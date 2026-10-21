@@ -914,7 +914,9 @@ body.nn-enabled.nn-hide-indent-guides .markdown-source-view.mod-cm6 .HyperMD-lis
 }
 
 /* Native Notes · empty-line-marks · feature-scoped styles */
-body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.an-empty-source-line.nn-empty-rendered-line:not([contenteditable="false"]):not(.cm-table-widget .cm-line)::after {
+/* Source-backed CodeMirror decorations own this state. Updating editor line
+   classes from a DOM observer makes CodeMirror redraw and can change geometry. */
+body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.an-empty-source-line:not([contenteditable="false"]):not(.cm-table-widget .cm-line)::after {
   content: "";
   position: absolute;
   inset-inline-start: 3px;
@@ -929,11 +931,11 @@ body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > 
   pointer-events: none;
   user-select: none;
 }
-body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-codeblock.nn-empty-rendered-line::after {
+body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-codeblock.an-empty-source-line::after {
   inset-inline-start: var(--an-code-padding, 20px);
 }
 @media print {
-  body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.nn-empty-rendered-line::after {
+  body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.an-empty-source-line::after {
     display: none;
   }
 }
@@ -2248,7 +2250,7 @@ body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is
 body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.an-callout-source-end, .cm-callout) + * {
   --an-previous-block-space: var(--an-callout-gap);
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.cm-line.nn-math-source-end:not(.HyperMD-quote, .HyperMD-list-line), .math-block.cm-embed-block) + * {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.cm-line.HyperMD-math.nn-math-source-end:not(.HyperMD-quote, .HyperMD-list-line), .math-block.cm-embed-block) + * {
   --an-previous-block-space: var(--an-math-gap);
 }
 body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-preview-code-block > div > .expressive-code {
@@ -2323,10 +2325,10 @@ body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm
   pointer-events: none;
   z-index: -1;
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line.nn-math-source-begin:not(.HyperMD-quote, .HyperMD-list-line) {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-math.nn-math-source-begin:not(.HyperMD-quote, .HyperMD-list-line) {
   padding-block-start: calc(14px + max(0px, var(--an-math-gap) - var(--an-previous-block-space, 0px)));
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line.nn-math-source-end:not(.HyperMD-quote, .HyperMD-list-line) {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-math.nn-math-source-end:not(.HyperMD-quote, .HyperMD-list-line) {
   padding-block-end: calc(14px + var(--an-math-gap));
 }
 body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .math-block.cm-embed-block > .nn-math-display {
@@ -2814,27 +2816,51 @@ body.nn-enabled.nn-image-alignment.is-mobile .nn-alignment-menu .nn-alignment-ch
 }
 
 /* Only the plugin's own settings. */
-.native-notes-settings .native-notes-intro { margin: 0; color: var(--text-muted); line-height: 1.5; }
-.native-notes-settings .native-notes-settings-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--background-modifier-border); }
-.native-notes-settings .native-notes-settings-section > .setting-item.setting-item-heading { padding-inline: 0; padding-top: 0; margin-bottom: 4px; background: transparent; border: 0; border-radius: 0; }
+.native-notes-settings {
+  --setting-group-max-width: 720px;
+  --setting-items-padding-x: 16px;
+  --setting-items-padding-y: 14px;
+  --setting-items-radius: 12px;
+}
+.native-notes-settings .native-notes-intro-group > .setting-items {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.native-notes-settings .native-notes-intro { margin: 0; padding: 4px; color: var(--text-muted); line-height: 1.6; }
+.native-notes-settings .native-notes-settings-section { margin-top: 28px; padding-top: 0; border-top: 0; }
+.native-notes-settings .native-notes-settings-section > .setting-item.setting-item-heading { padding: 0 4px; margin: 0 0 12px; background: transparent; border: 0; border-radius: 0; }
 .native-notes-settings .native-notes-settings-section > .setting-item-heading .setting-item-name { font-size: 18px; font-weight: 600; }
-.native-notes-settings .native-notes-section-description { margin: 0 0 16px; color: var(--text-muted); font-size: var(--font-ui-small); line-height: 1.5; }
-.native-notes-settings .native-notes-theme-setting { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; }
-.native-notes-settings .native-notes-theme-setting > .native-notes-theme-preview { grid-column: 1 / -1; margin: 0; }
+.native-notes-settings .native-notes-settings-section > .setting-items {
+  background: var(--setting-items-background, var(--background-secondary));
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--setting-items-radius);
+}
+.native-notes-settings .native-notes-section-description { margin: 0; padding: 14px 16px; color: var(--text-muted); font-size: var(--font-ui-small); line-height: 1.5; }
+.native-notes-settings .native-notes-settings-section .setting-item:not(.setting-item-heading) { padding: 14px 16px; flex-wrap: wrap; gap: 12px 16px; }
+.native-notes-settings .setting-item-info { flex: 1 1 180px; min-width: 0; margin-inline-end: 0; }
+.native-notes-settings .native-notes-theme-setting { display: flex; flex-wrap: wrap; gap: 12px 16px; }
+.native-notes-settings .native-notes-theme-setting > .native-notes-theme-preview { flex: 0 0 100%; min-width: 0; margin: 0; }
 .native-notes-settings .native-notes-palette-row { display: flex; align-items: center; gap: 12px; margin-block: 8px; }
 .native-notes-settings .native-notes-palette-row > span { width: 36px; flex: 0 0 auto; font-size: var(--font-ui-small); color: var(--text-muted); }
-.native-notes-settings .native-notes-palette { display: flex; flex: 1; gap: 6px; }
+.native-notes-settings .native-notes-palette { display: flex; flex: 1; min-width: 0; gap: 6px; }
 .native-notes-settings .native-notes-palette > div { height: 26px; flex: 1; border: 1px solid var(--background-modifier-border); border-radius: 6px; }
-.native-notes-settings .setting-item-control { flex-wrap: wrap; gap: 8px; min-width: 0; flex-shrink: 1; }
+.native-notes-settings .setting-item-control { flex-wrap: wrap; gap: 8px; min-width: 0; max-width: 100%; flex-shrink: 1; margin-inline-start: auto; }
 .native-notes-settings .setting-item-control > select { max-width: 100%; text-overflow: ellipsis; }
 .native-notes-settings .setting-item-control.nn-select-control { flex-shrink: 0; }
 .native-notes-settings .setting-item-control > select:not(.is-measuring) { width: 140px; }
+.native-notes-settings .setting-item-control > button { max-width: 100%; white-space: normal; }
 .native-notes-settings .native-notes-symbol-preview { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; color: var(--text-muted); flex-shrink: 0; }
 .native-notes-settings .native-notes-symbol-preview svg { width: 18px; height: 18px; }
 .native-notes-settings .native-notes-symbol-setting.is-disabled .native-notes-symbol-preview { opacity: .4; }
-.native-notes-profile textarea { width: 100%; min-height: 240px; max-height: 50vh; resize: vertical; font-family: var(--font-monospace); font-size: 13px; }
+.native-notes-profile textarea { box-sizing: border-box; width: 100%; min-height: 240px; max-height: 50vh; padding: 12px; border-radius: 8px; resize: vertical; font-family: var(--font-monospace); font-size: 13px; line-height: 1.5; }
+.native-notes-profile .setting-item { flex-wrap: wrap; gap: 12px; }
+.native-notes-profile .setting-item-control { flex-wrap: wrap; gap: 8px; max-width: 100%; }
 .native-notes-profile .native-notes-profile-error { color: var(--text-error); min-height: 1.4em; }
 @media (max-width: 600px) {
+  .native-notes-settings .native-notes-settings-section { margin-top: 24px; }
   .native-notes-settings .setting-item { flex-wrap: wrap; row-gap: 12px; }
   .native-notes-settings .setting-item-control { max-width: 100%; }
   .native-notes-settings :is(input[type="text"], select, button),

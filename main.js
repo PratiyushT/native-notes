@@ -491,14 +491,15 @@ var require_settings_tab = __commonJS({
       // Definitions are also read before the tab opens to index settings search.
       // Keep document access inside render callbacks, when the host window is known.
       settingDefinition(name, desc, render, aliases) {
-        return { name, desc, aliases, render: (setting) => {
+        return { name, desc, aliases, render: (setting, group) => {
           this.plugin.attachDocument(setting.settingEl.ownerDocument);
           this.containerEl.classList.add("native-notes-settings");
-          return render(setting);
+          return render(setting, group);
         } };
       }
       descriptionDefinition(text, cls) {
-        const definition = this.settingDefinition("", text, (setting) => {
+        const definition = this.settingDefinition("", text, (setting, group) => {
+          if (cls === "native-notes-intro") group.addClass("native-notes-intro-group");
           setting.settingEl.empty();
           setting.settingEl.classList.remove("setting-item");
           setting.settingEl.classList.add(cls);
@@ -1092,6 +1093,106 @@ var require_callout_spacing = __commonJS({
   }
 });
 
+// src/math-spacing.js
+var require_math_spacing = __commonJS({
+  "src/math-spacing.js"(exports2, module2) {
+    "use strict";
+    var { scanFences } = require_fence();
+    var { maskComments } = require_callout_spacing();
+    var OPEN = /^ {0,3}\$\$(?!\$)/;
+    var LIST = /^( {0,3})(?:[-+*]|\d{1,9}[.)])([ \t]+)(.*)$/;
+    function closingDelimiter(line, from = 0) {
+      const delimiter = /\$\$(?!\$)/g;
+      delimiter.lastIndex = from;
+      let match;
+      while (match = delimiter.exec(line)) {
+        if (line[match.index - 1] === "$") continue;
+        let escapes = 0;
+        for (let index = match.index - 1; index >= 0 && line[index] === "\\"; index--) escapes++;
+        if (escapes % 2 === 0) return match.index;
+      }
+      return -1;
+    }
+    function scanRootMath(text) {
+      if (typeof text !== "string") throw new TypeError("text must be a string");
+      text = maskComments(text);
+      const lines = text.split("\n");
+      const fences = new Map(scanFences(text).map((fence) => [fence.lineStart, fence]));
+      const result = [];
+      let active = null;
+      let listIndent = null;
+      let listBlank = false;
+      let html = false;
+      let first = 0;
+      if (/^\uFEFF?---[ \t]*$/.test(lines[0])) {
+        first = 1;
+        while (first < lines.length && !/^(?:---|\.\.\.)[ \t]*$/.test(lines[first])) first++;
+        first++;
+      }
+      for (let index = first; index < lines.length; index++) {
+        const line = lines[index];
+        if (active !== null) {
+          const close2 = closingDelimiter(line);
+          if (close2 !== -1) {
+            if (!line.slice(close2 + 2).trim()) result.push({ start: active, end: index });
+            else result.push({ start: active, end: null });
+            active = null;
+          }
+          continue;
+        }
+        if (!line.trim()) {
+          html = false;
+          listBlank = true;
+          continue;
+        }
+        if (html) continue;
+        if (/^ {0,3}</.test(line)) {
+          html = true;
+          continue;
+        }
+        if (listIndent !== null) {
+          const indentation = /^[ \t]*/.exec(line)[0].replace(/\t/g, "    ").length;
+          const interrupts = /^ {0,3}(?:#{1,6}(?:[ \t]|$)|>|`{3,}|~{3,}|\$\$)/.test(line);
+          if (indentation >= listIndent || !listBlank && !interrupts && !LIST.test(line)) continue;
+          listIndent = null;
+        }
+        const list = LIST.exec(line);
+        if (list) {
+          listIndent = line.length - list[3].length;
+          listBlank = false;
+        }
+        if (/`{3,}|~{3,}/.test(line)) {
+          let fence = fences.get(index);
+          let offset = 0;
+          if (!fence) {
+            fence = scanFences(lines.slice(index).join("\n"))[0];
+            if (fence?.lineStart !== 0) fence = null;
+            offset = index;
+          }
+          if (fence) {
+            if (fence.lineEnd !== null) index = offset + fence.lineEnd;
+            else {
+              const source = offset ? lines.slice(offset).join("\n") : text;
+              index = offset + source.slice(0, Math.max(fence.openingStart, fence.bodyEnd - 1)).split("\n").length - 1;
+            }
+            continue;
+          }
+        }
+        if (list || /^ {0,3}>/.test(line)) continue;
+        const open = OPEN.exec(line);
+        if (!open) continue;
+        const close = closingDelimiter(line, open[0].length);
+        if (close !== -1) {
+          if (!line.slice(close + 2).trim()) result.push({ start: index, end: index });
+        } else active = index;
+      }
+      if (active !== null) result.push({ start: active, end: null });
+      return result;
+    }
+    module2.exports = { scanRootMath };
+  }
+});
+
 // src/code-features.js
 var require_code_features = __commonJS({
   "src/code-features.js"(exports2, module2) {
@@ -1102,6 +1203,7 @@ var require_code_features = __commonJS({
     var settingsChanged = StateEffect.define();
     var { scanFences, readTitle, updateTitle, readLanguage, updateLanguage, readFrame } = require_fence();
     var { scanRootCallouts } = require_callout_spacing();
+    var { scanRootMath } = require_math_spacing();
     function editorDecorations(state, spacing, emptyLineMarks) {
       if (!spacing && !emptyLineMarks) return Decoration.none;
       const text = state.doc.toString();
@@ -1112,6 +1214,14 @@ var require_code_features = __commonJS({
         } else {
           ranges.push(Decoration.line({ class: "an-callout-source-start" }).range(state.doc.line(start + 1).from));
           ranges.push(Decoration.line({ class: "an-callout-source-end" }).range(state.doc.line(end + 1).from));
+        }
+      }
+      for (const { start, end } of spacing ? scanRootMath(text) : []) {
+        if (start === end) {
+          ranges.push(Decoration.line({ class: "nn-math-source-begin nn-math-source-end" }).range(state.doc.line(start + 1).from));
+        } else {
+          ranges.push(Decoration.line({ class: "nn-math-source-begin" }).range(state.doc.line(start + 1).from));
+          if (end !== null) ranges.push(Decoration.line({ class: "nn-math-source-end" }).range(state.doc.line(end + 1).from));
         }
       }
       if (emptyLineMarks) {
@@ -1772,7 +1882,7 @@ var require_code_features = __commonJS({
         this.liveRegions.clear();
       }
     };
-    module2.exports = { CodeFeatures: CodeFeatures2 };
+    module2.exports = { CodeFeatures: CodeFeatures2, editorDecorations };
   }
 });
 
@@ -2849,7 +2959,6 @@ var require_dom_state = __commonJS({
       "pre",
       "figure.frame",
       "figcaption.header",
-      ".cm-line",
       "mjx-container",
       "math-field",
       "svg.flowchart"
@@ -2864,9 +2973,6 @@ var require_dom_state = __commonJS({
       "nn-has-copy-button",
       "nn-shell-frame",
       "nn-has-language-label",
-      "nn-empty-rendered-line",
-      "nn-math-source-begin",
-      "nn-math-source-end",
       "nn-math-display",
       "nn-mathlive-field"
     ];
@@ -2970,12 +3076,6 @@ var require_dom_state = __commonJS({
           set("nn-shell-frame", direct(el, 'pre:is([data-language="sh"], [data-language="bash"], [data-language="zsh"], [data-language="shell"])'));
         }
         if (el.matches("figcaption.header")) set("nn-has-language-label", direct(el, ".an-code-language-label"));
-        if (el.matches(".cm-line")) {
-          set("nn-empty-rendered-line", el.children.length === 1 && el.firstElementChild.nodeName === "BR" && el.textContent === "");
-          const begin = direct(el, ".cm-formatting-math-begin.cm-math-block");
-          set("nn-math-source-begin", begin);
-          set("nn-math-source-end", (el.classList.contains("HyperMD-math") || begin) && direct(el, ".cm-formatting-math-end"));
-        }
         set("nn-math-display", el.localName === "mjx-container" && el.getAttribute("display") === "true");
         set("nn-mathlive-field", el.localName === "math-field" && el.closest(".mathlive-modal-content, .obsidian-mathlive-codemirror-wrapper"));
         this.states.set(el, states);
