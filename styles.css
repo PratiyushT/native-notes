@@ -356,12 +356,17 @@ body.nn-enabled.nn-chrome:not(.is-mobile) :is(.workspace-split.mod-primary-split
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
-body.nn-enabled.nn-chrome.is-translucent:not(.is-fullscreen):not(.is-mobile):not(.nn-solid-surfaces) .app-container {
+/* Only macOS supplies native window vibrancy. Other desktops retain an opaque
+   workspace and their own frame controls, including frameless and RTL layouts. */
+body.nn-enabled.nn-chrome.mod-macos.is-translucent:not(.is-fullscreen):not(.is-mobile):not(.nn-solid-surfaces) .app-container {
   background: var(--workspace-background-translucent);
 }
-body.nn-enabled.nn-chrome.is-translucent:not(.is-fullscreen):not(.is-mobile):not(.nn-solid-surfaces) :is(.workspace-ribbon, .workspace-split.mod-primary-split, .workspace-split.mod-secondary-split, .workspace-tab-header-container) {
+body.nn-enabled.nn-chrome.mod-macos.is-translucent:not(.is-fullscreen):not(.is-mobile):not(.nn-solid-surfaces) :is(.workspace-ribbon, .workspace-split.mod-primary-split, .workspace-split.mod-secondary-split, .workspace-tab-header-container) {
   background: transparent;
   backdrop-filter: none;
+}
+body.nn-enabled.nn-chrome:is(.mod-windows, .mod-linux) {
+  --workspace-background-translucent: var(--an-chrome-solid);
 }
 body.nn-enabled.nn-chrome:not(.is-mobile) :is(.mod-primary-split,.mod-secondary-split,.mod-left-split,.mod-right-split) :is(.workspace-leaf,.workspace-leaf-content,.view-content,.workspace-tabs,.workspace-tab-container) { background: transparent; }
 body.nn-enabled.nn-chrome:not(.is-mobile) .workspace-split.mod-root > .workspace-tabs > .workspace-tab-container { background: var(--an-paper); }
@@ -539,7 +544,7 @@ body.nn-enabled.nn-chrome.nn-compact-sidebar { --an-row-height: 30px; --nav-item
 body.nn-enabled.nn-chrome.nn-hide-ribbon .workspace-ribbon:is(.mod-primary,.mod-left) { display: none; }
 body.nn-enabled.nn-chrome.nn-solid-surfaces { --an-glass: var(--an-chrome-solid); --an-glass-blur: 0px; }
 body.nn-enabled.nn-chrome.nn-solid-surfaces .app-container { background: var(--an-chrome-solid); }
-body.nn-enabled.nn-chrome.nn-solid-surfaces :is(.menu,.suggestion-container,.prompt) { background: var(--an-chrome-solid); backdrop-filter: none; }
+body.nn-enabled.nn-chrome.nn-solid-surfaces :is(.menu,.suggestion-container,.prompt) { background: var(--an-chrome-solid); -webkit-backdrop-filter: none; backdrop-filter: none; }
 body.nn-enabled.nn-chrome.is-mobile { --font-ui-medium: 15px; --input-height: 36px; --an-row-height: 44px; }
 body.nn-enabled.nn-chrome.is-mobile .view-actions { border: 0; box-shadow: none; background: transparent; }
 body.nn-enabled.nn-chrome.is-mobile .vertical-tab-content { padding: 20px; }
@@ -552,7 +557,7 @@ body.nn-enabled.nn-chrome.theme-light { --an-glass: var(--an-chrome-solid); --an
   body.nn-enabled.nn-chrome:not(.is-mobile) .app-container { background: var(--an-chrome-solid); }
 }
 @media (prefers-reduced-transparency: reduce) {
-  body.nn-enabled.nn-chrome:not(.is-mobile) :is(.menu,.suggestion-container,.prompt) { background: var(--an-chrome-solid); backdrop-filter: none; }
+  body.nn-enabled.nn-chrome:not(.is-mobile) :is(.menu,.suggestion-container,.prompt) { background: var(--an-chrome-solid); -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   body.nn-enabled.nn-chrome { --anim-duration-superfast: 0ms; --anim-duration-fast: 0ms; --anim-duration-moderate: 0ms; --anim-duration-slow: 0ms; }
@@ -2673,17 +2678,30 @@ body.nn-enabled.nn-image-alignment .nn-media-align-target:is(:hover, :focus-with
   opacity: 1;
   pointer-events: auto;
 }
+/* Host Zoom/Edit actions and the plugin action share one hit area and baseline.
+   Mermaid inherits the code-block toolbar, while images use Obsidian's embed
+   toolbar; neither should leave Alignment larger or visually unboxed. */
+body.nn-enabled.nn-image-alignment .nn-media-actions,
+body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host,
+body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 body.nn-enabled.nn-image-alignment .nn-media-actions.nn-media-actions-open,
 body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host.nn-media-actions-open,
 body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host.nn-media-actions-open {
   opacity: 1;
   pointer-events: auto;
 }
-body.nn-enabled.nn-image-alignment .nn-media-actions .nn-align-button,
-body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host .nn-align-button,
-body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host .nn-align-button,
+body.nn-enabled.nn-image-alignment .nn-media-actions > .embed-action,
+body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host > .embed-action,
+body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host > .embed-action,
 body.nn-enabled.nn-image-alignment .nn-alignment-menu .nn-alignment-choice {
+  --icon-size: 18px;
+  --icon-stroke: 1.7px;
   display: flex;
+  box-sizing: border-box;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
@@ -2700,6 +2718,17 @@ body.nn-enabled.nn-image-alignment .nn-alignment-menu .nn-alignment-choice {
   box-shadow: none;
   cursor: pointer;
 }
+body.nn-enabled.nn-image-alignment .nn-media-actions > .embed-action,
+body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host > .embed-action,
+body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host > .embed-action {
+  padding: 6px;
+  border: 1px solid var(--an-rule);
+  border-radius: 7px;
+  background: var(--an-block);
+  box-shadow: 0 1px 2px #0000000a;
+}
+body.nn-enabled.nn-image-alignment .nn-media-actions > .embed-action svg,
+body.nn-enabled.nn-image-alignment .nn-media-actions-host > .embed-action svg,
 body.nn-enabled.nn-image-alignment .nn-align-button svg,
 body.nn-enabled.nn-image-alignment .nn-alignment-choice svg {
   width: 18px;
@@ -2727,21 +2756,23 @@ body.nn-enabled.nn-image-alignment .nn-alignment-menu {
   box-shadow: 0 8px 24px #00000024, 0 2px 6px #00000012;
 }
 body.nn-enabled.nn-image-alignment .nn-alignment-menu[hidden],
-body.nn-enabled.nn-image-alignment .nn-media-actions .nn-align-button[hidden],
-body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host .nn-align-button[hidden],
-body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host .nn-align-button[hidden],
+body.nn-enabled.nn-image-alignment .nn-media-actions > .embed-action[hidden],
+body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host > .embed-action[hidden],
+body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host > .embed-action[hidden],
 body.nn-enabled.nn-image-alignment .nn-media-actions[hidden] { display: none; }
-body.nn-enabled.nn-image-alignment .nn-align-button:focus-visible,
+body.nn-enabled.nn-image-alignment .nn-media-actions > .embed-action:focus-visible,
+body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host > .embed-action:focus-visible,
+body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host > .embed-action:focus-visible,
 body.nn-enabled.nn-image-alignment .nn-alignment-choice:focus-visible {
   outline: 2px solid var(--an-focus);
   outline-offset: -2px;
 }
 @media (hover: hover) {
-  body.nn-enabled.nn-image-alignment .nn-media-actions .nn-align-button:hover,
-  body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host .nn-align-button:hover,
-  body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host .nn-align-button:hover,
+  body.nn-enabled.nn-image-alignment .nn-media-actions > .embed-action:hover,
+  body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host > .embed-action:hover,
+  body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host > .embed-action:hover,
   body.nn-enabled.nn-image-alignment .nn-alignment-menu .nn-alignment-choice:hover {
-    background: var(--an-hover);
+    background: var(--an-inline);
     color: var(--an-label);
   }
 }
@@ -2751,15 +2782,15 @@ body.nn-enabled.nn-image-alignment.is-mobile .markdown-source-view.mod-cm6 .cm-e
   opacity: 1;
   pointer-events: auto;
 }
-body.nn-enabled.nn-image-alignment.is-mobile .nn-media-actions .nn-align-button,
-body.nn-enabled.nn-image-alignment.is-mobile .image-embed > .embed-actions.nn-media-actions-host .nn-align-button,
-body.nn-enabled.nn-image-alignment.is-mobile .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host .nn-align-button,
+body.nn-enabled.nn-image-alignment.is-mobile .nn-media-actions > .embed-action,
+body.nn-enabled.nn-image-alignment.is-mobile .image-embed > .embed-actions.nn-media-actions-host > .embed-action,
+body.nn-enabled.nn-image-alignment.is-mobile .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host > .embed-action,
 body.nn-enabled.nn-image-alignment.is-mobile .nn-alignment-menu .nn-alignment-choice {
   width: 44px;
   min-width: 44px;
   height: 44px;
   min-height: 44px;
-  padding: 13px;
+  padding: 12px;
 }
 @media (hover: none) {
   body.nn-enabled.nn-image-alignment .nn-media-actions,

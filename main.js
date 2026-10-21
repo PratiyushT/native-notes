@@ -125,14 +125,14 @@ var require_settings = __commonJS({
     };
     var FONTS = {
       text: {
-        system: { name: "System (San Francisco)", css: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif' },
+        system: { name: "System", css: '-apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif' },
         serif: { name: "System serif", css: 'ui-serif, Georgia, "Times New Roman", serif' },
-        rounded: { name: "System rounded", css: "ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif" },
+        rounded: { name: "System rounded", css: 'ui-rounded, -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Noto Sans", Ubuntu, Cantarell, sans-serif' },
         theme: { name: "Use current theme", css: null }
       },
       code: {
-        system: { name: "System monospace", css: 'ui-monospace, "SFMono-Regular", "SF Mono", Menlo, monospace' },
-        menlo: { name: "Menlo", css: "Menlo, ui-monospace, monospace" },
+        system: { name: "System monospace", css: 'ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace' },
+        menlo: { name: "Menlo", css: 'Menlo, ui-monospace, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace' },
         theme: { name: "Use current theme", css: null }
       }
     };
@@ -609,7 +609,7 @@ var require_settings_tab = __commonJS({
           }
         }
         const options = {
-          translucentNavigation: ["Translucent navigation", "On Mac, also enable Obsidian\u2019s Translucent window setting. Mobile uses solid surfaces."],
+          translucentNavigation: ["Translucent navigation", "Desktop popovers use a soft blur. On Mac, also enable Obsidian\u2019s Translucent window setting for translucent sidebars. Windows and Linux keep solid sidebars; mobile uses solid surfaces."],
           hideRibbon: ["Hide left ribbon", "Desktop only. Commands remain available through the command palette."]
         };
         for (const [key, [name, desc]] of Object.entries(options)) definitions.push(this.settingDefinition(name, desc, (setting) => {
@@ -2881,6 +2881,7 @@ var require_dom_state = __commonJS({
         this.doc = doc;
         this.win = doc.defaultView;
         this.tracked = /* @__PURE__ */ new Set();
+        this.states = /* @__PURE__ */ new WeakMap();
         this.pending = /* @__PURE__ */ new Set();
         this.diagrams = /* @__PURE__ */ new Map();
         this.frame = null;
@@ -2915,7 +2916,7 @@ var require_dom_state = __commonJS({
         if (this.disposed) return;
         for (const record of records) {
           const target = record.target;
-          if (record.type === "attributes" && record.attributeName === "class" && externalClasses(record.oldValue) === externalClasses(target.getAttribute("class"))) continue;
+          if (record.type === "attributes" && record.attributeName === "class" && externalClasses(record.oldValue) === externalClasses(target.getAttribute("class")) && CLASSES.every((name) => target.classList.contains(name) === Boolean(this.states.get(target)?.has(name)))) continue;
           if (target.nodeType !== 1 || target.closest("[data-native-notes-diagram-style]")) continue;
           for (let el = target; el && el !== this.doc.body; el = el.parentElement) {
             if (el.matches(TARGETS) || this.tracked.has(el)) this.pending.add(el);
@@ -2970,13 +2971,14 @@ var require_dom_state = __commonJS({
         }
         if (el.matches("figcaption.header")) set("nn-has-language-label", direct(el, ".an-code-language-label"));
         if (el.matches(".cm-line")) {
-          set("nn-empty-rendered-line", el.childNodes.length === 1 && el.firstChild.nodeName === "BR");
+          set("nn-empty-rendered-line", el.children.length === 1 && el.firstElementChild.nodeName === "BR" && el.textContent === "");
           const begin = direct(el, ".cm-formatting-math-begin.cm-math-block");
           set("nn-math-source-begin", begin);
           set("nn-math-source-end", (el.classList.contains("HyperMD-math") || begin) && direct(el, ".cm-formatting-math-end"));
         }
         set("nn-math-display", el.localName === "mjx-container" && el.getAttribute("display") === "true");
         set("nn-mathlive-field", el.localName === "math-field" && el.closest(".mathlive-modal-content, .obsidian-mathlive-codemirror-wrapper"));
+        this.states.set(el, states);
         for (const name of CLASSES) el.classList.toggle(name, states.has(name));
         if (el.matches(".mermaid svg.flowchart")) this.syncDiagram(el);
         else this.clearDiagram(el);
@@ -3026,6 +3028,7 @@ var require_dom_state = __commonJS({
           OWNERS.delete(el);
         }
         this.clearDiagram(el);
+        this.states.delete(el);
         this.tracked.delete(el);
       }
       destroy() {
