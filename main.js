@@ -378,6 +378,191 @@ var require_appearance = __commonJS({
   }
 });
 
+// src/sync/ui.js
+var require_ui = __commonJS({
+  "src/sync/ui.js"(exports2, module2) {
+    "use strict";
+    var { Modal, Notice: Notice2, Setting } = require("obsidian");
+    var SETUP_URL = "https://github.com/PratiyushT/native-notes/blob/main/docs/SYNC.md";
+    var SyncHistoryModal2 = class extends Modal {
+      constructor(plugin) {
+        super(plugin.app);
+        this.plugin = plugin;
+        this.live = false;
+        this.offset = 0;
+        this.filter = "";
+      }
+      onOpen() {
+        if (this.plugin.disposed) {
+          this.close();
+          return;
+        }
+        this.live = true;
+        this.session = {};
+        this.busy = false;
+        this.plugin.settingsModals.add(this);
+        this.setTitle("Local recovery history");
+        this.contentEl.classList.add("native-notes-sync-modal");
+        this.errorEl = this.contentEl.createEl("p", { cls: "native-notes-sync-status", attr: { role: "status", "aria-live": "polite" } });
+        this.body = this.contentEl.createDiv();
+        this.body.createEl("p", { text: "These recovery snapshots are saved on this device. Restoring creates a separate copy so you can review it without replacing your current note." });
+        const session = this.session;
+        const label = this.body.createEl("label", { cls: "native-notes-sync-field" });
+        label.createSpan({ text: "Filter by file" });
+        const search = label.createEl("input", { attr: { type: "search", autocomplete: "off", spellcheck: "false" } });
+        search.value = this.filter;
+        const list = this.body.createDiv({ cls: "native-notes-sync-history" });
+        search.addEventListener("input", () => {
+          if (!this.current(session)) return;
+          this.filter = search.value;
+          this.offset = 0;
+          void this.perform(() => this.loadRows(list, session), session);
+        });
+        void this.perform(() => this.loadRows(list, session), session);
+      }
+      current(session = this.session) {
+        return this.live && session === this.session && !this.plugin.disposed;
+      }
+      async perform(action, session = this.session) {
+        if (!this.current(session) || this.busy) return;
+        this.busy = true;
+        this.errorEl.textContent = "Working\u2026";
+        const controls = [...this.body.querySelectorAll("button, input, textarea, select")].map((element) => [element, element.disabled]);
+        controls.forEach(([element]) => {
+          element.disabled = true;
+        });
+        try {
+          await action();
+          if (this.current(session)) this.errorEl.textContent = "";
+        } catch (error) {
+          if (this.current(session)) this.errorEl.textContent = error?.message || "The recovery action could not finish. Try again.";
+        } finally {
+          if (this.current(session)) {
+            this.busy = false;
+            controls.forEach(([element, disabled]) => {
+              element.disabled = disabled;
+            });
+          }
+        }
+      }
+      async loadRows(list, session = this.session) {
+        if (!this.current(session)) return;
+        const serial = this.serial = (this.serial || 0) + 1;
+        const sync = this.plugin.sync;
+        await sync.ensureStorage();
+        if (!this.current(session)) return;
+        const records = await sync.storage.history();
+        if (!this.current(session) || serial !== this.serial) return;
+        const rows = records.filter((record) => typeof record.path === "string" && record.path.toLowerCase().includes(this.filter.toLowerCase())).sort((a, b) => b.modified - a.modified);
+        if (this.offset >= rows.length) this.offset = Math.max(0, Math.floor((rows.length - 1) / 30) * 30);
+        list.empty();
+        list.createEl("p", { cls: "native-notes-sync-hint", text: rows.length ? `${rows.length} saved versions. Local history retains up to 20 versions per file, 5,000 versions total, within a 100 MiB device budget.` : "No saved versions match. Turn on Cloud folder tools to start saving recovery snapshots." });
+        for (const record of rows.slice(this.offset, this.offset + 30)) {
+          const row = list.createDiv({ cls: "native-notes-sync-history-row" });
+          row.createEl("strong", { text: record.path });
+          row.createEl("p", { cls: "native-notes-sync-hint", text: `${new Date(record.modified).toLocaleString()} \xB7 ${record.reason || "Local recovery snapshot"}` });
+          const readBytes = async () => {
+            const bytes = await sync.storage.readSnapshot(record.id);
+            if (!ArrayBuffer.isView(bytes) || Object.prototype.toString.call(bytes) !== "[object Uint8Array]") {
+              throw new Error("This recovery snapshot is unavailable. Choose another saved version.");
+            }
+            return bytes;
+          };
+          if (record.path.toLowerCase().endsWith(".md")) {
+            const details = row.createEl("details");
+            details.createEl("summary", { text: "Preview" });
+            const preview = details.createEl("pre");
+            let previewRequest = 0;
+            details.addEventListener("toggle", () => {
+              const request = ++previewRequest;
+              if (!this.current(session)) return;
+              if (!details.open) {
+                preview.textContent = "";
+                return;
+              }
+              preview.textContent = "Loading\u2026";
+              void (async () => {
+                try {
+                  const bytes = await readBytes();
+                  if (this.current(session) && request === previewRequest && details.open && details.isConnected) {
+                    preview.textContent = new TextDecoder().decode(bytes.subarray(0, 8e4)).slice(0, 2e4);
+                  }
+                } catch (error) {
+                  if (this.current(session) && request === previewRequest && details.open && details.isConnected) {
+                    preview.textContent = "";
+                    this.errorEl.textContent = error?.message || "This preview is unavailable.";
+                  }
+                }
+              })();
+            });
+          }
+          new Setting(row).addButton((button) => button.setButtonText("Restore a copy").onClick(() => void this.perform(async () => {
+            const bytes = await readBytes();
+            if (!this.current(session)) return;
+            const file = await sync.files().restoreCopy(record.path, bytes);
+            if (this.current(session)) new Notice2(`Saved recovery copy: ${file.path}`);
+          }, session)));
+        }
+        const navigation = new Setting(list);
+        if (this.offset > 0) navigation.addButton((button) => button.setButtonText("Previous").onClick(() => {
+          if (!this.current(session)) return;
+          this.offset = Math.max(0, this.offset - 30);
+          void this.perform(() => this.loadRows(list, session), session);
+        }));
+        if (this.offset + 30 < rows.length) navigation.addButton((button) => button.setButtonText("Next").onClick(() => {
+          if (!this.current(session)) return;
+          this.offset += 30;
+          void this.perform(() => this.loadRows(list, session), session);
+        }));
+      }
+      onClose() {
+        this.live = false;
+        this.session = null;
+        this.busy = false;
+        this.plugin.settingsModals.delete(this);
+        this.contentEl.empty();
+      }
+    };
+    function syncDefinitions(tab) {
+      const plugin = tab.plugin, sync = plugin.sync;
+      if (!sync) return [];
+      const perform = async (action) => {
+        if (plugin.disposed) return;
+        try {
+          await action();
+        } catch (error) {
+          if (!plugin.disposed) new Notice2(error?.message || "The recovery action could not finish. Try again.");
+        }
+        if (!plugin.disposed) tab.refreshSettingsTab();
+      };
+      const definition = (...args) => tab.settingDefinition(...args);
+      const items = [
+        tab.descriptionDefinition("Create or open your vault inside an iCloud Drive or OneDrive folder. Your installed cloud service transfers the files. Native Notes adds optional recovery snapshots saved on this device.", "native-notes-section-description"),
+        definition("Cloud folder tools", "Off by default. Save local recovery versions while Obsidian is open. Turning this off stops these snapshots; your cloud service keeps syncing.", (setting) => {
+          setting.addToggle((toggle) => toggle.setValue(sync.config.enabled).onChange((value) => void perform(() => sync.setEnabled(value))));
+        }),
+        definition("Cloud service", "Choose the setup instructions for your cloud folder. This does not move your vault or change your cloud service. Changing this choice pauses local recovery.", (setting) => {
+          setting.controlEl.classList.add("nn-select-control");
+          setting.addDropdown((dropdown) => dropdown.addOptions({ icloud: "iCloud Drive", onedrive: "OneDrive" }).setValue(sync.config.provider).onChange((value) => void perform(() => sync.configure({ provider: value }))));
+        }),
+        definition("Recovery status", sync.status, (setting) => {
+          setting.addButton((button) => button.setButtonText("Save snapshot").setDisabled(!sync.config.enabled).onClick(() => void perform(() => sync.run()))).addButton((button) => button.setButtonText("History").onClick(() => new SyncHistoryModal2(plugin).open()));
+          return sync.subscribe((text) => setting.setDesc(text));
+        }),
+        definition("Include attachments in recovery", "Add visible attachments up to 10 MiB to local snapshots. This does not change what your cloud service syncs. Changing this choice pauses local recovery.", (setting) => {
+          setting.addToggle((toggle) => toggle.setValue(sync.config.attachments).onChange((value) => void perform(() => sync.configure({ attachments: value }))));
+        }),
+        definition("Cloud folder setup", sync.config.provider === "icloud" ? "On Mac, iPhone, and iPad, create or open an Obsidian vault using iCloud Drive. On iPhone and iPad, use iCloud Drive/Obsidian. Keep your files downloaded for offline editing." : "On Mac or Windows, open a vault inside your OneDrive folder and keep it available offline. Linux needs a separate compatible sync client. Obsidian on iPhone and iPad cannot open a OneDrive vault folder natively.", (setting) => {
+          setting.controlEl.createEl("a", { text: "Open vault manager", cls: "native-notes-sync-guide", attr: { href: "obsidian://choose-vault" } });
+          setting.controlEl.createEl("a", { text: "Setup guide", cls: "native-notes-sync-guide", attr: { href: SETUP_URL, target: "_blank", rel: "noopener noreferrer" } });
+        })
+      ];
+      return [{ type: "group", heading: "Cloud folders", cls: "native-notes-settings-section", items }];
+    }
+    module2.exports = { syncDefinitions, SyncHistoryModal: SyncHistoryModal2 };
+  }
+});
+
 // src/settings-tab.js
 var require_settings_tab = __commonJS({
   "src/settings-tab.js"(exports2, module2) {
@@ -385,6 +570,7 @@ var require_settings_tab = __commonJS({
     var { PluginSettingTab, Setting, Modal, Notice: Notice2 } = require("obsidian");
     var { FEATURE_LABELS, PRESETS, TEXT_SIZES, defaults, exportProfile, importProfile } = require_settings();
     var { EMPTY_LINE_MARKS, setLocalIcon } = require_icons();
+    var { syncDefinitions } = require_ui();
     var SettingsModal = class extends Modal {
       constructor(plugin) {
         super(plugin.app);
@@ -573,6 +759,7 @@ var require_settings_tab = __commonJS({
             })
           ] },
           { type: "group", heading: "Optional features", cls: "native-notes-settings-section", items: this.featureDefinitions() },
+          ...syncDefinitions(this),
           { type: "group", heading: "Profiles", cls: "native-notes-settings-section", items: [
             this.descriptionDefinition("Keep the same look on your other devices.", "native-notes-section-description"),
             this.settingDefinition("Transfer settings", "Export your choices and import them on another device. Profiles contain no notes or account information.", (setting) => {
@@ -3184,6 +3371,536 @@ var require_dom_state = __commonJS({
   }
 });
 
+// src/sync/storage.js
+var require_storage = __commonJS({
+  "src/sync/storage.js"(exports2, module2) {
+    "use strict";
+    var MAX_HISTORY_BYTES = 100 * 1024 * 1024;
+    var MAX_HISTORY_RECORDS = 5e3;
+    var MAX_VERSIONS_PER_FILE = 20;
+    function isBytes(value) {
+      return ArrayBuffer.isView(value) && Object.prototype.toString.call(value) === "[object Uint8Array]";
+    }
+    function pruneRecords(records, info, history) {
+      const counts = /* @__PURE__ */ new Map();
+      let size = 0, retained = 0;
+      for (const item of records) {
+        const count = counts.get(item.path) || 0;
+        if (count >= MAX_VERSIONS_PER_FILE || retained >= MAX_HISTORY_RECORDS || size + item.size > MAX_HISTORY_BYTES) {
+          info.delete(item.id);
+          history.delete(item.id);
+        } else {
+          counts.set(item.path, count + 1);
+          size += item.size;
+          retained++;
+        }
+      }
+    }
+    var SyncStorage = class {
+      constructor(app, indexedDB = typeof window !== "undefined" ? window.indexedDB : void 0, crypto = typeof window !== "undefined" ? window.crypto : void 0) {
+        this.app = app;
+        this.indexedDB = indexedDB;
+        this.crypto = crypto;
+        this.db = null;
+        this.closed = false;
+        this.opening = null;
+        this.cancelOpen = null;
+      }
+      async open() {
+        if (this.closed) throw new Error("Recovery stopped.");
+        if (this.db) return this;
+        if (this.opening) return this.opening;
+        if (!this.indexedDB) throw new Error("Device storage is unavailable. Recovery remains off.");
+        let id = this.app.loadLocalStorage("native-notes-sync-device");
+        if (typeof id !== "string" || !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(id)) {
+          id = this.crypto.randomUUID();
+          this.app.saveLocalStorage("native-notes-sync-device", id);
+        }
+        this.deviceId = id;
+        this.opening = new Promise((resolve, reject) => {
+          const request = this.indexedDB.open(`native-notes-sync-${id}`, 2);
+          let settled = false;
+          const fail = (error) => {
+            if (settled) return;
+            settled = true;
+            this.cancelOpen = null;
+            reject(error);
+          };
+          this.cancelOpen = () => fail(new Error("Recovery stopped."));
+          request.onupgradeneeded = () => {
+            if (settled || this.closed) {
+              request.transaction.abort();
+              return;
+            }
+            const db = request.result;
+            if (!db.objectStoreNames.contains("state")) db.createObjectStore("state");
+            if (!db.objectStoreNames.contains("history")) db.createObjectStore("history", { keyPath: "id" });
+            const info = db.createObjectStore("info", { keyPath: "id" });
+            info.createIndex("path", "path");
+            info.createIndex("modified", "modified");
+            const history = request.transaction.objectStore("history");
+            const cursorRequest = history.openCursor();
+            cursorRequest.onsuccess = () => {
+              const cursor = cursorRequest.result;
+              if (cursor) {
+                const record = cursor.value;
+                if (typeof record.id === "string" && typeof record.path === "string" && record.path && Number.isFinite(record.modified) && isBytes(record.bytes) && record.bytes.byteLength <= MAX_HISTORY_BYTES) {
+                  info.put({
+                    id: record.id,
+                    path: record.path,
+                    modified: record.modified,
+                    reason: typeof record.reason === "string" ? record.reason : "Recovery snapshot",
+                    size: record.bytes.byteLength,
+                    hash: null
+                  });
+                  cursor.update({ id: record.id, bytes: record.bytes });
+                } else cursor.delete();
+                cursor.continue();
+              } else {
+                const counts = /* @__PURE__ */ new Map();
+                let size = 0, retained = 0;
+                const ordered = info.index("modified").openCursor(null, "prev");
+                ordered.onsuccess = () => {
+                  const current = ordered.result;
+                  if (!current) return;
+                  const item = current.value, count = counts.get(item.path) || 0;
+                  if (count >= MAX_VERSIONS_PER_FILE || retained >= MAX_HISTORY_RECORDS || size + item.size > MAX_HISTORY_BYTES) {
+                    current.delete();
+                    history.delete(item.id);
+                  } else {
+                    counts.set(item.path, count + 1);
+                    size += item.size;
+                    retained++;
+                  }
+                  current.continue();
+                };
+              }
+            };
+          };
+          request.onerror = () => fail(new Error("Could not open device storage. Recovery remains off."));
+          request.onblocked = () => fail(new Error("Device storage is busy. Close other vault windows and try again."));
+          request.onsuccess = () => {
+            if (settled || this.closed) {
+              request.result.close();
+              fail(new Error("Recovery stopped."));
+              return;
+            }
+            settled = true;
+            this.cancelOpen = null;
+            this.db = request.result;
+            this.db.onversionchange = () => this.close();
+            resolve(this);
+          };
+        }).finally(() => {
+          this.opening = null;
+        });
+        return this.opening;
+      }
+      transaction(store, mode, action) {
+        if (this.closed || !this.db) return Promise.reject(new Error("Recovery stopped."));
+        return new Promise((resolve, reject) => {
+          let transaction;
+          try {
+            transaction = this.db.transaction(store, mode);
+          } catch {
+            reject(new Error("Device storage is unavailable. Recovery paused to protect your files."));
+            return;
+          }
+          let request;
+          transaction.oncomplete = () => resolve(request?.result);
+          transaction.onerror = transaction.onabort = () => reject(new Error("Device storage could not be saved. Recovery paused to protect your files."));
+          try {
+            request = action(transaction.objectStore(Array.isArray(store) ? store[0] : store), transaction);
+          } catch (error) {
+            transaction.abort();
+            reject(error);
+          }
+        });
+      }
+      get(key) {
+        return this.transaction("state", "readonly", (store) => store.get(key));
+      }
+      put(key, value) {
+        return this.transaction("state", "readwrite", (store) => store.put(value, key));
+      }
+      async remember(path, bytes, reason = "snapshot") {
+        if (typeof path !== "string" || !path || !isBytes(bytes)) throw new Error("Invalid recovery snapshot.");
+        if (bytes.byteLength > MAX_HISTORY_BYTES) throw new Error("The recovery snapshot exceeds device storage limits.");
+        const snapshot = bytes.slice();
+        const digest = await this.crypto.subtle.digest("SHA-256", snapshot);
+        const hash = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+        await this.transaction(["info", "history"], "readwrite", (info, transaction) => {
+          const history = transaction.objectStore("history");
+          const request = info.index("path").getAll(path);
+          const insert = () => {
+            const all = info.getAll();
+            all.onsuccess = () => {
+              try {
+                const records = all.result.sort((a, b) => b.modified - a.modified);
+                const record = {
+                  id: this.crypto.randomUUID(),
+                  path,
+                  size: snapshot.byteLength,
+                  hash,
+                  reason: typeof reason === "string" ? reason : "Recovery snapshot",
+                  modified: Math.max(Date.now(), (records[0]?.modified || 0) + 1)
+                };
+                info.put(record);
+                history.put({ id: record.id, bytes: snapshot });
+                records.unshift(record);
+                pruneRecords(records, info, history);
+              } catch {
+                transaction.abort();
+              }
+            };
+          };
+          request.onsuccess = () => {
+            try {
+              const previous = request.result.sort((a, b) => b.modified - a.modified)[0];
+              if (previous?.hash === hash && previous.size === snapshot.byteLength) return;
+              if (previous && previous.hash === null && previous.size === snapshot.byteLength) {
+                const old = history.get(previous.id);
+                old.onsuccess = () => {
+                  if (equalBytes(old.result?.bytes, snapshot)) info.put({ ...previous, hash });
+                  else insert();
+                };
+              } else {
+                insert();
+              }
+            } catch {
+              transaction.abort();
+            }
+          };
+          return request;
+        });
+      }
+      async history(path) {
+        const records = await this.transaction("info", "readonly", (store) => path === void 0 ? store.getAll() : store.index("path").getAll(path));
+        return records.sort((a, b) => b.modified - a.modified).map(({ id, path: path2, modified, reason, size }) => ({ id, path: path2, modified, reason, size }));
+      }
+      async readSnapshot(id) {
+        if (typeof id !== "string" || !id || id.length > 128) throw new Error("Invalid recovery snapshot identifier.");
+        let metadata;
+        const record = await this.transaction(["history", "info"], "readonly", (history, transaction) => {
+          const info = transaction.objectStore("info").get(id);
+          info.onsuccess = () => {
+            metadata = info.result;
+          };
+          return history.get(id);
+        });
+        if (this.closed) throw new Error("Recovery stopped.");
+        if (!metadata || !isBytes(record?.bytes) || record.bytes.byteLength > MAX_HISTORY_BYTES || record.bytes.byteLength !== metadata.size) {
+          throw new Error("This recovery snapshot is unavailable. Choose another saved version.");
+        }
+        return record.bytes;
+      }
+      close() {
+        this.closed = true;
+        this.cancelOpen?.();
+        this.db?.close();
+        this.db = null;
+      }
+    };
+    function equalBytes(a, b) {
+      return isBytes(a) && isBytes(b) && a.byteLength === b.byteLength && a.every((byte, i) => byte === b[i]);
+    }
+    module2.exports = { SyncStorage, equalBytes, MAX_HISTORY_BYTES, MAX_HISTORY_RECORDS, MAX_VERSIONS_PER_FILE };
+  }
+});
+
+// src/sync/local.js
+var require_local = __commonJS({
+  "src/sync/local.js"(exports2, module2) {
+    "use strict";
+    var MAX_FILE_BYTES = 10 * 1024 * 1024;
+    var RESTORE_FOLDER = "Native Notes Restored";
+    var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+    function scopeKey(path) {
+      return String(path || "").normalize("NFKC").toUpperCase().toLowerCase();
+    }
+    function inside(path, folder) {
+      return folder && (path === folder || path.startsWith(`${folder}/`));
+    }
+    function validateRelativePath(path) {
+      if (typeof path !== "string" || !path || path.length > 4096 || path.startsWith("/") || /^[a-z]:/i.test(path) || path.includes("\\") || Array.from(path).some((character) => character.charCodeAt(0) < 32 || character.charCodeAt(0) === 127)) {
+        throw new Error("Recovery requires a safe vault-relative path.");
+      }
+      for (const part of path.split("/")) {
+        const normalized = part.normalize("NFKC");
+        if (!part || normalized === "." || normalized === ".." || /[/\\]/.test(normalized)) {
+          throw new Error("Recovery requires a safe vault-relative path.");
+        }
+      }
+      return path;
+    }
+    function validateBytes(bytes) {
+      if (!ArrayBuffer.isView(bytes) || Object.prototype.toString.call(bytes) !== "[object Uint8Array]") throw new Error("Invalid recovery data.");
+      if (bytes.byteLength > MAX_FILE_BYTES) throw new Error("A selected file exceeds the 10 MiB recovery limit.");
+    }
+    function exactBuffer(bytes) {
+      return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
+    }
+    var VaultFiles = class {
+      constructor(app, storage, options, alive, cryptoProvider = typeof window !== "undefined" ? window.crypto : void 0) {
+        this.app = app;
+        this.storage = storage;
+        this.options = options;
+        this.alive = alive;
+        this.crypto = cryptoProvider;
+      }
+      visiblePath(path) {
+        try {
+          validateRelativePath(path);
+        } catch {
+          return false;
+        }
+        if (path.split("/").some((part) => part.normalize("NFKC").startsWith("."))) return false;
+        const key = scopeKey(path);
+        return !inside(key, scopeKey(RESTORE_FOLDER)) && !inside(key, scopeKey(this.app.vault.configDir));
+      }
+      includes(path) {
+        return this.visiblePath(path) && (this.options.attachments === true || path.toLowerCase().endsWith(".md"));
+      }
+      check(path) {
+        if (!this.alive()) throw new Error("Recovery stopped.");
+        if (!this.includes(path)) throw new Error("This path is excluded from recovery snapshots.");
+      }
+      async list() {
+        if (!this.alive()) throw new Error("Recovery stopped.");
+        return this.app.vault.getFiles().filter((file) => this.includes(file.path)).map((file) => file.path);
+      }
+      async read(path) {
+        this.check(path);
+        const file = this.app.vault.getAbstractFileByPath(path);
+        if (!file) return null;
+        if (!file.stat) throw new Error("A folder occupies the selected file path.");
+        if (file.stat.size > MAX_FILE_BYTES) throw new Error("A selected file exceeds the 10 MiB recovery limit.");
+        const buffer = await this.app.vault.readBinary(file);
+        this.check(path);
+        if (Object.prototype.toString.call(buffer) !== "[object ArrayBuffer]") throw new Error("Obsidian returned invalid recovery data.");
+        const bytes = new Uint8Array(buffer);
+        validateBytes(bytes);
+        if (file.path !== path || this.app.vault.getAbstractFileByPath(path) !== file) {
+          throw new Error("A file moved while recovery was reading it. Try again.");
+        }
+        return bytes;
+      }
+      async parents(target) {
+        validateRelativePath(target);
+        if (!target.startsWith(`${RESTORE_FOLDER}/`)) throw new Error("Restored copies must stay in the recovery folder.");
+        const parts = target.split("/");
+        parts.pop();
+        let parent = "";
+        for (const part of parts) {
+          if (!this.alive()) throw new Error("Recovery stopped.");
+          parent = parent ? `${parent}/${part}` : part;
+          const existing = this.app.vault.getAbstractFileByPath(parent);
+          if (existing?.stat) throw new Error("A file occupies a required recovery folder path.");
+          if (!existing) {
+            try {
+              await this.app.vault.createFolder(parent);
+            } catch {
+              const created = this.app.vault.getAbstractFileByPath(parent);
+              if (!created || created.stat) throw new Error("The recovery folder could not be created.");
+            }
+          }
+        }
+        if (!this.alive()) throw new Error("Recovery stopped.");
+      }
+      async restoreCopy(path, bytes) {
+        validateRelativePath(path);
+        if (!this.visiblePath(path)) throw new Error("Hidden, configuration, and recovery paths cannot be restored here.");
+        validateBytes(bytes);
+        if (!this.alive()) throw new Error("Recovery stopped.");
+        if (!this.crypto?.randomUUID) throw new Error("Secure recovery identifiers are unavailable on this device.");
+        const id = this.crypto.randomUUID();
+        if (!UUID.test(id)) throw new Error("A safe recovery identifier could not be created.");
+        const target = `${RESTORE_FOLDER}/${id}/${path}`;
+        if (this.app.vault.getAbstractFileByPath(target)) throw new Error("That recovery copy already exists. Try restoring again.");
+        const snapshot = new Uint8Array(bytes);
+        await this.parents(target);
+        if (!this.alive()) throw new Error("Recovery stopped.");
+        if (this.app.vault.getAbstractFileByPath(target)) throw new Error("That recovery copy already exists. Try restoring again.");
+        return this.app.vault.createBinary(target, exactBuffer(snapshot));
+      }
+    };
+    module2.exports = { VaultFiles, MAX_FILE_BYTES, RESTORE_FOLDER, validateRelativePath, exactBuffer };
+  }
+});
+
+// src/sync/controller.js
+var require_controller = __commonJS({
+  "src/sync/controller.js"(exports2, module2) {
+    "use strict";
+    var { SyncStorage } = require_storage();
+    var { VaultFiles } = require_local();
+    var CONFIG_KEY = "native-notes-cloud-folders-v1";
+    function syncDefaults() {
+      return { enabled: false, provider: "icloud", attachments: false };
+    }
+    function normalizeSyncSettings(value) {
+      const config = syncDefaults();
+      if (!value || typeof value !== "object") return config;
+      config.enabled = value.enabled === true;
+      config.attachments = value.attachments === true;
+      config.provider = value.provider === "onedrive" ? "onedrive" : "icloud";
+      return config;
+    }
+    var NativeSync2 = class {
+      constructor(plugin) {
+        this.plugin = plugin;
+        this.app = plugin.app;
+        this.config = normalizeSyncSettings(this.app.loadLocalStorage?.(CONFIG_KEY));
+        this.status = "Off";
+        this.listeners = /* @__PURE__ */ new Set();
+        this.generation = 0;
+        this.storage = null;
+        this.storagePromise = null;
+        this.timer = null;
+        this.work = null;
+        this.destroyed = false;
+      }
+      load() {
+        for (const event of ["create", "modify", "delete", "rename"]) {
+          if (this.app.vault?.on) this.plugin.registerEvent(this.app.vault.on(event, () => this.schedule(2e3)));
+        }
+        if (this.plugin.registerDomEvent) {
+          this.plugin.registerDomEvent(document, "visibilitychange", () => {
+            if (!document.hidden) this.schedule(500);
+          });
+        }
+        if (this.config.enabled) this.app.workspace.onLayoutReady(() => {
+          if (!this.destroyed) this.schedule(1e3);
+        });
+      }
+      subscribe(listener) {
+        this.listeners.add(listener);
+        return () => this.listeners.delete(listener);
+      }
+      setStatus(text) {
+        if (this.destroyed || this.plugin.disposed) return;
+        this.status = String(text);
+        for (const listener of this.listeners) listener(this.status);
+      }
+      assertAlive() {
+        if (this.destroyed || this.plugin.disposed) throw new Error("Cloud folder tools stopped.");
+      }
+      isCurrent(generation) {
+        return !this.destroyed && !this.plugin.disposed && generation === this.generation;
+      }
+      async ensureStorage() {
+        this.assertAlive();
+        if (!this.storagePromise) {
+          const storage = new SyncStorage(this.app);
+          this.storage = storage;
+          this.storagePromise = storage.open().then((result) => {
+            this.assertAlive();
+            return result;
+          }).catch((error) => {
+            storage.close();
+            this.storagePromise = null;
+            throw error;
+          });
+        }
+        return this.storagePromise;
+      }
+      saveConfig() {
+        this.assertAlive();
+        this.app.saveLocalStorage(CONFIG_KEY, this.config);
+      }
+      async configure(patch) {
+        const pending = this.pause(), generation = this.generation;
+        await pending;
+        if (!this.isCurrent(generation)) return;
+        this.config = normalizeSyncSettings({ ...this.config, ...patch, enabled: false });
+        this.saveConfig();
+      }
+      async setEnabled(enabled) {
+        if (!enabled) return this.pause();
+        const pending = this.pause(), generation = this.generation;
+        await pending;
+        if (!this.isCurrent(generation)) return;
+        await this.ensureStorage();
+        if (!this.isCurrent(generation)) return;
+        this.config.enabled = true;
+        this.saveConfig();
+        this.setStatus("Recovery ready \xB7 cloud transfers are managed by your device.");
+        this.schedule(0);
+      }
+      async pause() {
+        this.config.enabled = false;
+        this.generation++;
+        if (this.timer !== null) window.clearTimeout(this.timer);
+        this.timer = null;
+        if (!this.destroyed && !this.plugin.disposed) {
+          this.saveConfig();
+          this.setStatus("Off \xB7 cloud transfers remain controlled by your device.");
+        }
+        if (this.work) await this.work.catch(() => {
+        });
+      }
+      schedule(delay = 3e4) {
+        if (this.destroyed || this.plugin.disposed || !this.config.enabled || this.work) return;
+        if (this.timer !== null) window.clearTimeout(this.timer);
+        this.timer = window.setTimeout(() => {
+          this.timer = null;
+          void this.run().catch(() => {
+          });
+        }, delay);
+      }
+      files(alive = () => !this.destroyed && !this.plugin.disposed) {
+        return new VaultFiles(this.app, this.storage, this.config, alive);
+      }
+      run() {
+        if (this.work) return this.work;
+        if (!this.config.enabled || this.destroyed || this.plugin.disposed) return Promise.reject(new Error("Enable cloud folder tools to save recovery snapshots."));
+        const generation = this.generation;
+        this.work = (async () => {
+          await this.ensureStorage();
+          const alive = () => this.isCurrent(generation) && this.config.enabled;
+          if (!alive()) return;
+          this.setStatus("Saving local recovery snapshots\u2026");
+          const local = this.files(alive);
+          let count = 0, skipped = 0;
+          for (const path of await local.list()) {
+            if (!alive()) return;
+            let bytes;
+            try {
+              bytes = await local.read(path);
+            } catch {
+              if (!alive()) return;
+              skipped++;
+              continue;
+            }
+            if (!alive()) return;
+            if (bytes) {
+              await this.storage.remember(path, bytes, "Cloud folder recovery");
+              count++;
+            }
+          }
+          if (alive()) this.setStatus(`Recovery checked for ${count} file${count === 1 ? "" : "s"}${skipped ? ` \xB7 ${skipped} skipped (unavailable or over 10 MiB)` : ""} \xB7 cloud delivery is managed by your device.`);
+        })().catch((error) => {
+          if (this.isCurrent(generation)) this.setStatus(error.message || "Recovery snapshot could not be saved.");
+          throw error;
+        }).finally(() => {
+          this.work = null;
+          this.schedule(3e4);
+        });
+        return this.work;
+      }
+      destroy() {
+        this.destroyed = true;
+        this.generation++;
+        if (this.timer !== null) window.clearTimeout(this.timer);
+        this.timer = null;
+        this.listeners.clear();
+        this.storage?.close();
+      }
+    };
+    module2.exports = { NativeSync: NativeSync2, normalizeSyncSettings, syncDefaults, CONFIG_KEY };
+  }
+});
+
 // src/main.js
 var { Plugin, Notice } = require("obsidian");
 var { normalizeSettings, CORE_FEATURES } = require_settings();
@@ -3193,6 +3910,8 @@ var { CodeFeatures } = require_code_features();
 var { FloatingOutline } = require_outline();
 var { MediaAlignment } = require_media_alignment();
 var { DOMState } = require_dom_state();
+var { NativeSync } = require_controller();
+var { SyncHistoryModal } = require_ui();
 module.exports = class NativeNotes extends Plugin {
   async onload() {
     this.disposed = false;
@@ -3203,12 +3922,20 @@ module.exports = class NativeNotes extends Plugin {
     this.saveQueue = Promise.resolve();
     const stored = await this.loadData();
     this.settings = normalizeSettings(stored);
+    this.sync = new NativeSync(this);
+    this.sync.load();
     this.settingTab = new NativeNotesSettingsTab(this.app, this);
     this.addSettingTab(this.settingTab);
     this.codeFeatures = this.addChild(new CodeFeatures(this));
     this.outline = this.addChild(new FloatingOutline(this));
     this.mediaAlignment = this.addChild(new MediaAlignment(this));
     this.addCommand({ id: "toggle-outline", name: "Toggle floating outline", checkCallback: (checking) => this.featureEnabled("outline") && this.outline.toggleActive(checking) });
+    this.addCommand({ id: "cloud-recovery-snapshot", name: "Save cloud folder recovery snapshot", callback: () => {
+      void this.sync.run().catch((error) => {
+        if (!this.disposed) new Notice(error.message);
+      });
+    } });
+    this.addCommand({ id: "cloud-recovery-history", name: "Open cloud folder recovery history", callback: () => new SyncHistoryModal(this).open() });
     this.registerEvent(this.app.workspace.on("window-open", (_window, win) => this.attachDocument(win.document)));
     this.registerEvent(this.app.workspace.on("window-close", (_window, win) => this.detachDocument(win.document)));
     this.registerEvent(this.app.workspace.on("layout-change", () => this.findDocuments()));
@@ -3291,6 +4018,7 @@ module.exports = class NativeNotes extends Plugin {
   }
   onunload() {
     this.disposed = true;
+    this.sync?.destroy();
     for (const modal of this.settingsModals) modal.close();
     this.settingsModals.clear();
     for (const doc of this.documents.keys()) this.detachDocument(doc);
