@@ -1,0 +1,10 @@
+{
+  "id": "native-notes",
+  "name": "Native Notes",
+  "version": "0.1.9",
+  "minAppVersion": "1.13.0",
+  "description": "Apple-inspired design with five coordinated themes, simple appearance choices, and portable profiles.",
+  "author": "PratiyushT",
+  "authorUrl": "https://github.com/PratiyushT",
+  "isDesktopOnly": false
+}
