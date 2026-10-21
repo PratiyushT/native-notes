@@ -385,14 +385,39 @@ var require_settings_tab = __commonJS({
     var { PluginSettingTab, Setting, Modal, Notice: Notice2 } = require("obsidian");
     var { FEATURE_LABELS, PRESETS, TEXT_SIZES, defaults, exportProfile, importProfile } = require_settings();
     var { EMPTY_LINE_MARKS, setLocalIcon } = require_icons();
-    var ProfileModal = class extends Modal {
-      constructor(plugin, mode, afterSave) {
+    var SettingsModal = class extends Modal {
+      constructor(plugin) {
         super(plugin.app);
         this.plugin = plugin;
+        this.session = null;
+      }
+      startSession() {
+        if (this.plugin.disposed) {
+          this.close();
+          return null;
+        }
+        this.session = {};
+        this.plugin.settingsModals.add(this);
+        return this.session;
+      }
+      isCurrent(session) {
+        return this.session === session && !this.plugin.disposed;
+      }
+      onClose() {
+        this.session = null;
+        this.plugin.settingsModals.delete(this);
+        this.contentEl.empty();
+      }
+    };
+    var ProfileModal = class extends SettingsModal {
+      constructor(plugin, mode, afterSave) {
+        super(plugin);
         this.mode = mode;
         this.afterSave = afterSave;
       }
       onOpen() {
+        const session = this.startSession();
+        if (!session) return;
         this.setTitle(this.mode === "export" ? "Export profile" : "Import profile");
         this.contentEl.classList.add("native-notes-profile");
         this.contentEl.createEl("p", { text: this.mode === "export" ? "Copy this profile to another device, or save it as a JSON file. It contains appearance settings only." : "Paste an exported Native Notes profile or choose its JSON file. Import replaces your appearance settings." });
@@ -404,16 +429,19 @@ var require_settings_tab = __commonJS({
         const controls = new Setting(this.contentEl);
         if (this.mode === "export") {
           controls.addButton((button) => button.setButtonText("Copy").setCta().onClick(async () => {
+            if (!this.isCurrent(session)) return;
             try {
               await input.ownerDocument.defaultView.navigator.clipboard.writeText(input.value);
-              new Notice2("Profile copied.");
+              if (this.isCurrent(session)) new Notice2("Profile copied.");
             } catch {
+              if (!this.isCurrent(session)) return;
               input.focus();
               input.select();
               this.errorEl.textContent = "Select and copy the profile text using your device\u2019s copy command.";
             }
           }));
           controls.addButton((button) => button.setButtonText("Save file").onClick(() => {
+            if (!this.isCurrent(session)) return;
             const win = input.ownerDocument.defaultView;
             const url = win.URL.createObjectURL(new win.Blob([input.value], { type: "application/json" }));
             const link = this.contentEl.createEl("a", { attr: { href: url, download: "native-notes-profile.json" } });
@@ -426,6 +454,7 @@ var require_settings_tab = __commonJS({
           const file = this.contentEl.createEl("input", { attr: { type: "file", accept: ".json,application/json", "aria-label": "Choose profile file" } });
           file.hidden = true;
           file.addEventListener("change", async () => {
+            if (!this.isCurrent(session)) return;
             const selected = file.files?.[0];
             if (!selected) return;
             if (selected.size > 1e5) {
@@ -433,18 +462,25 @@ var require_settings_tab = __commonJS({
               return;
             }
             try {
-              input.value = await selected.text();
+              const text = await selected.text();
+              if (!this.isCurrent(session)) return;
+              input.value = text;
               this.errorEl.textContent = "Profile loaded. Select import to apply it.";
             } catch {
-              this.errorEl.textContent = "The file could not be read.";
+              if (this.isCurrent(session)) this.errorEl.textContent = "The file could not be read.";
             }
           });
-          controls.addButton((button) => button.setButtonText("Choose file").onClick(() => file.click()));
+          controls.addButton((button) => button.setButtonText("Choose file").onClick(() => {
+            if (this.isCurrent(session)) file.click();
+          }));
           controls.addButton((button) => button.setButtonText("Import").setCta().onClick(async () => {
+            if (!this.isCurrent(session)) return;
             try {
               const settings = importProfile(input.value);
               this.plugin.settings = settings;
-              if (!await this.plugin.updateSettings()) {
+              const saved = await this.plugin.updateSettings();
+              if (!this.isCurrent(session)) return;
+              if (!saved) {
                 this.errorEl.textContent = "The profile could not be saved. Check that your vault is writable, then try again.";
                 return;
               }
@@ -452,7 +488,7 @@ var require_settings_tab = __commonJS({
               this.close();
               new Notice2("Profile imported.");
             } catch (error) {
-              this.errorEl.textContent = error.message;
+              if (this.isCurrent(session)) this.errorEl.textContent = error.message;
             }
           }));
         }
@@ -460,27 +496,28 @@ var require_settings_tab = __commonJS({
       }
       onClose() {
         for (const [win, url] of this.urls || []) win.URL.revokeObjectURL(url);
-        this.contentEl.empty();
+        this.urls = [];
+        super.onClose();
       }
     };
-    var ResetModal = class extends Modal {
+    var ResetModal = class extends SettingsModal {
       constructor(plugin, afterSave) {
-        super(plugin.app);
-        this.plugin = plugin;
+        super(plugin);
         this.afterSave = afterSave;
       }
       onOpen() {
+        const session = this.startSession();
+        if (!session) return;
         this.setTitle("Restore default appearance?");
         this.contentEl.createEl("p", { text: "This resets your theme, text size, sidebar density, and optional features. Export a profile first if you want to keep them." });
         new Setting(this.contentEl).addButton((button) => button.setButtonText("Cancel").onClick(() => this.close())).addButton((button) => button.setButtonText("Restore defaults").setWarning().onClick(async () => {
+          if (!this.isCurrent(session)) return;
           this.plugin.settings = defaults();
-          if (!await this.plugin.updateSettings()) return;
+          const saved = await this.plugin.updateSettings();
+          if (!this.isCurrent(session) || !saved) return;
           this.afterSave();
           this.close();
         }));
-      }
-      onClose() {
-        this.contentEl.empty();
       }
     };
     var NativeNotesSettingsTab2 = class extends PluginSettingTab {
@@ -509,6 +546,7 @@ var require_settings_tab = __commonJS({
         return definition;
       }
       refreshSettingsTab() {
+        if (this.plugin.disposed) return;
         const scrollTop = this.containerEl.scrollTop;
         this.update();
         this.containerEl.scrollTop = scrollTop;
@@ -3161,6 +3199,7 @@ module.exports = class NativeNotes extends Plugin {
     this.documents = /* @__PURE__ */ new Map();
     this.documentDisposers = /* @__PURE__ */ new Map();
     this.documentStates = /* @__PURE__ */ new Map();
+    this.settingsModals = /* @__PURE__ */ new Set();
     this.saveQueue = Promise.resolve();
     const stored = await this.loadData();
     this.settings = normalizeSettings(stored);
@@ -3217,12 +3256,14 @@ module.exports = class NativeNotes extends Plugin {
     this.documents.delete(doc);
   }
   applySettings() {
+    if (this.disposed) return;
     for (const [doc, style] of this.documents) this.applyDocument(doc, style);
     this.codeFeatures?.refreshSettings();
     this.outline?.refreshSettings();
     this.mediaAlignment?.refreshSettings();
   }
   updateSettings() {
+    if (this.disposed) return Promise.resolve(false);
     this.settings = normalizeSettings(this.settings);
     this.applySettings();
     const snapshot = JSON.parse(JSON.stringify(this.settings));
@@ -3230,7 +3271,7 @@ module.exports = class NativeNotes extends Plugin {
     }).then(() => this.saveData(snapshot));
     return this.saveQueue.then(() => true, (error) => {
       console.error("Native Notes could not save settings", error);
-      new Notice("Native Notes could not save your settings. Check that your vault is writable.");
+      if (!this.disposed) new Notice("Native Notes could not save your settings. Check that your vault is writable.");
       return false;
     });
   }
@@ -3250,6 +3291,8 @@ module.exports = class NativeNotes extends Plugin {
   }
   onunload() {
     this.disposed = true;
+    for (const modal of this.settingsModals) modal.close();
+    this.settingsModals.clear();
     for (const doc of this.documents.keys()) this.detachDocument(doc);
   }
 };
