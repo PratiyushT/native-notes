@@ -762,7 +762,7 @@ body.nn-enabled.nn-typography .workspace-leaf-content[data-type="markdown"] { co
 body.nn-enabled.nn-typography .markdown-source-view.mod-cm6 { --file-margins: 24px 22px 36px; }
 }
 @media print {
-  body.nn-enabled.nn-typography .markdown-rendered :is(h1, h2, h3, h4, h5, h6) { break-after: avoid; }
+  body.nn-enabled.nn-typography .markdown-rendered :is(h1, h2, h3, h4, h5, h6) { page-break-after: avoid; }
 }
 @media print {
   body.nn-enabled.nn-typography.theme-light,
@@ -909,7 +909,7 @@ body.nn-enabled.nn-hide-indent-guides .markdown-source-view.mod-cm6 .HyperMD-lis
 }
 
 /* Native Notes · empty-line-marks · feature-scoped styles */
-body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.an-empty-source-line:has(> br:only-child):not([contenteditable="false"]):not(.cm-table-widget .cm-line)::after {
+body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.an-empty-source-line.nn-empty-rendered-line:not([contenteditable="false"]):not(.cm-table-widget .cm-line)::after {
   content: "";
   position: absolute;
   inset-inline-start: 3px;
@@ -924,11 +924,11 @@ body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > 
   pointer-events: none;
   user-select: none;
 }
-body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-codeblock:has(> br:only-child)::after {
+body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.HyperMD-codeblock.nn-empty-rendered-line::after {
   inset-inline-start: var(--an-code-padding, 20px);
 }
 @media print {
-  body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line:has(> br:only-child)::after {
+  body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > .cm-line.nn-empty-rendered-line::after {
     display: none;
   }
 }
@@ -1027,14 +1027,14 @@ body.nn-enabled.nn-code-blocks .markdown-rendered pre:not(.expressive-code pre):
   outline: 2px solid var(--an-focus);
   outline-offset: 2px;
 }
-body.nn-enabled.nn-code-blocks .markdown-rendered pre:not(.expressive-code pre):not(.shiki):has(> button.copy-code-button)::before {
+body.nn-enabled.nn-code-blocks .markdown-rendered pre:not(.expressive-code pre):not(.shiki).nn-has-copy-button::before {
   content: "";
   float: inline-end;
   width: 24px;
   height: var(--an-code-line-height, 22px);
   pointer-events: none;
 }
-body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block:not(:has(.expressive-code)) pre:not(.shiki):has(> button.copy-code-button)::before {
+body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block:not(.nn-has-expressive-code) pre:not(.shiki).nn-has-copy-button::before {
   width: 64px;
 }
 @media (hover: none) {
@@ -1097,9 +1097,9 @@ body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-embed-block.cm-
   pointer-events: none;
   transition: opacity 120ms ease;
 }
-body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block:has(.expressive-code, pre) > .embed-actions { top: calc(var(--an-widget-space-before, 0px) + 8px); }
-body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block:has(.expressive-code) > .embed-actions { inset-inline-end: 48px; }
-body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block:has(pre):not(:has(.expressive-code)) > .embed-actions {
+body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block.nn-has-code > .embed-actions { top: calc(var(--an-widget-space-before, 0px) + 8px); }
+body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block.nn-has-expressive-code > .embed-actions { inset-inline-end: 48px; }
+body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block.nn-has-code:not(.nn-has-expressive-code) > .embed-actions {
   top: calc(var(--an-widget-space-before, 0px) + 8px);
   inset-inline-end: 48px;
 }
@@ -1131,12 +1131,12 @@ body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-embed-block.cm-
 @media print {
   body.nn-enabled.nn-code-blocks .markdown-rendered pre {
     box-shadow: none;
-    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 @media print {
   body.nn-enabled.nn-code-blocks .markdown-rendered pre:not(.expressive-code pre):not(.shiki) > button.copy-code-button,
-body.nn-enabled.nn-code-blocks .markdown-rendered pre:not(.expressive-code pre):not(.shiki):has(> button.copy-code-button)::before {
+body.nn-enabled.nn-code-blocks .markdown-rendered pre:not(.expressive-code pre):not(.shiki).nn-has-copy-button::before {
     display: none;
   }
 }
@@ -1329,8 +1329,7 @@ body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame > div.copy .fe
   border: 5px solid transparent;
   border-block-start-color: var(--tooltip-bg);
 }
-body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block:has(.expressive-code .copy .feedback) {
-  contain: layout !important;
+body.nn-enabled.nn-code-blocks .markdown-source-view.mod-cm6 .cm-preview-code-block.nn-has-copy-feedback {
   overflow: visible;
   z-index: 4;
 }
@@ -1366,11 +1365,11 @@ body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame.is-terminal > 
 body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame.is-terminal > figcaption.header > .title:empty::before {
   content: "Terminal";
 }
-body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame.is-terminal:has(> pre:is([data-language="sh"], [data-language="bash"], [data-language="zsh"], [data-language="shell"])) > figcaption.header > .title:empty::before {
+body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame.is-terminal.nn-shell-frame > figcaption.header > .title:empty::before {
   content: "Shell";
 }
 body.nn-enabled.nn-code-blocks div.expressive-code pre:is([data-language="text"], [data-language="txt"], [data-language="plaintext"]) .code span {
-  color: var(--an-label) !important;
+  color: var(--an-label);
 }
 body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame:is(.has-title, .is-terminal) .ec-line > .code {
   padding-inline-end: var(--an-code-padding, 20px);
@@ -1424,7 +1423,7 @@ body.nn-enabled.nn-code-blocks.is-mobile div.expressive-code > figure.frame:is(.
   font-size: 14px;
   line-height: 24px;
 }
-body.nn-enabled.nn-code-blocks.is-mobile .markdown-source-view.mod-cm6 .cm-preview-code-block:has(.expressive-code, pre) > .embed-actions {
+body.nn-enabled.nn-code-blocks.is-mobile .markdown-source-view.mod-cm6 .cm-preview-code-block.nn-has-code > .embed-actions {
   inset-inline-end: 60px;
   opacity: 1;
   pointer-events: auto;
@@ -1451,17 +1450,17 @@ body.nn-enabled.nn-code-blocks.is-mobile .markdown-rendered pre:not(.expressive-
   height: 44px;
   line-height: 42px;
 }
-body.nn-enabled.nn-code-blocks.is-mobile .markdown-rendered pre:not(.expressive-code pre):not(.shiki):has(> button.copy-code-button)::before {
+body.nn-enabled.nn-code-blocks.is-mobile .markdown-rendered pre:not(.expressive-code pre):not(.shiki).nn-has-copy-button::before {
   width: 44px;
   height: 44px;
 }
-body.nn-enabled.nn-code-blocks.is-mobile .markdown-source-view.mod-cm6 .cm-preview-code-block:not(:has(.expressive-code)) pre:not(.shiki):has(> button.copy-code-button)::before {
+body.nn-enabled.nn-code-blocks.is-mobile .markdown-source-view.mod-cm6 .cm-preview-code-block:not(.nn-has-expressive-code) pre:not(.shiki).nn-has-copy-button::before {
   width: 104px;
 }
 
 
 /* Filename and language describe different things; keep both in the header. */
-body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame > figcaption.header:has(> .an-code-language-label) > .title {
+body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame > figcaption.header.nn-has-language-label > .title {
   flex: 0 1 auto;
   padding-inline-end: 10px;
 }
@@ -1486,10 +1485,10 @@ body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame > figcaption.h
   overflow: hidden;
 }
 /* On a phone, two quiet rows leave room for the 44px Copy and Edit targets. */
-body.nn-enabled.nn-code-blocks.is-mobile div.expressive-code > figure.frame > figcaption.header:has(> .an-code-language-label) {
+body.nn-enabled.nn-code-blocks.is-mobile div.expressive-code > figure.frame > figcaption.header.nn-has-language-label {
   flex-wrap: wrap;
 }
-body.nn-enabled.nn-code-blocks.is-mobile div.expressive-code > figure.frame > figcaption.header:has(> .an-code-language-label) > .title {
+body.nn-enabled.nn-code-blocks.is-mobile div.expressive-code > figure.frame > figcaption.header.nn-has-language-label > .title {
   flex: 1 1 100%;
   padding-block: 8px 0;
 }
@@ -1501,6 +1500,52 @@ body.nn-enabled.nn-code-blocks.is-mobile div.expressive-code > figure.frame > fi
   border: 0;
   font-size: 12px;
   line-height: 20px;
+}
+
+/* Copy feedback lives outside CodeMirror's paint-contained blocks, so it can
+   appear above Copy without changing the editor's containment or clipping. */
+body.nn-enabled.nn-code-blocks div.expressive-code > figure.frame > div.copy .feedback.nn-copy-feedback-source {
+  visibility: hidden;
+}
+body.nn-enabled.nn-code-blocks .nn-copy-feedback-portal {
+  position: fixed;
+  inset: auto;
+  left: var(--nn-copy-feedback-left);
+  top: var(--nn-copy-feedback-top);
+  z-index: var(--layer-tooltip, 1000);
+  width: max-content;
+  max-width: calc(100vw - 16px);
+  margin: 0;
+  padding: 4px 8px;
+  border: 1px solid var(--an-rule);
+  border-radius: 6px;
+  background: var(--an-block);
+  color: var(--an-label);
+  font-family: var(--font-interface);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px #00000020;
+  pointer-events: none;
+  user-select: none;
+}
+body.nn-enabled.nn-code-blocks .nn-copy-feedback-portal::after {
+  content: "";
+  position: absolute;
+  inset-block-end: -10px;
+  inset-inline-end: 7px;
+  border: 5px solid transparent;
+  border-block-start-color: var(--an-block);
+}
+@media print {
+  body.nn-enabled.nn-code-blocks .nn-copy-feedback-portal { display: none; }
+}
+body.nn-enabled.nn-code-blocks .nn-copy-feedback-portal.nn-copy-feedback-below::after {
+  top: -10px;
+  bottom: auto;
+  border-block-start-color: transparent;
+  border-block-end-color: var(--an-block);
 }
 
 /* Native Notes · callouts · feature-scoped styles */
@@ -1627,7 +1672,7 @@ body.nn-enabled.nn-callouts .markdown-source-view.mod-cm6 .callout {
   body.nn-enabled.nn-callouts .markdown-rendered blockquote,
 body.nn-enabled.nn-callouts .markdown-rendered .callout {
     box-shadow: none;
-    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 body.nn-enabled.nn-callouts.is-mobile .markdown-source-view.mod-cm6 .cm-callout > .embed-actions {
@@ -1660,8 +1705,8 @@ body.nn-enabled.nn-math .markdown-source-view.mod-cm6 .math-block {
   text-align: center;
   max-width: 100%;
 }
-body.nn-enabled.nn-math .markdown-rendered .math-block > mjx-container[display="true"],
-body.nn-enabled.nn-math .markdown-source-view.mod-cm6 .math-block > mjx-container[display="true"] {
+body.nn-enabled.nn-math .markdown-rendered .math-block > .nn-math-display,
+body.nn-enabled.nn-math .markdown-source-view.mod-cm6 .math-block > .nn-math-display {
   display: block;
   max-width: 100%;
   overflow-x: auto;
@@ -1672,11 +1717,11 @@ body.nn-enabled.nn-math .markdown-source-view.mod-cm6 .math-inline { color: inhe
 @media print {
   body.nn-enabled.nn-math .markdown-rendered .math-block {
     box-shadow: none;
-    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 @media print {
-  body.nn-enabled.nn-math .markdown-rendered .math-block > mjx-container[display="true"] { overflow: visible; }
+  body.nn-enabled.nn-math .markdown-rendered .math-block > .nn-math-display { overflow: visible; }
 }
 
 /* Native Notes · properties · feature-scoped styles */
@@ -1878,44 +1923,44 @@ body.nn-enabled.nn-diagrams .mermaid > svg.flowchart {
 }
 body.nn-enabled.nn-diagrams.theme-dark .mermaid > svg.flowchart { filter: none; }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > :is(rect, polygon, circle, ellipse, path):not([style*="fill:"]) {
-  fill: var(--an-block) !important;
+  fill: var(--an-block);
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > :is(rect, polygon, circle, ellipse, path):not([style*="stroke:"]) {
-  stroke: var(--an-border-hover) !important;
+  stroke: var(--an-border-hover);
   stroke-linejoin: round;
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > g.label-container > :is(path, rect, circle, ellipse, polygon):not([fill="none"]):not([style*="fill:"]) {
-  fill: var(--an-block) !important;
+  fill: var(--an-block);
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > g.label-container > :is(path, rect, circle, ellipse, polygon):not([stroke="none"]):not([style*="stroke:"]) {
-  stroke: var(--an-border-hover) !important;
+  stroke: var(--an-border-hover);
   stroke-linejoin: round;
 }
-body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > g.label-container > [fill="none"]:not([style*="fill:"]) { fill: none !important; }
-body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > g.label-container > [stroke="none"]:not([style*="stroke:"]) { stroke: none !important; }
+body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > g.label-container > [fill="none"]:not([style*="fill:"]) { fill: none; }
+body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > g.label-container > [stroke="none"]:not([style*="stroke:"]) { stroke: none; }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] > rect.basic.label-container:not([rx]):not([ry]):not([style*="rx:"]):not([style*="ry:"]) {
   rx: 9px;
   ry: 9px;
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] .nodeLabel:not([style*="color:"]),
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] .nodeLabel:not([style*="color:"]) p:not([style*="color:"]) {
-  color: var(--an-label) !important;
+  color: var(--an-label);
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .node[class="node default"] text:not([style*="fill:"]),
-body.nn-enabled.nn-diagrams .mermaid svg.flowchart .flowchartTitleText:not([style*="fill:"]) { fill: var(--an-label) !important; }
+body.nn-enabled.nn-diagrams .mermaid svg.flowchart .flowchartTitleText:not([style*="fill:"]) { fill: var(--an-label); }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .flowchart-link:not([style*="stroke:"]) {
-  stroke: var(--an-secondary) !important;
+  stroke: var(--an-secondary);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-body.nn-enabled.nn-diagrams .mermaid svg.flowchart marker :is(path, circle):not([style*="fill:"]) { fill: var(--an-secondary) !important; }
-body.nn-enabled.nn-diagrams .mermaid svg.flowchart marker :is(path, circle):not([style*="stroke:"]) { stroke: var(--an-secondary) !important; }
+body.nn-enabled.nn-diagrams .mermaid svg.flowchart marker :is(path, circle):not([style*="fill:"]) { fill: var(--an-secondary); }
+body.nn-enabled.nn-diagrams .mermaid svg.flowchart marker :is(path, circle):not([style*="stroke:"]) { stroke: var(--an-secondary); }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart :is(.edgeLabel, .labelBkg):not([style*="background:"]):not([style*="background-color:"]),
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .edgeLabel p:not([style*="background:"]):not([style*="background-color:"]) {
-  background-color: var(--an-paper) !important;
+  background-color: var(--an-paper);
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart :is(span.edgeLabel, .edgeLabel p):not([style*="color:"]) {
-  color: var(--an-secondary) !important;
+  color: var(--an-secondary);
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart div.labelBkg {
   border-radius: 4px;
@@ -1923,18 +1968,18 @@ body.nn-enabled.nn-diagrams .mermaid svg.flowchart div.labelBkg {
 }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .edgeLabel foreignObject { overflow: visible; }
 body.nn-enabled.nn-diagrams .mermaid svg.flowchart .edgeLabel rect:not([style*="fill:"]) {
-  fill: var(--an-paper) !important;
-  opacity: 1 !important;
+  fill: var(--an-paper);
+  opacity: 1;
   rx: 4px;
   ry: 4px;
 }
-body.nn-enabled.nn-diagrams .mermaid svg.flowchart .edgeLabel text:not([style*="fill:"]) { fill: var(--an-secondary) !important; }
+body.nn-enabled.nn-diagrams .mermaid svg.flowchart .edgeLabel text:not([style*="fill:"]) { fill: var(--an-secondary); }
 
 /* Native Notes · icons · feature-scoped styles */
 body.nn-enabled.nn-icons .workspace-leaf-content[data-type="file-explorer"] .nav-files-container
-.nav-folder:not(.mod-root) > .nav-folder-title:not(:has(.iconize-icon)) > .nav-folder-title-content::before,
+.nav-folder:not(.mod-root) > .nav-folder-title:not(.nn-has-iconize) > .nav-folder-title-content::before,
 body.nn-enabled.nn-icons .workspace-leaf-content[data-type="file-explorer"] .nav-files-container
-.nav-file-title:not(:has(.iconize-icon)) > .nav-file-title-content::before {
+.nav-file-title:not(.nn-has-iconize) > .nav-file-title-content::before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -1953,19 +1998,19 @@ body.nn-enabled.nn-icons .workspace-leaf-content[data-type="file-explorer"] .nav
 }
 
 body.nn-enabled.nn-icons .workspace-leaf-content[data-type="file-explorer"] .nav-files-container
-.nav-folder:not(.mod-root) > .nav-folder-title:not(:has(.iconize-icon)) > .nav-folder-title-content::before {
+.nav-folder:not(.mod-root) > .nav-folder-title:not(.nn-has-iconize) > .nav-folder-title-content::before {
   -webkit-mask-image: var(--nn-folder-icon);
   mask-image: var(--nn-folder-icon);
 }
 
 body.nn-enabled.nn-icons .workspace-leaf-content[data-type="file-explorer"] .nav-files-container
-.nav-folder:not(.mod-root):not(.is-collapsed) > .nav-folder-title:not(:has(.iconize-icon)) > .nav-folder-title-content::before {
+.nav-folder:not(.mod-root):not(.is-collapsed) > .nav-folder-title:not(.nn-has-iconize) > .nav-folder-title-content::before {
   -webkit-mask-image: var(--nn-folder-open-icon);
   mask-image: var(--nn-folder-open-icon);
 }
 
 body.nn-enabled.nn-icons .workspace-leaf-content[data-type="file-explorer"] .nav-files-container
-.nav-file-title:not(:has(.iconize-icon)) > .nav-file-title-content::before {
+.nav-file-title:not(.nn-has-iconize) > .nav-file-title-content::before {
   -webkit-mask-image: var(--nn-note-icon);
   mask-image: var(--nn-note-icon);
 }
@@ -2030,8 +2075,8 @@ body.nn-enabled.nn-integrations .mathlive-modal-content {
   gap: 20px;
 }
 
-body.nn-enabled.nn-integrations .mathlive-modal-content math-field,
-body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper math-field {
+body.nn-enabled.nn-integrations .mathlive-modal-content .nn-mathlive-field,
+body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper .nn-mathlive-field {
   --caret-color: var(--an-accent-fill);
   --selection-background-color: var(--an-selection);
   --selection-color: var(--an-label);
@@ -2044,13 +2089,13 @@ body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper math-field
   border-radius: 10px;
 }
 
-body.nn-enabled.nn-integrations .mathlive-modal-content math-field {
+body.nn-enabled.nn-integrations .mathlive-modal-content .nn-mathlive-field {
   padding: 20px;
   overflow-x: auto;
 }
 
-body.nn-enabled.nn-integrations .mathlive-modal-content math-field::part(content),
-body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper math-field::part(content) {
+body.nn-enabled.nn-integrations .mathlive-modal-content .nn-mathlive-field::part(content),
+body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper .nn-mathlive-field::part(content) {
   --_text-highlight-background-color: var(--an-selection);
   --_contains-highlight-background-color: var(--an-inline);
 }
@@ -2119,7 +2164,7 @@ body.nn-enabled.nn-integrations .style-settings-heading[data-level="0"] + .style
 @media (prefers-reduced-motion: reduce) {
   body.nn-enabled.nn-integrations #dynamic-outline li,
 body.nn-enabled.nn-integrations .mathlive-action-btn,
-body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper math-field {
+body.nn-enabled.nn-integrations .obsidian-mathlive-codemirror-wrapper .nn-mathlive-field {
     transition: none;
   }
 }
@@ -2159,8 +2204,8 @@ body.nn-enabled.nn-integrations.is-mobile :is(#dynamic-outline, .obsidian-mathli
 }
 
 /* Native Notes · block-spacing · feature-scoped styles */
-body.nn-enabled.nn-block-spacing .markdown-rendered .math-block > mjx-container[display="true"],
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .math-block > mjx-container[display="true"] {
+body.nn-enabled.nn-block-spacing .markdown-rendered .math-block > .nn-math-display,
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .math-block > .nn-math-display {
   margin-block: var(--an-math-gap);
   padding-block: 14px;
 }
@@ -2174,7 +2219,7 @@ body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .callout {
 body.nn-enabled.nn-block-spacing div.expressive-code {
   margin-block: var(--an-code-gap);
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-preview-code-block:not(:has(.expressive-code)) pre:not(.shiki) {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-preview-code-block:not(.nn-has-expressive-code) pre:not(.shiki) {
   margin-block: var(--an-widget-space-before, 0px) var(--an-widget-space-after, 0px);
 }
 body.nn-enabled.nn-block-spacing .markdown-rendered pre:not(.expressive-code pre):not(.shiki) {
@@ -2184,7 +2229,7 @@ body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm
   --an-widget-space-before: max(0px, var(--an-callout-gap) - var(--an-previous-block-space, 0px));
   --an-widget-space-after: var(--an-callout-gap);
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-preview-code-block:not(.cm-lang-mermaid):has(> pre, > div > .expressive-code) {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-preview-code-block:not(.cm-lang-mermaid).nn-code-widget {
   --an-widget-space-before: max(0px, var(--an-code-gap) - var(--an-previous-block-space, 0px));
   --an-widget-space-after: var(--an-code-gap);
 }
@@ -2192,13 +2237,13 @@ body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .ma
   --an-widget-space-before: max(0px, var(--an-math-gap) - var(--an-previous-block-space, 0px));
   --an-widget-space-after: var(--an-math-gap);
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.HyperMD-codeblock-end-bg:not(.HyperMD-quote, .HyperMD-list-line), .cm-preview-code-block:not(.cm-lang-mermaid):has(> pre, > div > .expressive-code)) + * {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.HyperMD-codeblock-end-bg:not(.HyperMD-quote, .HyperMD-list-line), .cm-preview-code-block:not(.cm-lang-mermaid).nn-code-widget) + * {
   --an-previous-block-space: var(--an-code-gap);
 }
 body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.an-callout-source-end, .cm-callout) + * {
   --an-previous-block-space: var(--an-callout-gap);
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.cm-line:is(.HyperMD-math, :has(> .cm-formatting-math-begin.cm-math-block)):has(> .cm-formatting-math-end):not(.HyperMD-quote, .HyperMD-list-line), .math-block.cm-embed-block) + * {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > :is(.cm-line.nn-math-source-end:not(.HyperMD-quote, .HyperMD-list-line), .math-block.cm-embed-block) + * {
   --an-previous-block-space: var(--an-math-gap);
 }
 body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-preview-code-block > div > .expressive-code {
@@ -2273,20 +2318,24 @@ body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm
   pointer-events: none;
   z-index: -1;
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line:has(> .cm-formatting-math-begin.cm-math-block):not(.HyperMD-quote, .HyperMD-list-line) {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line.nn-math-source-begin:not(.HyperMD-quote, .HyperMD-list-line) {
   padding-block-start: calc(14px + max(0px, var(--an-math-gap) - var(--an-previous-block-space, 0px)));
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line:is(.HyperMD-math, :has(> .cm-formatting-math-begin.cm-math-block)):has(> .cm-formatting-math-end):not(.HyperMD-quote, .HyperMD-list-line) {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .cm-line.nn-math-source-end:not(.HyperMD-quote, .HyperMD-list-line) {
   padding-block-end: calc(14px + var(--an-math-gap));
 }
-body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .math-block.cm-embed-block > mjx-container[display="true"] {
+body.nn-enabled.nn-block-spacing .markdown-source-view.mod-cm6 .cm-content > .math-block.cm-embed-block > .nn-math-display {
   margin-block: var(--an-widget-space-before, var(--an-math-gap)) var(--an-widget-space-after, var(--an-math-gap));
 }
 
 /* Native Notes · code-headers · feature-scoped styles */
-/* Shiki's full-header decoration must not intercept clicks on either field. */
+/* The header owns its border, so remove Shiki's duplicate click-catching decoration. */
+body.nn-enabled.nn-code-headers .markdown-source-view .expressive-code > .frame.has-title > .header {
+  box-shadow: inset 0 0 0 var(--ec-brdWd, 1px) var(--ec-frm-edTabBarBrdCol, var(--an-rule));
+}
 body.nn-enabled.nn-code-headers .markdown-source-view .expressive-code > .frame.has-title > .header::before {
-  pointer-events: none !important;
+  content: none;
+  display: none;
 }
 body.nn-enabled.nn-code-headers .expressive-code .header :is(.title, .an-code-language-label) > .an-code-title-field-label {
   flex: 0 0 auto;
@@ -2347,10 +2396,10 @@ body.nn-enabled.nn-code-headers .expressive-code .header :is(.title, .an-code-la
   border-color: var(--text-error);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--text-error) 18%, transparent);
 }
-body.nn-enabled.nn-code-headers .markdown-source-view.mod-cm6 .cm-preview-code-block:has(.an-code-title-editable) > .embed-actions {
+body.nn-enabled.nn-code-headers .markdown-source-view.mod-cm6 .cm-preview-code-block.nn-editable-code-header > .embed-actions {
   opacity: 1;
 }
-body.nn-enabled.nn-code-headers .markdown-source-view.mod-cm6 div.expressive-code > figure.frame:has(.an-code-title-editable) > div.copy > button {
+body.nn-enabled.nn-code-headers .markdown-source-view.mod-cm6 div.expressive-code > figure.frame.nn-editable-code-header > div.copy > button {
   opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2424,7 +2473,7 @@ body.nn-enabled.nn-outline .nn-outline-popover {
 }
 body.nn-enabled.nn-outline .nn-outline-popover[hidden],
 body.nn-enabled.nn-outline .nn-outline-popover [hidden],
-body.nn-enabled.nn-outline .nn-outline-button[hidden] { display: none !important; }
+body.nn-enabled.nn-outline .nn-outline-button[hidden] { display: none; }
 body.nn-enabled.nn-outline .nn-outline-heading {
   margin: 0;
   padding: 0 8px 2px;
@@ -2553,7 +2602,7 @@ body.nn-enabled.nn-outline.is-mobile .nn-outline-level { font-size: 12px; }
   body.nn-enabled.nn-outline .nn-outline-row.is-active { outline: 1px solid Highlight; }
 }
 @media print {
-  body.nn-enabled.nn-outline :is(.nn-outline-popover, .nn-outline-button) { display: none !important; }
+  body.nn-enabled.nn-outline :is(.nn-outline-popover, .nn-outline-button) { display: none; }
 }
 
 /* Native Notes · image-alignment · feature-scoped styles */
@@ -2563,8 +2612,8 @@ body.nn-enabled.nn-image-alignment .markdown-source-view.is-live-preview .cm-lin
   height: 0;
   min-height: 0;
   line-height: 0;
-  padding-block: 0 !important;
-  margin-block: 0 !important;
+  padding-block: 0;
+  margin-block: 0;
   overflow: hidden;
 }
 body.nn-enabled.nn-image-alignment .nn-media-align-target:not(img) {
@@ -2678,8 +2727,10 @@ body.nn-enabled.nn-image-alignment .nn-alignment-menu {
   box-shadow: 0 8px 24px #00000024, 0 2px 6px #00000012;
 }
 body.nn-enabled.nn-image-alignment .nn-alignment-menu[hidden],
-body.nn-enabled.nn-image-alignment .nn-align-button[hidden],
-body.nn-enabled.nn-image-alignment .nn-media-actions[hidden] { display: none !important; }
+body.nn-enabled.nn-image-alignment .nn-media-actions .nn-align-button[hidden],
+body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host .nn-align-button[hidden],
+body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host .nn-align-button[hidden],
+body.nn-enabled.nn-image-alignment .nn-media-actions[hidden] { display: none; }
 body.nn-enabled.nn-image-alignment .nn-align-button:focus-visible,
 body.nn-enabled.nn-image-alignment .nn-alignment-choice:focus-visible {
   outline: 2px solid var(--an-focus);
@@ -2725,8 +2776,10 @@ body.nn-enabled.nn-image-alignment.is-mobile .nn-alignment-menu .nn-alignment-ch
 }
 @media print {
   body.nn-enabled.nn-image-alignment .nn-media-actions,
-  body.nn-enabled.nn-image-alignment .nn-align-button,
-  body.nn-enabled.nn-image-alignment .nn-alignment-menu { display: none !important; }
+  body.nn-enabled.nn-image-alignment .nn-media-actions .nn-align-button,
+  body.nn-enabled.nn-image-alignment .image-embed > .embed-actions.nn-media-actions-host .nn-align-button,
+  body.nn-enabled.nn-image-alignment .markdown-source-view.mod-cm6 .cm-embed-block > .embed-actions.nn-media-actions-host .nn-align-button,
+  body.nn-enabled.nn-image-alignment .nn-alignment-menu { display: none; }
 }
 
 /* Only the plugin's own settings. */
@@ -2735,14 +2788,15 @@ body.nn-enabled.nn-image-alignment.is-mobile .nn-alignment-menu .nn-alignment-ch
 .native-notes-settings .native-notes-settings-section > .setting-item.setting-item-heading { padding-inline: 0; padding-top: 0; margin-bottom: 4px; background: transparent; border: 0; border-radius: 0; }
 .native-notes-settings .native-notes-settings-section > .setting-item-heading .setting-item-name { font-size: 18px; font-weight: 600; }
 .native-notes-settings .native-notes-section-description { margin: 0 0 16px; color: var(--text-muted); font-size: var(--font-ui-small); line-height: 1.5; }
-.native-notes-settings .native-notes-theme-preview { margin: 12px 0 20px; }
+.native-notes-settings .native-notes-theme-setting { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; }
+.native-notes-settings .native-notes-theme-setting > .native-notes-theme-preview { grid-column: 1 / -1; margin: 0; }
 .native-notes-settings .native-notes-palette-row { display: flex; align-items: center; gap: 12px; margin-block: 8px; }
 .native-notes-settings .native-notes-palette-row > span { width: 36px; flex: 0 0 auto; font-size: var(--font-ui-small); color: var(--text-muted); }
 .native-notes-settings .native-notes-palette { display: flex; flex: 1; gap: 6px; }
 .native-notes-settings .native-notes-palette > div { height: 26px; flex: 1; border: 1px solid var(--background-modifier-border); border-radius: 6px; }
 .native-notes-settings .setting-item-control { flex-wrap: wrap; gap: 8px; min-width: 0; flex-shrink: 1; }
 .native-notes-settings .setting-item-control > select { max-width: 100%; text-overflow: ellipsis; }
-.native-notes-settings .setting-item-control:has(> select:not(.is-measuring)) { flex-shrink: 0; }
+.native-notes-settings .setting-item-control.nn-select-control { flex-shrink: 0; }
 .native-notes-settings .setting-item-control > select:not(.is-measuring) { width: 140px; }
 .native-notes-settings .native-notes-symbol-preview { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; color: var(--text-muted); flex-shrink: 0; }
 .native-notes-settings .native-notes-symbol-preview svg { width: 18px; height: 18px; }

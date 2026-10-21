@@ -410,7 +410,7 @@ var require_settings_tab = __commonJS({
             } catch {
               input.focus();
               input.select();
-              this.errorEl.textContent = "Select and copy the profile text using your device\u2019s Copy command.";
+              this.errorEl.textContent = "Select and copy the profile text using your device\u2019s copy command.";
             }
           }));
           controls.addButton((button) => button.setButtonText("Save file").onClick(() => {
@@ -434,7 +434,7 @@ var require_settings_tab = __commonJS({
             }
             try {
               input.value = await selected.text();
-              this.errorEl.textContent = "Profile loaded. Select Import to apply it.";
+              this.errorEl.textContent = "Profile loaded. Select import to apply it.";
             } catch {
               this.errorEl.textContent = "The file could not be read.";
             }
@@ -488,27 +488,67 @@ var require_settings_tab = __commonJS({
         super(app, plugin);
         this.plugin = plugin;
       }
-      display() {
-        const container = this.containerEl;
-        const scrollTop = container.scrollTop;
-        this.plugin.attachDocument(container.ownerDocument);
-        container.empty();
-        container.classList.add("native-notes-settings");
-        container.createEl("p", { cls: "native-notes-intro", text: "A coordinated Apple-inspired design. Choose a look and a few personal preferences." });
-        const section = (name, description) => {
-          const el = container.createEl("section", { cls: "native-notes-settings-section", attr: { "aria-label": name } });
-          new Setting(el).setName(name).setHeading();
-          if (description) el.createEl("p", { cls: "native-notes-section-description", text: description });
-          return el;
-        };
-        this.renderAppearance(section("Appearance", "Every theme includes matching light and dark colors. Fonts and spacing are taken care of."));
-        this.renderFeatures(section("Optional features"));
-        this.renderProfiles(section("Profiles", "Keep the same look on your other devices."));
-        container.scrollTop = scrollTop;
+      // Definitions are also read before the tab opens to index settings search.
+      // Keep document access inside render callbacks, when the host window is known.
+      settingDefinition(name, desc, render, aliases) {
+        return { name, desc, aliases, render: (setting) => {
+          this.plugin.attachDocument(setting.settingEl.ownerDocument);
+          this.containerEl.classList.add("native-notes-settings");
+          return render(setting);
+        } };
       }
-      renderAppearance(el) {
-        const theme = new Setting(el).setName("Color theme");
-        let preview;
+      descriptionDefinition(text, cls) {
+        const definition = this.settingDefinition("", text, (setting) => {
+          setting.settingEl.empty();
+          setting.settingEl.classList.remove("setting-item");
+          setting.settingEl.classList.add(cls);
+          setting.settingEl.textContent = text;
+        });
+        definition.searchable = false;
+        return definition;
+      }
+      refreshSettingsTab() {
+        const scrollTop = this.containerEl.scrollTop;
+        this.update();
+        this.containerEl.scrollTop = scrollTop;
+      }
+      getSettingDefinitions() {
+        return [
+          this.descriptionDefinition("A coordinated Apple-inspired design. Choose a look and a few personal preferences.", "native-notes-intro"),
+          { type: "group", heading: "Appearance", cls: "native-notes-settings-section", items: [
+            this.descriptionDefinition("Every theme includes matching light and dark colors. Fonts and spacing are taken care of.", "native-notes-section-description"),
+            this.settingDefinition("Color theme", PRESETS[this.plugin.settings.preset].description, (setting) => this.renderTheme(setting), Object.values(PRESETS).map((preset) => preset.name)),
+            this.settingDefinition("Text size", "Adjust note and code text together.", (setting) => {
+              setting.controlEl.classList.add("nn-select-control");
+              setting.addDropdown((dropdown) => dropdown.addOptions(Object.fromEntries(Object.entries(TEXT_SIZES).map(([id, size]) => [id, size.name]))).setValue(this.plugin.settings.textSize).onChange((value) => {
+                this.plugin.settings.textSize = value;
+                void this.plugin.updateSettings();
+              }));
+            }),
+            this.settingDefinition("Sidebar density", "Choose roomier or closer rows. Mobile keeps comfortable touch targets.", (setting) => {
+              setting.controlEl.classList.add("nn-select-control");
+              setting.addDropdown((dropdown) => dropdown.addOptions({ comfortable: "Comfortable", compact: "Compact" }).setValue(this.plugin.settings.sidebarDensity).onChange((value) => {
+                this.plugin.settings.sidebarDensity = value;
+                void this.plugin.updateSettings();
+              }));
+            })
+          ] },
+          { type: "group", heading: "Optional features", cls: "native-notes-settings-section", items: this.featureDefinitions() },
+          { type: "group", heading: "Profiles", cls: "native-notes-settings-section", items: [
+            this.descriptionDefinition("Keep the same look on your other devices.", "native-notes-section-description"),
+            this.settingDefinition("Transfer settings", "Export your choices and import them on another device. Profiles contain no notes or account information.", (setting) => {
+              setting.addButton((button) => button.setButtonText("Export").onClick(() => new ProfileModal(this.plugin, "export").open())).addButton((button) => button.setButtonText("Import").onClick(() => new ProfileModal(this.plugin, "import", () => this.refreshSettingsTab()).open()));
+            }, ["Import", "Export", "Profile"]),
+            this.settingDefinition("Restore defaults", "Return to the Notes theme and original preferences.", (setting) => {
+              setting.addButton((button) => button.setButtonText("Restore defaults").onClick(() => new ResetModal(this.plugin, () => this.refreshSettingsTab()).open()));
+            }, ["Reset"])
+          ] }
+        ];
+      }
+      renderTheme(theme) {
+        theme.controlEl.classList.add("nn-select-control");
+        theme.settingEl.classList.add("native-notes-theme-setting");
+        const preview = theme.settingEl.createDiv({ cls: "native-notes-theme-preview" });
         const refreshPreview = () => {
           const preset = PRESETS[this.plugin.settings.preset];
           theme.setDesc(preset.description);
@@ -528,56 +568,57 @@ var require_settings_tab = __commonJS({
           void this.plugin.updateSettings();
           refreshPreview();
         }));
-        preview = el.createDiv({ cls: "native-notes-theme-preview" });
         refreshPreview();
-        new Setting(el).setName("Text size").setDesc("Adjust note and code text together.").addDropdown((dropdown) => dropdown.addOptions(Object.fromEntries(Object.entries(TEXT_SIZES).map(([id, size]) => [id, size.name]))).setValue(this.plugin.settings.textSize).onChange((value) => {
-          this.plugin.settings.textSize = value;
-          void this.plugin.updateSettings();
-        }));
-        new Setting(el).setName("Sidebar density").setDesc("Choose roomier or closer rows. Mobile keeps comfortable touch targets.").addDropdown((dropdown) => dropdown.addOptions({ comfortable: "Comfortable", compact: "Compact" }).setValue(this.plugin.settings.sidebarDensity).onChange((value) => {
-          this.plugin.settings.sidebarDensity = value;
-          void this.plugin.updateSettings();
-        }));
+        return () => preview.remove();
       }
-      renderFeatures(el) {
-        for (const [key, [label, desc]] of Object.entries(FEATURE_LABELS)) {
+      featureDefinitions() {
+        const definitions = [];
+        for (const [key, [name, desc]] of Object.entries(FEATURE_LABELS)) {
           let symbolChoice, symbolRow;
-          new Setting(el).setName(label).setDesc(desc).addToggle((toggle) => toggle.setValue(this.plugin.settings.features[key]).onChange((value) => {
-            this.plugin.settings.features[key] = value;
-            symbolChoice?.setDisabled(!value);
-            symbolRow?.settingEl.classList.toggle("is-disabled", !value);
-            void this.plugin.updateSettings();
+          definitions.push(this.settingDefinition(name, desc, (setting) => {
+            setting.addToggle((toggle) => toggle.setValue(this.plugin.settings.features[key]).onChange((value) => {
+              this.plugin.settings.features[key] = value;
+              symbolChoice?.setDisabled(!value);
+              symbolRow?.settingEl.classList.toggle("is-disabled", !value);
+              void this.plugin.updateSettings();
+            }));
           }));
           if (key === "emptyLineMarks") {
-            symbolRow = new Setting(el).setName("Empty line symbol");
-            symbolRow.settingEl.classList.add("native-notes-symbol-setting");
-            symbolRow.settingEl.classList.toggle("is-disabled", !this.plugin.settings.features.emptyLineMarks);
-            const preview = symbolRow.controlEl.createSpan({ cls: "native-notes-symbol-preview", attr: { "aria-hidden": "true" } });
-            const showPreview = () => setLocalIcon(preview, EMPTY_LINE_MARKS[this.plugin.settings.emptyLineStyle].icon);
-            symbolRow.addDropdown((dropdown) => {
-              symbolChoice = dropdown;
-              dropdown.addOptions(Object.fromEntries(Object.entries(EMPTY_LINE_MARKS).map(([id, mark]) => [id, mark.name]))).setValue(this.plugin.settings.emptyLineStyle).setDisabled(!this.plugin.settings.features.emptyLineMarks).onChange((value) => {
-                this.plugin.settings.emptyLineStyle = value;
-                showPreview();
-                void this.plugin.updateSettings();
+            definitions.push(this.settingDefinition("Empty line symbol", "Choose the symbol shown on empty editor lines.", (setting) => {
+              symbolRow = setting;
+              setting.controlEl.classList.add("nn-select-control");
+              setting.settingEl.classList.add("native-notes-symbol-setting");
+              setting.settingEl.classList.toggle("is-disabled", !this.plugin.settings.features.emptyLineMarks);
+              const preview = setting.controlEl.createSpan({ cls: "native-notes-symbol-preview", attr: { "aria-hidden": "true" } });
+              const showPreview = () => setLocalIcon(preview, EMPTY_LINE_MARKS[this.plugin.settings.emptyLineStyle].icon);
+              setting.addDropdown((dropdown) => {
+                symbolChoice = dropdown;
+                dropdown.addOptions(Object.fromEntries(Object.entries(EMPTY_LINE_MARKS).map(([id, mark]) => [id, mark.name]))).setValue(this.plugin.settings.emptyLineStyle).setDisabled(!this.plugin.settings.features.emptyLineMarks).onChange((value) => {
+                  this.plugin.settings.emptyLineStyle = value;
+                  showPreview();
+                  void this.plugin.updateSettings();
+                });
+                dropdown.selectEl.setAttribute("aria-label", "Empty line symbol");
               });
-              dropdown.selectEl.setAttribute("aria-label", "Empty line symbol");
-            });
-            showPreview();
+              showPreview();
+              return () => {
+                symbolRow = void 0;
+                symbolChoice = void 0;
+              };
+            }));
           }
         }
         const options = {
           translucentNavigation: ["Translucent navigation", "On Mac, also enable Obsidian\u2019s Translucent window setting. Mobile uses solid surfaces."],
           hideRibbon: ["Hide left ribbon", "Desktop only. Commands remain available through the command palette."]
         };
-        for (const [key, [name, desc]] of Object.entries(options)) new Setting(el).setName(name).setDesc(desc).addToggle((toggle) => toggle.setValue(this.plugin.settings.options[key]).onChange((value) => {
-          this.plugin.settings.options[key] = value;
-          void this.plugin.updateSettings();
+        for (const [key, [name, desc]] of Object.entries(options)) definitions.push(this.settingDefinition(name, desc, (setting) => {
+          setting.addToggle((toggle) => toggle.setValue(this.plugin.settings.options[key]).onChange((value) => {
+            this.plugin.settings.options[key] = value;
+            void this.plugin.updateSettings();
+          }));
         }));
-      }
-      renderProfiles(el) {
-        new Setting(el).setName("Transfer settings").setDesc("Export your choices and import them on another device. Profiles contain no notes or account information.").addButton((button) => button.setButtonText("Export").onClick(() => new ProfileModal(this.plugin, "export").open())).addButton((button) => button.setButtonText("Import").onClick(() => new ProfileModal(this.plugin, "import", () => this.display()).open()));
-        new Setting(el).setName("Restore defaults").setDesc("Return to the Notes theme and original preferences.").addButton((button) => button.setButtonText("Restore defaults").onClick(() => new ResetModal(this.plugin, () => this.display()).open()));
+        return definitions;
       }
     };
     module2.exports = { NativeNotesSettingsTab: NativeNotesSettingsTab2, ProfileModal };
@@ -1083,6 +1124,74 @@ var require_code_features = __commonJS({
       return Decoration.set(ranges, true);
     }
     var TITLE = ".expressive-code > .frame > .header > :is(.title, .an-code-language-label)";
+    var COPY_FEEDBACK = ".expressive-code > .frame > .copy .feedback";
+    function removeCopyFeedbackPortal(record) {
+      record.portal?.remove();
+      record.portal = null;
+      record.stopPositioning?.();
+      record.stopPositioning = null;
+    }
+    function positionCopyFeedback(record) {
+      const { portal, button } = record;
+      if (!portal) return;
+      if (!button.isConnected) {
+        removeCopyFeedbackPortal(record);
+        return;
+      }
+      const win = button.ownerDocument.defaultView;
+      const anchor = button.getBoundingClientRect();
+      const bounds = portal.getBoundingClientRect();
+      const width = win.innerWidth;
+      const height = win.innerHeight;
+      if (anchor.bottom < 0 || anchor.top > height || anchor.right < 0 || anchor.left > width) {
+        removeCopyFeedbackPortal(record);
+        return;
+      }
+      const left = Math.max(8, Math.min(anchor.right - bounds.width, width - bounds.width - 8));
+      const above = anchor.top - bounds.height - 8;
+      const top = above >= 8 ? above : Math.min(anchor.bottom + 8, height - bounds.height - 8);
+      portal.style.setProperty("--nn-copy-feedback-left", `${left}px`);
+      portal.style.setProperty("--nn-copy-feedback-top", `${Math.max(8, top)}px`);
+      portal.classList.toggle("nn-copy-feedback-below", above < 8);
+    }
+    function syncCopyFeedback(record) {
+      const { feedback, button } = record;
+      if (!feedback.isConnected || !button.isConnected || !feedback.classList.contains("show")) {
+        removeCopyFeedbackPortal(record);
+        return;
+      }
+      if (!record.portal) {
+        const doc = feedback.ownerDocument;
+        const win = doc.defaultView;
+        const portal = record.portal = doc.createElement("div");
+        portal.className = "nn-copy-feedback-portal";
+        portal.setAttribute("role", "status");
+        portal.setAttribute("aria-live", "polite");
+        doc.body.appendChild(portal);
+        let pending = null;
+        const reposition = () => {
+          if (pending !== null) return;
+          if (!win.requestAnimationFrame) {
+            positionCopyFeedback(record);
+            return;
+          }
+          pending = win.requestAnimationFrame(() => {
+            pending = null;
+            positionCopyFeedback(record);
+          });
+        };
+        win.addEventListener("resize", reposition);
+        doc.addEventListener("scroll", reposition, true);
+        record.stopPositioning = () => {
+          if (pending !== null) win.cancelAnimationFrame(pending);
+          win.removeEventListener("resize", reposition);
+          doc.removeEventListener("scroll", reposition, true);
+        };
+      }
+      const message = feedback.textContent.trim();
+      if (record.portal.textContent !== message) record.portal.textContent = message;
+      positionCopyFeedback(record);
+    }
     var LANGUAGE_NAMES = {
       ts: "TypeScript",
       typescript: "TypeScript",
@@ -1127,6 +1236,7 @@ var require_code_features = __commonJS({
         this.context = context;
         this.plugin = plugin;
         this.decorated = /* @__PURE__ */ new Map();
+        this.copyFeedback = /* @__PURE__ */ new Map();
       }
       onload() {
         this.regionLoaded = true;
@@ -1143,6 +1253,7 @@ var require_code_features = __commonJS({
           }
           this.scan = null;
           for (const [title, record] of this.decorated) this.release(title, record);
+          for (const [feedback, record] of this.copyFeedback) this.releaseCopyFeedback(feedback, record);
           return;
         }
         if (this.behavior) {
@@ -1156,6 +1267,10 @@ var require_code_features = __commonJS({
           for (const [title, record] of this.decorated) {
             if (!this.containerEl.contains(title)) this.release(title, record);
           }
+          for (const [feedback, record] of this.copyFeedback) {
+            if (!this.containerEl.contains(feedback) || !record.button.isConnected) this.releaseCopyFeedback(feedback, record);
+          }
+          for (const feedback of this.containerEl.querySelectorAll(COPY_FEEDBACK)) this.claimCopyFeedback(feedback);
           for (const frame of this.containerEl.querySelectorAll(".expressive-code > .frame")) {
             const header = frame.querySelector(":scope > .header");
             if (!header) continue;
@@ -1219,8 +1334,14 @@ var require_code_features = __commonJS({
         };
         this.scan();
         const Observer = this.containerEl.ownerDocument.defaultView.MutationObserver;
-        const observer = new Observer(() => this.scan?.());
-        observer.observe(this.containerEl, { childList: true, subtree: true });
+        const observer = new Observer((changes) => {
+          if (changes.some((change) => change.type === "childList")) this.scan?.();
+          else for (const change of changes) {
+            const record = this.copyFeedback.get(change.target);
+            if (record) syncCopyFeedback(record);
+          }
+        });
+        observer.observe(this.containerEl, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
         behavior.register(() => observer.disconnect());
         const target = (event) => {
           const title = event.target?.closest?.(TITLE);
@@ -1246,6 +1367,39 @@ var require_code_features = __commonJS({
           event.stopPropagation();
           void this.plugin.begin(title, this);
         });
+      }
+      claimCopyFeedback(feedback) {
+        const previous = this.plugin.copyFeedbackRegions.get(feedback);
+        if (previous && previous !== this && this.containerEl.contains(previous.containerEl)) return;
+        let record = this.copyFeedback.get(feedback);
+        if (!record) {
+          const button = feedback.closest(".copy")?.querySelector(":scope > button");
+          if (!button) return;
+          record = previous?.copyFeedback.get(feedback) || {
+            feedback,
+            button,
+            portal: null,
+            stopPositioning: null,
+            ariaHidden: feedback.getAttribute("aria-hidden"),
+            ownedClass: !feedback.classList.contains("nn-copy-feedback-source")
+          };
+          if (previous && previous !== this) previous.copyFeedback.delete(feedback);
+          this.copyFeedback.set(feedback, record);
+          this.plugin.copyFeedbackRegions.set(feedback, this);
+          if (record.ownedClass && !feedback.classList.contains("nn-copy-feedback-source")) feedback.classList.add("nn-copy-feedback-source");
+          feedback.setAttribute("aria-hidden", "true");
+        }
+        syncCopyFeedback(record);
+      }
+      releaseCopyFeedback(feedback, record) {
+        if (this.plugin.copyFeedbackRegions.get(feedback) === this) {
+          removeCopyFeedbackPortal(record);
+          if (record.ownedClass) feedback.classList.remove("nn-copy-feedback-source");
+          if (record.ariaHidden === null) feedback.removeAttribute("aria-hidden");
+          else feedback.setAttribute("aria-hidden", record.ariaHidden);
+          this.plugin.copyFeedbackRegions.delete(feedback);
+        }
+        this.copyFeedback.delete(feedback);
       }
       claim(title, record) {
         const previous = this.plugin.titleRegions.get(title);
@@ -1317,6 +1471,7 @@ var require_code_features = __commonJS({
         this.host = host;
         this.app = host.app;
         this.titleRegions = /* @__PURE__ */ new WeakMap();
+        this.copyFeedbackRegions = /* @__PURE__ */ new WeakMap();
         this.regions = /* @__PURE__ */ new Map();
         this.liveRegions = /* @__PURE__ */ new Set();
         this.editorPlugins = /* @__PURE__ */ new Set();
@@ -2683,6 +2838,211 @@ var require_media_alignment = __commonJS({
   }
 });
 
+// src/dom-state.js
+var require_dom_state = __commonJS({
+  "src/dom-state.js"(exports2, module2) {
+    "use strict";
+    var TARGETS = [
+      ".nav-folder-title",
+      ".nav-file-title",
+      ".cm-preview-code-block",
+      "pre",
+      "figure.frame",
+      "figcaption.header",
+      ".cm-line",
+      "mjx-container",
+      "math-field",
+      "svg.flowchart"
+    ].join(",");
+    var CLASSES = [
+      "nn-has-iconize",
+      "nn-has-expressive-code",
+      "nn-has-code",
+      "nn-code-widget",
+      "nn-editable-code-header",
+      "nn-has-copy-feedback",
+      "nn-has-copy-button",
+      "nn-shell-frame",
+      "nn-has-language-label",
+      "nn-empty-rendered-line",
+      "nn-math-source-begin",
+      "nn-math-source-end",
+      "nn-math-display",
+      "nn-mathlive-field"
+    ];
+    var OWNED = new Set(CLASSES);
+    var OWNERS = /* @__PURE__ */ new WeakMap();
+    var CANDIDATES = `${TARGETS},${CLASSES.map((name) => `.${name}`).join(",")}`;
+    var CONTEXTS = /* @__PURE__ */ new Set(["mermaid", "mathlive-modal-content", "obsidian-mathlive-codemirror-wrapper"]);
+    var externalClasses = (value) => String(value || "").split(/\s+/).filter((name) => name && !OWNED.has(name)).sort().join(" ");
+    var direct = (el, selector) => Array.from(el.children).some((child) => child.matches(selector));
+    var DOMState2 = class {
+      constructor(doc) {
+        this.doc = doc;
+        this.win = doc.defaultView;
+        this.tracked = /* @__PURE__ */ new Set();
+        this.pending = /* @__PURE__ */ new Set();
+        this.diagrams = /* @__PURE__ */ new Map();
+        this.frame = null;
+        this.disposed = false;
+        this.observer = new this.win.MutationObserver((records) => this.collect(records));
+        this.observer.observe(doc.body, {
+          subtree: true,
+          childList: true,
+          attributes: true,
+          attributeOldValue: true,
+          attributeFilter: ["class", "data-language", "display", "id"]
+        });
+        this.refreshDiagrams = () => {
+          for (const el of this.tracked) if (el.matches("svg.flowchart")) {
+            this.clearDiagram(el);
+            this.pending.add(el);
+          }
+          this.schedule();
+        };
+        this.styleObserver = new this.win.MutationObserver(this.refreshDiagrams);
+        this.styleObserver.observe(doc.head, { subtree: true, childList: true, characterData: true });
+        doc.head.addEventListener("load", this.refreshDiagrams, true);
+        this.addSubtree(doc.body);
+        this.flush();
+      }
+      addSubtree(node) {
+        if (node.nodeType !== 1) return;
+        if (node.matches(CANDIDATES)) this.pending.add(node);
+        for (const el of node.querySelectorAll(CANDIDATES)) this.pending.add(el);
+      }
+      collect(records) {
+        if (this.disposed) return;
+        for (const record of records) {
+          const target = record.target;
+          if (record.type === "attributes" && record.attributeName === "class" && externalClasses(record.oldValue) === externalClasses(target.getAttribute("class"))) continue;
+          if (target.nodeType !== 1 || target.closest("[data-native-notes-diagram-style]")) continue;
+          for (let el = target; el && el !== this.doc.body; el = el.parentElement) {
+            if (el.matches(TARGETS) || this.tracked.has(el)) this.pending.add(el);
+          }
+          if (record.type === "attributes" && record.attributeName === "class") {
+            const previous = new Set(String(record.oldValue || "").split(/\s+/));
+            if (Array.from(CONTEXTS).some((name) => previous.has(name) !== target.classList.contains(name))) this.addSubtree(target);
+          }
+          for (const node of record.addedNodes || []) this.addSubtree(node);
+          for (const node of record.removedNodes || []) this.addSubtree(node);
+        }
+        this.schedule();
+      }
+      schedule() {
+        if (!this.disposed && this.pending.size && this.frame === null) {
+          this.frame = this.win.requestAnimationFrame(() => {
+            this.frame = null;
+            this.flush();
+          });
+        }
+      }
+      flush() {
+        if (this.disposed) return;
+        for (const el of this.pending) {
+          if (!el.isConnected || el.ownerDocument !== this.doc || !el.matches(TARGETS)) {
+            this.clearElement(el);
+            continue;
+          }
+          this.syncElement(el);
+        }
+        this.pending.clear();
+      }
+      syncElement(el) {
+        this.tracked.add(el);
+        OWNERS.set(el, this);
+        const states = /* @__PURE__ */ new Set();
+        const set = (name, value) => {
+          if (value) states.add(name);
+        };
+        if (el.matches(".nav-folder-title, .nav-file-title")) set("nn-has-iconize", el.querySelector(".iconize-icon"));
+        if (el.matches(".cm-preview-code-block")) {
+          set("nn-has-expressive-code", el.querySelector(".expressive-code"));
+          set("nn-has-code", el.querySelector(".expressive-code, pre"));
+          set("nn-code-widget", direct(el, "pre") || Array.from(el.children).some((child) => child.matches("div") && direct(child, ".expressive-code")));
+          set("nn-editable-code-header", el.querySelector(".an-code-title-editable"));
+          set("nn-has-copy-feedback", el.querySelector(".expressive-code .copy .feedback"));
+        }
+        if (el.matches("pre")) set("nn-has-copy-button", direct(el, "button.copy-code-button"));
+        if (el.matches("figure.frame")) {
+          set("nn-editable-code-header", el.querySelector(".an-code-title-editable"));
+          set("nn-shell-frame", direct(el, 'pre:is([data-language="sh"], [data-language="bash"], [data-language="zsh"], [data-language="shell"])'));
+        }
+        if (el.matches("figcaption.header")) set("nn-has-language-label", direct(el, ".an-code-language-label"));
+        if (el.matches(".cm-line")) {
+          set("nn-empty-rendered-line", el.childNodes.length === 1 && el.firstChild.nodeName === "BR");
+          const begin = direct(el, ".cm-formatting-math-begin.cm-math-block");
+          set("nn-math-source-begin", begin);
+          set("nn-math-source-end", (el.classList.contains("HyperMD-math") || begin) && direct(el, ".cm-formatting-math-end"));
+        }
+        set("nn-math-display", el.localName === "mjx-container" && el.getAttribute("display") === "true");
+        set("nn-mathlive-field", el.localName === "math-field" && el.closest(".mathlive-modal-content, .obsidian-mathlive-codemirror-wrapper"));
+        for (const name of CLASSES) el.classList.toggle(name, states.has(name));
+        if (el.matches(".mermaid svg.flowchart")) this.syncDiagram(el);
+        else this.clearDiagram(el);
+      }
+      syncDiagram(svg) {
+        const id = svg.id;
+        if (!id) {
+          this.clearDiagram(svg);
+          return;
+        }
+        const current = this.diagrams.get(svg);
+        if (current?.id === id && current.style.parentNode === svg) return;
+        this.clearDiagram(svg);
+        const escaped = this.win.CSS?.escape ? this.win.CSS.escape(id) : Array.from(id, (char) => `\\${char.codePointAt(0).toString(16)} `).join("");
+        const rules = [];
+        const visit = (sheet) => {
+          let entries;
+          try {
+            entries = sheet.cssRules;
+          } catch {
+            return;
+          }
+          for (const rule of entries || []) {
+            if (rule.selectorText?.includes("body.nn-enabled.nn-diagrams") && rule.selectorText.includes(".mermaid svg.flowchart") && !rule.selectorText.includes(".mermaid svg.flowchart#")) {
+              const selector = rule.selectorText.split(".mermaid svg.flowchart").join(`.mermaid svg.flowchart#${escaped}`);
+              rules.push(`${selector} { ${rule.style.cssText} }`);
+            }
+          }
+        };
+        for (const sheet of this.doc.styleSheets) {
+          if (!sheet.ownerNode?.hasAttribute?.("data-native-notes-diagram-style")) visit(sheet);
+        }
+        if (!rules.length) return;
+        const style = this.doc.createElementNS("http://www.w3.org/2000/svg", "style");
+        style.setAttribute("data-native-notes-diagram-style", "");
+        style.textContent = rules.join("\n");
+        svg.appendChild(style);
+        this.diagrams.set(svg, { id, style });
+      }
+      clearDiagram(el) {
+        this.diagrams.get(el)?.style.remove();
+        this.diagrams.delete(el);
+      }
+      clearElement(el) {
+        if (OWNERS.get(el) === this) {
+          el.classList.remove(...CLASSES);
+          OWNERS.delete(el);
+        }
+        this.clearDiagram(el);
+        this.tracked.delete(el);
+      }
+      destroy() {
+        this.disposed = true;
+        this.observer.disconnect();
+        this.styleObserver.disconnect();
+        this.doc.head.removeEventListener("load", this.refreshDiagrams, true);
+        if (this.frame !== null) this.win.cancelAnimationFrame(this.frame);
+        this.frame = null;
+        this.pending.clear();
+        for (const el of this.tracked) this.clearElement(el);
+      }
+    };
+    module2.exports = { DOMState: DOMState2 };
+  }
+});
+
 // src/main.js
 var { Plugin, Notice } = require("obsidian");
 var { normalizeSettings, CORE_FEATURES } = require_settings();
@@ -2691,11 +3051,13 @@ var { NativeNotesSettingsTab } = require_settings_tab();
 var { CodeFeatures } = require_code_features();
 var { FloatingOutline } = require_outline();
 var { MediaAlignment } = require_media_alignment();
+var { DOMState } = require_dom_state();
 module.exports = class NativeNotes extends Plugin {
   async onload() {
     this.disposed = false;
     this.documents = /* @__PURE__ */ new Map();
     this.documentDisposers = /* @__PURE__ */ new Map();
+    this.documentStates = /* @__PURE__ */ new Map();
     this.saveQueue = Promise.resolve();
     const stored = await this.loadData();
     this.settings = normalizeSettings(stored);
@@ -2734,6 +3096,7 @@ module.exports = class NativeNotes extends Plugin {
     doc.defaultView?.addEventListener("pagehide", cleanup);
     this.documentDisposers.set(doc, () => doc.defaultView?.removeEventListener("pagehide", cleanup));
     this.applyDocument(doc, style);
+    this.documentStates.set(doc, new DOMState(doc));
   }
   applyDocument(doc, style) {
     const names = new Set(classNames(this.settings));
@@ -2742,6 +3105,8 @@ module.exports = class NativeNotes extends Plugin {
   }
   detachDocument(doc) {
     if (!this.documents.has(doc)) return;
+    this.documentStates.get(doc)?.destroy();
+    this.documentStates.delete(doc);
     doc.body?.classList.remove(...OWNED_CLASSES);
     this.documents.get(doc).remove();
     this.documentDisposers.get(doc)?.();
