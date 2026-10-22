@@ -378,15 +378,250 @@ var require_appearance = __commonJS({
   }
 });
 
+// src/sync/icloud.js
+var require_icloud = __commonJS({
+  "src/sync/icloud.js"(exports2, module2) {
+    var { Platform, FileSystemAdapter } = require("obsidian");
+    var ICLOUD_GUIDE_URL = "https://help.obsidian.md/sync-notes#iCloud";
+    var VAULT_MANAGER_URL = "obsidian://choose-vault";
+    var APP_CONTAINER = "/Library/Mobile Documents/iCloud~md~obsidian/Documents";
+    function platformKind(platform) {
+      if (!platform || typeof platform !== "object") return "unknown";
+      const {
+        isDesktopApp: desktop,
+        isMobileApp: mobile,
+        isIosApp: ios,
+        isAndroidApp: android,
+        isMacOS: mac,
+        isWin: win,
+        isLinux: linux
+      } = platform;
+      if (desktop && mobile || ios && android || desktop && (ios || android) || win && (mac || linux || ios) || linux && (mac || ios) || ios && mobile === false) return "unknown";
+      if (ios) return "ios";
+      if (android || desktop && (win || linux)) return "unsupported";
+      if (desktop && mac && !mobile) return "mac";
+      return "unknown";
+    }
+    function location(kind, title, detail, supportsSetup) {
+      return { kind, title, detail, supportsSetup };
+    }
+    function inspectICloudLocation(app, {
+      platform = Platform,
+      FileSystemAdapterClass = FileSystemAdapter,
+      mobileConfirmed = false
+    } = {}) {
+      const host = platformKind(platform);
+      if (host === "unsupported") return location(
+        "unsupported",
+        "iCloud setup is for Apple devices",
+        "Obsidian recommends iCloud vaults on macOS, iPhone, and iPad. This setup is not offered on this platform; Native Notes appearance and editor features remain available.",
+        false
+      );
+      if (host === "unknown") return location(
+        "unverified",
+        "Device could not be identified",
+        "Native Notes could not identify a supported Apple app environment. Check the official iCloud setup guide.",
+        false
+      );
+      if (host === "ios") {
+        if (mobileConfirmed === true) return location(
+          "ready",
+          "iCloud location confirmed by you",
+          "You confirmed this vault is inside the Obsidian app folder in iCloud Drive. Obsidian's public mobile API cannot verify its location, Apple account, or transfer status.",
+          true
+        );
+        return location(
+          "unverified",
+          "Confirm this vault's iCloud location",
+          "In Files, check iCloud Drive \u2192 Obsidian, using the folder with the Obsidian app icon. The public mobile API cannot verify this location or iCloud transfers.",
+          true
+        );
+      }
+      let path;
+      try {
+        const adapter = app?.vault?.adapter;
+        if (typeof FileSystemAdapterClass !== "function" || !(adapter instanceof FileSystemAdapterClass)) {
+          return location(
+            "unverified",
+            "Vault location is unavailable",
+            "This vault does not expose a public desktop filesystem path. Check its location in Finder using the iCloud setup guide.",
+            true
+          );
+        }
+        path = adapter.getBasePath();
+      } catch {
+        return location(
+          "unverified",
+          "Vault location is unavailable",
+          "Obsidian could not provide this vault's desktop path. Check its location in Finder.",
+          true
+        );
+      }
+      if (typeof path !== "string" || path.length > 4096 || !path.startsWith("/") || path.includes("\\") || Array.from(path).some((char) => char.charCodeAt(0) < 32 || char.charCodeAt(0) === 127) || path.includes("//")) {
+        return location(
+          "unverified",
+          "Vault path could not be verified",
+          "The reported path is not a standard macOS vault path. Check the folder in Finder.",
+          true
+        );
+      }
+      path = path.replace(/\/$/, "");
+      const segments = path.slice(1).split("/");
+      if (segments.some((part) => !part || [".", ".."].includes(part.normalize("NFKC")))) {
+        return location(
+          "unverified",
+          "Vault path could not be verified",
+          "The reported path is not a standard macOS vault path. Check the folder in Finder.",
+          true
+        );
+      }
+      const index = path.indexOf(APP_CONTAINER);
+      if (index > 0) {
+        const suffix = path.slice(index + APP_CONTAINER.length);
+        const name = suffix.slice(1);
+        if (suffix.startsWith("/") && name && !name.includes("/") && name.trim() === name && !name.startsWith(".")) {
+          return location(
+            "ready",
+            "iCloud vault folder found",
+            "This checks the folder location only. Apple handles transfers; check your other device to confirm delivery.",
+            true
+          );
+        }
+        return location(
+          "outside",
+          "Choose a vault inside the Obsidian folder",
+          "Use a vault folder directly inside iCloud Drive \u2192 Obsidian. The app container itself and nested vault folders do not match the supported location.",
+          true
+        );
+      }
+      if (path.includes("/Library/Mobile Documents/com~apple~CloudDocs/Obsidian")) {
+        return location(
+          "outside",
+          "Use the Obsidian app folder",
+          "This is a regular iCloud Drive folder named Obsidian. For iPhone and iPad, use the Obsidian folder with the app icon instead.",
+          true
+        );
+      }
+      return location(
+        "outside",
+        "This vault is outside Obsidian's iCloud folder",
+        "Set up a vault inside iCloud Drive \u2192 Obsidian using the folder with the app icon. Native Notes does not move your vault or start iCloud transfers.",
+        true
+      );
+    }
+    function setupSteps(platform = Platform, mode = "existing") {
+      const host = platformKind(platform);
+      if (host !== "mac" && host !== "ios") return [{
+        label: "Choose a supported sync method",
+        body: "Use the official guide for this device. iCloud vault setup is recommended on macOS, iPhone, and iPad.",
+        href: ICLOUD_GUIDE_URL
+      }];
+      const steps = [{
+        label: "Enable iCloud Drive",
+        body: "In Apple settings, enable iCloud Drive and use the same Apple account on your devices. Apple manages file transfers.",
+        href: ICLOUD_GUIDE_URL
+      }];
+      if (mode === "new-device") steps.push({
+        label: "Open your existing vault",
+        body: host === "ios" ? "Wait for your vault to appear in iCloud Drive \u2192 Obsidian, then select it in Obsidian's vault switcher. Do not create a second vault with the same name." : "In the vault manager, choose Open folder as vault and select your existing vault inside iCloud Drive \u2192 Obsidian, using the folder with the app icon.",
+        href: VAULT_MANAGER_URL
+      });
+      else steps.push({
+        label: "Set up the vault folder",
+        body: host === "ios" ? "Back up a local vault first. Create an Obsidian vault with Store in iCloud enabled, then copy your notes into it. In Files, confirm it is under the Obsidian app folder." : "Back up a local vault first. Place a copy directly inside iCloud Drive \u2192 Obsidian, using the folder with the app icon, then open that copy as a vault.",
+        href: VAULT_MANAGER_URL
+      });
+      steps.push({
+        label: "Keep files available",
+        body: host === "mac" ? "On macOS 15 or later, use Finder's Keep Downloaded option for the Obsidian folder. Allow iCloud time to download files before editing on another device." : "Allow iCloud time to finish downloading your vault before editing. Check in Files that your notes are available on this device.",
+        href: ICLOUD_GUIDE_URL
+      });
+      steps.push({
+        label: "Check another device",
+        body: "Open a test note on your other device to confirm transfer. Use one sync service for the vault. Native Notes checks setup; it cannot report iCloud transfer completion."
+      });
+      return steps;
+    }
+    module2.exports = { inspectICloudLocation, setupSteps, ICLOUD_GUIDE_URL, VAULT_MANAGER_URL };
+  }
+});
+
+// src/sync/icloud-ui.js
+var require_icloud_ui = __commonJS({
+  "src/sync/icloud-ui.js"(exports2, module2) {
+    "use strict";
+    var { Modal, Setting, Platform } = require("obsidian");
+    var { setupSteps, VAULT_MANAGER_URL, ICLOUD_GUIDE_URL } = require_icloud();
+    var ICloudSetupModal = class extends Modal {
+      constructor(plugin, afterSave = () => {
+      }) {
+        super(plugin.app);
+        this.plugin = plugin;
+        this.afterSave = afterSave;
+        this.live = false;
+      }
+      onOpen() {
+        if (this.plugin.disposed) {
+          this.close();
+          return;
+        }
+        this.live = true;
+        this.plugin.settingsModals.add(this);
+        this.setTitle("Set up iCloud");
+        this.contentEl.classList.add("native-notes-sync-modal");
+        const status = this.contentEl.createDiv({ cls: "native-notes-icloud-location" });
+        const statusTitle = status.createEl("strong"), statusDetail = status.createEl("p");
+        const refreshLocation = () => {
+          const location = this.plugin.icloud.location();
+          statusTitle.textContent = location.title;
+          statusDetail.textContent = location.detail;
+        };
+        refreshLocation();
+        this.contentEl.createEl("p", { text: "Your Apple account and iCloud Drive transfer the vault. Native Notes does not sign in to Apple, move your vault, or verify cloud delivery." });
+        for (const [mode, title] of [["existing", "Set up this vault"], ["new-device", "Open on another device"]]) {
+          this.contentEl.createEl("h3", { text: title });
+          const list = this.contentEl.createEl("ol", { cls: "native-notes-icloud-steps" });
+          for (const step of setupSteps(Platform, mode)) {
+            const item = list.createEl("li");
+            item.createEl("strong", { text: step.label });
+            item.createEl("p", { text: step.body });
+          }
+        }
+        if (Platform.isIosApp) {
+          new Setting(this.contentEl).setName("I checked the iCloud folder").setDesc("In Files, this vault is inside iCloud Drive \u2192 Obsidian, using the folder with the Obsidian app icon. This records your confirmation only.").addToggle((toggle) => toggle.setValue(this.plugin.icloud.config.mobileConfirmed).onChange((value) => {
+            if (!this.live || this.plugin.disposed) return;
+            this.plugin.icloud.confirmMobile(value);
+            refreshLocation();
+            this.afterSave();
+          }));
+        }
+        this.contentEl.createEl("h3", { text: "Check both directions" });
+        this.contentEl.createEl("p", { text: "Create a small test note on the first device. Open the same vault on the second and check the exact text. Add a sentence there, then check it on the first device. Verify a small attachment too before relying on the setup." });
+        const links = this.contentEl.createDiv({ cls: "native-notes-icloud-actions" });
+        links.createEl("a", { text: "Open vault manager", cls: "native-notes-sync-guide", attr: { href: VAULT_MANAGER_URL } });
+        links.createEl("a", { text: "Obsidian\u2019s iCloud guide", cls: "native-notes-sync-guide", attr: { href: ICLOUD_GUIDE_URL, target: "_blank", rel: "noopener noreferrer" } });
+      }
+      onClose() {
+        this.live = false;
+        this.plugin.settingsModals.delete(this);
+        this.contentEl.empty();
+      }
+    };
+    module2.exports = { ICloudSetupModal };
+  }
+});
+
 // src/sync/ui.js
 var require_ui = __commonJS({
   "src/sync/ui.js"(exports2, module2) {
     "use strict";
     var { Modal, Notice: Notice2, Setting } = require("obsidian");
+    var { ICloudSetupModal } = require_icloud_ui();
     var SETUP_URL = "https://github.com/PratiyushT/native-notes/blob/main/docs/SYNC.md";
     var SyncHistoryModal2 = class extends Modal {
-      constructor(plugin) {
+      constructor(plugin, source = "local") {
         super(plugin.app);
+        this.source = source === "shared" ? "shared" : "local";
         this.plugin = plugin;
         this.live = false;
         this.offset = 0;
@@ -401,11 +636,11 @@ var require_ui = __commonJS({
         this.session = {};
         this.busy = false;
         this.plugin.settingsModals.add(this);
-        this.setTitle("Local recovery history");
+        this.setTitle(this.source === "shared" ? "Vault recovery history" : "Local recovery history");
         this.contentEl.classList.add("native-notes-sync-modal");
         this.errorEl = this.contentEl.createEl("p", { cls: "native-notes-sync-status", attr: { role: "status", "aria-live": "polite" } });
         this.body = this.contentEl.createDiv();
-        this.body.createEl("p", { text: "These recovery snapshots are saved on this device. Restoring creates a separate copy so you can review it without replacing your current note." });
+        this.body.createEl("p", { text: this.source === "shared" ? "These recovery versions are stored with the vault. iCloud can carry them to your other devices. A listed version may still be downloading; restoring always creates a separate copy." : "These recovery snapshots are saved on this device. Restoring creates a separate copy so you can review it without replacing your current note." });
         const session = this.session;
         const label = this.body.createEl("label", { cls: "native-notes-sync-field" });
         label.createSpan({ text: "Filter by file" });
@@ -449,20 +684,31 @@ var require_ui = __commonJS({
         if (!this.current(session)) return;
         const serial = this.serial = (this.serial || 0) + 1;
         const sync = this.plugin.sync;
-        await sync.ensureStorage();
+        if (this.source === "local") await sync.ensureStorage();
         if (!this.current(session)) return;
-        const records = await sync.storage.history();
+        const storage = this.source === "shared" ? this.plugin.icloud.historyStorage() : sync.storage;
+        const records = await storage.history();
         if (!this.current(session) || serial !== this.serial) return;
         const rows = records.filter((record) => typeof record.path === "string" && record.path.toLowerCase().includes(this.filter.toLowerCase())).sort((a, b) => b.modified - a.modified);
         if (this.offset >= rows.length) this.offset = Math.max(0, Math.floor((rows.length - 1) / 30) * 30);
         list.empty();
-        list.createEl("p", { cls: "native-notes-sync-hint", text: rows.length ? `${rows.length} saved versions. Local history retains up to 20 versions per file, 5,000 versions total, within a 100 MiB device budget.` : "No saved versions match. Turn on Cloud folder tools to start saving recovery snapshots." });
+        list.createEl("p", { cls: "native-notes-sync-hint", text: rows.length ? this.source === "shared" ? `${rows.length} vault versions. Each device writes its own immutable history; existing versions are kept when its storage limit is reached.` : `${rows.length} saved versions. Local history retains up to 20 versions per file, 5,000 versions total, within a 100 MiB device budget.` : this.source === "shared" ? "No vault versions are available. Enable Share recovery history on the original device, then allow iCloud to download the history folder here." : "No saved versions match. Turn on Local recovery to start saving snapshots." });
+        if (this.source === "shared") {
+          const stats = storage.stats?.() || {};
+          if (stats.limited || stats.invalid || stats.incomplete) {
+            list.createEl("p", { cls: "native-notes-sync-hint", text: [
+              stats.limited ? "This list is incomplete because the history scan limit was reached. Archive older device history folders before restoring." : "",
+              stats.invalid ? `${stats.invalid} invalid history items were skipped.` : "",
+              stats.incomplete ? `${stats.incomplete} unfinished versions are not ready to restore. Allow iCloud to finish downloading and reopen history.` : ""
+            ].filter(Boolean).join(" "), attr: { role: "status" } });
+          }
+        }
         for (const record of rows.slice(this.offset, this.offset + 30)) {
           const row = list.createDiv({ cls: "native-notes-sync-history-row" });
           row.createEl("strong", { text: record.path });
-          row.createEl("p", { cls: "native-notes-sync-hint", text: `${new Date(record.modified).toLocaleString()} \xB7 ${record.reason || "Local recovery snapshot"}` });
+          row.createEl("p", { cls: "native-notes-sync-hint", text: `${new Date(record.modified).toLocaleString()} \xB7 ${record.reason || "Recovery snapshot"}${record.unavailable ? ` \xB7 ${record.unavailableReason || "This version is not ready to restore."}` : ""}` });
           const readBytes = async () => {
-            const bytes = await sync.storage.readSnapshot(record.id);
+            const bytes = await storage.readSnapshot(record.id);
             if (!ArrayBuffer.isView(bytes) || Object.prototype.toString.call(bytes) !== "[object Uint8Array]") {
               throw new Error("This recovery snapshot is unavailable. Choose another saved version.");
             }
@@ -496,10 +742,10 @@ var require_ui = __commonJS({
               })();
             });
           }
-          new Setting(row).addButton((button) => button.setButtonText("Restore a copy").onClick(() => void this.perform(async () => {
+          new Setting(row).addButton((button) => button.setButtonText("Restore a copy").setDisabled(record.unavailable === true).onClick(() => void this.perform(async () => {
             const bytes = await readBytes();
             if (!this.current(session)) return;
-            const file = await sync.files().restoreCopy(record.path, bytes);
+            const file = await sync.files(() => this.current(session)).restoreCopy(record.path, bytes);
             if (this.current(session)) new Notice2(`Saved recovery copy: ${file.path}`);
           }, session)));
         }
@@ -536,28 +782,40 @@ var require_ui = __commonJS({
         if (!plugin.disposed) tab.refreshSettingsTab();
       };
       const definition = (...args) => tab.settingDefinition(...args);
+      const icloud = plugin.icloud;
+      const location = icloud.location();
       const items = [
-        tab.descriptionDefinition("Create or open your vault inside an iCloud Drive or OneDrive folder. Your installed cloud service transfers the files. Native Notes adds optional recovery snapshots saved on this device.", "native-notes-section-description"),
-        definition("Cloud folder tools", "Off by default. Save local recovery versions while Obsidian is open. Turning this off stops these snapshots; your cloud service keeps syncing.", (setting) => {
+        tab.descriptionDefinition("Use Apple\u2019s iCloud Drive to share the same vault between Mac, iPhone, and iPad. Native Notes adds setup guidance and optional recovery history. OneDrive integration is planned for 2.2.", "native-notes-section-description"),
+        definition("Vault folder", `${location.title}. ${location.detail}`, (setting) => {
+          setting.addButton((button) => button.setButtonText("Set up iCloud").onClick(() => {
+            if (!plugin.disposed) new ICloudSetupModal(plugin, () => tab.refreshSettingsTab()).open();
+          }));
+        }),
+        definition("Local recovery", "Save versions on this device while Obsidian is open. Turning this off stops Native Notes snapshots, including shared history; Apple\u2019s file transfers continue.", (setting) => {
           setting.addToggle((toggle) => toggle.setValue(sync.config.enabled).onChange((value) => void perform(() => sync.setEnabled(value))));
         }),
-        definition("Cloud service", "Choose the setup instructions for your cloud folder. This does not move your vault or change your cloud service. Changing this choice pauses local recovery.", (setting) => {
-          setting.controlEl.classList.add("nn-select-control");
-          setting.addDropdown((dropdown) => dropdown.addOptions({ icloud: "iCloud Drive", onedrive: "OneDrive" }).setValue(sync.config.provider).onChange((value) => void perform(() => sync.configure({ provider: value }))));
+        definition("Share recovery history", "Save recovery versions with this vault so iCloud can carry them to other devices. Requires Local recovery; turning off keeps existing versions.", (setting) => {
+          setting.addToggle((toggle) => toggle.setValue(icloud.config.sharedHistory).onChange((value) => void perform(() => icloud.setSharedEnabled(value))));
         }),
         definition("Recovery status", sync.status, (setting) => {
-          setting.addButton((button) => button.setButtonText("Save snapshot").setDisabled(!sync.config.enabled).onClick(() => void perform(() => sync.run()))).addButton((button) => button.setButtonText("History").onClick(() => new SyncHistoryModal2(plugin).open()));
+          setting.addButton((button) => button.setButtonText("Save snapshot").setDisabled(!sync.config.enabled).onClick(() => void perform(() => sync.run())));
           return sync.subscribe((text) => setting.setDesc(text));
         }),
-        definition("Include attachments in recovery", "Add visible attachments up to 10 MiB to local snapshots. This does not change what your cloud service syncs. Changing this choice pauses local recovery.", (setting) => {
+        definition("Saved versions", "Review earlier contents, including previously captured files that were later deleted. Restore a separate copy without replacing a current note.", (setting) => {
+          setting.addButton((button) => button.setButtonText("This device").onClick(() => {
+            if (!plugin.disposed) new SyncHistoryModal2(plugin).open();
+          })).addButton((button) => button.setButtonText("In this vault").onClick(() => {
+            if (!plugin.disposed) new SyncHistoryModal2(plugin, "shared").open();
+          }));
+        }),
+        definition("Include attachments in recovery", "Include visible attachments up to 10 MiB in local and shared snapshots. This does not change what iCloud transfers. Changing this choice pauses recovery.", (setting) => {
           setting.addToggle((toggle) => toggle.setValue(sync.config.attachments).onChange((value) => void perform(() => sync.configure({ attachments: value }))));
         }),
-        definition("Cloud folder setup", sync.config.provider === "icloud" ? "On Mac, iPhone, and iPad, create or open an Obsidian vault using iCloud Drive. On iPhone and iPad, use iCloud Drive/Obsidian. Keep your files downloaded for offline editing." : "On Mac or Windows, open a vault inside your OneDrive folder and keep it available offline. Linux needs a separate compatible sync client. Obsidian on iPhone and iPad cannot open a OneDrive vault folder natively.", (setting) => {
-          setting.controlEl.createEl("a", { text: "Open vault manager", cls: "native-notes-sync-guide", attr: { href: "obsidian://choose-vault" } });
-          setting.controlEl.createEl("a", { text: "Setup guide", cls: "native-notes-sync-guide", attr: { href: SETUP_URL, target: "_blank", rel: "noopener noreferrer" } });
+        definition("New device and backup", "Open the existing iCloud vault on a new device, then enable Native Notes. Keep a separate full-vault backup; cloud deletions can propagate to every device.", (setting) => {
+          setting.controlEl.createEl("a", { text: "Setup and recovery guide", cls: "native-notes-sync-guide", attr: { href: SETUP_URL, target: "_blank", rel: "noopener noreferrer" } });
         })
       ];
-      return [{ type: "group", heading: "Cloud folders", cls: "native-notes-settings-section", items }];
+      return [{ type: "group", heading: "iCloud and recovery", cls: "native-notes-settings-section", items }];
     }
     module2.exports = { syncDefinitions, SyncHistoryModal: SyncHistoryModal2 };
   }
@@ -3830,6 +4088,7 @@ var require_controller = __commonJS({
       async pause() {
         this.config.enabled = false;
         this.generation++;
+        this.plugin.icloud?.cancelCapture();
         if (this.timer !== null) window.clearTimeout(this.timer);
         this.timer = null;
         if (!this.destroyed && !this.plugin.disposed) {
@@ -3861,7 +4120,7 @@ var require_controller = __commonJS({
           if (!alive()) return;
           this.setStatus("Saving local recovery snapshots\u2026");
           const local = this.files(alive);
-          let count = 0, skipped = 0;
+          let count = 0, skipped = 0, shared = 0, sharedSkipped = 0, sharedError = "";
           for (const path of await local.list()) {
             if (!alive()) return;
             let bytes;
@@ -3876,9 +4135,18 @@ var require_controller = __commonJS({
             if (bytes) {
               await this.storage.remember(path, bytes, "Cloud folder recovery");
               count++;
+              if (!alive()) return;
+              if (!sharedError) {
+                try {
+                  if (await this.plugin.icloud?.capture(path, bytes)) shared++;
+                } catch (error) {
+                  if (error.code === "NN_SHARED_PATH") sharedSkipped++;
+                  else sharedError = error.message || "Shared history could not be saved.";
+                }
+              }
             }
           }
-          if (alive()) this.setStatus(`Recovery checked for ${count} file${count === 1 ? "" : "s"}${skipped ? ` \xB7 ${skipped} skipped (unavailable or over 10 MiB)` : ""} \xB7 cloud delivery is managed by your device.`);
+          if (alive()) this.setStatus(`Recovery checked for ${count} file${count === 1 ? "" : "s"}${skipped ? ` \xB7 ${skipped} skipped (unavailable or over 10 MiB)` : ""}${shared ? ` \xB7 ${shared} new vault versions` : ""}${sharedSkipped ? ` \xB7 ${sharedSkipped} names excluded from portable history` : ""}${sharedError ? ` \xB7 ${sharedError}` : ""} \xB7 cloud delivery is managed by your device.`);
         })().catch((error) => {
           if (this.isCurrent(generation)) this.setStatus(error.message || "Recovery snapshot could not be saved.");
           throw error;
@@ -3901,6 +4169,440 @@ var require_controller = __commonJS({
   }
 });
 
+// src/sync/shared-history.js
+var require_shared_history = __commonJS({
+  "src/sync/shared-history.js"(exports2, module2) {
+    "use strict";
+    var ROOT = ".native-notes-history/v1";
+    var DEVICE_KEY = "native-notes-shared-history-device-v1";
+    var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+    var LIMITS = Object.freeze({
+      fileBytes: 10 * 1024 * 1024,
+      deviceBytes: 100 * 1024 * 1024,
+      deviceRecords: 1e3,
+      records: 5e3,
+      devices: 1e3,
+      metadataBytes: 16384,
+      indexCharacters: 8 * 1024 * 1024
+    });
+    var STOPPED = "Shared recovery stopped.";
+    function key(value) {
+      return value.normalize("NFKC").toUpperCase().toLowerCase();
+    }
+    function controls(value) {
+      return Array.from(value).some((char) => char.codePointAt(0) < 32 || char.codePointAt(0) === 127);
+    }
+    function isBytes(value) {
+      return ArrayBuffer.isView(value) && Object.prototype.toString.call(value) === "[object Uint8Array]";
+    }
+    function pathError(message = "This path is excluded from shared recovery.") {
+      const error = new Error(message);
+      error.code = "NN_SHARED_PATH";
+      return error;
+    }
+    function safePath(path, configDir = "") {
+      if (typeof path !== "string" || !path || path.length > 4096 || controls(path)) throw pathError();
+      const parts = path.split("/");
+      if (parts.length > 64) throw pathError("Shared recovery supports paths up to 64 folders deep.");
+      for (const part of parts) {
+        const normalized = part.normalize("NFKC");
+        if (!normalized || normalized.startsWith(".") || /[\\/:*?"<>|]/.test(normalized) || /[. ]$/.test(normalized) || /^(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(normalized)) throw pathError();
+      }
+      const canonical = key(path), excluded = [configDir || "", "Native Notes Restored"].filter(Boolean).map(key);
+      if (excluded.some((folder) => canonical === folder || canonical.startsWith(`${folder}/`))) throw pathError();
+      return path;
+    }
+    function pathConflict(first, second) {
+      const a = first.split("/"), b = second.split("/");
+      for (let i = 0; i < Math.min(a.length, b.length); i++) {
+        if (key(a[i]) !== key(b[i])) return false;
+        if (a[i] !== b[i]) return true;
+      }
+      return a.length !== b.length;
+    }
+    function utf8Size(value) {
+      return new TextEncoder().encode(value).byteLength;
+    }
+    function limitError() {
+      return new Error("Shared recovery storage is full. Existing versions are retained. Archive a device\u2019s history folder outside the vault before capturing more versions.");
+    }
+    var SharedHistory = class {
+      constructor(app, { alive = () => true, cryptoProvider = typeof window !== "undefined" ? window.crypto : void 0, limits = {} } = {}) {
+        this.app = app;
+        this.adapter = app.vault.adapter;
+        this.alive = alive;
+        this.crypto = cryptoProvider;
+        this.limits = { ...LIMITS };
+        for (const name of Object.keys(LIMITS)) if (Number.isSafeInteger(limits[name]) && limits[name] > 0) this.limits[name] = Math.min(LIMITS[name], limits[name]);
+        this.closed = false;
+        this.queue = Promise.resolve();
+        this.index = /* @__PURE__ */ new Map();
+        this.writer = null;
+        this.summary = { records: 0, unavailable: 0, invalid: 0, incomplete: 0, bytes: 0, devices: 0, limited: false };
+      }
+      check() {
+        if (this.closed || !this.alive()) throw new Error(STOPPED);
+      }
+      async io(action) {
+        this.check();
+        const result = await action();
+        this.check();
+        return result;
+      }
+      uuid() {
+        this.check();
+        const value = this.crypto?.randomUUID?.();
+        if (!UUID.test(value || "")) throw new Error("Secure recovery identifiers are unavailable on this device.");
+        return value;
+      }
+      async hash(bytes) {
+        if (!this.crypto?.subtle) throw new Error("Recovery verification is unavailable on this device.");
+        const digest = await this.io(() => this.crypto.subtle.digest("SHA-256", bytes));
+        return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+      }
+      device() {
+        this.check();
+        if (this.deviceId) return this.deviceId;
+        let id = this.app.loadLocalStorage(DEVICE_KEY);
+        if (!UUID.test(id || "")) {
+          id = this.uuid();
+          this.app.saveLocalStorage(DEVICE_KEY, id);
+        }
+        this.check();
+        this.deviceId = id;
+        return id;
+      }
+      paths(device, id) {
+        return { json: `${ROOT}/${device}/${id}.json`, bin: `${ROOT}/${device}/${id}.bin` };
+      }
+      async list(path) {
+        if (!await this.io(() => this.adapter.exists(path))) return { files: [], folders: [] };
+        const result = await this.io(() => this.adapter.list(path));
+        if (!result || !Array.isArray(result.files) || !Array.isArray(result.folders)) throw new Error("Shared history could not be listed. Try again after iCloud finishes downloading.");
+        return result;
+      }
+      async stat(path) {
+        return this.io(() => this.adapter.stat(path));
+      }
+      validate(record, device, id) {
+        if (!record || record.version !== 1 || record.id !== id || record.device !== device || !UUID.test(id) || !UUID.test(device) || typeof record.hash !== "string" || !/^[a-f0-9]{64}$/.test(record.hash) || !Number.isSafeInteger(record.size) || record.size < 0 || record.size > this.limits.fileBytes || !Number.isSafeInteger(record.modified) || record.modified < 0 || record.modified > 864e13 || typeof record.reason !== "string" || record.reason.length > 200 || controls(record.reason)) throw new Error("Invalid shared recovery metadata.");
+        safePath(record.path, this.app.vault.configDir);
+        return { version: 1, id, device, path: record.path, hash: record.hash, size: record.size, modified: record.modified, reason: record.reason };
+      }
+      async metadata(device, id) {
+        const paths = this.paths(device, id), info = await this.stat(paths.json);
+        if (!info || info.type !== "file" || !Number.isSafeInteger(info.size) || info.size < 0 || info.size > this.limits.metadataBytes) throw new Error("Invalid shared recovery metadata.");
+        const text = await this.io(() => this.adapter.read(paths.json));
+        if (typeof text !== "string" || utf8Size(text) > this.limits.metadataBytes) throw new Error("Invalid shared recovery metadata.");
+        return this.validate(JSON.parse(text), device, id);
+      }
+      async scanDevice(device, remaining = this.limits.records) {
+        const folder = `${ROOT}/${device}`, listing = await this.list(folder);
+        if (listing.files.length + listing.folders.length > remaining * 2) return { limited: true, records: [], count: 0, bytes: 0, invalid: 0, incomplete: 0, inspected: 0 };
+        const ids = /* @__PURE__ */ new Set(), records = [], sizes = /* @__PURE__ */ new Map();
+        let bytes = 0, invalid = listing.folders.length, incomplete = 0;
+        for (const path of new Set(listing.files)) {
+          if (typeof path !== "string" || !path.startsWith(`${folder}/`)) {
+            invalid++;
+            continue;
+          }
+          const name = path.slice(folder.length + 1), match = /^([a-f0-9-]+)\.(json|bin)$/.exec(name);
+          if (!match || !UUID.test(match[1])) {
+            invalid++;
+            continue;
+          }
+          ids.add(match[1]);
+          let stat;
+          try {
+            stat = await this.stat(path);
+          } catch {
+            this.check();
+            invalid++;
+            continue;
+          }
+          if (!stat || stat.type !== "file" || !Number.isSafeInteger(stat.size) || stat.size < 0) {
+            invalid++;
+            continue;
+          }
+          bytes += stat.size;
+          sizes.set(name, stat.size);
+          if (match[2] === "json") {
+            try {
+              records.push(await this.metadata(device, match[1]));
+            } catch {
+              this.check();
+              invalid++;
+            }
+          }
+        }
+        for (const record of records) {
+          if (sizes.get(`${record.id}.bin`) !== record.size) {
+            record.unavailable = true;
+            record.unavailableReason = "The snapshot is still downloading or its file is incomplete.";
+          }
+        }
+        const committed = new Set(records.map((record) => record.id));
+        for (const id of ids) if (!committed.has(id)) incomplete++;
+        return { records, count: ids.size, bytes, invalid, incomplete, inspected: listing.files.length + listing.folders.length };
+      }
+      async history(path) {
+        this.check();
+        if (path !== void 0) safePath(path, this.app.vault.configDir);
+        const listing = await this.list(ROOT), records = [], seen = /* @__PURE__ */ new Set();
+        const summary = { records: 0, unavailable: 0, invalid: listing.files.length, incomplete: 0, bytes: 0, devices: 0, limited: false };
+        if (listing.folders.length > this.limits.devices) throw new Error("Shared history has too many device folders. Archive older device folders outside the vault.");
+        let inspected = listing.files.length;
+        if (inspected > this.limits.records * 2) {
+          summary.limited = true;
+          this.summary = summary;
+          this.index.clear();
+          return [];
+        }
+        for (const folder of listing.folders.slice().sort()) {
+          const device = typeof folder === "string" && folder.startsWith(`${ROOT}/`) ? folder.slice(ROOT.length + 1) : "";
+          if (!UUID.test(device) || seen.has(device)) {
+            summary.invalid++;
+            continue;
+          }
+          seen.add(device);
+          summary.devices++;
+          const scan = await this.scanDevice(device, Math.floor((this.limits.records * 2 - inspected) / 2));
+          if (scan.limited) {
+            summary.limited = true;
+            break;
+          }
+          inspected += scan.inspected;
+          summary.invalid += scan.invalid;
+          summary.incomplete += scan.incomplete;
+          summary.bytes += scan.bytes;
+          if (records.length + scan.records.length > this.limits.records) {
+            summary.limited = true;
+            break;
+          }
+          records.push(...scan.records);
+        }
+        const aliases = /* @__PURE__ */ new Map(), identifiers = /* @__PURE__ */ new Map();
+        let indexedCharacters = 0;
+        indexing: for (const record of records) {
+          const group = identifiers.get(record.id) || [];
+          group.push(record);
+          identifiers.set(record.id, group);
+          const parts = record.path.split("/");
+          let prefix = "";
+          for (let i = 1; i <= parts.length; i++) {
+            prefix = prefix ? `${prefix}/${parts[i - 1]}` : parts[0];
+            indexedCharacters += prefix.length;
+            if (indexedCharacters > this.limits.indexCharacters) {
+              summary.limited = true;
+              break indexing;
+            }
+            const canonical = key(prefix), items = aliases.get(canonical) || [];
+            items.push({ record, prefix, file: i === parts.length });
+            aliases.set(canonical, items);
+          }
+        }
+        for (const group of aliases.values()) if (new Set(group.map((item) => item.prefix)).size > 1 || group.some((item) => item.file) && group.some((item) => !item.file)) {
+          for (const { record } of group) {
+            record.unavailable = true;
+            record.unavailableReason = "These paths have conflicting case, Unicode spelling, or folder names. Rename the original notes before capturing new versions.";
+          }
+        }
+        for (const group of identifiers.values()) if (group.length > 1) for (const record of group) {
+          record.unavailable = true;
+          record.unavailableReason = "Duplicate snapshot identifiers cannot be restored safely.";
+        }
+        records.sort((a, b) => b.modified - a.modified || a.id.localeCompare(b.id));
+        summary.records = records.length;
+        summary.unavailable = records.filter((record) => record.unavailable).length;
+        this.check();
+        this.summary = summary;
+        this.index = new Map(records.map((record) => [record.id, record]));
+        return records.filter((record) => path === void 0 || record.path === path).map((record) => ({ ...record }));
+      }
+      stats() {
+        return { ...this.summary };
+      }
+      async readSnapshot(id) {
+        this.check();
+        if (typeof id !== "string" || !UUID.test(id)) throw new Error("Invalid shared recovery identifier.");
+        await this.history();
+        if (this.summary.limited) throw new Error("Shared history exceeds the inspection limit. Archive older device folders outside the vault before restoring.");
+        const known = this.index.get(id);
+        if (!known || known.unavailable) throw new Error(known?.unavailableReason || "This shared version is unavailable. Refresh after iCloud finishes downloading.");
+        const record = await this.metadata(known.device, id);
+        if (JSON.stringify(record) !== JSON.stringify(this.validate(known, known.device, id))) throw new Error("This shared version changed. Refresh history before restoring.");
+        const path = this.paths(record.device, id).bin, stat = await this.stat(path);
+        if (!stat || stat.type !== "file" || stat.size !== record.size) throw new Error("This shared version is incomplete. Wait for iCloud to download it.");
+        const buffer = await this.io(() => this.adapter.readBinary(path));
+        if (Object.prototype.toString.call(buffer) !== "[object ArrayBuffer]") throw new Error("Invalid shared recovery data.");
+        const bytes = new Uint8Array(buffer);
+        if (bytes.byteLength !== record.size || bytes.byteLength > this.limits.fileBytes || await this.hash(bytes) !== record.hash) throw new Error("This shared version failed verification. Choose another version.");
+        return bytes.slice();
+      }
+      remember(path, bytes, reason = "Recovery snapshot") {
+        try {
+          this.check();
+          safePath(path, this.app.vault.configDir);
+          if (!isBytes(bytes) || bytes.byteLength > this.limits.fileBytes) throw new Error("A selected file exceeds the 10 MiB shared recovery limit or contains invalid data.");
+          if (typeof reason !== "string" || reason.length > 200 || controls(reason)) throw new Error("Invalid recovery description.");
+        } catch (error) {
+          return Promise.reject(error);
+        }
+        const snapshot = bytes.slice();
+        const result = this.queue.then(() => this.commit(path, snapshot, reason));
+        this.queue = result.catch(() => {
+        });
+        return result;
+      }
+      async writerState() {
+        const device = this.device();
+        if (this.writer && Date.now() - this.writer.checked < 3e4) return this.writer;
+        const scan = await this.scanDevice(device), latest = /* @__PURE__ */ new Map();
+        if (scan.limited) throw limitError();
+        for (const record of scan.records.sort((a, b) => a.modified - b.modified)) latest.set(record.path, record);
+        this.writer = { ...scan, latest, checked: Date.now() };
+        return this.writer;
+      }
+      async folders(device) {
+        for (const path of [".native-notes-history", ROOT, `${ROOT}/${device}`]) {
+          const stat = await this.stat(path);
+          if (stat && stat.type !== "folder") throw new Error("A file occupies the shared history folder.");
+          if (!stat) {
+            try {
+              await this.io(() => this.adapter.mkdir(path));
+            } catch (error) {
+              this.check();
+              if ((await this.stat(path))?.type !== "folder") throw error;
+            }
+          }
+        }
+      }
+      async absent(path) {
+        if (await this.io(() => this.adapter.exists(path))) throw new Error("That snapshot identifier already exists. No existing version was changed.");
+      }
+      async commit(path, snapshot, reason) {
+        this.check();
+        const hash = await this.hash(snapshot), writer = await this.writerState();
+        const previous = writer.latest.get(path);
+        if (previous?.hash === hash && previous.size === snapshot.byteLength && !previous.unavailable) return { status: "unchanged", id: previous.id };
+        for (const existing of writer.latest.keys()) if (existing !== path && pathConflict(existing, path)) throw pathError("A shared history path has conflicting case, Unicode spelling, or folder names. Use a distinct note name.");
+        const device = this.device(), id = this.uuid(), paths = this.paths(device, id);
+        const record = {
+          version: 1,
+          id,
+          device,
+          path,
+          hash,
+          size: snapshot.byteLength,
+          modified: Math.max(Date.now(), Math.min(previous?.modified || 0, Date.now()) + 1),
+          reason
+        };
+        const json = JSON.stringify(record), addedBytes = snapshot.byteLength + utf8Size(json);
+        if (utf8Size(json) > this.limits.metadataBytes) throw new Error("This shared snapshot\u2019s metadata is too large.");
+        if (writer.invalid || writer.count >= this.limits.deviceRecords || writer.bytes + addedBytes > this.limits.deviceBytes) throw limitError();
+        await this.folders(device);
+        await this.absent(paths.bin);
+        await this.absent(paths.json);
+        this.check();
+        try {
+          await this.io(() => this.adapter.writeBinary(paths.bin, snapshot.buffer));
+          await this.absent(paths.json);
+          await this.io(() => this.adapter.write(paths.json, json));
+        } catch (error) {
+          this.writer = null;
+          throw error;
+        }
+        writer.count++;
+        writer.bytes += addedBytes;
+        writer.latest.set(path, record);
+        this.index.set(id, record);
+        return { status: "saved", id };
+      }
+      close() {
+        this.closed = true;
+        this.writer = null;
+        this.index.clear();
+      }
+    };
+    module2.exports = { SharedHistory, ROOT, DEVICE_KEY, LIMITS, safePath };
+  }
+});
+
+// src/sync/icloud-controller.js
+var require_icloud_controller = __commonJS({
+  "src/sync/icloud-controller.js"(exports2, module2) {
+    "use strict";
+    var { inspectICloudLocation } = require_icloud();
+    var { SharedHistory } = require_shared_history();
+    var ICLOUD_KEY = "native-notes-icloud-v1";
+    function normalizeICloudSettings(value) {
+      return { sharedHistory: value?.sharedHistory === true, mobileConfirmed: value?.mobileConfirmed === true };
+    }
+    var ICloudTools2 = class {
+      constructor(plugin) {
+        this.plugin = plugin;
+        this.app = plugin.app;
+        this.config = normalizeICloudSettings(this.app.loadLocalStorage(ICLOUD_KEY));
+        this.reader = null;
+        this.writer = null;
+        this.closed = false;
+      }
+      alive() {
+        return !this.closed && !this.plugin.disposed;
+      }
+      location() {
+        return inspectICloudLocation(this.app, { mobileConfirmed: this.config.mobileConfirmed });
+      }
+      save() {
+        if (!this.alive()) return;
+        this.app.saveLocalStorage(ICLOUD_KEY, { ...this.config });
+      }
+      confirmMobile(value) {
+        if (!this.alive()) return;
+        this.config.mobileConfirmed = value === true;
+        if (!value) this.setSharedEnabled(false);
+        this.save();
+      }
+      setSharedEnabled(enabled) {
+        if (!this.alive()) return;
+        if (enabled && this.location().kind !== "ready") {
+          throw new Error("Complete the iCloud folder check before sharing recovery history.");
+        }
+        this.writer?.close();
+        this.writer = null;
+        this.config.sharedHistory = enabled === true;
+        this.save();
+      }
+      async capture(path, bytes) {
+        if (!this.alive() || !this.config.sharedHistory) return false;
+        if (this.location().kind !== "ready") {
+          throw new Error("Shared history paused: check this vault\u2019s iCloud folder in setup.");
+        }
+        if (!this.writer) this.writer = new SharedHistory(this.app, { alive: () => this.alive() && this.config.sharedHistory && this.plugin.sync.config.enabled });
+        const result = await this.writer.remember(path, bytes, "iCloud recovery");
+        return this.alive() && this.config.sharedHistory && result.status === "saved";
+      }
+      historyStorage() {
+        if (!this.alive()) throw new Error("iCloud tools stopped.");
+        if (!this.reader) this.reader = new SharedHistory(this.app, { alive: () => this.alive() });
+        return this.reader;
+      }
+      cancelCapture() {
+        this.writer?.close();
+        this.writer = null;
+      }
+      destroy() {
+        this.closed = true;
+        this.reader?.close();
+        this.writer?.close();
+        this.reader = null;
+        this.writer = null;
+      }
+    };
+    module2.exports = { ICloudTools: ICloudTools2, ICLOUD_KEY, normalizeICloudSettings };
+  }
+});
+
 // src/main.js
 var { Plugin, Notice } = require("obsidian");
 var { normalizeSettings, CORE_FEATURES } = require_settings();
@@ -3911,6 +4613,7 @@ var { FloatingOutline } = require_outline();
 var { MediaAlignment } = require_media_alignment();
 var { DOMState } = require_dom_state();
 var { NativeSync } = require_controller();
+var { ICloudTools } = require_icloud_controller();
 var { SyncHistoryModal } = require_ui();
 module.exports = class NativeNotes extends Plugin {
   async onload() {
@@ -3923,6 +4626,7 @@ module.exports = class NativeNotes extends Plugin {
     const stored = await this.loadData();
     this.settings = normalizeSettings(stored);
     this.sync = new NativeSync(this);
+    this.icloud = new ICloudTools(this);
     this.sync.load();
     this.settingTab = new NativeNotesSettingsTab(this.app, this);
     this.addSettingTab(this.settingTab);
@@ -3930,12 +4634,12 @@ module.exports = class NativeNotes extends Plugin {
     this.outline = this.addChild(new FloatingOutline(this));
     this.mediaAlignment = this.addChild(new MediaAlignment(this));
     this.addCommand({ id: "toggle-outline", name: "Toggle floating outline", checkCallback: (checking) => this.featureEnabled("outline") && this.outline.toggleActive(checking) });
-    this.addCommand({ id: "cloud-recovery-snapshot", name: "Save cloud folder recovery snapshot", callback: () => {
+    this.addCommand({ id: "cloud-recovery-snapshot", name: "Save recovery snapshot", callback: () => {
       void this.sync.run().catch((error) => {
         if (!this.disposed) new Notice(error.message);
       });
     } });
-    this.addCommand({ id: "cloud-recovery-history", name: "Open cloud folder recovery history", callback: () => new SyncHistoryModal(this).open() });
+    this.addCommand({ id: "cloud-recovery-history", name: "Open local recovery history", callback: () => new SyncHistoryModal(this).open() });
     this.registerEvent(this.app.workspace.on("window-open", (_window, win) => this.attachDocument(win.document)));
     this.registerEvent(this.app.workspace.on("window-close", (_window, win) => this.detachDocument(win.document)));
     this.registerEvent(this.app.workspace.on("layout-change", () => this.findDocuments()));
@@ -4019,6 +4723,7 @@ module.exports = class NativeNotes extends Plugin {
   onunload() {
     this.disposed = true;
     this.sync?.destroy();
+    this.icloud?.destroy();
     for (const modal of this.settingsModals) modal.close();
     this.settingsModals.clear();
     for (const doc of this.documents.keys()) this.detachDocument(doc);
