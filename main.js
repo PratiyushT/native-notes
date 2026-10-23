@@ -7762,14 +7762,14 @@ var require_settings = __commonJS({
     "use strict";
     var { EMPTY_LINE_MARKS } = require_icons();
     var FEATURE_LABELS = {
-      outline: ["Floating outline", "Browse, search, and collapse headings from the note toolbar. Replaces the need for Dynamic Outline."],
+      outline: ["Floating outline", "Browse, search, and collapse headings from the note toolbar."],
       outlineLevels: ["Show heading levels", "Show H1\u2013H6 labels beside headings in the floating outline."],
       emptyLineMarks: ["Empty line marks", "Show a subtle symbol on empty lines in the editor. Reading view stays clear."],
       nestedBullets: ["Nested bullet shapes", "Use solid, hollow, and square bullets for different indentation levels."],
       tableSpacing: ["Extra table spacing", "Add space above and below tables. When off, use Obsidian\u2019s default spacing."],
       imageAlignment: ["Image alignment", "Show left, center, and right alignment controls for images and diagrams."],
       icons: ["Folder and note icons", "Show distinct icons in the sidebar. Expanded folders use an open-folder icon."],
-      codeHighlighting: ["Built-in code highlighting", "Highlight code with bundled languages and colors that follow the Native Notes theme. Turn off Shiki Highlighter before enabling this to avoid competing renderers."],
+      codeHighlighting: ["Built-in code highlighting", "Highlight code with bundled languages and colors that follow the Native Notes theme."],
       codeLanguages: ["Show language beside filename", "Show the code language next to a filename. Blocks without filenames always show their language."],
       codeHeaders: ["Editable code headers", "Click a filename or language in a rendered code header in Live Preview to change it. Reading view remains read-only."]
     };
