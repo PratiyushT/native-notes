@@ -1,9 +1,9 @@
 {
   "id": "native-notes",
   "name": "Native Notes",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "minAppVersion": "1.13.0",
-  "description": "Apple-inspired Obsidian design, built-in code highlighting, editor tools, and portable profiles.",
+  "description": "Apple-inspired design, built-in code highlighting, editor tools, and portable profiles.",
   "author": "PratiyushT",
   "authorUrl": "https://github.com/PratiyushT",
   "isDesktopOnly": false
