@@ -2871,12 +2871,12 @@ body.nn-enabled.nn-image-alignment.is-mobile .nn-alignment-menu .nn-alignment-ch
 .native-notes-sync-modal .native-notes-sync-history-row > strong { overflow-wrap: anywhere; }
 .native-notes-sync-modal .native-notes-sync-history-row pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow: auto; padding: 12px; background: var(--background-secondary); border-radius: 8px; font-size: var(--font-ui-small); }
 .native-notes-settings .setting-item-description { overflow-wrap: anywhere; }
-.native-notes-sync-modal .native-notes-icloud-location { padding: 16px; border: 1px solid var(--background-modifier-border); border-radius: 12px; background: var(--background-secondary); }
-.native-notes-sync-modal .native-notes-icloud-location p { margin-bottom: 0; color: var(--text-muted); }
-.native-notes-sync-modal .native-notes-icloud-steps { padding-inline-start: 24px; }
-.native-notes-sync-modal .native-notes-icloud-steps li { padding-inline-start: 4px; margin-block: 16px; }
-.native-notes-sync-modal .native-notes-icloud-steps p { margin-block: 4px 0; color: var(--text-muted); line-height: 1.5; }
-.native-notes-sync-modal .native-notes-icloud-actions { display: flex; flex-wrap: wrap; gap: 16px; padding-block: 16px; }
+.native-notes-sync-modal .native-notes-cloud-location { padding: 16px; border: 1px solid var(--background-modifier-border); border-radius: 12px; background: var(--background-secondary); }
+.native-notes-sync-modal .native-notes-cloud-location p { margin-bottom: 0; color: var(--text-muted); }
+.native-notes-sync-modal .native-notes-cloud-steps { padding-inline-start: 24px; }
+.native-notes-sync-modal .native-notes-cloud-steps li { padding-inline-start: 4px; margin-block: 16px; }
+.native-notes-sync-modal .native-notes-cloud-steps p { margin-block: 4px 0; color: var(--text-muted); line-height: 1.5; }
+.native-notes-sync-modal .native-notes-cloud-actions { display: flex; flex-wrap: wrap; gap: 16px; padding-block: 16px; }
 .native-notes-sync-modal h3 { margin-block: 24px 12px; }
 @media (max-width: 600px) {
   .native-notes-settings .native-notes-settings-section { margin-top: 24px; }

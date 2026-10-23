@@ -569,10 +569,10 @@ var require_icloud_ui = __commonJS({
         this.plugin.settingsModals.add(this);
         this.setTitle("Set up iCloud");
         this.contentEl.classList.add("native-notes-sync-modal");
-        const status = this.contentEl.createDiv({ cls: "native-notes-icloud-location" });
+        const status = this.contentEl.createDiv({ cls: "native-notes-cloud-location" });
         const statusTitle = status.createEl("strong"), statusDetail = status.createEl("p");
         const refreshLocation = () => {
-          const location = this.plugin.icloud.location();
+          const location = this.plugin.cloudFolders.location();
           statusTitle.textContent = location.title;
           statusDetail.textContent = location.detail;
         };
@@ -580,7 +580,7 @@ var require_icloud_ui = __commonJS({
         this.contentEl.createEl("p", { text: "Your Apple account and iCloud Drive transfer the vault. Native Notes does not sign in to Apple, move your vault, or verify cloud delivery." });
         for (const [mode, title] of [["existing", "Set up this vault"], ["new-device", "Open on another device"]]) {
           this.contentEl.createEl("h3", { text: title });
-          const list = this.contentEl.createEl("ol", { cls: "native-notes-icloud-steps" });
+          const list = this.contentEl.createEl("ol", { cls: "native-notes-cloud-steps" });
           for (const step of setupSteps(Platform, mode)) {
             const item = list.createEl("li");
             item.createEl("strong", { text: step.label });
@@ -588,16 +588,16 @@ var require_icloud_ui = __commonJS({
           }
         }
         if (Platform.isIosApp) {
-          new Setting(this.contentEl).setName("I checked the iCloud folder").setDesc("In Files, this vault is inside iCloud Drive \u2192 Obsidian, using the folder with the Obsidian app icon. This records your confirmation only.").addToggle((toggle) => toggle.setValue(this.plugin.icloud.config.mobileConfirmed).onChange((value) => {
-            if (!this.live || this.plugin.disposed) return;
-            this.plugin.icloud.confirmMobile(value);
+          new Setting(this.contentEl).setName("I checked the iCloud folder").setDesc("In Files, this vault is inside iCloud Drive \u2192 Obsidian, using the folder with the Obsidian app icon. This records your confirmation only.").addToggle((toggle) => toggle.setValue(this.plugin.cloudFolders.config.mobileConfirmed).onChange((value) => {
+            if (!this.live || this.plugin.disposed || this.plugin.cloudFolders.config.provider !== "icloud") return;
+            this.plugin.cloudFolders.confirmMobile(value);
             refreshLocation();
             this.afterSave();
           }));
         }
         this.contentEl.createEl("h3", { text: "Check both directions" });
         this.contentEl.createEl("p", { text: "Create a small test note on the first device. Open the same vault on the second and check the exact text. Add a sentence there, then check it on the first device. Verify a small attachment too before relying on the setup." });
-        const links = this.contentEl.createDiv({ cls: "native-notes-icloud-actions" });
+        const links = this.contentEl.createDiv({ cls: "native-notes-cloud-actions" });
         links.createEl("a", { text: "Open vault manager", cls: "native-notes-sync-guide", attr: { href: VAULT_MANAGER_URL } });
         links.createEl("a", { text: "Obsidian\u2019s iCloud guide", cls: "native-notes-sync-guide", attr: { href: ICLOUD_GUIDE_URL, target: "_blank", rel: "noopener noreferrer" } });
       }
@@ -611,12 +611,245 @@ var require_icloud_ui = __commonJS({
   }
 });
 
+// src/sync/onedrive.js
+var require_onedrive = __commonJS({
+  "src/sync/onedrive.js"(exports2, module2) {
+    var { Platform, FileSystemAdapter } = require("obsidian");
+    var ONEDRIVE_GUIDE_URL = "https://help.obsidian.md/sync-notes#OneDrive";
+    var VAULT_MANAGER_URL = "obsidian://choose-vault";
+    function platformKind(platform) {
+      if (!platform || typeof platform !== "object") return "unknown";
+      const {
+        isDesktopApp: desktop,
+        isMobileApp: mobile,
+        isIosApp: ios,
+        isAndroidApp: android,
+        isMacOS: mac,
+        isWin: win,
+        isLinux: linux
+      } = platform;
+      if (desktop && mobile || ios && android || desktop && (ios || android) || win && (mac || linux || ios || android) || linux && (mac || ios) || android && mac || ios && mobile === false) return "unknown";
+      if (ios) return "ios";
+      if (android || desktop && linux) return "unsupported";
+      if (desktop && !mobile && mac) return "mac";
+      if (desktop && !mobile && win) return "windows";
+      return "unknown";
+    }
+    function oneDriveFolder(name, cloudStorage = false) {
+      return cloudStorage ? /^OneDrive-\S(?:.*\S)?$/.test(name) : /^OneDrive(?: - \S(?:.*\S)?)?$/i.test(name);
+    }
+    function normalizePath(value, host) {
+      if (typeof value !== "string" || !value || value.length > 4096 || Array.from(value).some((char) => {
+        const code = char.codePointAt(0);
+        return code < 32 || code >= 127 && code <= 159 || code >= 55296 && code <= 57343;
+      })) return null;
+      if (host === "mac" ? !value.startsWith("/") || value.includes("\\") : !/^[a-z]:[\\/]/i.test(value)) return null;
+      const path = value.replace(/\\/g, "/");
+      if (path.includes("//")) return null;
+      const normalized = path.replace(/\/$/, "");
+      const parts = normalized.split("/").slice(1);
+      if (!parts.length || parts.some((part) => {
+        const compatible = part.normalize("NFKC");
+        return !part || part.trim() !== part || [".", ".."].includes(compatible) || /[\\/:]/.test(compatible) || /%(?:2e|2f|5c|0[0-9a-f]|1[0-9a-f]|7f)/i.test(part) || host === "windows" && (/[<>"|?*]/.test(part) || /[. ]$/.test(part) || /^(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(compatible));
+      })) return null;
+      const providerIndex = parts.findIndex((part) => oneDriveFolder(part) || oneDriveFolder(part, true));
+      if (host === "mac" && (parts[0] === "Volumes" && parts.length <= 2 || parts[0] === "Users" && parts.length <= 2) || host === "windows" && parts[0].toLowerCase() === "users" && parts.length <= 2 || providerIndex === parts.length - 1 || parts.at(-2) === "Library" && ["CloudStorage", "Mobile Documents"].includes(parts.at(-1))) return null;
+      if (parts.some((part) => /^(?:icloud(?: drive|drive)?|icloud~.*|com~apple~clouddocs)$/i.test(part)) || parts.some((part, index) => part === "Library" && parts[index + 1] === "Mobile Documents")) return null;
+      return { path: normalized, parts };
+    }
+    function desktopPath(app, host, FileSystemAdapterClass) {
+      if (host !== "mac" && host !== "windows") return null;
+      try {
+        const adapter = app?.vault?.adapter;
+        if (typeof FileSystemAdapterClass !== "function" || !(adapter instanceof FileSystemAdapterClass)) return null;
+        return normalizePath(adapter.getBasePath(), host);
+      } catch {
+        return null;
+      }
+    }
+    function readOneDrivePath(app, { platform = Platform, FileSystemAdapterClass = FileSystemAdapter } = {}) {
+      return desktopPath(app, platformKind(platform), FileSystemAdapterClass)?.path ?? null;
+    }
+    function standardOneDriveLocation({ path, parts }, host) {
+      if (host === "windows") return /^c:/i.test(path) && parts.length > 3 && parts[0].toLowerCase() === "users" && oneDriveFolder(parts[2]);
+      if (parts[0] !== "Users") return false;
+      if (parts.length > 3 && oneDriveFolder(parts[2])) return true;
+      return parts.length > 5 && parts[2] === "Library" && parts[3] === "CloudStorage" && oneDriveFolder(parts[4], true);
+    }
+    function location(kind, title, detail, supportsSetup, confirmationPath = null) {
+      return { kind, title, detail, supportsSetup, confirmationPath };
+    }
+    function inspectOneDriveLocation(app, {
+      platform = Platform,
+      FileSystemAdapterClass = FileSystemAdapter,
+      confirmedPath = ""
+    } = {}) {
+      const host = platformKind(platform);
+      if (host === "ios") return location(
+        "unsupported",
+        "OneDrive vault setup is for Mac and Windows",
+        "Obsidian on iPhone and iPad cannot directly open a OneDrive-backed vault through the OneDrive app. Use iCloud for Apple mobile devices. Native Notes appearance and local recovery remain available.",
+        false
+      );
+      if (host === "unsupported") return location(
+        "unsupported",
+        "OneDrive desktop setup is unavailable",
+        "This setup uses the OneDrive desktop app on macOS or Windows. Native client setup is not offered here on Linux or Android; Native Notes appearance and local recovery remain available.",
+        false
+      );
+      if (host === "unknown") return location(
+        "unverified",
+        "Device could not be identified",
+        "Native Notes could not identify a supported Mac or Windows app environment. Check the official OneDrive guide.",
+        false
+      );
+      const current = desktopPath(app, host, FileSystemAdapterClass);
+      if (!current) return location(
+        "unverified",
+        "Vault location could not be verified",
+        "Choose a dedicated vault folder inside OneDrive in Finder or File Explorer. A valid desktop folder outside iCloud is required; Native Notes does not move files or start transfers.",
+        true
+      );
+      if (standardOneDriveLocation(current, host)) return location(
+        "ready",
+        "OneDrive vault folder found",
+        "This checks the folder location only. Native Notes cannot verify OneDrive sign-in, download status, or delivery. Check a test note on another device.",
+        true,
+        current.path
+      );
+      if (typeof confirmedPath === "string" && confirmedPath === current.path) return location(
+        "ready",
+        "OneDrive location confirmed by you",
+        "You confirmed this exact vault folder is managed by the OneDrive desktop app. Native Notes cannot verify OneDrive sign-in, download status, or delivery. Moving the vault requires a new confirmation.",
+        true,
+        current.path
+      );
+      return location(
+        "unverified",
+        "Confirm this vault's OneDrive location",
+        "This is not a recognized standard OneDrive location. If the OneDrive desktop app manages this custom folder, check it in Finder or File Explorer and confirm its location. Native Notes cannot verify transfers.",
+        true,
+        current.path
+      );
+    }
+    function oneDriveSetupSteps(platform = Platform, mode = "existing") {
+      const host = platformKind(platform);
+      if (host !== "mac" && host !== "windows") return [{
+        label: "Choose a supported sync method",
+        body: host === "ios" ? "Obsidian on iPhone and iPad cannot directly open OneDrive-backed vaults. Use iCloud for Apple mobile devices. Appearance and local recovery remain available." : "This setup requires the OneDrive desktop app on macOS or Windows. Appearance and local recovery remain available on other platforms.",
+        href: ONEDRIVE_GUIDE_URL
+      }];
+      const steps = [{
+        label: "Set up the OneDrive desktop app",
+        body: "Install OneDrive and sign in through its desktop app. On another computer, use the same account and existing synced folder. Native Notes does not sign in to Microsoft or transfer your files.",
+        href: ONEDRIVE_GUIDE_URL
+      }];
+      if (mode === "new-device") steps.push({
+        label: "Open the same existing vault",
+        body: "Wait for the same existing vault folder to download from OneDrive. In Obsidian, choose Open folder as vault and select that folder. Do not create another vault with the same name or merge it with a local copy.",
+        href: VAULT_MANAGER_URL
+      });
+      else steps.push({
+        label: "Use the vault inside OneDrive",
+        body: "If this vault is already inside OneDrive, keep using it. Otherwise back up the complete local vault first, including hidden files and settings. Close it, then copy it into a new, empty folder inside OneDrive. Do not merge folders or use two sync services for the same vault. In Obsidian, choose Open folder as vault and select the copy.",
+        href: VAULT_MANAGER_URL
+      });
+      steps.push({
+        label: "Keep the whole vault downloaded",
+        body: "In Finder or File Explorer, mark the entire vault Always keep on this device. Include hidden files, the Obsidian configuration folder, attachments, and Native Notes history. Wait for downloads before editing; online-only placeholders are not available offline.",
+        href: ONEDRIVE_GUIDE_URL
+      });
+      steps.push({
+        label: "Check another device",
+        body: "Open a test note on the other computer and check its contents. Use only one sync service for the vault. Microsoft manages transfers; Native Notes cannot report sign-in, transfer completion, or delivery."
+      });
+      return steps;
+    }
+    module2.exports = { inspectOneDriveLocation, readOneDrivePath, oneDriveSetupSteps, ONEDRIVE_GUIDE_URL };
+  }
+});
+
+// src/sync/onedrive-ui.js
+var require_onedrive_ui = __commonJS({
+  "src/sync/onedrive-ui.js"(exports2, module2) {
+    "use strict";
+    var { Modal, Setting, Notice: Notice2, Platform } = require("obsidian");
+    var { oneDriveSetupSteps, ONEDRIVE_GUIDE_URL } = require_onedrive();
+    var { VAULT_MANAGER_URL } = require_icloud();
+    var OneDriveSetupModal = class extends Modal {
+      constructor(plugin, afterSave = () => {
+      }) {
+        super(plugin.app);
+        this.plugin = plugin;
+        this.afterSave = afterSave;
+        this.live = false;
+      }
+      onOpen() {
+        if (this.plugin.disposed) {
+          this.close();
+          return;
+        }
+        this.live = true;
+        this.plugin.settingsModals.add(this);
+        this.setTitle("Set up OneDrive");
+        this.contentEl.classList.add("native-notes-sync-modal");
+        const folders = this.plugin.cloudFolders;
+        const location = folders.location();
+        const status = this.contentEl.createDiv({ cls: "native-notes-cloud-location", attr: { role: "status", "aria-live": "polite" } });
+        const statusTitle = status.createEl("strong", { text: location.title });
+        const statusDetail = status.createEl("p", { text: location.detail });
+        this.contentEl.createEl("p", { text: "Use the OneDrive app you already sign in to. It transfers the vault; Native Notes does not sign in, move your vault, or verify delivery to another device." });
+        if (location.supportsSetup) {
+          for (const [mode, title] of [["existing", "Set up this vault"], ["new-device", "Open on another computer"]]) {
+            this.contentEl.createEl("h3", { text: title });
+            const list = this.contentEl.createEl("ol", { cls: "native-notes-cloud-steps" });
+            for (const step of oneDriveSetupSteps(Platform, mode)) {
+              const item = list.createEl("li");
+              item.createEl("strong", { text: step.label });
+              item.createEl("p", { text: step.body });
+            }
+          }
+          if (location.confirmationPath) {
+            const confirmed = folders.config.onedriveConfirmedPath === location.confirmationPath;
+            new Setting(this.contentEl).setName("I checked this OneDrive folder").setDesc("Always keep on this device is enabled for this vault inside the correct OneDrive account\u2019s folder. This records your folder check in Finder or File Explorer only.").addToggle((toggle) => toggle.setValue(confirmed).onChange((value) => {
+              if (!this.live || this.plugin.disposed || folders.config.provider !== "onedrive") return;
+              try {
+                folders.confirmOneDrive(value, location.confirmationPath);
+              } catch (error) {
+                toggle.setValue(folders.config.onedriveConfirmedPath === location.confirmationPath);
+                new Notice2(error.message);
+              }
+              const current = folders.location();
+              statusTitle.textContent = current.title;
+              statusDetail.textContent = current.detail;
+              this.afterSave();
+            }));
+          }
+          this.contentEl.createEl("h3", { text: "Check both directions" });
+          this.contentEl.createEl("p", { text: "Create a small test note on one computer and check its exact text on the other. Edit it there and verify the change on the first. Check an attachment and a shared recovery version too. The folder check cannot confirm cloud delivery." });
+        }
+        this.contentEl.createEl("p", { text: "Obsidian cannot directly open a OneDrive-backed vault through the OneDrive app on iPhone or iPad. Use iCloud for an Apple mobile vault. Keep one sync service per vault; do not put your iCloud vault inside OneDrive." });
+        const links = this.contentEl.createDiv({ cls: "native-notes-cloud-actions" });
+        if (location.supportsSetup) links.createEl("a", { text: "Open vault manager", cls: "native-notes-sync-guide", attr: { href: VAULT_MANAGER_URL } });
+        links.createEl("a", { text: "Obsidian\u2019s OneDrive guide", cls: "native-notes-sync-guide", attr: { href: ONEDRIVE_GUIDE_URL, target: "_blank", rel: "noopener noreferrer" } });
+      }
+      onClose() {
+        this.live = false;
+        this.plugin.settingsModals.delete(this);
+        this.contentEl.empty();
+      }
+    };
+    module2.exports = { OneDriveSetupModal };
+  }
+});
+
 // src/sync/ui.js
 var require_ui = __commonJS({
   "src/sync/ui.js"(exports2, module2) {
     "use strict";
     var { Modal, Notice: Notice2, Setting } = require("obsidian");
     var { ICloudSetupModal } = require_icloud_ui();
+    var { OneDriveSetupModal } = require_onedrive_ui();
     var SETUP_URL = "https://github.com/PratiyushT/native-notes/blob/main/docs/SYNC.md";
     var SyncHistoryModal2 = class extends Modal {
       constructor(plugin, source = "local") {
@@ -640,7 +873,7 @@ var require_ui = __commonJS({
         this.contentEl.classList.add("native-notes-sync-modal");
         this.errorEl = this.contentEl.createEl("p", { cls: "native-notes-sync-status", attr: { role: "status", "aria-live": "polite" } });
         this.body = this.contentEl.createDiv();
-        this.body.createEl("p", { text: this.source === "shared" ? "These recovery versions are stored with the vault. iCloud can carry them to your other devices. A listed version may still be downloading; restoring always creates a separate copy." : "These recovery snapshots are saved on this device. Restoring creates a separate copy so you can review it without replacing your current note." });
+        this.body.createEl("p", { text: this.source === "shared" ? "These recovery versions are stored with the vault. Your cloud app can carry them to your other devices. A listed version may still be downloading; restoring always creates a separate copy." : "These recovery snapshots are saved on this device. Restoring creates a separate copy so you can review it without replacing your current note." });
         const session = this.session;
         const label = this.body.createEl("label", { cls: "native-notes-sync-field" });
         label.createSpan({ text: "Filter by file" });
@@ -686,20 +919,20 @@ var require_ui = __commonJS({
         const sync = this.plugin.sync;
         if (this.source === "local") await sync.ensureStorage();
         if (!this.current(session)) return;
-        const storage = this.source === "shared" ? this.plugin.icloud.historyStorage() : sync.storage;
+        const storage = this.source === "shared" ? this.plugin.cloudFolders.historyStorage() : sync.storage;
         const records = await storage.history();
         if (!this.current(session) || serial !== this.serial) return;
         const rows = records.filter((record) => typeof record.path === "string" && record.path.toLowerCase().includes(this.filter.toLowerCase())).sort((a, b) => b.modified - a.modified);
         if (this.offset >= rows.length) this.offset = Math.max(0, Math.floor((rows.length - 1) / 30) * 30);
         list.empty();
-        list.createEl("p", { cls: "native-notes-sync-hint", text: rows.length ? this.source === "shared" ? `${rows.length} vault versions. Each device writes its own immutable history; existing versions are kept when its storage limit is reached.` : `${rows.length} saved versions. Local history retains up to 20 versions per file, 5,000 versions total, within a 100 MiB device budget.` : this.source === "shared" ? "No vault versions are available. Enable Share recovery history on the original device, then allow iCloud to download the history folder here." : "No saved versions match. Turn on Local recovery to start saving snapshots." });
+        list.createEl("p", { cls: "native-notes-sync-hint", text: rows.length ? this.source === "shared" ? `${rows.length} vault versions. Each device writes its own immutable history; existing versions are kept when its storage limit is reached.` : `${rows.length} saved versions. Local history retains up to 20 versions per file, 5,000 versions total, within a 100 MiB device budget.` : this.source === "shared" ? "No vault versions are available. Enable Share recovery history on the original device, then allow your cloud app to download the history folder here." : "No saved versions match. Turn on Local recovery to start saving snapshots." });
         if (this.source === "shared") {
           const stats = storage.stats?.() || {};
           if (stats.limited || stats.invalid || stats.incomplete) {
             list.createEl("p", { cls: "native-notes-sync-hint", text: [
               stats.limited ? "This list is incomplete because the history scan limit was reached. Archive older device history folders before restoring." : "",
               stats.invalid ? `${stats.invalid} invalid history items were skipped.` : "",
-              stats.incomplete ? `${stats.incomplete} unfinished versions are not ready to restore. Allow iCloud to finish downloading and reopen history.` : ""
+              stats.incomplete ? `${stats.incomplete} unfinished versions are not ready to restore. Allow your cloud app to finish downloading and reopen history.` : ""
             ].filter(Boolean).join(" "), attr: { role: "status" } });
           }
         }
@@ -782,20 +1015,26 @@ var require_ui = __commonJS({
         if (!plugin.disposed) tab.refreshSettingsTab();
       };
       const definition = (...args) => tab.settingDefinition(...args);
-      const icloud = plugin.icloud;
-      const location = icloud.location();
+      const folders = plugin.cloudFolders;
+      const provider = folders.config.provider === "onedrive" ? "OneDrive" : "iCloud";
+      const location = folders.location();
       const items = [
-        tab.descriptionDefinition("Use Apple\u2019s iCloud Drive to share the same vault between Mac, iPhone, and iPad. Native Notes adds setup guidance and optional recovery history. OneDrive integration is planned for 2.2.", "native-notes-section-description"),
+        tab.descriptionDefinition("Use iCloud on Apple devices or the OneDrive desktop app on Mac and Windows. Your cloud app transfers the vault; Native Notes provides setup guidance and optional recovery history.", "native-notes-section-description"),
+        definition("Cloud service", "Choose setup guidance for this vault. Changing this choice pauses recovery and turns shared capture off; it does not move files or change your cloud app.", (setting) => {
+          setting.addDropdown((dropdown) => dropdown.addOptions({ icloud: "iCloud", onedrive: "OneDrive" }).setValue(folders.config.provider).onChange((value) => void perform(() => folders.setProvider(value))));
+        }),
         definition("Vault folder", `${location.title}. ${location.detail}`, (setting) => {
-          setting.addButton((button) => button.setButtonText("Set up iCloud").onClick(() => {
-            if (!plugin.disposed) new ICloudSetupModal(plugin, () => tab.refreshSettingsTab()).open();
+          setting.addButton((button) => button.setButtonText(`Set up ${provider}`).onClick(() => {
+            if (plugin.disposed) return;
+            const SetupModal = folders.config.provider === "onedrive" ? OneDriveSetupModal : ICloudSetupModal;
+            new SetupModal(plugin, () => tab.refreshSettingsTab()).open();
           }));
         }),
-        definition("Local recovery", "Save versions on this device while Obsidian is open. Turning this off stops Native Notes snapshots, including shared history; Apple\u2019s file transfers continue.", (setting) => {
+        definition("Local recovery", "Save versions on this device while Obsidian is open. Turning this off stops Native Notes snapshots, including shared history; your cloud app\u2019s file transfers continue.", (setting) => {
           setting.addToggle((toggle) => toggle.setValue(sync.config.enabled).onChange((value) => void perform(() => sync.setEnabled(value))));
         }),
-        definition("Share recovery history", "Save recovery versions with this vault so iCloud can carry them to other devices. Requires Local recovery; turning off keeps existing versions.", (setting) => {
-          setting.addToggle((toggle) => toggle.setValue(icloud.config.sharedHistory).onChange((value) => void perform(() => icloud.setSharedEnabled(value))));
+        definition("Share recovery history", `Save recovery versions with this vault so ${provider} can carry them to other devices. Requires Local recovery and the folder check; turning off keeps existing versions.`, (setting) => {
+          setting.addToggle((toggle) => toggle.setValue(folders.config.sharedHistory).setDisabled(!sync.config.enabled && !folders.config.sharedHistory).onChange((value) => void perform(() => folders.setSharedEnabled(value))));
         }),
         definition("Recovery status", sync.status, (setting) => {
           setting.addButton((button) => button.setButtonText("Save snapshot").setDisabled(!sync.config.enabled).onClick(() => void perform(() => sync.run())));
@@ -808,14 +1047,14 @@ var require_ui = __commonJS({
             if (!plugin.disposed) new SyncHistoryModal2(plugin, "shared").open();
           }));
         }),
-        definition("Include attachments in recovery", "Include visible attachments up to 10 MiB in local and shared snapshots. This does not change what iCloud transfers. Changing this choice pauses recovery.", (setting) => {
+        definition("Include attachments in recovery", "Include visible attachments up to 10 MiB in local and shared snapshots. This does not change what your cloud app transfers. Changing this choice pauses recovery.", (setting) => {
           setting.addToggle((toggle) => toggle.setValue(sync.config.attachments).onChange((value) => void perform(() => sync.configure({ attachments: value }))));
         }),
-        definition("New device and backup", "Open the existing iCloud vault on a new device, then enable Native Notes. Keep a separate full-vault backup; cloud deletions can propagate to every device.", (setting) => {
+        definition("New device and backup", "Open the same downloaded vault folder on another supported device, then enable Native Notes. Keep a separate full-vault backup; cloud deletions can propagate to every device.", (setting) => {
           setting.controlEl.createEl("a", { text: "Setup and recovery guide", cls: "native-notes-sync-guide", attr: { href: SETUP_URL, target: "_blank", rel: "noopener noreferrer" } });
         })
       ];
-      return [{ type: "group", heading: "iCloud and recovery", cls: "native-notes-settings-section", items }];
+      return [{ type: "group", heading: "Cloud folders and recovery", cls: "native-notes-settings-section", items }];
     }
     module2.exports = { syncDefinitions, SyncHistoryModal: SyncHistoryModal2 };
   }
@@ -4088,7 +4327,7 @@ var require_controller = __commonJS({
       async pause() {
         this.config.enabled = false;
         this.generation++;
-        this.plugin.icloud?.cancelCapture();
+        this.plugin.cloudFolders?.cancelCapture();
         if (this.timer !== null) window.clearTimeout(this.timer);
         this.timer = null;
         if (!this.destroyed && !this.plugin.disposed) {
@@ -4138,7 +4377,7 @@ var require_controller = __commonJS({
               if (!alive()) return;
               if (!sharedError) {
                 try {
-                  if (await this.plugin.icloud?.capture(path, bytes)) shared++;
+                  if (await this.plugin.cloudFolders?.capture(path, bytes)) shared++;
                 } catch (error) {
                   if (error.code === "NN_SHARED_PATH") sharedSkipped++;
                   else sharedError = error.message || "Shared history could not be saved.";
@@ -4278,7 +4517,7 @@ var require_shared_history = __commonJS({
       async list(path) {
         if (!await this.io(() => this.adapter.exists(path))) return { files: [], folders: [] };
         const result = await this.io(() => this.adapter.list(path));
-        if (!result || !Array.isArray(result.files) || !Array.isArray(result.folders)) throw new Error("Shared history could not be listed. Try again after iCloud finishes downloading.");
+        if (!result || !Array.isArray(result.files) || !Array.isArray(result.folders)) throw new Error("Shared history could not be listed. Try again after your cloud app finishes downloading.");
         return result;
       }
       async stat(path) {
@@ -4428,11 +4667,11 @@ var require_shared_history = __commonJS({
         await this.history();
         if (this.summary.limited) throw new Error("Shared history exceeds the inspection limit. Archive older device folders outside the vault before restoring.");
         const known = this.index.get(id);
-        if (!known || known.unavailable) throw new Error(known?.unavailableReason || "This shared version is unavailable. Refresh after iCloud finishes downloading.");
+        if (!known || known.unavailable) throw new Error(known?.unavailableReason || "This shared version is unavailable. Reopen history after your cloud app finishes downloading.");
         const record = await this.metadata(known.device, id);
         if (JSON.stringify(record) !== JSON.stringify(this.validate(known, known.device, id))) throw new Error("This shared version changed. Refresh history before restoring.");
         const path = this.paths(record.device, id).bin, stat = await this.stat(path);
-        if (!stat || stat.type !== "file" || stat.size !== record.size) throw new Error("This shared version is incomplete. Wait for iCloud to download it.");
+        if (!stat || stat.type !== "file" || stat.size !== record.size) throw new Error("This shared version is incomplete. Wait for your cloud app to download it.");
         const buffer = await this.io(() => this.adapter.readBinary(path));
         if (Object.prototype.toString.call(buffer) !== "[object ArrayBuffer]") throw new Error("Invalid shared recovery data.");
         const bytes = new Uint8Array(buffer);
@@ -4528,78 +4767,142 @@ var require_shared_history = __commonJS({
   }
 });
 
-// src/sync/icloud-controller.js
-var require_icloud_controller = __commonJS({
-  "src/sync/icloud-controller.js"(exports2, module2) {
+// src/sync/cloud-folders-controller.js
+var require_cloud_folders_controller = __commonJS({
+  "src/sync/cloud-folders-controller.js"(exports2, module2) {
     "use strict";
     var { inspectICloudLocation } = require_icloud();
+    var { inspectOneDriveLocation } = require_onedrive();
     var { SharedHistory } = require_shared_history();
+    var CLOUD_FOLDER_KEY = "native-notes-cloud-folder-tools-v1";
     var ICLOUD_KEY = "native-notes-icloud-v1";
-    function normalizeICloudSettings(value) {
-      return { sharedHistory: value?.sharedHistory === true, mobileConfirmed: value?.mobileConfirmed === true };
+    function settingsObject(value) {
+      return value !== null && typeof value === "object" && !Array.isArray(value);
     }
-    var ICloudTools2 = class {
+    function normalizeCloudFolderSettings(value) {
+      return {
+        provider: value?.provider === "onedrive" ? "onedrive" : "icloud",
+        sharedHistory: value?.sharedHistory === true,
+        mobileConfirmed: value?.mobileConfirmed === true,
+        onedriveConfirmedPath: typeof value?.onedriveConfirmedPath === "string" ? value.onedriveConfirmedPath : ""
+      };
+    }
+    function loadCloudFolderSettings(plugin) {
+      const current = plugin.app.loadLocalStorage(CLOUD_FOLDER_KEY);
+      if (settingsObject(current)) return normalizeCloudFolderSettings(current);
+      const previous = plugin.app.loadLocalStorage(ICLOUD_KEY);
+      if (settingsObject(previous)) return normalizeCloudFolderSettings({
+        provider: "icloud",
+        sharedHistory: previous.sharedHistory,
+        mobileConfirmed: previous.mobileConfirmed
+      });
+      return normalizeCloudFolderSettings({ provider: plugin.sync.config.provider });
+    }
+    var CloudFolderTools2 = class {
       constructor(plugin) {
         this.plugin = plugin;
         this.app = plugin.app;
-        this.config = normalizeICloudSettings(this.app.loadLocalStorage(ICLOUD_KEY));
+        this.config = loadCloudFolderSettings(plugin);
         this.reader = null;
         this.writer = null;
         this.closed = false;
+        this.generation = 0;
       }
       alive() {
         return !this.closed && !this.plugin.disposed;
       }
+      label() {
+        return this.config.provider === "onedrive" ? "OneDrive" : "iCloud";
+      }
       location() {
-        return inspectICloudLocation(this.app, { mobileConfirmed: this.config.mobileConfirmed });
+        return this.config.provider === "onedrive" ? inspectOneDriveLocation(this.app, { confirmedPath: this.config.onedriveConfirmedPath }) : inspectICloudLocation(this.app, { mobileConfirmed: this.config.mobileConfirmed });
       }
       save() {
         if (!this.alive()) return;
-        this.app.saveLocalStorage(ICLOUD_KEY, { ...this.config });
+        this.app.saveLocalStorage(CLOUD_FOLDER_KEY, { ...this.config });
+      }
+      setProvider(provider) {
+        if (!this.alive()) return;
+        if (provider !== "icloud" && provider !== "onedrive") throw new Error("Choose iCloud or OneDrive for this vault.");
+        if (provider === this.config.provider) return;
+        this.cancelCapture();
+        this.config.provider = provider;
+        this.config.sharedHistory = false;
+        this.config.onedriveConfirmedPath = "";
+        this.save();
+        return this.plugin.sync.configure({ provider });
       }
       confirmMobile(value) {
         if (!this.alive()) return;
-        this.config.mobileConfirmed = value === true;
-        if (!value) this.setSharedEnabled(false);
+        const confirmed = value === true;
+        if (this.config.mobileConfirmed !== confirmed) this.cancelCapture();
+        this.config.mobileConfirmed = confirmed;
+        if (!confirmed && this.config.provider === "icloud") {
+          this.cancelCapture();
+          this.config.sharedHistory = false;
+        }
         this.save();
       }
-      setSharedEnabled(enabled) {
+      confirmOneDrive(value, expectedPath) {
         if (!this.alive()) return;
-        if (enabled && this.location().kind !== "ready") {
-          throw new Error("Complete the iCloud folder check before sharing recovery history.");
+        let confirmedPath = "";
+        if (value === true) {
+          if (this.config.provider !== "onedrive") throw new Error("Select OneDrive before confirming its folder.");
+          const current = this.location().confirmationPath;
+          if (typeof current !== "string" || !current || current !== expectedPath) {
+            throw new Error("The vault location changed or is unavailable. Reopen OneDrive setup and check its folder again.");
+          }
+          confirmedPath = current;
         }
-        this.writer?.close();
-        this.writer = null;
-        this.config.sharedHistory = enabled === true;
+        if (this.config.onedriveConfirmedPath !== confirmedPath) this.cancelCapture();
+        this.config.onedriveConfirmedPath = confirmedPath;
+        if (value !== true && this.config.provider === "onedrive") {
+          this.cancelCapture();
+          this.config.sharedHistory = false;
+        }
+        this.save();
+      }
+      setSharedEnabled(value) {
+        if (!this.alive()) return;
+        const enabled = value === true;
+        if (enabled && this.location().kind !== "ready") {
+          throw new Error(`Complete the ${this.label()} folder check before sharing recovery history.`);
+        }
+        if (enabled && !this.plugin.sync.config.enabled) throw new Error("Enable local recovery before sharing recovery history.");
+        this.cancelCapture();
+        this.config.sharedHistory = enabled;
         this.save();
       }
       async capture(path, bytes) {
-        if (!this.alive() || !this.config.sharedHistory) return false;
+        if (!this.alive() || !this.config.sharedHistory || !this.plugin.sync.config.enabled) return false;
         if (this.location().kind !== "ready") {
-          throw new Error("Shared history paused: check this vault\u2019s iCloud folder in setup.");
+          this.cancelCapture();
+          throw new Error(`Shared history paused: check this vault\u2019s ${this.label()} folder in setup.`);
         }
-        if (!this.writer) this.writer = new SharedHistory(this.app, { alive: () => this.alive() && this.config.sharedHistory && this.plugin.sync.config.enabled });
-        const result = await this.writer.remember(path, bytes, "iCloud recovery");
-        return this.alive() && this.config.sharedHistory && result.status === "saved";
+        const generation = this.generation, provider = this.config.provider;
+        const current = () => this.alive() && this.generation === generation && this.config.provider === provider && this.config.sharedHistory && this.plugin.sync.config.enabled && this.location().kind === "ready";
+        if (!this.writer) this.writer = new SharedHistory(this.app, { alive: current });
+        const writer = this.writer, result = await writer.remember(path, bytes, `${this.label()} recovery`);
+        return current() && this.writer === writer && result.status === "saved";
       }
       historyStorage() {
-        if (!this.alive()) throw new Error("iCloud tools stopped.");
+        if (!this.alive()) throw new Error("Cloud folder tools stopped.");
         if (!this.reader) this.reader = new SharedHistory(this.app, { alive: () => this.alive() });
         return this.reader;
       }
       cancelCapture() {
+        this.generation++;
         this.writer?.close();
         this.writer = null;
       }
       destroy() {
         this.closed = true;
+        this.cancelCapture();
         this.reader?.close();
-        this.writer?.close();
         this.reader = null;
-        this.writer = null;
       }
     };
-    module2.exports = { ICloudTools: ICloudTools2, ICLOUD_KEY, normalizeICloudSettings };
+    module2.exports = { CloudFolderTools: CloudFolderTools2, CLOUD_FOLDER_KEY, ICLOUD_KEY, normalizeCloudFolderSettings, loadCloudFolderSettings };
   }
 });
 
@@ -4613,7 +4916,7 @@ var { FloatingOutline } = require_outline();
 var { MediaAlignment } = require_media_alignment();
 var { DOMState } = require_dom_state();
 var { NativeSync } = require_controller();
-var { ICloudTools } = require_icloud_controller();
+var { CloudFolderTools } = require_cloud_folders_controller();
 var { SyncHistoryModal } = require_ui();
 module.exports = class NativeNotes extends Plugin {
   async onload() {
@@ -4626,7 +4929,7 @@ module.exports = class NativeNotes extends Plugin {
     const stored = await this.loadData();
     this.settings = normalizeSettings(stored);
     this.sync = new NativeSync(this);
-    this.icloud = new ICloudTools(this);
+    this.cloudFolders = new CloudFolderTools(this);
     this.sync.load();
     this.settingTab = new NativeNotesSettingsTab(this.app, this);
     this.addSettingTab(this.settingTab);
@@ -4723,7 +5026,7 @@ module.exports = class NativeNotes extends Plugin {
   onunload() {
     this.disposed = true;
     this.sync?.destroy();
-    this.icloud?.destroy();
+    this.cloudFolders?.destroy();
     for (const modal of this.settingsModals) modal.close();
     this.settingsModals.clear();
     for (const doc of this.documents.keys()) this.detachDocument(doc);

@@ -1,9 +1,9 @@
 {
   "id": "native-notes",
   "name": "Native Notes",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "minAppVersion": "1.13.0",
-  "description": "Apple-inspired design, editor refinements, portable profiles, and optional iCloud setup and recovery history.",
+  "description": "Apple-inspired design, editor refinements, portable profiles, and optional iCloud or OneDrive folder setup and recovery history.",
   "author": "PratiyushT",
   "authorUrl": "https://github.com/PratiyushT",
   "isDesktopOnly": false
