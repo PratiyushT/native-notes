@@ -941,6 +941,9 @@ body.nn-enabled.nn-empty-line-marks .markdown-source-view.mod-cm6 .cm-content > 
 }
 
 /* Native Notes · code-blocks · feature-scoped styles */
+body.nn-enabled.nn-code-blocks .nn-code-italic { font-style: italic; }
+body.nn-enabled.nn-code-blocks .nn-code-bold { font-weight: bold; }
+body.nn-enabled.nn-code-blocks .nn-code-underline { text-decoration: underline; }
 body.nn-enabled.nn-code-blocks.theme-light,
 body.nn-enabled.nn-code-blocks.theme-dark {
   --code-background: var(--an-block);
