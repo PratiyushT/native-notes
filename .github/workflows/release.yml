@@ -1,0 +1,122 @@
+name: Publish distribution
+
+on:
+  push:
+    tags: ['[0-9]*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-distribution
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'PratiyushT/native-notes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Validate prebuilt distribution
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const { execFileSync } = require('node:child_process');
+          const tag = process.env.RELEASE_TAG;
+          if (!/^\d+\.\d+\.\d+$/.test(tag)) throw new Error('Invalid release tag.');
+          const expected = [
+            'main.js', 'styles.css', 'manifest.json', 'versions.json', 'README.md', 'LICENSE', 'THIRD-PARTY-NOTICES.md',
+            'docs/INSTALL.md', 'docs/CODE-HIGHLIGHTING.md', 'docs/SYNC.md', 'docs/images/README.md',
+            'docs/images/appearance-settings.png', 'docs/images/code-highlighting.png', 'docs/images/code-settings.png',
+            'docs/images/notes-light.png', 'docs/images/ocean-dark.png', 'docs/images/optional-features.png', 'docs/images/profile-settings.png',
+            `docs/RELEASE-${tag}.md`, '.github/workflows/release.yml',
+          ].sort();
+          const entries = execFileSync('git', ['ls-files', '-s', '-z'], { encoding: 'utf8' }).split('\0').filter(Boolean);
+          const actual = entries.map(entry => {
+            const match = /^100644 [a-f\d]+ 0\t([\s\S]+)$/.exec(entry);
+            if (!match) throw new Error('Only regular distribution files are allowed.');
+            return match[1];
+          }).sort();
+          if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error('Unexpected distribution files.');
+          for (const file of expected) {
+            if (!fs.lstatSync(file).isFile()) throw new Error(`Not a regular file: ${file}`);
+            const contents = fs.readFileSync(file);
+            if (!contents.length) throw new Error(`Empty file: ${file}`);
+            if (['main.js', 'manifest.json', 'styles.css'].includes(file) && contents.length > 5000000) throw new Error(`Asset too large: ${file}`);
+            if (!file.endsWith('.png') && /^\s*(?:\/\/|\/\*)[#@]\s*sourceMappingURL\s*=/m.test(contents.toString('utf8'))) throw new Error(`Source map in ${file}`);
+          }
+          const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+          const versions = JSON.parse(fs.readFileSync('versions.json', 'utf8'));
+          if (manifest.id !== 'native-notes' || manifest.version !== tag || versions[tag] !== manifest.minAppVersion) throw new Error('Release metadata mismatch.');
+          execFileSync('git', ['fetch', 'origin', 'main'], { stdio: 'inherit' });
+          const parent = execFileSync('git', ['rev-parse', 'refs/remotes/origin/main'], { encoding: 'utf8' }).trim();
+          execFileSync('git', ['merge-base', '--is-ancestor', parent, process.env.GITHUB_SHA]);
+          const previous = JSON.parse(execFileSync('git', ['show', `${parent}:manifest.json`], { encoding: 'utf8' })).version;
+          if (!/^\d+\.\d+\.\d+$/.test(previous)) throw new Error('Invalid current distribution version.');
+          const nextParts = tag.split('.').map(BigInt), previousParts = previous.split('.').map(BigInt);
+          const changed = nextParts.findIndex((value, index) => value !== previousParts[index]);
+          if (changed === -1 || nextParts[changed] < previousParts[changed]) throw new Error('Release is not newer than current main.');
+          NODE
+      - name: Attest published distribution files
+        uses: actions/attest@508db95dd578ae2727ebd6217d5ba78e4fbda05d # v4.2.1
+        with:
+          subject-path: |
+            main.js
+            manifest.json
+            styles.css
+      - name: Stage GitHub release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" main.js manifest.json styles.css \
+            --verify-tag --draft --title "Native Notes ${RELEASE_TAG}" \
+            --notes-file "docs/RELEASE-${RELEASE_TAG}.md"
+      - name: Verify published asset names and hashes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh api "repos/$GH_REPO/releases/tags/$RELEASE_TAG" | node -e '
+            const fs = require("node:fs");
+            const { createHash } = require("node:crypto");
+            let input = "";
+            process.stdin.on("data", chunk => input += chunk);
+            process.stdin.on("end", () => {
+              const expected = ["main.js", "manifest.json", "styles.css"].sort();
+              const assets = JSON.parse(input).assets;
+              const actual = assets.map(asset => asset.name).sort();
+              if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error("Unexpected published assets.");
+              for (const asset of assets) {
+                const contents = fs.readFileSync(asset.name);
+                const digest = "sha256:" + createHash("sha256").update(contents).digest("hex");
+                if (asset.digest !== digest || asset.size !== contents.length) throw new Error(`Published asset does not match distribution: ${asset.name}`);
+              }
+            });
+          '
+      - name: Publish release and advance distribution main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release edit "$RELEASE_TAG" --draft=false --latest
+          gh api --method PATCH "repos/$GH_REPO/git/refs/heads/main" \
+            -f sha="$GITHUB_SHA" -F force=false
