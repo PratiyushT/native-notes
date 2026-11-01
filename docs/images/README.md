@@ -1,13 +1,29 @@
 # Documentation screenshots
 
-## Settings captures for 2.4.4
+## Editor tools and settings captures for 2.5.0
 
-`optional-features.png` and `code-settings.png` were captured from Native Notes 2.4.4 running in Obsidian 1.14.5 on macOS on October 23, 2026. Both show the actual settings interface in an isolated scratch vault, using the Notes preset in light mode and fresh-install defaults.
+The following images were captured from the Native Notes 2.5.0 release candidate running in Obsidian 1.14.4 on macOS on October 31, 2026. They show the actual interface in an isolated scratch vault containing public demonstration notes, using the Notes preset in light or dark mode.
 
-- `optional-features.png` shows the Optional features section through Extra table spacing, including the floating outline and empty-line controls.
-- `code-settings.png` shows the whole Code blocks section: built-in and inline highlighting on, line numbers and wrapping off, and frame set to Auto.
+| File | Suggested alt text |
+| --- | --- |
+| `optional-features.png` | Native Notes optional features, including the slash insertion menu and visual flowchart builder. |
+| `math-settings.png` | Math settings with the keyboard enabled, its button in the bottom-right corner, equation preview enabled, and separate rendering options. |
+| `math-button-light.png` | A light note with inline and table equations and a floating keyboard button above the status bar. |
+| `math-button-dark.png` | A dark note with inline and table equations and a floating keyboard button above the status bar. |
+| `math-keyboard-light.png` | The light math keyboard, moved beside a note while its equation remains visible. |
+| `math-keyboard-dark.png` | The dark math keyboard, moved beside a note while its equation remains visible. |
+| `flowchart-builder.png` | A visual flowchart with a shape palette, labeled connections, a selected decision, and its editable Mermaid source. |
+| `slash-menu.png` | Typing /cal in a note opens a searchable insertion menu with callout suggestions and keyboard navigation. |
 
-The images use application zoom and crop framing only. Both were inspected for legibility and privacy; no personal notes, vault identity, account details, or local paths appear. The capture left saved preferences unchanged.
+The settings captures show fresh-install defaults. The note captures turn off empty-line marks for presentation. The math button captures show the 48-pixel control separated from the status bar by 12 pixels. The keyboard captures show the actual draggable overlay inside the editor window. The flowchart uses an ordinary Mermaid block with four shapes and four connections; the slash menu was opened by typing `/cal` in Live Preview.
+
+Framing uses viewport sizing and cropping only. No interface elements or note content were retouched or generated as images. Every frame was inspected for legibility and privacy: no personal notes, vault identity, account details, or local paths appear. Temporary display preferences were restored after capture. These images do not establish testing on other devices or operating systems.
+
+## Retained code settings capture from 2.4.4
+
+`code-settings.png` was captured from Native Notes 2.4.4 running in Obsidian 1.14.5 on macOS on October 23, 2026. It shows the actual settings interface in an isolated scratch vault, using the Notes preset in light mode and fresh-install defaults: built-in and inline highlighting on, line numbers and wrapping off, and frame set to Auto.
+
+The image uses application zoom and crop framing only. It was inspected for legibility and privacy; no personal notes, vault identity, account details, or local paths appear. The capture left saved preferences unchanged.
 
 ## Grouped callout captures for 2.4.3
 

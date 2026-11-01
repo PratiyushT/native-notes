@@ -2,11 +2,137 @@
 
 # Third-party notices
 
-Native Notes is MIT-licensed. The code highlighter includes the packages and grammar assets credited below under their respective licenses. These notices are included in the distributed JavaScript bundle. No implementation from the separate Shiki Highlighter Obsidian plugin is copied.
+Native Notes is MIT-licensed. The code highlighter and math renderer include the packages, grammar assets, and fonts credited below under their respective licenses. These notices are included in the distributed JavaScript bundle.
 
 ## Included npm packages
 
 Package versions below are from the locked production bundle inputs. Identical license texts are grouped; their copyright notices are retained verbatim. Obsidian and CodeMirror host APIs are supplied by Obsidian and are not bundled.
+
+### mathlive@0.111.1
+
+The static math renderer and scoped stylesheet are bundled locally. The interactive editor, virtual keyboard, sounds, and remote loaders are not included.
+
+```text
+Copyright (c) 2017 - present Arno Gourdol. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+```
+
+### KaTeX fonts distributed with MathLive 0.111.1
+
+The 20 WOFF2 files retain their original bytes and embedded names. Only CSS family aliases are scoped to Native Notes. The embedded font notices identify these fonts under the SIL Open Font License 1.1.
+
+```text
+Copyright (c) 2009-2010, Design Science, Inc. (<www.mathjax.org>)
+Copyright (c) 2014-2018 Khan Academy (<www.khanacademy.org>)
+
+Reserved Font Names: KaTeX_AMS, KaTeX_Caligraphic, KaTeX_Fraktur,
+KaTeX_Main, KaTeX_Math, KaTeX_SansSerif, KaTeX_Script, KaTeX_Size1,
+KaTeX_Size2, KaTeX_Size3, KaTeX_Size4, KaTeX_Typewriter.
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+```
 
 ### fflate@0.8.3
 
@@ -7636,8 +7762,8 @@ var __typeError = (msg) => {
   throw TypeError(msg);
 };
 var __defNormalProp = (obj, key2, value) => key2 in obj ? __defProp(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
-var __esm = (fn3, res) => function __init() {
-  return fn3 && (res = (0, fn3[__getOwnPropNames(fn3)[0]])(fn3 = 0)), res;
+var __esm = (fn4, res) => function __init() {
+  return fn4 && (res = (0, fn4[__getOwnPropNames(fn4)[0]])(fn4 = 0)), res;
 };
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
@@ -7646,13 +7772,13 @@ var __export = (target, all4) => {
   for (var name2 in all4)
     __defProp(target, name2, { get: all4[name2], enumerable: true });
 };
-var __copyProps = (to, from, except, desc) => {
+var __copyProps = (to2, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key2 of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key2) && key2 !== except)
-        __defProp(to, key2, { get: () => from[key2], enumerable: !(desc = __getOwnPropDesc(from, key2)) || desc.enumerable });
+      if (!__hasOwnProp.call(to2, key2) && key2 !== except)
+        __defProp(to2, key2, { get: () => from[key2], enumerable: !(desc = __getOwnPropDesc(from, key2)) || desc.enumerable });
   }
-  return to;
+  return to2;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
   // If the importer is in node compatibility mode or this is not an ESM
@@ -7768,10 +7894,14 @@ var require_settings = __commonJS({
       nestedBullets: ["Nested bullet shapes", "Use solid, hollow, and square bullets for different indentation levels."],
       tableSpacing: ["Extra table spacing", "Add space above and below tables. When off, use Obsidian\u2019s default spacing."],
       imageAlignment: ["Image alignment", "Show left, center, and right alignment controls for images and diagrams."],
+      slashMenu: ["Slash insertion menu", "Type / in a note to insert a component. Keep typing to search headings, callouts, lists, tables, media, math, and diagrams."],
+      flowchart: ["Visual flowchart builder", "Build Mermaid flowcharts with draggable shapes and connections. Open Insert or edit flowchart from the command palette or editor menu."],
       icons: ["Folder and note icons", "Show distinct icons in the sidebar. Expanded folders use an open-folder icon."],
       codeHighlighting: ["Built-in code highlighting", "Highlight code with bundled languages and colors that follow the Native Notes theme."],
       codeLanguages: ["Show language beside filename", "Show the code language next to a filename. Blocks without filenames always show their language."],
-      codeHeaders: ["Editable code headers", "Click a filename or language in a rendered code header in Live Preview to change it. Reading view remains read-only."]
+      codeHeaders: ["Editable code headers", "Click a filename or language in a rendered code header in Live Preview to change it. Reading view remains read-only."],
+      mathRendering: ["Built-in math rendering", "Render equations in Reading view and Live Preview with bundled fonts and symbols. Works offline."],
+      mathKeyboard: ["Math keyboard", "Show a small keyboard icon for equations. While editing math, it floats in your chosen editor corner. Click or tap it to enter symbols and templates. Open Insert or edit equation from the command palette or editor menu for the full composer."]
     };
     var OPTIONAL_FEATURES = Object.keys(FEATURE_LABELS);
     var CORE_FEATURES2 = ["appearance", "chrome", "typography", "lists", "hideIndentGuides", "codeBlocks", "callouts", "math", "blockSpacing", "diagrams", "properties", "tables", "integrations"];
@@ -7860,6 +7990,12 @@ var require_settings = __commonJS({
       default: { name: "Default", textSize: 16, codeSize: 13, codeLineHeight: 22 },
       large: { name: "Large", textSize: 18, codeSize: 14, codeLineHeight: 24 }
     };
+    var MATH_LAUNCHER_POSITIONS = {
+      "bottom-right": "Bottom right",
+      "bottom-left": "Bottom left",
+      "top-right": "Top right",
+      "top-left": "Top left"
+    };
     var isObject = (value) => !!value && typeof value === "object" && !Array.isArray(value);
     var own6 = (object, key2) => isObject(object) && Object.prototype.hasOwnProperty.call(object, key2) ? object[key2] : void 0;
     var color2 = (value) => typeof value === "string" && /^#[\da-f]{6}$/i.test(value) ? value.toLowerCase() : null;
@@ -7870,8 +8006,9 @@ var require_settings = __commonJS({
         textSize: "default",
         sidebarDensity: "comfortable",
         emptyLineStyle: "return",
-        features: Object.fromEntries(Object.keys(FEATURE_LABELS).map((key2) => [key2, !["outlineLevels", "tableSpacing"].includes(key2)])),
+        features: Object.fromEntries(Object.keys(FEATURE_LABELS).map((key2) => [key2, !["outlineLevels", "tableSpacing", "mathRendering"].includes(key2)])),
         code: { inlineHighlighting: true, lineNumbers: false, wrap: false, frame: "auto" },
+        math: { inline: true, display: true, scale: 100, alignment: "center", preview: true, defaultMode: "display", launcherPosition: "bottom-right" },
         options: { translucentNavigation: true, hideRibbon: false }
       };
     }
@@ -7914,6 +8051,19 @@ var require_settings = __commonJS({
       }
       const frame = own6(own6(input, "code"), "frame");
       if (["auto", "code", "terminal", "none"].includes(frame)) output.code.frame = frame;
+      for (const key2 of ["inline", "display", "preview"]) {
+        const value = own6(own6(input, "math"), key2);
+        if (typeof value === "boolean") output.math[key2] = value;
+      }
+      const scale = own6(own6(input, "math"), "scale"), alignment = own6(own6(input, "math"), "alignment");
+      if ([80, 100, 120, 140].includes(scale)) output.math.scale = scale;
+      if (["left", "center", "right"].includes(alignment)) output.math.alignment = alignment;
+      const defaultMode = own6(own6(input, "math"), "defaultMode");
+      if (["inline", "display"].includes(defaultMode)) output.math.defaultMode = defaultMode;
+      const launcherPosition = own6(own6(input, "math"), "launcherPosition");
+      if (typeof launcherPosition === "string" && Object.prototype.hasOwnProperty.call(MATH_LAUNCHER_POSITIONS, launcherPosition)) {
+        output.math.launcherPosition = launcherPosition;
+      }
       return output;
     }
     function resolveDesign(input) {
@@ -7941,7 +8091,7 @@ var require_settings = __commonJS({
       if (profile?.plugin !== "native-notes" || ![1, 2].includes(profile.version) || !isObject(profile.settings) || profile.settings.schemaVersion !== profile.version) throw new Error("This profile is not a supported Native Notes profile (version 1 or 2).");
       return normalizeSettings2(profile.settings);
     }
-    module2.exports = { FEATURE_LABELS, FEATURE_CLASSES, CORE_FEATURES: CORE_FEATURES2, OPTIONAL_FEATURES, LAYOUT, FONTS, COLORS, PALETTES, PRESETS, TEXT_SIZES, defaults, normalizeSettings: normalizeSettings2, resolveDesign, exportProfile, importProfile };
+    module2.exports = { FEATURE_LABELS, FEATURE_CLASSES, CORE_FEATURES: CORE_FEATURES2, OPTIONAL_FEATURES, LAYOUT, FONTS, COLORS, PALETTES, PRESETS, TEXT_SIZES, MATH_LAUNCHER_POSITIONS, defaults, normalizeSettings: normalizeSettings2, resolveDesign, exportProfile, importProfile };
   }
 });
 
@@ -7992,54 +8142,54 @@ var require_appearance = __commonJS({
       });
       rules.push("@media screen {");
       for (const mode of ["light", "dark"]) {
-        const p2 = s2.palettes[mode];
+        const p3 = s2.palettes[mode];
         const mix2 = (value, into, percent) => `color-mix(in srgb,${value},${into} ${percent}%)`;
         const vars = {
-          "--an-paper": p2.background,
-          "--an-block": p2.surface,
-          "--an-label": p2.text,
-          "--an-secondary": p2.muted,
-          "--an-tertiary": mix2(p2.muted, p2.background, 20),
-          "--an-gold": p2.link,
-          "--an-link-hover": mix2(p2.link, mode === "dark" ? "white" : "black", 14),
-          "--an-accent-fill": p2.accent,
-          "--an-accent-hover": mix2(p2.accent, mode === "dark" ? "white" : "black", 8),
-          "--an-focus": p2.focus,
-          "--an-text-selection": p2.selection,
-          "--an-chrome-solid": p2.sidebar,
-          "--an-glass": p2.sidebar,
-          "--an-chrome-underlay": p2.sidebar,
-          "--an-inline": mix2(p2.surface, p2.text, 6),
-          "--an-input": p2.background,
-          "--an-control": mix2(p2.surface, p2.text, mode === "dark" ? 9 : 0),
-          "--an-control-hover": mix2(p2.surface, p2.text, mode === "dark" ? 15 : 4),
-          "--an-popover": mix2(p2.surface, "transparent", 3),
-          "--an-rule": mix2(p2.text, "transparent", 89),
-          "--an-border-hover": mix2(p2.text, "transparent", 78),
-          "--an-glass-edge": mix2(p2.text, "transparent", 88),
-          "--an-selection": mix2(p2.text, "transparent", 94),
-          "--an-selection-text": p2.text,
-          "--an-hover": mix2(p2.text, "transparent", 96),
-          "--text-on-accent": contrastText(p2.accent),
-          "--interactive-accent-rgb": rgb(p2.accent).join(","),
-          "--an-syntax-keyword": p2.keyword,
-          "--an-syntax-type": p2.type,
-          "--an-syntax-string": p2.string,
-          "--an-syntax-function": p2.fn,
-          "--an-syntax-comment": p2.comment
+          "--an-paper": p3.background,
+          "--an-block": p3.surface,
+          "--an-label": p3.text,
+          "--an-secondary": p3.muted,
+          "--an-tertiary": mix2(p3.muted, p3.background, 20),
+          "--an-gold": p3.link,
+          "--an-link-hover": mix2(p3.link, mode === "dark" ? "white" : "black", 14),
+          "--an-accent-fill": p3.accent,
+          "--an-accent-hover": mix2(p3.accent, mode === "dark" ? "white" : "black", 8),
+          "--an-focus": p3.focus,
+          "--an-text-selection": p3.selection,
+          "--an-chrome-solid": p3.sidebar,
+          "--an-glass": p3.sidebar,
+          "--an-chrome-underlay": p3.sidebar,
+          "--an-inline": mix2(p3.surface, p3.text, 6),
+          "--an-input": p3.background,
+          "--an-control": mix2(p3.surface, p3.text, mode === "dark" ? 9 : 0),
+          "--an-control-hover": mix2(p3.surface, p3.text, mode === "dark" ? 15 : 4),
+          "--an-popover": mix2(p3.surface, "transparent", 3),
+          "--an-rule": mix2(p3.text, "transparent", 89),
+          "--an-border-hover": mix2(p3.text, "transparent", 78),
+          "--an-glass-edge": mix2(p3.text, "transparent", 88),
+          "--an-selection": mix2(p3.text, "transparent", 94),
+          "--an-selection-text": p3.text,
+          "--an-hover": mix2(p3.text, "transparent", 96),
+          "--text-on-accent": contrastText(p3.accent),
+          "--interactive-accent-rgb": rgb(p3.accent).join(","),
+          "--an-syntax-keyword": p3.keyword,
+          "--an-syntax-type": p3.type,
+          "--an-syntax-string": p3.string,
+          "--an-syntax-function": p3.fn,
+          "--an-syntax-comment": p3.comment
         };
         for (const name2 of ["red", "orange", "green", "blue", "cyan", "purple"]) {
-          vars[`--color-${name2}`] = p2[name2];
-          vars[`--color-${name2}-rgb`] = rgb(p2[name2]).join(",");
+          vars[`--color-${name2}`] = p3[name2];
+          vars[`--color-${name2}-rgb`] = rgb(p3[name2]).join(",");
         }
         emit(`body.nn-enabled.nn-appearance.theme-${mode}`, vars);
         emit(`body.nn-enabled.nn-appearance.nn-code-blocks.theme-${mode}`, {
-          "--shiki-code-keyword": p2.keyword,
-          "--shiki-code-function": p2.fn,
-          "--shiki-code-property": p2.type,
-          "--shiki-code-string": p2.string,
-          "--shiki-code-comment": p2.comment,
-          "--shiki-code-value": p2.type
+          "--shiki-code-keyword": p3.keyword,
+          "--shiki-code-function": p3.fn,
+          "--shiki-code-property": p3.type,
+          "--shiki-code-string": p3.string,
+          "--shiki-code-comment": p3.comment,
+          "--shiki-code-value": p3.type
         });
       }
       rules.push("}");
@@ -8055,7 +8205,7 @@ var require_settings_tab = __commonJS({
   "src/settings-tab.js"(exports2, module2) {
     "use strict";
     var { PluginSettingTab, Setting, Modal, Notice: Notice2 } = require("obsidian");
-    var { FEATURE_LABELS, PRESETS, TEXT_SIZES, defaults, exportProfile, importProfile } = require_settings();
+    var { FEATURE_LABELS, PRESETS, TEXT_SIZES, MATH_LAUNCHER_POSITIONS, defaults, exportProfile, importProfile } = require_settings();
     var { EMPTY_LINE_MARKS, setLocalIcon } = require_icons();
     var SettingsModal = class extends Modal {
       constructor(plugin2) {
@@ -8092,7 +8242,7 @@ var require_settings_tab = __commonJS({
         if (!session) return;
         this.setTitle(this.mode === "export" ? "Export profile" : "Import profile");
         this.contentEl.classList.add("native-notes-profile");
-        this.contentEl.createEl("p", { text: this.mode === "export" ? "Copy this profile to another device, or save it as a JSON file. It contains appearance and editor preferences only." : "Paste an exported Native Notes profile or choose its JSON file. Import replaces your appearance and editor preferences." });
+        this.contentEl.createEl("p", { text: this.mode === "export" ? "Copy this profile to another device, or save it as a JSON file. It contains appearance, editor, code, and math preferences only." : "Paste an exported Native Notes profile or choose its JSON file. Import replaces your appearance, editor, code, and math preferences." });
         const input = this.contentEl.createEl("textarea", { attr: { "aria-label": "Native Notes profile", spellcheck: "false" } });
         input.value = this.mode === "export" ? exportProfile(this.plugin.settings) : "";
         input.readOnly = this.mode === "export";
@@ -8181,7 +8331,7 @@ var require_settings_tab = __commonJS({
         const session = this.startSession();
         if (!session) return;
         this.setTitle("Restore default appearance?");
-        this.contentEl.createEl("p", { text: "This resets your theme, text size, sidebar density, code preferences, and optional features. Export a profile first if you want to keep them." });
+        this.contentEl.createEl("p", { text: "This resets your theme, text size, sidebar density, code and math preferences, and optional features. Export a profile first if you want to keep them." });
         new Setting(this.contentEl).addButton((button) => button.setButtonText("Cancel").onClick(() => this.close())).addButton((button) => button.setButtonText("Restore defaults").setWarning().onClick(async () => {
           if (!this.isCurrent(session)) return;
           this.plugin.settings = defaults();
@@ -8246,6 +8396,7 @@ var require_settings_tab = __commonJS({
           ] },
           { type: "group", heading: "Optional features", cls: "native-notes-settings-section", items: this.featureDefinitions() },
           { type: "group", heading: "Code blocks", cls: "native-notes-settings-section", items: this.codeDefinitions() },
+          { type: "group", heading: "Math", cls: "native-notes-settings-section", items: this.mathDefinitions() },
           { type: "group", heading: "Profiles", cls: "native-notes-settings-section", items: [
             this.descriptionDefinition("Keep the same look on your other devices.", "native-notes-section-description"),
             this.settingDefinition("Transfer settings", "Export your choices and import them on another device. Profiles contain no notes or account information.", (setting) => {
@@ -8312,6 +8463,128 @@ var require_settings_tab = __commonJS({
         }));
         return definitions;
       }
+      mathDefinitions() {
+        const controls = /* @__PURE__ */ new Map();
+        const enabled2 = () => this.plugin.settings.features.mathRendering;
+        const refreshControls = () => {
+          for (const [setting, control] of controls) {
+            control.setDisabled(!enabled2());
+            setting.settingEl.classList.toggle("is-disabled", !enabled2());
+          }
+        };
+        const definitions = [this.settingDefinition(...FEATURE_LABELS.mathRendering, (setting) => {
+          let active = true;
+          setting.addToggle((toggle) => toggle.setValue(enabled2()).onChange((value) => {
+            if (!active || this.plugin.disposed) return;
+            this.plugin.settings.features.mathRendering = value;
+            refreshControls();
+            void this.plugin.updateSettings();
+          }));
+          return () => {
+            active = false;
+          };
+        })];
+        const toggles = {
+          inline: ["Render inline math", "Render equations written between single dollar signs within text."],
+          display: ["Render display math", "Render equations written between double dollar signs on their own lines."]
+        };
+        for (const [key2, [name2, desc]] of Object.entries(toggles)) {
+          definitions.push(this.settingDefinition(name2, desc, (setting) => {
+            setting.addToggle((toggle) => {
+              controls.set(setting, toggle);
+              toggle.setValue(this.plugin.settings.math[key2]).onChange((value) => {
+                if (this.plugin.disposed || !controls.has(setting) || !enabled2()) return;
+                this.plugin.settings.math[key2] = value;
+                void this.plugin.updateSettings();
+              });
+            });
+            refreshControls();
+            return () => controls.delete(setting);
+          }));
+        }
+        const dropdowns = {
+          scale: ["Math size", "Scale rendered equations relative to the surrounding text.", { 80: "80%", 100: "100%", 120: "120%", 140: "140%" }],
+          alignment: ["Display math alignment", "Position display equations within the note. Inline equations stay within their text.", { left: "Left", center: "Center", right: "Right" }]
+        };
+        for (const [key2, [name2, desc, options]] of Object.entries(dropdowns)) {
+          definitions.push(this.settingDefinition(name2, desc, (setting) => {
+            setting.controlEl.classList.add("nn-select-control");
+            setting.addDropdown((dropdown) => {
+              controls.set(setting, dropdown);
+              dropdown.addOptions(options).setValue(String(this.plugin.settings.math[key2])).onChange((value) => {
+                if (this.plugin.disposed || !controls.has(setting) || !enabled2()) return;
+                this.plugin.settings.math[key2] = key2 === "scale" ? Number(value) : value;
+                void this.plugin.updateSettings();
+              });
+            });
+            refreshControls();
+            return () => controls.delete(setting);
+          }));
+        }
+        return [...this.mathKeyboardDefinitions(), ...definitions];
+      }
+      mathKeyboardDefinitions() {
+        const controls = /* @__PURE__ */ new Map();
+        const enabled2 = () => this.plugin.settings.features.mathKeyboard;
+        const refreshControls = () => {
+          for (const [setting, control] of controls) {
+            control.setDisabled(!enabled2());
+            setting.settingEl.classList.toggle("is-disabled", !enabled2());
+          }
+        };
+        return [
+          this.settingDefinition(...FEATURE_LABELS.mathKeyboard, (setting) => {
+            let active = true;
+            setting.addToggle((toggle) => toggle.setValue(enabled2()).onChange((value) => {
+              if (!active || this.plugin.disposed) return;
+              this.plugin.settings.features.mathKeyboard = value;
+              refreshControls();
+              void this.plugin.updateSettings();
+            }));
+            return () => {
+              active = false;
+            };
+          }, ["Equation", "Insert or edit equation"]),
+          this.settingDefinition("Keyboard button position", "Choose the editor corner for the floating keyboard button while editing an equation.", (setting) => {
+            setting.controlEl.classList.add("nn-select-control");
+            setting.addDropdown((dropdown) => {
+              controls.set(setting, dropdown);
+              dropdown.addOptions(MATH_LAUNCHER_POSITIONS).setValue(this.plugin.settings.math.launcherPosition).onChange((value) => {
+                if (this.plugin.disposed || !controls.has(setting) || !enabled2() || !Object.prototype.hasOwnProperty.call(MATH_LAUNCHER_POSITIONS, value)) return;
+                this.plugin.settings.math.launcherPosition = value;
+                void this.plugin.updateSettings();
+              });
+            });
+            refreshControls();
+            return () => controls.delete(setting);
+          }, ["Math keyboard corner", "Floating equation button"]),
+          this.settingDefinition("Live equation preview", "Show a rendered preview as you compose an equation. This works independently of math rendering in notes.", (setting) => {
+            setting.addToggle((toggle) => {
+              controls.set(setting, toggle);
+              toggle.setValue(this.plugin.settings.math.preview).onChange((value) => {
+                if (this.plugin.disposed || !controls.has(setting) || !enabled2()) return;
+                this.plugin.settings.math.preview = value;
+                void this.plugin.updateSettings();
+              });
+            });
+            refreshControls();
+            return () => controls.delete(setting);
+          }),
+          this.settingDefinition("Default equation format", "Choose how new equations are inserted. You can change the format in the math keyboard before inserting.", (setting) => {
+            setting.controlEl.classList.add("nn-select-control");
+            setting.addDropdown((dropdown) => {
+              controls.set(setting, dropdown);
+              dropdown.addOptions({ display: "Display equation", inline: "Inline equation" }).setValue(this.plugin.settings.math.defaultMode).onChange((value) => {
+                if (this.plugin.disposed || !controls.has(setting) || !enabled2()) return;
+                this.plugin.settings.math.defaultMode = value;
+                void this.plugin.updateSettings();
+              });
+            });
+            refreshControls();
+            return () => controls.delete(setting);
+          })
+        ];
+      }
       renderTheme(theme) {
         theme.controlEl.classList.add("nn-select-control");
         theme.settingEl.classList.add("native-notes-theme-setting");
@@ -8341,7 +8614,7 @@ var require_settings_tab = __commonJS({
       featureDefinitions() {
         const definitions = [];
         for (const [key2, [name2, desc]] of Object.entries(FEATURE_LABELS)) {
-          if (key2 === "codeHighlighting") continue;
+          if (["codeHighlighting", "mathRendering", "mathKeyboard"].includes(key2)) continue;
           let symbolChoice, symbolRow;
           definitions.push(this.settingDefinition(name2, desc, (setting) => {
             setting.addToggle((toggle) => toggle.setValue(this.plugin.settings.features[key2]).onChange((value) => {
@@ -8611,7 +8884,7 @@ var require_fence = __commonJS({
           malformed: hasEquals ? /^["'/{]/.test(value) : /^\s*=/.test(remaining.slice(match.index + match[1].length))
         });
       }
-      return titles.sort((a, b) => a.start - b.start);
+      return titles.sort((a, b2) => a.start - b2.start);
     }
     function readTitle(openingLine) {
       requireString(openingLine, "openingLine");
@@ -9903,7 +10176,7 @@ var init_aria = __esm({
         ariaValueText: null,
         role: null
       },
-      transform(_, property) {
+      transform(_2, property) {
         return property === "role" ? property : "aria-" + property.slice(4).toLowerCase();
       }
     });
@@ -10899,7 +11172,7 @@ var init_xlink = __esm({
         xLinkType: null
       },
       space: "xlink",
-      transform(_, property) {
+      transform(_2, property) {
         return "xlink:" + property.slice(5).toLowerCase();
       }
     });
@@ -10929,7 +11202,7 @@ var init_xml = __esm({
     xml = create({
       properties: { xmlBase: null, xmlLang: null, xmlSpace: null },
       space: "xml",
-      transform(_, property) {
+      transform(_2, property) {
         return "xml:" + property.slice(3).toLowerCase();
       }
     });
@@ -10962,11 +11235,11 @@ function find(schema, value) {
   }
   return new Type(property, value);
 }
-function kebab($0) {
-  return "-" + $0.toLowerCase();
+function kebab($02) {
+  return "-" + $02.toLowerCase();
 }
-function camelcase($0) {
-  return $0.charAt(1).toUpperCase();
+function camelcase($02) {
+  return $02.charAt(1).toUpperCase();
 }
 var cap, dash, valid;
 var init_find = __esm({
@@ -11081,7 +11354,7 @@ function root(node, state) {
   });
   return result;
 }
-function doctype(_, state) {
+function doctype(_2, state) {
   return state.doc.implementation.createDocumentType("html", "", "");
 }
 function text(node, state) {
@@ -11195,14 +11468,14 @@ var init_html_void_elements = __esm({
 function zwitch(key2, options) {
   const settings = options || {};
   function one5(value, ...parameters) {
-    let fn3 = one5.invalid;
+    let fn4 = one5.invalid;
     const handlers = one5.handlers;
     if (value && own2.call(value, key2)) {
       const id2 = String(value[key2]);
-      fn3 = own2.call(handlers, id2) ? handlers[id2] : one5.unknown;
+      fn4 = own2.call(handlers, id2) ? handlers[id2] : one5.unknown;
     }
-    if (fn3) {
-      return fn3.call(this, value, ...parameters);
+    if (fn4) {
+      return fn4.call(this, value, ...parameters);
     }
   }
   one5.handlers = settings.handlers || {};
@@ -11771,9 +12044,9 @@ function comment2(node, _1, _2, state) {
       subset: bogusCommentEntitySubset
     })
   ) + ">" : "<!--" + node.value.replace(htmlCommentRegex, encode) + "-->";
-  function encode($0) {
+  function encode($02) {
     return stringifyEntities(
-      $0,
+      $02,
       Object.assign({}, state.settings.characterReferences, {
         subset: commentEntitySubset
       })
@@ -11926,67 +12199,67 @@ var init_omission = __esm({
 });
 
 // node_modules/hast-util-to-html/lib/omission/closing.js
-function headOrColgroupOrCaption(_, index, parent) {
+function headOrColgroupOrCaption(_2, index, parent) {
   const next = siblingAfter(parent, index, true);
   return !next || next.type !== "comment" && !(next.type === "text" && whitespace(next.value.charAt(0)));
 }
-function html3(_, index, parent) {
+function html3(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type !== "comment";
 }
-function body(_, index, parent) {
+function body(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type !== "comment";
 }
-function p(_, index, parent) {
+function p(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return next ? next.type === "element" && (next.tagName === "address" || next.tagName === "article" || next.tagName === "aside" || next.tagName === "blockquote" || next.tagName === "details" || next.tagName === "div" || next.tagName === "dl" || next.tagName === "fieldset" || next.tagName === "figcaption" || next.tagName === "figure" || next.tagName === "footer" || next.tagName === "form" || next.tagName === "h1" || next.tagName === "h2" || next.tagName === "h3" || next.tagName === "h4" || next.tagName === "h5" || next.tagName === "h6" || next.tagName === "header" || next.tagName === "hgroup" || next.tagName === "hr" || next.tagName === "main" || next.tagName === "menu" || next.tagName === "nav" || next.tagName === "ol" || next.tagName === "p" || next.tagName === "pre" || next.tagName === "section" || next.tagName === "table" || next.tagName === "ul") : !parent || // Confusing parent.
   !(parent.type === "element" && (parent.tagName === "a" || parent.tagName === "audio" || parent.tagName === "del" || parent.tagName === "ins" || parent.tagName === "map" || parent.tagName === "noscript" || parent.tagName === "video"));
 }
-function li(_, index, parent) {
+function li(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && next.tagName === "li";
 }
-function dt(_, index, parent) {
+function dt(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return Boolean(
     next && next.type === "element" && (next.tagName === "dt" || next.tagName === "dd")
   );
 }
-function dd(_, index, parent) {
+function dd(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && (next.tagName === "dt" || next.tagName === "dd");
 }
-function rubyElement(_, index, parent) {
+function rubyElement(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && (next.tagName === "rp" || next.tagName === "rt");
 }
-function optgroup(_, index, parent) {
+function optgroup(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && next.tagName === "optgroup";
 }
-function option(_, index, parent) {
+function option(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && (next.tagName === "option" || next.tagName === "optgroup");
 }
-function thead(_, index, parent) {
+function thead(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return Boolean(
     next && next.type === "element" && (next.tagName === "tbody" || next.tagName === "tfoot")
   );
 }
-function tbody(_, index, parent) {
+function tbody(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && (next.tagName === "tbody" || next.tagName === "tfoot");
 }
-function tfoot(_, index, parent) {
+function tfoot(_2, index, parent) {
   return !siblingAfter(parent, index);
 }
-function tr(_, index, parent) {
+function tr(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && next.tagName === "tr";
 }
-function cells(_, index, parent) {
+function cells(_2, index, parent) {
   const next = siblingAfter(parent, index);
   return !next || next.type === "element" && (next.tagName === "td" || next.tagName === "th");
 }
@@ -12129,7 +12402,7 @@ function serializeAttributes(state, properties) {
 function serializeAttribute(state, key2, value) {
   const info = find(state.schema, key2);
   const x = state.settings.allowParseErrors && state.schema.space === "html" ? 0 : 1;
-  const y = state.settings.allowDangerousCharacters ? 0 : 1;
+  const y2 = state.settings.allowDangerousCharacters ? 0 : 1;
   let quote = state.quote;
   let result;
   if (info.overloadedBoolean && (value === info.attribute || value === "")) {
@@ -12144,7 +12417,7 @@ function serializeAttribute(state, key2, value) {
     info.attribute,
     Object.assign({}, state.settings.characterReferences, {
       // Always encode without parse errors in non-HTML.
-      subset: constants.name[x][y]
+      subset: constants.name[x][y2]
     })
   );
   if (value === true) return name2;
@@ -12157,7 +12430,7 @@ function serializeAttribute(state, key2, value) {
       value,
       Object.assign({}, state.settings.characterReferences, {
         attribute: true,
-        subset: constants.unquoted[x][y]
+        subset: constants.unquoted[x][y2]
       })
     );
   }
@@ -12169,7 +12442,7 @@ function serializeAttribute(state, key2, value) {
       value,
       Object.assign({}, state.settings.characterReferences, {
         // Always encode without parse errors in non-HTML.
-        subset: (quote === "'" ? constants.single : constants.double)[x][y],
+        subset: (quote === "'" ? constants.single : constants.double)[x][y2],
         attribute: true
       })
     ) + quote;
@@ -12213,7 +12486,7 @@ var init_element = __esm({
 });
 
 // node_modules/hast-util-to-html/lib/handle/text.js
-function text2(node, _, parent, state) {
+function text2(node, _2, parent, state) {
   return parent && parent.type === "element" && (parent.tagName === "script" || parent.tagName === "style") ? node.value : stringifyEntities(
     node.value,
     Object.assign({}, state.settings.characterReferences, {
@@ -12475,8 +12748,8 @@ function createMulticharIndex(items) {
     return emptyMulticharIndex;
   }
   var index = {};
-  for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
-    var item = items_1[_i];
+  for (var _i2 = 0, items_1 = items; _i2 < items_1.length; _i2++) {
+    var item = items_1[_i2];
     extendIndex(item, index);
   }
   return index;
@@ -12486,8 +12759,8 @@ function createRegularIndex(items) {
     return emptyRegularIndex;
   }
   var result = {};
-  for (var _i = 0, items_2 = items; _i < items_2.length; _i++) {
-    var item = items_2[_i];
+  for (var _i2 = 0, items_2 = items; _i2 < items_2.length; _i2++) {
+    var item = items_2[_i2];
     result[item] = true;
   }
   return result;
@@ -12512,8 +12785,8 @@ function calculatePseudoSignature(types) {
     }
     result.type = type2;
   }
-  for (var _i = 0, types_1 = types; _i < types_1.length; _i++) {
-    var type = types_1[_i];
+  for (var _i2 = 0, types_1 = types; _i2 < types_1.length; _i2++) {
+    var type = types_1[_i2];
     if (type === "NoArgument") {
       result.optional = true;
     }
@@ -12535,12 +12808,12 @@ function calculatePseudoSignature(types) {
 }
 function inverseCategories(obj) {
   var result = {};
-  for (var _i = 0, _a7 = Object.keys(obj); _i < _a7.length; _i++) {
-    var category = _a7[_i];
+  for (var _i2 = 0, _a8 = Object.keys(obj); _i2 < _a8.length; _i2++) {
+    var category = _a8[_i2];
     var items = obj[category];
     if (items) {
-      for (var _b2 = 0, _c = items; _b2 < _c.length; _b2++) {
-        var item = _c[_b2];
+      for (var _b2 = 0, _c2 = items; _b2 < _c2.length; _b2++) {
+        var item = _c2[_b2];
         (result[item] || (result[item] = [])).push(category);
       }
     }
@@ -12550,8 +12823,8 @@ function inverseCategories(obj) {
 function calculatePseudoSignatures(definitions) {
   var pseudoClassesToArgumentTypes = inverseCategories(definitions);
   var result = {};
-  for (var _i = 0, _a7 = Object.keys(pseudoClassesToArgumentTypes); _i < _a7.length; _i++) {
-    var pseudoClass = _a7[_i];
+  for (var _i2 = 0, _a8 = Object.keys(pseudoClassesToArgumentTypes); _i2 < _a8.length; _i2++) {
+    var pseudoClass = _a8[_i2];
     var argumentTypes = pseudoClassesToArgumentTypes[pseudoClass];
     if (argumentTypes) {
       result[pseudoClass] = calculatePseudoSignature(argumentTypes);
@@ -12613,8 +12886,8 @@ function mergeSection(values) {
       throw new Error("Unexpected syntax definition extension type: ".concat(extension, "."));
     }
     var result = __assign({}, base);
-    for (var _i = 0, _a7 = Object.entries(extension); _i < _a7.length; _i++) {
-      var _b2 = _a7[_i], key2 = _b2[0], value = _b2[1];
+    for (var _i2 = 0, _a8 = Object.entries(extension); _i2 < _a8.length; _i2++) {
+      var _b2 = _a8[_i2], key2 = _b2[0], value = _b2[1];
       if (key2 === "latest") {
         continue;
       }
@@ -12647,8 +12920,8 @@ function mergeDefinitions(base, extension) {
     return extension;
   }
   var result = __assign({}, base);
-  for (var _i = 0, _a7 = Object.entries(extension); _i < _a7.length; _i++) {
-    var _b2 = _a7[_i], key2 = _b2[0], value = _b2[1];
+  for (var _i2 = 0, _a8 = Object.entries(extension); _i2 < _a8.length; _i2++) {
+    var _b2 = _a8[_i2], key2 = _b2[0], value = _b2[1];
     if (!value) {
       delete result[key2];
       continue;
@@ -12668,14 +12941,14 @@ function buildPseudoLocationIndex() {
     pseudoElements: {}
   };
   var cssLevels = ["css1", "css2", "css3", "selectors-3", "selectors-4"];
-  for (var _i = 0, cssLevels_1 = cssLevels; _i < cssLevels_1.length; _i++) {
-    var level = cssLevels_1[_i];
+  for (var _i2 = 0, cssLevels_1 = cssLevels; _i2 < cssLevels_1.length; _i2++) {
+    var level = cssLevels_1[_i2];
     var syntax = cssSyntaxDefinitions[level];
     if (syntax.pseudoClasses && typeof syntax.pseudoClasses === "object") {
       var definitions = syntax.pseudoClasses.definitions;
       if (definitions) {
-        for (var _a7 = 0, _b2 = Object.entries(definitions); _a7 < _b2.length; _a7++) {
-          var _c = _b2[_a7], names2 = _c[1];
+        for (var _a8 = 0, _b2 = Object.entries(definitions); _a8 < _b2.length; _a8++) {
+          var _c2 = _b2[_a8], names2 = _c2[1];
           for (var _d = 0, names_1 = names2; _d < names_1.length; _d++) {
             var name_1 = names_1[_d];
             if (!index.pseudoClasses[name_1]) {
@@ -12692,8 +12965,8 @@ function buildPseudoLocationIndex() {
       var definitions = syntax.pseudoElements.definitions;
       if (definitions) {
         if (Array.isArray(definitions)) {
-          for (var _e = 0, definitions_1 = definitions; _e < definitions_1.length; _e++) {
-            var name_2 = definitions_1[_e];
+          for (var _e2 = 0, definitions_1 = definitions; _e2 < definitions_1.length; _e2++) {
+            var name_2 = definitions_1[_e2];
             if (!index.pseudoElements[name_2]) {
               index.pseudoElements[name_2] = [];
             }
@@ -12719,12 +12992,12 @@ function buildPseudoLocationIndex() {
     }
   }
   for (var _j = 0, _k = Object.entries(cssModules); _j < _k.length; _j++) {
-    var _l = _k[_j], moduleName = _l[0], moduleSyntax = _l[1];
+    var _l2 = _k[_j], moduleName = _l2[0], moduleSyntax = _l2[1];
     if (moduleSyntax.pseudoClasses && typeof moduleSyntax.pseudoClasses === "object") {
       var definitions = moduleSyntax.pseudoClasses.definitions;
       if (definitions) {
-        for (var _m = 0, _o = Object.values(definitions); _m < _o.length; _m++) {
-          var names2 = _o[_m];
+        for (var _m = 0, _o2 = Object.values(definitions); _m < _o2.length; _m++) {
+          var names2 = _o2[_m];
           for (var _p = 0, names_3 = names2; _p < names_3.length; _p++) {
             var name_4 = names_3[_p];
             if (!index.pseudoClasses[name_4]) {
@@ -12751,10 +13024,10 @@ function buildPseudoLocationIndex() {
             }
           }
         } else {
-          for (var _r = 0, _s = Object.values(definitions); _r < _s.length; _r++) {
-            var names2 = _s[_r];
-            for (var _t = 0, names_4 = names2; _t < names_4.length; _t++) {
-              var name_6 = names_4[_t];
+          for (var _r2 = 0, _s2 = Object.values(definitions); _r2 < _s2.length; _r2++) {
+            var names2 = _s2[_r2];
+            for (var _t2 = 0, names_4 = names2; _t2 < names_4.length; _t2++) {
+              var name_6 = names_4[_t2];
               if (!index.pseudoElements[name_6]) {
                 index.pseudoElements[name_6] = [];
               }
@@ -12773,13 +13046,13 @@ var __assign, emptyXmlOptions, defaultXmlOptions, extendSyntaxDefinition, css1Sy
 var init_syntax_definitions = __esm({
   "node_modules/css-selector-parser/dist/mjs/syntax-definitions.js"() {
     __assign = function() {
-      __assign = Object.assign || function(t) {
+      __assign = Object.assign || function(t32) {
         for (var s2, i = 1, n = arguments.length; i < n; i++) {
           s2 = arguments[i];
-          for (var p2 in s2) if (Object.prototype.hasOwnProperty.call(s2, p2))
-            t[p2] = s2[p2];
+          for (var p3 in s2) if (Object.prototype.hasOwnProperty.call(s2, p3))
+            t32[p3] = s2[p3];
         }
-        return t;
+        return t32;
       };
       return __assign.apply(this, arguments);
     };
@@ -13015,11 +13288,11 @@ var init_syntax_definitions = __esm({
         nestingSelector: true
       }
     };
-    latestSyntaxDefinition = __assign(__assign({}, selectors4SyntaxDefinition), { modules: Object.entries(cssModules).filter(function(_a7) {
-      var latest = _a7[1].latest;
+    latestSyntaxDefinition = __assign(__assign({}, selectors4SyntaxDefinition), { modules: Object.entries(cssModules).filter(function(_a8) {
+      var latest = _a8[1].latest;
       return latest;
-    }).map(function(_a7) {
-      var name2 = _a7[0];
+    }).map(function(_a8) {
+      var name2 = _a8[0];
       return name2;
     }) });
     progressiveSyntaxDefinition = extendSyntaxDefinition(latestSyntaxDefinition, {
@@ -13091,14 +13364,14 @@ function createParser(options) {
   if (options === void 0) {
     options = {};
   }
-  var _a7 = options.syntax, syntax = _a7 === void 0 ? "latest" : _a7, substitutes = options.substitutes, _b2 = options.strict, strict = _b2 === void 0 ? true : _b2, modules = options.modules;
+  var _a8 = options.syntax, syntax = _a8 === void 0 ? "latest" : _a8, substitutes = options.substitutes, _b2 = options.strict, strict = _b2 === void 0 ? true : _b2, modules = options.modules;
   var syntaxDefinition = typeof syntax === "object" ? syntax : cssSyntaxDefinitions[syntax];
   if (syntaxDefinition.baseSyntax) {
     syntaxDefinition = extendSyntaxDefinition(cssSyntaxDefinitions[syntaxDefinition.baseSyntax], syntaxDefinition);
   }
   if (syntaxDefinition.modules && syntaxDefinition.modules.length > 0) {
-    for (var _i = 0, _c = syntaxDefinition.modules; _i < _c.length; _i++) {
-      var module_1 = _c[_i];
+    for (var _i2 = 0, _c2 = syntaxDefinition.modules; _i2 < _c2.length; _i2++) {
+      var module_1 = _c2[_i2];
       var moduleSyntax = cssModules[module_1];
       if (moduleSyntax) {
         syntaxDefinition = extendSyntaxDefinition(moduleSyntax, syntaxDefinition);
@@ -13114,7 +13387,7 @@ function createParser(options) {
       }
     }
   }
-  var _e = syntaxDefinition.tag ? [true, Boolean(getXmlOptions(syntaxDefinition.tag).wildcard)] : [false, false], tagNameEnabled = _e[0], tagNameWildcardEnabled = _e[1];
+  var _e2 = syntaxDefinition.tag ? [true, Boolean(getXmlOptions(syntaxDefinition.tag).wildcard)] : [false, false], tagNameEnabled = _e2[0], tagNameWildcardEnabled = _e2[1];
   var idEnabled = Boolean(syntaxDefinition.ids);
   var classNamesEnabled = Boolean(syntaxDefinition.classNames);
   var nestingSelectorEnabled = Boolean(syntaxDefinition.nestingSelector);
@@ -13148,11 +13421,11 @@ function createParser(options) {
   var l = str.length;
   var pos = 0;
   var chr = "";
-  var is3 = function(comparison) {
+  var is4 = function(comparison) {
     return chr === comparison;
   };
   var isTagStart = function() {
-    return is3("*") || isIdentStart(chr);
+    return is4("*") || isIdentStart(chr);
   };
   var rewind = function(newPos) {
     pos = newPos;
@@ -13227,19 +13500,19 @@ function createParser(options) {
     var result = "";
     pass(quote);
     while (pos < l) {
-      if (is3(quote)) {
+      if (is4(quote)) {
         next();
         return result;
-      } else if (is3("\\")) {
+      } else if (is4("\\")) {
         next();
-        if (is3(quote)) {
+        if (is4(quote)) {
           result += quote;
           next();
         } else if (chr === "\n" || chr === "\f") {
           next();
         } else if (chr === "\r") {
           next();
-          if (is3("\n")) {
+          if (is4("\n")) {
             next();
           }
         } else if (isHex(chr)) {
@@ -13260,11 +13533,11 @@ function createParser(options) {
       return null;
     }
     var result = "";
-    while (is3("-")) {
+    while (is4("-")) {
       result += chr;
       next();
     }
-    if (result === "-" && !isIdent(chr) && !is3("\\")) {
+    if (result === "-" && !isIdent(chr) && !is4("\\")) {
       fail("Identifiers cannot consist of a single hyphen.");
     }
     if (strict && result.length >= 2) {
@@ -13276,7 +13549,7 @@ function createParser(options) {
     while (pos < l) {
       if (isIdent(chr)) {
         result += readAndNext();
-      } else if (is3("\\")) {
+      } else if (is4("\\")) {
         next();
         assertNonEof();
         if (isHex(chr)) {
@@ -13293,9 +13566,9 @@ function createParser(options) {
   function parsePseudoClassString() {
     var result = "";
     while (pos < l) {
-      if (is3(")")) {
+      if (is4(")")) {
         break;
-      } else if (is3("\\")) {
+      } else if (is4("\\")) {
         next();
         if (isEof() && !strict) {
           return (result + "\\").trim();
@@ -13335,7 +13608,7 @@ function createParser(options) {
     }
     skipWhitespace();
     var rules = [parseRule(relative)];
-    while (is3(",")) {
+    while (is4(",")) {
       next();
       skipWhitespace();
       rules.push(parseRule(relative));
@@ -13349,7 +13622,7 @@ function createParser(options) {
     pass("[");
     skipWhitespace();
     var attr;
-    if (is3("|")) {
+    if (is4("|")) {
       assert(namespaceEnabled, "Namespaces are not enabled.");
       next();
       var name_1 = parseIdentifier();
@@ -13359,7 +13632,7 @@ function createParser(options) {
         name: name_1,
         namespace: { type: "NoNamespace" }
       };
-    } else if (is3("*")) {
+    } else if (is4("*")) {
       assert(namespaceEnabled, "Namespaces are not enabled.");
       assert(namespaceWildcardEnabled, "Wildcard namespace is not enabled.");
       next();
@@ -13378,7 +13651,7 @@ function createParser(options) {
         type: "Attribute",
         name: identifier
       };
-      if (is3("|")) {
+      if (is4("|")) {
         var savedPos = pos;
         next();
         if (isIdentStart(chr)) {
@@ -13400,7 +13673,7 @@ function createParser(options) {
     if (isEof() && !strict) {
       return attr;
     }
-    if (is3("]")) {
+    if (is4("]")) {
       next();
     } else {
       attr.operator = matchMulticharIndex(attributesOperatorsIndex);
@@ -13412,7 +13685,7 @@ function createParser(options) {
           type: "String",
           value: parseString(chr)
         };
-      } else if (substitutesEnabled && is3("$")) {
+      } else if (substitutesEnabled && is4("$")) {
         next();
         var name_4 = parseIdentifier();
         assert(name_4, "Expected substitute name.");
@@ -13432,7 +13705,7 @@ function createParser(options) {
       if (isEof() && !strict) {
         return attr;
       }
-      if (!is3("]")) {
+      if (!is4("]")) {
         var caseSensitivityModifier = parseIdentifier();
         assert(caseSensitivityModifier, "Expected end of attribute selector.");
         attr.caseSensitivityModifier = caseSensitivityModifier;
@@ -13456,10 +13729,10 @@ function createParser(options) {
     return parseInt(result);
   }
   var isNumberStart = function() {
-    return is3("-") || is3("+") || digitsChars[chr];
+    return is4("-") || is4("+") || digitsChars[chr];
   };
   function parseFormula() {
-    if (is3("e") || is3("o")) {
+    if (is4("e") || is4("o")) {
       var ident = parseIdentifier();
       if (ident === "even") {
         skipWhitespace();
@@ -13472,16 +13745,16 @@ function createParser(options) {
     }
     var firstNumber = null;
     var firstNumberMultiplier = 1;
-    if (is3("-")) {
+    if (is4("-")) {
       next();
       firstNumberMultiplier = -1;
     }
     if (isNumberStart()) {
-      if (is3("+")) {
+      if (is4("+")) {
         next();
       }
       firstNumber = parseNumber();
-      if (!is3("\\") && !is3("n")) {
+      if (!is4("\\") && !is4("n")) {
         return [0, firstNumber * firstNumberMultiplier];
       }
     }
@@ -13490,7 +13763,7 @@ function createParser(options) {
     }
     firstNumber *= firstNumberMultiplier;
     var identifier;
-    if (is3("\\")) {
+    if (is4("\\")) {
       next();
       if (isHex(chr)) {
         identifier = parseHex();
@@ -13502,8 +13775,8 @@ function createParser(options) {
     }
     assert(identifier === "n", 'Formula parse error: expected "n".');
     skipWhitespace();
-    if (is3("+") || is3("-")) {
-      var sign = is3("+") ? 1 : -1;
+    if (is4("+") || is4("-")) {
+      var sign = is4("+") ? 1 : -1;
       next();
       skipWhitespace();
       return [firstNumber, sign * parseNumber()];
@@ -13513,10 +13786,10 @@ function createParser(options) {
   }
   function parsePseudoArgument(pseudoName, type, signature) {
     var argument;
-    if (is3("(")) {
+    if (is4("(")) {
       next();
       skipWhitespace();
-      if (substitutesEnabled && is3("$")) {
+      if (substitutesEnabled && is4("$")) {
         next();
         var name_5 = parseIdentifier();
         assert(name_5, "Expected substitute name.");
@@ -13533,22 +13806,22 @@ function createParser(options) {
       } else if (signature.type === "Selector") {
         argument = parseSelector2(true);
       } else if (signature.type === "Formula") {
-        var _a8 = parseFormula(), a = _a8[0], b = _a8[1];
+        var _a9 = parseFormula(), a = _a9[0], b2 = _a9[1];
         argument = {
           type: "Formula",
           a,
-          b
+          b: b2
         };
         if (signature.ofSelector) {
           skipWhitespace();
-          if (is3("o") || is3("\\")) {
+          if (is4("o") || is4("\\")) {
             var ident = parseIdentifier();
             assert(ident === "of", "Formula of selector parse error.");
             skipWhitespace();
             argument = {
               type: "FormulaOfSelector",
               a,
-              b,
+              b: b2,
               selector: parseRule()
             };
           }
@@ -13567,7 +13840,7 @@ function createParser(options) {
     return argument;
   }
   function parseTagName() {
-    if (is3("*")) {
+    if (is4("*")) {
       assert(tagNameWildcardEnabled, "Wildcard tag name is not enabled.");
       next();
       return { type: "WildcardTag" };
@@ -13584,10 +13857,10 @@ function createParser(options) {
     }
   }
   function parseTagNameWithNamespace() {
-    if (is3("*")) {
+    if (is4("*")) {
       var savedPos = pos;
       next();
-      if (!is3("|")) {
+      if (!is4("|")) {
         rewind(savedPos);
         return parseTagName();
       }
@@ -13601,7 +13874,7 @@ function createParser(options) {
       var tagName = parseTagName();
       tagName.namespace = { type: "WildcardNamespace" };
       return tagName;
-    } else if (is3("|")) {
+    } else if (is4("|")) {
       assert(namespaceEnabled, "Namespaces are not enabled.");
       next();
       var tagName = parseTagName();
@@ -13610,7 +13883,7 @@ function createParser(options) {
     } else if (isIdentStart(chr)) {
       var identifier = parseIdentifier();
       assert(identifier, "Expected tag name.");
-      if (!is3("|")) {
+      if (!is4("|")) {
         assert(tagNameEnabled, "Tag names are not enabled.");
         return {
           type: "TagName",
@@ -13635,7 +13908,7 @@ function createParser(options) {
     }
   }
   function parseRule(relative) {
-    var _a8, _b3;
+    var _a9, _b3;
     if (relative === void 0) {
       relative = false;
     }
@@ -13651,7 +13924,7 @@ function createParser(options) {
       if (isTagStart()) {
         assert(rule2.items.length === 0, "Unexpected tag/namespace start.");
         rule2.items.push(parseTagNameWithNamespace());
-      } else if (is3("|")) {
+      } else if (is4("|")) {
         var savedPos = pos;
         next();
         if (isTagStart()) {
@@ -13662,30 +13935,30 @@ function createParser(options) {
           rewind(savedPos);
           break;
         }
-      } else if (is3(".")) {
+      } else if (is4(".")) {
         assert(classNamesEnabled, "Class names are not enabled.");
         next();
         var className2 = parseIdentifier();
         assert(className2, "Expected class name.");
         rule2.items.push({ type: "ClassName", name: className2 });
-      } else if (is3("#")) {
+      } else if (is4("#")) {
         assert(idEnabled, "IDs are not enabled.");
         next();
         var idName = parseIdentifier();
         assert(idName, "Expected ID name.");
         rule2.items.push({ type: "Id", name: idName });
-      } else if (is3("&")) {
+      } else if (is4("&")) {
         assert(nestingSelectorEnabled, "Nesting selector is not enabled.");
         next();
         rule2.items.push({ type: "NestingSelector" });
-      } else if (is3("[")) {
+      } else if (is4("[")) {
         assert(attributesEnabled, "Attributes are not enabled.");
         rule2.items.push(parseAttribute());
-      } else if (is3(":")) {
+      } else if (is4(":")) {
         var isDoubleColon = false;
         var isPseudoElement = false;
         next();
-        if (is3(":")) {
+        if (is4(":")) {
           assert(pseudoElementsEnabled, "Pseudo elements are not enabled.");
           assert(pseudoElementsDoubleColonNotationEnabled, "Pseudo elements double colon notation is not enabled.");
           isDoubleColon = true;
@@ -13706,7 +13979,7 @@ function createParser(options) {
         }
         isPseudoElement = pseudoElementsEnabled && (isDoubleColon || !isDoubleColon && pseudoElementsSingleColonNotationEnabled && Object.prototype.hasOwnProperty.call(pseudoElementsDefinitions, pseudoName));
         if (isPseudoElement) {
-          var signature = (_a8 = pseudoElementsDefinitions[pseudoName]) !== null && _a8 !== void 0 ? _a8 : pseudoElementsAcceptUnknown && defaultPseudoSignature;
+          var signature = (_a9 = pseudoElementsDefinitions[pseudoName]) !== null && _a9 !== void 0 ? _a9 : pseudoElementsAcceptUnknown && defaultPseudoSignature;
           var pseudoElement = {
             type: "PseudoElement",
             name: pseudoName
@@ -13751,7 +14024,7 @@ function createParser(options) {
       }
     }
     skipWhitespace();
-    if (!isEof() && !is3(",") && !is3(")")) {
+    if (!isEof() && !is4(",") && !is4(")")) {
       var combinator = matchMulticharIndex(combinatorsIndex);
       skipWhitespace();
       rule2.nestedRule = parseRule();
@@ -13791,25 +14064,25 @@ var init_render = __esm({
 // node_modules/css-selector-parser/dist/mjs/ast.js
 function astMethods(type) {
   return function(generatorName, checkerName) {
-    var _a7;
-    return _a7 = {}, _a7[generatorName] = function(props) {
+    var _a8;
+    return _a8 = {}, _a8[generatorName] = function(props) {
       return __assign2({ type }, props);
-    }, _a7[checkerName] = function(entity) {
+    }, _a8[checkerName] = function(entity) {
       return typeof entity === "object" && entity !== null && entity.type === type;
-    }, _a7;
+    }, _a8;
   };
 }
 var __assign2, ast;
 var init_ast = __esm({
   "node_modules/css-selector-parser/dist/mjs/ast.js"() {
     __assign2 = function() {
-      __assign2 = Object.assign || function(t) {
+      __assign2 = Object.assign || function(t32) {
         for (var s2, i = 1, n = arguments.length; i < n; i++) {
           s2 = arguments[i];
-          for (var p2 in s2) if (Object.prototype.hasOwnProperty.call(s2, p2))
-            t[p2] = s2[p2];
+          for (var p3 in s2) if (Object.prototype.hasOwnProperty.call(s2, p3))
+            t32[p3] = s2[p3];
         }
-        return t;
+        return t32;
       };
       return __assign2.apply(this, arguments);
     };
@@ -13914,7 +14187,7 @@ function visitParents(tree, test2, visitor, reverse) {
   } else {
     check = test2;
   }
-  const is3 = convert(check);
+  const is4 = convert(check);
   const step = reverse ? -1 : 1;
   factory2(tree, void 0, [])();
   function factory2(node, index, parents) {
@@ -13940,7 +14213,7 @@ function visitParents(tree, test2, visitor, reverse) {
       let subresult;
       let offset;
       let grandparents;
-      if (!test2 || is3(node, index, parents[parents.length - 1] || void 0)) {
+      if (!test2 || is4(node, index, parents[parents.length - 1] || void 0)) {
         result = toResult(visitor(node, parents));
         if (result[0] === EXIT) {
           return result;
@@ -14417,18 +14690,18 @@ var require_boolbase = __commonJS({
 // node_modules/nth-check/lib/esm/compile.js
 function compile(parsed) {
   const a = parsed[0];
-  const b = parsed[1] - 1;
-  if (b < 0 && a <= 0)
+  const b2 = parsed[1] - 1;
+  if (b2 < 0 && a <= 0)
     return import_boolbase.default.falseFunc;
   if (a === -1)
-    return (index) => index <= b;
+    return (index) => index <= b2;
   if (a === 0)
-    return (index) => index === b;
+    return (index) => index === b2;
   if (a === 1)
-    return b < 0 ? import_boolbase.default.trueFunc : (index) => index >= b;
+    return b2 < 0 ? import_boolbase.default.trueFunc : (index) => index >= b2;
   const absA = Math.abs(a);
-  const bMod = (b % absA + absA) % absA;
-  return a > 1 ? (index) => index >= b && index % absA === bMod : (index) => index <= b && index % absA === bMod;
+  const bMod = (b2 % absA + absA) % absA;
+  return a > 1 ? (index) => index >= b2 && index % absA === bMod : (index) => index <= b2 && index % absA === bMod;
 }
 var import_boolbase;
 var init_compile = __esm({
@@ -14449,7 +14722,7 @@ var init_esm = __esm({
 });
 
 // node_modules/hast-util-select/lib/pseudo.js
-function anyLink(_, element3) {
+function anyLink(_2, element3) {
   return (element3.tagName === "a" || element3.tagName === "area" || element3.tagName === "link") && hasProperty(element3, "href");
 }
 function assertDeep(state, query) {
@@ -14457,13 +14730,13 @@ function assertDeep(state, query) {
     throw new Error("Cannot use `:" + query.name + "` without parent");
   }
 }
-function blank(_, element3) {
+function blank(_2, element3) {
   return !someChildren(element3, check);
   function check(child) {
     return child.type === "element" || child.type === "text" && !whitespace(child);
   }
 }
-function checked(_, element3) {
+function checked(_2, element3) {
   if (element3.tagName === "input" || element3.tagName === "menuitem") {
     return Boolean(
       (element3.properties.type === "checkbox" || element3.properties.type === "radio") && hasProperty(element3, "checked")
@@ -14479,10 +14752,10 @@ function dir(query, _1, _2, _3, state) {
   ok2(query.argument.type === "String", "expected plain text");
   return state.direction === query.argument.value;
 }
-function disabled(_, element3) {
+function disabled(_2, element3) {
   return (element3.tagName === "button" || element3.tagName === "input" || element3.tagName === "select" || element3.tagName === "textarea" || element3.tagName === "optgroup" || element3.tagName === "option" || element3.tagName === "menuitem" || element3.tagName === "fieldset") && hasProperty(element3, "disabled");
 }
-function empty3(_, element3) {
+function empty3(_2, element3) {
   return !someChildren(element3, check);
   function check(child) {
     return child.type === "element" || child.type === "text";
@@ -14607,10 +14880,10 @@ function optional(query, element3) {
 function readOnly(query, element3, index, parent, state) {
   return !readWrite(query, element3, index, parent, state);
 }
-function readWrite(_, element3, _1, _2, state) {
+function readWrite(_2, element3, _1, _22, state) {
   return element3.tagName === "input" || element3.tagName === "textarea" ? !hasProperty(element3, "readOnly") && !hasProperty(element3, "disabled") : Boolean(state.editableOrEditingHost);
 }
-function required(_, element3) {
+function required(_2, element3) {
   return (element3.tagName === "input" || element3.tagName === "textarea" || element3.tagName === "select") && hasProperty(element3, "required");
 }
 function root3(_1, element3, _2, parent, state) {
@@ -15598,8 +15871,8 @@ var require_stringifier = __commonJS({
         if (root5.raws.indent) return root5.raws.indent;
         let value;
         root5.walk((i) => {
-          let p2 = i.parent;
-          if (p2 && p2 !== root5 && p2.parent && p2.parent === root5) {
+          let p3 = i.parent;
+          if (p3 && p3 !== root5 && p3.parent && p3.parent === root5) {
             if (typeof i.raws.before !== "undefined") {
               let parts = i.raws.before.split("\n");
               value = parts[parts.length - 1];
@@ -16081,7 +16354,7 @@ var require_node = __commonJS({
         }
         return result;
       }
-      toJSON(_, inputs) {
+      toJSON(_2, inputs) {
         let emitInputs = inputs == null;
         inputs = inputs || /* @__PURE__ */ new Map();
         let holderOfRoot = [];
@@ -17050,13 +17323,13 @@ var require_input = __commonJS({
         let consumer = this.map.consumer();
         let from = consumer.originalPositionFor({ column: column - 1, line });
         if (!from.source) return false;
-        let to;
+        let to2;
         if (typeof endLine === "number") {
           let toPosition = consumer.originalPositionFor({
             column: endColumn - 1,
             line: endLine
           });
-          if (toPosition.source) to = toPosition;
+          if (toPosition.source) to2 = toPosition;
         }
         let fromUrl;
         if (isAbsolute(from.source)) {
@@ -17069,8 +17342,8 @@ var require_input = __commonJS({
         }
         let result = {
           column: from.column + 1,
-          endColumn: to && to.column + 1,
-          endLine: to && to.line,
+          endColumn: to2 && to2.column + 1,
+          endLine: to2 && to2.line,
           line: from.line,
           url: fromUrl.toString()
         };
@@ -17531,9 +17804,9 @@ var require_map_generator = __commonJS({
             column += str.length;
           }
           if (node && type !== "start") {
-            let p2 = node.parent || { raws: {} };
+            let p3 = node.parent || { raws: {} };
             let childless = node.type === "decl" || node.type === "atrule" && !node.nodes;
-            if (!childless || node !== p2.last || p2.raws.semicolon) {
+            if (!childless || node !== p3.last || p3.raws.semicolon) {
               if (node.source && node.source.end) {
                 mapping.source = this.sourcePath(node);
                 mapping.original.line = node.source.end.line;
@@ -17937,9 +18210,9 @@ var require_parser = __commonJS({
         if (pos) return pos;
       }
     }
-    function tokensToString(tokens, from, to) {
+    function tokensToString(tokens, from, to2) {
       let result = "";
-      for (let i = from; i < to; i++) result += tokens[i][1];
+      for (let i = from; i < to2; i++) result += tokens[i][1];
       return result;
     }
     var Parser = class {
@@ -18784,8 +19057,8 @@ var require_lazy_result = __commonJS({
               let pluginVer = plugin2.postcssVersion;
               let runtimeVer = this.result.processor.version;
               let a = pluginVer.split(".");
-              let b = runtimeVer.split(".");
-              if (a[0] !== b[0] || parseInt(a[1]) > parseInt(b[1])) {
+              let b2 = runtimeVer.split(".");
+              if (a[0] !== b2[0] || parseInt(a[1]) > parseInt(b2[1])) {
                 console.error(
                   "Unknown error from PostCSS plugin. Your current PostCSS version is " + runtimeVer + ", but " + pluginName + " uses " + pluginVer + ". Perhaps this is the source of the error below."
                 );
@@ -19481,8 +19754,8 @@ var require_getProp = __commonJS({
     exports2.default = getProp;
     function getProp(obj) {
       var props = [];
-      for (var _i = 1; _i < arguments.length; _i++) {
-        props[_i - 1] = arguments[_i];
+      for (var _i2 = 1; _i2 < arguments.length; _i2++) {
+        props[_i2 - 1] = arguments[_i2];
       }
       while (props.length > 0) {
         var prop = props.shift();
@@ -19504,8 +19777,8 @@ var require_ensureObject = __commonJS({
     exports2.default = ensureObject;
     function ensureObject(obj) {
       var props = [];
-      for (var _i = 1; _i < arguments.length; _i++) {
-        props[_i - 1] = arguments[_i];
+      for (var _i2 = 1; _i2 < arguments.length; _i2++) {
+        props[_i2 - 1] = arguments[_i2];
       }
       while (props.length > 0) {
         var prop = props.shift();
@@ -19792,48 +20065,48 @@ var require_container2 = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/container.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m2, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      var desc = Object.getOwnPropertyDescriptor(m2, k);
-      if (!desc || ("get" in desc ? !m2.__esModule : desc.writable || desc.configurable)) {
+      var desc = Object.getOwnPropertyDescriptor(m3, k);
+      if (!desc || ("get" in desc ? !m3.__esModule : desc.writable || desc.configurable)) {
         desc = { enumerable: true, get: function() {
-          return m2[k];
+          return m3[k];
         } };
       }
       Object.defineProperty(o, k2, desc);
-    }) : (function(o, m2, k, k2) {
+    }) : (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      o[k2] = m2[k];
+      o[k2] = m3[k];
     }));
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
-      Object.defineProperty(o, "default", { enumerable: true, value: v });
-    }) : function(o, v) {
-      o["default"] = v;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v2) {
+      Object.defineProperty(o, "default", { enumerable: true, value: v2 });
+    }) : function(o, v2) {
+      o["default"] = v2;
     });
     var __importStar = exports2 && exports2.__importStar || /* @__PURE__ */ (function() {
       var ownKeys = function(o) {
         ownKeys = Object.getOwnPropertyNames || function(o2) {
-          var ar = [];
-          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar[ar.length] = k;
-          return ar;
+          var ar2 = [];
+          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar2[ar2.length] = k;
+          return ar2;
         };
         return ownKeys(o);
       };
@@ -19848,8 +20121,8 @@ var require_container2 = __commonJS({
       };
     })();
     var __values = exports2 && exports2.__values || function(o) {
-      var s2 = typeof Symbol === "function" && Symbol.iterator, m2 = s2 && o[s2], i = 0;
-      if (m2) return m2.call(o);
+      var s2 = typeof Symbol === "function" && Symbol.iterator, m3 = s2 && o[s2], i = 0;
+      if (m3) return m3.call(o);
       if (o && typeof o.length === "number") return {
         next: function() {
           if (o && i >= o.length) o = void 0;
@@ -19859,30 +20132,30 @@ var require_container2 = __commonJS({
       throw new TypeError(s2 ? "Object is not iterable." : "Symbol.iterator is not defined.");
     };
     var __read = exports2 && exports2.__read || function(o, n) {
-      var m2 = typeof Symbol === "function" && o[Symbol.iterator];
-      if (!m2) return o;
-      var i = m2.call(o), r, ar = [], e;
+      var m3 = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m3) return o;
+      var i = m3.call(o), r, ar2 = [], e;
       try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar2.push(r.value);
       } catch (error) {
         e = { error };
       } finally {
         try {
-          if (r && !r.done && (m2 = i["return"])) m2.call(i);
+          if (r && !r.done && (m3 = i["return"])) m3.call(i);
         } finally {
           if (e) throw e.error;
         }
       }
-      return ar;
+      return ar2;
     };
-    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from, pack) {
-      if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
+    var __spreadArray = exports2 && exports2.__spreadArray || function(to2, from, pack) {
+      if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar2; i < l; i++) {
+        if (ar2 || !(i in from)) {
+          if (!ar2) ar2 = Array.prototype.slice.call(from, 0, i);
+          ar2[i] = from[i];
         }
       }
-      return to.concat(ar || Array.prototype.slice.call(from));
+      return to2.concat(ar2 || Array.prototype.slice.call(from));
     };
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
@@ -19959,17 +20232,17 @@ var require_container2 = __commonJS({
           return this;
         };
         Container3.prototype.removeAll = function() {
-          var e_1, _a7;
+          var e_1, _a8;
           try {
-            for (var _b2 = __values(this.nodes), _c = _b2.next(); !_c.done; _c = _b2.next()) {
-              var node = _c.value;
+            for (var _b2 = __values(this.nodes), _c2 = _b2.next(); !_c2.done; _c2 = _b2.next()) {
+              var node = _c2.value;
               node.parent = void 0;
             }
           } catch (e_1_1) {
             e_1 = { error: e_1_1 };
           } finally {
             try {
-              if (_c && !_c.done && (_a7 = _b2.return)) _a7.call(_b2);
+              if (_c2 && !_c2.done && (_a8 = _b2.return)) _a8.call(_b2);
             } finally {
               if (e_1) throw e_1.error;
             }
@@ -19981,7 +20254,7 @@ var require_container2 = __commonJS({
           return this.removeAll();
         };
         Container3.prototype.insertAfter = function(oldNode, newNode) {
-          var _a7;
+          var _a8;
           newNode.parent = this;
           var oldIndex = this.index(oldNode);
           var resetNode = [];
@@ -19989,7 +20262,7 @@ var require_container2 = __commonJS({
             arguments[i].parent = this;
             resetNode.push(arguments[i]);
           }
-          (_a7 = this.nodes).splice.apply(_a7, __spreadArray([oldIndex + 1, 0, newNode], __read(resetNode), false));
+          (_a8 = this.nodes).splice.apply(_a8, __spreadArray([oldIndex + 1, 0, newNode], __read(resetNode), false));
           newNode.parent = this;
           var index;
           for (var id2 in this.indexes) {
@@ -20001,7 +20274,7 @@ var require_container2 = __commonJS({
           return this;
         };
         Container3.prototype.insertBefore = function(oldNode, newNode) {
-          var _a7;
+          var _a8;
           newNode.parent = this;
           var oldIndex = this.index(oldNode);
           var resetNode = [];
@@ -20009,7 +20282,7 @@ var require_container2 = __commonJS({
             arguments[i].parent = this;
             resetNode.push(arguments[i]);
           }
-          (_a7 = this.nodes).splice.apply(_a7, __spreadArray([oldIndex, 0, newNode], __read(resetNode), false));
+          (_a8 = this.nodes).splice.apply(_a8, __spreadArray([oldIndex, 0, newNode], __read(resetNode), false));
           newNode.parent = this;
           var index;
           for (var id2 in this.indexes) {
@@ -20226,22 +20499,22 @@ var require_root2 = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/root.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20293,22 +20566,22 @@ var require_selector = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/selector.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20401,9 +20674,9 @@ var require_cssesc = __commonJS({
           output = "\\3" + firstChar + " " + output.slice(1);
         }
       }
-      output = output.replace(regexExcessiveSpaces, function($0, $1, $2) {
+      output = output.replace(regexExcessiveSpaces, function($02, $1, $2) {
         if ($1 && $1.length % 2) {
-          return $0;
+          return $02;
         }
         return ($1 || "") + $2;
       });
@@ -20428,22 +20701,22 @@ var require_className = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/className.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20468,17 +20741,17 @@ var require_className = __commonJS({
           get: function() {
             return this._value;
           },
-          set: function(v) {
+          set: function(v2) {
             if (this._constructed) {
-              var escaped = (0, cssesc_1.default)(v, { isIdentifier: true });
-              if (escaped !== v) {
+              var escaped = (0, cssesc_1.default)(v2, { isIdentifier: true });
+              if (escaped !== v2) {
                 (0, util_1.ensureObject)(this, "raws");
                 this.raws.value = escaped;
               } else if (this.raws) {
                 delete this.raws.value;
               }
             }
-            this._value = v;
+            this._value = v2;
           },
           enumerable: false,
           configurable: true
@@ -20498,22 +20771,22 @@ var require_comment2 = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/comment.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20543,22 +20816,22 @@ var require_id = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/id.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20591,22 +20864,22 @@ var require_namespace = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/namespace.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20660,11 +20933,11 @@ var require_namespace = __commonJS({
         Object.defineProperty(Namespace2.prototype, "namespaceString", {
           get: function() {
             if (this.namespace) {
-              var ns = this.stringifyProperty("namespace");
-              if (ns === true) {
+              var ns2 = this.stringifyProperty("namespace");
+              if (ns2 === true) {
                 return "";
               } else {
-                return ns;
+                return ns2;
               }
             } else {
               return "";
@@ -20695,22 +20968,22 @@ var require_tag = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/tag.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20740,22 +21013,22 @@ var require_string = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/string.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String2(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String2(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20785,22 +21058,22 @@ var require_pseudo = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/pseudo.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -20839,9 +21112,9 @@ var require_pseudo = __commonJS({
 var require_browser = __commonJS({
   "node_modules/util-deprecate/browser.js"(exports2, module2) {
     module2.exports = deprecate;
-    function deprecate(fn3, msg) {
+    function deprecate(fn4, msg) {
       if (config("noDeprecation")) {
-        return fn3;
+        return fn4;
       }
       var warned = false;
       function deprecated() {
@@ -20855,14 +21128,14 @@ var require_browser = __commonJS({
           }
           warned = true;
         }
-        return fn3.apply(this, arguments);
+        return fn4.apply(this, arguments);
       }
       return deprecated;
     }
     function config(name2) {
       try {
         if (!global.localStorage) return false;
-      } catch (_) {
+      } catch (_2) {
         return false;
       }
       var val = global.localStorage[name2];
@@ -20877,28 +21150,28 @@ var require_attribute = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/attribute.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
     };
-    var _a7;
+    var _a8;
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.unescapeValue = unescapeValue;
     var cssesc_1 = __importDefault(require_cssesc());
@@ -20917,10 +21190,10 @@ var require_attribute = __commonJS({
       var deprecatedUsage = false;
       var quoteMark = null;
       var unescaped = value;
-      var m2 = unescaped.match(WRAPPED_IN_QUOTES);
-      if (m2) {
-        quoteMark = m2[1];
-        unescaped = m2[2];
+      var m3 = unescaped.match(WRAPPED_IN_QUOTES);
+      if (m3) {
+        quoteMark = m3[1];
+        unescaped = m3[2];
       }
       unescaped = (0, unesc_1.default)(unescaped);
       if (unescaped !== value) {
@@ -20940,7 +21213,7 @@ var require_attribute = __commonJS({
         return opts;
       }
       warnOfDeprecatedConstructor();
-      var _a8 = unescapeValue(opts.value), quoteMark = _a8.quoteMark, unescaped = _a8.unescaped;
+      var _a9 = unescapeValue(opts.value), quoteMark = _a9.quoteMark, unescaped = _a9.unescaped;
       if (!opts.raws) {
         opts.raws = {};
       }
@@ -20994,19 +21267,19 @@ var require_attribute = __commonJS({
           this._syncRawValue();
         };
         Attribute2.prototype.smartQuoteMark = function(options) {
-          var v = this.value;
-          var numSingleQuotes = v.replace(/[^']/g, "").length;
-          var numDoubleQuotes = v.replace(/[^"]/g, "").length;
+          var v2 = this.value;
+          var numSingleQuotes = v2.replace(/[^']/g, "").length;
+          var numDoubleQuotes = v2.replace(/[^"]/g, "").length;
           if (numSingleQuotes + numDoubleQuotes === 0) {
-            var escaped = (0, cssesc_1.default)(v, { isIdentifier: true });
-            if (escaped === v) {
+            var escaped = (0, cssesc_1.default)(v2, { isIdentifier: true });
+            if (escaped === v2) {
               return Attribute2.NO_QUOTE;
             } else {
               var pref = this.preferredQuoteMark(options);
               if (pref === Attribute2.NO_QUOTE) {
                 var quote = this.quoteMark || options.quoteMark || Attribute2.DOUBLE_QUOTE;
                 var opts = CSSESC_QUOTE_OPTIONS[quote];
-                var quoteValue = (0, cssesc_1.default)(v, opts);
+                var quoteValue = (0, cssesc_1.default)(v2, opts);
                 if (quoteValue.length < escaped.length) {
                   return quote;
                 }
@@ -21112,9 +21385,9 @@ var require_attribute = __commonJS({
            * Instead, you should call `attr.setValue(newValue, opts)` and pass options that describe
            * how the new value is quoted.
            */
-          set: function(v) {
+          set: function(v2) {
             if (this._constructed) {
-              var _a8 = unescapeValue(v), deprecatedUsage = _a8.deprecatedUsage, unescaped = _a8.unescaped, quoteMark = _a8.quoteMark;
+              var _a9 = unescapeValue(v2), deprecatedUsage = _a9.deprecatedUsage, unescaped = _a9.unescaped, quoteMark = _a9.quoteMark;
               if (deprecatedUsage) {
                 warnOfDeprecatedValueAssignment();
               }
@@ -21125,7 +21398,7 @@ var require_attribute = __commonJS({
               this._quoteMark = quoteMark;
               this._syncRawValue();
             } else {
-              this._value = v;
+              this._value = v2;
             }
           },
           enumerable: false,
@@ -21258,10 +21531,10 @@ var require_attribute = __commonJS({
       })(namespace_1.default)
     );
     exports2.default = Attribute;
-    var CSSESC_QUOTE_OPTIONS = (_a7 = {
+    var CSSESC_QUOTE_OPTIONS = (_a8 = {
       "'": { quotes: "single", wrap: true },
       '"': { quotes: "double", wrap: true }
-    }, _a7[null] = { isIdentifier: true }, _a7);
+    }, _a8[null] = { isIdentifier: true }, _a8);
     function defaultAttrConcat(attrValue, attrSpaces) {
       return "".concat(attrSpaces.before).concat(attrValue).concat(attrSpaces.after);
     }
@@ -21273,22 +21546,22 @@ var require_universal = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/universal.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -21319,22 +21592,22 @@ var require_combinator = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/combinator.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -21378,22 +21651,22 @@ var require_nesting = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/nesting.js"(exports2) {
     "use strict";
     var __extends = exports2 && exports2.__extends || /* @__PURE__ */ (function() {
-      var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p2 in b2) if (Object.prototype.hasOwnProperty.call(b2, p2)) d2[p2] = b2[p2];
+      var extendStatics = function(d, b2) {
+        extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b3) {
+          d2.__proto__ = b3;
+        } || function(d2, b3) {
+          for (var p3 in b3) if (Object.prototype.hasOwnProperty.call(b3, p3)) d2[p3] = b3[p3];
         };
-        return extendStatics(d, b);
+        return extendStatics(d, b2);
       };
-      return function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
+      return function(d, b2) {
+        if (typeof b2 !== "function" && b2 !== null)
+          throw new TypeError("Class extends value " + String(b2) + " is not a constructor or null");
+        extendStatics(d, b2);
         function __() {
           this.constructor = d;
         }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        d.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
       };
     })();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
@@ -21426,8 +21699,8 @@ var require_sortAscending = __commonJS({
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.default = sortAscending;
     function sortAscending(list2) {
-      return list2.sort(function(a, b) {
-        return a - b;
+      return list2.sort(function(a, b2) {
+        return a - b2;
       });
     }
   }
@@ -21477,30 +21750,30 @@ var require_tokenTypes = __commonJS({
 var require_tokenize2 = __commonJS({
   "node_modules/postcss-selector-parser/dist/tokenize.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m2, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      var desc = Object.getOwnPropertyDescriptor(m2, k);
-      if (!desc || ("get" in desc ? !m2.__esModule : desc.writable || desc.configurable)) {
+      var desc = Object.getOwnPropertyDescriptor(m3, k);
+      if (!desc || ("get" in desc ? !m3.__esModule : desc.writable || desc.configurable)) {
         desc = { enumerable: true, get: function() {
-          return m2[k];
+          return m3[k];
         } };
       }
       Object.defineProperty(o, k2, desc);
-    }) : (function(o, m2, k, k2) {
+    }) : (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      o[k2] = m2[k];
+      o[k2] = m3[k];
     }));
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
-      Object.defineProperty(o, "default", { enumerable: true, value: v });
-    }) : function(o, v) {
-      o["default"] = v;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v2) {
+      Object.defineProperty(o, "default", { enumerable: true, value: v2 });
+    }) : function(o, v2) {
+      o["default"] = v2;
     });
     var __importStar = exports2 && exports2.__importStar || /* @__PURE__ */ (function() {
       var ownKeys = function(o) {
         ownKeys = Object.getOwnPropertyNames || function(o2) {
-          var ar = [];
-          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar[ar.length] = k;
-          return ar;
+          var ar2 = [];
+          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar2[ar2.length] = k;
+          return ar2;
         };
         return ownKeys(o);
       };
@@ -21514,14 +21787,14 @@ var require_tokenize2 = __commonJS({
         return result;
       };
     })();
-    var _a7;
+    var _a8;
     var _b2;
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.FIELDS = void 0;
     exports2.default = tokenize;
-    var t = __importStar(require_tokenTypes());
-    var unescapable = (_a7 = {}, _a7[t.tab] = true, _a7[t.newline] = true, _a7[t.cr] = true, _a7[t.feed] = true, _a7);
-    var wordDelimiters = (_b2 = {}, _b2[t.space] = true, _b2[t.tab] = true, _b2[t.newline] = true, _b2[t.cr] = true, _b2[t.feed] = true, _b2[t.ampersand] = true, _b2[t.asterisk] = true, _b2[t.bang] = true, _b2[t.comma] = true, _b2[t.colon] = true, _b2[t.semicolon] = true, _b2[t.openParenthesis] = true, _b2[t.closeParenthesis] = true, _b2[t.openSquare] = true, _b2[t.closeSquare] = true, _b2[t.singleQuote] = true, _b2[t.doubleQuote] = true, _b2[t.plus] = true, _b2[t.pipe] = true, _b2[t.tilde] = true, _b2[t.greaterThan] = true, _b2[t.equals] = true, _b2[t.dollar] = true, _b2[t.caret] = true, _b2[t.slash] = true, _b2);
+    var t32 = __importStar(require_tokenTypes());
+    var unescapable = (_a8 = {}, _a8[t32.tab] = true, _a8[t32.newline] = true, _a8[t32.cr] = true, _a8[t32.feed] = true, _a8);
+    var wordDelimiters = (_b2 = {}, _b2[t32.space] = true, _b2[t32.tab] = true, _b2[t32.newline] = true, _b2[t32.cr] = true, _b2[t32.feed] = true, _b2[t32.ampersand] = true, _b2[t32.asterisk] = true, _b2[t32.bang] = true, _b2[t32.comma] = true, _b2[t32.colon] = true, _b2[t32.semicolon] = true, _b2[t32.openParenthesis] = true, _b2[t32.closeParenthesis] = true, _b2[t32.openSquare] = true, _b2[t32.closeSquare] = true, _b2[t32.singleQuote] = true, _b2[t32.doubleQuote] = true, _b2[t32.plus] = true, _b2[t32.pipe] = true, _b2[t32.tilde] = true, _b2[t32.greaterThan] = true, _b2[t32.equals] = true, _b2[t32.dollar] = true, _b2[t32.caret] = true, _b2[t32.slash] = true, _b2);
     var hex = {};
     var hexChars = "0123456789abcdefABCDEF";
     for (i = 0; i < hexChars.length; i++) {
@@ -21535,7 +21808,7 @@ var require_tokenize2 = __commonJS({
         code = css.charCodeAt(next);
         if (wordDelimiters[code]) {
           return next - 1;
-        } else if (code === t.backslash) {
+        } else if (code === t32.backslash) {
           next = consumeEscape(css, next) + 1;
         } else {
           next++;
@@ -21554,7 +21827,7 @@ var require_tokenize2 = __commonJS({
           hexDigits++;
           code = css.charCodeAt(next + 1);
         } while (hex[code] && hexDigits < 6);
-        if (hexDigits < 6 && code === t.space) {
+        if (hexDigits < 6 && code === t32.space) {
           next++;
         }
       } else {
@@ -21590,67 +21863,67 @@ var require_tokenize2 = __commonJS({
       }
       while (start < length) {
         code = css.charCodeAt(start);
-        if (code === t.newline) {
+        if (code === t32.newline) {
           offset = start;
           line += 1;
         }
         switch (code) {
-          case t.space:
-          case t.tab:
-          case t.newline:
-          case t.cr:
-          case t.feed:
+          case t32.space:
+          case t32.tab:
+          case t32.newline:
+          case t32.cr:
+          case t32.feed:
             next = start;
             do {
               next += 1;
               code = css.charCodeAt(next);
-              if (code === t.newline) {
+              if (code === t32.newline) {
                 offset = next;
                 line += 1;
               }
-            } while (code === t.space || code === t.newline || code === t.tab || code === t.cr || code === t.feed);
-            tokenType = t.space;
+            } while (code === t32.space || code === t32.newline || code === t32.tab || code === t32.cr || code === t32.feed);
+            tokenType = t32.space;
             endLine = line;
             endColumn = next - offset - 1;
             end = next;
             break;
-          case t.plus:
-          case t.greaterThan:
-          case t.tilde:
-          case t.pipe:
+          case t32.plus:
+          case t32.greaterThan:
+          case t32.tilde:
+          case t32.pipe:
             next = start;
             do {
               next += 1;
               code = css.charCodeAt(next);
-            } while (code === t.plus || code === t.greaterThan || code === t.tilde || code === t.pipe);
-            tokenType = t.combinator;
+            } while (code === t32.plus || code === t32.greaterThan || code === t32.tilde || code === t32.pipe);
+            tokenType = t32.combinator;
             endLine = line;
             endColumn = start - offset;
             end = next;
             break;
           // Consume these characters as single tokens.
-          case t.asterisk:
-          case t.ampersand:
-          case t.bang:
-          case t.comma:
-          case t.equals:
-          case t.dollar:
-          case t.caret:
-          case t.openSquare:
-          case t.closeSquare:
-          case t.colon:
-          case t.semicolon:
-          case t.openParenthesis:
-          case t.closeParenthesis:
+          case t32.asterisk:
+          case t32.ampersand:
+          case t32.bang:
+          case t32.comma:
+          case t32.equals:
+          case t32.dollar:
+          case t32.caret:
+          case t32.openSquare:
+          case t32.closeSquare:
+          case t32.colon:
+          case t32.semicolon:
+          case t32.openParenthesis:
+          case t32.closeParenthesis:
             next = start;
             tokenType = code;
             endLine = line;
             endColumn = start - offset;
             end = next + 1;
             break;
-          case t.singleQuote:
-          case t.doubleQuote:
-            quote = code === t.singleQuote ? "'" : '"';
+          case t32.singleQuote:
+          case t32.doubleQuote:
+            quote = code === t32.singleQuote ? "'" : '"';
             next = start;
             do {
               escaped = false;
@@ -21659,18 +21932,18 @@ var require_tokenize2 = __commonJS({
                 unclosed("quote", quote);
               }
               escapePos = next;
-              while (css.charCodeAt(escapePos - 1) === t.backslash) {
+              while (css.charCodeAt(escapePos - 1) === t32.backslash) {
                 escapePos -= 1;
                 escaped = !escaped;
               }
             } while (escaped);
-            tokenType = t.str;
+            tokenType = t32.str;
             endLine = line;
             endColumn = start - offset;
             end = next + 1;
             break;
           default:
-            if (code === t.slash && css.charCodeAt(start + 1) === t.asterisk) {
+            if (code === t32.slash && css.charCodeAt(start + 1) === t32.asterisk) {
               next = css.indexOf("*/", start + 2) + 1;
               if (next === 0) {
                 unclosed("comment", "*/");
@@ -21685,11 +21958,11 @@ var require_tokenize2 = __commonJS({
                 nextLine = line;
                 nextOffset = offset;
               }
-              tokenType = t.comment;
+              tokenType = t32.comment;
               line = nextLine;
               endLine = nextLine;
               endColumn = next - nextOffset;
-            } else if (code === t.slash) {
+            } else if (code === t32.slash) {
               next = start;
               tokenType = code;
               endLine = line;
@@ -21697,7 +21970,7 @@ var require_tokenize2 = __commonJS({
               end = next + 1;
             } else {
               next = consumeWord(css, start);
-              tokenType = t.word;
+              tokenType = t32.word;
               endLine = line;
               endColumn = next - offset;
             }
@@ -21736,40 +22009,40 @@ var require_parser2 = __commonJS({
   "node_modules/postcss-selector-parser/dist/parser.js"(exports2) {
     "use strict";
     var __assign3 = exports2 && exports2.__assign || function() {
-      __assign3 = Object.assign || function(t) {
+      __assign3 = Object.assign || function(t32) {
         for (var s2, i = 1, n = arguments.length; i < n; i++) {
           s2 = arguments[i];
-          for (var p2 in s2) if (Object.prototype.hasOwnProperty.call(s2, p2))
-            t[p2] = s2[p2];
+          for (var p3 in s2) if (Object.prototype.hasOwnProperty.call(s2, p3))
+            t32[p3] = s2[p3];
         }
-        return t;
+        return t32;
       };
       return __assign3.apply(this, arguments);
     };
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m2, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      var desc = Object.getOwnPropertyDescriptor(m2, k);
-      if (!desc || ("get" in desc ? !m2.__esModule : desc.writable || desc.configurable)) {
+      var desc = Object.getOwnPropertyDescriptor(m3, k);
+      if (!desc || ("get" in desc ? !m3.__esModule : desc.writable || desc.configurable)) {
         desc = { enumerable: true, get: function() {
-          return m2[k];
+          return m3[k];
         } };
       }
       Object.defineProperty(o, k2, desc);
-    }) : (function(o, m2, k, k2) {
+    }) : (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      o[k2] = m2[k];
+      o[k2] = m3[k];
     }));
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
-      Object.defineProperty(o, "default", { enumerable: true, value: v });
-    }) : function(o, v) {
-      o["default"] = v;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v2) {
+      Object.defineProperty(o, "default", { enumerable: true, value: v2 });
+    }) : function(o, v2) {
+      o["default"] = v2;
     });
     var __importStar = exports2 && exports2.__importStar || /* @__PURE__ */ (function() {
       var ownKeys = function(o) {
         ownKeys = Object.getOwnPropertyNames || function(o2) {
-          var ar = [];
-          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar[ar.length] = k;
-          return ar;
+          var ar2 = [];
+          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar2[ar2.length] = k;
+          return ar2;
         };
         return ownKeys(o);
       };
@@ -21784,35 +22057,35 @@ var require_parser2 = __commonJS({
       };
     })();
     var __read = exports2 && exports2.__read || function(o, n) {
-      var m2 = typeof Symbol === "function" && o[Symbol.iterator];
-      if (!m2) return o;
-      var i = m2.call(o), r, ar = [], e;
+      var m3 = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m3) return o;
+      var i = m3.call(o), r, ar2 = [], e;
       try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar2.push(r.value);
       } catch (error) {
         e = { error };
       } finally {
         try {
-          if (r && !r.done && (m2 = i["return"])) m2.call(i);
+          if (r && !r.done && (m3 = i["return"])) m3.call(i);
         } finally {
           if (e) throw e.error;
         }
       }
-      return ar;
+      return ar2;
     };
-    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from, pack) {
-      if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
+    var __spreadArray = exports2 && exports2.__spreadArray || function(to2, from, pack) {
+      if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar2; i < l; i++) {
+        if (ar2 || !(i in from)) {
+          if (!ar2) ar2 = Array.prototype.slice.call(from, 0, i);
+          ar2[i] = from[i];
         }
       }
-      return to.concat(ar || Array.prototype.slice.call(from));
+      return to2.concat(ar2 || Array.prototype.slice.call(from));
     };
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
     };
-    var _a7;
+    var _a8;
     var _b2;
     Object.defineProperty(exports2, "__esModule", { value: true });
     var root_1 = __importDefault(require_root2());
@@ -21832,7 +22105,7 @@ var require_parser2 = __commonJS({
     var tokens = __importStar(require_tokenTypes());
     var types = __importStar(require_types());
     var util_1 = require_util();
-    var WHITESPACE_TOKENS = (_a7 = {}, _a7[tokens.space] = true, _a7[tokens.cr] = true, _a7[tokens.feed] = true, _a7[tokens.newline] = true, _a7[tokens.tab] = true, _a7);
+    var WHITESPACE_TOKENS = (_a8 = {}, _a8[tokens.space] = true, _a8[tokens.cr] = true, _a8[tokens.feed] = true, _a8[tokens.newline] = true, _a8[tokens.tab] = true, _a8);
     var WHITESPACE_EQUIV_TOKENS = __assign3(__assign3({}, WHITESPACE_TOKENS), (_b2 = {}, _b2[tokens.comment] = true, _b2));
     function tokenStart(token) {
       return {
@@ -22140,7 +22413,7 @@ var require_parser2 = __commonJS({
                     index: token[tokenize_1.FIELDS.START_POS]
                   });
                 }
-                var _a8 = (0, attribute_1.unescapeValue)(content), unescaped = _a8.unescaped, quoteMark = _a8.quoteMark;
+                var _a9 = (0, attribute_1.unescapeValue)(content), unescaped = _a9.unescaped, quoteMark = _a9.quoteMark;
                 node.value = unescaped;
                 node.quoteMark = quoteMark;
                 lastAdded = "value";
@@ -22288,7 +22561,7 @@ var require_parser2 = __commonJS({
             if (nodes.length > 0) {
               var last = this.current.last;
               if (last) {
-                var _a8 = this.convertWhitespaceNodesToSpace(nodes), space = _a8.space, rawSpace = _a8.rawSpace;
+                var _a9 = this.convertWhitespaceNodesToSpace(nodes), space = _a9.space, rawSpace = _a9.rawSpace;
                 if (rawSpace !== void 0) {
                   last.rawSpaceAfter += rawSpace;
                 }
@@ -22327,7 +22600,7 @@ var require_parser2 = __commonJS({
               node.rawSpaceBefore = rawSpace;
             }
           } else {
-            var _c = this.convertWhitespaceNodesToSpace(spaceOrDescendantSelectorNodes, true), space = _c.space, rawSpace = _c.rawSpace;
+            var _c2 = this.convertWhitespaceNodesToSpace(spaceOrDescendantSelectorNodes, true), space = _c2.space, rawSpace = _c2.rawSpace;
             if (!rawSpace) {
               rawSpace = space;
             }
@@ -22731,11 +23004,11 @@ var require_parser2 = __commonJS({
             var last = description.pop();
             description = "".concat(description.join(", "), " or ").concat(last);
           }
-          var an = /^[aeiou]/.test(description[0]) ? "an" : "a";
+          var an2 = /^[aeiou]/.test(description[0]) ? "an" : "a";
           if (!found) {
-            return this.error("Expected ".concat(an, " ").concat(description, "."), { index });
+            return this.error("Expected ".concat(an2, " ").concat(description, "."), { index });
           }
-          return this.error("Expected ".concat(an, " ").concat(description, ', found "').concat(found, '" instead.'), { index });
+          return this.error("Expected ".concat(an2, " ").concat(description, ', found "').concat(found, '" instead.'), { index });
         };
         Parser2.prototype.requiredSpace = function(space) {
           return this.options.lossy ? " " : space;
@@ -23031,7 +23304,7 @@ var require_constructors = __commonJS({
 var require_guards = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/guards.js"(exports2) {
     "use strict";
-    var _a7;
+    var _a8;
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.isUniversal = exports2.isTag = exports2.isString = exports2.isSelector = exports2.isRoot = exports2.isPseudo = exports2.isNesting = exports2.isIdentifier = exports2.isComment = exports2.isCombinator = exports2.isClassName = exports2.isAttribute = void 0;
     exports2.isNode = isNode;
@@ -23040,7 +23313,7 @@ var require_guards = __commonJS({
     exports2.isContainer = isContainer;
     exports2.isNamespace = isNamespace;
     var types_1 = require_types();
-    var IS_TYPE = (_a7 = {}, _a7[types_1.ATTRIBUTE] = true, _a7[types_1.CLASS] = true, _a7[types_1.COMBINATOR] = true, _a7[types_1.COMMENT] = true, _a7[types_1.ID] = true, _a7[types_1.NESTING] = true, _a7[types_1.PSEUDO] = true, _a7[types_1.ROOT] = true, _a7[types_1.SELECTOR] = true, _a7[types_1.STRING] = true, _a7[types_1.TAG] = true, _a7[types_1.UNIVERSAL] = true, _a7);
+    var IS_TYPE = (_a8 = {}, _a8[types_1.ATTRIBUTE] = true, _a8[types_1.CLASS] = true, _a8[types_1.COMBINATOR] = true, _a8[types_1.COMMENT] = true, _a8[types_1.ID] = true, _a8[types_1.NESTING] = true, _a8[types_1.PSEUDO] = true, _a8[types_1.ROOT] = true, _a8[types_1.SELECTOR] = true, _a8[types_1.STRING] = true, _a8[types_1.TAG] = true, _a8[types_1.UNIVERSAL] = true, _a8);
     function isNode(node) {
       return typeof node === "object" && IS_TYPE[node.type];
     }
@@ -23078,21 +23351,21 @@ var require_guards = __commonJS({
 var require_selectors = __commonJS({
   "node_modules/postcss-selector-parser/dist/selectors/index.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m2, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      var desc = Object.getOwnPropertyDescriptor(m2, k);
-      if (!desc || ("get" in desc ? !m2.__esModule : desc.writable || desc.configurable)) {
+      var desc = Object.getOwnPropertyDescriptor(m3, k);
+      if (!desc || ("get" in desc ? !m3.__esModule : desc.writable || desc.configurable)) {
         desc = { enumerable: true, get: function() {
-          return m2[k];
+          return m3[k];
         } };
       }
       Object.defineProperty(o, k2, desc);
-    }) : (function(o, m2, k, k2) {
+    }) : (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      o[k2] = m2[k];
+      o[k2] = m3[k];
     }));
-    var __exportStar = exports2 && exports2.__exportStar || function(m2, exports3) {
-      for (var p2 in m2) if (p2 !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p2)) __createBinding(exports3, m2, p2);
+    var __exportStar = exports2 && exports2.__exportStar || function(m3, exports3) {
+      for (var p3 in m3) if (p3 !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p3)) __createBinding(exports3, m3, p3);
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     __exportStar(require_types(), exports2);
@@ -23105,30 +23378,30 @@ var require_selectors = __commonJS({
 var require_dist = __commonJS({
   "node_modules/postcss-selector-parser/dist/index.js"(exports2, module2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m2, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      var desc = Object.getOwnPropertyDescriptor(m2, k);
-      if (!desc || ("get" in desc ? !m2.__esModule : desc.writable || desc.configurable)) {
+      var desc = Object.getOwnPropertyDescriptor(m3, k);
+      if (!desc || ("get" in desc ? !m3.__esModule : desc.writable || desc.configurable)) {
         desc = { enumerable: true, get: function() {
-          return m2[k];
+          return m3[k];
         } };
       }
       Object.defineProperty(o, k2, desc);
-    }) : (function(o, m2, k, k2) {
+    }) : (function(o, m3, k, k2) {
       if (k2 === void 0) k2 = k;
-      o[k2] = m2[k];
+      o[k2] = m3[k];
     }));
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
-      Object.defineProperty(o, "default", { enumerable: true, value: v });
-    }) : function(o, v) {
-      o["default"] = v;
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v2) {
+      Object.defineProperty(o, "default", { enumerable: true, value: v2 });
+    }) : function(o, v2) {
+      o["default"] = v2;
     });
     var __importStar = exports2 && exports2.__importStar || /* @__PURE__ */ (function() {
       var ownKeys = function(o) {
         ownKeys = Object.getOwnPropertyNames || function(o2) {
-          var ar = [];
-          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar[ar.length] = k;
-          return ar;
+          var ar2 = [];
+          for (var k in o2) if (Object.prototype.hasOwnProperty.call(o2, k)) ar2[ar2.length] = k;
+          return ar2;
         };
         return ownKeys(o);
       };
@@ -23526,19 +23799,19 @@ var init_util = __esm({
 });
 
 // node_modules/@ctrl/tinycolor/dist/module/conversion.js
-function rgbToRgb(r, g, b) {
+function rgbToRgb(r, g, b2) {
   return {
     r: bound01(r, 255) * 255,
     g: bound01(g, 255) * 255,
-    b: bound01(b, 255) * 255
+    b: bound01(b2, 255) * 255
   };
 }
-function rgbToHsl(r, g, b) {
+function rgbToHsl(r, g, b2) {
   r = bound01(r, 255);
   g = bound01(g, 255);
-  b = bound01(b, 255);
-  const max2 = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
+  b2 = bound01(b2, 255);
+  const max2 = Math.max(r, g, b2);
+  const min = Math.min(r, g, b2);
   let h2 = 0;
   let s2 = 0;
   const l = (max2 + min) / 2;
@@ -23550,12 +23823,12 @@ function rgbToHsl(r, g, b) {
     s2 = l > 0.5 ? d / (2 - max2 - min) : d / (max2 + min);
     switch (max2) {
       case r:
-        h2 = (g - b) / d + (g < b ? 6 : 0);
+        h2 = (g - b2) / d + (g < b2 ? 6 : 0);
         break;
       case g:
-        h2 = (b - r) / d + 2;
+        h2 = (b2 - r) / d + 2;
         break;
-      case b:
+      case b2:
         h2 = (r - g) / d + 4;
         break;
       default:
@@ -23565,52 +23838,52 @@ function rgbToHsl(r, g, b) {
   }
   return { h: h2, s: s2, l };
 }
-function hue2rgb(p2, q, t) {
-  if (t < 0) {
-    t += 1;
+function hue2rgb(p3, q2, t32) {
+  if (t32 < 0) {
+    t32 += 1;
   }
-  if (t > 1) {
-    t -= 1;
+  if (t32 > 1) {
+    t32 -= 1;
   }
-  if (t < 1 / 6) {
-    return p2 + (q - p2) * (6 * t);
+  if (t32 < 1 / 6) {
+    return p3 + (q2 - p3) * (6 * t32);
   }
-  if (t < 1 / 2) {
-    return q;
+  if (t32 < 1 / 2) {
+    return q2;
   }
-  if (t < 2 / 3) {
-    return p2 + (q - p2) * (2 / 3 - t) * 6;
+  if (t32 < 2 / 3) {
+    return p3 + (q2 - p3) * (2 / 3 - t32) * 6;
   }
-  return p2;
+  return p3;
 }
 function hslToRgb(h2, s2, l) {
   let r;
   let g;
-  let b;
+  let b2;
   h2 = bound01(h2, 360);
   s2 = bound01(s2, 100);
   l = bound01(l, 100);
   if (s2 === 0) {
     g = l;
-    b = l;
+    b2 = l;
     r = l;
   } else {
-    const q = l < 0.5 ? l * (1 + s2) : l + s2 - l * s2;
-    const p2 = 2 * l - q;
-    r = hue2rgb(p2, q, h2 + 1 / 3);
-    g = hue2rgb(p2, q, h2);
-    b = hue2rgb(p2, q, h2 - 1 / 3);
+    const q2 = l < 0.5 ? l * (1 + s2) : l + s2 - l * s2;
+    const p3 = 2 * l - q2;
+    r = hue2rgb(p3, q2, h2 + 1 / 3);
+    g = hue2rgb(p3, q2, h2);
+    b2 = hue2rgb(p3, q2, h2 - 1 / 3);
   }
-  return { r: r * 255, g: g * 255, b: b * 255 };
+  return { r: r * 255, g: g * 255, b: b2 * 255 };
 }
-function rgbToHsv(r, g, b) {
+function rgbToHsv(r, g, b2) {
   r = bound01(r, 255);
   g = bound01(g, 255);
-  b = bound01(b, 255);
-  const max2 = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
+  b2 = bound01(b2, 255);
+  const max2 = Math.max(r, g, b2);
+  const min = Math.min(r, g, b2);
   let h2 = 0;
-  const v = max2;
+  const v2 = max2;
   const d = max2 - min;
   const s2 = max2 === 0 ? 0 : d / max2;
   if (max2 === min) {
@@ -23618,12 +23891,12 @@ function rgbToHsv(r, g, b) {
   } else {
     switch (max2) {
       case r:
-        h2 = (g - b) / d + (g < b ? 6 : 0);
+        h2 = (g - b2) / d + (g < b2 ? 6 : 0);
         break;
       case g:
-        h2 = (b - r) / d + 2;
+        h2 = (b2 - r) / d + 2;
         break;
-      case b:
+      case b2:
         h2 = (r - g) / d + 4;
         break;
       default:
@@ -23631,71 +23904,71 @@ function rgbToHsv(r, g, b) {
     }
     h2 /= 6;
   }
-  return { h: h2, s: s2, v };
+  return { h: h2, s: s2, v: v2 };
 }
-function hsvToRgb(h2, s2, v) {
+function hsvToRgb(h2, s2, v2) {
   h2 = bound01(h2, 360) * 6;
   s2 = bound01(s2, 100);
-  v = bound01(v, 100);
+  v2 = bound01(v2, 100);
   const i = Math.floor(h2);
   const f = h2 - i;
-  const p2 = v * (1 - s2);
-  const q = v * (1 - f * s2);
-  const t = v * (1 - (1 - f) * s2);
+  const p3 = v2 * (1 - s2);
+  const q2 = v2 * (1 - f * s2);
+  const t32 = v2 * (1 - (1 - f) * s2);
   const mod = i % 6;
-  const r = [v, q, p2, p2, t, v][mod];
-  const g = [t, v, v, q, p2, p2][mod];
-  const b = [p2, p2, t, v, v, q][mod];
-  return { r: r * 255, g: g * 255, b: b * 255 };
+  const r = [v2, q2, p3, p3, t32, v2][mod];
+  const g = [t32, v2, v2, q2, p3, p3][mod];
+  const b2 = [p3, p3, t32, v2, v2, q2][mod];
+  return { r: r * 255, g: g * 255, b: b2 * 255 };
 }
-function rgbToHex(r, g, b, allow3Char) {
+function rgbToHex(r, g, b2, allow3Char) {
   const rHex = pad2(Math.round(r).toString(16));
   const gHex = pad2(Math.round(g).toString(16));
-  const bHex = pad2(Math.round(b).toString(16));
+  const bHex = pad2(Math.round(b2).toString(16));
   if (allow3Char && rHex.startsWith(rHex.charAt(1)) && gHex.startsWith(gHex.charAt(1)) && bHex.startsWith(bHex.charAt(1))) {
     return rHex.charAt(0) + gHex.charAt(0) + bHex.charAt(0);
   }
   return rHex + gHex + bHex;
 }
-function rgbaToHex(r, g, b, a, allow4Char) {
+function rgbaToHex(r, g, b2, a, allow4Char) {
   const rHex = pad2(Math.round(r).toString(16));
   const gHex = pad2(Math.round(g).toString(16));
-  const bHex = pad2(Math.round(b).toString(16));
+  const bHex = pad2(Math.round(b2).toString(16));
   const aHex = pad2(convertDecimalToHex(a));
   if (allow4Char && rHex.startsWith(rHex.charAt(1)) && gHex.startsWith(gHex.charAt(1)) && bHex.startsWith(bHex.charAt(1)) && aHex.startsWith(aHex.charAt(1))) {
     return rHex.charAt(0) + gHex.charAt(0) + bHex.charAt(0) + aHex.charAt(0);
   }
   return rHex + gHex + bHex + aHex;
 }
-function cmykToRgb(c, m2, y, k) {
+function cmykToRgb(c, m3, y2, k) {
   const cConv = c / 100;
-  const mConv = m2 / 100;
-  const yConv = y / 100;
+  const mConv = m3 / 100;
+  const yConv = y2 / 100;
   const kConv = k / 100;
   const r = 255 * (1 - cConv) * (1 - kConv);
   const g = 255 * (1 - mConv) * (1 - kConv);
-  const b = 255 * (1 - yConv) * (1 - kConv);
-  return { r, g, b };
+  const b2 = 255 * (1 - yConv) * (1 - kConv);
+  return { r, g, b: b2 };
 }
-function rgbToCmyk(r, g, b) {
+function rgbToCmyk(r, g, b2) {
   let c = 1 - r / 255;
-  let m2 = 1 - g / 255;
-  let y = 1 - b / 255;
-  let k = Math.min(c, m2, y);
+  let m3 = 1 - g / 255;
+  let y2 = 1 - b2 / 255;
+  let k = Math.min(c, m3, y2);
   if (k === 1) {
     c = 0;
-    m2 = 0;
-    y = 0;
+    m3 = 0;
+    y2 = 0;
   } else {
     c = (c - k) / (1 - k) * 100;
-    m2 = (m2 - k) / (1 - k) * 100;
-    y = (y - k) / (1 - k) * 100;
+    m3 = (m3 - k) / (1 - k) * 100;
+    y2 = (y2 - k) / (1 - k) * 100;
   }
   k *= 100;
   return {
     c: Math.round(c),
-    m: Math.round(m2),
-    y: Math.round(y),
+    m: Math.round(m3),
+    y: Math.round(y2),
     k: Math.round(k)
   };
 }
@@ -23883,7 +24156,7 @@ function inputToRGB(color2) {
   let rgb = { r: 0, g: 0, b: 0 };
   let a = 1;
   let s2 = null;
-  let v = null;
+  let v2 = null;
   let l = null;
   let ok3 = false;
   let format = false;
@@ -23897,8 +24170,8 @@ function inputToRGB(color2) {
       format = String(color2.r).substr(-1) === "%" ? "prgb" : "rgb";
     } else if (isValidCSSUnit(color2.h) && isValidCSSUnit(color2.s) && isValidCSSUnit(color2.v)) {
       s2 = convertToPercentage(color2.s);
-      v = convertToPercentage(color2.v);
-      rgb = hsvToRgb(color2.h, s2, v);
+      v2 = convertToPercentage(color2.v);
+      rgb = hsvToRgb(color2.h, s2, v2);
       ok3 = true;
       format = "hsv";
     } else if (isValidCSSUnit(color2.h) && isValidCSSUnit(color2.s) && isValidCSSUnit(color2.l)) {
@@ -24105,28 +24378,28 @@ var init_module = __esm({
        */
       getLuminance() {
         const rgb = this.toRgb();
-        let R;
-        let G;
+        let R3;
+        let G2;
         let B;
         const RsRGB = rgb.r / 255;
         const GsRGB = rgb.g / 255;
         const BsRGB = rgb.b / 255;
         if (RsRGB <= 0.03928) {
-          R = RsRGB / 12.92;
+          R3 = RsRGB / 12.92;
         } else {
-          R = Math.pow((RsRGB + 0.055) / 1.055, 2.4);
+          R3 = Math.pow((RsRGB + 0.055) / 1.055, 2.4);
         }
         if (GsRGB <= 0.03928) {
-          G = GsRGB / 12.92;
+          G2 = GsRGB / 12.92;
         } else {
-          G = Math.pow((GsRGB + 0.055) / 1.055, 2.4);
+          G2 = Math.pow((GsRGB + 0.055) / 1.055, 2.4);
         }
         if (BsRGB <= 0.03928) {
           B = BsRGB / 12.92;
         } else {
           B = Math.pow((BsRGB + 0.055) / 1.055, 2.4);
         }
-        return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+        return 0.2126 * R3 + 0.7152 * G2 + 0.0722 * B;
       }
       /**
        * Returns the alpha value of a color, from 0-1.
@@ -24166,8 +24439,8 @@ var init_module = __esm({
         const hsv = rgbToHsv(this.r, this.g, this.b);
         const h2 = Math.round(hsv.h * 360);
         const s2 = Math.round(hsv.s * 100);
-        const v = Math.round(hsv.v * 100);
-        return this.a === 1 ? `hsv(${h2}, ${s2}%, ${v}%)` : `hsva(${h2}, ${s2}%, ${v}%, ${this.roundA})`;
+        const v2 = Math.round(hsv.v * 100);
+        return this.a === 1 ? `hsv(${h2}, ${s2}%, ${v2}%)` : `hsva(${h2}, ${s2}%, ${v2}%, ${this.roundA})`;
       }
       /**
        * Returns the object as a HSLA object.
@@ -24240,8 +24513,8 @@ var init_module = __esm({
       toRgbString() {
         const r = Math.round(this.r);
         const g = Math.round(this.g);
-        const b = Math.round(this.b);
-        return this.a === 1 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${this.roundA})`;
+        const b2 = Math.round(this.b);
+        return this.a === 1 ? `rgb(${r}, ${g}, ${b2})` : `rgba(${r}, ${g}, ${b2}, ${this.roundA})`;
       }
       /**
        * Returns the object as a RGBA object.
@@ -24268,8 +24541,8 @@ var init_module = __esm({
         };
       }
       toCmykString() {
-        const { c, m: m2, y, k } = rgbToCmyk(this.r, this.g, this.b);
-        return `cmyk(${c}, ${m2}, ${y}, ${k})`;
+        const { c, m: m3, y: y2, k } = rgbToCmyk(this.r, this.g, this.b);
+        return `cmyk(${c}, ${m3}, ${y2}, ${k})`;
       }
       /**
        * The 'real' name of the color -if there is one.
@@ -24432,12 +24705,12 @@ var init_module = __esm({
       mix(color2, amount = 50) {
         const rgb1 = this.toRgb();
         const rgb2 = new _TinyColor(color2).toRgb();
-        const p2 = amount / 100;
+        const p3 = amount / 100;
         const rgba = {
-          r: (rgb2.r - rgb1.r) * p2 + rgb1.r,
-          g: (rgb2.g - rgb1.g) * p2 + rgb1.g,
-          b: (rgb2.b - rgb1.b) * p2 + rgb1.b,
-          a: (rgb2.a - rgb1.a) * p2 + rgb1.a
+          r: (rgb2.r - rgb1.r) * p3 + rgb1.r,
+          g: (rgb2.g - rgb1.g) * p3 + rgb1.g,
+          b: (rgb2.b - rgb1.b) * p3 + rgb1.b,
+          a: (rgb2.a - rgb1.a) * p3 + rgb1.a
         };
         return new _TinyColor(rgba);
       }
@@ -24463,12 +24736,12 @@ var init_module = __esm({
         const hsv = this.toHsv();
         const { h: h2 } = hsv;
         const { s: s2 } = hsv;
-        let { v } = hsv;
+        let { v: v2 } = hsv;
         const res = [];
         const modification = 1 / results;
         while (results--) {
-          res.push(new _TinyColor({ h: h2, s: s2, v }));
-          v = (v + modification) % 1;
+          res.push(new _TinyColor({ h: h2, s: s2, v: v2 }));
+          v2 = (v2 + modification) % 1;
         }
         return res;
       }
@@ -24815,7 +25088,7 @@ function parseOptions(input, syntax = {
       });
     }
   });
-  options.sort((a, b) => a.index - b.index);
+  options.sort((a, b2) => a.index - b2.index);
   return {
     options,
     errors
@@ -25009,7 +25282,7 @@ function splitLineAtAnnotationBoundaries(line) {
         return [inlineRange.columnStart, inlineRange.columnEnd];
       })
     )
-  ].sort((a, b) => a - b);
+  ].sort((a, b2) => a - b2);
   let lastColumn = 0;
   annotationBoundaries.forEach((column) => {
     if (column === lastColumn)
@@ -25097,7 +25370,7 @@ function renderLineToAst({
       partNodes[partIndex] = renderOutput[index];
     });
   });
-  const sortedGutterElements = [...gutterElements].sort((a, b) => renderPhaseSortFn(a.gutterElement, b.gutterElement));
+  const sortedGutterElements = [...gutterElements].sort((a, b2) => renderPhaseSortFn(a.gutterElement, b2.gutterElement));
   const renderedGutterElements = sortedGutterElements.map(({ pluginName, gutterElement }) => {
     try {
       const node = gutterElement.renderLine({ ...restContext, line, lineIndex });
@@ -25129,7 +25402,7 @@ function renderLineToAst({
 function getRenderEmptyLineFn(context) {
   return () => {
     const { gutterElements } = context;
-    const sortedGutterElements = [...gutterElements].sort((a, b) => renderPhaseSortFn(a.gutterElement, b.gutterElement));
+    const sortedGutterElements = [...gutterElements].sort((a, b2) => renderPhaseSortFn(a.gutterElement, b2.gutterElement));
     const renderedGutterElements = sortedGutterElements.map(({ pluginName, gutterElement }) => {
       try {
         const node = gutterElement.renderPlaceholder();
@@ -25154,9 +25427,9 @@ function getRenderEmptyLineFn(context) {
     };
   };
 }
-function renderPhaseSortFn(a, b) {
+function renderPhaseSortFn(a, b2) {
   const indexA = AnnotationRenderPhaseOrder.indexOf(a.renderPhase || "normal");
-  const indexB = AnnotationRenderPhaseOrder.indexOf(b.renderPhase || "normal");
+  const indexB = AnnotationRenderPhaseOrder.indexOf(b2.renderPhase || "normal");
   return indexA - indexB;
 }
 function validateAnnotationRenderOutput(nodes, expectedLength) {
@@ -25401,26 +25674,26 @@ function convertHslToRgb({ h: h2, s: s2, l, alpha }) {
   if (l === void 0)
     l = 0;
   let m1 = l + s2 * (l < 0.5 ? l : 1 - l);
-  let m2 = m1 - (m1 - l) * 2 * Math.abs(h2 / 60 % 2 - 1);
+  let m22 = m1 - (m1 - l) * 2 * Math.abs(h2 / 60 % 2 - 1);
   let res;
   switch (Math.floor(h2 / 60)) {
     case 0:
-      res = { r: m1, g: m2, b: 2 * l - m1 };
+      res = { r: m1, g: m22, b: 2 * l - m1 };
       break;
     case 1:
-      res = { r: m2, g: m1, b: 2 * l - m1 };
+      res = { r: m22, g: m1, b: 2 * l - m1 };
       break;
     case 2:
-      res = { r: 2 * l - m1, g: m1, b: m2 };
+      res = { r: 2 * l - m1, g: m1, b: m22 };
       break;
     case 3:
-      res = { r: 2 * l - m1, g: m2, b: m1 };
+      res = { r: 2 * l - m1, g: m22, b: m1 };
       break;
     case 4:
-      res = { r: m2, g: 2 * l - m1, b: m1 };
+      res = { r: m22, g: 2 * l - m1, b: m1 };
       break;
     case 5:
-      res = { r: m1, g: 2 * l - m1, b: m2 };
+      res = { r: m1, g: 2 * l - m1, b: m22 };
       break;
     default:
       res = { r: 2 * l - m1, g: 2 * l - m1, b: 2 * l - m1 };
@@ -25495,30 +25768,30 @@ function bisect({
   return highestValid;
 }
 function xyzToRgb(xyz) {
-  const [x, y, z] = [xyz.x, xyz.y, xyz.z].map((v) => v / 100);
-  const linearToSrgb = (v) => v > 31308e-7 ? 1.055 * Math.pow(v, 1 / 2.4) - 0.055 : 12.92 * v;
-  const r = x * m[0][0] + y * m[0][1] + z * m[0][2];
-  const g = x * m[1][0] + y * m[1][1] + z * m[1][2];
-  const b = x * m[2][0] + y * m[2][1] + z * m[2][2];
+  const [x, y2, z2] = [xyz.x, xyz.y, xyz.z].map((v2) => v2 / 100);
+  const linearToSrgb = (v2) => v2 > 31308e-7 ? 1.055 * Math.pow(v2, 1 / 2.4) - 0.055 : 12.92 * v2;
+  const r = x * m[0][0] + y2 * m[0][1] + z2 * m[0][2];
+  const g = x * m[1][0] + y2 * m[1][1] + z2 * m[1][2];
+  const b2 = x * m[2][0] + y2 * m[2][1] + z2 * m[2][2];
   return {
     r: linearToSrgb(r) * 255,
     g: linearToSrgb(g) * 255,
-    b: linearToSrgb(b) * 255
+    b: linearToSrgb(b2) * 255
   };
 }
 function labToXyz(lab, illuminant = D65) {
-  const [l, a, b] = [lab.l, lab.a, lab.b].map((v) => v / 100);
-  const y = (l + 0.16) / 1.16;
-  const x = a / 5 + y;
-  const z = y - b / 2;
-  const transform2 = (v, whitepoint) => {
-    const pow = Math.pow(v, 3);
-    return (pow > 8856e-6 ? pow : (v - 16 / 116) / 7.787037) * whitepoint;
+  const [l, a, b2] = [lab.l, lab.a, lab.b].map((v2) => v2 / 100);
+  const y2 = (l + 0.16) / 1.16;
+  const x = a / 5 + y2;
+  const z2 = y2 - b2 / 2;
+  const transform2 = (v2, whitepoint) => {
+    const pow = Math.pow(v2, 3);
+    return (pow > 8856e-6 ? pow : (v2 - 16 / 116) / 7.787037) * whitepoint;
   };
   return {
     x: transform2(x, illuminant[0]) * 100,
-    y: transform2(y, illuminant[1]) * 100,
-    z: transform2(z, illuminant[2]) * 100
+    y: transform2(y2, illuminant[1]) * 100,
+    z: transform2(z2, illuminant[2]) * 100
   };
 }
 function lchabToLab(lch) {
@@ -25540,21 +25813,21 @@ function lchabToRgba(lch, illuminant = D65) {
   return labToRgba(lchabToLab(lch), illuminant);
 }
 function rgbaToCulori(rgba) {
-  const { r, g, b, a } = rgba;
+  const { r, g, b: b2, a } = rgba;
   return {
     mode: "rgb",
     r: r / 255,
     g: g / 255,
-    b: b / 255,
+    b: b2 / 255,
     ...a !== void 0 && { alpha: a }
   };
 }
 function rgbaFromCulori(culoriRgb) {
-  const { r, g, b, alpha } = culoriRgb;
+  const { r, g, b: b2, alpha } = culoriRgb;
   return {
     r: r * 255,
     g: g * 255,
-    b: b * 255,
+    b: b2 * 255,
     a: alpha
   };
 }
@@ -25605,11 +25878,11 @@ function parseCssLabColor(labString) {
   if (!match) {
     return void 0;
   }
-  const [, l, a, b, alpha] = match;
+  const [, l, a, b2, alpha] = match;
   return {
     l: parseCssValue(l, 0, 100),
     a: parseCssValue(a, -125, 125),
-    b: parseCssValue(b, -125, 125),
+    b: parseCssValue(b2, -125, 125),
     alpha: alpha !== void 0 ? parseCssValue(alpha, 0, 1) : void 0
   };
 }
@@ -26273,7 +26546,7 @@ function resolveStyleSettings({
       );
     return result;
   }
-  unresolvedByPath.forEach((_, settingPath) => resolveSetting(settingPath));
+  unresolvedByPath.forEach((_2, settingPath) => resolveSetting(settingPath));
   return resolvedByPath;
 }
 function getCssVarDeclarations({
@@ -26525,7 +26798,7 @@ var init_dist = __esm({
           if (textDecorations.length)
             newStyles.set(`${varPrefix}td`, textDecorations.join(" "));
         };
-        const variantIndices = this.styleVariantIndex !== void 0 ? [this.styleVariantIndex] : styleVariants.map((_, i) => i);
+        const variantIndices = this.styleVariantIndex !== void 0 ? [this.styleVariantIndex] : styleVariants.map((_2, i) => i);
         variantIndices.forEach(addStylesForVariantIndex);
         if (newStyles.size === 0)
           return nodesToTransform;
@@ -27088,7 +27361,7 @@ var init_dist = __esm({
           throw newTypeError("non-empty non-negative number[]", indices);
         if (__privateGet(this, _state)?.canEditCode === false)
           throw new Error("Cannot delete code block lines in the current state.");
-        const sorted = [...indices].sort((a, b) => b - a);
+        const sorted = [...indices].sort((a, b2) => b2 - a);
         let lastIndex;
         sorted.forEach((index) => {
           if (lastIndex === index)
@@ -27141,12 +27414,12 @@ var init_dist = __esm({
       }
       return (Math.sign(c) || 1) * Math.pow((abs + 0.055) / 1.055, 2.4);
     };
-    convertRgbToLrgb = ({ r, g, b, alpha }) => {
+    convertRgbToLrgb = ({ r, g, b: b2, alpha }) => {
       let res = {
         mode: "lrgb",
         r: fn(r),
         g: fn(g),
-        b: fn(b)
+        b: fn(b2)
       };
       if (alpha !== void 0)
         res.alpha = alpha;
@@ -27160,12 +27433,12 @@ var init_dist = __esm({
       }
       return c * 12.92;
     };
-    convertLrgbToRgb = ({ r, g, b, alpha }, mode = "rgb") => {
+    convertLrgbToRgb = ({ r, g, b: b2, alpha }, mode = "rgb") => {
       let res = {
         mode,
         r: fn2(r),
         g: fn2(g),
-        b: fn2(b)
+        b: fn2(b2)
       };
       if (alpha !== void 0)
         res.alpha = alpha;
@@ -27174,15 +27447,15 @@ var init_dist = __esm({
     convertLrgbToRgb_default = convertLrgbToRgb;
     normalizeHue = (hue) => (hue = hue % 360) < 0 ? hue + 360 : hue;
     normalizeHue_default = normalizeHue;
-    convertLabToLch = ({ l, a, b, alpha }, mode = "lch") => {
+    convertLabToLch = ({ l, a, b: b2, alpha }, mode = "lch") => {
       if (a === void 0)
         a = 0;
-      if (b === void 0)
-        b = 0;
-      let c = Math.sqrt(a * a + b * b);
+      if (b2 === void 0)
+        b2 = 0;
+      let c = Math.sqrt(a * a + b2 * b2);
       let res = { mode, l, c };
       if (c)
-        res.h = normalizeHue_default(Math.atan2(b, a) * 180 / Math.PI);
+        res.h = normalizeHue_default(Math.atan2(b2, a) * 180 / Math.PI);
       if (alpha !== void 0)
         res.alpha = alpha;
       return res;
@@ -27202,27 +27475,27 @@ var init_dist = __esm({
       return res;
     };
     convertLchToLab_default = convertLchToLab;
-    convertLrgbToOklab = ({ r, g, b, alpha }) => {
+    convertLrgbToOklab = ({ r, g, b: b2, alpha }) => {
       if (r === void 0)
         r = 0;
       if (g === void 0)
         g = 0;
-      if (b === void 0)
-        b = 0;
+      if (b2 === void 0)
+        b2 = 0;
       let L = Math.cbrt(
-        0.41222147079999993 * r + 0.5363325363 * g + 0.0514459929 * b
+        0.41222147079999993 * r + 0.5363325363 * g + 0.0514459929 * b2
       );
-      let M = Math.cbrt(
-        0.2119034981999999 * r + 0.6806995450999999 * g + 0.1073969566 * b
+      let M2 = Math.cbrt(
+        0.2119034981999999 * r + 0.6806995450999999 * g + 0.1073969566 * b2
       );
       let S = Math.cbrt(
-        0.08830246189999998 * r + 0.2817188376 * g + 0.6299787005000002 * b
+        0.08830246189999998 * r + 0.2817188376 * g + 0.6299787005000002 * b2
       );
       let res = {
         mode: "oklab",
-        l: 0.2104542553 * L + 0.793617785 * M - 0.0040720468 * S,
-        a: 1.9779984951 * L - 2.428592205 * M + 0.4505937099 * S,
-        b: 0.0259040371 * L + 0.7827717662 * M - 0.808675766 * S
+        l: 0.2104542553 * L + 0.793617785 * M2 - 0.0040720468 * S,
+        a: 1.9779984951 * L - 2.428592205 * M2 + 0.4505937099 * S,
+        b: 0.0259040371 * L + 0.7827717662 * M2 - 0.808675766 * S
       };
       if (alpha !== void 0) {
         res.alpha = alpha;
@@ -27238,30 +27511,30 @@ var init_dist = __esm({
       return res;
     };
     convertRgbToOklab_default = convertRgbToOklab;
-    convertOklabToLrgb = ({ l, a, b, alpha }) => {
+    convertOklabToLrgb = ({ l, a, b: b2, alpha }) => {
       if (l === void 0)
         l = 0;
       if (a === void 0)
         a = 0;
-      if (b === void 0)
-        b = 0;
+      if (b2 === void 0)
+        b2 = 0;
       let L = Math.pow(
-        l * 0.9999999984505198 + 0.39633779217376786 * a + 0.2158037580607588 * b,
+        l * 0.9999999984505198 + 0.39633779217376786 * a + 0.2158037580607588 * b2,
         3
       );
-      let M = Math.pow(
-        l * 1.0000000088817609 - 0.10556134232365635 * a - 0.06385417477170591 * b,
+      let M2 = Math.pow(
+        l * 1.0000000088817609 - 0.10556134232365635 * a - 0.06385417477170591 * b2,
         3
       );
       let S = Math.pow(
-        l * 1.0000000546724108 - 0.08948418209496575 * a - 1.2914855378640917 * b,
+        l * 1.0000000546724108 - 0.08948418209496575 * a - 1.2914855378640917 * b2,
         3
       );
       let res = {
         mode: "lrgb",
-        r: 4.076741661347994 * L - 3.307711590408193 * M + 0.230969928729428 * S,
-        g: -1.2684380040921763 * L + 2.6097574006633715 * M - 0.3413193963102197 * S,
-        b: -0.004196086541837188 * L - 0.7034186144594493 * M + 1.7076147009309444 * S
+        r: 4.076741661347994 * L - 3.307711590408193 * M2 + 0.230969928729428 * S,
+        g: -1.2684380040921763 * L + 2.6097574006633715 * M2 - 0.3413193963102197 * S,
+        b: -0.004196086541837188 * L - 0.7034186144594493 * M2 + 1.7076147009309444 * S
       };
       if (alpha !== void 0) {
         res.alpha = alpha;
@@ -29169,7 +29442,7 @@ function flattenInlineMarkerRanges(markerRanges) {
       }
     }
     flattenedRanges.push(newRange);
-    flattenedRanges.sort((a, b) => a.start - b.start);
+    flattenedRanges.sort((a, b2) => a.start - b2.start);
   };
   MarkerTypeOrder.forEach((markerType) => {
     markerRanges.filter((range) => range.markerType === markerType).forEach(addRange);
@@ -29367,13 +29640,13 @@ var init_dist3 = __esm({
     __commonJS2 = (cb, mod) => function __require() {
       return mod || (0, cb[__getOwnPropNames2(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
     };
-    __copyProps2 = (to, from, except, desc) => {
+    __copyProps2 = (to2, from, except, desc) => {
       if (from && typeof from === "object" || typeof from === "function") {
         for (let key2 of __getOwnPropNames2(from))
-          if (!__hasOwnProp2.call(to, key2) && key2 !== except)
-            __defProp2(to, key2, { get: () => from[key2], enumerable: !(desc = __getOwnPropDesc2(from, key2)) || desc.enumerable });
+          if (!__hasOwnProp2.call(to2, key2) && key2 !== except)
+            __defProp2(to2, key2, { get: () => from[key2], enumerable: !(desc = __getOwnPropDesc2(from, key2)) || desc.enumerable });
       }
-      return to;
+      return to2;
     };
     __toESM2 = (mod, isNodeMode, target) => (target = mod != null ? __create2(__getProtoOf2(mod)) : {}, __copyProps2(
       // If the importer is in node compatibility mode or this is not an ESM
@@ -29388,12 +29661,12 @@ var init_dist3 = __esm({
         "use strict";
         function parsePart(string) {
           let res = [];
-          let m2;
+          let m3;
           for (let str of string.split(",").map((str2) => str2.trim())) {
             if (/^-?\d+$/.test(str)) {
               res.push(parseInt(str, 10));
-            } else if (m2 = str.match(/^(-?\d+)(-|\.\.\.?|\u2025|\u2026|\u22EF)(-?\d+)$/)) {
-              let [_, lhs, sep, rhs] = m2;
+            } else if (m3 = str.match(/^(-?\d+)(-|\.\.\.?|\u2025|\u2026|\u22EF)(-?\d+)$/)) {
+              let [_2, lhs, sep, rhs] = m3;
               if (lhs && rhs) {
                 lhs = parseInt(lhs);
                 rhs = parseInt(rhs);
@@ -29594,18 +29867,18 @@ function parseSections(value) {
   value.split(",").map((section) => section.split("-").map((lineNum) => parseInt(lineNum))).forEach((list2) => {
     if (list2.length !== 2)
       return;
-    const [from, to] = list2;
-    if (isNaN(from) || isNaN(to))
+    const [from, to2] = list2;
+    if (isNaN(from) || isNaN(to2))
       return;
-    if (from > to)
+    if (from > to2)
       return;
     for (const { from: existingFrom, to: existingTo } of sections) {
       if (from >= existingFrom && from <= existingTo)
         return;
-      if (to >= existingFrom && to <= existingTo)
+      if (to2 >= existingFrom && to2 <= existingTo)
         return;
     }
-    sections.push({ from, to, lines: [] });
+    sections.push({ from, to: to2, lines: [] });
   });
   return sections;
 }
@@ -29748,9 +30021,9 @@ function sectionizeAst({
 }) {
   const { collapseStyle = "github" } = codeBlock.props;
   const outp = [...lines];
-  [...sections].sort((a, b) => b.to - a.to).forEach(({ from, to }) => {
-    const contentLines = lines.slice(from - 1, to);
-    const minIndent = codeBlock.props.collapsePreserveIndent !== false && codeBlock.getLines(from - 1, to).reduce((acc, line) => {
+  [...sections].sort((a, b2) => b2.to - a.to).forEach(({ from, to: to2 }) => {
+    const contentLines = lines.slice(from - 1, to2);
+    const minIndent = codeBlock.props.collapsePreserveIndent !== false && codeBlock.getLines(from - 1, to2).reduce((acc, line) => {
       if (line.text.trim().length === 0)
         return acc;
       return Math.min(acc, line.text.match(/^\s*/)?.[0].length ?? 0);
@@ -29760,7 +30033,7 @@ function sectionizeAst({
       setInlineStyle3(summaryLine.lineAst, "--ecIndent", `${minIndent}ch`);
     summaryLine.codeWrapper.children.push(h("span.expand"), h("span.collapse"), h("span.text", formatTemplate(text3, { lineCount: contentLines.length })));
     const summary = h("summary", summaryLine.lineAst);
-    const resolvedCollapseStyle = collapseStyle === "collapsible-auto" ? to >= lines.length ? "collapsible-end" : "collapsible-start" : collapseStyle;
+    const resolvedCollapseStyle = collapseStyle === "collapsible-auto" ? to2 >= lines.length ? "collapsible-end" : "collapsible-start" : collapseStyle;
     const outerSelector = `.${collapsibleSectionClass}.${resolvedCollapseStyle}`;
     let outerElement;
     if (collapseStyle === "github") {
@@ -29768,7 +30041,7 @@ function sectionizeAst({
     } else {
       outerElement = h(`div${outerSelector}`, [h(`details`, [summary]), h(`div.content-lines`, contentLines)]);
     }
-    outp.splice(from - 1, to - from + 1, outerElement);
+    outp.splice(from - 1, to2 - from + 1, outerElement);
   });
   return outp;
 }
@@ -29947,30 +30220,30 @@ function basename(path) {
     return path.substr(~idx + 1);
   }
 }
-function strcmp(a, b) {
-  if (a < b) {
+function strcmp(a, b2) {
+  if (a < b2) {
     return -1;
   }
-  if (a > b) {
+  if (a > b2) {
     return 1;
   }
   return 0;
 }
-function strArrCmp(a, b) {
-  if (a === null && b === null) {
+function strArrCmp(a, b2) {
+  if (a === null && b2 === null) {
     return 0;
   }
   if (!a) {
     return -1;
   }
-  if (!b) {
+  if (!b2) {
     return 1;
   }
   let len1 = a.length;
-  let len2 = b.length;
+  let len2 = b2.length;
   if (len1 === len2) {
     for (let i = 0; i < len1; i++) {
-      let res = strcmp(a[i], b[i]);
+      let res = strcmp(a[i], b2[i]);
       if (res !== 0) {
         return res;
       }
@@ -30107,16 +30380,16 @@ function parseTheme(source) {
   return result;
 }
 function resolveParsedThemeRules(parsedThemeRules, _colorMap) {
-  parsedThemeRules.sort((a, b) => {
-    let r = strcmp(a.scope, b.scope);
+  parsedThemeRules.sort((a, b2) => {
+    let r = strcmp(a.scope, b2.scope);
     if (r !== 0) {
       return r;
     }
-    r = strArrCmp(a.parentScopes, b.parentScopes);
+    r = strArrCmp(a.parentScopes, b2.parentScopes);
     if (r !== 0) {
       return r;
     }
-    return a.index - b.index;
+    return a.index - b2.index;
   });
   let defaultFontStyle = 0;
   let defaultForeground = "#000000";
@@ -30906,10 +31179,10 @@ var init_dist7 = __esm({
       }
     };
     CachedFn = class {
-      constructor(fn3) {
+      constructor(fn4) {
         __publicField(this, "fn");
         __publicField(this, "cache", /* @__PURE__ */ new Map());
-        this.fn = fn3;
+        this.fn = fn4;
       }
       get(key2) {
         if (this.cache.has(key2)) {
@@ -30951,7 +31224,7 @@ var init_dist7 = __esm({
         const scopeName = scopePath.scopeName;
         const matchingTrieElements = this._cachedMatchRoot.get(scopeName);
         const effectiveRule = matchingTrieElements.find(
-          (v) => _scopePathMatchesParentScopes(scopePath.parent, v.parentScopes)
+          (v2) => _scopePathMatchesParentScopes(scopePath.parent, v2.parentScopes)
         );
         if (!effectiveRule) {
           return null;
@@ -31143,9 +31416,9 @@ var init_dist7 = __esm({
         this._children = _children;
         this._rulesWithParentScopes = rulesWithParentScopes;
       }
-      static _cmpBySpecificity(a, b) {
-        if (a.scopeDepth !== b.scopeDepth) {
-          return b.scopeDepth - a.scopeDepth;
+      static _cmpBySpecificity(a, b2) {
+        if (a.scopeDepth !== b2.scopeDepth) {
+          return b2.scopeDepth - a.scopeDepth;
         }
         let aParentIndex = 0;
         let bParentIndex = 0;
@@ -31153,20 +31426,20 @@ var init_dist7 = __esm({
           if (a.parentScopes[aParentIndex] === ">") {
             aParentIndex++;
           }
-          if (b.parentScopes[bParentIndex] === ">") {
+          if (b2.parentScopes[bParentIndex] === ">") {
             bParentIndex++;
           }
-          if (aParentIndex >= a.parentScopes.length || bParentIndex >= b.parentScopes.length) {
+          if (aParentIndex >= a.parentScopes.length || bParentIndex >= b2.parentScopes.length) {
             break;
           }
-          const parentScopeLengthDiff = b.parentScopes[bParentIndex].length - a.parentScopes[aParentIndex].length;
+          const parentScopeLengthDiff = b2.parentScopes[bParentIndex].length - a.parentScopes[aParentIndex].length;
           if (parentScopeLengthDiff !== 0) {
             return parentScopeLengthDiff;
           }
           aParentIndex++;
           bParentIndex++;
         }
-        return b.parentScopes.length - a.parentScopes.length;
+        return b2.parentScopes.length - a.parentScopes.length;
       }
       match(scope2) {
         if (scope2 !== "") {
@@ -31355,10 +31628,10 @@ var init_dist7 = __esm({
         this.Q = [new TopLevelRuleReference(this.initialScopeName)];
       }
       processQueue() {
-        const q = this.Q;
+        const q2 = this.Q;
         this.Q = [];
         const deps = new ExternalReferenceCollector();
-        for (const dep of q) {
+        for (const dep of q2) {
           collectReferencesOfReference(dep, this.initialScopeName, this.repo, deps);
         }
         for (const dep of deps.references) {
@@ -32156,11 +32429,11 @@ var init_dist7 = __esm({
         return this._embeddedLanguagesMatcher.match(scope2) || 0;
       }
       _toStandardTokenType(scopeName) {
-        const m2 = scopeName.match(_a4.STANDARD_TOKEN_TYPE_REGEXP);
-        if (!m2) {
+        const m3 = scopeName.match(_a4.STANDARD_TOKEN_TYPE_REGEXP);
+        if (!m3) {
           return 8;
         }
-        switch (m2[1]) {
+        switch (m3[1]) {
           case "comment":
             return 1;
           case "string":
@@ -32197,11 +32470,11 @@ var init_dist7 = __esm({
         if (!this.scopesRegExp) {
           return void 0;
         }
-        const m2 = scope2.match(this.scopesRegExp);
-        if (!m2) {
+        const m3 = scope2.match(this.scopesRegExp);
+        if (!m3) {
           return void 0;
         }
-        return this.values.get(m2[1]);
+        return this.values.get(m3[1]);
       }
     };
     DebugFlags = {
@@ -32511,22 +32784,22 @@ var init_dist7 = __esm({
       equals(other) {
         return _AttributedScopeStack.equals(this, other);
       }
-      static equals(a, b) {
+      static equals(a, b2) {
         do {
-          if (a === b) {
+          if (a === b2) {
             return true;
           }
-          if (!a && !b) {
+          if (!a && !b2) {
             return true;
           }
-          if (!a || !b) {
+          if (!a || !b2) {
             return false;
           }
-          if (a.scopeName !== b.scopeName || a.tokenAttributes !== b.tokenAttributes) {
+          if (a.scopeName !== b2.scopeName || a.tokenAttributes !== b2.tokenAttributes) {
             return false;
           }
           a = a.parent;
-          b = b.parent;
+          b2 = b2.parent;
         } while (true);
       }
       static mergeAttributes(existingTokenAttributes, basicScopeAttributes, styleAttributes) {
@@ -32641,44 +32914,44 @@ var init_dist7 = __esm({
         }
         return _a5._equals(this, other);
       }
-      static _equals(a, b) {
-        if (a === b) {
+      static _equals(a, b2) {
+        if (a === b2) {
           return true;
         }
-        if (!this._structuralEquals(a, b)) {
+        if (!this._structuralEquals(a, b2)) {
           return false;
         }
-        return AttributedScopeStack.equals(a.contentNameScopesList, b.contentNameScopesList);
+        return AttributedScopeStack.equals(a.contentNameScopesList, b2.contentNameScopesList);
       }
       /**
        * A structural equals check. Does not take into account `scopes`.
        */
-      static _structuralEquals(a, b) {
+      static _structuralEquals(a, b2) {
         do {
-          if (a === b) {
+          if (a === b2) {
             return true;
           }
-          if (!a && !b) {
+          if (!a && !b2) {
             return true;
           }
-          if (!a || !b) {
+          if (!a || !b2) {
             return false;
           }
-          if (a.depth !== b.depth || a.ruleId !== b.ruleId || a.endRule !== b.endRule) {
+          if (a.depth !== b2.depth || a.ruleId !== b2.ruleId || a.endRule !== b2.endRule) {
             return false;
           }
           a = a.parent;
-          b = b.parent;
+          b2 = b2.parent;
         } while (true);
       }
       clone() {
         return this;
       }
-      static _reset(el) {
-        while (el) {
-          el._enterPos = -1;
-          el._anchorPos = -1;
-          el = el.parent;
+      static _reset(el2) {
+        while (el2) {
+          el2._enterPos = -1;
+          el2._anchorPos = -1;
+          el2 = el2.parent;
         }
       }
       reset() {
@@ -32757,12 +33030,12 @@ var init_dist7 = __esm({
       }
       // Used to warn of endless loops
       hasSameRuleAs(other) {
-        let el = this;
-        while (el && el._enterPos === other._enterPos) {
-          if (el.ruleId === other.ruleId) {
+        let el2 = this;
+        while (el2 && el2._enterPos === other._enterPos) {
+          if (el2.ruleId === other.ruleId) {
             return true;
           }
-          el = el.parent;
+          el2 = el2.parent;
         }
         return false;
       }
@@ -32810,11 +33083,11 @@ var init_dist7 = __esm({
               this.allowAny = true;
               return [];
             }
-            return createMatchers(selector, nameMatcher).map((m2) => m2.matcher);
+            return createMatchers(selector, nameMatcher).map((m3) => m3.matcher);
           }
         );
         this.unbalancedBracketScopes = unbalancedBracketScopes.flatMap(
-          (selector) => createMatchers(selector, nameMatcher).map((m2) => m2.matcher)
+          (selector) => createMatchers(selector, nameMatcher).map((m3) => m3.matcher)
         );
       }
       get matchesAlways() {
@@ -33160,8 +33433,8 @@ function applyColorReplacements(color2, replacements) {
 function toArray(x) {
   return Array.isArray(x) ? x : [x];
 }
-async function normalizeGetter(p2) {
-  return Promise.resolve(typeof p2 === "function" ? p2() : p2).then((r) => r.default || r);
+async function normalizeGetter(p3) {
+  return Promise.resolve(typeof p3 === "function" ? p3() : p3).then((r) => r.default || r);
 }
 function isPlainLang(lang205) {
   return !lang205 || ["plaintext", "txt", "text", "plain"].includes(lang205);
@@ -33176,11 +33449,11 @@ function isSpecialTheme(theme) {
   return isNoneTheme(theme);
 }
 function addClassToHast(node, className2) {
-  var _a7;
+  var _a8;
   if (!className2)
     return node;
   node.properties || (node.properties = {});
-  (_a7 = node.properties).class || (_a7.class = []);
+  (_a8 = node.properties).class || (_a8.class = []);
   if (typeof node.properties.class === "string")
     node.properties.class = node.properties.class.split(/\s+/g);
   if (!Array.isArray(node.properties.class))
@@ -33290,12 +33563,12 @@ function splitToken(token, offsets) {
   return tokens;
 }
 function splitTokens(tokens, breakpoints) {
-  const sorted = Array.from(breakpoints instanceof Set ? breakpoints : new Set(breakpoints)).sort((a, b) => a - b);
+  const sorted = Array.from(breakpoints instanceof Set ? breakpoints : new Set(breakpoints)).sort((a, b2) => a - b2);
   if (!sorted.length)
     return tokens;
   return tokens.map((line) => {
     return line.flatMap((token) => {
-      const breakpointsInToken = sorted.filter((i) => token.offset < i && i < token.offset + token.content.length).map((i) => i - token.offset).sort((a, b) => a - b);
+      const breakpointsInToken = sorted.filter((i) => token.offset < i && i < token.offset + token.content.length).map((i) => i - token.offset).sort((a, b2) => a - b2);
       if (!breakpointsInToken.length)
         return token;
       return splitToken(token, breakpointsInToken);
@@ -33308,8 +33581,8 @@ function flatTokenVariants(merged, variantsOrder, cssVariablePrefix, defaultColo
     explanation: merged.explanation,
     offset: merged.offset
   };
-  const styles = variantsOrder.map((t) => getTokenStyleObject(merged.variants[t]));
-  const styleKeys = new Set(styles.flatMap((t) => Object.keys(t)));
+  const styles = variantsOrder.map((t32) => getTokenStyleObject(merged.variants[t32]));
+  const styleKeys = new Set(styles.flatMap((t32) => Object.keys(t32)));
   const mergedStyles = {};
   const varKey = (idx, key2) => {
     const keyName = key2 === "color" ? "" : key2 === "background-color" ? "-bg" : `-${key2}`;
@@ -33320,8 +33593,8 @@ function flatTokenVariants(merged, variantsOrder, cssVariablePrefix, defaultColo
       const value = cur[key2] || "inherit";
       if (idx === 0 && defaultColor && COLOR_KEYS.includes(key2)) {
         if (defaultColor === DEFAULT_COLOR_LIGHT_DARK && styles.length > 1) {
-          const lightIndex = variantsOrder.findIndex((t) => t === "light");
-          const darkIndex = variantsOrder.findIndex((t) => t === "dark");
+          const lightIndex = variantsOrder.findIndex((t32) => t32 === "light");
+          const darkIndex = variantsOrder.findIndex((t32) => t32 === "dark");
           if (lightIndex === -1 || darkIndex === -1)
             throw new ShikiError('When using `defaultColor: "light-dark()"`, you must provide both `light` and `dark` themes');
           const lightValue = styles[lightIndex][key2] || "inherit";
@@ -33398,27 +33671,27 @@ function transformerDecorations() {
   const map = /* @__PURE__ */ new WeakMap();
   function getContext(shiki) {
     if (!map.has(shiki.meta)) {
-      let normalizePosition = function(p2) {
-        if (typeof p2 === "number") {
-          if (p2 < 0 || p2 > shiki.source.length)
-            throw new ShikiError(`Invalid decoration offset: ${p2}. Code length: ${shiki.source.length}`);
+      let normalizePosition = function(p3) {
+        if (typeof p3 === "number") {
+          if (p3 < 0 || p3 > shiki.source.length)
+            throw new ShikiError(`Invalid decoration offset: ${p3}. Code length: ${shiki.source.length}`);
           return {
-            ...converter.indexToPos(p2),
-            offset: p2
+            ...converter.indexToPos(p3),
+            offset: p3
           };
         } else {
-          const line = converter.lines[p2.line];
+          const line = converter.lines[p3.line];
           if (line === void 0)
-            throw new ShikiError(`Invalid decoration position ${JSON.stringify(p2)}. Lines length: ${converter.lines.length}`);
-          let character = p2.character;
+            throw new ShikiError(`Invalid decoration position ${JSON.stringify(p3)}. Lines length: ${converter.lines.length}`);
+          let character = p3.character;
           if (character < 0)
             character = line.length + character;
           if (character < 0 || character > line.length)
-            throw new ShikiError(`Invalid decoration position ${JSON.stringify(p2)}. Line ${p2.line} length: ${line.length}`);
+            throw new ShikiError(`Invalid decoration position ${JSON.stringify(p3)}. Line ${p3.line} length: ${line.length}`);
           return {
-            ...p2,
+            ...p3,
             character,
-            offset: converter.posToIndex(p2.line, character)
+            offset: converter.posToIndex(p3.line, character)
           };
         }
       };
@@ -33497,22 +33770,22 @@ function transformerDecorations() {
       function applyLine(line, decoration) {
         lines[line] = applyDecoration(lines[line], decoration, "line");
       }
-      function applyDecoration(el, decoration, type) {
+      function applyDecoration(el2, decoration, type) {
         const properties = decoration.properties || {};
         const transform2 = decoration.transform || ((i) => i);
-        el.tagName = decoration.tagName || "span";
-        el.properties = {
-          ...el.properties,
+        el2.tagName = decoration.tagName || "span";
+        el2.properties = {
+          ...el2.properties,
           ...properties,
-          class: el.properties.class
+          class: el2.properties.class
         };
         if (decoration.properties?.class)
-          addClassToHast(el, decoration.properties.class);
-        el = transform2(el, type) || el;
-        return el;
+          addClassToHast(el2, decoration.properties.class);
+        el2 = transform2(el2, type) || el2;
+        return el2;
       }
       const lineApplies = [];
-      const sorted = ctx.decorations.sort((a, b) => b.start.offset - a.start.offset || a.end.offset - b.end.offset);
+      const sorted = ctx.decorations.sort((a, b2) => b2.start.offset - a.start.offset || a.end.offset - b2.end.offset);
       for (const decoration of sorted) {
         const { start, end } = decoration;
         if (start.line === end.line) {
@@ -33553,11 +33826,11 @@ function verifyIntersections(items) {
     }
   }
 }
-function stringify4(el) {
-  if (el.type === "text")
-    return el.value;
-  if (el.type === "element")
-    return el.children.map(stringify4).join("");
+function stringify4(el2) {
+  if (el2.type === "text")
+    return el2.value;
+  if (el2.type === "element")
+    return el2.children.map(stringify4).join("");
   return "";
 }
 function getTransformers(options) {
@@ -33782,8 +34055,8 @@ function createColorPalette(namedColorsMap = defaultNamedColorsMap) {
     let levels = [0, 95, 135, 175, 215, 255];
     for (let r = 0; r < 6; r++) {
       for (let g = 0; g < 6; g++) {
-        for (let b = 0; b < 6; b++) {
-          colorTable.push(rgbColor([levels[r], levels[g], levels[b]]));
+        for (let b2 = 0; b2 < 6; b2++) {
+          colorTable.push(rgbColor([levels[r], levels[g], levels[b2]]));
         }
       }
     }
@@ -33869,15 +34142,15 @@ function dimColor(color2) {
     } else if (hex.length === 4) {
       const r = hex[0];
       const g = hex[1];
-      const b = hex[2];
+      const b2 = hex[2];
       const a = hex[3];
       const alpha = Math.round(Number.parseInt(`${a}${a}`, 16) / 2).toString(16).padStart(2, "0");
-      return `#${r}${r}${g}${g}${b}${b}${alpha}`;
+      return `#${r}${r}${g}${g}${b2}${b2}${alpha}`;
     } else if (hex.length === 3) {
       const r = hex[0];
       const g = hex[1];
-      const b = hex[2];
-      return `#${r}${r}${g}${g}${b}${b}80`;
+      const b2 = hex[2];
+      return `#${r}${r}${g}${g}${b2}${b2}80`;
     }
   }
   const cssVarMatch = color2.match(/var\((--[\w-]+-ansi-[\w-]+)\)/);
@@ -34099,13 +34372,13 @@ function explainThemeScope(themeSettingsSelectors, scope2, parentScopes) {
 }
 function codeToTokensWithThemes(internal, code, options) {
   const themes = Object.entries(options.themes).filter((i) => i[1]).map((i) => ({ color: i[0], theme: i[1] }));
-  const themedTokens = themes.map((t) => {
+  const themedTokens = themes.map((t32) => {
     const tokens2 = codeToTokensBase(internal, code, {
       ...options,
-      theme: t.theme
+      theme: t32.theme
     });
     const state = getLastGrammarStateFromMap(tokens2);
-    const theme = typeof t.theme === "string" ? t.theme : t.theme.name;
+    const theme = typeof t32.theme === "string" ? t32.theme : t32.theme.name;
     return {
       tokens: tokens2,
       state,
@@ -34125,13 +34398,13 @@ function codeToTokensWithThemes(internal, code, options) {
       if ("includeExplanation" in options && options.includeExplanation) {
         mergedToken.explanation = _token.explanation;
       }
-      tokens.forEach((t, themeIdx) => {
+      tokens.forEach((t32, themeIdx) => {
         const {
-          content: _,
+          content: _2,
           explanation: __,
           offset: ___,
           ...styles
-        } = t[lineIdx][tokenIdx];
+        } = t32[lineIdx][tokenIdx];
         mergedToken.variants[themes[themeIdx].color] = styles;
       });
       return mergedToken;
@@ -34149,13 +34422,13 @@ function syncThemesTokenization(...themes) {
   const outThemes = themes.map(() => []);
   const count2 = themes.length;
   for (let i = 0; i < themes[0].length; i++) {
-    const lines = themes.map((t) => t[i]);
+    const lines = themes.map((t32) => t32[i]);
     const outLines = outThemes.map(() => []);
-    outThemes.forEach((t, i2) => t.push(outLines[i2]));
+    outThemes.forEach((t32, i2) => t32.push(outLines[i2]));
     const indexes = lines.map(() => 0);
     const current = lines.map((l) => l[0]);
-    while (current.every((t) => t)) {
-      const minLength = Math.min(...current.map((t) => t.content.length));
+    while (current.every((t32) => t32)) {
+      const minLength = Math.min(...current.map((t32) => t32.content.length));
       for (let n = 0; n < count2; n++) {
         const token = current[n];
         if (token.content.length === minLength) {
@@ -34191,7 +34464,7 @@ function codeToTokens(internal, code, options) {
       cssVariablePrefix = "--shiki-",
       colorsRendering = "css-vars"
     } = options;
-    const themes = Object.entries(options.themes).filter((i) => i[1]).map((i) => ({ color: i[0], theme: i[1] })).sort((a, b) => a.color === defaultColor ? -1 : b.color === defaultColor ? 1 : 0);
+    const themes = Object.entries(options.themes).filter((i) => i[1]).map((i) => ({ color: i[0], theme: i[1] })).sort((a, b2) => a.color === defaultColor ? -1 : b2.color === defaultColor ? 1 : 0);
     if (themes.length === 0)
       throw new ShikiError("`themes` option must not be empty");
     const themeTokens = codeToTokensWithThemes(
@@ -34200,17 +34473,17 @@ function codeToTokens(internal, code, options) {
       options
     );
     grammarState = getLastGrammarStateFromMap(themeTokens);
-    if (defaultColor && DEFAULT_COLOR_LIGHT_DARK !== defaultColor && !themes.find((t) => t.color === defaultColor))
+    if (defaultColor && DEFAULT_COLOR_LIGHT_DARK !== defaultColor && !themes.find((t32) => t32.color === defaultColor))
       throw new ShikiError(`\`themes\` option must contain the defaultColor key \`${defaultColor}\``);
-    const themeRegs = themes.map((t) => internal.getTheme(t.theme));
-    const themesOrder = themes.map((t) => t.color);
+    const themeRegs = themes.map((t32) => internal.getTheme(t32.theme));
+    const themesOrder = themes.map((t32) => t32.color);
     tokens = themeTokens.map((line) => line.map((token) => flatTokenVariants(token, themesOrder, cssVariablePrefix, defaultColor, colorsRendering)));
     if (grammarState)
       setLastGrammarStateToMap(tokens, grammarState);
-    const themeColorReplacements = themes.map((t) => resolveColorReplacements(t.theme, options));
+    const themeColorReplacements = themes.map((t32) => resolveColorReplacements(t32.theme, options));
     fg = mapThemeColors(themes, themeRegs, themeColorReplacements, cssVariablePrefix, defaultColor, "fg", colorsRendering);
     bg = mapThemeColors(themes, themeRegs, themeColorReplacements, cssVariablePrefix, defaultColor, "bg", colorsRendering);
-    themeName = `shiki-themes ${themeRegs.map((t) => t.name).join(" ")}`;
+    themeName = `shiki-themes ${themeRegs.map((t32) => t32.name).join(" ")}`;
     rootStyle = defaultColor ? void 0 : [fg, bg].join(";");
   } else if ("theme" in options) {
     const colorReplacements = resolveColorReplacements(options.theme, options);
@@ -34237,13 +34510,13 @@ function codeToTokens(internal, code, options) {
   };
 }
 function mapThemeColors(themes, themeRegs, themeColorReplacements, cssVariablePrefix, defaultColor, property, colorsRendering) {
-  return themes.map((t, idx) => {
+  return themes.map((t32, idx) => {
     const value = applyColorReplacements(themeRegs[idx][property], themeColorReplacements[idx]) || "inherit";
-    const cssVar = `${cssVariablePrefix + t.color}${property === "bg" ? "-bg" : ""}:${value}`;
+    const cssVar = `${cssVariablePrefix + t32.color}${property === "bg" ? "-bg" : ""}:${value}`;
     if (idx === 0 && defaultColor) {
       if (defaultColor === DEFAULT_COLOR_LIGHT_DARK && themes.length > 1) {
-        const lightIndex = themes.findIndex((t2) => t2.color === "light");
-        const darkIndex = themes.findIndex((t2) => t2.color === "dark");
+        const lightIndex = themes.findIndex((t210) => t210.color === "light");
+        const darkIndex = themes.findIndex((t210) => t210.color === "dark");
         if (lightIndex === -1 || darkIndex === -1)
           throw new ShikiError('When using `defaultColor: "light-dark()"`, you must provide both `light` and `dark` themes');
         const lightValue = applyColorReplacements(themeRegs[lightIndex][property], themeColorReplacements[lightIndex]) || "inherit";
@@ -35389,7 +35662,7 @@ var init_dist8 = __esm({
         this._themes = _themes;
         this._langs = _langs;
         this._alias = _alias;
-        this._themes.map((t) => this.loadTheme(t));
+        this._themes.map((t32) => this.loadTheme(t32));
         this.loadLanguages(this._langs);
       }
       getTheme(theme) {
@@ -35471,9 +35744,9 @@ var init_dist8 = __esm({
         for (const lang205 of langs)
           this.resolveEmbeddedLanguages(lang205);
         const langsGraphArray = Array.from(this._langGraph.entries());
-        const missingLangs = langsGraphArray.filter(([_, lang205]) => !lang205);
+        const missingLangs = langsGraphArray.filter(([_2, lang205]) => !lang205);
         if (missingLangs.length) {
-          const dependents = langsGraphArray.filter(([_, lang205]) => {
+          const dependents = langsGraphArray.filter(([_2, lang205]) => {
             if (!lang205)
               return false;
             const embedded = lang205.embeddedLanguages || lang205.embeddedLangs;
@@ -35481,9 +35754,9 @@ var init_dist8 = __esm({
           }).filter((lang205) => !missingLangs.includes(lang205));
           throw new ShikiError2(`Missing languages ${missingLangs.map(([name2]) => `\`${name2}\``).join(", ")}, required by ${dependents.map(([name2]) => `\`${name2}\``).join(", ")}`);
         }
-        for (const [_, lang205] of langsGraphArray)
+        for (const [_2, lang205] of langsGraphArray)
           this._resolver.addLanguage(lang205);
-        for (const [_, lang205] of langsGraphArray)
+        for (const [_2, lang205] of langsGraphArray)
           this.loadLanguage(lang205);
       }
       getLoadedLanguages() {
@@ -35622,7 +35895,7 @@ function strFromU8(dat, latin1) {
   } else if (td) {
     return td.decode(dat);
   } else {
-    var _a7 = dutf8(dat), s2 = _a7.s, r = _a7.r;
+    var _a8 = dutf8(dat), s2 = _a8.s, r = _a8.r;
     if (r.length)
       err(8);
     return s2;
@@ -35707,17 +35980,17 @@ var init_browser = __esm({
     ]);
     clim = new u8([16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15]);
     freb = function(eb, start) {
-      var b = new u16(31);
+      var b2 = new u16(31);
       for (var i = 0; i < 31; ++i) {
-        b[i] = start += 1 << eb[i - 1];
+        b2[i] = start += 1 << eb[i - 1];
       }
-      var r = new i32(b[30]);
+      var r = new i32(b2[30]);
       for (var i = 1; i < 30; ++i) {
-        for (var j = b[i]; j < b[i + 1]; ++j) {
-          r[j] = j - b[i] << 5 | i;
+        for (var j = b2[i]; j < b2[i + 1]; ++j) {
+          r[j] = j - b2[i] << 5 | i;
         }
       }
-      return { b, r };
+      return { b: b2, r };
     };
     _a6 = freb(fleb, 2);
     fl = _a6.b;
@@ -35741,33 +36014,33 @@ var init_browser = __esm({
         if (cd[i])
           ++l[cd[i] - 1];
       }
-      var le = new u16(mb);
+      var le2 = new u16(mb);
       for (i = 1; i < mb; ++i) {
-        le[i] = le[i - 1] + l[i - 1] << 1;
+        le2[i] = le2[i - 1] + l[i - 1] << 1;
       }
-      var co;
+      var co2;
       if (r) {
-        co = new u16(1 << mb);
+        co2 = new u16(1 << mb);
         var rvb = 15 - mb;
         for (i = 0; i < s2; ++i) {
           if (cd[i]) {
             var sv = i << 4 | cd[i];
             var r_1 = mb - cd[i];
-            var v = le[cd[i] - 1]++ << r_1;
-            for (var m2 = v | (1 << r_1) - 1; v <= m2; ++v) {
-              co[rev[v] >> rvb] = sv;
+            var v2 = le2[cd[i] - 1]++ << r_1;
+            for (var m3 = v2 | (1 << r_1) - 1; v2 <= m3; ++v2) {
+              co2[rev[v2] >> rvb] = sv;
             }
           }
         }
       } else {
-        co = new u16(s2);
+        co2 = new u16(s2);
         for (i = 0; i < s2; ++i) {
           if (cd[i]) {
-            co[i] = rev[le[cd[i] - 1]++] >> 15 - cd[i];
+            co2[i] = rev[le2[cd[i] - 1]++] >> 15 - cd[i];
           }
         }
       }
-      return co;
+      return co2;
     });
     flt = new u8(288);
     for (i = 0; i < 144; ++i)
@@ -35784,30 +36057,30 @@ var init_browser = __esm({
     flrm = /* @__PURE__ */ hMap(flt, 9, 1);
     fdrm = /* @__PURE__ */ hMap(fdt, 5, 1);
     max = function(a) {
-      var m2 = a[0];
+      var m3 = a[0];
       for (var i = 1; i < a.length; ++i) {
-        if (a[i] > m2)
-          m2 = a[i];
+        if (a[i] > m3)
+          m3 = a[i];
       }
-      return m2;
+      return m3;
     };
-    bits = function(d, p2, m2) {
-      var o = p2 / 8 | 0;
-      return (d[o] | d[o + 1] << 8) >> (p2 & 7) & m2;
+    bits = function(d, p3, m3) {
+      var o = p3 / 8 | 0;
+      return (d[o] | d[o + 1] << 8) >> (p3 & 7) & m3;
     };
-    bits16 = function(d, p2) {
-      var o = p2 / 8 | 0;
-      return (d[o] | d[o + 1] << 8 | d[o + 2] << 16) >> (p2 & 7);
+    bits16 = function(d, p3) {
+      var o = p3 / 8 | 0;
+      return (d[o] | d[o + 1] << 8 | d[o + 2] << 16) >> (p3 & 7);
     };
-    shft = function(p2) {
-      return (p2 + 7) / 8 | 0;
+    shft = function(p3) {
+      return (p3 + 7) / 8 | 0;
     };
-    slc = function(v, s2, e) {
+    slc = function(v2, s2, e) {
       if (s2 == null || s2 < 0)
         s2 = 0;
-      if (e == null || e > v.length)
-        e = v.length;
-      return new u8(v.subarray(s2, e));
+      if (e == null || e > v2.length)
+        e = v2.length;
+      return new u8(v2.subarray(s2, e));
     };
     ec = [
       "unexpected EOF",
@@ -35827,58 +36100,58 @@ var init_browser = __esm({
       "invalid zip data"
       // determined by unknown compression method
     ];
-    err = function(ind, msg, nt) {
+    err = function(ind, msg, nt2) {
       var e = new Error(msg || ec[ind]);
       e.code = ind;
       if (Error.captureStackTrace)
         Error.captureStackTrace(e, err);
-      if (!nt)
+      if (!nt2)
         throw e;
       return e;
     };
-    inflt = function(dat, st, buf, dict) {
-      var sl = dat.length, dl = dict ? dict.length : 0;
-      if (!sl || st.f && !st.l)
+    inflt = function(dat, st2, buf, dict) {
+      var sl2 = dat.length, dl2 = dict ? dict.length : 0;
+      if (!sl2 || st2.f && !st2.l)
         return buf || new u8(0);
       var noBuf = !buf;
-      var resize = noBuf || st.i != 2;
-      var noSt = st.i;
+      var resize = noBuf || st2.i != 2;
+      var noSt = st2.i;
       if (noBuf)
-        buf = new u8(sl * 3);
+        buf = new u8(sl2 * 3);
       var cbuf = function(l2) {
-        var bl = buf.length;
-        if (l2 > bl) {
-          var nbuf = new u8(Math.max(bl * 2, l2));
+        var bl2 = buf.length;
+        if (l2 > bl2) {
+          var nbuf = new u8(Math.max(bl2 * 2, l2));
           nbuf.set(buf);
           buf = nbuf;
         }
       };
-      var final = st.f || 0, pos = st.p || 0, bt = st.b || 0, lm = st.l, dm = st.d, lbt = st.m, dbt = st.n;
-      var tbts = sl * 8;
+      var final = st2.f || 0, pos = st2.p || 0, bt2 = st2.b || 0, lm2 = st2.l, dm = st2.d, lbt = st2.m, dbt = st2.n;
+      var tbts = sl2 * 8;
       do {
-        if (!lm) {
+        if (!lm2) {
           final = bits(dat, pos, 1);
           var type = bits(dat, pos + 1, 3);
           pos += 3;
           if (!type) {
-            var s2 = shft(pos) + 4, l = dat[s2 - 4] | dat[s2 - 3] << 8, t = s2 + l;
-            if (t > sl) {
+            var s2 = shft(pos) + 4, l = dat[s2 - 4] | dat[s2 - 3] << 8, t32 = s2 + l;
+            if (t32 > sl2) {
               if (noSt)
                 err(0);
               break;
             }
             if (resize)
-              cbuf(bt + l);
-            buf.set(dat.subarray(s2, t), bt);
-            st.b = bt += l, st.p = pos = t * 8, st.f = final;
+              cbuf(bt2 + l);
+            buf.set(dat.subarray(s2, t32), bt2);
+            st2.b = bt2 += l, st2.p = pos = t32 * 8, st2.f = final;
             continue;
           } else if (type == 1)
-            lm = flrm, dm = fdrm, lbt = 9, dbt = 5;
+            lm2 = flrm, dm = fdrm, lbt = 9, dbt = 5;
           else if (type == 2) {
             var hLit = bits(dat, pos, 31) + 257, hcLen = bits(dat, pos + 10, 15) + 4;
-            var tl = hLit + bits(dat, pos + 5, 31) + 1;
+            var tl2 = hLit + bits(dat, pos + 5, 31) + 1;
             pos += 14;
-            var ldt = new u8(tl);
+            var ldt = new u8(tl2);
             var clt = new u8(19);
             for (var i = 0; i < hcLen; ++i) {
               clt[clim[i]] = bits(dat, pos + i * 3, 7);
@@ -35886,7 +36159,7 @@ var init_browser = __esm({
             pos += hcLen * 3;
             var clb = max(clt), clbmsk = (1 << clb) - 1;
             var clm = hMap(clt, clb, 1);
-            for (var i = 0; i < tl; ) {
+            for (var i = 0; i < tl2; ) {
               var r = clm[bits(dat, pos, clbmsk)];
               pos += r & 15;
               var s2 = r >> 4;
@@ -35904,11 +36177,11 @@ var init_browser = __esm({
                   ldt[i++] = c;
               }
             }
-            var lt = ldt.subarray(0, hLit), dt2 = ldt.subarray(hLit);
-            lbt = max(lt);
-            dbt = max(dt2);
-            lm = hMap(lt, lbt, 1);
-            dm = hMap(dt2, dbt, 1);
+            var lt2 = ldt.subarray(0, hLit), dt3 = ldt.subarray(hLit);
+            lbt = max(lt2);
+            dbt = max(dt3);
+            lm2 = hMap(lt2, lbt, 1);
+            dm = hMap(dt3, dbt, 1);
           } else
             err(1);
           if (pos > tbts) {
@@ -35918,11 +36191,11 @@ var init_browser = __esm({
           }
         }
         if (resize)
-          cbuf(bt + 131072);
+          cbuf(bt2 + 131072);
         var lms = (1 << lbt) - 1, dms = (1 << dbt) - 1;
         var lpos = pos;
         for (; ; lpos = pos) {
-          var c = lm[bits16(dat, pos) & lms], sym = c >> 4;
+          var c = lm2[bits16(dat, pos) & lms], sym = c >> 4;
           pos += c & 15;
           if (pos > tbts) {
             if (noSt)
@@ -35932,25 +36205,25 @@ var init_browser = __esm({
           if (!c)
             err(2);
           if (sym < 256)
-            buf[bt++] = sym;
+            buf[bt2++] = sym;
           else if (sym == 256) {
-            lpos = pos, lm = null;
+            lpos = pos, lm2 = null;
             break;
           } else {
             var add2 = sym - 254;
             if (sym > 264) {
-              var i = sym - 257, b = fleb[i];
-              add2 = bits(dat, pos, (1 << b) - 1) + fl[i];
-              pos += b;
+              var i = sym - 257, b2 = fleb[i];
+              add2 = bits(dat, pos, (1 << b2) - 1) + fl[i];
+              pos += b2;
             }
             var d = dm[bits16(dat, pos) & dms], dsym = d >> 4;
             if (!d)
               err(3);
             pos += d & 15;
-            var dt2 = fd[dsym];
+            var dt3 = fd[dsym];
             if (dsym > 3) {
-              var b = fdeb[dsym];
-              dt2 += bits16(dat, pos) & (1 << b) - 1, pos += b;
+              var b2 = fdeb[dsym];
+              dt3 += bits16(dat, pos) & (1 << b2) - 1, pos += b2;
             }
             if (pos > tbts) {
               if (noSt)
@@ -35958,24 +36231,24 @@ var init_browser = __esm({
               break;
             }
             if (resize)
-              cbuf(bt + 131072);
-            var end = bt + add2;
-            if (bt < dt2) {
-              var shift = dl - dt2, dend = Math.min(dt2, end);
-              if (shift + bt < 0)
+              cbuf(bt2 + 131072);
+            var end = bt2 + add2;
+            if (bt2 < dt3) {
+              var shift = dl2 - dt3, dend = Math.min(dt3, end);
+              if (shift + bt2 < 0)
                 err(3);
-              for (; bt < dend; ++bt)
-                buf[bt] = dict[shift + bt];
+              for (; bt2 < dend; ++bt2)
+                buf[bt2] = dict[shift + bt2];
             }
-            for (; bt < end; ++bt)
-              buf[bt] = buf[bt - dt2];
+            for (; bt2 < end; ++bt2)
+              buf[bt2] = buf[bt2 - dt3];
           }
         }
-        st.l = lm, st.p = lpos, st.b = bt, st.f = final;
-        if (lm)
-          final = 1, st.m = lbt, st.d = dm, st.n = dbt;
+        st2.l = lm2, st2.p = lpos, st2.b = bt2, st2.f = final;
+        if (lm2)
+          final = 1, st2.m = lbt, st2.d = dm, st2.n = dbt;
       } while (!final);
-      return bt != buf.length && noBuf ? slc(buf, 0, bt) : buf.subarray(0, bt);
+      return bt2 != buf.length && noBuf ? slc(buf, 0, bt2) : buf.subarray(0, bt2);
     };
     et = /* @__PURE__ */ new u8(0);
     td = typeof TextDecoder != "undefined" && /* @__PURE__ */ new TextDecoder();
@@ -40186,26 +40459,26 @@ async function main(init) {
     }
     let str = "";
     while (idx < endPtr) {
-      let u0 = heapOrArray[idx++];
-      if (!(u0 & 128)) {
-        str += String.fromCharCode(u0);
+      let u02 = heapOrArray[idx++];
+      if (!(u02 & 128)) {
+        str += String.fromCharCode(u02);
         continue;
       }
       const u1 = heapOrArray[idx++] & 63;
-      if ((u0 & 224) === 192) {
-        str += String.fromCharCode((u0 & 31) << 6 | u1);
+      if ((u02 & 224) === 192) {
+        str += String.fromCharCode((u02 & 31) << 6 | u1);
         continue;
       }
       const u2 = heapOrArray[idx++] & 63;
-      if ((u0 & 240) === 224) {
-        u0 = (u0 & 15) << 12 | u1 << 6 | u2;
+      if ((u02 & 240) === 224) {
+        u02 = (u02 & 15) << 12 | u1 << 6 | u2;
       } else {
-        u0 = (u0 & 7) << 18 | u1 << 12 | u2 << 6 | heapOrArray[idx++] & 63;
+        u02 = (u02 & 7) << 18 | u1 << 12 | u2 << 6 | heapOrArray[idx++] & 63;
       }
-      if (u0 < 65536) {
-        str += String.fromCharCode(u0);
+      if (u02 < 65536) {
+        str += String.fromCharCode(u02);
       } else {
-        const ch = u0 - 65536;
+        const ch = u02 - 65536;
         str += String.fromCharCode(55296 | ch >> 10, 56320 | ch & 1023);
       }
     }
@@ -40316,7 +40589,7 @@ async function createOnigurumaEngine(options) {
     await loadWasm(options);
   return {
     createScanner(patterns) {
-      return new OnigScanner(patterns.map((p2) => typeof p2 === "string" ? p2 : p2.source));
+      return new OnigScanner(patterns.map((p3) => typeof p3 === "string" ? p3 : p3.source));
     },
     createString(s2) {
       return new OnigString(s2);
@@ -40841,7 +41114,7 @@ var require_code_highlighter = __commonJS({
               while (column2 < line.text.length && line.text[column2] !== displayed[visible]) column2++;
               removed.push([from, column2]);
             }
-            for (const [from, to] of removed.reverse()) line.editText(from, to, "");
+            for (const [from, to2] of removed.reverse()) line.editText(from, to2, "");
           }
           let column = 0;
           for (const token of tokens) {
@@ -40905,8 +41178,8 @@ var require_code_highlighting_editor = __commonJS({
     var MAX_BLOCK_LENGTH = 1e5;
     var MAX_CACHE_LENGTH = 4e5;
     var MAX_CACHE_ENTRIES = 32;
-    function overlaps(ranges, from, to) {
-      return ranges.some((range) => range.from <= to && range.to >= from);
+    function overlaps(ranges, from, to2) {
+      return ranges.some((range) => range.from <= to2 && range.to >= from);
     }
     function candidates(view, inlineEnabled) {
       const state = view.state;
@@ -40918,7 +41191,7 @@ var require_code_highlighting_editor = __commonJS({
       let block = null;
       function finish() {
         if (!block) return;
-        const rows = [...block.rows.values()].sort((a, b) => a.number - b.number);
+        const rows = [...block.rows.values()].sort((a, b2) => a.number - b2.number);
         if (rows.length && block.language && block.language !== "mermaid" && overlaps(visible, rows[0].from, rows[rows.length - 1].to)) {
           const segments = [];
           let code = "";
@@ -40952,12 +41225,12 @@ var require_code_highlighting_editor = __commonJS({
           while (position < node.to) {
             const line = state.doc.lineAt(position);
             const from2 = Math.max(line.from, node.from);
-            const to = Math.min(line.to, node.to);
+            const to2 = Math.min(line.to, node.to);
             const previous = block.rows.get(line.number);
             block.rows.set(line.number, {
               number: line.number,
               from: Math.min(previous?.from ?? from2, from2),
-              to: Math.max(previous?.to ?? to, to)
+              to: Math.max(previous?.to ?? to2, to2)
             });
             position = line.to + 1;
           }
@@ -41484,6 +41757,8620 @@ var require_code_renderer = __commonJS({
   }
 });
 
+// node_modules/mathlive/mathlive-ssr.min.mjs
+var mathlive_ssr_min_exports = {};
+__export(mathlive_ssr_min_exports, {
+  convertAsciiMathToLatex: () => I2,
+  convertLatexToAsciiMath: () => O2,
+  convertLatexToMarkup: () => E2,
+  convertLatexToMathMl: () => F2,
+  convertLatexToSpeakableText: () => P2,
+  validateLatex: () => R2
+});
+function bt(t32, e) {
+  t32 === void 0 && (t32 = 77);
+  let r = C0[e][t32];
+  if (r) return { defaultMetrics: false, depth: r[0], height: r[1], italic: r[2], skew: r[3], width: r[4] };
+  if (t32 === 11034) return { defaultMetrics: true, depth: 0.2, height: 0.8, italic: 0, skew: 0, width: 0.8 };
+  let i = String.fromCodePoint(t32);
+  if (i in L0) t32 = L0[i].codePointAt(0);
+  else if (ql.test(i)) return t32 = 77, { defaultMetrics: true, depth: 0.2, height: 0.9, italic: 0, skew: 0, width: 1 };
+  return { defaultMetrics: true, depth: 0.2, height: 0.7, italic: 0, skew: 0, width: 0.8 };
+}
+function ye(t32) {
+  return Array.isArray(t32);
+}
+function D0(t32) {
+  if (io[t32]) {
+    let [c, h2, d] = io[t32], f = `<span class="ML__stretchy" style="height:${d}em"><svg width="100%" height="${d}em" viewBox="0 0 ${c} ${h2}" preserveAspectRatio="none" ><path fill="currentcolor" d="${T0[t32]}"></path></svg></span>`;
+    return `<span style="display:inline-block;height:${Math.floor(100 * d / 2) / 100}em;min-width:0">${f}</span>`;
+  }
+  let [e, r, i, n] = ro[t32], o, a, l = i / 1e3;
+  e.length === 3 ? (o = ["slice-1-of-3", "slice-2-of-3", "slice-3-of-3"], a = ["xMinYMin", "xMidYMin", "xMaxYMin"]) : e.length === 2 ? (o = ["slice-1-of-2", "slice-2-of-2"], a = ["xMinYMin", "xMaxYMin"]) : (o = ["slice-1-of-1"], a = [n]);
+  let s2 = e.map((c, h2) => `<span class="${o[h2]}" style=height:${l}em><svg width=400em height=${l}em viewBox="0 0 400000 ${i}" preserveAspectRatio="${a[h2]} slice"><path fill="currentcolor" d="${T0[c]}"></path></svg></span>`).join("");
+  return `<span style="display:inline-block;height:${l}em;min-width:${r}em;">${s2}</span>`;
+}
+function z0(t32) {
+  return ro[t32] ? ro[t32][2] / 1e3 : io[t32][2];
+}
+function ao(t32) {
+  var h2, d, f, S, x, w;
+  let e = t32.split("!"), r, i, n, o = 255, a = 255, l = 255, s2 = -1, c = e.length > 0 && e[0].startsWith("-");
+  c && (e[0] = e[0].slice(1));
+  for (let T = 0; T < e.length; T++) {
+    r = o, i = a, n = l;
+    let g = (h2 = e[T].trim().match(/^([A-Za-z\d-]+)/)) == null ? void 0 : h2[1], C = g == null ? void 0 : g.toLowerCase(), k = g && (w = (x = (S = (f = (d = E0[C]) != null ? d : E0[R0[g]]) != null ? f : Vl[g]) != null ? S : Jl[g]) != null ? x : Nl[g]) != null ? w : e[T].trim(), L = k.match(/^#([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i);
+    if (L != null && L[1] && L[2] && L[3]) o = Math.max(0, Math.min(255, Number.parseInt(L[1], 16))), a = Math.max(0, Math.min(255, Number.parseInt(L[2], 16))), l = Math.max(0, Math.min(255, Number.parseInt(L[3], 16)));
+    else if (L = k.match(/^#([\da-f]{3})$/i), L != null && L[1]) {
+      let P = Number.parseInt(L[1][0], 16), B = Number.parseInt(L[1][1], 16), A = Number.parseInt(L[1][2], 16);
+      o = Math.max(0, Math.min(255, P * 16 + P)), a = Math.max(0, Math.min(255, B * 16 + B)), l = Math.max(0, Math.min(255, A * 16 + A));
+    } else if (L = k.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i), L != null && L[1] && L[2] && L[3]) o = Math.max(0, Math.min(255, Number.parseInt(L[1]))), a = Math.max(0, Math.min(255, Number.parseInt(L[2]))), l = Math.max(0, Math.min(255, Number.parseInt(L[3])));
+    else return;
+    s2 >= 0 && (o = (1 - s2) * o + s2 * r, a = (1 - s2) * a + s2 * i, l = (1 - s2) * l + s2 * n, s2 = -1), T + 1 < e.length && (s2 = Math.max(0, Math.min(100, Number.parseInt(e[++T]))) / 100);
+  }
+  return s2 >= 0 && (o = s2 * o + (1 - s2) * r, a = s2 * a + (1 - s2) * i, l = s2 * l + (1 - s2) * n), c && (o = 255 - o, a = 255 - a, l = 255 - l), "#" + ("00" + Math.round(o).toString(16)).slice(-2) + ("00" + Math.round(a).toString(16)).slice(-2) + ("00" + Math.round(l).toString(16)).slice(-2);
+}
+function F0(t32) {
+  var e, r;
+  return t32 = t32.trim(), (r = (e = $0[t32.toLowerCase()]) != null ? e : $0[R0[t32]]) != null ? r : ao(t32);
+}
+function Hl(t32) {
+  if (!t32 || t32[0] !== "#") return;
+  t32 = t32.slice(1);
+  let e;
+  return t32.length <= 4 ? (e = { r: parseInt(t32[0] + t32[0], 16), g: parseInt(t32[1] + t32[1], 16), b: parseInt(t32[2] + t32[2], 16) }, t32.length === 4 && (e.a = parseInt(t32[3] + t32[3], 16) / 255)) : (e = { r: parseInt(t32[0] + t32[1], 16), g: parseInt(t32[2] + t32[3], 16), b: parseInt(t32[4] + t32[5], 16) }, t32.length === 8 && (e.a = parseInt(t32[6] + t32[7], 16) / 255)), e && e.a === void 0 && (e.a = 1), e;
+}
+function no(t32, e, r) {
+  return r < 0 && (r += 6), r >= 6 && (r -= 6), r < 1 ? (e - t32) * r + t32 : r < 3 ? e : r < 4 ? (e - t32) * (4 - r) + t32 : t32;
+}
+function Gl(t32) {
+  let [e, r, i] = [t32.h, t32.s, t32.l];
+  e = (e + 360) % 360 / 60, i = Math.max(0, Math.min(i, 1)), r = Math.max(0, Math.min(r, 1));
+  let n = i <= 0.5 ? i * (r + 1) : i + r - i * r, o = i * 2 - n;
+  return { r: Math.round(255 * no(o, n, e + 2)), g: Math.round(255 * no(o, n, e)), b: Math.round(255 * no(o, n, e - 2)) };
+}
+function oo(t32) {
+  return t32 < 0 ? 0 : t32 > 255 ? 255 : Math.round(t32);
+}
+function Wl(t32) {
+  let { r: e, g: r, b: i } = t32, n = ((1 << 24) + (oo(e) << 16) + (oo(r) << 8) + oo(i)).toString(16).slice(1);
+  return n[0] === n[1] && n[2] === n[3] && n[4] === n[5] && n[6] === n[7] && (n = n[0] + n[2] + n[4]), "#" + n;
+}
+function Zl(t32) {
+  let { r: e, g: r, b: i } = t32;
+  e = e / 255, r = r / 255, i = i / 255;
+  let n = Math.min(e, r, i), o = Math.max(e, r, i), a = o - n, l, s2;
+  o === n ? l = 0 : e === o ? l = (r - i) / a : r === o ? l = 2 + (i - e) / a : i === o && (l = 4 + (e - r) / a), l = Math.min(l * 60, 360), l < 0 && (l += 360);
+  let c = (n + o) / 2;
+  return o === n ? s2 = 0 : c <= 0.5 ? s2 = a / (o + n) : s2 = a / (2 - o - n), { h: l, s: s2, l: c };
+}
+function P0(t32) {
+  let e = Hl(t32);
+  if (!e) return t32;
+  let { h: r, s: i, l: n } = Zl(e);
+  return i += 0.1, n -= 0.1, Wl(Gl({ h: r, s: i, l: n }));
+}
+function qi() {
+  return "window" in globalThis && "document" in globalThis;
+}
+function O0() {
+  var e, r;
+  if (!qi()) return "other";
+  let t32 = (r = (e = navigator.userAgentData) == null ? void 0 : e.platform) != null ? r : navigator.platform;
+  return /^mac/i.test(t32) ? navigator.maxTouchPoints === 5 ? "ios" : "macos" : /^win/i.test(t32) ? "windows" : /android/i.test(navigator.userAgent) ? "android" : /iphone|ipod|ipad/i.test(navigator.userAgent) ? "ios" : /\bcros\b/i.test(navigator.userAgent) ? "chromeos" : "other";
+}
+function I0() {
+  if (!qi()) return true;
+  if (/firefox/i.test(navigator.userAgent)) {
+    let t32 = navigator.userAgent.match(/firefox\/(\d+)/i);
+    return t32 ? parseInt(t32[1]) >= 78 : false;
+  }
+  if (/trident/i.test(navigator.userAgent)) return false;
+  if (/edge/i.test(navigator.userAgent)) {
+    let t32 = navigator.userAgent.match(/edg\/(\d+)/i);
+    return t32 ? parseInt(t32[1]) >= 79 : false;
+  }
+  return true;
+}
+function Rr(t32, e, r) {
+  if (!/[A-Za-z\d]/.test(t32) || (r === "up" && (r = void 0), !e && !r)) return;
+  let i = t32.codePointAt(0);
+  if (i === void 0) return t32;
+  for (let n of q0) if ((!e || n.variant === e) && (!r || n.style === r) && i >= n.offset && i < n.offset + n.len) {
+    let o = n.start + i - n.offset;
+    return String.fromCodePoint(so[o] || o);
+  }
+}
+function Ul(t32) {
+  var e;
+  if ((t32 < 119808 || t32 > 120831) && (t32 < 8448 || t32 > 8527)) return { char: String.fromCodePoint(t32) };
+  for (let r in so) if (so[r] === t32) {
+    t32 = (e = r.codePointAt(0)) != null ? e : 0;
+    break;
+  }
+  for (let r of q0) if (t32 >= r.start && t32 < r.start + r.len) return { char: String.fromCodePoint(t32 - r.start + r.offset), variant: r.variant, style: r.style };
+  return { char: String.fromCodePoint(t32) };
+}
+function N0(t32) {
+  var a;
+  if ("{}<>[]$&*#^_%:'\u02DC".includes(t32) || t32.length > 1) return;
+  let e = (a = t32.codePointAt(0)) != null ? a : 0, r = lo[e];
+  if (r) return r;
+  let { char: i, variant: n, style: o } = Ul(e);
+  if (!(!n && !o)) {
+    switch (r = i, n) {
+      case "double-struck":
+        r = `\\mathbb{${r}}`;
+        break;
+      case "fraktur":
+        r = `\\mathfrak{${r}}`;
+        break;
+      case "script":
+        r = `\\mathscr{${r}}`;
+        break;
+      case "sans-serif":
+        r = `\\mathsf{${r}}`;
+        break;
+      case "monospace":
+        r = `\\mathtt{${r}}`;
+        break;
+      case "calligraphic":
+        r = `\\mathcal{${r}}`;
+        break;
+    }
+    switch (o) {
+      case "bold":
+        r = `\\mathbf{${r}}`;
+        break;
+      case "italic":
+        r = `\\mathit{${r}}`;
+        break;
+      case "bolditalic":
+        r = `\\mathbfit{${r}}`;
+        break;
+    }
+    return r;
+  }
+}
+function M(t32) {
+  return t32 ? Array.isArray(t32) ? t32 : typeof t32 == "object" && "group" in t32 ? t32.group : [] : [];
+}
+function uo(t32, e, r = "mord", i) {
+  e !== void 0 && (co[t32] = { definitionType: "symbol", type: r, variant: i, codepoint: e }, Vi[e] || (Vi[e] = t32));
+}
+function ne(t32, e, r) {
+  if (typeof t32 == "string") {
+    for (let i = 0; i < t32.length; i++) {
+      let n = t32.charAt(i);
+      uo(n, n.codePointAt(0));
+    }
+    return;
+  }
+  for (let [i, n, o, a] of t32) uo(i, n, o != null ? o : e, a != null ? a : r);
+}
+function po(t32, e) {
+  for (let r = t32; r <= e; r++) uo(String.fromCodePoint(r), r);
+}
+function G0(t32) {
+  var e;
+  return (e = ho[t32]) != null ? e : null;
+}
+function J0(t32) {
+  let e = "auto", r = t32.match(/:([^=]+)/);
+  return r && (e = r[1].trim()), e;
+}
+function Hi(t32) {
+  if (!t32) return [];
+  let e = [], r = t32.split("]");
+  if (r[0].startsWith("[")) {
+    e.push({ isOptional: true, type: J0(r[0].slice(1)) });
+    for (let i = 1; i <= r.length; i++) e.push(...Hi(r[i]));
+  } else if (r = t32.split("}"), r[0].startsWith("{")) {
+    e.push({ isOptional: false, type: J0(r[0].slice(1)) });
+    for (let i = 1; i <= r.length; i++) e.push(...Hi(r[i]));
+  }
+  return e;
+}
+function fo(t32) {
+  if (!t32) return "";
+  let e = "", r = true;
+  for (let i of t32) typeof i.value == "string" ? e += i.value : r = false;
+  return r ? e : "";
+}
+function We(t32, e, r) {
+  typeof t32 == "string" && (t32 = [t32]);
+  let n = { tabular: true, rootOnly: false, params: Hi(e), createAtom: r };
+  for (let o of t32) ho[o] = n;
+}
+function Gi(t32, e, r) {
+  var n;
+  typeof t32 == "string" && (t32 = [t32]);
+  let i = { tabular: (n = r == null ? void 0 : r.tabular) != null ? n : false, rootOnly: true, params: [], createAtom: e };
+  for (let o of t32) ho[o] = i;
+}
+function y(t32, e, r) {
+  var n, o;
+  r || (r = {});
+  let i = { definitionType: "function", params: Hi(e), ifMode: r.ifMode, isFunction: (n = r.isFunction) != null ? n : false, applyMode: r.applyMode, infix: (o = r.infix) != null ? o : false, parse: r.parse, createAtom: r.createAtom, applyStyle: r.applyStyle, serialize: r.serialize, render: r.render };
+  if (typeof t32 == "string") mo["\\" + t32] = i;
+  else for (let a of t32) mo["\\" + a] = i;
+}
+function Wi(t32) {
+  return Ni || (Ni = Fr(Yl)), t32 ? Fr(m2(m2({}, Ni), t32)) : Ni;
+}
+function H0(t32, e) {
+  var r, i, n, o;
+  if (typeof t32 == "string") {
+    let a = 0, l = t32;
+    return /(^|[^\\])#1/.test(l) && (a = 1), /(^|[^\\])#2/.test(l) && (a = 2), /(^|[^\\])#3/.test(l) && (a = 3), /(^|[^\\])#4/.test(l) && (a = 4), /(^|[^\\])#5/.test(l) && (a = 5), /(^|[^\\])#6/.test(l) && (a = 6), /(^|[^\\])#7/.test(l) && (a = 7), /(^|[^\\])#8/.test(l) && (a = 8), /(^|[^\\])#9/.test(l) && (a = 9), { expand: (r = e == null ? void 0 : e.expand) != null ? r : true, captureSelection: (i = e == null ? void 0 : e.captureSelection) != null ? i : true, args: a, def: l };
+  }
+  return m2({ expand: (n = e == null ? void 0 : e.expand) != null ? n : true, captureSelection: (o = e == null ? void 0 : e.captureSelection) != null ? o : true, args: 0 }, t32);
+}
+function Fr(t32) {
+  if (!t32) return {};
+  let e = {};
+  for (let r of Object.keys(t32)) {
+    let i = t32[r];
+    if (i == null) delete e[r];
+    else if (typeof i == "object" && "package" in i) for (let n of Object.keys(i.package)) e[n] = H0(i.package[n], { expand: !i.primitive, captureSelection: i.captureSelection });
+    else e[r] = H0(i);
+  }
+  return e;
+}
+function H(t32, e = "math") {
+  if (!t32 || t32.length === 0) return null;
+  let r = null;
+  if (t32.startsWith("\\")) {
+    if (r = mo[t32], r) return !r.ifMode || r.ifMode === e ? r : null;
+    e === "math" ? r = co[t32] : nr[t32] && (r = { definitionType: "symbol", type: "mord", codepoint: nr[t32] });
+  } else if (e === "math") {
+    if (r = co[t32], !r && t32.length === 1) {
+      let i = go("math", t32.codePointAt(0));
+      return i.startsWith("\\") ? u(m2({}, H(i, "math")), { command: i }) : null;
+    }
+  } else nr[t32] ? r = { definitionType: "symbol", type: "mord", codepoint: nr[t32] } : e === "text" && (r = { definitionType: "symbol", type: "mord", codepoint: t32.codePointAt(0) });
+  return r != null ? r : null;
+}
+function Pr(t32, e) {
+  if (!t32.startsWith("\\")) return null;
+  let r = t32.slice(1);
+  return e[r];
+}
+function go(t32, e) {
+  if (e === void 0) return "";
+  if (t32 === "math" && Vi[e]) return Vi[e];
+  if (t32 === "text") {
+    let r = Object.keys(nr).find((i) => nr[i] === e);
+    return r || String.fromCodePoint(e);
+  }
+  return String.fromCodePoint(e);
+}
+function Ql(t32) {
+  let e = [];
+  for (let r = 0; r < t32.length; r++) {
+    let i = t32.charCodeAt(r);
+    if (i === 13 && t32.charCodeAt(r + 1) === 10 && (i = 10, r++), (i === 13 || i === 12) && (i = 10), i === 0 && (i = 65533), i >= 55296 && i <= 56319) {
+      let n = t32.charCodeAt(r + 1);
+      if (n >= 56320 && n <= 57343) {
+        let o = i - 55296, a = n - 56320;
+        i = 2 ** 16 + o * 2 ** 10 + a, r++;
+      }
+    }
+    e.push(i);
+  }
+  return e;
+}
+function Z0(t32) {
+  var e;
+  if (Zi === void 0) {
+    Zi = {};
+    for (let r of ec2) for (let i = r[0]; i <= r[0] + r[1] - 1; i++) Zi[i] = true;
+  }
+  return (e = Zi[t32]) != null ? e : false;
+}
+function tc(t32) {
+  return t32 >= W0[0] && t32 <= W0[1];
+}
+function U0(t32) {
+  if (/^[\u0020-\u00FF]*$/.test(t32)) return t32;
+  let e = [], r = Ql(t32), i = 0;
+  for (; i < r.length; ) {
+    let n = r[i++], o = r[i];
+    if (o === Ui) {
+      let a = i - 1;
+      for (i += 2; r[i] === Ui; ) i += 2;
+      e.push(String.fromCodePoint(...r.slice(a, i - a + 1)));
+    } else if (Z0(o)) {
+      let a = i - 1;
+      for (; Z0(r[i]); ) i += r[i] === Ui ? 2 : 1;
+      e.push(String.fromCodePoint(...r.slice(a, 2 * i - a - 1)));
+    } else tc(n) ? (i += 1, e.push(String.fromCodePoint(...r.slice(i - 2, 2)))) : e.push(String.fromCodePoint(n));
+  }
+  return e;
+}
+function rc(t32, e) {
+  var n, o, a, l;
+  let r = [], i = t32.next();
+  if (i && i !== "\\relax") {
+    if (i === "\\noexpand") i = t32.next(), i && r.push(i);
+    else if (i === "\\obeyspaces") t32.obeyspaces = true;
+    else if (i === "\\bgroup") r.push("<{>");
+    else if (i === "\\egroup") r.push("<}>");
+    else if (i === "\\string") {
+      if (i = t32.next(), i) if (i.startsWith("\\")) for (let s2 of i) r.push(s2 === "\\" ? "\\backslash" : s2);
+      else i === "<{>" ? r.push("\\{") : i === "<space>" ? r.push("~") : i === "<}>" && r.push("\\}");
+    } else if (i === "\\csname") {
+      for (; t32.peek() === "<space>"; ) t32.next();
+      let s2 = "", c = false, h2 = [];
+      do {
+        if (h2.length === 0) if (/^#[\d?@]$/.test(t32.peek())) {
+          let d = t32.get().slice(1);
+          h2 = or((o = (n = e == null ? void 0 : e(d)) != null ? n : e == null ? void 0 : e("?")) != null ? o : "\\placeholder{}", e), i = h2[0];
+        } else i = t32.next(), h2 = i ? [i] : [];
+        c = h2.length === 0, !c && i === "\\endcsname" && (c = true, h2.shift()), c || (c = i === "<$>" || i === "<$$>" || i === "<{>" || i === "<}>" || typeof i == "string" && i.length > 1 && i.startsWith("\\")), c || (s2 += h2.shift());
+      } while (!c);
+      s2 && r.push("\\" + s2), r.push(...h2);
+    } else if (i !== "\\endcsname") if (i.length > 1 && i.startsWith("#")) {
+      let s2 = i.slice(1);
+      r.push(...or((l = (a = e == null ? void 0 : e(s2)) != null ? a : e == null ? void 0 : e("?")) != null ? l : "\\placeholder{}", e));
+    } else r.push(i);
+  }
+  return r;
+}
+function or(t32, e = null) {
+  if (!t32) return [];
+  let r = [], i = "";
+  for (let a of t32.toString().split(/\r?\n/)) {
+    i && r.push(i), i = " ";
+    let l = a.match(/((?:\\%)|[^%])*/);
+    l !== null && r.push(l[0]);
+  }
+  let n = new yo(r.join("")), o = [];
+  do
+    o.push(...rc(n, e));
+  while (!n.end());
+  return o;
+}
+function D(t32) {
+  let e = "", r = [];
+  for (let i of t32) i && (e && /^[a-zA-Z\*]/.test(i) && r.push(e), r.push(i), /^\\[a-zA-Z]+\*?[\"\'][^\ ]+$/.test(i) && r.push(" "), e = /\\[a-zA-Z]+\*?$/.test(i) ? " " : "");
+  return r.join("");
+}
+function R(t32, ...e) {
+  return t32.startsWith("\\"), e.length === 0 ? t32 : D([t32, ...e.map((r) => `{${r}}`)]);
+}
+function xt(t32) {
+  return D(t32.map((e) => {
+    var r;
+    return (r = { "<space>": " ", "<$$>": "$$", "<$>": "$", "<{>": "{", "<}>": "}" }[e]) != null ? r : e;
+  }));
+}
+function X0(t32) {
+  let e = [], r = [], i = "NONE";
+  for (let n of t32) n.type !== "first" && (n.mode !== i ? (r.length > 0 && e.push(r), r = [n], i = n.mode) : r.push(n));
+  return r.length > 0 && e.push(r), e;
+}
+function ji(t32) {
+  if ((t32 == null ? void 0 : t32.mode) !== "math") return "";
+  let { style: e } = t32;
+  return !e || !e.variantStyle ? "" : e.variantStyle === "bold" || e.variantStyle === "bolditalic" ? "bold" : "";
+}
+function Xi(t32) {
+  if (!t32) return "";
+  let { style: e } = t32;
+  if (!e) return "";
+  let r = e.variant;
+  return r === void 0 && (r = "normal"), !["calligraphic", "fraktur", "double-struck", "script", "monospace", "sans-serif"].includes(r) && e.variantStyle && (r += "-" + e.variantStyle), r;
+}
+function ze(t32, e) {
+  let r = [], i = [], n;
+  for (let o of t32) {
+    if (o.type === "first") continue;
+    let a;
+    e === "variant" ? a = Xi(o) : e === "bold" ? a = ji(o) : a = o.style[e], a === n ? i.push(o) : (i.length > 0 && r.push(i), i = [o], n = a);
+  }
+  return i.length > 0 && r.push(i), r;
+}
+function j0(t32, e) {
+  var o;
+  let { parent: r } = t32[0], i = r == null ? void 0 : r.style.color, n = [];
+  for (let a of X0(t32)) {
+    let l = e.defaultMode;
+    for (let s2 of ze(a, "color")) {
+      let c = s2[0].style, h2 = Q._registry[s2[0].mode].serialize(s2, u(m2({}, e), { defaultMode: l === "text" ? "text" : "math" }));
+      !e.skipStyles && c.color && c.color !== "none" && (!r || i !== c.color) ? n.push(R("\\textcolor", (o = c.verbatimColor) != null ? o : c.color, D(h2))) : n.push(D(h2));
+    }
+  }
+  return n;
+}
+function ic(t32, e) {
+  let { parent: r } = t32[0], i = r == null ? void 0 : r.style.backgroundColor;
+  return ze(t32, "backgroundColor").map((n) => {
+    var o;
+    if (n.length > 0 || n[0].type !== "box") {
+      let a = n[0].style;
+      if (a.backgroundColor && a.backgroundColor !== "none" && (!r || i !== a.backgroundColor)) return R("\\colorbox", (o = a.verbatimBackgroundColor) != null ? o : a.backgroundColor, D(j0(n, u(m2({}, e), { defaultMode: "text" }))));
+    }
+    return D(j0(n, e));
+  });
+}
+function nc(t32, e) {
+  if (t32.length === 0) return [];
+  let { parent: r } = t32[0], i = r == null ? void 0 : r.style.fontSize, n = [];
+  for (let o of ze(t32, "fontSize")) {
+    let a = o[0].style.fontSize, l = ic(o, e);
+    l && (a && a !== "auto" && (!r || i !== a) ? n.push(["", "\\tiny", "\\scriptsize", "\\footnotesize", "\\small", "\\normalsize", "\\large", "\\Large", "\\LARGE", "\\huge", "\\Huge"][a], ...l) : n.push(...l));
+  }
+  return n;
+}
+function Ki(t32) {
+  return t32 ? { mord: "ord", mbin: "bin", mop: "op", mrel: "rel", mopen: "open", mclose: "close", mpunct: "punct", minner: "inner", spacing: "ignore", latex: "latex", composition: "inner", error: "inner", placeholder: "ord", supsub: "ignore" }[t32] : void 0;
+}
+function Ft(t32) {
+  if (t32.length === 0) return "ord";
+  let e = Ki(t32[0].type), r = Ki(t32[t32.length - 1].type);
+  return e && e === r ? e : "ord";
+}
+function Or(t32, e) {
+  if (typeof t32 == "string") return t32;
+  if (typeof t32 == "number") {
+    Number.isFinite(t32);
+    let r = Math.ceil(100 * t32) / 100;
+    return r === 0 ? "0" : r.toString() + (e != null ? e : "");
+  }
+  return "";
+}
+function xo(t32) {
+  if (!t32 || t32.length === 0) return [];
+  t32[0].children = xo(t32[0].children);
+  let e = [t32[0]];
+  for (let r = 1; r < t32.length; r++) e[e.length - 1].tryCoalesceWith(t32[r]) || (t32[r].children = xo(t32[r].children), e.push(t32[r]));
+  return e;
+}
+function Yi(t32) {
+  return t32.children && (t32.children = xo(t32.children)), t32;
+}
+function K0(t32, e) {
+  if (!t32) return new b(null, e);
+  let r = new b(null, { classes: "ML__strut", type: "ignore" });
+  r.setStyle("height", Math.max(0, t32.height), "em");
+  let i = [r];
+  if (t32.depth !== 0) {
+    let n = new b(null, { classes: "ML__strut--bottom", type: "ignore" });
+    n.setStyle("height", t32.height + t32.depth, "em"), n.setStyle("vertical-align", -t32.depth, "em"), i.push(n);
+  }
+  return i.push(t32), new b(i, u(m2({}, e), { type: "lift" }));
+}
+function sr(t32) {
+  let e = z0(t32) / 2, r = new b(null, { maxFontSize: 0 });
+  return r.height = e + 0.166, r.depth = e - 0.166, r.svgBody = t32, r;
+}
+function oc(t32, e) {
+  var r;
+  if (t32.type === "latex") {
+    t32.height = 0.9, t32.depth = 0.2, t32._width = 1;
+    return;
+  }
+  if (t32.value) {
+    t32.height = -1 / 0, t32.depth = -1 / 0, t32._width = 0, t32.skew = -1 / 0, t32.italic = -1 / 0;
+    for (let i = 0; i < t32.value.length; i++) {
+      let n = bt(t32.value.codePointAt(i), e);
+      t32.height = Math.max(t32.height, n.height), t32.depth = Math.max(t32.depth, n.depth), t32._width += n.width, t32.skew = n.skew, t32.italic = n.italic;
+    }
+    return;
+  }
+  if (t32.children && t32.children.length > 0) {
+    let i = -1 / 0, n = -1 / 0, o = 0;
+    for (let a of t32.children) a.height > i && (i = a.height), a.depth > n && (n = a.depth), o = Math.max(o, (r = a.maxFontSize) != null ? r : 0);
+    t32.height = i, t32.depth = n, t32._width = t32.children.reduce((a, l) => a + l.width, 0), t32.maxFontSize = o;
+  }
+}
+function ac(t32) {
+  return t32.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function bo(t32) {
+  if (t32 = t32.trim().replace(/ /g, "-"), t32.length === 0) throw new Error("Invalid empty attribute name");
+  if (/[\x20\x09\x0a\x0c\x0d"'>/=\x00-\x1f]/.test(t32)) throw new Error(`Invalid attribute name "${t32}"`);
+  return t32;
+}
+function Y0(t32) {
+  return t32.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function ar(t32) {
+  if (t32 = t32.trim(), t32.length >= 2 && (t32.startsWith('"') && t32.endsWith('"') || t32.startsWith("'") && t32.endsWith("'"))) t32 = t32.slice(1, -1);
+  else if (t32.length === 0) throw new Error("Invalid empty attribute value");
+  return `"${Y0(t32)}"`;
+}
+function sc(t32) {
+  if ("individualShift" in t32) {
+    let e = t32.individualShift, r = e[0];
+    if (r == null) return [null, 0];
+    let i = [r], n = -r.shift - r.box.depth, o = n;
+    for (let a = 1; a < e.length; a++) {
+      let l = e[a], s2 = -l.shift - o - l.box.depth, c = s2 - (r.box.height + r.box.depth);
+      o = o + s2, i.push(c), i.push(l), r = l;
+    }
+    return [i, n];
+  }
+  if ("top" in t32) {
+    let e = t32.top;
+    for (let r of t32.children) e -= typeof r == "number" ? r : r.box.height + r.box.depth;
+    return [t32.children, e];
+  } else {
+    if ("bottom" in t32) return [t32.children, -t32.bottom];
+    if ("firstBaseline" in t32) {
+      let e = t32.firstBaseline[0];
+      if (typeof e == "number") throw new Error("First child must be an element.");
+      return [t32.firstBaseline, -e.box.depth];
+    } else if ("shift" in t32) {
+      let e = t32.children[0];
+      if (typeof e == "number") throw new Error("First child must be an element.");
+      return [t32.children, -e.box.depth - t32.shift];
+    }
+  }
+  return [null, 0];
+}
+function lc(t32) {
+  var S;
+  let [e, r] = sc(t32);
+  if (!e) return [[], 0, 0];
+  let i = new b(null, { classes: "ML__pstrut" }), n = 0;
+  for (let x of e) if (typeof x != "number") {
+    let w = x.box;
+    n = Math.max(n, w.maxFontSize, w.height);
+  }
+  n += 2, i.height = n, i.setStyle("height", n, "em");
+  let o = [], a = r, l = r, s2 = r, c = 0;
+  for (let x of e) {
+    if (typeof x == "number") s2 += x;
+    else {
+      let w = x.box, T = (S = x.classes) != null ? S : [], g = new b([i, w], { classes: T.join(" "), style: x.style });
+      w.setStyle("height", w.height + w.depth, "em"), w.setStyle("display", "inline-block"), g.setStyle("top", -n - s2 - w.depth, "em"), x.marginLeft && g.setStyle("margin-left", x.marginLeft, "em"), x.marginRight && g.setStyle("margin-right", x.marginRight, "em"), o.push(g), s2 += w.height + w.depth, c = Math.max(c, g.width);
+    }
+    a = Math.min(a, s2), l = Math.max(l, s2);
+  }
+  o.forEach((x) => {
+    x.softWidth = c;
+  });
+  let h2 = new b(o, { classes: "ML__vlist" });
+  if (h2.softWidth = c, h2.height = l, h2.setStyle("height", l, "em"), a >= 0) return [[new b(h2, { classes: "ML__vlist-r" })], l, -a];
+  let d = new b(new b(null), { classes: "ML__vlist" });
+  d.height = -a, d.setStyle("height", -a, "em");
+  let f = new b(8203, { classes: "ML__vlist-s", maxFontSize: 0 });
+  return f.softWidth = 0, f.height = 0, f.depth = 0, [[new b([h2, f], { classes: "ML__vlist-r" }), new b(d, { classes: "ML__vlist-r" })], l, -a];
+}
+function Q0(t32, e) {
+  var c, h2, d, f, S;
+  let r = t32.metrics, i = new b(e.base), n = (c = e.baseShift) != null ? c : 0, o = (h2 = e.slant) != null ? h2 : 0, a = 0, l = 0;
+  e.above && (a = (d = e.aboveShift) != null ? d : Math.max(r.bigOpSpacing1, r.bigOpSpacing3 - e.above.depth)), e.below && (l = (f = e.belowShift) != null ? f : Math.max(r.bigOpSpacing2, r.bigOpSpacing4 - e.below.height));
+  let s2 = null;
+  if (e.below && e.above) {
+    let x = r.bigOpSpacing5 + e.below.height + e.below.depth + l + i.depth + n;
+    s2 = new V({ bottom: x, children: [r.bigOpSpacing5, { box: e.below, marginLeft: -o, classes: ["ML__center"] }, l, { box: i, classes: ["ML__center"] }, a, { box: e.above, marginLeft: o, classes: ["ML__center"] }, r.bigOpSpacing5] }).wrap(t32);
+  } else if (e.below && !e.above) s2 = new V({ top: i.height - n, children: [r.bigOpSpacing5, { box: e.below, marginLeft: -o, classes: ["ML__center"] }, l, { box: i, classes: ["ML__center"] }] }).wrap(t32);
+  else if (!e.below && e.above) {
+    let x = i.depth + n;
+    s2 = new V({ bottom: x, children: [{ box: i, classes: ["ML__center"] }, a, { box: e.above, marginLeft: o, classes: ["ML__center"] }, r.bigOpSpacing5] }).wrap(t32);
+  } else {
+    let x = i.depth + n;
+    s2 = new V({ bottom: x, children: [{ box: i }, r.bigOpSpacing5] }).wrap(t32);
+  }
+  return new b(s2, { type: (S = e.type) != null ? S : "op" });
+}
+function vo(t32) {
+  let e = [], r = 0, i = "";
+  for (let n of t32.trim()) {
+    if (n === "(" ? r += 1 : n === ")" && (r -= 1), r < 0) return;
+    /\s/.test(n) && r === 0 ? (i && e.push(i), i = "") : i += n;
+  }
+  if (r === 0) return i && e.push(i), e;
+}
+function So(t32) {
+  return cc.test(t32);
+}
+function wo(t32) {
+  return mc.test(t32);
+}
+function el(t32) {
+  if (!t32) return;
+  let e = t32.trim();
+  return So(e) ? e : void 0;
+}
+function lr(t32) {
+  if (!t32) return;
+  let e = vo(t32);
+  if (!(!e || e.length !== 1)) return wo(e[0]) ? e[0] : void 0;
+}
+function Qi(t32) {
+  if (!t32) return;
+  let e = vo(t32);
+  if (!e || e.length === 0 || e.length > 3) return;
+  let r = 0, i = 0, n = 0;
+  for (let o of e) if (So(o)) r += 1;
+  else if (uc.test(o)) i += 1;
+  else if (wo(o)) n += 1;
+  else return;
+  if (!(r > 1 || i > 1 || n > 1)) return e.join(" ");
+}
+function tl(t32) {
+  if (!t32) return;
+  let e = vo(t32);
+  if (!e || e.length < 2 || e.length > 4) return;
+  let r = 0, i = 0;
+  for (let n of e) if (So(n)) r += 1;
+  else if (wo(n)) i += 1;
+  else return;
+  if (!(r < 2 || r > 3 || i > 1)) return e.join(" ");
+}
+function rl(t32) {
+  if (!t32) return;
+  let e = t32.trim();
+  return /^[A-Za-z0-9 _'",-]+$/.test(e) ? e : void 0;
+}
+function Ao(t32, e) {
+  var i;
+  if (!t32) return 0;
+  let r = { pt: 1, mm: 7227 / 2540, cm: 7227 / 254, ex: 35271 / 8192, px: 3 / 4, em: Ge, bp: 803 / 800, dd: 1238 / 1157, pc: 12, in: 72.27, mu: 10 / 18 }[(i = t32.unit) != null ? i : "pt"];
+  if (Number.isFinite(e)) {
+    let n = 10 ** e;
+    return Math.round(t32.dimension / Ge * r * n) / n;
+  }
+  return t32.dimension * r;
+}
+function tn(t32, e) {
+  if (t32 === null) return 0;
+  let r = Ao(t32) / Ge;
+  if (Number.isFinite(e)) {
+    let i = 10 ** e;
+    return Math.round(r * i) / i;
+  }
+  return r;
+}
+function Mo(t32) {
+  var e;
+  return `${t32.dimension}${(e = t32.unit) != null ? e : "pt"}`;
+}
+function hc(t32) {
+  let e = Mo(t32.glue);
+  return t32.grow && t32.grow.dimension !== 0 && (e += ` plus ${Mo(t32.grow)}`), t32.shrink && t32.shrink.dimension !== 0 && (e += ` minus ${Mo(t32.shrink)}`), e;
+}
+function X(t32) {
+  var r, i;
+  if (t32 == null) return null;
+  let e = "";
+  if ("dimension" in t32 && (e = `${t32.dimension}${(r = t32.unit) != null ? r : "pt"}`), "glue" in t32 && (e = hc(t32)), "number" in t32) if (!("base" in t32) || t32.base === "decimal") e = Number(t32.number).toString();
+  else if (t32.base === "alpha") e = `\`${String.fromCodePoint(t32.number)}`;
+  else {
+    let n = Math.round(t32.number) >>> 0;
+    t32.base === "hexadecimal" ? (e = Number(n).toString(16).toUpperCase(), n <= 255 ? e = e.padStart(2, "0") : n <= 65535 ? e = e.padStart(4, "0") : n <= 16777215 ? e = e.padStart(6, "0") : e = e.padStart(8, "0"), e = `"${e}`) : t32.base === "octal" && (e = Number(n).toString(8), n <= 63 ? e = e.padStart(2, "0") : n <= 30583 ? e = e.padStart(4, "0") : e = e.padStart(8, "0"), e = `'${e}`);
+  }
+  return "register" in t32 && ("factor" in t32 && (t32.factor === -1 ? e = "-" : t32.factor !== 1 && (e = Number(t32.factor).toString())), "global" in t32 && t32.global && (e += "\\global"), e += `\\${t32.register}`), "string" in t32 && (e = t32.string), (i = t32.relax) != null && i && (e += "\\relax"), e;
+}
+function Ee(t32, e) {
+  return t32 == null ? null : "number" in t32 ? u(m2({}, t32), { number: t32.number * e }) : "register" in t32 ? "factor" in t32 && t32.factor ? u(m2({}, t32), { factor: t32.factor * e }) : u(m2({}, t32), { factor: e }) : "dimension" in t32 ? u(m2({}, t32), { dimension: t32.dimension * e }) : "glue" in t32 ? t32.shrink && t32.grow ? { glue: Ee(t32.glue, e), shrink: Ee(t32.shrink, e), grow: Ee(t32.grow, e) } : t32.shrink ? { glue: Ee(t32.glue, e), shrink: Ee(t32.shrink, e) } : t32.grow ? { glue: Ee(t32.glue, e), grow: Ee(t32.grow, e) } : { glue: Ee(t32.glue, e) } : null;
+}
+function nl(t32, ...e) {
+  if (t32 === void 0) return;
+  let r = "", i = q.locale;
+  q.strings[i] && (r = q.strings[i][t32]);
+  let n = i.slice(0, 2);
+  if (!r && q.strings[n] && (r = q.strings[n][t32]), r || (r = q.strings.en[t32]), !r) return;
+  let o = /(%@|%([0-9]+)\$@)/g, a = o.exec(r), l = 0;
+  for (; a; ) {
+    if (e[l++]) {
+      let c = a[2] ? parseInt(a[2], 10) - 1 : l - 1, h2 = e[c];
+      typeof h2 == "number" && (h2 = q.numberFormatter.format(h2)), r = r.replace(a[1], h2);
+    }
+    a = o.exec(r);
+  }
+  return r = r.replace(/%%/g, "%"), r;
+}
+function ol() {
+  return m2({}, dc);
+}
+function Vr() {
+  return { registers: ol(), smartFence: false, renderPlaceholder: void 0, placeholderSymbol: "\u25A2", letterShapeStyle: q.locale.startsWith("fr") ? "french" : "tex", minFontScale: 0, maxMatrixCols: 10, colorMap: ao, backgroundColorMap: F0, getMacro: (t32) => Pr(t32, Wi()) };
+}
+function wt(t32) {
+  return typeof t32 == "string" && Mt.includes(t32);
+}
+function Jr(t32) {
+  return t32 !== void 0 && Array.isArray(t32) && t32.length === 2;
+}
+function pc(t32) {
+  let e, r = [], i = [];
+  for (let n of t32) {
+    if (n.type === "first") {
+      i.push(n);
+      continue;
+    }
+    if (!e && !n.style) i.push(n);
+    else {
+      let o = n.style;
+      e && o.color === e.color && o.backgroundColor === e.backgroundColor && o.fontSize === e.fontSize ? i.push(n) : (i.length > 0 && r.push(i), i = [n], e = o);
+    }
+  }
+  return i.length > 0 && r.push(i), r;
+}
+function fc(t32, e, r) {
+  var l, s2, c, h2, d;
+  if (!e || e.length === 0) return null;
+  let i = new z({ parent: t32 }, r.style), n = !((l = i.atomIdsSettings) != null && l.groupNumbers), o = [];
+  if (e.length === 1) {
+    let f = e[0], S = f.render(i);
+    S && (n && f.isSelected && S.selected(true), o = [S]);
+  } else {
+    let f = "", S = true;
+    for (let x of e) {
+      (s2 = i.atomIdsSettings) != null && s2.groupNumbers && f && (S && x.isDigit() || !S && ko(x)) && (i.atomIdsSettings.overrideID = f);
+      let w = x.render(i);
+      i.atomIdsSettings && (i.atomIdsSettings.overrideID = void 0), w && ((c = i.atomIdsSettings) != null && c.groupNumbers && ((x.isDigit() || ko(x)) && (!f || S !== x.isDigit()) && (S = x.isDigit(), f = (h2 = x.id) != null ? h2 : ""), f && (!(x.isDigit() || ko(x)) || !x.hasEmptyBranch("superscript") || !x.hasEmptyBranch("subscript")) && (f = "")), n && x.isSelected && w.selected(true), o.push(w));
+    }
+  }
+  if (o.length === 0) return null;
+  let a = new b(o, u(m2({ isTight: i.isTight }, r), { type: (d = r.type) != null ? d : "lift" }));
+  return a.isSelected = o.every((f) => f.isSelected), a.wrap(i);
+}
+function ko(t32) {
+  return t32.mode === "text";
+}
+function gc(t32) {
+  return t32.map((e) => e === null ? "<null>" : Array.isArray(e) && e[0] instanceof p2 ? { atoms: e.map((r) => r.toJson()) } : typeof e == "object" && "group" in e ? { group: e.group.map((r) => r.toJson()) } : e);
+}
+function rn(t32) {
+  var e;
+  return (e = { "[": 91, "]": 93, "(": 40, ")": 41, "\\mid": 8739, "|": 8739, "\u2223": 8739, "\u2225": 8741, "\\|": 8739, "\\{": 123, "\\}": 125, "\\lbrace": 123, "\\rbrace": 125, "\\lparen": 40, "\\rparen": 41, "\\lbrack": 91, "\\rbrack": 93, "\\vert": 8739, "\\lvert": 8739, "\\mvert": 8739, "\\rvert": 8739, "\\Vert": 8741, "\\lVert": 8741, "\\mVert": 8741, "\\rVert": 8741, "\\parallel": 8741, "\\shortparallel": 8741, "\\langle": 10216, "\\rangle": 10217, "\\lfloor": 8970, "\\rfloor": 8971, "\\lceil": 8968, "\\rceil": 8969, "\\ulcorner": 9484, "\\urcorner": 9488, "\\llcorner": 9492, "\\lrcorner": 9496, "\\lgroup": 10222, "\\rgroup": 10223, "\\lmoustache": 9136, "\\rmoustache": 9137, "\\surd": 8730 }[t32]) != null ? e : t32.codePointAt(0);
+}
+function yc(t32, e, r, i) {
+  var a;
+  let o = new b(rn(t32), { fontFamily: "Main-Regular", isSelected: i.isSelected, classes: "ML__small-delim " + ((a = i.classes) != null ? a : "") }).wrap(e);
+  return r && o.setTop((1 - e.scalingFactor) * fe), o;
+}
+function al(t32, e, r, i, n) {
+  var l, s2;
+  let o = new z({ parent: i, mathstyle: "textstyle" }, n == null ? void 0 : n.style), a = new b(rn(t32), { fontFamily: `Size${e}-Regular`, isSelected: n.isSelected, classes: ((l = n.classes) != null ? l : "") + ` ML__delim-size${e}`, type: (s2 = n.type) != null ? s2 : "ignore" }).wrap(o);
+  return r && a.setTop((1 - o.scalingFactor) * fe), a;
+}
+function sl(t32, e, r, i, n) {
+  var ee;
+  let o, a, l, s2;
+  o = l = s2 = rn(t32), a = null;
+  let c = "Size1-Regular";
+  t32 === "\\vert" || t32 === "\\lvert" || t32 === "\\rvert" || t32 === "\\mvert" || t32 === "\\mid" ? l = o = s2 = 8739 : t32 === "\\Vert" || t32 === "\\lVert" || t32 === "\\rVert" || t32 === "\\mVert" || t32 === "\\|" ? l = o = s2 = 8741 : t32 === "\\uparrow" ? l = s2 = 9168 : t32 === "\\Uparrow" ? l = s2 = 8214 : t32 === "\\downarrow" ? o = l = 9168 : t32 === "\\Downarrow" ? o = l = 8214 : t32 === "\\updownarrow" ? (o = 8593, l = 9168, s2 = 8595) : t32 === "\\Updownarrow" ? (o = 8657, l = 8214, s2 = 8659) : t32 === "[" || t32 === "\\lbrack" ? (o = 9121, l = 9122, s2 = 9123, c = "Size4-Regular") : t32 === "]" || t32 === "\\rbrack" ? (o = 9124, l = 9125, s2 = 9126, c = "Size4-Regular") : t32 === "\\lfloor" || t32 === "\u230A" ? (l = o = 9122, s2 = 9123, c = "Size4-Regular") : t32 === "\\lceil" || t32 === "\u2308" ? (o = 9121, l = s2 = 9122, c = "Size4-Regular") : t32 === "\\rfloor" || t32 === "\u230B" ? (l = o = 9125, s2 = 9126, c = "Size4-Regular") : t32 === "\\rceil" || t32 === "\u2309" ? (o = 9124, l = s2 = 9125, c = "Size4-Regular") : t32 === "(" || t32 === "\\lparen" ? (o = 9115, l = 9116, s2 = 9117, c = "Size4-Regular") : t32 === ")" || t32 === "\\rparen" ? (o = 9118, l = 9119, s2 = 9120, c = "Size4-Regular") : t32 === "\\{" || t32 === "\\lbrace" ? (o = 9127, a = 9128, s2 = 9129, l = 9130, c = "Size4-Regular") : t32 === "\\}" || t32 === "\\rbrace" ? (o = 9131, a = 9132, s2 = 9133, l = 9130, c = "Size4-Regular") : t32 === "\\lgroup" || t32 === "\u27EE" ? (o = 9127, s2 = 9129, l = 9130, c = "Size4-Regular") : t32 === "\\rgroup" || t32 === "\u27EF" ? (o = 9131, s2 = 9133, l = 9130, c = "Size4-Regular") : t32 === "\\lmoustache" || t32 === "\u23B0" ? (o = 9127, s2 = 9133, l = 9130, c = "Size4-Regular") : t32 === "\\rmoustache" || t32 === "\u23B1" ? (o = 9131, s2 = 9129, l = 9130, c = "Size4-Regular") : t32 === "\\surd" ? (o = 57345, s2 = 9143, l = 57344, c = "Size4-Regular") : t32 === "\\ulcorner" ? (o = 9484, l = s2 = 32) : t32 === "\\urcorner" ? (o = 9488, l = s2 = 32) : t32 === "\\llcorner" ? (s2 = 9492, l = o = 32) : t32 === "\\lrcorner" && (o = 9496, l = o = 32);
+  let h2 = bt(o, c), d = h2.height + h2.depth, f = bt(l, c), S = f.height + f.depth, x = bt(s2, c), w = x.height + x.depth, T = 0, g = 1;
+  if (a !== null) {
+    let te = bt(a, c);
+    T = te.height + te.depth, g = 2;
+  }
+  let C = d + w + T, k = Math.max(0, Math.ceil((e - C) / (g * S))), L = C + k * g * S, P = fe;
+  r && (P = P * i.scalingFactor);
+  let B = L / 2 - P, A = 8e-3, F = [];
+  F.push({ box: new b(s2, { fontFamily: c }) }), F.push(-A);
+  let O = new b(l, { fontFamily: c });
+  if (a === null) for (let te = 0; te < k; te++) F.push({ box: O });
+  else {
+    for (let te = 0; te < k; te++) F.push({ box: O });
+    F.push(-A), F.push({ box: new b(a, { fontFamily: c }) }), F.push(-A);
+    for (let te = 0; te < k; te++) F.push({ box: O });
+  }
+  F.push(-A), F.push({ box: new b(o, { fontFamily: c }) });
+  let Y = "";
+  c === "Size1-Regular" ? Y = " delim-size1" : c === "Size4-Regular" && (Y = " delim-size4");
+  let $ = new V({ bottom: B, children: F }, { classes: Y });
+  return new b($, u(m2({}, n != null ? n : {}), { classes: ((ee = n == null ? void 0 : n.classes) != null ? ee : "") + " ML__delim-mult" }));
+}
+function ml(t32, e, r, i) {
+  return t32 === void 0 || t32 === "." ? rt(r, i.classes) : (t32 === "<" || t32 === "\\lt" || t32 === "\u27E8" ? t32 = "\\langle" : (t32 === ">" || t32 === "\\gt" || t32 === "\u27E9") && (t32 = "\\rangle"), ll.has(t32) || cl.has(t32) ? al(t32, e, false, r, i) : bc.has(t32) ? sl(t32, xc[e], false, r, i) : ("" + t32, null));
+}
+function Mc(t32) {
+  return t32.type === "small" ? "Main-Regular" : t32.type === "large" ? "Size" + t32.size + "-Regular" : (t32.type, "Size4-Regular");
+}
+function Ac(t32, e, r, i) {
+  let n = { "-4": 0, "-3": 1, 0: 2 }[i.mathstyle.sizeDelta];
+  for (let o = n; o < r.length && r[o].type !== "stack"; o++) {
+    let a = bt(t32, Mc(r[o]));
+    if (a.defaultMetrics) return { type: "small", mathstyle: "scriptstyle" };
+    let l = a.height + a.depth;
+    if (r[o].type === "small" && (r[o].mathstyle === "scriptscriptstyle" ? l *= Math.max($r[Math.max(1, i.size - 2)], i.minFontScale) : r[o].mathstyle === "scriptstyle" && (l *= Math.max($r[Math.max(1, i.size - 1)], i.minFontScale))), l > e) return r[o];
+  }
+  return r[r.length - 1];
+}
+function cr(t32, e, r, i, n, o) {
+  if (!e || e.length === 0 || e === ".") return rt(n);
+  e === "<" || e === "\\lt" ? e = "\\langle" : (e === ">" || e === "\\gt") && (e = "\\rangle");
+  let a;
+  cl.has(e) ? a = vc : ll.has(e) ? a = wc : a = Sc;
+  let l = Ac(rn(e), r, a, n), s2 = new z({ parent: n, mathstyle: l.mathstyle }, o == null ? void 0 : o.style);
+  return l.type === "small" ? yc(e, s2, i, u(m2({}, o), { type: t32 })) : l.type === "large" ? al(e, l.size, i, s2, u(m2({}, o), { type: t32 })) : (l.type, sl(e, r, i, s2, u(m2({}, o), { type: t32 })));
+}
+function Ot(t32, e, r, i, n, o) {
+  if (e === ".") return rt(n, o == null ? void 0 : o.classes);
+  let a = fe * n.scalingFactor, l = 901, s2 = 5 / Ge, c = Math.max(r - a, i + a), h2 = Math.max(c / 500 * l, 2 * c - s2);
+  return cr(t32, e, h2, true, n, o);
+}
+function rt(t32, e) {
+  let r = new b(null, { classes: " ML__nulldelimiter " + (e != null ? e : ""), type: "ignore" });
+  return r.width = t32.getRegisterAsEm("nulldelimiterspace"), r.wrap(new z({ parent: t32, mathstyle: "textstyle" }));
+}
+function kc(t32, e) {
+  if (!e.base) return null;
+  if (!e.above && !e.below) {
+    let l = new b(e.base, { type: e.type });
+    return l.setStyle("position", "relative"), l;
+  }
+  let r = 0;
+  e.above && (r = t32.metrics.bigOpSpacing5);
+  let i = null, n = e.base, o = 0, a = ["ML__center"];
+  if (e.paddedAboveBelow && a.push("ML__label_padding"), e.below && e.above) {
+    let l = t32.metrics.bigOpSpacing5 + e.below.height + e.below.depth + n.depth + o;
+    i = new V({ bottom: l, children: [t32.metrics.bigOpSpacing5, { box: e.below, classes: a }, { box: n, classes: ["ML__center"] }, r, { box: e.above, classes: a }, t32.metrics.bigOpSpacing5] });
+  } else e.below ? i = new V({ top: n.height - o, children: [t32.metrics.bigOpSpacing5, { box: e.below, classes: a }, { box: n, classes: ["ML__center"] }] }) : e.above && (i = new V({ bottom: n.depth + o, children: [{ box: n, classes: ["ML__center"] }, r, { box: e.above, classes: a }, t32.metrics.bigOpSpacing5] }));
+  return new b(i, { type: e.type });
+}
+function Hr(t32) {
+  return t32.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function nn(t32) {
+  return typeof t32 == "number" ? `${Math.floor(100 * t32) / 100}%` : t32;
+}
+function _c(t32) {
+  if (!t32) return "1px";
+  let e = t32.match(/([0-9][a-zA-Z\%]+)/);
+  return e === null ? "1px" : e[1];
+}
+function Cc(t32) {
+  return (Math.floor(100 * t32.metrics.sqrtRuleThickness / t32.scalingFactor) / 100 / 10).toString() + "em";
+}
+function hl(t32) {
+  let e = t32.isDisplayStyle ? Se : t32.metrics.defaultRuleThickness;
+  return t32.metrics.defaultRuleThickness + t32.scalingFactor * e / 4;
+}
+function Bc(t32, e) {
+  let r = [], i = 0, n = false, o = "";
+  for (let a of t32) a === '"' ? n = !n : !n && a === "(" ? i += 1 : !n && a === ")" && (i = Math.max(0, i - 1)), a === e && i === 0 && !n ? (o.length > 0 && r.push(o), o = "") : o += a;
+  return o.length > 0 && r.push(o), r;
+}
+function dl(t32) {
+  return Tc.includes(t32);
+}
+function Dc(t32, e, r) {
+  let i = 0;
+  for (let c of r.columns) "align" in c && (i += 1);
+  i = Math.max(i, r.minColumns);
+  let n = 0, o = [];
+  for (let c of e) {
+    n = Math.max(n, Math.min(c.length, i));
+    let h2 = 0;
+    for (; h2 < c.length; ) {
+      let d = [], f = Math.min(c.length, h2 + i);
+      for (; h2 < f; ) d.push(Ec(c[h2], t32.mode)), h2 += 1;
+      if (d.length < r.minColumns) for (; d.length < r.minColumns; ) d.push([new p2({ type: "first", mode: t32.mode })]);
+      o.push(d);
+    }
+  }
+  !t32.isMultiline && o.length > 0 && o[o.length - 1].length === 1 && Rc(o[o.length - 1][0]) && o.pop();
+  let a = [];
+  for (let c of o) {
+    if (c.length !== n) for (let h2 = c.length; h2 < n; h2++) t32.isMultiline ? c.push([new p2({ type: "first", mode: t32.mode })]) : c.push([new p2({ type: "first", mode: t32.mode }), new ae()]);
+    a.push(c);
+  }
+  let l = 0, s2 = 0;
+  for (let c of a) {
+    s2 = 0;
+    for (let h2 of c) {
+      for (let d of h2) d.parent = t32, d.parentBranch = [l, s2];
+      s2 += 1;
+    }
+    l += 1;
+  }
+  return t32.isDirty = true, a;
+}
+function zc(t32) {
+  return t32.length > 0 && t32.every((e) => e.type === "first");
+}
+function $c(t32, e, r) {
+  let i = new b(null, { classes: "ML__empty-line-anchor" }), n = t32[0];
+  n && (n.id || (n.id = e.makeID()), i.atomID = n.id), i.setStyle("display", "inline-block"), i.setStyle("width", 0), i.setStyle("position", "relative"), i.setStyle("height", Math.max(0, r.height + r.depth), "em"), i.setStyle("vertical-align", -r.depth, "em"), i.height = r.height, i.depth = r.depth;
+  let o = t32.find((a) => a.caret);
+  return o != null && o.caret && (i.caret = o.caret), t32.some((a) => a.isSelected) && i.selected(true), i;
+}
+function Ec(t32, e) {
+  return t32.length === 0 ? [new p2({ type: "first", mode: e })] : t32[0].type !== "first" ? [new p2({ type: "first", mode: e }), ...t32] : (t32.slice(1).some((r) => r.type === "first"), t32);
+}
+function Rc(t32) {
+  return t32.length === 1 && t32[0].type === "first";
+}
+function on(t32, e = false) {
+  let r = new p2({ type: "first", mode: t32.mode });
+  r.parent = t32;
+  let i = [r];
+  if (e) {
+    let n = new ae();
+    n.parent = t32, i.push(n);
+  }
+  return i;
+}
+function It(t32) {
+  for (let e = 0; e < t32.rowCount; e++) for (let r = 0; r < t32.colCount; r++) {
+    let i = t32.getCell(e, r);
+    if (i) for (let n of i) n && (n.parent = t32, n.parentBranch = [e, r]);
+  }
+}
+function an(t32) {
+  let e = new b(null, { classes: "ML__arraycolsep" });
+  return e.width = t32, e;
+}
+function Fc(t32, e, r, i) {
+  if (!i) return null;
+  let n = [];
+  for (let o of e) {
+    let a = p2.createBox(t32, i, { type: "ignore" });
+    a && (a.depth = o.depth, a.height = o.height, n.push({ box: a, shift: o.pos - r }));
+  }
+  return new V({ individualShift: n }).wrap(t32);
+}
+function Re(t32, e = [[[]]], r = [], i = [], n) {
+  switch (t32) {
+    case "math":
+      return new G(t32, e, r, { mathstyleName: "textstyle", isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1, maxRows: 1 });
+    case "displaymath":
+      return new G(t32, e, r, { mathstyleName: "textstyle", isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1, maxRows: 1 });
+    case "center":
+      return new G(t32, e, r, { columns: [{ align: "c" }], classes: ["ML__center_environment"], isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1, maxRows: 1 });
+    case "multline":
+    case "multline*":
+      return new G(t32, e, r, { columns: [{ align: "m" }], leftDelim: ".", rightDelim: ".", isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1 });
+    case "split":
+      return new G(t32, e, r, { columns: [{ align: "r" }, { align: "l" }], minColumns: 2, minRows: 1, isRoot: false });
+    case "gather":
+    case "gather*":
+      return new G(t32, e, r, { columns: [{ gap: 0.25 }, { align: "c" }, { gap: 0 }], minColumns: 1, maxColumns: 1, minRows: 1, isRoot: true, classes: ["ML__gather_environment"] });
+    case "gathered":
+      return new G(t32, e, r, { columns: [{ gap: 0.25 }, { align: "c" }, { gap: 0 }], minColumns: 1, maxColumns: 1, minRows: 1 });
+    case "equation":
+    case "equation*":
+    case "subequations":
+      return new G(t32, e, r, { columns: [{ align: "c" }], isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1 });
+    case "aligned": {
+      let o = 0;
+      for (let s2 of e) o = Math.max(o, s2.length);
+      let a = [{ gap: 0 }, { align: "r" }, { gap: 0.25 }, { align: "l" }], l = 2;
+      for (; l < o; ) a.push({ gap: 1 }, { align: "r" }, { gap: 0.25 }, { align: "l" }), l += 2;
+      return a.push({ gap: 0 }), new G(t32, e, r, { arraycolsep: 0, columns: a, minColumns: 2, minRows: 1, isRoot: t32 !== "aligned" });
+    }
+    case "eqnarray":
+      return new G(t32, e, r, { arraycolsep: 0, columns: [{ gap: 0 }, { align: "r" }, { align: "c" }, { align: "l" }], minColumns: 3, maxColumns: 3, minRows: 1, isRoot: true, classes: ["ML__eqnarray_environment"] });
+    case "align":
+    case "align*":
+      return new G(t32, e, r, { arraycolsep: 0, columns: [{ gap: 0 }, { align: "r" }, { gap: 0.25 }, { align: "l" }], minColumns: 2, maxColumns: 2, minRows: 1, isRoot: true, classes: ["ML__align_environment"] });
+    case "pmatrix":
+    case "pmatrix*":
+      return new G(t32, e, r, { mathstyleName: "textstyle", leftDelim: "(", rightDelim: ")", columns: qt(i[0], n) });
+    case "bmatrix":
+    case "bmatrix*":
+      return new G(t32, e, r, { mathstyleName: "textstyle", leftDelim: "[", rightDelim: "]", columns: qt(i[0], n) });
+    case "Bmatrix":
+    case "Bmatrix*":
+      return new G(t32, e, r, { mathstyleName: "textstyle", leftDelim: "\\lbrace", rightDelim: "\\rbrace", columns: qt(i[0], n) });
+    case "vmatrix":
+    case "vmatrix*":
+      return new G(t32, e, r, { mathstyleName: "textstyle", leftDelim: "\\vert", rightDelim: "\\vert", columns: qt(i[0], n) });
+    case "Vmatrix":
+    case "Vmatrix*":
+      return new G(t32, e, r, { mathstyleName: "textstyle", leftDelim: "\\Vert", rightDelim: "\\Vert", columns: qt(i[0], n) });
+    case "matrix":
+    case "matrix*":
+      return new G(t32, e, r, { mathstyleName: "textstyle", leftDelim: ".", rightDelim: ".", columns: qt(i == null ? void 0 : i[0], n) });
+    case "smallmatrix":
+    case "smallmatrix*":
+      return new G(t32, e, r, { mathstyleName: "scriptstyle", columns: qt(i == null ? void 0 : i[0], n), colSeparationType: "small", arraystretch: 0.5 });
+    case "cases":
+    case "dcases":
+      return new G(t32, e, r, { mathstyleName: t32 === "dcases" ? "displaystyle" : "textstyle", arraystretch: 1.2, leftDelim: "\\lbrace", rightDelim: ".", columns: pl() });
+    case "rcases":
+      return new G(t32, e, r, { arraystretch: 1.2, leftDelim: ".", rightDelim: "\\rbrace", columns: pl() });
+    case "lines":
+      return new G(t32, e, r, { leftDelim: ".", rightDelim: ".", columns: [{ align: "l" }], isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1 });
+  }
+  return new G(t32, e, r, { mathstyleName: "textstyle" });
+}
+function qt(t32, e = 10) {
+  return t32 != null ? t32 : Array(e).fill({ align: "c" });
+}
+function pl(t32 = 10) {
+  let e = [];
+  for (let r = 0; r < t32; r++) r > 0 && e.push({ gap: 1 }), e.push({ align: "l" });
+  return e;
+}
+function sn(t32) {
+  var e;
+  return (e = { left: "ML__left", right: "ML__right", center: "ML__center" }[t32]) != null ? e : "ML__center";
+}
+function Pc(t32) {
+  return "dimension" in t32 ? t32.dimension === 0 : "glue" in t32 ? t32.glue.dimension === 0 : "number" in t32 ? t32.number === 0 : "string" in t32 ? parseFloat(t32.string) === 0 : false;
+}
+function yl(t32, e, r, i, n) {
+  if (t32) for (let o = 0; o < t32.length; o++) {
+    let a = t32[o];
+    a.type === "middle" ? (t32[o] = e.bind(r, Ot("inner", a.value, i, n, r, { isSelected: e.isSelected })), t32[o].caret = a.caret, t32[o].isSelected = a.isSelected, t32[o].cssId = a.cssId, t32[o].htmlData = a.htmlData, t32[o].htmlStyle = a.htmlStyle, t32[o].attributes = a.attributes, t32[o].cssProperties = a.cssProperties) : a.children && yl(a.children, e, r, i, n);
+  }
+}
+function yr(t32) {
+  return t32 ? !/^(<$$>|<$>|<space>|<{>|<}>|#[0-9\?]|\\.+)$/.test(t32) : false;
+}
+function nt(t32, e) {
+  var o, a, l, s2;
+  let r = (o = e == null ? void 0 : e.args) != null ? o : void 0, i = new cn(or(t32, r), e == null ? void 0 : e.context, { args: r, mathstyle: (a = e == null ? void 0 : e.mathstyle) != null ? a : "displaystyle", parseMode: (l = e == null ? void 0 : e.parseMode) != null ? l : "math", style: (s2 = e == null ? void 0 : e.style) != null ? s2 : {} }), n = [];
+  for (; !i.end(); ) n.push(...i.scan(() => false));
+  return n;
+}
+function bl(t32, e) {
+  var i;
+  let r = new cn(or(t32, null), e == null ? void 0 : e.context, { mathstyle: "displaystyle", parseMode: (i = e == null ? void 0 : e.parseMode) != null ? i : "math" });
+  for (; !r.end(); ) r.scan();
+  return r.errors;
+}
+function Jt(t32) {
+  if (ye(t32)) return t32.map((i) => Jt(i));
+  if (typeof t32 == "string") return p2.fromJson(t32);
+  t32 = m2({}, t32);
+  for (let i of Mt) t32[i] && (t32[i] = Jt(t32[i]));
+  t32.args && (t32.args = Oc(t32.args)), t32.array && (t32.array = Jt(t32.array));
+  let e = t32.type, r;
+  e === "accent" && (r = At.fromJson(t32)), e === "array" && (r = G.fromJson(t32)), e === "box" && (r = Le.fromJson(t32)), e === "chem" && (r = Gr.fromJson(t32)), e === "composition" && (r = mn.fromJson(t32)), e === "delim" && (r = ur.fromJson(t32)), e === "enclose" && (r = it.fromJson(t32)), e === "error" && (r = Pe.fromJson(t32)), e === "extensible-symbol" && (r = Nt.fromJson(t32)), e === "genfrac" && (r = Ce.fromJson(t32)), e === "group" && (r = dr.fromJson(t32)), e === "latex" && (r = _t.fromJson(t32)), e === "latexgroup" && (r = un.fromJson(t32)), e === "leftright" && (r = Vt.fromJson(t32)), e === "macro" && (r = pr.fromJson(t32)), e === "macro-argument" && (r = ln.fromJson(t32)), e === "operator" && (r = Fe.fromJson(t32)), e === "overlap" && (r = Oe.fromJson(t32)), e === "overunder" && (r = le.fromJson(t32)), e === "placeholder" && (r = ae.fromJson(t32)), e === "prompt" && (r = fr.fromJson(t32)), e === "phantom" && (r = Ue.fromJson(t32)), e === "sizeddelim" && (r = hr.fromJson(t32)), e === "spacing" && (r = je.fromJson(t32)), e === "subsup" && (r = gr.fromJson(t32)), e === "surd" && (r = mr.fromJson(t32)), e === "text" && (r = kt.fromJson(t32)), e === "tooltip" && (r = Ht.fromJson(t32)), r || (!e || ["first", "mbin", "mrel", "mclose", "minner", "mop", "mopen", "mord", "mpunct", "root", "space"].includes(e), `${e}`, r = p2.fromJson(t32));
+  for (let i of Mt) t32[i] && r.setChildren(t32[i], i);
+  return t32.verbatimLatex !== void 0 && (r.verbatimLatex = t32.verbatimLatex), t32.subsupPlacement && (r.subsupPlacement = t32.subsupPlacement), t32.explicitSubsupPlacement && (r.explicitSubsupPlacement = true), t32.isFunction && (r.isFunction = true), t32.skipBoundary && (r.skipBoundary = true), t32.captureSelection && (r.captureSelection = true), r;
+}
+function Oc(t32) {
+  if (t32) {
+    if (typeof t32 == "string") return t32;
+    if (Array.isArray(t32)) return t32.map((e) => e === "<null>" ? null : typeof e == "object" && "group" in e ? { group: e.group.map((r) => Jt(r)) } : typeof e == "object" && "atoms" in e ? e.atoms.map((r) => Jt(r)) : e);
+  }
+}
+function Wr(t32, e) {
+  if (!t32.parent) return;
+  let r = t32.parent.children, i = r.indexOf(t32), n = i - 1;
+  for (; n >= 0 && r[n].type === "ignore"; ) n -= 1;
+  if (n < 0 && t32.parent.parent && t32.parent.type === "lift") {
+    Wr(t32.parent, e);
+    return;
+  }
+  i > 0 && r[i - 1].type === "skip" ? r[i - 1].width += e : r.splice(i, 0, new Co(e));
+}
+function Nc(t32) {
+  Zr(t32, (e, r) => {
+    r.type === "bin" && (!e || /^(middle|bin|op|rel|open|punct)$/.test(e.type)) && (r.type = "ord"), (e == null ? void 0 : e.type) === "bin" && /^(rel|close|punct)$/.test(r.type) && (e.type = "ord"), r.type !== "ignore" && (e = r);
+  });
+}
+function hn(t32, e) {
+  if (!t32.children) return t32;
+  let r = t32.children;
+  Nc(r);
+  let i = e.getRegisterAsEm("thinmuskip"), n = e.getRegisterAsEm("medmuskip"), o = e.getRegisterAsEm("thickmuskip");
+  return Zr(r, (a, l) => {
+    var d, f, S;
+    if (!a) return;
+    let s2 = a.type, c = l.isTight ? (d = qc[s2]) != null ? d : null : (f = Ic[s2]) != null ? f : null, h2 = (S = c == null ? void 0 : c[l.type]) != null ? S : null;
+    h2 === 3 && Wr(l, i), h2 === 4 && Wr(l, n), h2 === 5 && Wr(l, o);
+  }), t32;
+}
+function Zr(t32, e, r = void 0) {
+  if (!t32) return r;
+  t32 = [...t32];
+  for (let i of t32) i.type === "lift" ? r = Zr(i.children, e, r) : i.type === "ignore" ? Zr(i.children, e) : (e(r, i), Zr(i.children, e), r = i);
+  return r;
+}
+function xl(t32) {
+  return { up: "italic", bold: "bolditalic", italic: "italic", bolditalic: "bolditalic", "": "italic" }[t32 != null ? t32 : ""];
+}
+function Ur(t32) {
+  return { up: "up", bold: "bold", italic: void 0, bolditalic: "bold", "": void 0 }[t32 != null ? t32 : ""];
+}
+function ue(t32) {
+  return t32.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function J(t32, e) {
+  return !t32 || !e.generateID ? "" : ` extid="${t32}"`;
+}
+function Vc(t32, e, r) {
+  var d, f, S, x, w, T, g, C;
+  let i = false;
+  e = e != null ? e : t32.atoms.length;
+  let n = "", o = "", a = t32.atoms[t32.index], l = (d = a.style) == null ? void 0 : d.variant, s2 = (f = a.style) == null ? void 0 : f.variantStyle, c = "";
+  if (a.value && (l || s2)) {
+    let k = (S = Rr(a.value, l, s2)) != null ? S : a.value;
+    if (k !== a.value) return t32.index += 1, n = `<mi${J(a.id, r)}>${k}</mi>`, Xe(n, t32, r) || (t32.mathML += n, t32.lastType = "mi"), true;
+    c = (x = { upnormal: "normal", boldnormal: "bold", italicmain: "italic", bolditalicmain: "bold-italic", "updouble-struck": "double-struck", "double-struck": "double-struck", boldfraktur: "bold-fraktur", calligraphic: "script", upcalligraphic: "script", script: "script", boldscript: "bold-script", boldcalligraphic: "bold-script", fraktur: "fraktur", "upsans-serif": "sans-serif", "boldsans-serif": "bold-sans-serif", "italicsans-serif": "sans-serif-italic", "bolditalicsans-serif": "sans-serif-bold-italic", monospace: "monospace" }[(s2 != null ? s2 : "") + (l != null ? l : "")]) != null ? x : "", c && (c = ` mathvariant="${c}"`);
+  }
+  let h2 = { "\\exponentialE": "&#x02147;", "\\imaginaryI": "&#x2148;", "\\differentialD": "&#x2146;", "\\capitalDifferentialD": "&#x2145;", "\\alpha": "&#x03b1;", "\\pi": "&#x03c0;", "\\infty": "&#x221e;", "\\forall": "&#x2200;", "\\nexists": "&#x2204;", "\\exists": "&#x2203;", "\\hbar": "\u210F", "\\cdotp": "\u22C5", "\\ldots": "\u2026", "\\cdots": "\u22EF", "\\ddots": "\u22F1", "\\vdots": "\u22EE", "\\ldotp": "." };
+  if (a.command === "!") return t32.index += 1, n = "<mo>!</mo>", Xe(n, t32, r) || (t32.mathML += n, t32.lastType = "mo"), true;
+  if (h2[a.command]) {
+    t32.index += 1;
+    let k = `<mi${J(a.id, r)}${c}>${h2[a.command]}</mi>`;
+    return (t32.lastType === "mi" || t32.lastType === "mn" || t32.lastType === "mtext" || t32.lastType === "fence") && (k = dn + k), Xe(k, t32, r) || (t32.mathML += k, t32.lastType = "mi"), true;
+  }
+  if (a.command === "\\operatorname") o = br(a.body), t32.index += 1;
+  else if (l || s2) for (; t32.index < e && (a.type === "mord" || a.type === "macro") && !a.isDigit() && l === ((T = (w = a.style) == null ? void 0 : w.variant) != null ? T : "") && s2 === ((C = (g = a.style) == null ? void 0 : g.variantStyle) != null ? C : ""); ) o += br([a]), t32.index += 1, a = t32.atoms[t32.index];
+  else (a.type === "mord" || a.type === "macro") && !a.isDigit() && (o += br([a]), t32.index += 1);
+  if (o.length > 0) {
+    i = true, n = `<mi${c}>${o}</mi>`;
+    let k = t32.lastType;
+    n.endsWith(">f</mi>") || n.endsWith(">g</mi>") ? (n += Sl, t32.lastType = "applyfunction") : t32.lastType = /^<mo>(.*)<\/mo>$/.test(n) ? "mo" : "mi", Xe(n, t32, r) || ((k === "mi" || k === "mn" || k === "mtext" || k === "fence") && (n = dn + n), t32.mathML += n);
+  }
+  return i;
+}
+function wl(t32) {
+  return t32.index < t32.atoms.length && t32.atoms[t32.index].superscript && t32.atoms[t32.index].type === "subsup";
+}
+function Ml(t32) {
+  let e = -1, r = t32.index, i = false, n = false;
+  for (; r < t32.atoms.length && !i && !n; ) {
+    let o = t32.atoms[r];
+    i = !o.isDigit(), n = !i && o.superscript !== void 0, r++;
+  }
+  return n && (e = r - 1), e;
+}
+function Xe(t32, e, r) {
+  var s2;
+  let i = e.atoms[e.index - 1];
+  if (!i) return false;
+  if (!i.superscript && !i.subscript) if (((s2 = e.atoms[e.index]) == null ? void 0 : s2.type) === "subsup") i = e.atoms[e.index], e.index += 1;
+  else return false;
+  let n = e.lastType;
+  e.lastType = "";
+  let o = I(i.superscript, r);
+  e.lastType = "";
+  let a = I(i.subscript, r);
+  if (e.lastType = n, !o && !a) return false;
+  let l = "";
+  return o && a ? l = `<msubsup>${t32}${a}${o}</msubsup>` : o ? l = `<msup>${t32}${o}</msup>` : a && (l = `<msub>${t32}${a}</msub>`), e.mathML += l, e.lastType = "", true;
+}
+function Jc(t32, e, r) {
+  e = e != null ? e : t32.atoms.length;
+  let i = t32.index, n = "", o = Ml(t32);
+  for (o >= 0 && o < e && (e = o); t32.index < e && t32.atoms[t32.index].mode === "text"; ) n += t32.atoms[t32.index].value ? t32.atoms[t32.index].value : " ", t32.index += 1;
+  return n.length > 0 ? (n = `<mtext ${J(t32.atoms[i].id, r)}>${ue(n)}</mtext>`, o < 0 && wl(t32) && (o = t32.index, t32.index += 1), Xe(n, t32, r) || (t32.mathML += n, t32.lastType = "mtext"), true) : false;
+}
+function Hc(t32, e, r) {
+  e = e != null ? e : t32.atoms.length;
+  let i = t32.index, n = "", o = Ml(t32);
+  for (o >= 0 && o < e && (e = o); t32.index < e && t32.atoms[t32.index].isDigit(); ) n += t32.atoms[t32.index].asDigit(), t32.index += 1;
+  return n.length <= 0 ? false : (n = "<mn" + J(t32.atoms[i].id, r) + ">" + n + "</mn>", o < 0 && wl(t32) && (o = t32.index, t32.index += 1), Xe(n, t32, r) || (t32.mathML += n, t32.lastType = "mn"), true);
+}
+function Gc(t32, e, r) {
+  let i = false;
+  e = e != null ? e : t32.atoms.length;
+  let n = "", o = "";
+  if (t32.index < e && t32.atoms[t32.index].type === "mopen") {
+    let a = false, l = 0, s2 = t32.index, c = -1, h2 = s2 + 1;
+    for (; h2 < e && !a; ) t32.atoms[h2].type === "mopen" ? l += 1 : t32.atoms[h2].type === "mclose" && (l -= 1), l === -1 && (a = true, c = h2), h2 += 1;
+    a && (n = "<mrow>", n += Gt(t32.atoms[s2], r), n += I(t32.atoms, r, s2 + 1, c), n += Gt(t32.atoms[c], r), n += "</mrow>", t32.index = c + 1, (t32.lastType === "mi" || t32.lastType === "mn" || t32.lastType === "mfrac" || t32.lastType === "fence") && (t32.mathML += dn), Xe(n, t32, r) && (i = true, t32.lastType = "", n = ""), o = "fence");
+  }
+  return n.length > 0 && (i = true, t32.mathML += n, t32.lastType = o), i;
+}
+function Wc(t32, e, r) {
+  let i = false;
+  e = e != null ? e : t32.atoms.length;
+  let n = "", o = "", a = t32.atoms[t32.index];
+  if (!a) return false;
+  let l = { "\\ne": "&ne;", "\\neq": "&ne;", "\\pm": "&#177;", "\\times": "&#215;", "\\colon": ":", "\\vert": "|", "\\Vert": "\u2225", "\\mid": "\u2223", "\\{": "{", "\\}": "}", "\\lbrace": "{", "\\rbrace": "}", "\\lbrack": "[", "\\rbrack": "]", "\\lparen": "(", "\\rparen": ")", "\\langle": "\u27E8", "\\rangle": "\u27E9", "\\lfloor": "\u230A", "\\rfloor": "\u230B", "\\lceil": "\u2308", "\\rceil": "\u2309" };
+  if (l[a.command]) {
+    t32.index += 1;
+    let s2 = `<mo${J(a.id, r)}>${l[a.command]}</mo>`;
+    return Xe(s2, t32, r) || (t32.mathML += s2, t32.lastType = "mo"), true;
+  }
+  if (t32.index < e && (a.type === "mbin" || a.type === "mrel")) n += Lo(t32.atoms[t32.index], r), t32.index += 1, o = "mo";
+  else if (t32.index < e && (a.type === "mop" || a.type === "operator" || a.type === "extensible-symbol")) {
+    if (a.subsupPlacement === "over-under" && (a.superscript || a.subscript)) {
+      let s2 = Gt(a, r);
+      return a.superscript && a.subscript ? (n += "<munderover>" + s2, n += I(a.subscript, r), n += I(a.superscript, r), n += "</munderover>") : a.superscript ? (n += "<mover>" + s2, n += I(a.superscript, r), n += "</mover>") : a.subscript && (n += "<munder>" + s2, n += I(a.subscript, r), n += "</munder>"), t32.mathML += n, t32.lastType = "mo", t32.index += 1, true;
+    }
+    {
+      let s2 = t32.atoms[t32.index], c = s2.value === "\\operatorname", h2 = c ? '<mi class="MathML-Unit"' + J(s2.id, r) + ">" + br(s2.value) + "</mi>" : Gt(s2, r);
+      n += h2, !c && !/^<mo>(.*)<\/mo>$/.test(h2) ? (n += Sl, o = "applyfunction") : o = c ? "mi" : "mo";
+    }
+    (t32.lastType === "mi" || t32.lastType === "mn") && !/^<mo>(.*)<\/mo>$/.test(n) && (n = dn + n), t32.index += 1;
+  }
+  return n.length > 0 && (i = true, Xe(n, t32, r) || (t32.mathML += n, t32.lastType = o)), i;
+}
+function I(t32, e, r, i) {
+  e != null || (e = {});
+  let n = { atoms: [], index: r != null ? r : 0, mathML: "", lastType: "" };
+  if (typeof t32 == "number" || typeof t32 == "boolean") n.mathML = t32.toString();
+  else if (typeof t32 == "string") n.mathML = t32;
+  else if (t32 instanceof p2) n.mathML = Lo(t32, e);
+  else if (Array.isArray(t32)) {
+    n.atoms = t32;
+    let o = 0;
+    for (i = i || (t32 ? t32.length : 0); n.index < i; ) if (Jc(n, i, e) || Hc(n, i, e) || Vc(n, i, e) || Wc(n, i, e) || Gc(n, i, e)) o += 1;
+    else if (n.index < i) {
+      let a = Lo(n.atoms[n.index], e);
+      n.lastType === "mn" && a.length > 0 && n.atoms[n.index].type === "genfrac" && (a = "<mo>&#x2064;</mo>" + a), n.atoms[n.index].type === "genfrac" ? n.lastType = "mfrac" : n.lastType = "", n.index += 1, Xe(a, n, e) ? o += 1 : a.length > 0 && (n.mathML += a, o += 1);
+    }
+    o > 1 && (n.mathML = "<mrow>" + n.mathML + "</mrow>");
+  }
+  return n.mathML;
+}
+function Gt(t32, e) {
+  let r = "", i = br(t32.value);
+  return i && (r = "<mo" + J(t32.id, e) + ">" + i + "</mo>"), r;
+}
+function br(t32) {
+  if (!t32) return "";
+  if (typeof t32 == "string") return ue(t32);
+  if (!Array.isArray(t32) && typeof t32.body == "string") return ue(t32.body);
+  let e = "";
+  for (let r of t32) typeof r.value == "string" && (e += r.value);
+  return ue(e);
+}
+function Lo(t32, e) {
+  var w, T, g, C, k, L, P, B, A, F, O, Y, $, K, ee, te, Ct, ot, j, oe, se, we, Ie;
+  if (t32.mode === "text") return `<mi${J(t32.id, e)}>${ue(t32.value)}</mi>`;
+  let r = { widehat: "^", widecheck: "\u02C7", widetilde: "~", utilde: "~", overleftarrow: "\u2190", underleftarrow: "\u2190", xleftarrow: "\u2190", longleftarrow: "\u2190", overrightarrow: "\u2192", underrightarrow: "\u2192", xrightarrow: "\u2192", longrightarrow: "\u2192", underbrace: "\u23DF", overbrace: "\u23DE", overgroup: "\u23E0", undergroup: "\u23E1", overleftrightarrow: "\u2194", underleftrightarrow: "\u2194", xleftrightarrow: "\u2194", Overrightarrow: "\u21D2", xRightarrow: "\u21D2", overleftharpoon: "\u21BC", xleftharpoonup: "\u21BC", overrightharpoon: "\u21C0", xrightharpoonup: "\u21C0", xLeftarrow: "\u21D0", xLeftrightarrow: "\u21D4", xhookleftarrow: "\u21A9", xhookrightarrow: "\u21AA", xmapsto: "\u21A6", xrightharpoondown: "\u21C1", xleftharpoondown: "\u21BD", xrightleftharpoons: "\u21CC", longrightleftharpoons: "\u21CC", xleftrightharpoons: "\u21CB", xtwoheadleftarrow: "\u219E", xtwoheadrightarrow: "\u21A0", xlongequal: "=", xtofrom: "\u21C4", xleftrightarrows: "\u21C4", xRightleftharpoons: "\u21CC", longRightleftharpoons: "\u21CC", xLeftrightharpoons: "\u21CB", longLeftrightharpoons: "\u21CB" }, i = { "\\!": -3 / 18, "\\ ": 6 / 18, "\\,": 3 / 18, "\\:": 4 / 18, "\\>": 4 / 18, "\\;": 5 / 18, "\\enspace": 0.5, "\\quad": 1, "\\qquad": 2, "\\enskip": 0.5 }, n = "", o = "", a, l, s2, c, h2, d, { command: f } = t32;
+  if (t32.command === "\\error") return `<merror${J(t32.id, e)}>${I(t32.body, e)}</merror>`;
+  let S = { "\\vert": "|", "\\Vert": "\u2225", "\\mid": "\u2223", "\\lbrack": "[", "\\rbrack": "]", "\\{": "{", "\\}": "}", "\\lbrace": "{", "\\rbrace": "}", "\\lparen": "(", "\\rparen": ")", "\\langle": "\u27E8", "\\rangle": "\u27E9", "\\lfloor": "\u230A", "\\rfloor": "\u230B", "\\lceil": "\u2308", "\\rceil": "\u2309" }, x = { "\\vec": "&#x20d7;", "\\acute": "&#x00b4;", "\\grave": "&#x0060;", "\\dot": "&#x02d9;", "\\ddot": "&#x00a8;", "\\tilde": "&#x007e;", "\\bar": "&#x00af;", "\\breve": "&#x02d8;", "\\check": "&#x02c7;", "\\hat": "&#x005e;" };
+  switch (t32.type) {
+    case "first":
+      break;
+    case "error":
+      if (t32.command === "\\\\") break;
+      n = `<merror${J(t32.id, e)}>${I(t32.body, e)}</merror>`;
+      break;
+    case "group":
+    case "root":
+      n = I(t32.body, e);
+      break;
+    case "array":
+      let W = t32;
+      if ((W.leftDelim && W.leftDelim !== "." || W.rightDelim && W.rightDelim !== ".") && (n += "<mrow>", W.leftDelim && W.leftDelim !== "." && (n += `<mo>${ue(S[W.leftDelim] || W.leftDelim)}</mo>`)), n += "<mtable", W.colFormat) {
+        for (n += ' columnalign="', s2 = 0; s2 < W.colFormat.length; s2++) {
+          let he = W.colFormat[s2];
+          "align" in he && (n += { l: "left", c: "center", r: "right" }[he.align] + " ");
+        }
+        n += '"';
+      }
+      for (n += ">", l = 0; l < W.rows.length; l++) {
+        for (n += "<mtr>", a = 0; a < W.rows[l].length; a++) n += "<mtd>" + I(W.rows[l][a], e) + "</mtd>";
+        n += "</mtr>";
+      }
+      n += "</mtable>", (W.leftDelim && W.leftDelim !== "." || W.rightDelim && W.rightDelim !== ".") && (W.rightDelim && W.rightDelim !== "." && (n += `<mo>${ue(S[W.rightDelim] || W.rightDelim)}</mo>`), n += "</mrow>");
+      break;
+    case "genfrac":
+      let re2 = t32;
+      if ((re2.leftDelim || re2.rightDelim) && (n += "<mrow>"), re2.leftDelim && re2.leftDelim !== "." && (n += "<mo" + J(t32.id, e) + ">" + ue(S[re2.leftDelim] || re2.leftDelim) + "</mo>"), re2.hasBarLine) {
+        let he = re2.barThickness;
+        he && "dimension" in he ? n += `<mfrac linethickness="${X(he)}">` : n += "<mfrac>", n += I(t32.above, e) || "<mi>&nbsp;</mi>", n += I(t32.below, e) || "<mi>&nbsp;</mi>", n += "</mfrac>";
+      } else n += "<mtable" + J(t32.id, e) + ">", n += "<mtr>" + I(t32.above, e) + "</mtr>", n += "<mtr>" + I(t32.below, e) + "</mtr>", n += "</mtable>";
+      re2.rightDelim && re2.rightDelim !== "." && (n += "<mo" + J(t32.id, e) + ">" + ue(S[re2.rightDelim] || re2.rightDelim) + "</mo>"), (re2.leftDelim || re2.rightDelim) && (n += "</mrow>");
+      break;
+    case "surd":
+      t32.hasEmptyBranch("above") ? (n += "<msqrt" + J(t32.id, e) + ">", n += I(t32.body, e), n += "</msqrt>") : (n += "<mroot" + J(t32.id, e) + ">", n += I(t32.body, e), n += I(t32.above, e), n += "</mroot>");
+      break;
+    case "leftright":
+      let Lt = t32, at = Lt.leftDelim;
+      n = "<mrow>", at && at !== "." && (n += `<mo${J(t32.id, e)}>${ue((w = S[at]) != null ? w : at)}</mo>`), t32.body && (n += I(t32.body, e));
+      let Kr = Lt.matchingRightDelim();
+      Kr && Kr !== "." && (n += `<mo${J(t32.id, e)}>${ue((T = S[Kr]) != null ? T : Kr)}</mo>`), n += "</mrow>";
+      break;
+    case "sizeddelim":
+    case "delim":
+      n += `<mo${J(t32.id, e)}>${ue(S[t32.value] || t32.value)}</mo>`;
+      break;
+    case "accent":
+      let El = t32;
+      n += '<mover accent="true"' + J(t32.id, e) + ">", n += I(t32.body, e), n += "<mo>" + (x[f] || El.accent) + "</mo>", n += "</mover>";
+      break;
+    case "line":
+    case "overlap":
+      break;
+    case "overunder":
+      let ve = t32;
+      h2 = t32.above, c = t32.below, (ve.svgAbove || h2) && (ve.svgBelow || c) ? d = t32.body : h2 && h2.length > 0 ? (d = t32.body, (C = (g = t32.body) == null ? void 0 : g[0]) != null && C.below ? (c = t32.body[0].below, d = t32.body[0].body) : ((L = (k = t32.body) == null ? void 0 : k[0]) == null ? void 0 : L.type) === "first" && ((B = (P = t32.body) == null ? void 0 : P[1]) != null && B.below) && (c = t32.body[1].below, d = t32.body[1].body)) : c && c.length > 0 && (d = t32.body, (F = (A = t32.body) == null ? void 0 : A[0]) != null && F.above ? (h2 = t32.body[0].above, d = t32.body[0].body) : ((Y = (O = t32.body) == null ? void 0 : O[0]) == null ? void 0 : Y.type) === "first" && ((K = ($ = t32.body) == null ? void 0 : $[1]) != null && K.above) && (h2 = t32.body[1].above, d = t32.body[1].body)), (ve.svgAbove || h2) && (ve.svgBelow || c) ? (n += `<munderover ${J(t32.id, e)}>`, n += (ee = r[ve.svgBody]) != null ? ee : I(d, e), n += (te = r[ve.svgBelow]) != null ? te : I(c, e), n += (Ct = r[ve.svgAbove]) != null ? Ct : I(h2, e), n += "</munderover>") : ve.svgAbove || h2 ? (n += `<mover ${J(t32.id, e)}>` + ((ot = r[ve.svgBody]) != null ? ot : I(d, e)), n += (j = r[ve.svgAbove]) != null ? j : I(h2, e), n += "</mover>") : (ve.svgBelow || c) && (n += `<munder ${J(t32.id, e)}>` + ((oe = r[ve.svgBody]) != null ? oe : I(d, e)), n += (se = r[ve.svgBelow]) != null ? se : I(c, e), n += "</munder>");
+      break;
+    case "placeholder":
+      n += "?";
+      break;
+    case "mord": {
+      if (n = typeof t32.value == "string" ? t32.value : f, n.length > 0 && n.startsWith("\\")) typeof t32.value == "string" && t32.value.charCodeAt(0) > 255 ? n = String.fromCodePoint(t32.value.codePointAt(0)) : typeof t32.value == "string" && (n = t32.value.charAt(0));
+      else if (t32.command === "\\char") {
+        let vn = (we = t32.args) == null ? void 0 : we[0];
+        if (vn !== void 0 && "number" in vn) {
+          let Yr = vn.number;
+          typeof Yr == "number" && Yr >= 0 && Yr <= 1114111 && (n = String.fromCodePoint(Yr));
+        }
+      } else typeof t32.value == "string" ? n = t32.value : (console.error("Did not expect this"), n = "");
+      let he = /\d/.test(n) ? "mn" : "mi";
+      n = `<${he}${J(t32.id, e)}>${ue(n)}</${he}>`;
+      break;
+    }
+    case "mbin":
+    case "mrel":
+    case "minner":
+      n = Gt(t32, e);
+      break;
+    case "mpunct":
+      n = '<mo separator="true"' + J(t32.id, e) + ">" + f + "</mo>";
+      break;
+    case "mop":
+    case "operator":
+    case "extensible-symbol":
+      t32.value !== "\u200B" && (n = "<mo" + J(t32.id, e) + ">", n += f === "\\operatorname" ? t32.body : f || t32.body, n += "</mo>");
+      break;
+    case "box":
+      let bn = t32;
+      n = '<menclose notation="box"', bn.backgroundcolor && "string" in bn.backgroundcolor && (n += ' mathbackground="' + ue(bn.backgroundcolor.string) + '"'), n += J(t32.id, e) + ">" + I(t32.body, e) + "</menclose>";
+      break;
+    case "spacing":
+      n += '<mspace width="' + ((Ie = i[f]) != null ? Ie : 0) + 'em"/>';
+      break;
+    case "enclose":
+      let xn = t32;
+      n = '<menclose notation="';
+      for (let he in xn.notation) Object.prototype.hasOwnProperty.call(xn.notation, he) && xn.notation[he] && (n += o + ue(he), o = " ");
+      n += J(t32.id, e) + '">' + I(t32.body, e) + "</menclose>";
+      break;
+    case "prompt":
+      n = '<menclose notation="roundexbox""">' + I(t32.body, e) + "</menclose>";
+      break;
+    case "space":
+      n += "&nbsp;";
+      break;
+    case "subsup":
+      break;
+    case "phantom":
+      break;
+    case "composition":
+      break;
+    case "rule":
+      break;
+    case "chem":
+      break;
+    case "mopen":
+      n += Gt(t32, e);
+      break;
+    case "mclose":
+      n += Gt(t32, e);
+      break;
+    case "macro":
+      {
+        let he = t32.command + br(t32.macroArgs);
+        he && (n += `<mo ${J(t32.id, e)}>${he}</mo>`);
+      }
+      break;
+    case "latexgroup":
+      n += I(t32.body, e);
+      break;
+    case "latex":
+      n += "<mtext" + J(t32.id, e) + ">" + ue(t32.value) + "</mtext>";
+      break;
+    case "tooltip":
+      n += I(t32.body, e);
+      break;
+    case "text":
+      n += `<mtext ${J(t32.id, e)}x>${ue(t32.value)}</mtext>`;
+      break;
+    default:
+      if (t32.command === "\\displaystyle") return `<mrow ${J(t32.id, e)} displaystyle="true">${I(t32.body, e)}</mrow>`;
+      if (t32.command === "\\textstyle") return `<mrow ${J(t32.id, e)} displaystyle="false">${I(t32.body, e)}</mrow>`;
+      console.info("Unexpected element in conversion to MathML:", t32);
+  }
+  return n;
+}
+function Zc(t32) {
+  let e = "";
+  return t32.startsWith("\\") && (e = " " + t32.replace("\\", "") + " "), e;
+}
+function jr(t32) {
+  let e = 0;
+  if (ye(t32)) for (let r of t32) r.type !== "first" && (e += 1);
+  return e === 1;
+}
+function Uc(t32) {
+  if (ye(t32)) {
+    for (let e of t32) if (e.type !== "first" && e.id) return e.id.toString();
+  }
+  return "";
+}
+function Al(t32) {
+  let e = "";
+  if (ye(t32)) for (let r of t32) r.type !== "first" && typeof r.value == "string" && (e += r.value);
+  return e;
+}
+function jc(t32) {
+  return t32 ? t32.map((e) => e.value).join("") : "";
+}
+function pn(t32) {
+  if (t32 && !t32.some((e) => e.type !== "first" && e.value === void 0)) return t32.map((e) => e.value).join("");
+}
+function To(t32) {
+  return `<emphasis>${t32}</emphasis>`;
+}
+function Xc(t32, e) {
+  var o;
+  let r = "", i = false, n = false;
+  for (let a = 0; a < e.length; a++) e[a].type !== "first" && (e[a].mode !== "text" && (n = false), a < e.length - 2 && e[a].type === "mopen" && e[a + 2].type === "mclose" && e[a + 1].type === "mord" ? (r += " of ", r += To(E(t32, e[a + 1])), a += 2) : e[a].mode === "text" ? n ? r += (o = e[a].value) != null ? o : " " : (n = true, r += E("text", e[a])) : e[a].isDigit() ? i ? r += e[a].asDigit() : (i = true, r += E(t32, e[a])) : (i = false, r += E(t32, e[a])));
+  return r;
+}
+function kl(t32) {
+  return t32 ? globalThis.MathfieldElement.textToSpeechMarkup ? t32.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : t32 : "";
+}
+function E(t32, e) {
+  var c, h2, d, f, S, x, w, T;
+  function r(g) {
+    return globalThis.MathfieldElement.textToSpeechMarkup ? /[a-z]/.test(g) ? ` <say-as interpret-as="character">${g}</say-as>` : /[A-Z]/.test(g) ? `capital <say-as interpret-as="character">${g.toLowerCase()}</say-as>` : g : /[a-z]/.test(g) ? " '" + g.toUpperCase() + "'" : /[A-Z]/.test(g) ? " 'capital " + g.toUpperCase() + "'" : g;
+  }
+  if (!e) return "";
+  if (ye(e)) return Xc(t32, e);
+  let i = "";
+  if (e.id && t32 === "math" && (i += '<mark name="' + e.id.toString() + '"/>'), e.mode === "text") return i + kl(e.value);
+  let n = "", o = "", a = "", l = false, { command: s2 } = e;
+  switch (s2) {
+    case "\\vec":
+      return "vector " + E(t32, e.body);
+    case "\\acute":
+      return E(t32, e.body) + " acute";
+    case "\\grave":
+      return E(t32, e.body) + " grave";
+    case "\\dot":
+      return "dot over" + E(t32, e.body);
+    case "\\ddot":
+      return "double dot over" + E(t32, e.body);
+    case "\\mathring":
+      return "ring over" + E(t32, e.body);
+    case "\\tilde":
+    case "\\widetilde":
+      return "tilde over" + E(t32, e.body);
+    case "\\bar":
+      return E(t32, e.body) + " bar";
+    case "\\breve":
+      return E(t32, e.body) + " breve";
+    case "\\check":
+    case "\\widecheck":
+      return "check over " + E(t32, e.body);
+    case "\\hat":
+    case "\\widehat":
+      return "hat over" + E(t32, e.body);
+    case "\\overarc":
+    case "\\overparen":
+    case "\\wideparen":
+      return "arc over " + E(t32, e.body);
+    case "\\underarc":
+    case "\\underparen":
+      return "arc under " + E(t32, e.body);
+    case "\\mathop":
+      return (c = pn(e.body)) != null ? c : E(t32, e.body);
+    case "\\mathit":
+      return (h2 = pn(e.body)) != null ? h2 : E(t32, e.body);
+    case "\\mathrm":
+      return (d = pn(e.body)) != null ? d : E(t32, e.body);
+    case "\\mathbb":
+      return "blackboard" + ((f = pn(e.body)) != null ? f : E(t32, e.body));
+  }
+  switch (e.type) {
+    case "prompt":
+      let g = e.body.length > 1 ? 'start input . <break time="500ms"/> ' + E(t32, e.body) + '. <break time="500ms"/> end input' : "blank";
+      i += ' <break time="300ms"/> ' + g + '. <break time="700ms"/>' + ((S = e.correctness) != null ? S : "") + ' . <break time="700ms"/> ';
+      break;
+    case "array":
+      let C = e.rows, k = e.environmentName;
+      if (Object.keys(Bo).includes(k)) {
+        i += ` begin ${Bo[k]} `;
+        for (let B = 0; B < C.length; B++) {
+          B > 0 && (i += ","), i += ` row ${B + 1} `;
+          for (let A = 0; A < C[B].length; A++) A > 0 && (i += ","), i += ` column ${A + 1}: `, i += E("math", C[B][A]);
+        }
+        i += ` end ${Bo[k]} `;
+      }
+      break;
+    case "group":
+      s2 === "\\ne" ? i += " not equal " : (s2 === "\\not" && (i += " not "), i += E("math", e.body));
+      break;
+    case "root":
+      i += E("math", e.body);
+      break;
+    case "genfrac":
+      if (n = E("math", e.above), o = E("math", e.below), jr(e.above) && jr(e.below)) {
+        let A = { "1/2": " half ", "1/3": " one third ", "2/3": " two third", "1/4": " one quarter ", "3/4": " three quarter ", "1/5": " one fifth ", "2/5": " two fifths ", "3/5": " three fifths ", "4/5": " four fifths ", "1/6": " one sixth ", "5/6": " five sixths ", "1/8": " one eight ", "3/8": " three eights ", "5/8": " five eights ", "7/8": " seven eights ", "1/9": " one ninth ", "2/9": " two ninths ", "4/9": " four ninths ", "5/9": " five ninths ", "7/9": " seven ninths ", "8/9": " eight ninths " }[Al(e.above) + "/" + Al(e.below)];
+        A ? i = A : i += n + " over " + o;
+      } else i += ' the fraction <break time="150ms"/>' + n + ' over <break time="150ms"/>' + o + '.<break time="150ms"/> End fraction.<break time="150ms"/>';
+      break;
+    case "surd":
+      if (a = E("math", e.body), e.hasEmptyBranch("above")) i += jr(e.body) ? " the square root of " + a + " , " : ' the square root of <break time="200ms"/>' + a + '. <break time="200ms"/> End square root';
+      else {
+        let B = E("math", e.above);
+        B = B.trim();
+        let A = B.replace(/<mark([^/]*)\/>/g, "");
+        A === "3" ? i += ' the cube root of <break time="200ms"/>' + a + '. <break time="200ms"/> End cube root' : A === "n" ? i += ' the nth root of <break time="200ms"/>' + a + '. <break time="200ms"/> End root' : i += ' the root with index: <break time="200ms"/>' + B + ', of <break time="200ms"/>' + a + '. <break time="200ms"/> End root';
+      }
+      break;
+    case "leftright":
+      {
+        let B = e;
+        i += (x = B.leftDelim ? xr[B.leftDelim] : void 0) != null ? x : B.leftDelim, i += E("math", e.body), i += (w = B.rightDelim ? xr[B.rightDelim] : void 0) != null ? w : B.rightDelim;
+      }
+      break;
+    case "rule":
+      break;
+    case "overunder":
+      break;
+    case "overlap":
+      break;
+    case "macro":
+      let L = s2.replace(/^\\/g, ""), P = Wi()[L];
+      P != null && P.expand ? i += E("math", e.body) : i += `${L} `;
+      break;
+    case "placeholder":
+      i += "placeholder ";
+      break;
+    case "delim":
+    case "sizeddelim":
+    case "mord":
+    case "minner":
+    case "mbin":
+    case "mrel":
+    case "mpunct":
+    case "mopen":
+    case "mclose": {
+      if (s2 === "\\mathbin" || s2 === "\\mathrel" || s2 === "\\mathopen" || s2 === "\\mathclose" || s2 === "\\mathpunct" || s2 === "\\mathord" || s2 === "\\mathinner") {
+        i = E(t32, e.body);
+        break;
+      }
+      let B = e.isDigit() ? e.asDigit() : e.value, A = e.command;
+      if ((e.type === "delim" || e.type === "sizeddelim") && (A = e.value, B = A), t32 === "text") i += kl(B);
+      else {
+        if (e.type === "mbin" && (i += '<break time="150ms"/>'), B) {
+          let F = xr[B] || (A ? xr[A.trim()] : "");
+          if (F) i += " " + F;
+          else {
+            let O = A ? Zc(A.trim()) : "";
+            i += O || r(B);
+          }
+        } else i += E("math", e.body);
+        e.type === "mbin" && (i += '<break time="150ms"/>');
+      }
+      break;
+    }
+    case "mop":
+    case "operator":
+    case "extensible-symbol":
+      if (e.value !== "\u200B") {
+        let B = e.command;
+        if (B === "\\sum") if (!e.hasEmptyBranch("superscript") && !e.hasEmptyBranch("subscript")) {
+          let A = E("math", e.superscript);
+          A = A.trim();
+          let F = E("math", e.subscript);
+          F = F.trim(), i += ' the summation from <break time="200ms"/>' + F + '<break time="200ms"/> to  <break time="200ms"/>' + A + '<break time="200ms"/> of <break time="150ms"/>', l = true;
+        } else if (e.hasEmptyBranch("subscript")) i += " the summation of";
+        else {
+          let A = E("math", e.subscript);
+          A = A.trim(), i += ' the summation from <break time="200ms"/>' + A + '<break time="200ms"/> of <break time="150ms"/>', l = true;
+        }
+        else if (B === "\\prod") if (!e.hasEmptyBranch("superscript") && !e.hasEmptyBranch("subscript")) {
+          let A = E("math", e.superscript);
+          A = A.trim();
+          let F = E("math", e.subscript);
+          F = F.trim(), i += ' the product from <break time="200ms"/>' + F + '<break time="200ms"/> to <break time="200ms"/>' + A + '<break time="200ms"/> of <break time="150ms"/>', l = true;
+        } else if (e.hasEmptyBranch("subscript")) i += " the product  of ";
+        else {
+          let A = E("math", e.subscript);
+          A = A.trim(), i += ' the product from <break time="200ms"/>' + A + '<break time="200ms"/> of <break time="150ms"/>', l = true;
+        }
+        else if (B === "\\int") if (!e.hasEmptyBranch("superscript") && !e.hasEmptyBranch("subscript")) {
+          let A = E("math", e.superscript);
+          A = A.trim();
+          let F = E("math", e.subscript);
+          F = F.trim(), i += ' the integral from <break time="200ms"/>' + To(F) + '<break time="200ms"/> to <break time="200ms"/>' + To(A) + ' <break time="200ms"/> of ', l = true;
+        } else i += ' the integral of <break time="200ms"/> ';
+        else if (B === "\\operatorname" || B === "\\operatorname*") i += jc(e.body) + " ";
+        else if (typeof e.value == "string") {
+          let A = (T = xr[e.value]) != null ? T : e.command ? xr[e.command] : void 0;
+          i += A || " " + e.value;
+        } else e.command && (e.command === "\\mathop" ? i += E("math", e.body) : i += e.command.startsWith("\\") ? " " + e.command.slice(1) : " " + e.command);
+      }
+      break;
+    case "enclose":
+      a = E("math", e.body), i += " crossed out " + a + ". End crossed out.";
+      break;
+    case "space":
+    case "spacing":
+      break;
+  }
+  if (!l && !e.hasEmptyBranch("superscript")) {
+    let g = E(t32, e.superscript);
+    g = g.trim();
+    let C = g.replace(/<[^>]*>/g, "");
+    if (jr(e.superscript)) {
+      if (t32 === "math") {
+        let k = Uc(e.superscript);
+        k && (i += '<mark name="' + k + '"/>');
+      }
+      C === "\u2032" ? i += " prime " : C === "2" ? i += " squared " : C === "3" ? i += " cubed " : Number.isNaN(Number.parseInt(C)) ? i += " to the " + g + "; " : i += ' to the <say-as interpret-as="ordinal">' + C + "</say-as> power; ";
+    } else Number.isNaN(Number.parseInt(C)) ? i += " raised to the " + g + "; " : i += ' raised to the <say-as interpret-as="ordinal">' + C + "</say-as> power; ";
+  }
+  if (!l && !e.hasEmptyBranch("subscript")) {
+    let g = E("math", e.subscript);
+    g = g.trim(), i += jr(e.subscript) ? " sub " + g : " subscript " + g + ". End subscript. ";
+  }
+  return i;
+}
+function _l(t32) {
+  var i, n;
+  let e = globalThis.MathfieldElement;
+  if (e.textToSpeechRules === "sre" && ("sre" in window || "SRE" in window)) {
+    let o = I(t32);
+    if (o) {
+      e.textToSpeechMarkup && (e.textToSpeechRulesOptions = (i = e.textToSpeechRulesOptions) != null ? i : {}, e.textToSpeechRulesOptions = u(m2({}, e.textToSpeechRulesOptions), { markup: e.textToSpeechMarkup }), e.textToSpeechRulesOptions.markup === "ssml" && (e.textToSpeechRulesOptions = u(m2({}, e.textToSpeechRulesOptions), { markup: "ssml_step" })), e.textToSpeechRulesOptions = u(m2({}, e.textToSpeechRulesOptions), { rate: e.speechEngineRate }));
+      let a = (n = window.SRE) != null ? n : globalThis.sre.System.getInstance();
+      e.textToSpeechRulesOptions && a.setupEngine(e.textToSpeechRulesOptions);
+      let l = "";
+      try {
+        l = a.toSpeech(o);
+      } catch (s2) {
+        console.error("MathLive 0.111.1: `SRE.toSpeech()` runtime error", s2);
+      }
+      return l;
+    }
+    return "";
+  }
+  let r = E("math", t32);
+  if (e.textToSpeechMarkup === "ssml") {
+    let o = "";
+    e.speechEngineRate && (o = '<prosody rate="' + e.speechEngineRate + '">'), r = '<?xml version="1.0"?><speak version="1.1" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US"><amazon:auto-breaths>' + o + "<p><s>" + r + "</s></p>" + (o ? "</prosody>" : "") + "</amazon:auto-breaths></speak>";
+  } else e.textToSpeechMarkup === "mac" && O0() === "macos" ? r = r.replace(/<mark([^/]*)\/>/g, "").replace(/<emphasis>/g, "[[emph+]]").replace(/<\/emphasis>/g, "").replace(/<break time="(\d*)ms"\/>/g, "[[slc $1]]").replace(/<say-as[^>]*>/g, "").replace(/<\/say-as>/g, "") : r = r.replace(/<[^>]*>/g, "").replace(/\s{2,}/g, " ");
+  return r;
+}
+function Kc(t32) {
+  let e = "";
+  for (let r of t32) {
+    let i = e[e.length - 1];
+    i !== void 0 && (/\d$/.test(i) && /^\d/.test(r) || /[a-zA-Z]$/.test(i) && /^[a-zA-Z]/.test(r)) && (e += " "), e += r;
+  }
+  return e;
+}
+function U(t32, e) {
+  var a, l, s2, c, h2, d, f, S, x, w, T, g, C, k, L, P, B, A, F;
+  if (!t32) return "";
+  if (ye(t32)) {
+    if (t32.length === 0) return "";
+    if (t32[0].mode === "latex") return t32.map(($) => U($)).join("");
+    if (t32[0].mode === "text") {
+      let $ = 0, K = "";
+      for (; ((a = t32[$]) == null ? void 0 : a.mode) === "text"; ) K += t32[$].body ? U(t32[$].body, e) : t32[$].value, $++;
+      return e != null && e.plain ? K + U(t32.slice($), e) : `"${K}" ${U(t32.slice($))}`;
+    }
+    let O = 0, Y = [];
+    for (; ((l = t32[O]) == null ? void 0 : l.mode) === "math"; ) {
+      let $ = "";
+      for (; ((s2 = t32[O]) == null ? void 0 : s2.type) === "mord" && /\d/.test(t32[O].value); ) $ += t32[O++].value;
+      $ ? Y.push($) : Y.push(U(t32[O++], e));
+    }
+    return Y.push(U(t32.slice(O), e)), Kc(Y);
+  }
+  if (t32.mode === "text") return e != null && e.plain ? t32.value : `"${t32.value}"`;
+  let r = "", { command: i } = t32, n;
+  if (i === "\\placeholder") return `(${U(t32.body, e)})`;
+  let o = p2.serialize([t32], { expandMacro: false, defaultMode: "math" });
+  switch (t32.type) {
+    case "accent":
+      let O = { "\\vec": "vec", "\\dot": "dot", "\\ddot": "ddot", "\\bar": "bar", "\\hat": "hat", "\\acute": "acute;", "\\grave": "grave", "\\tilde": "tilde", "\\breve": "breave", "\\check": "check" }[i];
+      r = `${O != null ? O : ""} ${U(t32.body, e)} `;
+      break;
+    case "first":
+      return "";
+    case "latexgroup":
+      return t32.body.map(($) => $.value).join("");
+    case "group":
+    case "root":
+      r = (c = Ke[i]) != null ? c : U(t32.body, e);
+      break;
+    case "genfrac":
+      {
+        let $ = t32;
+        ($.leftDelim || $.rightDelim) && (r = $.leftDelim === "." || !$.leftDelim ? "{:" : $.leftDelim), $.hasBarLine ? (r += "(", r += U($.above, e), r += ")/(", r += U($.below, e), r += ")") : (r += "((", r += U($.above, e), r += ") choose (", r += U($.below, e), r += "))"), ($.leftDelim || $.rightDelim) && (r += $.rightDelim === "." || !$.rightDelim ? "{:" : $.rightDelim);
+      }
+      break;
+    case "surd":
+      t32.hasEmptyBranch("above") ? r += `sqrt(${U(t32.body, e)})` : r += `root(${U(t32.above, e)})(${U(t32.body, e)})`;
+      break;
+    case "latex":
+      r = t32.value;
+      break;
+    case "leftright":
+      {
+        let $ = t32, K = $.leftDelim;
+        K && fn3[K] && (K = fn3[K]), r += K === "." || !K ? "{:" : K, r += U($.body, e);
+        let ee = $.matchingRightDelim();
+        ee && fn3[ee] && (ee = fn3[ee]), r += ee === "." || !ee ? ":}" : ee;
+      }
+      break;
+    case "sizeddelim":
+    case "delim":
+      r = t32.value;
+      break;
+    case "overlap":
+      break;
+    case "overunder":
+      break;
+    case "mord":
+      if (Ke[o]) return Ke[o];
+      r = (f = (d = (h2 = Ke[i]) != null ? h2 : i) != null ? d : i) != null ? f : typeof t32.value == "string" ? t32.value : "", r.startsWith("\\") && (r += " "), n = i ? i.match(/{?\\char"([\dabcdefABCDEF]+)}?/) : null, n ? r = String.fromCodePoint(Number.parseInt("0x" + n[1])) : r.length > 0 && r.startsWith("\\") && (r = typeof t32.value == "string" ? t32.value.charAt(0) : t32.command), r = Yc(r, t32.style);
+      break;
+    case "mbin":
+    case "mrel":
+    case "minner":
+      r = (w = (x = (S = Ke[o]) != null ? S : Ke[i]) != null ? x : Xr[i]) != null ? w : t32.value;
+      break;
+    case "mopen":
+    case "mclose":
+      r = t32.value;
+      break;
+    case "mpunct":
+      r = (T = Xr[i]) != null ? T : i;
+      break;
+    case "mop":
+    case "operator":
+    case "extensible-symbol":
+      t32.value !== "\u200B" && (Xr[i] ? r = Xr[i] : r = i === "\\operatorname" ? U(t32.body, e) : (g = t32.value) != null ? g : i, r += " ");
+      break;
+    case "array":
+      let Y = t32.environmentName;
+      if (t32.isMultiline) r = t32.rows.map((K) => K.map((ee) => U(ee, e)).join("")).join(`
+`);
+      else {
+        let $ = (C = { bmatrix: ["[", "]"], "bmatrix*": ["[", "]"] }[Y]) != null ? C : ["(", ")"], K = [], ee = t32.rows;
+        for (let Ct of ee) {
+          let ot = [];
+          for (let j of Ct) ot.push(U(j, e));
+          K.push($[0] + ot.join(",") + $[1]);
+        }
+        let te = (k = { bmatrix: ["[", "]"], "bmatrix*": ["[", "]"], cases: ["{", ":}"] }[Y]) != null ? k : ["(", ")"];
+        r = te[0] + K.join(",") + te[1];
+      }
+      break;
+    case "box":
+      break;
+    case "spacing":
+      r = (P = (L = Ke[o]) != null ? L : Ke[i]) != null ? P : " ";
+      break;
+    case "enclose":
+      r = "(" + U(t32.body, e) + ")";
+      break;
+    case "space":
+      r = " ";
+      break;
+    case "subsup":
+      r = "";
+      break;
+    case "macro":
+      r = (F = (A = (B = Ke[o]) != null ? B : Ke[i]) != null ? A : Xr[i]) != null ? F : U(t32.body, e);
+      break;
+  }
+  if (!t32.hasEmptyBranch("subscript")) {
+    r += "_";
+    let O = U(t32.subscript, e);
+    r += O.length !== 1 ? `(${O})` : O;
+  }
+  if (!t32.hasEmptyBranch("superscript")) {
+    r += "^";
+    let O = U(t32.superscript, e);
+    r += O.length !== 1 ? `(${O})` : O;
+  }
+  return r;
+}
+function Yc(t32, e) {
+  if (!e) return t32;
+  let r = t32;
+  return e.variant === "double-struck" && (r = `bbb "${r}"`), e.variant === "script" && (r = `cc "${r}"`), e.variant === "fraktur" && (r = `fr "${r}"`), e.variant === "sans-serif" && (r = `sf "${r}"`), e.variant === "monospace" && (r = `tt "${r}"`), e.variantStyle === "bold" && (r = `bb "${r}"`), e.color ? `color({${e.color}})(${r})` : r;
+}
+function Qc(t32, e) {
+  if (!e) return "";
+  if (typeof e == "string") return e;
+  if (!t32 || e.after === void 0) return e.value;
+  let r = false, i = false, n = false, o = false, a = false, l = false, s2 = false, c = false, h2 = false, d = false, f = false, S = false, x = false, w = false, T = false, g = t32[0], C = 0;
+  for (; g != null && g.type && /^(subsup|placeholder)$/.test(g.type); ) C += 1, g = t32[C];
+  return r = !g || g.type === "first", g && (w = g.mode === "text", i = !w && g.type === "mord" && Ji.test(g.value), n = !w && g.type === "mord" && /\d+$/.test(g.value), o = !w && g.isFunction, a = g.type === "genfrac", l = g.type === "surd", s2 = g.type === "mbin", c = g.type === "mrel", h2 = g.type === "mop" || g.type === "operator" || g.type === "extensible-symbol", d = g.type === "mpunct" || g.type === "minner", f = g.type === "array", S = g.type === "mopen", x = g.type === "mclose" || g.type === "leftright", T = g.type === "space"), e.after.includes("nothing") && r || e.after.includes("letter") && i || e.after.includes("digit") && n || e.after.includes("function") && o || e.after.includes("frac") && a || e.after.includes("surd") && l || e.after.includes("binop") && s2 || e.after.includes("relop") && c || e.after.includes("operator") && h2 || e.after.includes("punct") && d || e.after.includes("array") && f || e.after.includes("openfence") && S || e.after.includes("closefence") && x || e.after.includes("text") && w || e.after.includes("space") && T ? e.value : "";
+}
+function Do(t32, e, r) {
+  return r ? Qc(t32, r[e]) : "";
+}
+function Tl(t32, e) {
+  var i;
+  let r = (i = e == null ? void 0 : e.format) != null ? i : "auto";
+  return r === "auto" && ([r, t32] = rm(t32)), r === "ascii-math" ? (t32 = t32.replace(/\u2061/gu, ""), t32 = t32.replace(/\u3016/gu, "{"), t32 = t32.replace(/\u3017/gu, "}"), t32 = t32.replace(/([^\\])sinx/g, "$1\\sin x"), t32 = t32.replace(/([^\\])cosx/g, "$1\\cos x "), t32 = t32.replace(/\u2013/g, "-"), ["ascii-math", xe(t32, { inlineShortcuts: e == null ? void 0 : e.inlineShortcuts })]) : ["latex", t32];
+}
+function xe(t32, e) {
+  var a;
+  if (t32 = t32.trim(), !t32) return "";
+  let r = (a = e.inlineShortcuts) != null ? a : Cl;
+  if (t32.startsWith("^") || t32.startsWith("_")) {
+    let { match: l, rest: s2 } = Wt(t32.slice(1), { inlineShortcuts: r, noWrap: true });
+    return `${t32[0]}{${l}}${xe(s2, e)}`;
+  }
+  let i = t32.match(/^(sqrt|\u221A)(.*)/);
+  if (i) {
+    let { match: l, rest: s2 } = Wt(i[2], { inlineShortcuts: r, noWrap: true });
+    return `\\sqrt{${l != null ? l : "\\placeholder{}"}}${xe(s2, e)}`;
+  }
+  if (i = t32.match(/^(\\cbrt|\u221B)(.*)/), i) {
+    let { match: l, rest: s2 } = Wt(i[2], { inlineShortcuts: r, noWrap: true });
+    return `\\sqrt[3]{${l != null ? l : "\\placeholder{}"}}${xe(s2, e)}`;
+  }
+  if (i = t32.match(/^abs(.*)/), i) {
+    let { match: l, rest: s2 } = Wt(i[1], { inlineShortcuts: r, noWrap: true });
+    return `\\left|${l != null ? l : "\\placeholder{}"}\\right|${xe(s2, e)}`;
+  }
+  if (i = t32.match(/^["”“](.*?)["”“](.*)/), i) return `\\text{${i[1]}}${xe(i[2], e)}`;
+  if (i = t32.match(/^([^a-zA-Z0-9\(\{\[\_\^\\\s"]+)(.*)/), i) return `${Bl(i[1], r)}${xe(i[2], e)}`;
+  if (/^([fgh])[^a-zA-Z]/.test(t32)) {
+    let { rest: l, match: s2 } = Wt(t32.slice(1), { inlineShortcuts: r, noWrap: true }), c = "";
+    return t32[1] === "(" ? c = `${t32[0]}\\left(${s2}\\right)` : c = t32[0] + s2, c + xe(l, e);
+  }
+  if (i = t32.match(/^([a-zA-Z]+)(.*)/), i) return Bl(i[1], r) + xe(i[2], e);
+  let { match: n, rest: o } = Wt(t32, { inlineShortcuts: r, noWrap: true });
+  if (n && o[0] === "/") {
+    let l = Wt(o.slice(1), { inlineShortcuts: r, noWrap: true });
+    if (l.match) return `\\frac{${n}}{${l.match}}${xe(l.rest, e)}`;
+  } else return t32.startsWith("(") ? "\\left(" + n + "\\right)" + xe(o, e) : n + xe(o, e);
+  return i = t32.match(/^(\s+)(.*)$/), i ? " " + xe(i[2], e) : t32;
+}
+function Wt(t32, e) {
+  var a, l;
+  let r = "";
+  t32 = t32.trim();
+  let i = t32, n = t32.charAt(0), o = { "(": ")", "{": "}", "[": "]" }[n];
+  if (o) {
+    let s2 = 1, c = 1;
+    for (; c < t32.length && s2 > 0; ) t32[c] === n && s2++, t32[c] === o && s2--, c++;
+    if (s2 === 0) {
+      let h2 = xe(t32.substring(1, c - 1), e);
+      e.noWrap && n === "(" ? r = h2 : r = `\\left${(a = Ll[n]) != null ? a : n}${h2}\\right${(l = Ll[o]) != null ? l : o}`, i = t32.slice(Math.max(0, c));
+    } else r = t32.substring(1, c), i = "";
+  } else {
+    let s2 = t32.match(/^([a-zA-Z]+)/);
+    if (s2) {
+      let c = Do(null, t32, e.inlineShortcuts);
+      if (c) return c = c.replace("_{#?}", ""), c = c.replace("^{#?}", ""), { match: c, rest: t32.slice(c.length) };
+    }
+    if (s2 = t32.match(/^([a-zA-Z])/), s2) return { match: s2[1], rest: t32.slice(1) };
+    if (s2 = t32.match(/^(-)?\d+(\.\d*)?/), s2) return { match: s2[0], rest: t32.slice(s2[0].length) };
+    /^\\(left|right)/.test(t32) || (s2 = t32.match(/^(\\[a-zA-Z]+)/), s2 && (i = t32.slice(s2[1].length), r = s2[1]));
+  }
+  return { match: r, rest: i };
+}
+function Bl(t32, e) {
+  let r = Do(null, t32, e);
+  return r ? (r = r.replace("_{#?}", ""), r = r.replace("^{#?}", ""), r += " ") : r = t32, r;
+}
+function tm(t32) {
+  let e = t32.trim();
+  for (let r of em) if (e.startsWith(r[0]) && e.endsWith(r[1])) return [true, e.substring(r[0].length, e.length - r[1].length)];
+  return [false, t32];
+}
+function rm(t32) {
+  if (t32 = t32.trim(), t32.length <= 1) return ["latex", t32];
+  let e;
+  return [e, t32] = tm(t32), e ? ["latex", t32] : t32.startsWith("`") && t32.endsWith("`") ? (t32 = t32.substring(1, t32.length - 1), ["ascii-math", t32]) : t32.includes("\\") ? ["latex", t32] : /\$.+\$/.test(t32) ? ["latex", `\\text{${t32}}`] : [void 0, t32];
+}
+function am(t32, e) {
+  return ze(t32, "bold").map((r) => {
+    if (ji(r[0]) !== "bold") return D(yn(r, e));
+    if (ji(r[0].parent) === "bold") return D(yn(r, e));
+    let n = D(r.map((o) => {
+      var a;
+      return (a = o.value) != null ? a : "";
+    }));
+    return /^[a-zA-Z0-9]+$/.test(n) ? R("\\mathbf", D(yn(r, e))) : R("\\bm", D(yn(r, e)));
+  });
+}
+function yn(t32, e) {
+  let { parent: r } = t32[0], i = Xi(r);
+  return ze(t32, "variant").map((n) => {
+    let o = Xi(n[0]), a = "";
+    o && o !== i && (a = { calligraphic: "\\mathcal", "calligraphic-uo": "\\mathcal", fraktur: "\\mathfrak", "fraktur-uo": "\\mathfrak", "double-struck": "\\mathbb", "double-struck-uo": "\\mathbb", script: "\\mathscr", "script-uo": "\\mathscr", monospace: "\\mathtt", "monospace-uo": "\\mathtt", "sans-serif": "\\mathsf", "sans-serif-uo": "\\mathsf", normal: "", "normal-up": "\\mathrm", "normal-italic": "\\mathnormal", "normal-bold": "", "normal-bolditalic": "\\mathbfit", ams: "", "ams-up": "\\mathrm", "ams-italic": "\\mathit", "ams-bold": "", "ams-bolditalic": "\\mathbfit", main: "", "main-up": "\\mathrm", "main-italic": "\\mathit", "main-bold": "", "main-bolditalic": "\\mathbfit" }[o]);
+    let l = "", s2 = n[n.length - 1], c = a && n.length > 0 && (s2.branch("subscript") !== void 0 || s2.branch("superscript") !== void 0);
+    c && (l = s2.supsubToLatex(e));
+    let h2 = D(n.map((d, f) => {
+      if (c && f === n.length - 1) {
+        let S = H(d.command, d.mode);
+        return S != null && S.serialize ? S.serialize(d, e) : d.body && d.command ? R(d.command, d.bodyToLatex(e)) : d.body ? d.bodyToLatex(e) : !d.value || d.value === "\u200B" ? "" : d.command || d.value;
+      }
+      return d._serialize(e);
+    }));
+    return a ? R(a, h2) + l : h2;
+  });
+}
+function sm(t32, e) {
+  return t32.map((r) => r._serialize(e));
+}
+function lm(t32, e) {
+  return ze(t32, "fontShape").map((r) => {
+    let i = sm(r, e), { fontShape: n } = r[0].style, o = "";
+    return n === "it" && (o = "\\textit"), n === "sl" && (o = "\\textsl"), n === "sc" && (o = "\\textsc"), n === "n" && (o = "\\textup"), !o && n ? `{${R("\\fontshape", n)}${D(i)}}` : o ? R(o, D(i)) : D(i);
+  });
+}
+function cm(t32, e) {
+  return ze(t32, "fontSeries").map((r) => {
+    let i = lm(r, e), { fontSeries: n } = r[0].style, o = "";
+    return n === "b" && (o = "\\textbf"), n === "l" && (o = "\\textlf"), n === "m" && (o = "\\textmd"), n && !o ? `{${R("\\fontseries", n)}${D(i)}}` : o ? R(o, D(i)) : D(i);
+  });
+}
+function mm(t32, e) {
+  return ze(t32, "fontSize").map((r) => {
+    var o, a;
+    let i = cm(r, e), n = (a = ["", "\\tiny", "\\scriptsize", "\\footnotesize", "\\small", "\\normalsize", "\\large", "\\Large", "\\LARGE", "\\huge", "\\Huge"][(o = r[0].style.fontSize) != null ? o : ""]) != null ? a : "";
+    return n ? `${n} ${D(i)}` : D(i);
+  });
+}
+function um(t32, e, r) {
+  return ze(t32, "fontFamily").map((i) => {
+    var l;
+    r = r && !i.every((s2) => s2.style.fontFamily || s2.style.fontShape || s2.style.fontSeries || s2.style.fontSize);
+    let n = mm(i, e), { fontFamily: o } = i[0].style, a = (l = { roman: "textrm", monospace: "texttt", "sans-serif": "textsf" }[o != null ? o : ""]) != null ? l : "";
+    return a ? `\\${a}{${D(n)}}` : o ? `{\\fontfamily{${i[0].style.fontFamily}} ${D(n)}}` : r ? `\\text{${D(n)}}` : D(n);
+  });
+}
+function E2(t32, e) {
+  var h2;
+  let r = u(m2({}, Vr()), { renderPlaceholder: () => new b(160, { maxFontSize: 1 }) });
+  if (e != null && e.letterShapeStyle && (e == null ? void 0 : e.letterShapeStyle) !== "auto" && (r.letterShapeStyle = e.letterShapeStyle), e != null && e.macros) {
+    let d = Fr(e == null ? void 0 : e.macros);
+    r.getMacro = (f) => Pr(f, d);
+  }
+  e != null && e.registers && (r.registers = m2(m2({}, r.registers), e.registers));
+  let i = (h2 = e == null ? void 0 : e.defaultMode) != null ? h2 : "math", n = "math", o = "displaystyle";
+  i === "inline-math" ? o = "textstyle" : i === "math" ? o = "displaystyle" : i === "text" && (o = "textstyle", n = "text");
+  let a = new z({ from: r }), s2 = new p2({ type: "root", mode: n, body: nt(t32, { context: a, parseMode: n, mathstyle: o }) }).render(a);
+  return s2 ? (Yi(hn(s2, a)), K0(s2, { classes: "ML__latex" }).toMarkup()) : "";
+}
+function R2(t32, e) {
+  let r = m2({}, Vr());
+  if (e != null && e.macros) {
+    let i = Fr(e.macros);
+    r.getMacro = (n) => Pr(n, i);
+  }
+  return bl(t32, { context: r });
+}
+function F2(t32, e = {}) {
+  return I(nt(t32, { parseMode: "math", args: () => "", mathstyle: "displaystyle" }), e);
+}
+function P2(t32) {
+  let e = nt(t32, { parseMode: "math", mathstyle: "displaystyle" });
+  return _l(e);
+}
+function O2(t32, e = "math") {
+  return U(new p2({ type: "root", body: nt(t32, { parseMode: e }) }));
+}
+function I2(t32) {
+  return Tl(t32, { format: "ascii-math" })[1];
+}
+var Rl, Fl, Pl, Ro, Ol, Il, Fo, m2, u, Po, Me, Bt, Sn, Qr, Oo, vr, N, Io, qo, ei, wn, de, ti, No, Vo, ri, Mn, st, ii, ni, Jo, Ho, Go, lt, Sr, An, oi, Wo, ai, Zt, qe, Ut, Be, wr, Zo, Ne, ge, ct, jt, Uo, jo, Xo, mt, Ko, Yo, si, Qo, ea, li2, ta, ra, Xt, ia, na, oa, aa, sa, la, ca, ma, ua, kn, Mr, ha, da, _n, ci, Ae, Kt, mi, ui, Cn, ut, hi, Tt, Yt, pa, fa, ht, Te, ga, ya, ba, di, Ln, Bn, xa, va, Ve, Sa, Ar, wa, Ma, Tn, Aa, Dn, ka, Dt, _a7, zn, dt2, Ca, $n, pi, fi, La, Ba, gi, Ta, pt, Da, En, za, $a, Ea, yi, Ra, Rn, Fa, Pa, bi, ft, Oa, xi, Ia, qa, Na, Va, Ja, Ha, Ga, Wa, Ye, Qt, ke, zt, $t, kr, Za, _r, Qe, vi, ie, er, Fn, Cr, Ua, ja, _e, Xa, Ka, Ya, Qa, es, Pn, Lr, ts, Br, rs, On, In, is3, ns, qn, os, Et, Si, as, ss, gt, wi, Mi, ls, Ai, cs, ki, ms, us, hs, _i, Tr, ds, ps, fs, gs, ys, bs, xs, Dr, vs, Ss, ws, Ms, As, ce, et2, yt, ks, Nn, _s, Cs, Vn, Ls, Bs, Ts, Ci, Ds, zs, Jn, Hn, Je, Gn, Wn, $s, Es, Rs, Fs, Zn, Ps, Os, Is, qs, Ns, Vs, He, Un, tt, Js, jn, Xn, Hs, Kn, Gs, Ws, Zs, Us, js, Xs, Ks, Ys, Qs, Li, e0, t0, r0, i0, n0, tr2, rr, Yn, o0, a0, s0, l0, Bi, c0, m0, u0, ir, Ti, h0, Qn, d0, p0, f0, Di, zi, $i, g0, y0, b0, Ei, Ri, Fi, Pi, x0, eo, Oi, v0, S0, w0, M0, Ii, _, De, A0, k0, pe, zr, _0, C0, ql, Ge, fe, B0, Se, to, $r, Er, L0, ro, io, T0, Nl, Vl, $0, E0, R0, Jl, lo, so, q0, co, Vi, mo, ho, jl, Xl, Kl, Yl, nr, Ji, V0, Ni, Ui, ec2, Zi, W0, yo, Rt, Q, b, V, cc, mc, uc, en, qr, Nr, vt, Pt, be, St, me, Ze, Ir, $e, il, q, dc, z, Mt, p2, At, _o, Fu, ll, bc, cl, xc, vc, Sc, wc, le, ul, it, Lc, ae, Tc, G, Nt, mr, Ce, ur, hr, Fe, fl2, gl, Pe, dr, Vt, pr, ln, fr, gr, kt, cn, Gr, v, Z, Le, Ue, je, Oe, mn, _t, un, Co, Ic, qc, Ht, vl, Sl, dn, xr, Bo, Ke, Xr, fn3, Cl, Ll, em, gn, Dl, zl, im, nm, om, zo, $l, $o, Eo;
+var init_mathlive_ssr_min = __esm({
+  "node_modules/mathlive/mathlive-ssr.min.mjs"() {
+    Rl = Object.defineProperty;
+    Fl = Object.defineProperties;
+    Pl = Object.getOwnPropertyDescriptors;
+    Ro = Object.getOwnPropertySymbols;
+    Ol = Object.prototype.hasOwnProperty;
+    Il = Object.prototype.propertyIsEnumerable;
+    Fo = (t32, e, r) => e in t32 ? Rl(t32, e, { enumerable: true, configurable: true, writable: true, value: r }) : t32[e] = r;
+    m2 = (t32, e) => {
+      for (var r in e || (e = {})) Ol.call(e, r) && Fo(t32, r, e[r]);
+      if (Ro) for (var r of Ro(e)) Il.call(e, r) && Fo(t32, r, e[r]);
+      return t32;
+    };
+    u = (t32, e) => Fl(t32, Pl(e));
+    Po = { fractionNavigationOrder: "numerator-denominator" };
+    Me = [0, 0.68889, 0, 0, 0.72222];
+    Bt = [0, 0.68889, 0, 0, 0.66667];
+    Sn = [0, 0.68889, 0, 0, 0.77778];
+    Qr = [0, 0.68889, 0, 0, 0.61111];
+    Oo = [0.16667, 0.68889, 0, 0, 0.77778];
+    vr = [0, 0.68889, 0, 0, 0.55556];
+    N = [0, 0, 0, 0, 0.25];
+    Io = [0, 0.825, 0, 0, 2.33334];
+    qo = [0, 0.9, 0, 0, 2.33334];
+    ei = [0, 0.68889, 0, 0, 0.54028];
+    wn = [-0.03598, 0.46402, 0, 0, 0.5];
+    de = [-0.13313, 0.36687, 0, 0, 1];
+    ti = [0.01354, 0.52239, 0, 0, 1];
+    No = [0.01354, 0.52239, 0, 0, 1.11111];
+    Vo = [0, 0.54986, 0, 0, 1];
+    ri = [0, 0.69224, 0, 0, 0.5];
+    Mn = [0, 0.43056, 0, 0, 1];
+    st = [0.08198, 0.58198, 0, 0, 0.77778];
+    ii = [0.19444, 0.69224, 0, 0, 0.41667];
+    ni = [0.1808, 0.675, 0, 0, 1];
+    Jo = [0.19444, 0.69224, 0, 0, 0.83334];
+    Ho = [0.13667, 0.63667, 0, 0, 1];
+    Go = [-0.064, 0.437, 0, 0, 1.334];
+    lt = [0.08167, 0.58167, 0, 0, 0.77778];
+    Sr = [0, 0.69224, 0, 0, 0.72222];
+    An = [0, 0.69224, 0, 0, 0.66667];
+    oi = [-0.13313, 0.36687, 0, 0, 0.77778];
+    Wo = [0.06062, 0.54986, 0, 0, 0.77778];
+    ai = [0, 0.69224, 0, 0, 0.77778];
+    Zt = [0.25583, 0.75583, 0, 0, 0.77778];
+    qe = [0.25142, 0.75726, 0, 0, 0.77778];
+    Ut = [0.20576, 0.70576, 0, 0, 0.77778];
+    Be = [0.30274, 0.79383, 0, 0, 0.77778];
+    wr = [0.22958, 0.72958, 0, 0, 0.77778];
+    Zo = [0.1808, 0.675, 0, 0, 0.77778];
+    Ne = [0.13667, 0.63667, 0, 0, 0.77778];
+    ge = [0.13597, 0.63597, 0, 0, 0.77778];
+    ct = [0.03517, 0.54986, 0, 0, 0.77778];
+    jt = [0, 0.675, 0, 0, 0.77778];
+    Uo = [0.19444, 0.69224, 0, 0, 0.61111];
+    jo = [0, 0.54986, 0, 0, 0.76042];
+    Xo = [0, 0.54986, 0, 0, 0.66667];
+    mt = [0.0391, 0.5391, 0, 0, 0.77778];
+    Ko = [0.03517, 0.54986, 0, 0, 1.33334];
+    Yo = [0.38569, 0.88569, 0, 0, 0.77778];
+    si = [0.23222, 0.74111, 0, 0, 0.77778];
+    Qo = [0.19444, 0.69224, 0, 0, 0.77778];
+    ea = [0, 0.37788, 0, 0, 0.5];
+    li2 = [0, 0.54986, 0, 0, 0.72222];
+    ta = [0, 0.69224, 0, 0, 0.83334];
+    ra = [0.11111, 0.69224, 0, 0, 0.66667];
+    Xt = [0.26167, 0.75726, 0, 0, 0.77778];
+    ia = [0.48256, 0.98256, 0, 0, 0.77778];
+    na = [0.28481, 0.79383, 0, 0, 0.77778];
+    oa = [0.08167, 0.58167, 0, 0, 0.22222];
+    aa = [0.08167, 0.58167, 0, 0, 0.38889];
+    sa = [0, 0.43056, 0.04028, 0, 0.66667];
+    la = [0.41951, 0.91951, 0, 0, 0.77778];
+    ca = [0.24982, 0.74947, 0, 0, 0.38865];
+    ma = [0.08319, 0.58283, 0, 0, 0.75623];
+    ua = [0, 0.10803, 0, 0, 0.27764];
+    kn = [0, 0.47534, 0, 0, 0.50181];
+    Mr = [0.18906, 0.47534, 0, 0, 0.50181];
+    ha = [0, 0.69141, 0, 0, 0.50181];
+    da = [0.24982, 0.74947, 0, 0, 0.27764];
+    _n = [0, 0.69141, 0, 0, 0.21471];
+    ci = [0.25, 0.75, 0, 0, 0.44722];
+    Ae = [0, 0.64444, 0, 0, 0.575];
+    Kt = [0.08556, 0.58556, 0, 0, 0.89444];
+    mi = [0, 0.69444, 0, 0, 0.89444];
+    ui = [0, 0.68611, 0, 0, 0.9];
+    Cn = [0, 0.68611, 0, 0, 0.86944];
+    ut = [0.25, 0.75, 0, 0, 0.575];
+    hi = [0.25, 0.75, 0, 0, 0.31944];
+    Tt = [0, 0.69444, 0, 0, 0.63889];
+    Yt = [0, 0.69444, 0, 0, 0.31944];
+    pa = [0, 0.44444, 0, 0, 0.63889];
+    fa = [0, 0.44444, 0, 0, 0.51111];
+    ht = [0, 0.69444, 0, 0, 0.575];
+    Te = [0.13333, 0.63333, 0, 0, 0.89444];
+    ga = [0, 0.44444, 0, 0, 0.31944];
+    ya = [0, 0.69444, 0, 0, 0.86944];
+    ba = [0, 0.68611, 0, 0, 0.69166];
+    di = [0, 0.68611, 0, 0, 0.83055];
+    Ln = [0, 0.68611, 0, 0, 0.89444];
+    Bn = [0, 0.69444, 0, 0, 0.60278];
+    xa = [0.19444, 0.69444, 0, 0, 0.51111];
+    va = [0, 0.69444, 0, 0, 0.83055];
+    Ve = [-0.10889, 0.39111, 0, 0, 1.14999];
+    Sa = [0.19444, 0.69444, 0, 0, 0.575];
+    Ar = [0.19444, 0.69444, 0, 0, 1.14999];
+    wa = [0.19444, 0.69444, 0, 0, 0.70277];
+    Ma = [0.05556, 0.75, 0, 0, 0.575];
+    Tn = [0, 0.68611, 0, 0, 0.95833];
+    Aa = [0.08556, 0.58556, 0, 0, 0.76666];
+    Dn = [-0.02639, 0.47361, 0, 0, 0.575];
+    ka = [0, 0.44444, 0, 0, 0.89444];
+    Dt = [0, 0.55556, 0, 0, 0.76666];
+    _a7 = [-0.10889, 0.39111, 0, 0, 0.89444];
+    zn = [222e-5, 0.50222, 0, 0, 0.89444];
+    dt2 = [0.19667, 0.69667, 0, 0, 0.89444];
+    Ca = [0.08556, 0.58556, 0, 0, 1.14999];
+    $n = [0, 0.69444, 0, 0, 0.70277];
+    pi = [-0.02778, 0.47222, 0, 0, 0.575];
+    fi = [0.25, 0.75, 0, 0, 0.51111];
+    La = [-0.13889, 0.36111, 0, 0, 1.14999];
+    Ba = [0.19444, 0.69444, 0, 0, 1.02222];
+    gi = [0.12963, 0.69444, 0, 0, 0.89444];
+    Ta = [0.19444, 0.69444, 0, 0, 0.44722];
+    pt = [0, 0.64444, 0.13167, 0, 0.59111];
+    Da = [0.19444, 0.64444, 0.13167, 0, 0.59111];
+    En = [0, 0.68611, 0.17208, 0, 0.8961];
+    za = [0.19444, 0.44444, 0.105, 0, 0.53222];
+    $a = [0, 0.44444, 0.085, 0, 0.82666];
+    Ea = [0, 0.69444, 0.06709, 0, 0.59111];
+    yi = [0, 0.69444, 0.12945, 0, 0.35555];
+    Ra = [0, 0.69444, 0, 0, 0.94888];
+    Rn = [0, 0.69444, 0.11472, 0, 0.59111];
+    Fa = [0, 0.68611, 0.10778, 0, 0.88555];
+    Pa = [0, 0.69444, 0.07939, 0, 0.62055];
+    bi = [0, 0.69444, 0.12417, 0, 0.30667];
+    ft = [0, 0.64444, 0.13556, 0, 0.51111];
+    Oa = [0.19444, 0.64444, 0.13556, 0, 0.51111];
+    xi = [0, 0.68333, 0.16389, 0, 0.74333];
+    Ia = [0.19444, 0.43056, 0.08847, 0, 0.46];
+    qa = [0, 0.43056, 0.07514, 0, 0.71555];
+    Na = [0, 0.69444, 0.06646, 0, 0.51111];
+    Va = [0, 0.69444, 0, 0, 0.83129];
+    Ja = [0, 0.69444, 0.1225, 0, 0.51111];
+    Ha = [0, 0.68333, 0.09403, 0, 0.76666];
+    Ga = [0, 0.68333, 0.11111, 0, 0.76666];
+    Wa = [0, 0.69444, 0.06961, 0, 0.51444];
+    Ye = [0, 0.69444, 0, 0, 0.27778];
+    Qt = [0.25, 0.75, 0, 0, 0.38889];
+    ke = [0, 0.64444, 0, 0, 0.5];
+    zt = [0, 0.69444, 0, 0, 0.77778];
+    $t = [0, 0.68333, 0, 0, 0.75];
+    kr = [0, 0.68333, 0, 0, 0.77778];
+    Za = [0, 0.68333, 0, 0, 0.68056];
+    _r = [0, 0.68333, 0, 0, 0.72222];
+    Qe = [0.25, 0.75, 0, 0, 0.5];
+    vi = [0.25, 0.75, 0, 0, 0.27778];
+    ie = [0, 0.69444, 0, 0, 0.5];
+    er = [0, 0.69444, 0, 0, 0.55556];
+    Fn = [0, 0.43056, 0, 0, 0.44445];
+    Cr = [0, 0.43056, 0, 0, 0.5];
+    Ua = [0.19444, 0.43056, 0, 0, 0.55556];
+    ja = [0, 0.43056, 0, 0, 0.55556];
+    _e = [0.08333, 0.58333, 0, 0, 0.77778];
+    Xa = [0, 0.43056, 0, 0, 0.27778];
+    Ka = [0, 0.66786, 0, 0, 0.27778];
+    Ya = [0, 0.69444, 0, 0, 0.75];
+    Qa = [0, 0.66786, 0, 0, 0.5];
+    es = [0, 0.68333, 0, 0, 0.625];
+    Pn = [0.19444, 0.69444, 0, 0, 0.44445];
+    Lr = [0, 0.69444, 0, 0, 0.72222];
+    ts = [0.19444, 0.69444, 0, 0, 0.5];
+    Br = [0.19444, 0.69444, 0, 0, 1];
+    rs = [0.011, 0.511, 0, 0, 1.126];
+    On = [0.19444, 0.69444, 0, 0, 0.61111];
+    In = [0.05556, 0.75, 0, 0, 0.5];
+    is3 = [0, 0.68333, 0, 0, 0.83334];
+    ns = [0.0391, 0.5391, 0, 0, 0.66667];
+    qn = [-0.05555, 0.44445, 0, 0, 0.5];
+    os = [0, 0.43056, 0, 0, 0.77778];
+    Et = [0, 0.55556, 0, 0, 0.66667];
+    Si = [-0.03625, 0.46375, 0, 0, 0.77778];
+    as = [-0.01688, 0.48312, 0, 0, 0.77778];
+    ss = [0.0391, 0.5391, 0, 0, 1];
+    gt = [0, 0.69444, 0, 0, 0.61111];
+    wi = [-0.03472, 0.46528, 0, 0, 0.5];
+    Mi = [0.25, 0.75, 0, 0, 0.44445];
+    ls = [-0.14236, 0.35764, 0, 0, 1];
+    Ai = [0.244, 0.744, 0, 0, 0.412];
+    cs = [0.19444, 0.69444, 0, 0, 0.88889];
+    ki = [0.12963, 0.69444, 0, 0, 0.77778];
+    ms = [0.19444, 0.69444, 0, 0, 0.38889];
+    us = [0.011, 0.511, 0, 0, 1.638];
+    hs = [0.19444, 0.69444, 0, 0, 0];
+    _i = [0, 0.44444, 0, 0, 0.575];
+    Tr = [0.19444, 0.44444, 0, 0, 0.575];
+    ds = [0, 0.68611, 0, 0, 0.75555];
+    ps = [0, 0.69444, 0, 0, 0.66759];
+    fs = [0, 0.68611, 0, 0, 0.80555];
+    gs = [0, 0.68611, 0.08229, 0, 0.98229];
+    ys = [0, 0.68611, 0, 0, 0.76666];
+    bs = [0, 0.44444, 0, 0, 0.58472];
+    xs = [0.19444, 0.44444, 0, 0, 0.6118];
+    Dr = [0.19444, 0.43056, 0, 0, 0.5];
+    vs = [0, 0.68333, 0.02778, 0.08334, 0.76278];
+    Ss = [0, 0.68333, 0.08125, 0.05556, 0.83125];
+    ws = [0, 0.43056, 0, 0.05556, 0.48472];
+    Ms = [0.19444, 0.43056, 0, 0.08334, 0.51702];
+    As = [0.25, 0.75, 0, 0, 0.42778];
+    ce = [0, 0.69444, 0, 0, 0.55];
+    et2 = [0, 0.69444, 0, 0, 0.73334];
+    yt = [0, 0.69444, 0, 0, 0.79445];
+    ks = [0, 0.69444, 0, 0, 0.51945];
+    Nn = [0, 0.69444, 0, 0, 0.70278];
+    _s = [0, 0.69444, 0, 0, 0.76389];
+    Cs = [0.25, 0.75, 0, 0, 0.34306];
+    Vn = [0, 0.69444, 0, 0, 0.56111];
+    Ls = [0, 0.69444, 0, 0, 0.25556];
+    Bs = [0.19444, 0.45833, 0, 0, 0.56111];
+    Ts = [0, 0.45833, 0, 0, 0.56111];
+    Ci = [0, 0.69444, 0, 0, 0.30556];
+    Ds = [0, 0.69444, 0, 0, 0.58056];
+    zs = [0, 0.69444, 0, 0, 0.67223];
+    Jn = [0, 0.69444, 0, 0, 0.85556];
+    Hn = [0, 0.69444, 0, 0, 0.55834];
+    Je = [0, 0.65556, 0.11156, 0, 0.5];
+    Gn = [0, 0.69444, 0.08094, 0, 0.70834];
+    Wn = [0.17014, 0, 0, 0, 0.44445];
+    $s = [0, 0.69444, 0.0799, 0, 0.5];
+    Es = [0, 0.69444, 0, 0, 0.73752];
+    Rs = [0, 0.69444, 0.09205, 0, 0.5];
+    Fs = [0, 0.69444, 0.09031, 0, 0.77778];
+    Zn = [0, 0.69444, 0.07816, 0, 0.27778];
+    Ps = [0, 0.69444, 316e-5, 0, 0.5];
+    Os = [0.19444, 0.69444, 0, 0, 0.83334];
+    Is = [0.05556, 0.75, 0, 0, 0.83334];
+    qs = [0, 0.75, 0, 0, 0.5];
+    Ns = [0.125, 0.08333, 0, 0, 0.27778];
+    Vs = [0, 0.08333, 0, 0, 0.27778];
+    He = [0, 0.65556, 0, 0, 0.5];
+    Un = [0, 0.69444, 0, 0, 0.47222];
+    tt = [0, 0.69444, 0, 0, 0.66667];
+    Js = [0, 0.69444, 0, 0, 0.59722];
+    jn = [0, 0.69444, 0, 0, 0.54167];
+    Xn = [0, 0.69444, 0, 0, 0.70834];
+    Hs = [0.25, 0.75, 0, 0, 0.28889];
+    Kn = [0, 0.69444, 0, 0, 0.51667];
+    Gs = [0, 0.44444, 0, 0, 0.44445];
+    Ws = [0.19444, 0.44444, 0, 0, 0.51667];
+    Zs = [0, 0.44444, 0, 0, 0.38333];
+    Us = [0, 0.44444, 0, 0, 0.51667];
+    js = [0, 0.69444, 0, 0, 0.83334];
+    Xs = [0.35001, 0.85, 0, 0, 0.45834];
+    Ks = [0.35001, 0.85, 0, 0, 0.57778];
+    Ys = [0.35001, 0.85, 0, 0, 0.41667];
+    Qs = [0.35001, 0.85, 0, 0, 0.58334];
+    Li = [0, 0.72222, 0, 0, 0.55556];
+    e0 = [1e-5, 0.6, 0, 0, 0.66667];
+    t0 = [1e-5, 0.6, 0, 0, 0.77778];
+    r0 = [0.25001, 0.75, 0, 0, 0.94445];
+    i0 = [0.306, 0.805, 0.19445, 0, 0.47222];
+    n0 = [0.30612, 0.805, 0.19445, 0, 0.47222];
+    tr2 = [0.25001, 0.75, 0, 0, 0.83334];
+    rr = [0.35001, 0.85, 0, 0, 0.47222];
+    Yn = [0.25001, 0.75, 0, 0, 1.11111];
+    o0 = [0.65002, 1.15, 0, 0, 0.59722];
+    a0 = [0.65002, 1.15, 0, 0, 0.81111];
+    s0 = [0.65002, 1.15, 0, 0, 0.47222];
+    l0 = [0.65002, 1.15, 0, 0, 0.66667];
+    Bi = [0, 0.75, 0, 0, 1];
+    c0 = [0.55001, 1.05, 0, 0, 1.27778];
+    m0 = [0.862, 1.36, 0.44445, 0, 0.55556];
+    u0 = [0.86225, 1.36, 0.44445, 0, 0.55556];
+    ir = [0.55001, 1.05, 0, 0, 1.11111];
+    Ti = [0.65002, 1.15, 0, 0, 0.52778];
+    h0 = [0.65002, 1.15, 0, 0, 0.61111];
+    Qn = [0.55001, 1.05, 0, 0, 1.51112];
+    d0 = [0.95003, 1.45, 0, 0, 0.73611];
+    p0 = [0.95003, 1.45, 0, 0, 1.04445];
+    f0 = [0.95003, 1.45, 0, 0, 0.52778];
+    Di = [0.95003, 1.45, 0, 0, 0.75];
+    zi = [0, 0.75, 0, 0, 1.44445];
+    $i = [0.95003, 1.45, 0, 0, 0.58334];
+    g0 = [1.25003, 1.75, 0, 0, 0.79167];
+    y0 = [1.25003, 1.75, 0, 0, 1.27778];
+    b0 = [1.25003, 1.75, 0, 0, 0.58334];
+    Ei = [1.25003, 1.75, 0, 0, 0.80556];
+    Ri = [0, 0.825, 0, 0, 1.8889];
+    Fi = [1.25003, 1.75, 0, 0, 0.63889];
+    Pi = [0.64502, 1.155, 0, 0, 0.875];
+    x0 = [1e-5, 0.6, 0, 0, 0.875];
+    eo = [-99e-5, 0.601, 0, 0, 0.66667];
+    Oi = [0.64502, 1.155, 0, 0, 0.66667];
+    v0 = [1e-5, 0.9, 0, 0, 0.88889];
+    S0 = [0.65002, 1.15, 0, 0, 0.88889];
+    w0 = [0.90001, 0, 0, 0, 0.88889];
+    M0 = [-499e-5, 0.605, 0, 0, 1.05556];
+    Ii = [0, 0.12, 0, 0, 0.45];
+    _ = [0, 0.61111, 0, 0, 0.525];
+    De = [0.08333, 0.69444, 0, 0, 0.525];
+    A0 = [-0.08056, 0.53055, 0, 0, 0.525];
+    k0 = [-0.05556, 0.55556, 0, 0, 0.525];
+    pe = [0, 0.43056, 0, 0, 0.525];
+    zr = [0.22222, 0.43056, 0, 0, 0.525];
+    _0 = [0, 0, 0, 0, 0.525];
+    C0 = { "AMS-Regular": { 32: N, 65: Me, 66: Bt, 67: Me, 68: Me, 69: Bt, 70: Qr, 71: Sn, 72: Sn, 73: [0, 0.68889, 0, 0, 0.38889], 74: [0.16667, 0.68889, 0, 0, 0.5], 75: Sn, 76: Bt, 77: [0, 0.68889, 0, 0, 0.94445], 78: Me, 79: Oo, 80: Qr, 81: Oo, 82: Me, 83: vr, 84: Bt, 85: Me, 86: Me, 87: [0, 0.68889, 0, 0, 1], 88: Me, 89: Me, 90: Bt, 107: vr, 160: N, 165: [0, 0.675, 0.025, 0, 0.75], 174: [0.15559, 0.69224, 0, 0, 0.94666], 240: vr, 295: ei, 710: Io, 732: qo, 770: Io, 771: qo, 989: lt, 1008: sa, 8245: [0, 0.54986, 0, 0, 0.275], 8463: ei, 8487: Me, 8498: vr, 8502: Bt, 8503: [0, 0.68889, 0, 0, 0.44445], 8504: Bt, 8513: [0, 0.68889, 0, 0, 0.63889], 8592: wn, 8594: wn, 8602: de, 8603: de, 8606: ti, 8608: ti, 8610: No, 8611: No, 8619: Vo, 8620: Vo, 8621: [-0.13313, 0.37788, 0, 0, 1.38889], 8622: de, 8624: ri, 8625: ri, 8630: Mn, 8631: Mn, 8634: st, 8635: st, 8638: ii, 8639: ii, 8642: ii, 8643: ii, 8644: ni, 8646: ni, 8647: ni, 8648: Jo, 8649: ni, 8650: Jo, 8651: ti, 8652: ti, 8653: de, 8654: de, 8655: de, 8666: Ho, 8667: Ho, 8669: [-0.13313, 0.37788, 0, 0, 1], 8672: Go, 8674: Go, 8705: [0, 0.825, 0, 0, 0.5], 8708: vr, 8709: lt, 8717: [0, 0.43056, 0, 0, 0.42917], 8722: wn, 8724: [0.08198, 0.69224, 0, 0, 0.77778], 8726: lt, 8733: ai, 8736: Sr, 8737: Sr, 8738: [0.03517, 0.52239, 0, 0, 0.72222], 8739: oa, 8740: [0.25142, 0.74111, 0, 0, 0.27778], 8741: aa, 8742: [0.25142, 0.74111, 0, 0, 0.5], 8756: An, 8757: An, 8764: oi, 8765: [-0.13313, 0.37788, 0, 0, 0.77778], 8769: oi, 8770: Si, 8774: Be, 8776: as, 8778: lt, 8782: Wo, 8783: Wo, 8785: st, 8786: st, 8787: st, 8790: ai, 8791: wr, 8796: [0.08198, 0.91667, 0, 0, 0.77778], 8806: Zt, 8807: Zt, 8808: qe, 8809: qe, 8812: [0.25583, 0.75583, 0, 0, 0.5], 8814: Ut, 8815: Ut, 8816: Be, 8817: Be, 8818: wr, 8819: wr, 8822: Zo, 8823: Zo, 8828: Ne, 8829: Ne, 8830: wr, 8831: wr, 8832: Ut, 8833: Ut, 8840: Be, 8841: Be, 8842: ge, 8843: ge, 8847: ct, 8848: ct, 8858: st, 8859: st, 8861: st, 8862: jt, 8863: jt, 8864: jt, 8865: jt, 8872: [0, 0.69224, 0, 0, 0.61111], 8873: Sr, 8874: [0, 0.69224, 0, 0, 0.88889], 8876: Qr, 8877: Qr, 8878: Me, 8879: Me, 8882: ct, 8883: ct, 8884: Ne, 8885: Ne, 8888: [0, 0.54986, 0, 0, 1.11111], 8890: Ua, 8891: Uo, 8892: Uo, 8901: [0, 0.54986, 0, 0, 0.27778], 8903: lt, 8905: lt, 8906: lt, 8907: ai, 8908: ai, 8909: [-0.03598, 0.46402, 0, 0, 0.77778], 8910: jo, 8911: jo, 8912: ct, 8913: ct, 8914: Xo, 8915: Xo, 8916: An, 8918: mt, 8919: mt, 8920: Ko, 8921: Ko, 8922: Yo, 8923: Yo, 8926: Ne, 8927: Ne, 8928: Be, 8929: Be, 8934: si, 8935: si, 8936: si, 8937: si, 8938: Ut, 8939: Ut, 8940: Be, 8941: Be, 8994: Qo, 8995: Qo, 9416: [0.15559, 0.69224, 0, 0, 0.90222], 9484: ri, 9488: ri, 9492: ea, 9496: ea, 9585: [0.19444, 0.68889, 0, 0, 0.88889], 9586: [0.19444, 0.74111, 0, 0, 0.88889], 9632: jt, 9633: jt, 9650: li2, 9651: li2, 9654: ct, 9660: li2, 9661: li2, 9664: ct, 9674: ra, 9733: [0.19444, 0.69224, 0, 0, 0.94445], 10003: ta, 10016: ta, 10731: ra, 10846: [0.19444, 0.75583, 0, 0, 0.61111], 10877: Ne, 10878: Ne, 10885: Zt, 10886: Zt, 10887: ge, 10888: ge, 10889: Xt, 10890: Xt, 10891: ia, 10892: ia, 10901: Ne, 10902: Ne, 10933: qe, 10934: qe, 10935: Xt, 10936: Xt, 10937: Xt, 10938: Xt, 10949: Zt, 10950: Zt, 10955: na, 10956: na, 57350: oa, 57351: aa, 57352: lt, 57353: sa, 57356: qe, 57357: qe, 57358: la, 57359: Be, 57360: Be, 57361: la, 57366: qe, 57367: qe, 57368: qe, 57369: qe, 57370: ge, 57371: ge }, "Caligraphic-Regular": { 32: N, 65: [0, 0.68333, 0, 0.19445, 0.79847], 66: [0, 0.68333, 0.03041, 0.13889, 0.65681], 67: [0, 0.68333, 0.05834, 0.13889, 0.52653], 68: [0, 0.68333, 0.02778, 0.08334, 0.77139], 69: [0, 0.68333, 0.08944, 0.11111, 0.52778], 70: [0, 0.68333, 0.09931, 0.11111, 0.71875], 71: [0.09722, 0.68333, 0.0593, 0.11111, 0.59487], 72: [0, 0.68333, 965e-5, 0.11111, 0.84452], 73: [0, 0.68333, 0.07382, 0, 0.54452], 74: [0.09722, 0.68333, 0.18472, 0.16667, 0.67778], 75: [0, 0.68333, 0.01445, 0.05556, 0.76195], 76: [0, 0.68333, 0, 0.13889, 0.68972], 77: [0, 0.68333, 0, 0.13889, 1.2009], 78: [0, 0.68333, 0.14736, 0.08334, 0.82049], 79: [0, 0.68333, 0.02778, 0.11111, 0.79611], 80: [0, 0.68333, 0.08222, 0.08334, 0.69556], 81: [0.09722, 0.68333, 0, 0.11111, 0.81667], 82: [0, 0.68333, 0, 0.08334, 0.8475], 83: [0, 0.68333, 0.075, 0.13889, 0.60556], 84: [0, 0.68333, 0.25417, 0, 0.54464], 85: [0, 0.68333, 0.09931, 0.08334, 0.62583], 86: [0, 0.68333, 0.08222, 0, 0.61278], 87: [0, 0.68333, 0.08222, 0.08334, 0.98778], 88: [0, 0.68333, 0.14643, 0.13889, 0.7133], 89: [0.09722, 0.68333, 0.08222, 0.08334, 0.66834], 90: [0, 0.68333, 0.07944, 0.13889, 0.72473], 160: N }, "Fraktur-Regular": { 32: N, 33: [0, 0.69141, 0, 0, 0.29574], 34: _n, 38: [0, 0.69141, 0, 0, 0.73786], 39: [0, 0.69141, 0, 0, 0.21201], 40: ca, 41: ca, 42: [0, 0.62119, 0, 0, 0.27764], 43: ma, 44: ua, 45: ma, 46: ua, 47: [0.24982, 0.74947, 0, 0, 0.50181], 48: kn, 49: kn, 50: kn, 51: Mr, 52: Mr, 53: Mr, 54: ha, 55: Mr, 56: ha, 57: Mr, 58: [0, 0.47534, 0, 0, 0.21606], 59: [0.12604, 0.47534, 0, 0, 0.21606], 61: [-0.13099, 0.36866, 0, 0, 0.75623], 63: [0, 0.69141, 0, 0, 0.36245], 65: [0, 0.69141, 0, 0, 0.7176], 66: [0, 0.69141, 0, 0, 0.88397], 67: [0, 0.69141, 0, 0, 0.61254], 68: [0, 0.69141, 0, 0, 0.83158], 69: [0, 0.69141, 0, 0, 0.66278], 70: [0.12604, 0.69141, 0, 0, 0.61119], 71: [0, 0.69141, 0, 0, 0.78539], 72: [0.06302, 0.69141, 0, 0, 0.7203], 73: [0, 0.69141, 0, 0, 0.55448], 74: [0.12604, 0.69141, 0, 0, 0.55231], 75: [0, 0.69141, 0, 0, 0.66845], 76: [0, 0.69141, 0, 0, 0.66602], 77: [0, 0.69141, 0, 0, 1.04953], 78: [0, 0.69141, 0, 0, 0.83212], 79: [0, 0.69141, 0, 0, 0.82699], 80: [0.18906, 0.69141, 0, 0, 0.82753], 81: [0.03781, 0.69141, 0, 0, 0.82699], 82: [0, 0.69141, 0, 0, 0.82807], 83: [0, 0.69141, 0, 0, 0.82861], 84: [0, 0.69141, 0, 0, 0.66899], 85: [0, 0.69141, 0, 0, 0.64576], 86: [0, 0.69141, 0, 0, 0.83131], 87: [0, 0.69141, 0, 0, 1.04602], 88: [0, 0.69141, 0, 0, 0.71922], 89: [0.18906, 0.69141, 0, 0, 0.83293], 90: [0.12604, 0.69141, 0, 0, 0.60201], 91: da, 93: da, 94: [0, 0.69141, 0, 0, 0.49965], 97: [0, 0.47534, 0, 0, 0.50046], 98: [0, 0.69141, 0, 0, 0.51315], 99: [0, 0.47534, 0, 0, 0.38946], 100: [0, 0.62119, 0, 0, 0.49857], 101: [0, 0.47534, 0, 0, 0.40053], 102: [0.18906, 0.69141, 0, 0, 0.32626], 103: [0.18906, 0.47534, 0, 0, 0.5037], 104: [0.18906, 0.69141, 0, 0, 0.52126], 105: [0, 0.69141, 0, 0, 0.27899], 106: [0, 0.69141, 0, 0, 0.28088], 107: [0, 0.69141, 0, 0, 0.38946], 108: [0, 0.69141, 0, 0, 0.27953], 109: [0, 0.47534, 0, 0, 0.76676], 110: [0, 0.47534, 0, 0, 0.52666], 111: [0, 0.47534, 0, 0, 0.48885], 112: [0.18906, 0.52396, 0, 0, 0.50046], 113: [0.18906, 0.47534, 0, 0, 0.48912], 114: [0, 0.47534, 0, 0, 0.38919], 115: [0, 0.47534, 0, 0, 0.44266], 116: [0, 0.62119, 0, 0, 0.33301], 117: [0, 0.47534, 0, 0, 0.5172], 118: [0, 0.52396, 0, 0, 0.5118], 119: [0, 0.52396, 0, 0, 0.77351], 120: [0.18906, 0.47534, 0, 0, 0.38865], 121: [0.18906, 0.47534, 0, 0, 0.49884], 122: [0.18906, 0.47534, 0, 0, 0.39054], 160: N, 8216: _n, 8217: _n, 58112: [0, 0.62119, 0, 0, 0.49749], 58113: [0, 0.62119, 0, 0, 0.4983], 58114: [0.18906, 0.69141, 0, 0, 0.33328], 58115: [0.18906, 0.69141, 0, 0, 0.32923], 58116: [0.18906, 0.47534, 0, 0, 0.50343], 58117: [0, 0.69141, 0, 0, 0.33301], 58118: [0, 0.62119, 0, 0, 0.33409], 58119: [0, 0.47534, 0, 0, 0.50073] }, "Main-Bold": { 32: N, 33: [0, 0.69444, 0, 0, 0.35], 34: Bn, 35: [0.19444, 0.69444, 0, 0, 0.95833], 36: Ma, 37: [0.05556, 0.75, 0, 0, 0.95833], 38: mi, 39: Yt, 40: ci, 41: ci, 42: [0, 0.75, 0, 0, 0.575], 43: Te, 44: [0.19444, 0.15556, 0, 0, 0.31944], 45: Zs, 46: [0, 0.15556, 0, 0, 0.31944], 47: ut, 48: Ae, 49: Ae, 50: Ae, 51: Ae, 52: Ae, 53: Ae, 54: Ae, 55: Ae, 56: Ae, 57: Ae, 58: ga, 59: [0.19444, 0.44444, 0, 0, 0.31944], 60: Kt, 61: _a7, 62: Kt, 63: [0, 0.69444, 0, 0, 0.54305], 64: mi, 65: Cn, 66: [0, 0.68611, 0, 0, 0.81805], 67: di, 68: [0, 0.68611, 0, 0, 0.88194], 69: ds, 70: [0, 0.68611, 0, 0, 0.72361], 71: [0, 0.68611, 0, 0, 0.90416], 72: ui, 73: [0, 0.68611, 0, 0, 0.43611], 74: [0, 0.68611, 0, 0, 0.59444], 75: [0, 0.68611, 0, 0, 0.90138], 76: ba, 77: [0, 0.68611, 0, 0, 1.09166], 78: ui, 79: [0, 0.68611, 0, 0, 0.86388], 80: [0, 0.68611, 0, 0, 0.78611], 81: [0.19444, 0.68611, 0, 0, 0.86388], 82: [0, 0.68611, 0, 0, 0.8625], 83: [0, 0.68611, 0, 0, 0.63889], 84: [0, 0.68611, 0, 0, 0.8], 85: [0, 0.68611, 0, 0, 0.88472], 86: [0, 0.68611, 0.01597, 0, 0.86944], 87: [0, 0.68611, 0.01597, 0, 1.18888], 88: Cn, 89: [0, 0.68611, 0.02875, 0, 0.86944], 90: [0, 0.68611, 0, 0, 0.70277], 91: hi, 92: ut, 93: hi, 94: ht, 95: [0.31, 0.13444, 0.03194, 0, 0.575], 97: [0, 0.44444, 0, 0, 0.55902], 98: Tt, 99: fa, 100: Tt, 101: [0, 0.44444, 0, 0, 0.52708], 102: [0, 0.69444, 0.10903, 0, 0.35139], 103: [0.19444, 0.44444, 0.01597, 0, 0.575], 104: Tt, 105: Yt, 106: [0.19444, 0.69444, 0, 0, 0.35139], 107: [0, 0.69444, 0, 0, 0.60694], 108: Yt, 109: [0, 0.44444, 0, 0, 0.95833], 110: pa, 111: _i, 112: [0.19444, 0.44444, 0, 0, 0.63889], 113: [0.19444, 0.44444, 0, 0, 0.60694], 114: [0, 0.44444, 0, 0, 0.47361], 115: [0, 0.44444, 0, 0, 0.45361], 116: [0, 0.63492, 0, 0, 0.44722], 117: pa, 118: [0, 0.44444, 0.01597, 0, 0.60694], 119: [0, 0.44444, 0.01597, 0, 0.83055], 120: [0, 0.44444, 0, 0, 0.60694], 121: [0.19444, 0.44444, 0.01597, 0, 0.60694], 122: fa, 123: ut, 124: hi, 125: ut, 126: [0.35, 0.34444, 0, 0, 0.575], 160: N, 163: [0, 0.69444, 0, 0, 0.86853], 168: ht, 172: [0, 0.44444, 0, 0, 0.76666], 176: ya, 177: Te, 184: [0.17014, 0, 0, 0, 0.51111], 198: [0, 0.68611, 0, 0, 1.04166], 215: Te, 216: [0.04861, 0.73472, 0, 0, 0.89444], 223: Js, 230: [0, 0.44444, 0, 0, 0.83055], 247: Te, 248: [0.09722, 0.54167, 0, 0, 0.575], 305: ga, 338: [0, 0.68611, 0, 0, 1.16944], 339: ka, 567: [0.19444, 0.44444, 0, 0, 0.35139], 710: ht, 711: [0, 0.63194, 0, 0, 0.575], 713: [0, 0.59611, 0, 0, 0.575], 714: ht, 715: ht, 728: ht, 729: Yt, 730: ya, 732: ht, 733: ht, 915: ba, 916: Tn, 920: Ln, 923: fs, 926: ys, 928: ui, 931: di, 933: Ln, 934: di, 936: Ln, 937: di, 8211: [0, 0.44444, 0.03194, 0, 0.575], 8212: [0, 0.44444, 0.03194, 0, 1.14999], 8216: Yt, 8217: Yt, 8220: Bn, 8221: Bn, 8224: xa, 8225: xa, 8242: [0, 0.55556, 0, 0, 0.34444], 8407: [0, 0.72444, 0.15486, 0, 0.575], 8463: ps, 8465: va, 8467: [0, 0.69444, 0, 0, 0.47361], 8472: [0.19444, 0.44444, 0, 0, 0.74027], 8476: va, 8501: $n, 8592: Ve, 8593: Sa, 8594: Ve, 8595: Sa, 8596: Ve, 8597: ut, 8598: Ar, 8599: Ar, 8600: Ar, 8601: Ar, 8636: Ve, 8637: Ve, 8640: Ve, 8641: Ve, 8656: Ve, 8657: wa, 8658: Ve, 8659: wa, 8660: Ve, 8661: [0.25, 0.75, 0, 0, 0.70277], 8704: Tt, 8706: [0, 0.69444, 0.06389, 0, 0.62847], 8707: Tt, 8709: Ma, 8711: Tn, 8712: Aa, 8715: Aa, 8722: Te, 8723: Te, 8725: ut, 8726: ut, 8727: pi, 8728: Dn, 8729: Dn, 8730: [0.18, 0.82, 0, 0, 0.95833], 8733: ka, 8734: [0, 0.44444, 0, 0, 1.14999], 8736: Sr, 8739: hi, 8741: ut, 8743: Dt, 8744: Dt, 8745: Dt, 8746: Dt, 8747: [0.19444, 0.69444, 0.12778, 0, 0.56875], 8764: _a7, 8768: [0.19444, 0.69444, 0, 0, 0.31944], 8771: zn, 8776: [0.02444, 0.52444, 0, 0, 0.89444], 8781: zn, 8801: zn, 8804: dt2, 8805: dt2, 8810: Ca, 8811: Ca, 8826: Kt, 8827: Kt, 8834: Kt, 8835: Kt, 8838: dt2, 8839: dt2, 8846: Dt, 8849: dt2, 8850: dt2, 8851: Dt, 8852: Dt, 8853: Te, 8854: Te, 8855: Te, 8856: Te, 8857: Te, 8866: $n, 8867: $n, 8868: mi, 8869: mi, 8900: Dn, 8901: [-0.02639, 0.47361, 0, 0, 0.31944], 8902: pi, 8968: fi, 8969: fi, 8970: fi, 8971: fi, 8994: La, 8995: La, 9651: Ba, 9657: pi, 9661: Ba, 9667: pi, 9711: Ar, 9824: gi, 9825: gi, 9826: gi, 9827: gi, 9837: [0, 0.75, 0, 0, 0.44722], 9838: Ta, 9839: Ta, 10216: ci, 10217: ci, 10815: ui, 10927: dt2, 10928: dt2, 57376: hs }, "Main-BoldItalic": { 32: N, 33: [0, 0.69444, 0.11417, 0, 0.38611], 34: Pa, 35: [0.19444, 0.69444, 0.06833, 0, 0.94444], 37: [0.05556, 0.75, 0.12861, 0, 0.94444], 38: [0, 0.69444, 0.08528, 0, 0.88555], 39: yi, 40: [0.25, 0.75, 0.15806, 0, 0.47333], 41: [0.25, 0.75, 0.03306, 0, 0.47333], 42: [0, 0.75, 0.14333, 0, 0.59111], 43: [0.10333, 0.60333, 0.03306, 0, 0.88555], 44: [0.19444, 0.14722, 0, 0, 0.35555], 45: [0, 0.44444, 0.02611, 0, 0.41444], 46: [0, 0.14722, 0, 0, 0.35555], 47: [0.25, 0.75, 0.15806, 0, 0.59111], 48: pt, 49: pt, 50: pt, 51: pt, 52: Da, 53: pt, 54: pt, 55: Da, 56: pt, 57: pt, 58: [0, 0.44444, 0.06695, 0, 0.35555], 59: [0.19444, 0.44444, 0.06695, 0, 0.35555], 61: [-0.10889, 0.39111, 0.06833, 0, 0.88555], 63: Rn, 64: [0, 0.69444, 0.09208, 0, 0.88555], 65: [0, 0.68611, 0, 0, 0.86555], 66: [0, 0.68611, 0.0992, 0, 0.81666], 67: [0, 0.68611, 0.14208, 0, 0.82666], 68: [0, 0.68611, 0.09062, 0, 0.87555], 69: [0, 0.68611, 0.11431, 0, 0.75666], 70: [0, 0.68611, 0.12903, 0, 0.72722], 71: [0, 0.68611, 0.07347, 0, 0.89527], 72: En, 73: [0, 0.68611, 0.15681, 0, 0.47166], 74: [0, 0.68611, 0.145, 0, 0.61055], 75: [0, 0.68611, 0.14208, 0, 0.89499], 76: [0, 0.68611, 0, 0, 0.69777], 77: [0, 0.68611, 0.17208, 0, 1.07277], 78: En, 79: [0, 0.68611, 0.09062, 0, 0.85499], 80: [0, 0.68611, 0.0992, 0, 0.78721], 81: [0.19444, 0.68611, 0.09062, 0, 0.85499], 82: [0, 0.68611, 0.02559, 0, 0.85944], 83: [0, 0.68611, 0.11264, 0, 0.64999], 84: [0, 0.68611, 0.12903, 0, 0.7961], 85: [0, 0.68611, 0.17208, 0, 0.88083], 86: [0, 0.68611, 0.18625, 0, 0.86555], 87: [0, 0.68611, 0.18625, 0, 1.15999], 88: [0, 0.68611, 0.15681, 0, 0.86555], 89: [0, 0.68611, 0.19803, 0, 0.86555], 90: [0, 0.68611, 0.14208, 0, 0.70888], 91: [0.25, 0.75, 0.1875, 0, 0.35611], 93: [0.25, 0.75, 0.09972, 0, 0.35611], 94: Ea, 95: [0.31, 0.13444, 0.09811, 0, 0.59111], 97: [0, 0.44444, 0.09426, 0, 0.59111], 98: [0, 0.69444, 0.07861, 0, 0.53222], 99: [0, 0.44444, 0.05222, 0, 0.53222], 100: [0, 0.69444, 0.10861, 0, 0.59111], 101: [0, 0.44444, 0.085, 0, 0.53222], 102: [0.19444, 0.69444, 0.21778, 0, 0.4], 103: za, 104: [0, 0.69444, 0.09426, 0, 0.59111], 105: [0, 0.69326, 0.11387, 0, 0.35555], 106: [0.19444, 0.69326, 0.1672, 0, 0.35555], 107: [0, 0.69444, 0.11111, 0, 0.53222], 108: [0, 0.69444, 0.10861, 0, 0.29666], 109: [0, 0.44444, 0.09426, 0, 0.94444], 110: [0, 0.44444, 0.09426, 0, 0.64999], 111: [0, 0.44444, 0.07861, 0, 0.59111], 112: [0.19444, 0.44444, 0.07861, 0, 0.59111], 113: za, 114: [0, 0.44444, 0.11111, 0, 0.50167], 115: [0, 0.44444, 0.08167, 0, 0.48694], 116: [0, 0.63492, 0.09639, 0, 0.385], 117: [0, 0.44444, 0.09426, 0, 0.62055], 118: [0, 0.44444, 0.11111, 0, 0.53222], 119: [0, 0.44444, 0.11111, 0, 0.76777], 120: [0, 0.44444, 0.12583, 0, 0.56055], 121: [0.19444, 0.44444, 0.105, 0, 0.56166], 122: [0, 0.44444, 0.13889, 0, 0.49055], 126: [0.35, 0.34444, 0.11472, 0, 0.59111], 160: N, 168: [0, 0.69444, 0.11473, 0, 0.59111], 176: Ra, 184: [0.17014, 0, 0, 0, 0.53222], 198: [0, 0.68611, 0.11431, 0, 1.02277], 216: [0.04861, 0.73472, 0.09062, 0, 0.88555], 223: [0.19444, 0.69444, 0.09736, 0, 0.665], 230: $a, 248: [0.09722, 0.54167, 0.09458, 0, 0.59111], 305: [0, 0.44444, 0.09426, 0, 0.35555], 338: [0, 0.68611, 0.11431, 0, 1.14054], 339: $a, 567: [0.19444, 0.44444, 0.04611, 0, 0.385], 710: Ea, 711: [0, 0.63194, 0.08271, 0, 0.59111], 713: [0, 0.59444, 0.10444, 0, 0.59111], 714: [0, 0.69444, 0.08528, 0, 0.59111], 715: [0, 0.69444, 0, 0, 0.59111], 728: [0, 0.69444, 0.10333, 0, 0.59111], 729: yi, 730: Ra, 732: Rn, 733: Rn, 915: [0, 0.68611, 0.12903, 0, 0.69777], 916: [0, 0.68611, 0, 0, 0.94444], 920: [0, 0.68611, 0.09062, 0, 0.88555], 923: [0, 0.68611, 0, 0, 0.80666], 926: [0, 0.68611, 0.15092, 0, 0.76777], 928: En, 931: [0, 0.68611, 0.11431, 0, 0.82666], 933: Fa, 934: [0, 0.68611, 0.05632, 0, 0.82666], 936: Fa, 937: [0, 0.68611, 0.0992, 0, 0.82666], 8211: [0, 0.44444, 0.09811, 0, 0.59111], 8212: [0, 0.44444, 0.09811, 0, 1.18221], 8216: yi, 8217: yi, 8220: [0, 0.69444, 0.16772, 0, 0.62055], 8221: Pa }, "Main-Italic": { 32: N, 33: bi, 34: Wa, 35: [0.19444, 0.69444, 0.06616, 0, 0.81777], 37: [0.05556, 0.75, 0.13639, 0, 0.81777], 38: [0, 0.69444, 0.09694, 0, 0.76666], 39: bi, 40: [0.25, 0.75, 0.16194, 0, 0.40889], 41: [0.25, 0.75, 0.03694, 0, 0.40889], 42: [0, 0.75, 0.14917, 0, 0.51111], 43: [0.05667, 0.56167, 0.03694, 0, 0.76666], 44: [0.19444, 0.10556, 0, 0, 0.30667], 45: [0, 0.43056, 0.02826, 0, 0.35778], 46: [0, 0.10556, 0, 0, 0.30667], 47: [0.25, 0.75, 0.16194, 0, 0.51111], 48: ft, 49: ft, 50: ft, 51: ft, 52: Oa, 53: ft, 54: ft, 55: Oa, 56: ft, 57: ft, 58: [0, 0.43056, 0.0582, 0, 0.30667], 59: [0.19444, 0.43056, 0.0582, 0, 0.30667], 61: [-0.13313, 0.36687, 0.06616, 0, 0.76666], 63: Ja, 64: [0, 0.69444, 0.09597, 0, 0.76666], 65: [0, 0.68333, 0, 0, 0.74333], 66: [0, 0.68333, 0.10257, 0, 0.70389], 67: [0, 0.68333, 0.14528, 0, 0.71555], 68: [0, 0.68333, 0.09403, 0, 0.755], 69: [0, 0.68333, 0.12028, 0, 0.67833], 70: [0, 0.68333, 0.13305, 0, 0.65277], 71: [0, 0.68333, 0.08722, 0, 0.77361], 72: xi, 73: [0, 0.68333, 0.15806, 0, 0.38555], 74: [0, 0.68333, 0.14028, 0, 0.525], 75: [0, 0.68333, 0.14528, 0, 0.76888], 76: [0, 0.68333, 0, 0, 0.62722], 77: [0, 0.68333, 0.16389, 0, 0.89666], 78: xi, 79: Ha, 80: [0, 0.68333, 0.10257, 0, 0.67833], 81: [0.19444, 0.68333, 0.09403, 0, 0.76666], 82: [0, 0.68333, 0.03868, 0, 0.72944], 83: [0, 0.68333, 0.11972, 0, 0.56222], 84: [0, 0.68333, 0.13305, 0, 0.71555], 85: xi, 86: [0, 0.68333, 0.18361, 0, 0.74333], 87: [0, 0.68333, 0.18361, 0, 0.99888], 88: [0, 0.68333, 0.15806, 0, 0.74333], 89: [0, 0.68333, 0.19383, 0, 0.74333], 90: [0, 0.68333, 0.14528, 0, 0.61333], 91: [0.25, 0.75, 0.1875, 0, 0.30667], 93: [0.25, 0.75, 0.10528, 0, 0.30667], 94: Na, 95: [0.31, 0.12056, 0.09208, 0, 0.51111], 97: [0, 0.43056, 0.07671, 0, 0.51111], 98: [0, 0.69444, 0.06312, 0, 0.46], 99: [0, 0.43056, 0.05653, 0, 0.46], 100: [0, 0.69444, 0.10333, 0, 0.51111], 101: [0, 0.43056, 0.07514, 0, 0.46], 102: [0.19444, 0.69444, 0.21194, 0, 0.30667], 103: Ia, 104: [0, 0.69444, 0.07671, 0, 0.51111], 105: [0, 0.65536, 0.1019, 0, 0.30667], 106: [0.19444, 0.65536, 0.14467, 0, 0.30667], 107: [0, 0.69444, 0.10764, 0, 0.46], 108: [0, 0.69444, 0.10333, 0, 0.25555], 109: [0, 0.43056, 0.07671, 0, 0.81777], 110: [0, 0.43056, 0.07671, 0, 0.56222], 111: [0, 0.43056, 0.06312, 0, 0.51111], 112: [0.19444, 0.43056, 0.06312, 0, 0.51111], 113: Ia, 114: [0, 0.43056, 0.10764, 0, 0.42166], 115: [0, 0.43056, 0.08208, 0, 0.40889], 116: [0, 0.61508, 0.09486, 0, 0.33222], 117: [0, 0.43056, 0.07671, 0, 0.53666], 118: [0, 0.43056, 0.10764, 0, 0.46], 119: [0, 0.43056, 0.10764, 0, 0.66444], 120: [0, 0.43056, 0.12042, 0, 0.46389], 121: [0.19444, 0.43056, 0.08847, 0, 0.48555], 122: [0, 0.43056, 0.12292, 0, 0.40889], 126: [0.35, 0.31786, 0.11585, 0, 0.51111], 160: N, 168: [0, 0.66786, 0.10474, 0, 0.51111], 176: Va, 184: [0.17014, 0, 0, 0, 0.46], 198: [0, 0.68333, 0.12028, 0, 0.88277], 216: [0.04861, 0.73194, 0.09403, 0, 0.76666], 223: [0.19444, 0.69444, 0.10514, 0, 0.53666], 230: qa, 248: [0.09722, 0.52778, 0.09194, 0, 0.51111], 338: [0, 0.68333, 0.12028, 0, 0.98499], 339: qa, 710: Na, 711: [0, 0.62847, 0.08295, 0, 0.51111], 713: [0, 0.56167, 0.10333, 0, 0.51111], 714: [0, 0.69444, 0.09694, 0, 0.51111], 715: [0, 0.69444, 0, 0, 0.51111], 728: [0, 0.69444, 0.10806, 0, 0.51111], 729: [0, 0.66786, 0.11752, 0, 0.30667], 730: Va, 732: [0, 0.66786, 0.11585, 0, 0.51111], 733: Ja, 915: [0, 0.68333, 0.13305, 0, 0.62722], 916: [0, 0.68333, 0, 0, 0.81777], 920: Ha, 923: [0, 0.68333, 0, 0, 0.69222], 926: [0, 0.68333, 0.15294, 0, 0.66444], 928: xi, 931: [0, 0.68333, 0.12028, 0, 0.71555], 933: Ga, 934: [0, 0.68333, 0.05986, 0, 0.71555], 936: Ga, 937: [0, 0.68333, 0.10257, 0, 0.71555], 8211: [0, 0.43056, 0.09208, 0, 0.51111], 8212: [0, 0.43056, 0.09208, 0, 1.02222], 8216: bi, 8217: bi, 8220: [0, 0.69444, 0.1685, 0, 0.51444], 8221: Wa, 8463: ei }, "Main-Regular": { 32: N, 33: Ye, 34: ie, 35: Os, 36: In, 37: Is, 38: zt, 39: Ye, 40: Qt, 41: Qt, 42: qs, 43: _e, 44: [0.19444, 0.10556, 0, 0, 0.27778], 45: [0, 0.43056, 0, 0, 0.33333], 46: [0, 0.10556, 0, 0, 0.27778], 47: Qe, 48: ke, 49: ke, 50: ke, 51: ke, 52: ke, 53: ke, 54: ke, 55: ke, 56: ke, 57: ke, 58: Xa, 59: [0.19444, 0.43056, 0, 0, 0.27778], 60: mt, 61: oi, 62: mt, 63: Un, 64: zt, 65: $t, 66: [0, 0.68333, 0, 0, 0.70834], 67: _r, 68: [0, 0.68333, 0, 0, 0.76389], 69: Za, 70: [0, 0.68333, 0, 0, 0.65278], 71: [0, 0.68333, 0, 0, 0.78472], 72: $t, 73: [0, 0.68333, 0, 0, 0.36111], 74: [0, 0.68333, 0, 0, 0.51389], 75: kr, 76: es, 77: [0, 0.68333, 0, 0, 0.91667], 78: $t, 79: kr, 80: Za, 81: [0.19444, 0.68333, 0, 0, 0.77778], 82: [0, 0.68333, 0, 0, 0.73611], 83: [0, 0.68333, 0, 0, 0.55556], 84: _r, 85: $t, 86: [0, 0.68333, 0.01389, 0, 0.75], 87: [0, 0.68333, 0.01389, 0, 1.02778], 88: $t, 89: [0, 0.68333, 0.025, 0, 0.75], 90: [0, 0.68333, 0, 0, 0.61111], 91: vi, 92: Qe, 93: vi, 94: ie, 95: [0.31, 0.12056, 0.02778, 0, 0.5], 97: Cr, 98: er, 99: Fn, 100: er, 101: Fn, 102: [0, 0.69444, 0.07778, 0, 0.30556], 103: [0.19444, 0.43056, 0.01389, 0, 0.5], 104: er, 105: Ka, 106: [0.19444, 0.66786, 0, 0, 0.30556], 107: [0, 0.69444, 0, 0, 0.52778], 108: Ye, 109: [0, 0.43056, 0, 0, 0.83334], 110: ja, 111: Cr, 112: Ua, 113: [0.19444, 0.43056, 0, 0, 0.52778], 114: [0, 0.43056, 0, 0, 0.39167], 115: [0, 0.43056, 0, 0, 0.39445], 116: [0, 0.61508, 0, 0, 0.38889], 117: ja, 118: [0, 0.43056, 0.01389, 0, 0.52778], 119: [0, 0.43056, 0.01389, 0, 0.72222], 120: [0, 0.43056, 0, 0, 0.52778], 121: [0.19444, 0.43056, 0.01389, 0, 0.52778], 122: Fn, 123: Qe, 124: vi, 125: Qe, 126: [0.35, 0.31786, 0, 0, 0.5], 160: N, 163: [0, 0.69444, 0, 0, 0.76909], 167: Pn, 168: Qa, 172: [0, 0.43056, 0, 0, 0.66667], 176: Ya, 177: _e, 182: On, 184: Wn, 198: [0, 0.68333, 0, 0, 0.90278], 215: _e, 216: [0.04861, 0.73194, 0, 0, 0.77778], 223: ie, 230: [0, 0.43056, 0, 0, 0.72222], 247: _e, 248: [0.09722, 0.52778, 0, 0, 0.5], 305: Xa, 338: [0, 0.68333, 0, 0, 1.01389], 339: os, 567: [0.19444, 0.43056, 0, 0, 0.30556], 710: ie, 711: [0, 0.62847, 0, 0, 0.5], 713: [0, 0.56778, 0, 0, 0.5], 714: ie, 715: ie, 728: ie, 729: Ka, 730: Ya, 732: Qa, 733: ie, 915: es, 916: is3, 920: kr, 923: [0, 0.68333, 0, 0, 0.69445], 926: [0, 0.68333, 0, 0, 0.66667], 928: $t, 931: _r, 933: kr, 934: _r, 936: kr, 937: _r, 8211: [0, 0.43056, 0.02778, 0, 0.5], 8212: [0, 0.43056, 0.02778, 0, 1], 8216: Ye, 8217: Ye, 8220: ie, 8221: ie, 8224: Pn, 8225: Pn, 8230: [0, 0.12, 0, 0, 1.172], 8242: [0, 0.55556, 0, 0, 0.275], 8407: [0, 0.71444, 0.15382, 0, 0.5], 8463: ei, 8465: Lr, 8467: [0, 0.69444, 0, 0.11111, 0.41667], 8472: [0.19444, 0.43056, 0, 0.11111, 0.63646], 8476: Lr, 8501: gt, 8592: de, 8593: ts, 8594: de, 8595: ts, 8596: de, 8597: Qe, 8598: Br, 8599: Br, 8600: Br, 8601: Br, 8614: [0.011, 0.511, 0, 0, 1], 8617: rs, 8618: rs, 8636: de, 8637: de, 8640: de, 8641: de, 8652: [0.011, 0.671, 0, 0, 1], 8656: de, 8657: On, 8658: de, 8659: On, 8660: de, 8661: [0.25, 0.75, 0, 0, 0.61111], 8704: er, 8706: [0, 0.69444, 0.05556, 0.08334, 0.5309], 8707: er, 8709: In, 8711: is3, 8712: ns, 8715: ns, 8722: _e, 8723: _e, 8725: Qe, 8726: Qe, 8727: wi, 8728: qn, 8729: qn, 8730: [0.2, 0.8, 0, 0, 0.83334], 8733: os, 8734: Mn, 8736: Sr, 8739: vi, 8741: Qe, 8743: Et, 8744: Et, 8745: Et, 8746: Et, 8747: [0.19444, 0.69444, 0.11111, 0, 0.41667], 8764: oi, 8768: [0.19444, 0.69444, 0, 0, 0.27778], 8771: Si, 8773: [-0.022, 0.589, 0, 0, 1], 8776: as, 8781: Si, 8784: [-0.133, 0.67, 0, 0, 0.778], 8801: Si, 8804: ge, 8805: ge, 8810: ss, 8811: ss, 8826: mt, 8827: mt, 8834: mt, 8835: mt, 8838: ge, 8839: ge, 8846: Et, 8849: ge, 8850: ge, 8851: Et, 8852: Et, 8853: _e, 8854: _e, 8855: _e, 8856: _e, 8857: _e, 8866: gt, 8867: gt, 8868: zt, 8869: zt, 8872: [0.249, 0.75, 0, 0, 0.867], 8900: qn, 8901: [-0.05555, 0.44445, 0, 0, 0.27778], 8902: wi, 8904: [5e-3, 0.505, 0, 0, 0.9], 8942: [0.03, 0.9, 0, 0, 0.278], 8943: [-0.19, 0.31, 0, 0, 1.172], 8945: [-0.1, 0.82, 0, 0, 1.282], 8968: Mi, 8969: Mi, 8970: Mi, 8971: Mi, 8994: ls, 8995: ls, 9136: Ai, 9137: Ai, 9651: cs, 9657: wi, 9661: cs, 9667: wi, 9711: Br, 9824: ki, 9825: ki, 9826: ki, 9827: ki, 9837: [0, 0.75, 0, 0, 0.38889], 9838: ms, 9839: ms, 10216: Qt, 10217: Qt, 10222: Ai, 10223: Ai, 10229: [0.011, 0.511, 0, 0, 1.609], 10230: us, 10231: [0.011, 0.511, 0, 0, 1.859], 10232: [0.024, 0.525, 0, 0, 1.609], 10233: [0.024, 0.525, 0, 0, 1.638], 10234: [0.024, 0.525, 0, 0, 1.858], 10236: us, 10815: $t, 10927: ge, 10928: ge, 57376: hs }, "Math-BoldItalic": { 32: N, 48: _i, 49: _i, 50: _i, 51: Tr, 52: Tr, 53: Tr, 54: Ae, 55: Tr, 56: Ae, 57: Tr, 65: Cn, 66: [0, 0.68611, 0.04835, 0, 0.8664], 67: [0, 0.68611, 0.06979, 0, 0.81694], 68: [0, 0.68611, 0.03194, 0, 0.93812], 69: [0, 0.68611, 0.05451, 0, 0.81007], 70: [0, 0.68611, 0.15972, 0, 0.68889], 71: [0, 0.68611, 0, 0, 0.88673], 72: gs, 73: [0, 0.68611, 0.07778, 0, 0.51111], 74: [0, 0.68611, 0.10069, 0, 0.63125], 75: [0, 0.68611, 0.06979, 0, 0.97118], 76: ds, 77: [0, 0.68611, 0.11424, 0, 1.14201], 78: [0, 0.68611, 0.11424, 0, 0.95034], 79: [0, 0.68611, 0.03194, 0, 0.83666], 80: [0, 0.68611, 0.15972, 0, 0.72309], 81: [0.19444, 0.68611, 0, 0, 0.86861], 82: [0, 0.68611, 421e-5, 0, 0.87235], 83: [0, 0.68611, 0.05382, 0, 0.69271], 84: [0, 0.68611, 0.15972, 0, 0.63663], 85: [0, 0.68611, 0.11424, 0, 0.80027], 86: [0, 0.68611, 0.25555, 0, 0.67778], 87: [0, 0.68611, 0.15972, 0, 1.09305], 88: [0, 0.68611, 0.07778, 0, 0.94722], 89: [0, 0.68611, 0.25555, 0, 0.67458], 90: [0, 0.68611, 0.06979, 0, 0.77257], 97: [0, 0.44444, 0, 0, 0.63287], 98: [0, 0.69444, 0, 0, 0.52083], 99: [0, 0.44444, 0, 0, 0.51342], 100: [0, 0.69444, 0, 0, 0.60972], 101: [0, 0.44444, 0, 0, 0.55361], 102: [0.19444, 0.69444, 0.11042, 0, 0.56806], 103: [0.19444, 0.44444, 0.03704, 0, 0.5449], 104: ps, 105: [0, 0.69326, 0, 0, 0.4048], 106: [0.19444, 0.69326, 0.0622, 0, 0.47083], 107: [0, 0.69444, 0.01852, 0, 0.6037], 108: [0, 0.69444, 88e-4, 0, 0.34815], 109: [0, 0.44444, 0, 0, 1.0324], 110: [0, 0.44444, 0, 0, 0.71296], 111: bs, 112: [0.19444, 0.44444, 0, 0, 0.60092], 113: [0.19444, 0.44444, 0.03704, 0, 0.54213], 114: [0, 0.44444, 0.03194, 0, 0.5287], 115: [0, 0.44444, 0, 0, 0.53125], 116: [0, 0.63492, 0, 0, 0.41528], 117: [0, 0.44444, 0, 0, 0.68102], 118: [0, 0.44444, 0.03704, 0, 0.56666], 119: [0, 0.44444, 0.02778, 0, 0.83148], 120: [0, 0.44444, 0, 0, 0.65903], 121: [0.19444, 0.44444, 0.03704, 0, 0.59028], 122: [0, 0.44444, 0.04213, 0, 0.55509], 160: N, 915: [0, 0.68611, 0.15972, 0, 0.65694], 916: Tn, 920: [0, 0.68611, 0.03194, 0, 0.86722], 923: fs, 926: [0, 0.68611, 0.07458, 0, 0.84125], 928: gs, 931: [0, 0.68611, 0.05451, 0, 0.88507], 933: [0, 0.68611, 0.15972, 0, 0.67083], 934: ys, 936: [0, 0.68611, 0.11653, 0, 0.71402], 937: [0, 0.68611, 0.04835, 0, 0.8789], 945: [0, 0.44444, 0, 0, 0.76064], 946: [0.19444, 0.69444, 0.03403, 0, 0.65972], 947: [0.19444, 0.44444, 0.06389, 0, 0.59003], 948: [0, 0.69444, 0.03819, 0, 0.52222], 949: [0, 0.44444, 0, 0, 0.52882], 950: [0.19444, 0.69444, 0.06215, 0, 0.50833], 951: [0.19444, 0.44444, 0.03704, 0, 0.6], 952: [0, 0.69444, 0.03194, 0, 0.5618], 953: [0, 0.44444, 0, 0, 0.41204], 954: [0, 0.44444, 0, 0, 0.66759], 955: [0, 0.69444, 0, 0, 0.67083], 956: [0.19444, 0.44444, 0, 0, 0.70787], 957: [0, 0.44444, 0.06898, 0, 0.57685], 958: [0.19444, 0.69444, 0.03021, 0, 0.50833], 959: bs, 960: [0, 0.44444, 0.03704, 0, 0.68241], 961: xs, 962: [0.09722, 0.44444, 0.07917, 0, 0.42361], 963: [0, 0.44444, 0.03704, 0, 0.68588], 964: [0, 0.44444, 0.13472, 0, 0.52083], 965: [0, 0.44444, 0.03704, 0, 0.63055], 966: [0.19444, 0.44444, 0, 0, 0.74722], 967: [0.19444, 0.44444, 0, 0, 0.71805], 968: [0.19444, 0.69444, 0.03704, 0, 0.75833], 969: [0, 0.44444, 0.03704, 0, 0.71782], 977: [0, 0.69444, 0, 0, 0.69155], 981: [0.19444, 0.69444, 0, 0, 0.7125], 982: [0, 0.44444, 0.03194, 0, 0.975], 1009: xs, 1013: [0, 0.44444, 0, 0, 0.48333], 57649: [0, 0.44444, 0, 0, 0.39352], 57911: [0.19444, 0.44444, 0, 0, 0.43889] }, "Math-Italic": { 32: N, 48: Cr, 49: Cr, 50: Cr, 51: Dr, 52: Dr, 53: Dr, 54: ke, 55: Dr, 56: ke, 57: Dr, 65: [0, 0.68333, 0, 0.13889, 0.75], 66: [0, 0.68333, 0.05017, 0.08334, 0.75851], 67: [0, 0.68333, 0.07153, 0.08334, 0.71472], 68: [0, 0.68333, 0.02778, 0.05556, 0.82792], 69: [0, 0.68333, 0.05764, 0.08334, 0.7382], 70: [0, 0.68333, 0.13889, 0.08334, 0.64306], 71: [0, 0.68333, 0, 0.08334, 0.78625], 72: Ss, 73: [0, 0.68333, 0.07847, 0.11111, 0.43958], 74: [0, 0.68333, 0.09618, 0.16667, 0.55451], 75: [0, 0.68333, 0.07153, 0.05556, 0.84931], 76: [0, 0.68333, 0, 0.02778, 0.68056], 77: [0, 0.68333, 0.10903, 0.08334, 0.97014], 78: [0, 0.68333, 0.10903, 0.08334, 0.80347], 79: vs, 80: [0, 0.68333, 0.13889, 0.08334, 0.64201], 81: [0.19444, 0.68333, 0, 0.08334, 0.79056], 82: [0, 0.68333, 773e-5, 0.08334, 0.75929], 83: [0, 0.68333, 0.05764, 0.08334, 0.6132], 84: [0, 0.68333, 0.13889, 0.08334, 0.58438], 85: [0, 0.68333, 0.10903, 0.02778, 0.68278], 86: [0, 0.68333, 0.22222, 0, 0.58333], 87: [0, 0.68333, 0.13889, 0, 0.94445], 88: [0, 0.68333, 0.07847, 0.08334, 0.82847], 89: [0, 0.68333, 0.22222, 0, 0.58056], 90: [0, 0.68333, 0.07153, 0.08334, 0.68264], 97: [0, 0.43056, 0, 0, 0.52859], 98: [0, 0.69444, 0, 0, 0.42917], 99: [0, 0.43056, 0, 0.05556, 0.43276], 100: [0, 0.69444, 0, 0.16667, 0.52049], 101: [0, 0.43056, 0, 0.05556, 0.46563], 102: [0.19444, 0.69444, 0.10764, 0.16667, 0.48959], 103: [0.19444, 0.43056, 0.03588, 0.02778, 0.47697], 104: [0, 0.69444, 0, 0, 0.57616], 105: [0, 0.65952, 0, 0, 0.34451], 106: [0.19444, 0.65952, 0.05724, 0, 0.41181], 107: [0, 0.69444, 0.03148, 0, 0.5206], 108: [0, 0.69444, 0.01968, 0.08334, 0.29838], 109: [0, 0.43056, 0, 0, 0.87801], 110: [0, 0.43056, 0, 0, 0.60023], 111: ws, 112: [0.19444, 0.43056, 0, 0.08334, 0.50313], 113: [0.19444, 0.43056, 0.03588, 0.08334, 0.44641], 114: [0, 0.43056, 0.02778, 0.05556, 0.45116], 115: [0, 0.43056, 0, 0.05556, 0.46875], 116: [0, 0.61508, 0, 0.08334, 0.36111], 117: [0, 0.43056, 0, 0.02778, 0.57246], 118: [0, 0.43056, 0.03588, 0.02778, 0.48472], 119: [0, 0.43056, 0.02691, 0.08334, 0.71592], 120: [0, 0.43056, 0, 0.02778, 0.57153], 121: [0.19444, 0.43056, 0.03588, 0.05556, 0.49028], 122: [0, 0.43056, 0.04398, 0.05556, 0.46505], 160: N, 915: [0, 0.68333, 0.13889, 0.08334, 0.61528], 916: [0, 0.68333, 0, 0.16667, 0.83334], 920: vs, 923: [0, 0.68333, 0, 0.16667, 0.69445], 926: [0, 0.68333, 0.07569, 0.08334, 0.74236], 928: Ss, 931: [0, 0.68333, 0.05764, 0.08334, 0.77986], 933: [0, 0.68333, 0.13889, 0.05556, 0.58333], 934: [0, 0.68333, 0, 0.08334, 0.66667], 936: [0, 0.68333, 0.11, 0.05556, 0.61222], 937: [0, 0.68333, 0.05017, 0.08334, 0.7724], 945: [0, 0.43056, 37e-4, 0.02778, 0.6397], 946: [0.19444, 0.69444, 0.05278, 0.08334, 0.56563], 947: [0.19444, 0.43056, 0.05556, 0, 0.51773], 948: [0, 0.69444, 0.03785, 0.05556, 0.44444], 949: [0, 0.43056, 0, 0.08334, 0.46632], 950: [0.19444, 0.69444, 0.07378, 0.08334, 0.4375], 951: [0.19444, 0.43056, 0.03588, 0.05556, 0.49653], 952: [0, 0.69444, 0.02778, 0.08334, 0.46944], 953: [0, 0.43056, 0, 0.05556, 0.35394], 954: [0, 0.43056, 0, 0, 0.57616], 955: [0, 0.69444, 0, 0, 0.58334], 956: [0.19444, 0.43056, 0, 0.02778, 0.60255], 957: [0, 0.43056, 0.06366, 0.02778, 0.49398], 958: [0.19444, 0.69444, 0.04601, 0.11111, 0.4375], 959: ws, 960: [0, 0.43056, 0.03588, 0, 0.57003], 961: Ms, 962: [0.09722, 0.43056, 0.07986, 0.08334, 0.36285], 963: [0, 0.43056, 0.03588, 0, 0.57141], 964: [0, 0.43056, 0.1132, 0.02778, 0.43715], 965: [0, 0.43056, 0.03588, 0.02778, 0.54028], 966: [0.19444, 0.43056, 0, 0.08334, 0.65417], 967: [0.19444, 0.43056, 0, 0.05556, 0.62569], 968: [0.19444, 0.69444, 0.03588, 0.11111, 0.65139], 969: [0, 0.43056, 0.03588, 0, 0.62245], 977: [0, 0.69444, 0, 0.08334, 0.59144], 981: [0.19444, 0.69444, 0, 0.08334, 0.59583], 982: [0, 0.43056, 0.02778, 0, 0.82813], 1009: Ms, 1013: [0, 0.43056, 0, 0.05556, 0.4059], 57649: [0, 0.43056, 0, 0.02778, 0.32246], 57911: [0.19444, 0.43056, 0, 0.08334, 0.38403] }, "SansSerif-Bold": { 32: N, 33: [0, 0.69444, 0, 0, 0.36667], 34: Hn, 35: [0.19444, 0.69444, 0, 0, 0.91667], 36: [0.05556, 0.75, 0, 0, 0.55], 37: [0.05556, 0.75, 0, 0, 1.02912], 38: [0, 0.69444, 0, 0, 0.83056], 39: Ci, 40: As, 41: As, 42: [0, 0.75, 0, 0, 0.55], 43: [0.11667, 0.61667, 0, 0, 0.85556], 44: [0.10556, 0.13056, 0, 0, 0.30556], 45: [0, 0.45833, 0, 0, 0.36667], 46: [0, 0.13056, 0, 0, 0.30556], 47: [0.25, 0.75, 0, 0, 0.55], 48: ce, 49: ce, 50: ce, 51: ce, 52: ce, 53: ce, 54: ce, 55: ce, 56: ce, 57: ce, 58: [0, 0.45833, 0, 0, 0.30556], 59: [0.10556, 0.45833, 0, 0, 0.30556], 61: [-0.09375, 0.40625, 0, 0, 0.85556], 63: ks, 64: et2, 65: et2, 66: et2, 67: Nn, 68: yt, 69: [0, 0.69444, 0, 0, 0.64167], 70: gt, 71: et2, 72: yt, 73: [0, 0.69444, 0, 0, 0.33056], 74: ks, 75: _s, 76: Ds, 77: [0, 0.69444, 0, 0, 0.97778], 78: yt, 79: yt, 80: Nn, 81: [0.10556, 0.69444, 0, 0, 0.79445], 82: Nn, 83: gt, 84: et2, 85: _s, 86: [0, 0.69444, 0.01528, 0, 0.73334], 87: [0, 0.69444, 0.01528, 0, 1.03889], 88: et2, 89: [0, 0.69444, 0.0275, 0, 0.73334], 90: zs, 91: Cs, 93: Cs, 94: ce, 95: [0.35, 0.10833, 0.03056, 0, 0.55], 97: [0, 0.45833, 0, 0, 0.525], 98: Vn, 99: [0, 0.45833, 0, 0, 0.48889], 100: Vn, 101: [0, 0.45833, 0, 0, 0.51111], 102: [0, 0.69444, 0.07639, 0, 0.33611], 103: [0.19444, 0.45833, 0.01528, 0, 0.55], 104: Vn, 105: Ls, 106: [0.19444, 0.69444, 0, 0, 0.28611], 107: [0, 0.69444, 0, 0, 0.53056], 108: Ls, 109: [0, 0.45833, 0, 0, 0.86667], 110: Ts, 111: [0, 0.45833, 0, 0, 0.55], 112: Bs, 113: Bs, 114: [0, 0.45833, 0.01528, 0, 0.37222], 115: [0, 0.45833, 0, 0, 0.42167], 116: [0, 0.58929, 0, 0, 0.40417], 117: Ts, 118: [0, 0.45833, 0.01528, 0, 0.5], 119: [0, 0.45833, 0.01528, 0, 0.74445], 120: [0, 0.45833, 0, 0, 0.5], 121: [0.19444, 0.45833, 0.01528, 0, 0.5], 122: [0, 0.45833, 0, 0, 0.47639], 126: [0.35, 0.34444, 0, 0, 0.55], 160: N, 168: ce, 176: et2, 180: ce, 184: [0.17014, 0, 0, 0, 0.48889], 305: [0, 0.45833, 0, 0, 0.25556], 567: [0.19444, 0.45833, 0, 0, 0.28611], 710: ce, 711: [0, 0.63542, 0, 0, 0.55], 713: [0, 0.63778, 0, 0, 0.55], 728: ce, 729: Ci, 730: et2, 732: ce, 733: ce, 915: Ds, 916: [0, 0.69444, 0, 0, 0.91667], 920: Jn, 923: zs, 926: et2, 928: yt, 931: yt, 933: Jn, 934: yt, 936: Jn, 937: yt, 8211: [0, 0.45833, 0.03056, 0, 0.55], 8212: [0, 0.45833, 0.03056, 0, 1.10001], 8216: Ci, 8217: Ci, 8220: Hn, 8221: Hn }, "SansSerif-Italic": { 32: N, 33: [0, 0.69444, 0.05733, 0, 0.31945], 34: Ps, 35: [0.19444, 0.69444, 0.05087, 0, 0.83334], 36: [0.05556, 0.75, 0.11156, 0, 0.5], 37: [0.05556, 0.75, 0.03126, 0, 0.83334], 38: [0, 0.69444, 0.03058, 0, 0.75834], 39: Zn, 40: [0.25, 0.75, 0.13164, 0, 0.38889], 41: [0.25, 0.75, 0.02536, 0, 0.38889], 42: [0, 0.75, 0.11775, 0, 0.5], 43: [0.08333, 0.58333, 0.02536, 0, 0.77778], 44: Ns, 45: [0, 0.44444, 0.01946, 0, 0.33333], 46: Vs, 47: [0.25, 0.75, 0.13164, 0, 0.5], 48: Je, 49: Je, 50: Je, 51: Je, 52: Je, 53: Je, 54: Je, 55: Je, 56: Je, 57: Je, 58: [0, 0.44444, 0.02502, 0, 0.27778], 59: [0.125, 0.44444, 0.02502, 0, 0.27778], 61: [-0.13, 0.37, 0.05087, 0, 0.77778], 63: [0, 0.69444, 0.11809, 0, 0.47222], 64: [0, 0.69444, 0.07555, 0, 0.66667], 65: tt, 66: [0, 0.69444, 0.08293, 0, 0.66667], 67: [0, 0.69444, 0.11983, 0, 0.63889], 68: [0, 0.69444, 0.07555, 0, 0.72223], 69: [0, 0.69444, 0.11983, 0, 0.59722], 70: [0, 0.69444, 0.13372, 0, 0.56945], 71: [0, 0.69444, 0.11983, 0, 0.66667], 72: Gn, 73: [0, 0.69444, 0.13372, 0, 0.27778], 74: [0, 0.69444, 0.08094, 0, 0.47222], 75: [0, 0.69444, 0.11983, 0, 0.69445], 76: jn, 77: [0, 0.69444, 0.08094, 0, 0.875], 78: Gn, 79: [0, 0.69444, 0.07555, 0, 0.73611], 80: [0, 0.69444, 0.08293, 0, 0.63889], 81: [0.125, 0.69444, 0.07555, 0, 0.73611], 82: [0, 0.69444, 0.08293, 0, 0.64584], 83: [0, 0.69444, 0.09205, 0, 0.55556], 84: [0, 0.69444, 0.13372, 0, 0.68056], 85: [0, 0.69444, 0.08094, 0, 0.6875], 86: [0, 0.69444, 0.1615, 0, 0.66667], 87: [0, 0.69444, 0.1615, 0, 0.94445], 88: [0, 0.69444, 0.13372, 0, 0.66667], 89: [0, 0.69444, 0.17261, 0, 0.66667], 90: [0, 0.69444, 0.11983, 0, 0.61111], 91: [0.25, 0.75, 0.15942, 0, 0.28889], 93: [0.25, 0.75, 0.08719, 0, 0.28889], 94: $s, 95: [0.35, 0.09444, 0.08616, 0, 0.5], 97: [0, 0.44444, 981e-5, 0, 0.48056], 98: [0, 0.69444, 0.03057, 0, 0.51667], 99: [0, 0.44444, 0.08336, 0, 0.44445], 100: [0, 0.69444, 0.09483, 0, 0.51667], 101: [0, 0.44444, 0.06778, 0, 0.44445], 102: [0, 0.69444, 0.21705, 0, 0.30556], 103: [0.19444, 0.44444, 0.10836, 0, 0.5], 104: [0, 0.69444, 0.01778, 0, 0.51667], 105: [0, 0.67937, 0.09718, 0, 0.23889], 106: [0.19444, 0.67937, 0.09162, 0, 0.26667], 107: [0, 0.69444, 0.08336, 0, 0.48889], 108: [0, 0.69444, 0.09483, 0, 0.23889], 109: [0, 0.44444, 0.01778, 0, 0.79445], 110: [0, 0.44444, 0.01778, 0, 0.51667], 111: [0, 0.44444, 0.06613, 0, 0.5], 112: [0.19444, 0.44444, 0.0389, 0, 0.51667], 113: [0.19444, 0.44444, 0.04169, 0, 0.51667], 114: [0, 0.44444, 0.10836, 0, 0.34167], 115: [0, 0.44444, 0.0778, 0, 0.38333], 116: [0, 0.57143, 0.07225, 0, 0.36111], 117: [0, 0.44444, 0.04169, 0, 0.51667], 118: [0, 0.44444, 0.10836, 0, 0.46111], 119: [0, 0.44444, 0.10836, 0, 0.68334], 120: [0, 0.44444, 0.09169, 0, 0.46111], 121: [0.19444, 0.44444, 0.10836, 0, 0.46111], 122: [0, 0.44444, 0.08752, 0, 0.43472], 126: [0.35, 0.32659, 0.08826, 0, 0.5], 160: N, 168: [0, 0.67937, 0.06385, 0, 0.5], 176: Es, 184: Wn, 305: [0, 0.44444, 0.04169, 0, 0.23889], 567: [0.19444, 0.44444, 0.04169, 0, 0.26667], 710: $s, 711: [0, 0.63194, 0.08432, 0, 0.5], 713: [0, 0.60889, 0.08776, 0, 0.5], 714: Rs, 715: ie, 728: [0, 0.69444, 0.09483, 0, 0.5], 729: [0, 0.67937, 0.07774, 0, 0.27778], 730: Es, 732: [0, 0.67659, 0.08826, 0, 0.5], 733: Rs, 915: [0, 0.69444, 0.13372, 0, 0.54167], 916: js, 920: [0, 0.69444, 0.07555, 0, 0.77778], 923: gt, 926: [0, 0.69444, 0.12816, 0, 0.66667], 928: Gn, 931: [0, 0.69444, 0.11983, 0, 0.72222], 933: Fs, 934: [0, 0.69444, 0.04603, 0, 0.72222], 936: Fs, 937: [0, 0.69444, 0.08293, 0, 0.72222], 8211: [0, 0.44444, 0.08616, 0, 0.5], 8212: [0, 0.44444, 0.08616, 0, 1], 8216: Zn, 8217: Zn, 8220: [0, 0.69444, 0.14205, 0, 0.5], 8221: Ps }, "SansSerif-Regular": { 32: N, 33: [0, 0.69444, 0, 0, 0.31945], 34: ie, 35: Os, 36: In, 37: Is, 38: [0, 0.69444, 0, 0, 0.75834], 39: Ye, 40: Qt, 41: Qt, 42: qs, 43: _e, 44: Ns, 45: [0, 0.44444, 0, 0, 0.33333], 46: Vs, 47: Qe, 48: He, 49: He, 50: He, 51: He, 52: He, 53: He, 54: He, 55: He, 56: He, 57: He, 58: [0, 0.44444, 0, 0, 0.27778], 59: [0.125, 0.44444, 0, 0, 0.27778], 61: [-0.13, 0.37, 0, 0, 0.77778], 63: Un, 64: tt, 65: tt, 66: tt, 67: Tt, 68: [0, 0.69444, 0, 0, 0.72223], 69: Js, 70: [0, 0.69444, 0, 0, 0.56945], 71: tt, 72: Xn, 73: Ye, 74: Un, 75: [0, 0.69444, 0, 0, 0.69445], 76: jn, 77: [0, 0.69444, 0, 0, 0.875], 78: Xn, 79: [0, 0.69444, 0, 0, 0.73611], 80: Tt, 81: [0.125, 0.69444, 0, 0, 0.73611], 82: [0, 0.69444, 0, 0, 0.64584], 83: er, 84: [0, 0.69444, 0, 0, 0.68056], 85: [0, 0.69444, 0, 0, 0.6875], 86: [0, 0.69444, 0.01389, 0, 0.66667], 87: [0, 0.69444, 0.01389, 0, 0.94445], 88: tt, 89: [0, 0.69444, 0.025, 0, 0.66667], 90: gt, 91: Hs, 93: Hs, 94: ie, 95: [0.35, 0.09444, 0.02778, 0, 0.5], 97: [0, 0.44444, 0, 0, 0.48056], 98: Kn, 99: Gs, 100: Kn, 101: Gs, 102: [0, 0.69444, 0.06944, 0, 0.30556], 103: [0.19444, 0.44444, 0.01389, 0, 0.5], 104: Kn, 105: [0, 0.67937, 0, 0, 0.23889], 106: [0.19444, 0.67937, 0, 0, 0.26667], 107: [0, 0.69444, 0, 0, 0.48889], 108: [0, 0.69444, 0, 0, 0.23889], 109: [0, 0.44444, 0, 0, 0.79445], 110: Us, 111: [0, 0.44444, 0, 0, 0.5], 112: Ws, 113: Ws, 114: [0, 0.44444, 0.01389, 0, 0.34167], 115: Zs, 116: [0, 0.57143, 0, 0, 0.36111], 117: Us, 118: [0, 0.44444, 0.01389, 0, 0.46111], 119: [0, 0.44444, 0.01389, 0, 0.68334], 120: [0, 0.44444, 0, 0, 0.46111], 121: [0.19444, 0.44444, 0.01389, 0, 0.46111], 122: [0, 0.44444, 0, 0, 0.43472], 126: [0.35, 0.32659, 0, 0, 0.5], 160: N, 168: [0, 0.67937, 0, 0, 0.5], 176: tt, 184: Wn, 305: [0, 0.44444, 0, 0, 0.23889], 567: [0.19444, 0.44444, 0, 0, 0.26667], 710: ie, 711: [0, 0.63194, 0, 0, 0.5], 713: [0, 0.60889, 0, 0, 0.5], 714: ie, 715: ie, 728: ie, 729: [0, 0.67937, 0, 0, 0.27778], 730: tt, 732: [0, 0.67659, 0, 0, 0.5], 733: ie, 915: jn, 916: js, 920: zt, 923: gt, 926: tt, 928: Xn, 931: Lr, 933: zt, 934: Lr, 936: zt, 937: Lr, 8211: [0, 0.44444, 0.02778, 0, 0.5], 8212: [0, 0.44444, 0.02778, 0, 1], 8216: Ye, 8217: Ye, 8220: ie, 8221: ie }, "Script-Regular": { 32: N, 65: [0, 0.7, 0.22925, 0, 0.80253], 66: [0, 0.7, 0.04087, 0, 0.90757], 67: [0, 0.7, 0.1689, 0, 0.66619], 68: [0, 0.7, 0.09371, 0, 0.77443], 69: [0, 0.7, 0.18583, 0, 0.56162], 70: [0, 0.7, 0.13634, 0, 0.89544], 71: [0, 0.7, 0.17322, 0, 0.60961], 72: [0, 0.7, 0.29694, 0, 0.96919], 73: [0, 0.7, 0.19189, 0, 0.80907], 74: [0.27778, 0.7, 0.19189, 0, 1.05159], 75: [0, 0.7, 0.31259, 0, 0.91364], 76: [0, 0.7, 0.19189, 0, 0.87373], 77: [0, 0.7, 0.15981, 0, 1.08031], 78: [0, 0.7, 0.3525, 0, 0.9015], 79: [0, 0.7, 0.08078, 0, 0.73787], 80: [0, 0.7, 0.08078, 0, 1.01262], 81: [0, 0.7, 0.03305, 0, 0.88282], 82: [0, 0.7, 0.06259, 0, 0.85], 83: [0, 0.7, 0.19189, 0, 0.86767], 84: [0, 0.7, 0.29087, 0, 0.74697], 85: [0, 0.7, 0.25815, 0, 0.79996], 86: [0, 0.7, 0.27523, 0, 0.62204], 87: [0, 0.7, 0.27523, 0, 0.80532], 88: [0, 0.7, 0.26006, 0, 0.94445], 89: [0, 0.7, 0.2939, 0, 0.70961], 90: [0, 0.7, 0.24037, 0, 0.8212], 160: N }, "Size1-Regular": { 32: N, 40: Xs, 41: Xs, 47: Ks, 91: Ys, 92: Ks, 93: Ys, 123: Qs, 125: Qs, 160: N, 710: Li, 732: Li, 770: Li, 771: Li, 8214: [-99e-5, 0.601, 0, 0, 0.77778], 8593: e0, 8595: e0, 8657: t0, 8659: t0, 8719: r0, 8720: r0, 8721: [0.25001, 0.75, 0, 0, 1.05556], 8730: [0.35001, 0.85, 0, 0, 1], 8739: [-599e-5, 0.606, 0, 0, 0.33333], 8741: [-599e-5, 0.606, 0, 0, 0.55556], 8747: n0, 8748: i0, 8749: i0, 8750: n0, 8896: tr2, 8897: tr2, 8898: tr2, 8899: tr2, 8968: rr, 8969: rr, 8970: rr, 8971: rr, 9168: eo, 10216: rr, 10217: rr, 10752: Yn, 10753: Yn, 10754: Yn, 10756: tr2, 10758: tr2 }, "Size2-Regular": { 32: N, 40: o0, 41: o0, 47: a0, 91: s0, 92: a0, 93: s0, 123: l0, 125: l0, 160: N, 710: Bi, 732: Bi, 770: Bi, 771: Bi, 8719: c0, 8720: c0, 8721: [0.55001, 1.05, 0, 0, 1.44445], 8730: [0.65002, 1.15, 0, 0, 1], 8747: u0, 8748: m0, 8749: m0, 8750: u0, 8896: ir, 8897: ir, 8898: ir, 8899: ir, 8968: Ti, 8969: Ti, 8970: Ti, 8971: Ti, 10216: h0, 10217: h0, 10752: Qn, 10753: Qn, 10754: Qn, 10756: ir, 10758: ir }, "Size3-Regular": { 32: N, 40: d0, 41: d0, 47: p0, 91: f0, 92: p0, 93: f0, 123: Di, 125: Di, 160: N, 710: zi, 732: zi, 770: zi, 771: zi, 8730: [0.95003, 1.45, 0, 0, 1], 8968: $i, 8969: $i, 8970: $i, 8971: $i, 10216: Di, 10217: Di }, "Size4-Regular": { 32: N, 40: g0, 41: g0, 47: y0, 91: b0, 92: y0, 93: b0, 123: Ei, 125: Ei, 160: N, 710: Ri, 732: Ri, 770: Ri, 771: Ri, 8730: [1.25003, 1.75, 0, 0, 1], 8968: Fi, 8969: Fi, 8970: Fi, 8971: Fi, 9115: Pi, 9116: x0, 9117: Pi, 9118: Pi, 9119: x0, 9120: Pi, 9121: Oi, 9122: eo, 9123: Oi, 9124: Oi, 9125: eo, 9126: Oi, 9127: v0, 9128: S0, 9129: w0, 9130: [0, 0.3, 0, 0, 0.88889], 9131: v0, 9132: S0, 9133: w0, 9143: [0.88502, 0.915, 0, 0, 1.05556], 10216: Ei, 10217: Ei, 57344: M0, 57345: M0, 57680: Ii, 57681: Ii, 57682: Ii, 57683: Ii }, "Typewriter-Regular": { 32: _0, 33: _, 34: _, 35: _, 36: De, 37: De, 38: _, 39: _, 40: De, 41: De, 42: [0, 0.52083, 0, 0, 0.525], 43: A0, 44: [0.13889, 0.125, 0, 0, 0.525], 45: A0, 46: [0, 0.125, 0, 0, 0.525], 47: De, 48: _, 49: _, 50: _, 51: _, 52: _, 53: _, 54: _, 55: _, 56: _, 57: _, 58: pe, 59: [0.13889, 0.43056, 0, 0, 0.525], 60: k0, 61: [-0.19549, 0.41562, 0, 0, 0.525], 62: k0, 63: _, 64: _, 65: _, 66: _, 67: _, 68: _, 69: _, 70: _, 71: _, 72: _, 73: _, 74: _, 75: _, 76: _, 77: _, 78: _, 79: _, 80: _, 81: [0.13889, 0.61111, 0, 0, 0.525], 82: _, 83: _, 84: _, 85: _, 86: _, 87: _, 88: _, 89: _, 90: _, 91: De, 92: De, 93: De, 94: _, 95: [0.09514, 0, 0, 0, 0.525], 96: _, 97: pe, 98: _, 99: pe, 100: _, 101: pe, 102: _, 103: zr, 104: _, 105: _, 106: [0.22222, 0.61111, 0, 0, 0.525], 107: _, 108: _, 109: pe, 110: pe, 111: pe, 112: zr, 113: zr, 114: pe, 115: pe, 116: [0, 0.55358, 0, 0, 0.525], 117: pe, 118: pe, 119: pe, 120: pe, 121: zr, 122: pe, 123: De, 124: De, 125: De, 126: _, 127: _, 160: _0, 176: _, 184: [0.19445, 0, 0, 0, 0.525], 305: pe, 567: zr, 711: [0, 0.56597, 0, 0, 0.525], 713: [0, 0.56555, 0, 0, 0.525], 714: _, 715: _, 728: _, 730: _, 770: _, 771: _, 776: _, 915: _, 916: _, 920: _, 923: _, 926: _, 928: _, 931: _, 933: _, 934: _, 936: _, 937: _, 8216: _, 8217: _, 8242: _, 9251: [0.11111, 0.21944, 0, 0, 0.525] } };
+    ql = /[\u3040-\u309F]|[\u30A0-\u30FF]|[\u4E00-\u9FAF]|[\uAC00-\uD7AF]/;
+    Ge = 10;
+    fe = 0.25;
+    B0 = 1.2;
+    Se = 0.431;
+    to = { slant: [0.25, 0.25, 0.25], space: [0, 0, 0], stretch: [0, 0, 0], shrink: [0, 0, 0], xHeight: [Se, Se, Se], quad: [1, 1.171, 1.472], extraSpace: [0, 0, 0], num1: [0.5, 0.732, 0.925], num2: [0.394, 0.384, 0.5], num3: [0.444, 0.471, 0.504], denom1: [0.686, 0.752, 1.025], denom2: [0.345, 0.344, 0.532], sup1: [0.413, 0.503, 0.504], sup2: [0.363, 0.431, 0.404], sup3: [0.289, 0.286, 0.294], sub1: [0.15, 0.143, 0.2], sub2: [0.247, 0.286, 0.4], supDrop: [0.386, 0.353, 0.494], subDrop: [0.05, 0.071, 0.1], delim1: [2.39, 1.7, 1.98], delim2: [1.01, 1.157, 1.42], axisHeight: [fe, fe, fe], defaultRuleThickness: [0.04, 0.049, 0.049], bigOpSpacing1: [0.111, 0.111, 0.111], bigOpSpacing2: [0.166, 0.166, 0.166], bigOpSpacing3: [0.2, 0.2, 0.2], bigOpSpacing4: [0.6, 0.611, 0.611], bigOpSpacing5: [0.1, 0.143, 0.143], sqrtRuleThickness: [0.04, 0.04, 0.04] };
+    $r = [0, 0.5, 0.7, 0.8, 0.9, 1, 1.2, 1.44, 1.728, 2.074, 2.488];
+    Er = 5;
+    L0 = { "\xA0": " ", "\u200B": " ", \u00C5: "A", \u00C7: "C", \u00D0: "D", \u00DE: "o", \u00E5: "a", \u00E7: "c", \u00F0: "d", \u00FE: "o", \u0410: "A", \u0411: "B", \u0412: "B", \u0413: "F", \u0414: "A", \u0415: "E", \u0416: "K", \u0417: "3", \u0418: "N", \u0419: "N", \u041A: "K", \u041B: "N", \u041C: "M", \u041D: "H", \u041E: "O", \u041F: "N", \u0420: "P", \u0421: "C", \u0422: "T", \u0423: "y", \u0424: "O", \u0425: "X", \u0426: "U", \u0427: "h", \u0428: "W", \u0429: "W", \u042A: "B", \u042B: "X", \u042C: "B", \u042D: "3", \u042E: "X", \u042F: "R", \u0430: "a", \u0431: "b", \u0432: "a", \u0433: "r", \u0434: "y", \u0435: "e", \u0436: "m", \u0437: "e", \u0438: "n", \u0439: "n", \u043A: "n", \u043B: "n", \u043C: "m", \u043D: "n", \u043E: "o", \u043F: "n", \u0440: "p", \u0441: "c", \u0442: "o", \u0443: "y", \u0444: "b", \u0445: "x", \u0446: "n", \u0447: "n", \u0448: "w", \u0449: "w", \u044A: "a", \u044B: "m", \u044C: "a", \u044D: "e", \u044E: "m", \u044F: "r" };
+    ro = { overrightarrow: [["rightarrow"], 0.888, 522, "xMaxYMin"], overleftarrow: [["leftarrow"], 0.888, 522, "xMinYMin"], underrightarrow: [["rightarrow"], 0.888, 522, "xMaxYMin"], underleftarrow: [["leftarrow"], 0.888, 522, "xMinYMin"], xrightarrow: [["rightarrow"], 1.469, 522, "xMaxYMin"], longrightarrow: [["rightarrow"], 1.469, 522, "xMaxYMin"], xleftarrow: [["leftarrow"], 1.469, 522, "xMinYMin"], longleftarrow: [["leftarrow"], 1.469, 522, "xMinYMin"], Overrightarrow: [["doublerightarrow"], 0.888, 560, "xMaxYMin"], xRightarrow: [["doublerightarrow"], 1.526, 560, "xMaxYMin"], xLeftarrow: [["doubleleftarrow"], 1.526, 560, "xMinYMin"], overleftharpoon: [["leftharpoon"], 0.888, 522, "xMinYMin"], xleftharpoonup: [["leftharpoon"], 0.888, 522, "xMinYMin"], xleftharpoondown: [["leftharpoondown"], 0.888, 522, "xMinYMin"], overrightharpoon: [["rightharpoon"], 0.888, 522, "xMaxYMin"], xrightharpoonup: [["rightharpoon"], 0.888, 522, "xMaxYMin"], xrightharpoondown: [["rightharpoondown"], 0.888, 522, "xMaxYMin"], xlongequal: [["longequal"], 0.888, 334, "xMinYMin"], xtwoheadleftarrow: [["twoheadleftarrow"], 0.888, 334, "xMinYMin"], xtwoheadrightarrow: [["twoheadrightarrow"], 0.888, 334, "xMaxYMin"], overleftrightarrow: [["leftarrow", "rightarrow"], 0.888, 522], overbrace: [["leftbrace", "midbrace", "rightbrace"], 1.6, 548], underbrace: [["leftbraceunder", "midbraceunder", "rightbraceunder"], 1.6, 548], underleftrightarrow: [["leftarrow", "rightarrow"], 0.888, 522], xleftrightarrow: [["leftarrow", "rightarrow"], 1.75, 522], longleftrightarrow: [["leftarrow", "rightarrow"], 1.75, 522], xLeftrightarrow: [["doubleleftarrow", "doublerightarrow"], 1.75, 560], xrightleftharpoons: [["leftharpoondownplus", "rightharpoonplus"], 1.75, 716], longrightleftharpoons: [["leftharpoondownplus", "rightharpoonplus"], 1.75, 716], xleftrightharpoons: [["leftharpoonplus", "rightharpoondownplus"], 1.75, 716], longleftrightharpoons: [["leftharpoonplus", "rightharpoondownplus"], 1.75, 716], xhookleftarrow: [["leftarrow", "righthook"], 1.08, 522], xhookrightarrow: [["lefthook", "rightarrow"], 1.08, 522], overlinesegment: [["leftlinesegment", "rightlinesegment"], 0.888, 522], underlinesegment: [["leftlinesegment", "rightlinesegment"], 0.888, 522], overgroup: [["leftgroup", "rightgroup"], 0.888, 342], undergroup: [["leftgroupunder", "rightgroupunder"], 0.888, 342], xmapsto: [["leftmapsto", "rightarrow"], 1.5, 522], xtofrom: [["leftToFrom", "rightToFrom"], 1.75, 528], xleftrightarrows: [["baraboveleftarrow", "rightarrowabovebar"], 1.75, 901], longleftrightarrows: [["baraboveleftarrow", "rightarrowabovebar"], 1.75, 901], xRightleftharpoons: [["baraboveshortleftharpoon", "rightharpoonaboveshortbar"], 1.75, 716], longRightleftharpoons: [["baraboveshortleftharpoon", "rightharpoonaboveshortbar"], 1.75, 716], xLeftrightharpoons: [["shortbaraboveleftharpoon", "shortrightharpoonabovebar"], 1.75, 716], longLeftrightharpoons: [["shortbaraboveleftharpoon", "shortrightharpoonabovebar"], 1.75, 716] };
+    io = { widehat1: [1062, 239, 0.24], widehat2: [2364, 300, 0.3], widehat3: [2364, 360, 0.36], widehat4: [2364, 420, 0.42], widecheck1: [1062, 239, 0.24], widecheck2: [2364, 300, 0.3], widecheck3: [2364, 360, 0.36], widecheck4: [2364, 420, 0.42], widetilde1: [600, 260, 0.26], widetilde2: [1033, 286, 0.286], widetilde3: [2339, 306, 0.306], widetilde4: [2340, 312, 0.34], overarc: [1061, 159, 0.3], underarc: [1061, 159, 0.3] };
+    T0 = { doubleleftarrow: `M262 157
+l10-10c34-36 62.7-77 86-123 3.3-8 5-13.3 5-16 0-5.3-6.7-8-20-8-7.3
+ 0-12.2.5-14.5 1.5-2.3 1-4.8 4.5-7.5 10.5-49.3 97.3-121.7 169.3-217 216-28
+ 14-57.3 25-88 33-6.7 2-11 3.8-13 5.5-2 1.7-3 4.2-3 7.5s1 5.8 3 7.5
+c2 1.7 6.3 3.5 13 5.5 68 17.3 128.2 47.8 180.5 91.5 52.3 43.7 93.8 96.2 124.5
+ 157.5 9.3 8 15.3 12.3 18 13h6c12-.7 18-4 18-10 0-2-1.7-7-5-15-23.3-46-52-87
+-86-123l-10-10h399738v-40H218c328 0 0 0 0 0l-10-8c-26.7-20-65.7-43-117-69 2.7
+-2 6-3.7 10-5 36.7-16 72.3-37.3 107-64l10-8h399782v-40z
+m8 0v40h399730v-40zm0 194v40h399730v-40z`, doublerightarrow: `M399738 392l
+-10 10c-34 36-62.7 77-86 123-3.3 8-5 13.3-5 16 0 5.3 6.7 8 20 8 7.3 0 12.2-.5
+ 14.5-1.5 2.3-1 4.8-4.5 7.5-10.5 49.3-97.3 121.7-169.3 217-216 28-14 57.3-25 88
+-33 6.7-2 11-3.8 13-5.5 2-1.7 3-4.2 3-7.5s-1-5.8-3-7.5c-2-1.7-6.3-3.5-13-5.5-68
+-17.3-128.2-47.8-180.5-91.5-52.3-43.7-93.8-96.2-124.5-157.5-9.3-8-15.3-12.3-18
+-13h-6c-12 .7-18 4-18 10 0 2 1.7 7 5 15 23.3 46 52 87 86 123l10 10H0v40h399782
+c-328 0 0 0 0 0l10 8c26.7 20 65.7 43 117 69-2.7 2-6 3.7-10 5-36.7 16-72.3 37.3
+-107 64l-10 8H0v40zM0 157v40h399730v-40zm0 194v40h399730v-40z`, leftarrow: `M400000 241H110l3-3c68.7-52.7 113.7-120
+ 135-202 4-14.7 6-23 6-25 0-7.3-7-11-21-11-8 0-13.2.8-15.5 2.5-2.3 1.7-4.2 5.8
+-5.5 12.5-1.3 4.7-2.7 10.3-4 17-12 48.7-34.8 92-68.5 130S65.3 228.3 18 247
+c-10 4-16 7.7-18 11 0 8.7 6 14.3 18 17 47.3 18.7 87.8 47 121.5 85S196 441.3 208
+ 490c.7 2 1.3 5 2 9s1.2 6.7 1.5 8c.3 1.3 1 3.3 2 6s2.2 4.5 3.5 5.5c1.3 1 3.3
+ 1.8 6 2.5s6 1 10 1c14 0 21-3.7 21-11 0-2-2-10.3-6-25-20-79.3-65-146.7-135-202
+ l-3-3h399890zM100 241v40h399900v-40z`, leftbrace: `M6 548l-6-6v-35l6-11c56-104 135.3-181.3 238-232 57.3-28.7 117
+-45 179-50h399577v120H403c-43.3 7-81 15-113 26-100.7 33-179.7 91-237 174-2.7
+ 5-6 9-10 13-.7 1-7.3 1-20 1H6z`, leftbraceunder: `M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z`, overarc: "M529 0c179 0 524 115 524 115 5 1 9 5 9 10 0 1-1 2-1 3l-4 22c-1 5-5 9-11 9h-2s-338-93-512-92c-174 0-513 92-513 92h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13 0 0 342-115 520-115z", underarc: `m 529 160
+  c -179 0 -524 -115 -524 -115
+  c -5 -1 -9 -5 -9 -10
+  c 0 -1 1 -2 1 -3
+  l 4 -22
+  c 1 -5 5 -9 11 -9
+  h 2
+  s 338 93 512 92
+  c 174 0 513 -92 513 -92
+  h 2
+  c 5 0 9 4 11 9
+  l 5 22
+  c 1 6 -2 12 -8 13
+  c 0 0 -342 115 -520 115
+  z
+  `, leftgroup: `M400000 80
+H435C64 80 168.3 229.4 21 260c-5.9 1.2-18 0-18 0-2 0-3-1-3-3v-38C76 61 257 0
+ 435 0h399565z`, leftgroupunder: `M400000 262
+H435C64 262 168.3 112.6 21 82c-5.9-1.2-18 0-18 0-2 0-3 1-3 3v38c76 158 257 219
+ 435 219h399565z`, leftharpoon: `M0 267c.7 5.3 3 10 7 14h399993v-40H93c3.3
+-3.3 10.2-9.5 20.5-18.5s17.8-15.8 22.5-20.5c50.7-52 88-110.3 112-175 4-11.3 5
+-18.3 3-21-1.3-4-7.3-6-18-6-8 0-13 .7-15 2s-4.7 6.7-8 16c-42 98.7-107.3 174.7
+-196 228-6.7 4.7-10.7 8-12 10-1.3 2-2 5.7-2 11zm100-26v40h399900v-40z`, leftharpoonplus: `M0 267c.7 5.3 3 10 7 14h399993v-40H93c3.3-3.3 10.2-9.5
+ 20.5-18.5s17.8-15.8 22.5-20.5c50.7-52 88-110.3 112-175 4-11.3 5-18.3 3-21-1.3
+-4-7.3-6-18-6-8 0-13 .7-15 2s-4.7 6.7-8 16c-42 98.7-107.3 174.7-196 228-6.7 4.7
+-10.7 8-12 10-1.3 2-2 5.7-2 11zm100-26v40h399900v-40zM0 435v40h400000v-40z
+m0 0v40h400000v-40z`, leftharpoondown: `M7 241c-4 4-6.333 8.667-7 14 0 5.333.667 9 2 11s5.333
+ 5.333 12 10c90.667 54 156 130 196 228 3.333 10.667 6.333 16.333 9 17 2 .667 5
+ 1 9 1h5c10.667 0 16.667-2 18-6 2-2.667 1-9.667-3-21-32-87.333-82.667-157.667
+-152-211l-3-3h399907v-40zM93 281 H400000 v-40L7 241z`, leftharpoondownplus: `M7 435c-4 4-6.3 8.7-7 14 0 5.3.7 9 2 11s5.3 5.3 12
+ 10c90.7 54 156 130 196 228 3.3 10.7 6.3 16.3 9 17 2 .7 5 1 9 1h5c10.7 0 16.7
+-2 18-6 2-2.7 1-9.7-3-21-32-87.3-82.7-157.7-152-211l-3-3h399907v-40H7zm93 0
+v40h399900v-40zM0 241v40h399900v-40zm0 0v40h399900v-40z`, lefthook: `M400000 281 H103s-33-11.2-61-33.5S0 197.3 0 164s14.2-61.2 42.5
+-83.5C70.8 58.2 104 47 142 47 c16.7 0 25 6.7 25 20 0 12-8.7 18.7-26 20-40 3.3
+-68.7 15.7-86 37-10 12-15 25.3-15 40 0 22.7 9.8 40.7 29.5 54 19.7 13.3 43.5 21
+ 71.5 23h399859zM103 281v-40h399897v40z`, leftlinesegment: `M40 281 V428 H0 V94 H40 V241 H400000 v40z
+M40 281 V428 H0 V94 H40 V241 H400000 v40z`, leftmapsto: `M40 281 V448H0V74H40V241H400000v40z
+M40 281 V448H0V74H40V241H400000v40z`, leftToFrom: `M0 147h400000v40H0zm0 214c68 40 115.7 95.7 143 167h22c15.3 0 23
+-.3 23-1 0-1.3-5.3-13.7-16-37-18-35.3-41.3-69-70-101l-7-8h399905v-40H95l7-8
+c28.7-32 52-65.7 70-101 10.7-23.3 16-35.7 16-37 0-.7-7.7-1-23-1h-22C115.7 265.3
+ 68 321 0 361zm0-174v-40h399900v40zm100 154v40h399900v-40z`, longequal: `M0 50 h400000 v40H0z m0 194h40000v40H0z
+M0 50 h400000 v40H0z m0 194h40000v40H0z`, midbrace: `M200428 334
+c-100.7-8.3-195.3-44-280-108-55.3-42-101.7-93-139-153l-9-14c-2.7 4-5.7 8.7-9 14
+-53.3 86.7-123.7 153-211 199-66.7 36-137.3 56.3-212 62H0V214h199568c178.3-11.7
+ 311.7-78.3 403-201 6-8 9.7-12 11-12 .7-.7 6.7-1 18-1s17.3.3 18 1c1.3 0 5 4 11
+ 12 44.7 59.3 101.3 106.3 170 141s145.3 54.3 229 60h199572v120z`, midbraceunder: `M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z`, oiintSize1: `M512.6 71.6c272.6 0 320.3 106.8 320.3 178.2 0 70.8-47.7 177.6
+-320.3 177.6S193.1 320.6 193.1 249.8c0-71.4 46.9-178.2 319.5-178.2z
+m368.1 178.2c0-86.4-60.9-215.4-368.1-215.4-306.4 0-367.3 129-367.3 215.4 0 85.8
+60.9 214.8 367.3 214.8 307.2 0 368.1-129 368.1-214.8z`, oiintSize2: `M757.8 100.1c384.7 0 451.1 137.6 451.1 230 0 91.3-66.4 228.8
+-451.1 228.8-386.3 0-452.7-137.5-452.7-228.8 0-92.4 66.4-230 452.7-230z
+m502.4 230c0-111.2-82.4-277.2-502.4-277.2s-504 166-504 277.2
+c0 110 84 276 504 276s502.4-166 502.4-276z`, oiiintSize1: `M681.4 71.6c408.9 0 480.5 106.8 480.5 178.2 0 70.8-71.6 177.6
+-480.5 177.6S202.1 320.6 202.1 249.8c0-71.4 70.5-178.2 479.3-178.2z
+m525.8 178.2c0-86.4-86.8-215.4-525.7-215.4-437.9 0-524.7 129-524.7 215.4 0
+85.8 86.8 214.8 524.7 214.8 438.9 0 525.7-129 525.7-214.8z`, oiiintSize2: `M1021.2 53c603.6 0 707.8 165.8 707.8 277.2 0 110-104.2 275.8
+-707.8 275.8-606 0-710.2-165.8-710.2-275.8C311 218.8 415.2 53 1021.2 53z
+m770.4 277.1c0-131.2-126.4-327.6-770.5-327.6S248.4 198.9 248.4 330.1
+c0 130 128.8 326.4 772.7 326.4s770.5-196.4 770.5-326.4z`, rightarrow: `M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z`, rightbrace: `M400000 542l
+-6 6h-17c-12.7 0-19.3-.3-20-1-4-4-7.3-8.3-10-13-35.3-51.3-80.8-93.8-136.5-127.5
+s-117.2-55.8-184.5-66.5c-.7 0-2-.3-4-1-18.7-2.7-76-4.3-172-5H0V214h399571l6 1
+c124.7 8 235 61.7 331 161 31.3 33.3 59.7 72.7 85 118l7 13v35z`, rightbraceunder: `M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z`, rightgroup: `M0 80h399565c371 0 266.7 149.4 414 180 5.9 1.2 18 0 18 0 2 0
+ 3-1 3-3v-38c-76-158-257-219-435-219H0z`, rightgroupunder: `M0 262h399565c371 0 266.7-149.4 414-180 5.9-1.2 18 0 18
+ 0 2 0 3 1 3 3v38c-76 158-257 219-435 219H0z`, rightharpoon: `M0 241v40h399993c4.7-4.7 7-9.3 7-14 0-9.3
+-3.7-15.3-11-18-92.7-56.7-159-133.7-199-231-3.3-9.3-6-14.7-8-16-2-1.3-7-2-15-2
+-10.7 0-16.7 2-18 6-2 2.7-1 9.7 3 21 15.3 42 36.7 81.8 64 119.5 27.3 37.7 58
+ 69.2 92 94.5zm0 0v40h399900v-40z`, rightharpoonplus: `M0 241v40h399993c4.7-4.7 7-9.3 7-14 0-9.3-3.7-15.3-11
+-18-92.7-56.7-159-133.7-199-231-3.3-9.3-6-14.7-8-16-2-1.3-7-2-15-2-10.7 0-16.7
+ 2-18 6-2 2.7-1 9.7 3 21 15.3 42 36.7 81.8 64 119.5 27.3 37.7 58 69.2 92 94.5z
+m0 0v40h399900v-40z m100 194v40h399900v-40zm0 0v40h399900v-40z`, rightharpoondown: `M399747 511c0 7.3 6.7 11 20 11 8 0 13-.8 15-2.5s4.7-6.8
+ 8-15.5c40-94 99.3-166.3 178-217 13.3-8 20.3-12.3 21-13 5.3-3.3 8.5-5.8 9.5
+-7.5 1-1.7 1.5-5.2 1.5-10.5s-2.3-10.3-7-15H0v40h399908c-34 25.3-64.7 57-92 95
+-27.3 38-48.7 77.7-64 119-3.3 8.7-5 14-5 16zM0 241v40h399900v-40z`, rightharpoondownplus: `M399747 705c0 7.3 6.7 11 20 11 8 0 13-.8
+ 15-2.5s4.7-6.8 8-15.5c40-94 99.3-166.3 178-217 13.3-8 20.3-12.3 21-13 5.3-3.3
+ 8.5-5.8 9.5-7.5 1-1.7 1.5-5.2 1.5-10.5s-2.3-10.3-7-15H0v40h399908c-34 25.3
+-64.7 57-92 95-27.3 38-48.7 77.7-64 119-3.3 8.7-5 14-5 16zM0 435v40h399900v-40z
+m0-194v40h400000v-40zm0 0v40h400000v-40z`, righthook: `M399859 241c-764 0 0 0 0 0 40-3.3 68.7-15.7 86-37 10-12 15-25.3
+ 15-40 0-22.7-9.8-40.7-29.5-54-19.7-13.3-43.5-21-71.5-23-17.3-1.3-26-8-26-20 0
+-13.3 8.7-20 26-20 38 0 71 11.2 99 33.5 0 0 7 5.6 21 16.7 14 11.2 21 33.5 21
+ 66.8s-14 61.2-42 83.5c-28 22.3-61 33.5-99 33.5L0 241z M0 281v-40h399859v40z`, rightlinesegment: `M399960 241 V94 h40 V428 h-40 V281 H0 v-40z
+M399960 241 V94 h40 V428 h-40 V281 H0 v-40z`, rightToFrom: `M400000 167c-70.7-42-118-97.7-142-167h-23c-15.3 0-23 .3-23
+ 1 0 1.3 5.3 13.7 16 37 18 35.3 41.3 69 70 101l7 8H0v40h399905l-7 8c-28.7 32
+-52 65.7-70 101-10.7 23.3-16 35.7-16 37 0 .7 7.7 1 23 1h23c24-69.3 71.3-125 142
+-167z M100 147v40h399900v-40zM0 341v40h399900v-40z`, twoheadleftarrow: `M0 167c68 40
+ 115.7 95.7 143 167h22c15.3 0 23-.3 23-1 0-1.3-5.3-13.7-16-37-18-35.3-41.3-69
+-70-101l-7-8h125l9 7c50.7 39.3 85 86 103 140h46c0-4.7-6.3-18.7-19-42-18-35.3
+-40-67.3-66-96l-9-9h399716v-40H284l9-9c26-28.7 48-60.7 66-96 12.7-23.333 19
+-37.333 19-42h-46c-18 54-52.3 100.7-103 140l-9 7H95l7-8c28.7-32 52-65.7 70-101
+ 10.7-23.333 16-35.7 16-37 0-.7-7.7-1-23-1h-22C115.7 71.3 68 127 0 167z`, twoheadrightarrow: `M400000 167
+c-68-40-115.7-95.7-143-167h-22c-15.3 0-23 .3-23 1 0 1.3 5.3 13.7 16 37 18 35.3
+ 41.3 69 70 101l7 8h-125l-9-7c-50.7-39.3-85-86-103-140h-46c0 4.7 6.3 18.7 19 42
+ 18 35.3 40 67.3 66 96l9 9H0v40h399716l-9 9c-26 28.7-48 60.7-66 96-12.7 23.333
+-19 37.333-19 42h46c18-54 52.3-100.7 103-140l9-7h125l-7 8c-28.7 32-52 65.7-70
+ 101-10.7 23.333-16 35.7-16 37 0 .7 7.7 1 23 1h22c27.3-71.3 75-127 143-167z`, widetilde1: `M200 55.538c-77 0-168 73.953-177 73.953-3 0-7
+-2.175-9-5.437L2 97c-1-2-2-4-2-6 0-4 2-7 5-9l20-12C116 12 171 0 207 0c86 0
+ 114 68 191 68 78 0 168-68 177-68 4 0 7 2 9 5l12 19c1 2.175 2 4.35 2 6.525 0
+ 4.35-2 7.613-5 9.788l-19 13.05c-92 63.077-116.937 75.308-183 76.128
+-68.267.847-113-73.952-191-73.952z`, widetilde2: `M344 55.266c-142 0-300.638 81.316-311.5 86.418
+-8.01 3.762-22.5 10.91-23.5 5.562L1 120c-1-2-1-3-1-4 0-5 3-9 8-10l18.4-9C160.9
+ 31.9 283 0 358 0c148 0 188 122 331 122s314-97 326-97c4 0 8 2 10 7l7 21.114
+c1 2.14 1 3.21 1 4.28 0 5.347-3 9.626-7 10.696l-22.3 12.622C852.6 158.372 751
+ 181.476 676 181.476c-149 0-189-126.21-332-126.21z`, widetilde3: `M786 59C457 59 32 175.242 13 175.242c-6 0-10-3.457
+-11-10.37L.15 138c-1-7 3-12 10-13l19.2-6.4C378.4 40.7 634.3 0 804.3 0c337 0
+ 411.8 157 746.8 157 328 0 754-112 773-112 5 0 10 3 11 9l1 14.075c1 8.066-.697
+ 16.595-6.697 17.492l-21.052 7.31c-367.9 98.146-609.15 122.696-778.15 122.696
+ -338 0-409-156.573-744-156.573z`, widetilde4: `M786 58C457 58 32 177.487 13 177.487c-6 0-10-3.345
+-11-10.035L.15 143c-1-7 3-12 10-13l22-6.7C381.2 35 637.15 0 807.15 0c337 0 409
+ 177 744 177 328 0 754-127 773-127 5 0 10 3 11 9l1 14.794c1 7.805-3 13.38-9
+ 14.495l-20.7 5.574c-366.85 99.79-607.3 139.372-776.3 139.372-338 0-409
+ -175.236-744-175.236z`, vec: `M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z`, widehat1: `M529 0h5l519 115c5 1 9 5 9 10 0 1-1 2-1 3l-4 22
+c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z`, widehat2: `M1181 0h2l1171 176c6 0 10 5 10 11l-2 23c-1 6-5 10
+-11 10h-1L1182 67 15 220h-1c-6 0-10-4-11-10l-2-23c-1-6 4-11 10-11z`, widehat3: `M1181 0h2l1171 236c6 0 10 5 10 11l-2 23c-1 6-5 10
+-11 10h-1L1182 67 15 280h-1c-6 0-10-4-11-10l-2-23c-1-6 4-11 10-11z`, widehat4: `M1181 0h2l1171 296c6 0 10 5 10 11l-2 23c-1 6-5 10
+-11 10h-1L1182 67 15 340h-1c-6 0-10-4-11-10l-2-23c-1-6 4-11 10-11z`, widecheck1: `M529,159h5l519,-115c5,-1,9,-5,9,-10c0,-1,-1,-2,-1,-3l-4,-22c-1,
+-5,-5,-9,-11,-9h-2l-512,92l-513,-92h-2c-5,0,-9,4,-11,9l-5,22c-1,6,2,12,8,13z`, widecheck2: `M1181,220h2l1171,-176c6,0,10,-5,10,-11l-2,-23c-1,-6,-5,-10,
+-11,-10h-1l-1168,153l-1167,-153h-1c-6,0,-10,4,-11,10l-2,23c-1,6,4,11,10,11z`, widecheck3: `M1181,280h2l1171,-236c6,0,10,-5,10,-11l-2,-23c-1,-6,-5,-10,
+-11,-10h-1l-1168,213l-1167,-213h-1c-6,0,-10,4,-11,10l-2,23c-1,6,4,11,10,11z`, widecheck4: `M1181,340h2l1171,-296c6,0,10,-5,10,-11l-2,-23c-1,-6,-5,-10,
+-11,-10h-1l-1168,273l-1167,-273h-1c-6,0,-10,4,-11,10l-2,23c-1,6,4,11,10,11z`, baraboveleftarrow: `M400000 620h-399890l3 -3c68.7 -52.7 113.7 -120 135 -202
+c4 -14.7 6 -23 6 -25c0 -7.3 -7 -11 -21 -11c-8 0 -13.2 0.8 -15.5 2.5
+c-2.3 1.7 -4.2 5.8 -5.5 12.5c-1.3 4.7 -2.7 10.3 -4 17c-12 48.7 -34.8 92 -68.5 130
+s-74.2 66.3 -121.5 85c-10 4 -16 7.7 -18 11c0 8.7 6 14.3 18 17c47.3 18.7 87.8 47
+121.5 85s56.5 81.3 68.5 130c0.7 2 1.3 5 2 9s1.2 6.7 1.5 8c0.3 1.3 1 3.3 2 6
+s2.2 4.5 3.5 5.5c1.3 1 3.3 1.8 6 2.5s6 1 10 1c14 0 21 -3.7 21 -11
+c0 -2 -2 -10.3 -6 -25c-20 -79.3 -65 -146.7 -135 -202l-3 -3h399890z
+M100 620v40h399900v-40z M0 241v40h399900v-40zM0 241v40h399900v-40z`, rightarrowabovebar: `M0 241v40h399891c-47.3 35.3-84 78-110 128-16.7 32
+-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20 11 8 0
+13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7 39
+-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85-40.5
+-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+151.7 139 205zm96 379h399894v40H0zm0 0h399904v40H0z`, baraboveshortleftharpoon: `M507,435c-4,4,-6.3,8.7,-7,14c0,5.3,0.7,9,2,11
+c1.3,2,5.3,5.3,12,10c90.7,54,156,130,196,228c3.3,10.7,6.3,16.3,9,17
+c2,0.7,5,1,9,1c0,0,5,0,5,0c10.7,0,16.7,-2,18,-6c2,-2.7,1,-9.7,-3,-21
+c-32,-87.3,-82.7,-157.7,-152,-211c0,0,-3,-3,-3,-3l399351,0l0,-40
+c-398570,0,-399437,0,-399437,0z M593 435 v40 H399500 v-40z
+M0 281 v-40 H399908 v40z M0 281 v-40 H399908 v40z`, rightharpoonaboveshortbar: `M0,241 l0,40c399126,0,399993,0,399993,0
+c4.7,-4.7,7,-9.3,7,-14c0,-9.3,-3.7,-15.3,-11,-18c-92.7,-56.7,-159,-133.7,-199,
+-231c-3.3,-9.3,-6,-14.7,-8,-16c-2,-1.3,-7,-2,-15,-2c-10.7,0,-16.7,2,-18,6
+c-2,2.7,-1,9.7,3,21c15.3,42,36.7,81.8,64,119.5c27.3,37.7,58,69.2,92,94.5z
+M0 241 v40 H399908 v-40z M0 475 v-40 H399500 v40z M0 475 v-40 H399500 v40z`, shortbaraboveleftharpoon: `M7,435c-4,4,-6.3,8.7,-7,14c0,5.3,0.7,9,2,11
+c1.3,2,5.3,5.3,12,10c90.7,54,156,130,196,228c3.3,10.7,6.3,16.3,9,17c2,0.7,5,1,9,
+1c0,0,5,0,5,0c10.7,0,16.7,-2,18,-6c2,-2.7,1,-9.7,-3,-21c-32,-87.3,-82.7,-157.7,
+-152,-211c0,0,-3,-3,-3,-3l399907,0l0,-40c-399126,0,-399993,0,-399993,0z
+M93 435 v40 H400000 v-40z M500 241 v40 H400000 v-40z M500 241 v40 H400000 v-40z`, shortrightharpoonabovebar: `M53,241l0,40c398570,0,399437,0,399437,0
+c4.7,-4.7,7,-9.3,7,-14c0,-9.3,-3.7,-15.3,-11,-18c-92.7,-56.7,-159,-133.7,-199,
+-231c-3.3,-9.3,-6,-14.7,-8,-16c-2,-1.3,-7,-2,-15,-2c-10.7,0,-16.7,2,-18,6
+c-2,2.7,-1,9.7,3,21c15.3,42,36.7,81.8,64,119.5c27.3,37.7,58,69.2,92,94.5z
+M500 241 v40 H399408 v-40z M500 435 v40 H400000 v-40z` };
+    Nl = { m0: "#3F3D99", m1: "#993D71", m2: "#998B3D", m3: "#3D9956", m4: "#3D5A99", m5: "#993D90", m6: "#996D3D", m7: "#43993D", m8: "#3D7999", m9: "#843D99" };
+    Vl = { blue: "#0072BD", orange: "#D95319", yellow: "#EDB120", purple: "#7E2F8E", green: "#77AC30", cyan: "#4DBEEE", red: "#A2142F" };
+    $0 = { red: "#fbbbb6", orange: "#ffe0c2", yellow: "#fff1c2", lime: "#d0e8b9", green: "#bceac4", teal: "#b9f1f1", cyan: "#b8e5c9", blue: "#b6d9fb", indigo: "#d1c2f0", purple: "#e3baf8", magenta: "#f9c8e0", black: "#353535", "dark-grey": "#8C8C8C", grey: "#D0D0D0", "light-grey": "#F0F0F0", white: "#ffffff" };
+    E0 = { red: "#d7170b", orange: "#fe8a2b", yellow: "#ffc02b", lime: "#63b215", green: "#21ba3a", teal: "#17cfcf", cyan: "#13a7ec", blue: "#0d80f2", indigo: "#63c", purple: "#a219e6", magenta: "#eb4799", black: "#000", "dark-grey": "#666", grey: "#A6A6A6", "light-grey": "#d4d5d2", white: "#ffffff" };
+    R0 = { Red: "red", Orange: "orange", Yellow: "yellow", LimeGreen: "lime", Green: "green", TealBlue: "teal", Blue: "blue", Violet: "indigo", Purple: "purple", Magenta: "magenta", Black: "black", Gray: "grey", White: "white" };
+    Jl = { Apricot: "#FBB982", Aquamarine: "#00B5BE", Bittersweet: "#C04F17", Black: "#221E1F", Blue: "#2D2F92", BlueGreen: "#00B3B8", BlueViolet: "#473992", BrickRed: "#B6321C", Brown: "#792500", BurntOrange: "#F7921D", CadetBlue: "#74729A", CarnationPink: "#F282B4", Cerulean: "#00A2E3", CornflowerBlue: "#41B0E4", Cyan: "#00AEEF", Dandelion: "#FDBC42", DarkOrchid: "#A4538A", Emerald: "#00A99D", ForestGreen: "#009B55", Fuchsia: "#8C368C", Goldenrod: "#FFDF42", Gray: "#949698", Green: "#00A64F", GreenYellow: "#DFE674", JungleGreen: "#00A99A", Lavender: "#F49EC4", Limegreen: "#8DC73E", Magenta: "#EC008C", Mahogany: "#A9341F", Maroon: "#AF3235", Melon: "#F89E7B", MidnightBlue: "#006795", Mulberry: "#A93C93", NavyBlue: "#006EB8", OliveGreen: "#3C8031", Orange: "#F58137", OrangeRed: "#ED135A", Orchid: "#AF72B0", Peach: "#F7965A", Periwinkle: "#7977B8", PineGreen: "#008B72", Plum: "#92268F", ProcessBlue: "#00B0F0", Purple: "#99479B", RawSienna: "#974006", Red: "#ED1B23", RedOrange: "#F26035", RedViolet: "#A1246B", Rhodamine: "#EF559F", RoyalBlue: "#0071BC", RoyalPurple: "#613F99", RubineRed: "#ED017D", Salmon: "#F69289", SeaGreen: "#3FBC9D", Sepia: "#671800", SkyBlue: "#46C5DD", SpringGreen: "#C6DC67", Tan: "#DA9D76", TealBlue: "#00AEB3", Thistle: "#D883B7", Turquoise: "#00B4CE", Violet: "#58429B", VioletRed: "#EF58A0", White: "#FFFFFF", WildStrawberry: "#EE2967", Yellow: "#FFF200", YellowGreen: "#98CC70", YellowOrange: "#FAA21A" };
+    lo = { 60: "\\lt", 62: "\\gt", 111: "o", 38: "\\&", 123: "\\lbrace", 125: "\\rbrace", 91: "\\lbrack", 93: "\\rbrack", 58: "\\colon", 160: "~", 172: "\\neg", 183: "\\cdot", 188: "\\frac{1}{4}", 189: "\\frac{1}{2}", 190: "\\frac{3}{4}", 8304: "^{0}", 8305: "^{i}", 185: "^{1}", 178: "^{2}", 179: "^{3}", 8224: "\\dagger", 8225: "\\ddagger", 8230: "\\ldots", 8308: "^{4}", 8309: "^{5}", 8310: "^{6}", 8311: "^{7}", 8312: "^{8}", 8313: "^{9}", 8314: "^{+}", 8315: "^{-}", 8316: "^{=}", 8319: "^{n}", 8320: "_{0}", 8321: "_{1}", 8322: "_{2}", 8323: "_{3}", 8324: "_{4}", 8325: "_{5}", 8326: "_{6}", 8327: "_{7}", 8328: "_{8}", 8329: "_{9}", 8330: "_{+}", 8331: "_{-}", 8332: "_{=}", 8336: "_{a}", 8337: "_{e}", 8338: "_{o}", 8339: "_{x}", 8242: "\\prime", 39: "\\prime", 8592: "\\gets", 8594: "\\to", 9651: "\\triangle", 9661: "\\triangledown", 8715: "\\owns", 8727: "\\ast", 8739: "\\vert", 8741: "\\Vert", 8743: "\\land", 8744: "\\lor", 8901: "\\cdot", 8904: "\\bowtie", 8800: "\\ne", 8804: "\\le", 8805: "\\ge", 8869: "\\bot", 10178: "\\perp", 10231: "\\biconditional", 10232: "\\impliedby", 10233: "\\implies", 10234: "\\iff", 8450: "\\mathbb{C}", 8469: "\\mathbb{N}", 8473: "\\mathbb{P}", 8474: "\\mathbb{Q}", 8477: "\\mathbb{R}", 8484: "\\mathbb{Z}", 8461: "\\mathbb{H}", 8476: "\\Re", 8465: "\\Im", 42: "\\ast", 11036: "\\square", 9633: "\\square", 8720: "\\coprod", 8716: "\\not\\ni", 9671: "\\diamond", 8846: "\\uplus", 8851: "\\sqcap", 8852: "\\sqcup", 8768: "\\wr", 8750: "\\oint", 8226: "\\textbullet", 8722: "-", 978: "\\Upsilon" };
+    so = { 119893: 8462, 119965: 8492, 119968: 8496, 119969: 8497, 119971: 8459, 119972: 8464, 119975: 8466, 119976: 8499, 119981: 8475, 119994: 8495, 119996: 8458, 120004: 8500, 120070: 8493, 120075: 8460, 120076: 8465, 120085: 8476, 120093: 8488, 120122: 8450, 120127: 8461, 120133: 8469, 120135: 8473, 120136: 8474, 120137: 8477, 120145: 8484 };
+    q0 = [{ start: 119808, len: 26, offset: 65, style: "bold" }, { start: 119834, len: 26, offset: 97, style: "bold" }, { start: 120488, len: 25, offset: 913, style: "bold" }, { start: 120514, len: 25, offset: 945, style: "bold" }, { start: 119860, len: 26, offset: 65, style: "italic" }, { start: 119886, len: 26, offset: 97, style: "italic" }, { start: 120546, len: 25, offset: 913, style: "italic" }, { start: 120572, len: 25, offset: 945, style: "italic" }, { start: 119912, len: 26, offset: 65, style: "bolditalic" }, { start: 119938, len: 26, offset: 97, style: "bolditalic" }, { start: 120604, len: 25, offset: 913, style: "bolditalic" }, { start: 120630, len: 25, offset: 945, style: "bolditalic" }, { start: 120782, len: 10, offset: 48, variant: "main", style: "bold" }, { start: 119964, len: 26, offset: 65, variant: "script" }, { start: 119990, len: 26, offset: 97, variant: "script" }, { start: 120016, len: 26, offset: 65, variant: "script", style: "bold" }, { start: 120042, len: 26, offset: 97, variant: "script", style: "bold" }, { start: 120068, len: 26, offset: 65, variant: "fraktur" }, { start: 120094, len: 26, offset: 97, variant: "fraktur" }, { start: 120172, len: 26, offset: 65, variant: "fraktur", style: "bold" }, { start: 120198, len: 26, offset: 97, variant: "fraktur", style: "bold" }, { start: 120120, len: 26, offset: 65, variant: "double-struck" }, { start: 120146, len: 26, offset: 97, variant: "double-struck" }, { start: 120792, len: 10, offset: 48, variant: "double-struck" }, { start: 120432, len: 26, offset: 65, variant: "monospace" }, { start: 120458, len: 26, offset: 97, variant: "monospace" }, { start: 120822, len: 10, offset: 48, variant: "monospace" }, { start: 120224, len: 26, offset: 65, variant: "sans-serif" }, { start: 120250, len: 26, offset: 97, variant: "sans-serif" }, { start: 120276, len: 26, offset: 65, variant: "sans-serif", style: "bold" }, { start: 120302, len: 26, offset: 97, variant: "sans-serif", style: "bold" }, { start: 120328, len: 26, offset: 65, variant: "sans-serif", style: "italic" }, { start: 120354, len: 26, offset: 97, variant: "sans-serif", style: "italic" }, { start: 120380, len: 26, offset: 65, variant: "sans-serif", style: "bolditalic" }, { start: 120406, len: 26, offset: 97, variant: "sans-serif", style: "bolditalic" }, { start: 120662, len: 25, offset: 913, variant: "sans-serif", style: "bold" }, { start: 120688, len: 25, offset: 945, variant: "sans-serif", style: "bold" }, { start: 120720, len: 25, offset: 913, variant: "sans-serif", style: "bolditalic" }, { start: 120746, len: 25, offset: 945, variant: "sans-serif", style: "bolditalic" }, { start: 120803, len: 10, offset: 48, variant: "sans-serif" }, { start: 120812, len: 10, offset: 48, variant: "sans-serif", style: "bold" }];
+    co = {};
+    Vi = m2({}, lo);
+    mo = {};
+    ho = {};
+    jl = { darr: "\\downarrow", dArr: "\\Downarrow", Darr: "\\Downarrow", lang: "\\langle", rang: "\\rangle", uarr: "\\uparrow", uArr: "\\Uparrow", Uarr: "\\Uparrow", C: "\\mathbb{C}", H: "\\mathbb{H}", N: "\\mathbb{N}", Q: "\\mathbb{Q}", R: "\\mathbb{R}", Z: "\\mathbb{Z}", alef: "\\aleph", alefsym: "\\aleph", Alpha: "\\mathrm{A}", Beta: "\\mathrm{B}", bull: "\\bullet", Chi: "\\mathrm{X}", clubs: "\\clubsuit", cnums: "\\mathbb{C}", Complex: "\\mathbb{C}", Dagger: "\\ddagger", diamonds: "\\diamondsuit", doublecap: "\\Cap", doublecup: "\\Cup", empty: "\\emptyset", Epsilon: "\\mathrm{E}", Eta: "\\mathrm{H}", exist: "\\exists", hArr: "\\Leftrightarrow", harr: "\\leftrightarrow", Harr: "\\Leftrightarrow", hearts: "\\heartsuit", image: "\\Im", infin: "\\infty", Iota: "\\mathrm{I}", isin: "\\in", Kappa: "\\mathrm{K}", larr: "\\leftarrow", Larr: "\\Leftarrow", lArr: "\\Leftarrow", lrarr: "\\leftrightarrow", Lrarr: "\\Leftrightarrow", lrArr: "\\Leftrightarrow", Mu: "\\mathrm{M}", natnums: "\\mathbb{N}", Nu: "\\mathrm{N}", Omicron: "\\mathrm{O}", part: "\\partial", plusmn: "\\pm", rarr: "\\rightarrow", Rarr: "\\Rightarrow", rArr: "\\Rightarrow", real: "\\Re", reals: "\\mathbb{R}", Reals: "\\mathbb{R}", restriction: "\\upharpoonright", Rho: "\\mathrm{P}", sdot: "\\cdot", sect: "\\S", spades: "\\spadesuit", sub: "\\subset", sube: "\\subseteq", supe: "\\supseteq", Tau: "\\mathrm{T}", thetasym: "\\vartheta", varcoppa: "\\coppa", weierp: "\\wp", Zeta: "\\mathrm{Z}" };
+    Xl = { varGamma: "\\mathit{\\Gamma}", varDelta: "\\mathit{\\Delta}", varTheta: "\\mathit{\\Theta}", varLambda: "\\mathit{\\Lambda}", varXi: "\\mathit{\\Xi}", varPi: "\\mathit{\\Pi}", varSigma: "\\mathit{\\Sigma}", varUpsilon: "\\mathit{\\Upsilon}", varPhi: "\\mathit{\\Phi}", varPsi: "\\mathit{\\Psi}", varOmega: "\\mathit{\\Omega}", pmod: { def: "\\quad(\\operatorname{mod}\\ #1)", args: 1, expand: false, captureSelection: false }, mod: { def: "\\quad\\operatorname{mod}\\,\\,#1", args: 1, expand: false }, bmod: { def: "\\;\\mathbin{\\operatorname{mod }}", expand: false } };
+    Kl = { bra: { def: "\\mathinner{\\langle{#1}|}", args: 1, captureSelection: false }, ket: { def: "\\mathinner{|{#1}\\rangle}", args: 1, captureSelection: false }, braket: { def: "\\mathinner{\\langle{#1}\\rangle}", args: 1, captureSelection: false }, set: { def: "\\mathinner{\\lbrace #1 \\rbrace}", args: 1, captureSelection: false }, Bra: { def: "\\left\\langle #1\\right|", args: 1, captureSelection: false }, Ket: { def: "\\left|#1\\right\\rangle", args: 1, captureSelection: false }, Braket: { def: "\\left\\langle{#1}\\right\\rangle", args: 1, captureSelection: false }, Set: { def: "\\left\\lbrace #1 \\right\\rbrace", args: 1, captureSelection: false } };
+    Yl = { strut: { primitive: true, def: "\\phantom{\\rule[0.3\\baselineskip]{0}{0.7\\baselineskip}}", args: 0, captureSelection: true }, iff: { primitive: true, captureSelection: true, def: "\\;\\Longleftrightarrow\\;" }, nicefrac: "^{#1}\\!\\!/\\!_{#2}", phase: { def: "\\enclose{phasorangle}{#1}", args: 1, captureSelection: false }, rd: "\\mathrm{d}", rD: "\\mathrm{D}", odif: "\\mathrm{d}", doubleStruckCapitalN: "\\mathbb{N}", doubleStruckCapitalR: "\\mathbb{R}", doubleStruckCapitalQ: "\\mathbb{Q}", doubleStruckCapitalZ: "\\mathbb{Z}", doubleStruckCapitalP: "\\mathbb{P}", scriptCapitalE: "\\mathscr{E}", scriptCapitalH: "\\mathscr{H}", scriptCapitalL: "\\mathscr{L}", gothicCapitalC: "\\mathfrak{C}", gothicCapitalH: "\\mathfrak{H}", gothicCapitalI: "\\mathfrak{I}", gothicCapitalR: "\\mathfrak{R}", imaginaryI: "\\mathrm{i}", imaginaryJ: "\\mathrm{j}", exponentialE: "\\mathrm{e}", differentialD: "\\mathrm{d}", capitalDifferentialD: "\\mathrm{D}", mathstrut: { def: "\\vphantom{(}", primitive: true }, angl: "\\enclose{actuarial}{#1}", angln: "\\enclose{actuarial}{n}", anglr: "\\enclose{actuarial}{r}", anglk: "\\enclose{actuarial}{k}", mathtools: { primitive: true, package: { ordinarycolon: ":", vcentcolon: "\\mathrel{\\mathop\\ordinarycolon}", dblcolon: '{\\mathop{\\char"2237}}', coloneqq: '{\\mathop{\\char"2254}}', Coloneqq: '{\\mathop{\\char"2A74}}', coloneq: '{\\mathop{\\char"2254}}', Coloneq: '{\\mathop{\\char"2A74}}', eqqcolon: '{\\mathop{\\char"2255}}', Eqqcolon: '{\\mathop{\\char"3D\\char"2237}}', eqcolon: '{\\mathop{\\char"2255}}', Eqcolon: '{\\mathop{\\char"3D\\char"2237}}', colonapprox: '{\\mathop{\\char"003A\\char"2248}}', Colonapprox: '{\\mathop{\\char"2237\\char"2248}}', colonsim: '{\\mathop{\\char"3A\\char"223C}}', Colonsim: '{\\mathop{\\char"2237\\char"223C}}', colondash: "\\mathrel{\\vcentcolon\\mathrel{\\mkern-1.2mu}\\mathrel{-}}", Colondash: "\\mathrel{\\dblcolon\\mathrel{\\mkern-1.2mu}\\mathrel{-}}", dashcolon: "\\mathrel{\\mathrel{-}\\mathrel{\\mkern-1.2mu}\\vcentcolon}", Dashcolon: "\\mathrel{\\mathrel{-}\\mathrel{\\mkern-1.2mu}\\dblcolon}" } }, ratio: "\\vcentcolon", coloncolon: "\\dblcolon", colonequals: "\\coloneq", coloncolonequals: "\\Coloneq", equalscolon: "\\eqcolon", equalscoloncolon: "\\Eqcolon", colonminus: "\\colondash", coloncolonminus: "\\Colondash", minuscolon: "\\dashcolon", minuscoloncolon: "\\Dashcolon", coloncolonapprox: "\\Colonapprox", coloncolonsim: "\\Colonsim", simcolon: "\\mathrel{\\sim\\mathrel{\\mkern-1.2mu}\\vcentcolon}", Simcolon: "\\mathrel{\\sim\\mathrel{\\mkern-1.2mu}\\dblcolon}", simcoloncolon: "\\mathrel{\\sim\\mathrel{\\mkern-1.2mu}\\dblcolon}", approxcolon: "\\mathrel{\\approx\\mathrel{\\mkern-1.2mu}\\vcentcolon}", Approxcolon: "\\mathrel{\\approx\\mathrel{\\mkern-1.2mu}\\dblcolon}", approxcoloncolon: "\\mathrel{\\approx\\mathrel{\\mkern-1.2mu}\\dblcolon}", notni: "\\mathrel{\\char`\u220C}", limsup: "\\operatorname*{lim\\,sup}", liminf: "\\operatorname*{lim\\,inf}", injlim: "\\operatorname*{inj\\,lim}", projlim: "\\operatorname*{proj\\,lim}", varlimsup: "\\operatorname*{\\overline{lim}}", varliminf: "\\operatorname*{\\underline{lim}}", varinjlim: "\\operatorname*{\\underrightarrow{lim}}", varprojlim: "\\operatorname*{\\underleftarrow{lim}}", argmin: "\\operatorname*{arg\\,min}", argmax: "\\operatorname*{arg\\,max}", plim: "\\mathop{\\operatorname{plim}}\\limits", tripledash: { def: "\\vphantom{-}\\raise{4mu}{\\mkern1.5mu\\rule{2mu}{1.5mu}\\mkern{2.25mu}\\rule{2mu}{1.5mu}\\mkern{2.25mu}\\rule{2mu}{1.5mu}\\mkern{2mu}}", expand: true }, "braket.sty": { package: Kl }, "amsmath.sty": { package: Xl, primitive: true }, "texvc.sty": { package: jl, primitive: false } };
+    nr = { " ": 32, "\\!": 33, "\\#": 35, "\\$": 36, "\\%": 37, "\\&": 38, "\\_": 95, "-": 45, "\\textunderscore": 95, "\\euro": 8364, "\\maltese": 10016, "\\{": 123, "\\}": 125, "\\textbraceleft": 123, "\\textbraceright": 125, "\\lbrace": 123, "\\rbrace": 125, "\\lbrack": 91, "\\rbrack": 93, "\\nobreakspace": 160, "\\ldots": 8230, "\\textellipsis": 8230, "\\backslash": 92, "`": 8216, "'": 8217, "``": 8220, "''": 8221, "\\degree": 176, "\\textasciicircum": 94, "\\textasciitilde": 126, "\\textasteriskcentered": 42, "\\textbackslash": 92, "\\textbullet": 8226, "\\textdollar": 36, "\\textsterling": 163, "\\textdagger": 8224, "\\textdaggerdbl": 8225, "\u2013": 8211, "\u2014": 8212, "\u2018": 8216, "\u2019": 8217, "\u201C": 8220, "\u201D": 8221, '"': 8221, "\\ss": 223, "\\ae": 230, "\\oe": 339, "\\AE": 198, "\\OE": 338, "\\O": 216, "\\i": 305, "\\j": 567, "\\aa": 229, "\\AA": 197 };
+    I0() ? (Ji = new RegExp("\\p{Letter}", "u"), V0 = new RegExp("[0-9\\p{Letter}]", "u")) : (Ji = /[a-zA-ZаАбБвВгГдДеЕёЁжЖзЗиИйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяĄąĆćĘęŁłŃńÓóŚśŹźŻżàâäôéèëêïîçùûüÿæœÀÂÄÔÉÈËÊÏÎŸÇÙÛÜÆŒößÖẞìíòúÌÍÒÚáñÁÑ]/, V0 = /[\da-zA-ZаАбБвВгГдДеЕёЁжЖзЗиИйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяĄąĆćĘęŁłŃńÓóŚśŹźŻżàâäôéèëêïîçùûüÿæœÀÂÄÔÉÈËÊÏÎŸÇÙÛÜÆŒößÖẞìíòúÌÍÒÚáñÁÑ]/);
+    Ui = 8205;
+    ec2 = [[Ui, 1], [65038, 2], [127995, 5], [129456, 4], [917536, 96]];
+    W0 = [127462, 127487];
+    yo = class {
+      constructor(e) {
+        this.obeyspaces = false;
+        this.pos = 0;
+        this.s = U0(e);
+      }
+      end() {
+        return this.pos >= this.s.length;
+      }
+      get() {
+        return this.pos < this.s.length ? this.s[this.pos++] : "";
+      }
+      peek() {
+        return this.s[this.pos];
+      }
+      match(e) {
+        let r = typeof this.s == "string" ? e.exec(this.s.slice(this.pos)) : e.exec(this.s.slice(this.pos).join(""));
+        return r != null && r[0] ? (this.pos += r[0].length, r[0]) : "";
+      }
+      next() {
+        if (this.end()) return null;
+        if (!this.obeyspaces && this.match(/^[ \f\n\r\t\v\u00A0\u2028\u2029]+/) || this.obeyspaces && this.match(/^[ \f\n\r\t\v\u00A0\u2028\u2029]/)) return "<space>";
+        let e = this.get();
+        if (e === "\\") {
+          if (!this.end()) {
+            let r = this.match(/^[a-zA-Z\*]+/);
+            return r ? this.match(/^[ \f\n\r\t\v\u00A0\u2028\u2029]*/) : r = this.get(), "\\" + r;
+          }
+        } else {
+          if (e === "{") return "<{>";
+          if (e === "}") return "<}>";
+          if (e === "^") {
+            if (this.peek() === "^") {
+              this.get();
+              let r = this.match(/^(\^(\^(\^(\^[\da-f])?[\da-f])?[\da-f])?[\da-f])?[\da-f]{2}/);
+              if (r) return String.fromCodePoint(Number.parseInt(r.slice(r.lastIndexOf("^") + 1), 16));
+            }
+            return e;
+          } else if (e === "#") {
+            if (!this.end()) {
+              let r = false;
+              if (/[\d?@]/.test(this.peek()) && (r = true, this.pos + 1 < this.s.length)) {
+                let i = this.s[this.pos + 1];
+                r = /[^\dA-Za-z]/.test(i);
+              }
+              return r ? "#" + this.get() : "#";
+            }
+          } else if (e === "$") return this.peek() === "$" ? (this.get(), "<$$>") : "<$>";
+        }
+        return e;
+      }
+    };
+    Rt = class Rt2 {
+      constructor(e) {
+        Rt2._registry[e] = this;
+      }
+      static createAtom(e, r, i) {
+        return Rt2._registry[e].createAtom(r, H(r, e), i);
+      }
+      static serialize(e, r) {
+        var i;
+        if (!e || e.length === 0) return "";
+        if ((i = r.skipStyles) != null && i) {
+          let n = [];
+          for (let o of X0(e)) {
+            let a = Rt2._registry[o[0].mode];
+            n.push(...a.serialize(o, r));
+          }
+          return D(n);
+        }
+        return D(nc(e, r));
+      }
+      static getFont(e, r, i) {
+        return Rt2._registry[e].getFont(r, i);
+      }
+    };
+    Rt._registry = {};
+    Q = Rt;
+    b = class t {
+      constructor(e, r) {
+        var n, o, a, l, s2;
+        if (typeof e == "number" ? this.value = String.fromCodePoint(e) : typeof e == "string" ? this.value = e : ye(e) ? this.children = e.filter((c) => c !== null) : e && e instanceof t && (this.children = [e]), this.children) for (let c of this.children) c.parent = this;
+        this.type = (n = r == null ? void 0 : r.type) != null ? n : "ignore", this.isSelected = (r == null ? void 0 : r.isSelected) === true, r != null && r.caret && (this.caret = r.caret), this.classes = (o = r == null ? void 0 : r.classes) != null ? o : "", this.isTight = (a = r == null ? void 0 : r.isTight) != null ? a : false, r != null && r.attributes && (this.attributes = r.attributes);
+        let i = r == null ? void 0 : r.fontFamily;
+        r != null && r.style && this.value && (i = (s2 = Q.getFont((l = r.mode) != null ? l : "math", this, u(m2({ variant: "normal" }, r.style), { letterShapeStyle: r.letterShapeStyle }))) != null ? s2 : void 0), i || (i = "Main-Regular"), this._height = 0, this._depth = 0, this._width = 0, this.hasExplicitWidth = false, this.skew = 0, this.italic = 0, this.maxFontSize = 0, this.scale = 1, (r == null ? void 0 : r.maxFontSize) !== void 0 && (this.maxFontSize = r.maxFontSize), oc(this, i);
+      }
+      set atomID(e) {
+        e === void 0 || e.length === 0 || (this.id = e);
+      }
+      selected(e) {
+        if (this.isSelected !== e && (this.isSelected = e, this.children)) for (let r of this.children) r.selected(e);
+      }
+      setStyle(e, r, i) {
+        if (r === void 0) return;
+        let n = Or(r, i);
+        n.length > 0 && (this.cssProperties || (this.cssProperties = {}), this.cssProperties[e] = n);
+      }
+      setTop(e) {
+        Number.isFinite(e) && Math.abs(e) > 0.01 && (this.cssProperties || (this.cssProperties = {}), this.cssProperties.top = Or(e, "em"), this.height -= e, this.depth += e);
+      }
+      get left() {
+        var e;
+        return (e = this.cssProperties) != null && e["margin-left"] ? Number.parseFloat(this.cssProperties["margin-left"]) : 0;
+      }
+      set left(e) {
+        Number.isFinite(e) && (e === 0 ? this.cssProperties && delete this.cssProperties["margin-left"] : (this.cssProperties || (this.cssProperties = {}), this.cssProperties["margin-left"] = Or(e, "em")));
+      }
+      set right(e) {
+        Number.isFinite(e) && (e === 0 ? this.cssProperties && delete this.cssProperties["margin-right"] : (this.cssProperties || (this.cssProperties = {}), this.cssProperties["margin-right"] = Or(e, "em")));
+      }
+      set bottom(e) {
+        Number.isFinite(e) && (e === 0 ? this.cssProperties && delete this.cssProperties["margin-bottom"] : (this.cssProperties || (this.cssProperties = {}), this.cssProperties["margin-bottom"] = Or(e, "em")));
+      }
+      get width() {
+        return this._width * this.scale;
+      }
+      set width(e) {
+        this._width = e, this.hasExplicitWidth = true;
+      }
+      set softWidth(e) {
+      }
+      get height() {
+        return this._height * this.scale;
+      }
+      set height(e) {
+        this._height = e;
+      }
+      get depth() {
+        return this._depth * this.scale;
+      }
+      set depth(e) {
+        this._depth = e;
+      }
+      wrap(e) {
+        let r = e.parent;
+        if (!r) return this;
+        e.isPhantom && this.setStyle("opacity", 0);
+        let i = e.color;
+        i && i !== r.color && this.setStyle("color", i);
+        let o = e.backgroundColor;
+        this.isSelected && (o = P0(o)), o && o !== r.backgroundColor && (this.setStyle("background-color", o), this.setStyle("--bg-color", o), this.setStyle("display", "inline-block"), this.setStyle("position", "relative"), this.classes = this.classes ? `${this.classes} ML__bg` : "ML__bg");
+        let a = e.scalingFactor;
+        return this.scale = a, this.skew *= a, this.italic *= a, this;
+      }
+      toMarkup() {
+        var c, h2, d;
+        let e = this.value ? ac(this.value) : "";
+        if (this.children) for (let f of this.children) e += f.toMarkup();
+        let r = "";
+        if (this.svgBody) r = D0(this.svgBody);
+        else if (this.svgOverlay) {
+          r = '<span style="', r += "display: inline-block;", r += `height:${Math.floor(100 * (this.height + this.depth)) / 100}em;`, r += `vertical-align:${Math.floor(100 * this.depth) / 100}em;`, r += '">', r += e, r += "</span>", r += '<svg style="position:absolute;overflow:visible;', r += `height:${Math.floor(100 * (this.height + this.depth)) / 100}em;`;
+          let f = (c = this.cssProperties) == null ? void 0 : c.padding;
+          f ? (r += `top:${f};`, r += `left:${f};`, r += `width:calc(100% - 2 * ${f} );`) : r += "top:0;left:0;width:100%;", r += "z-index:2;", this.svgFilter && (r += `filter:${this.svgFilter.replace(/["&<>]/g, (S) => `&#${S.charCodeAt(0)};`)};`), r += '"', this.svgStyle && (r += this.svgStyle), r += ` viewBox="0 0 ${Math.floor(100 * this.width) / 100} ${Math.floor(100 * (this.height + this.depth)) / 100}"`, r += `>${this.svgOverlay}</svg>`;
+        }
+        let i = [], n = this.classes.split(" ");
+        n.push((h2 = { latex: "ML__raw-latex", placeholder: "ML__placeholder", error: "ML__error" }[this.type]) != null ? h2 : ""), this.caret === "latex" && n.push("ML__latex-caret"), this.isSelected && n.push("ML__selected");
+        let o = n.length === 1 ? n[0] : n.filter((f, S, x) => f.length > 0 && x.indexOf(f) === S).join(" ");
+        if (o.length > 0 && i.push(`class=${ar(`"${o}"`)}`), this.id && i.push(` data-atom-id=${ar(this.id)}`), this.cssId && i.push(` id=${ar(`"${this.cssId.replace(/ /g, "-")}"`)}`), this.attributes && i.push(...Object.keys(this.attributes).map((f) => `${bo(f)}=${ar(this.attributes[f])}`)), this.htmlData) {
+          let f = this.htmlData.split(",");
+          for (let S of f) {
+            let x = S.match(/([^=]+)=(.+$)/);
+            if (x) {
+              let w = bo(x[1]);
+              if (w) if (w === "href") {
+                let T = new URL(x[2]);
+                if (T.protocol !== "http:" && T.protocol !== "https:") throw new Error(`Invalid URL: ${x[2]}`);
+                i.push(`href="${Y0(x[2])}"`);
+              } else i.push(`data-${w}=${ar(x[2])}`);
+            } else {
+              let w = bo(S);
+              w && i.push(`data-${w} `);
+            }
+          }
+        }
+        let a = (d = this.cssProperties) != null ? d : {};
+        this.hasExplicitWidth && a.width === void 0 && (a.width = `${Math.ceil(this._width * 100) / 100}em`);
+        let l = Object.keys(a).map((f) => `${f}:${a[f]}`);
+        if (this.scale !== void 0 && this.scale !== 1 && (e.length > 0 || r.length > 0) && l.push(`font-size: ${Math.ceil(this.scale * 1e4) / 100}%`), this.htmlStyle) for (let f of this.htmlStyle.split(";")) {
+          let S = f.match(/([^:]+):(.+$)/);
+          if (S) {
+            let x = S[1].trim().replace(/ /g, "-");
+            x && l.push(`${x}:${S[2]}`);
+          }
+        }
+        l.length > 0 && i.push(`style=${ar(l.join(";"))}`);
+        let s2 = "";
+        return i.length > 0 || r.length > 0 ? s2 = `<span ${i.join(" ")}>${e}${r}</span>` : s2 = e, this.caret === "text" ? s2 += '<span class="ML__text-caret"></span>' : this.caret === "math" && (s2 += '<span class="ML__caret"></span>'), s2;
+      }
+      tryCoalesceWith(e) {
+        if (this.svgBody || !this.value || e.svgBody || !e.value) return false;
+        let r = this.children && this.children.length > 0, i = e.children && e.children.length > 0;
+        if (r || i) return false;
+        if (e.cssProperties || this.cssProperties) {
+          for (let s2 of ["border", "border-left", "border-right", "border-right-width", "left", "margin", "margin-left", "margin-right", "padding", "position", "width"]) if (e.cssProperties && s2 in e.cssProperties || this.cssProperties && s2 in this.cssProperties) return false;
+        }
+        let n = this.cssProperties ? Object.keys(this.cssProperties).length : 0, o = e.cssProperties ? Object.keys(e.cssProperties).length : 0;
+        if (n !== o) return false;
+        if (n > 0) {
+          for (let s2 of Object.keys(this.cssProperties)) if (this.cssProperties[s2] !== e.cssProperties[s2]) return false;
+        }
+        let a = this.classes.trim().replace(/\s+/g, " ").split(" "), l = e.classes.trim().replace(/\s+/g, " ").split(" ");
+        if (a.length !== l.length) return false;
+        a.sort(), l.sort();
+        for (let [s2, c] of a.entries()) if (c === "ML__vertical-separator" || c !== l[s2]) return false;
+        return this.value += e.value, this.height = Math.max(this.height, e.height), this.depth = Math.max(this.depth, e.depth), this._width = this._width + e._width, this.maxFontSize = Math.max(this.maxFontSize, e.maxFontSize), this.italic = e.italic, true;
+      }
+    };
+    V = class extends b {
+      constructor(e, r) {
+        var a;
+        let [i, n, o] = lc(e);
+        super(i.length === 1 ? i[0] : i, { type: r == null ? void 0 : r.type, classes: ((a = r == null ? void 0 : r.classes) != null ? a : "") + " ML__vlist-t" + (i.length === 2 ? " ML__vlist-t2" : "") }), this.height = n, this.depth = o, this.softWidth = i.reduce((l, s2) => Math.max(l, s2.width), 0);
+      }
+    };
+    cc = /^-?(\d+|\d*\.\d+)(px|em|rem|ex|ch|pt|pc|cm|mm|in|vw|vh|%)?$/;
+    mc = /^([a-zA-Z]+|#[0-9a-fA-F]{3,8}|(rgba?|hsla?)\(\s*[-\d.,%\s/]*\s*\)|var\(--[\w-]+\))$/;
+    uc = /^(none|hidden|solid|dashed|dotted|double|groove|ridge|inset|outset)$/;
+    en = 7;
+    qr = 6;
+    Nr = 5;
+    vt = 4;
+    Pt = 3;
+    be = 2;
+    St = 1;
+    me = 0;
+    Ze = class {
+      constructor(e, r, i) {
+        this.id = e, this.sizeDelta = r, this.cramped = i;
+        let n = { "-4": 2, "-3": 1, 0: 0 }[r];
+        this.metrics = Object.keys(to).reduce((o, a) => u(m2({}, o), { [a]: to[a][n] }), {});
+      }
+      getFontSize(e) {
+        return Math.max(1, e + this.sizeDelta);
+      }
+      get sup() {
+        return $e[[me, St, me, St, be, Pt, be, Pt][this.id]];
+      }
+      get sub() {
+        return $e[[me, me, me, me, be, be, be, be][this.id]];
+      }
+      get fracNum() {
+        return $e[[me, St, me, St, be, Pt, vt, Nr][this.id]];
+      }
+      get fracDen() {
+        return $e[[me, me, me, me, be, be, vt, vt][this.id]];
+      }
+      get cramp() {
+        return $e[[me, me, be, be, vt, vt, qr, qr][this.id]];
+      }
+      get isTight() {
+        return this.sizeDelta < 0;
+      }
+    };
+    Ir = { 7: new Ze(en, 0, false), 6: new Ze(qr, 0, true), 5: new Ze(Nr, 0, false), 4: new Ze(vt, 0, true), 3: new Ze(Pt, -3, false), 2: new Ze(be, -3, true), 1: new Ze(St, -4, false), 0: new Ze(me, -4, true) };
+    $e = u(m2({}, Ir), { displaystyle: Ir[en], textstyle: Ir[Nr], scriptstyle: Ir[Pt], scriptscriptstyle: Ir[St] });
+    il = { en: { "keyboard.tooltip.symbols": "Symbols", "keyboard.tooltip.greek": "Greek Letters", "keyboard.tooltip.numeric": "Numeric", "keyboard.tooltip.alphabetic": "Roman Letters", "tooltip.copy to clipboard": "Copy to Clipboard", "tooltip.cut to clipboard": "Cut to Clipboard", "tooltip.paste from clipboard": "Paste from Clipboard", "tooltip.redo": "Redo", "tooltip.toggle virtual keyboard": "Toggle Virtual Keyboard", "tooltip.menu": "Menu", "tooltip.undo": "Undo", "menu.borders": "Borders", "menu.insert matrix": "Insert Matrix", "menu.array.add row above": "Add Row Before", "menu.array.add row below": "Add Row After", "menu.array.add column after": "Add Column After", "menu.array.add column before": "Add Column Before", "menu.array.delete row": "Delete Row", "menu.array.delete rows": "Delete Selected Rows", "menu.array.delete column": "Delete Column", "menu.array.delete columns": "Delete Selected Columns", "menu.mode": "Mode", "menu.mode-math": "Math", "menu.mode-text": "Text", "menu.mode-latex": "LaTeX", "menu.insert": "Insert", "menu.insert.abs": "Absolute Value", "menu.insert.abs-template": "\\left|x\\right|", "menu.insert.nth-root": "n<sup>th</sup> Root", "menu.insert.nth-root-template": "\\sqrt[n]{x}", "menu.insert.log-base": "Logarithm base a", "menu.insert.log-base-template": "\\log_a(x)", "menu.insert.heading-calculus": "Calculus", "menu.insert.derivative": "Derivative", "menu.insert.derivative-template": "\\dfrac{\\mathrm{d}}{\\mathrm{d}x}f(x)\\bigm|_{x=a}", "menu.insert.nth-derivative": "n<sup>th</sup> derivative", "menu.insert.nth-derivative-template": "\\dfrac{\\mathrm{d}^n}{\\mathrm{d}x^n}f(x)\\bigm|_{x=a}", "menu.insert.integral": "Integral", "menu.insert.integral-template": "$\\int_a^b f(x)\\,\\mathrm{d}x$", "menu.insert.sum": "Sum", "menu.insert.sum-template": "$\\sum_{i=1}^n x_i$", "menu.insert.product": "Product", "menu.insert.product-template": "\\prod_{i=1}^n x_i", "menu.insert.heading-complex-numbers": "Complex Numbers", "menu.insert.modulus": "Modulus", "menu.insert.modulus-template": "\\lvert z \\rvert", "menu.insert.argument": "Argument", "menu.insert.argument-template": "\\arg(z)", "menu.insert.real-part": "Real Part", "menu.insert.real-part-template": "\\Re(z)", "menu.insert.imaginary-part": "Imaginary Part", "menu.insert.imaginary-part-template": "\\Im(z)", "menu.insert.conjugate": "Conjugate", "menu.insert.conjugate-template": "\\overline{z}", "tooltip.blackboard": "Blackboard", "tooltip.bold": "Bold", "tooltip.italic": "Italic", "tooltip.fraktur": "Fraktur", "tooltip.script": "Script", "tooltip.caligraphic": "Caligraphic", "tooltip.typewriter": "Typewriter", "tooltip.roman-upright": "Roman Upright", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Font Style", "menu.accent": "Accent", "menu.decoration": "Decoration", "menu.color": "Color", "menu.background-color": "Background", "menu.cut": "Cut", "menu.copy": "Copy", "menu.copy-as-latex": "Copy as LaTeX", "menu.copy-as-typst": "Copy as Typst", "menu.copy-as-ascii-math": "Copy as ASCII Math", "menu.copy-as-mathml": "Copy as MathML", "menu.paste": "Paste", "menu.select-all": "Select All", "color.red": "Red", "color.orange": "Orange", "color.yellow": "Yellow", "color.lime": "Lime", "color.green": "Green", "color.teal": "Teal", "color.cyan": "Cyan", "color.blue": "Blue", "color.indigo": "Indigo", "color.purple": "Purple", "color.magenta": "Magenta", "color.black": "Black", "color.dark-grey": "Dark Grey", "color.grey": "Grey", "color.light-grey": "Light Grey", "color.white": "White" }, ar: { "keyboard.tooltip.symbols": "\u062D\u0631\u0641 \u0627\u0648 \u0631\u0645\u0632", "keyboard.tooltip.greek": "\u062D\u0631\u0648\u0641 \u064A\u0648\u0646\u0627\u0646\u064A\u0629", "keyboard.tooltip.numeric": "\u0627\u0644\u0631\u0642\u0645\u064A\u0629", "keyboard.tooltip.alphabetic": "\u0631\u0645\u0648\u0632 \u0627\u0644\u0627\u062D\u0631\u0641 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u064A\u0629", "tooltip.copy to clipboard": "\u0646\u0633\u062E \u0625\u0644\u0649 \u0627\u0644\u062D\u0627\u0641\u0638\u0629", "tooltip.cut to clipboard": "\u0642\u0635 \u0625\u0644\u0649 \u0627\u0644\u062D\u0627\u0641\u0638\u0629", "tooltip.paste from clipboard": "\u0644\u0635\u0642 \u0645\u0646 \u0627\u0644\u062D\u0627\u0641\u0638\u0629", "tooltip.redo": "\u0627\u0644\u0625\u0639\u0627\u062F\u0629", "tooltip.toggle virtual keyboard": "\u062A\u0628\u062F\u064A\u0644 \u0644\u0648\u062D\u0629 \u0627\u0644\u0645\u0641\u0627\u062A\u064A\u062D \u0627\u0644\u0625\u0641\u062A\u0631\u0627\u0636\u064A\u0629", "tooltip.undo": "\u0625\u0644\u063A\u0627\u0621", "menu.insert matrix": "\u0623\u062F\u062E\u0644 \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629", "menu.borders": "\u0645\u062D\u062F\u062F\u0627\u062A \u0627\u0644\u0645\u0635\u0641\u0648\u0641\u0629", "menu.array.add row above": "\u0623\u0636\u0641 \u0635\u0641\u064B\u0627 \u0628\u0639\u062F \u0630\u0644\u0643", "menu.array.add row below": "\u0623\u0636\u0641 \u0627\u0644\u0635\u0641 \u0642\u0628\u0644", "menu.array.add column after": "\u0623\u0636\u0641 \u0627\u0644\u0639\u0645\u0648\u062F \u0628\u0639\u062F \u0630\u0644\u0643", "menu.array.add column before": "\u0623\u0636\u0641 \u0627\u0644\u0639\u0645\u0648\u062F \u0642\u0628\u0644", "menu.array.delete row": "\u0627\u062D\u0630\u0641 \u0635\u0641", "menu.array.delete rows": "\u062D\u0630\u0641 \u0627\u0644\u0635\u0641\u0648\u0641 \u0627\u0644\u0645\u062D\u062F\u062F\u0629", "menu.array.delete column": "\u062D\u0630\u0641 \u0627\u0644\u0639\u0645\u0648\u062F", "menu.array.delete columns": "\u062D\u0630\u0641 \u0627\u0644\u0623\u0639\u0645\u062F\u0629 \u0627\u0644\u0645\u062D\u062F\u062F\u0629", "menu.mode": "\u0648\u0636\u0639", "menu.mode-math": "\u0631\u064A\u0627\u0636\u064A\u0627\u062A", "menu.mode-text": "\u0646\u0635", "menu.mode-latex": "\u0644\u0627\u062A\u0643\u0633", "tooltip.blackboard": "\u0633\u0628\u0648\u0631\u0629", "tooltip.bold": "\u0639\u0631\u064A\u0636", "tooltip.italic": "\u0645\u0627\u0626\u0644", "tooltip.fraktur": "\u0641\u0631\u0627\u0643\u062A\u0648\u0631", "tooltip.script": "\u0633\u0643\u0631\u064A\u0628\u062A", "tooltip.caligraphic": "\u0643\u0627\u0644\u064A\u062C\u0631\u0627\u0641\u064A\u0643", "tooltip.typewriter": "\u0622\u0644\u0629 \u0643\u0627\u062A\u0628\u0629", "tooltip.roman-upright": "\u0631\u0648\u0645\u0627\u0646\u064A \u0645\u0633\u062A\u0642\u064A\u0645", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u0646\u0645\u0637 \u0627\u0644\u062E\u0637", "menu.accent": "\u062A\u0634\u0643\u064A\u0644", "menu.decoration": "\u0632\u062E\u0631\u0641\u0629", "menu.color": "\u0644\u0648\u0646", "menu.background-color": "\u0627\u0644\u062E\u0644\u0641\u064A\u0629", "menu.cut": "\u0642\u0635", "menu.copy": "\u0646\u0633\u062E", "menu.copy-as-latex": "\u0646\u0633\u062E \u0643\u0640 LaTeX", "menu.copy-as-ascii-math": "\u0646\u0633\u062E \u0643\u0640 ASCII Math", "menu.copy-as-mathml": "\u0646\u0633\u062E \u0643\u0640 MathML", "menu.paste": "\u0644\u0635\u0642", "menu.select-all": "\u062A\u062D\u062F\u064A\u062F \u0627\u0644\u0643\u0644", "color.red": "\u0623\u062D\u0645\u0631", "color.orange": "\u0628\u0631\u062A\u0642\u0627\u0644\u064A", "color.yellow": "\u0623\u0635\u0641\u0631", "color.lime": "\u0644\u064A\u0645\u0648\u0646\u064A", "color.green": "\u0623\u062E\u0636\u0631", "color.teal": "\u0633\u0645\u0627\u0648\u064A", "color.cyan": "\u0633\u0645\u0627\u0648\u064A \u0641\u0627\u062A\u062D", "color.blue": "\u0623\u0632\u0631\u0642", "color.indigo": "\u0646\u064A\u0644\u064A", "color.purple": "\u0628\u0646\u0641\u0633\u062C\u064A", "color.magenta": "\u0623\u0631\u062C\u0648\u0627\u0646\u064A", "color.black": "\u0623\u0633\u0648\u062F", "color.dark-grey": "\u0631\u0645\u0627\u062F\u064A \u063A\u0627\u0645\u0642", "color.grey": "\u0631\u0645\u0627\u062F\u064A", "color.light-grey": "\u0631\u0645\u0627\u062F\u064A \u0641\u0627\u062A\u062D", "color.white": "\u0623\u0628\u064A\u0636" }, de: { "keyboard.tooltip.symbols": "Symbole", "keyboard.tooltip.greek": "Griechische Buchstaben", "keyboard.tooltip.numeric": "Numerisch", "keyboard.tooltip.alphabetic": "R\xF6mische Buchstaben", "tooltip.copy to clipboard": "In die Zwischenablage kopieren", "tooltip.redo": "Wiederholen", "tooltip.toggle virtual keyboard": "Virtuelle Tastatur umschalten", "tooltip.undo": "Widerrufen", "menu.insert matrix": "Matrix einf\xFCgen", "menu.borders": "Matrixtrennzeichen", "menu.array.add row above": "Zeile hinzuf\xFCgen nach", "menu.array.add row below": "Zeile hinzuf\xFCgen vor", "menu.array.add column after": "Spalte hinzuf\xFCgen nach", "menu.array.add column before": "Spalte hinzuf\xFCgen vor", "menu.array.delete row": "Zeile l\xF6schen", "menu.array.delete rows": "Ausgew\xE4hlte Zeilen l\xF6schen", "menu.array.delete column": "Spalte l\xF6schen", "menu.array.delete columns": "Ausgew\xE4hlte Spalten l\xF6schen", "menu.mode": "Modus", "menu.mode-math": "Mathematik", "menu.mode-text": "Text", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "Tafel", "tooltip.bold": "Fett", "tooltip.italic": "Kursiv", "tooltip.fraktur": "Fraktur", "tooltip.script": "Skript", "tooltip.caligraphic": "Kalligraphie", "tooltip.typewriter": "Schreibmaschine", "tooltip.roman-upright": "R\xF6misch aufrecht", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Schriftstil", "menu.accent": "Akzent", "menu.decoration": "Dekoration", "menu.color": "Farbe", "menu.background-color": "Hintergrund", "menu.cut": "Ausschneiden", "menu.copy": "Kopieren", "menu.copy-as-latex": "Als LaTeX kopieren", "menu.copy-as-ascii-math": "Als ASCII Math kopieren", "menu.copy-as-mathml": "Als MathML kopieren", "menu.paste": "Einf\xFCgen", "menu.select-all": "Alles ausw\xE4hlen", "color.red": "Rot", "color.orange": "Orange", "color.yellow": "Gelb", "color.lime": "Limette", "color.green": "Gr\xFCn", "color.teal": "Blaugr\xFCn", "color.cyan": "Cyan", "color.blue": "Blau", "color.indigo": "Indigo", "color.purple": "Lila", "color.magenta": "Magenta", "color.black": "Schwarz", "color.dark-grey": "Dunkelgrau", "color.grey": "Grau", "color.light-grey": "Hellgrau", "color.white": "Wei\xDF" }, el: { "keyboard.tooltip.symbols": "\u03C3\u03CD\u03BC\u03B2\u03BF\u03BB\u03B1", "keyboard.tooltip.greek": "\u03B5\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B3\u03C1\u03AC\u03BC\u03BC\u03B1\u03C4\u03B1", "keyboard.tooltip.numeric": "\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03CC\u03C2", "keyboard.tooltip.alphabetic": "\u03A1\u03C9\u03BC\u03B1\u03CA\u03BA\u03AC \u03B3\u03C1\u03AC\u03BC\u03BC\u03B1\u03C4\u03B1", "tooltip.copy to clipboard": "\u0391\u03BD\u03C4\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE \u03C3\u03C4\u03BF \u03C0\u03C1\u03CC\u03C7\u03B5\u03B9\u03C1\u03BF", "tooltip.redo": "\u039E\u03B1\u03BD\u03B1\u03BA\u03AC\u03BD\u03C9", "tooltip.toggle virtual keyboard": "\u0395\u03BD\u03B1\u03BB\u03BB\u03B1\u03B3\u03AE \u03B5\u03B9\u03BA\u03BF\u03BD\u03B9\u03BA\u03BF\u03CD \u03C0\u03BB\u03B7\u03BA\u03C4\u03C1\u03BF\u03BB\u03BF\u03B3\u03AF\u03BF\u03C5", "tooltip.undo": "\u039E\u03B5\u03BA\u03AC\u03BD\u03C9", "menu.insert matrix": "\u0395\u03B9\u03C3\u03B1\u03B3\u03C9\u03B3\u03AE \u03BC\u03AE\u03C4\u03C1\u03B1", "menu.borders": "\u039F\u03C1\u03B9\u03BF\u03B8\u03AD\u03C4\u03B5\u03C2 \u03BC\u03AE\u03C4\u03C1\u03B1", "menu.array.add row above": "\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC\u03C2 \u03BC\u03B5\u03C4\u03AC", "menu.array.add row below": "\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC\u03C2 \u03C0\u03C1\u03B9\u03BD", "menu.array.add column after": "\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03C3\u03C4\u03AE\u03BB\u03B7\u03C2 \u03BC\u03B5\u03C4\u03AC", "menu.array.add column before": "\u03A0\u03C1\u03BF\u03C3\u03B8\u03AE\u03BA\u03B7 \u03C3\u03C4\u03AE\u03BB\u03B7\u03C2 \u03C0\u03C1\u03B9\u03BD", "menu.array.delete row": "\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC\u03C2", "menu.array.delete rows": "\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE \u03B5\u03C0\u03B9\u03BB\u03B5\u03B3\u03BC\u03AD\u03BD\u03C9\u03BD \u03C3\u03B5\u03B9\u03C1\u03CE\u03BD", "menu.array.delete column": "\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE \u03C3\u03C4\u03AE\u03BB\u03B7\u03C2", "menu.array.delete columns": "\u0394\u03B9\u03B1\u03B3\u03C1\u03B1\u03C6\u03AE \u03B5\u03C0\u03B9\u03BB\u03B5\u03B3\u03BC\u03AD\u03BD\u03C9\u03BD \u03C3\u03C4\u03B7\u03BB\u03CE\u03BD", "menu.mode": "\u039B\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1", "menu.mode-math": "\u039C\u03B1\u03B8\u03B7\u03BC\u03B1\u03C4\u03B9\u03BA\u03AC", "menu.mode-text": "\u039A\u03B5\u03AF\u03BC\u03B5\u03BD\u03BF", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "\u03A0\u03AF\u03BD\u03B1\u03BA\u03B1\u03C2", "tooltip.bold": "\u0388\u03BD\u03C4\u03BF\u03BD\u03B7", "tooltip.italic": "\u03A0\u03BB\u03AC\u03B3\u03B9\u03B1", "tooltip.fraktur": "\u03A6\u03C1\u03AC\u03BA\u03C4\u03BF\u03C5\u03C1", "tooltip.script": "\u03A3\u03B5\u03BD\u03AC\u03C1\u03B9\u03BF", "tooltip.caligraphic": "\u039A\u03B1\u03BB\u03BB\u03B9\u03B3\u03C1\u03B1\u03C6\u03B9\u03BA\u03AE", "tooltip.typewriter": "\u039C\u03B7\u03C7\u03B1\u03BD\u03AE \u03B3\u03C1\u03B1\u03C6\u03AE\u03C2", "tooltip.roman-upright": "\u03A1\u03C9\u03BC\u03B1\u03CA\u03BA\u03CC \u039A\u03B1\u03C4\u03B1\u03BA\u03CC\u03C1\u03C5\u03C6\u03BF", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u03A3\u03C4\u03C5\u03BB \u03B3\u03C1\u03B1\u03BC\u03BC\u03B1\u03C4\u03BF\u03C3\u03B5\u03B9\u03C1\u03AC\u03C2", "menu.accent": "\u03A4\u03CC\u03BD\u03BF\u03C2", "menu.decoration": "\u0394\u03B9\u03B1\u03BA\u03CC\u03C3\u03BC\u03B7\u03C3\u03B7", "menu.color": "\u03A7\u03C1\u03CE\u03BC\u03B1", "menu.background-color": "\u03A7\u03C1\u03CE\u03BC\u03B1 \u03C6\u03CC\u03BD\u03C4\u03BF\u03C5", "menu.cut": "\u0391\u03C0\u03BF\u03BA\u03BF\u03C0\u03AE", "menu.copy": "\u0391\u03BD\u03C4\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE", "menu.copy-as-latex": "\u0391\u03BD\u03C4\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE \u03C9\u03C2 LaTeX", "menu.copy-as-ascii-math": "\u0391\u03BD\u03C4\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE \u03C9\u03C2 ASCII Math", "menu.copy-as-mathml": "\u0391\u03BD\u03C4\u03B9\u03B3\u03C1\u03B1\u03C6\u03AE \u03C9\u03C2 MathML", "menu.paste": "\u0395\u03C0\u03B9\u03BA\u03CC\u03BB\u03BB\u03B7\u03C3\u03B7", "menu.select-all": "\u0395\u03C0\u03B9\u03BB\u03BF\u03B3\u03AE \u03CC\u03BB\u03C9\u03BD", "color.red": "\u039A\u03CC\u03BA\u03BA\u03B9\u03BD\u03BF", "color.orange": "\u03A0\u03BF\u03C1\u03C4\u03BF\u03BA\u03B1\u03BB\u03AF", "color.yellow": "\u039A\u03AF\u03C4\u03C1\u03B9\u03BD\u03BF", "color.lime": "\u039B\u03B1\u03C7\u03B1\u03BD\u03AF", "color.green": "\u03A0\u03C1\u03AC\u03C3\u03B9\u03BD\u03BF", "color.teal": "\u039A\u03C5\u03B1\u03BD\u03CC", "color.cyan": "\u0393\u03B1\u03BB\u03AC\u03B6\u03B9\u03BF", "color.blue": "\u039C\u03C0\u03BB\u03B5", "color.indigo": "\u0399\u03BD\u03B4\u03B9\u03BA\u03CC", "color.purple": "\u039C\u03C9\u03B2", "color.magenta": "\u039C\u03B1\u03C4\u03B6\u03AD\u03BD\u03C4\u03B1", "color.black": "\u039C\u03B1\u03CD\u03C1\u03BF", "color.dark-grey": "\u03A3\u03BA\u03BF\u03CD\u03C1\u03BF \u0393\u03BA\u03C1\u03B9", "color.grey": "\u0393\u03BA\u03C1\u03B9", "color.light-grey": "\u0391\u03BD\u03BF\u03B9\u03C7\u03C4\u03CC \u0393\u03BA\u03C1\u03B9", "color.white": "\u039B\u03B5\u03C5\u03BA\u03CC" }, es: { "keyboard.tooltip.symbols": "S\xEDmbolos", "keyboard.tooltip.greek": "Letras griegas", "keyboard.tooltip.numeric": "Num\xE9rico", "keyboard.tooltip.alphabetic": "Letras romanas", "tooltip.copy to clipboard": "Copiar al portapapeles", "tooltip.redo": "Rehacer", "tooltip.toggle virtual keyboard": "Alternar teclado virtual", "tooltip.undo": "Deshacer", "menu.insert matrix": "A\xF1adir Matriz", "menu.borders": "Delimitadores de Matriz", "menu.array.add row above": "A\xF1adir L\xEDnea Antes", "menu.array.add row below": "A\xF1adir L\xEDnea Despues", "menu.array.add column after": "A\xF1adir Columna Despues", "menu.array.add column before": "A\xF1adir Columna Antes", "menu.array.delete row": "Borrar L\xEDnea", "menu.array.delete rows": "Borrar L\xEDneas Seleccionadas", "menu.array.delete column": "Borrar Columna", "menu.array.delete columns": "Borrar Columnas Seleccionadas", "menu.mode": "Modo", "menu.mode-math": "Matem\xE1ticas", "menu.mode-text": "Texto", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "Pizarra", "tooltip.bold": "Negrita", "tooltip.italic": "Cursiva", "tooltip.fraktur": "Fraktur", "tooltip.script": "Script", "tooltip.caligraphic": "Caligr\xE1fico", "tooltip.typewriter": "M\xE1quina de escribir", "tooltip.roman-upright": "Romano Vertical", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Estilo de fuente", "menu.accent": "Acento", "menu.decoration": "Decoraci\xF3n", "menu.color": "Color", "menu.background-color": "Fondo", "menu.cut": "Cortar", "menu.copy": "Copiar", "menu.copy-as-latex": "Copiar como LaTeX", "menu.copy-as-ascii-math": "Copiar como ASCII Math", "menu.copy-as-mathml": "Copiar como MathML", "menu.paste": "Pegar", "menu.select-all": "Seleccionar todo", "color.red": "Rojo", "color.orange": "Naranja", "color.yellow": "Amarillo", "color.lime": "Lima", "color.green": "Verde", "color.teal": "Verde azulado", "color.cyan": "Cian", "color.blue": "Azul", "color.indigo": "\xCDndigo", "color.purple": "Morado", "color.magenta": "Magenta", "color.black": "Negro", "color.dark-grey": "Gris oscuro", "color.grey": "Gris", "color.light-grey": "Gris claro", "color.white": "Blanco" }, fr: { "keyboard.tooltip.symbols": "Symboles", "keyboard.tooltip.greek": "Lettres grecques", "keyboard.tooltip.numeric": "Num\xE9rique", "keyboard.tooltip.alphabetic": "Lettres romaines", "tooltip.menu": "Menu", "tooltip.copy to clipboard": "Copier dans le presse-papiers", "tooltip.redo": "R\xE9tablir", "tooltip.toggle virtual keyboard": "Afficher/Masquer le clavier virtuel", "tooltip.undo": "Annuler", "menu.insert matrix": "Ins\xE9rer une Matrice", "menu.borders": "Bords", "menu.array.add row above": "Ajouter une Ligne Avant", "menu.array.add row below": "Ajouter une Ligne Apr\xE8s", "menu.array.add column before": "Ajouter une Colonne Avant", "menu.array.add column after": "Ajouter une Colonne Apr\xE8s", "menu.array.delete row": "Enlever une Ligne", "menu.array.delete rows": "Enlever les Lignes S\xE9lection\xE9es", "menu.array.delete column": "Enlever une Colone", "menu.array.delete columns": "Enlever les Colonnes S\xE9lection\xE9es", "menu.mode": "Mode", "menu.mode-math": "Math", "menu.mode-text": "Text", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "Tableau noir", "tooltip.bold": "Gras", "tooltip.italic": "Italique", "tooltip.fraktur": "Fraktur", "tooltip.script": "Script", "tooltip.caligraphic": "Calligraphique", "tooltip.typewriter": "Machine \xE0 \xE9crire", "tooltip.roman-upright": "Romain droit", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Style de police", "menu.accent": "Accent", "menu.decoration": "D\xE9coration", "menu.color": "Couleur", "menu.background-color": "Arri\xE8re-plan", "menu.cut": "Couper", "menu.copy": "Copier", "menu.copy-as-latex": "Copier en LaTeX", "menu.copy-as-ascii-math": "Copier en ASCII Math", "menu.copy-as-mathml": "Copier en MathML", "menu.paste": "Coller", "menu.select-all": "S\xE9lectionner tout", "color.red": "Rouge", "color.orange": "Orange", "color.yellow": "Jaune", "color.lime": "Citron vert", "color.green": "Vert", "color.teal": "Turquoise", "color.cyan": "Cyan", "color.blue": "Bleu", "color.indigo": "Indigo", "color.purple": "Violet", "color.magenta": "Magenta", "color.black": "Noir", "color.dark-grey": "Gris fonc\xE9", "color.grey": "Gris", "color.light-grey": "Gris clair", "color.white": "Blanc" }, he: { "keyboard.tooltip.symbols": "\u05E1\u05DE\u05DC\u05D9\u05DD", "keyboard.tooltip.greek": "\u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05D9\u05D5\u05D5\u05E0\u05D9\u05D5\u05EA", "keyboard.tooltip.numeric": "\u05DE\u05E1\u05E4\u05E8\u05D9", "keyboard.tooltip.alphabetic": "\u05DE\u05DB\u05EA\u05D1\u05D9\u05DD \u05E8\u05D5\u05DE\u05D9\u05D9\u05DD", "tooltip.copy to clipboard": "\u05D4\u05E2\u05EA\u05E7 \u05DC\u05DC\u05D5\u05D7", "tooltip.redo": "\u05DC\u05B7\u05E2\u05B2\u05E9\u05C2\u05D5\u05B9\u05EA \u05E9\u05C1\u05D5\u05BC\u05D1", "tooltip.toggle virtual keyboard": "\u05D4\u05D7\u05DC\u05E3 \u05D0\u05EA \u05D4\u05DE\u05E7\u05DC\u05D3\u05EA \u05D4\u05D5\u05D5\u05D9\u05E8\u05D8\u05D5\u05D0\u05DC\u05D9\u05EA", "tooltip.undo": "\u05DC\u05D1\u05D8\u05DC", "menu.insert matrix": "\u05D4\u05DB\u05E0\u05E1 \u05DE\u05D8\u05E8\u05D9\u05E7\u05E1", "menu.borders": "\u05DE\u05E4\u05E8\u05D9\u05D3\u05D9 \u05DE\u05D8\u05E8\u05D9\u05E7\u05E1", "menu.array.add row above": "\u05D4\u05D5\u05E1\u05E3 \u05E9\u05D5\u05E8\u05D4 \u05D0\u05D7\u05E8\u05D9", "menu.array.add row below": "\u05D4\u05D5\u05E1\u05E3 \u05E9\u05D5\u05E8\u05D4 \u05DC\u05E4\u05E0\u05D9", "menu.array.add column after": "\u05D4\u05D5\u05E1\u05E3 \u05E2\u05DE\u05D5\u05D3\u05D4 \u05D0\u05D7\u05E8\u05D9", "menu.array.add column before": "\u05D4\u05D5\u05E1\u05E3 \u05E2\u05DE\u05D5\u05D3\u05D4 \u05DC\u05E4\u05E0\u05D9", "menu.array.delete row": "\u05DE\u05D7\u05E7 \u05E9\u05D5\u05E8\u05D4", "menu.array.delete rows": "\u05DE\u05D7\u05E7 \u05E9\u05D5\u05E8\u05D5\u05EA \u05E9\u05E0\u05D1\u05D7\u05E8\u05D5", "menu.array.delete column": "\u05DE\u05D7\u05E7 \u05E2\u05DE\u05D5\u05D3\u05D4", "menu.array.delete columns": "\u05DE\u05D7\u05E7 \u05E2\u05DE\u05D5\u05D3\u05D5\u05EA \u05E9\u05E0\u05D1\u05D7\u05E8\u05D5", "menu.mode": "\u05DE\u05E6\u05D1", "menu.mode-math": "\u05DE\u05EA\u05DE\u05D8\u05D9\u05E7\u05D4", "menu.mode-text": "\u05D8\u05E7\u05E1\u05D8", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "\u05DC\u05D5\u05D7 \u05E9\u05D7\u05D5\u05E8", "tooltip.bold": "\u05DE\u05D5\u05D3\u05D2\u05E9", "tooltip.italic": "\u05E0\u05D8\u05D5\u05D9", "tooltip.fraktur": "\u05E4\u05E8\u05E7\u05D8\u05D5\u05E8", "tooltip.script": "\u05DB\u05EA\u05D1", "tooltip.caligraphic": "\u05E7\u05DC\u05D9\u05D2\u05E8\u05E4\u05D9", "tooltip.typewriter": "\u05DE\u05DB\u05D5\u05E0\u05EA \u05DB\u05EA\u05D9\u05D1\u05D4", "tooltip.roman-upright": "\u05E8\u05D5\u05DE\u05D9 \u05D9\u05E9\u05E8", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u05E1\u05D2\u05E0\u05D5\u05DF \u05D2\u05D5\u05E4\u05DF", "menu.accent": "\u05E6\u05DC\u05D9\u05DC", "menu.decoration": "\u05E7\u05D9\u05E9\u05D5\u05D8", "menu.color": "\u05E6\u05D1\u05E2", "menu.background-color": "\u05E8\u05E7\u05E2", "menu.cut": "\u05D2\u05D6\u05D5\u05E8", "menu.copy": "\u05D4\u05E2\u05EA\u05E7", "menu.copy-as-latex": "\u05D4\u05E2\u05EA\u05E7 \u05DB\u05BELaTeX", "menu.copy-as-ascii-math": "\u05D4\u05E2\u05EA\u05E7 \u05DB\u05BEASCII Math", "menu.copy-as-mathml": "\u05D4\u05E2\u05EA\u05E7 \u05DB\u05BEMathML", "menu.paste": "\u05D4\u05D3\u05D1\u05E7", "menu.select-all": "\u05D1\u05D7\u05E8 \u05D4\u05DB\u05DC", "color.red": "\u05D0\u05D3\u05D5\u05DD", "color.orange": "\u05DB\u05EA\u05D5\u05DD", "color.yellow": "\u05E6\u05D4\u05D5\u05D1", "color.lime": "\u05D9\u05E8\u05D5\u05E7 \u05DC\u05D9\u05D9\u05DD", "color.green": "\u05D9\u05E8\u05D5\u05E7", "color.teal": "\u05D8\u05D9\u05DC", "color.cyan": "\u05E6\u05D9\u05D0\u05DF", "color.blue": "\u05DB\u05D7\u05D5\u05DC", "color.indigo": "\u05D0\u05D9\u05E0\u05D3\u05D9\u05D2\u05D5", "color.purple": "\u05E1\u05D2\u05D5\u05DC", "color.magenta": "\u05DE\u05D2\u05E0\u05D8\u05D4", "color.black": "\u05E9\u05D7\u05D5\u05E8", "color.dark-grey": "\u05D0\u05E4\u05D5\u05E8 \u05DB\u05D4\u05D4", "color.grey": "\u05D0\u05E4\u05D5\u05E8", "color.light-grey": "\u05D0\u05E4\u05D5\u05E8 \u05D1\u05D4\u05D9\u05E8", "color.white": "\u05DC\u05D1\u05DF" }, it: { "keyboard.tooltip.symbols": "Simboli", "keyboard.tooltip.greek": "Lettere greche", "keyboard.tooltip.numeric": "Numerico", "keyboard.tooltip.alphabetic": "Lettere romane", "tooltip.copy to clipboard": "Copia negli appunti", "tooltip.cut to clipboard": "Taglia negli appunti", "tooltip.paste from clipboard": "Incolla dagli appunti", "tooltip.redo": "Ripeti", "tooltip.toggle virtual keyboard": "Attiva/disattiva tastiera virtuale", "tooltip.menu": "Menu", "tooltip.undo": "Annulla", "menu.borders": "Delimitatori", "menu.insert matrix": "Inserisci matrice", "menu.array.add row above": "Aggiungi riga sopra", "menu.array.add row below": "Aggiungi riga sotto", "menu.array.add column after": "Aggiungi colonna dopo", "menu.array.add column before": "Aggiungi colonna prima", "menu.array.delete row": "Elimina riga", "menu.array.delete rows": "Elimina righe selezionate", "menu.array.delete column": "Elimina colonna", "menu.array.delete columns": "Elimina colonne selezionate", "menu.mode": "Modalit\xE0", "menu.mode-math": "Matematica", "menu.mode-text": "Testo", "menu.mode-latex": "LaTeX", "menu.insert": "Inserisci", "menu.insert.abs": "Valore assoluto", "menu.insert.abs-template": "\\left|x\\right|", "menu.insert.nth-root": "Radice n-esima", "menu.insert.nth-root-template": "\\sqrt[n]{x}", "menu.insert.log-base": "Logaritmo in base a", "menu.insert.log-base-template": "\\log_a(x)", "menu.insert.heading-calculus": "Calcolo", "menu.insert.derivative": "Derivata", "menu.insert.derivative-template": "\\dfrac{\\mathrm{d}}{\\mathrm{d}x}f(x)\\bigm|_{x=a}", "menu.insert.nth-derivative": "Derivata n-esima", "menu.insert.nth-derivative-template": "\\dfrac{\\mathrm{d}^n}{\\mathrm{d}x^n}f(x)\\bigm|_{x=a}", "menu.insert.integral": "Integrale", "menu.insert.integral-template": "$\\int_a^b f(x)\\,\\mathrm{d}x$", "menu.insert.sum": "Somma", "menu.insert.sum-template": "$\\sum_{i=1}^n x_i$", "menu.insert.product": "Prodotto", "menu.insert.product-template": "\\prod_{i=1}^n x_i", "menu.insert.heading-complex-numbers": "Numeri complessi", "menu.insert.modulus": "Modulo", "menu.insert.modulus-template": "\\lvert z \\rvert", "menu.insert.argument": "Argomento", "menu.insert.argument-template": "\\arg(z)", "menu.insert.real-part": "Parte reale", "menu.insert.real-part-template": "\\Re(z)", "menu.insert.imaginary-part": "Parte immaginaria", "menu.insert.imaginary-part-template": "\\Im(z)", "menu.insert.conjugate": "Coniugato", "menu.insert.conjugate-template": "\\overline{z}", "tooltip.blackboard": "Lavagna", "tooltip.bold": "Grassetto", "tooltip.italic": "Corsivo", "tooltip.fraktur": "Fraktur", "tooltip.script": "Script", "tooltip.caligraphic": "Calligrafico", "tooltip.typewriter": "Macchina da scrivere", "tooltip.roman-upright": "Romano diritto", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Stile carattere", "menu.accent": "Accento", "menu.decoration": "Decorazione", "menu.color": "Colore", "menu.background-color": "Sfondo", "menu.cut": "Taglia", "menu.copy": "Copia", "menu.copy-as-latex": "Copia come LaTeX", "menu.copy-as-ascii-math": "Copia come ASCII Math", "menu.copy-as-mathml": "Copia come MathML", "menu.paste": "Incolla", "menu.select-all": "Seleziona tutto", "color.red": "Rosso", "color.orange": "Arancione", "color.yellow": "Giallo", "color.lime": "Lime", "color.green": "Verde", "color.teal": "Verde acqua", "color.cyan": "Ciano", "color.blue": "Blu", "color.indigo": "Indaco", "color.purple": "Viola", "color.magenta": "Magenta", "color.black": "Nero", "color.dark-grey": "Grigio scuro", "color.grey": "Grigio", "color.light-grey": "Grigio chiaro", "color.white": "Bianco" }, ja: { "keyboard.tooltip.symbols": "\u8A18\u53F7", "keyboard.tooltip.greek": "\u30AE\u30EA\u30B7\u30A2\u6587\u5B57", "keyboard.tooltip.numeric": "\u6570\u5024", "keyboard.tooltip.alphabetic": "\u30ED\u30FC\u30DE\u5B57", "tooltip.copy to clipboard": "\u30AF\u30EA\u30C3\u30D7\u30DC\u30FC\u30C9\u306B\u30B3\u30D4\u30FC", "tooltip.cut to clipboard": "\u30AF\u30EA\u30C3\u30D7\u30DC\u30FC\u30C9\u306B\u5207\u308A\u53D6\u308A", "tooltip.paste from clipboard": "\u30AF\u30EA\u30C3\u30D7\u30DC\u30FC\u30C9\u304B\u3089\u8CBC\u308A\u4ED8\u3051", "tooltip.redo": "\u3084\u308A\u76F4\u3057", "tooltip.toggle virtual keyboard": "\u4EEE\u60F3\u30AD\u30FC\u30DC\u30FC\u30C9\u306E\u5207\u308A\u66FF\u3048", "tooltip.menu": "\u30E1\u30CB\u30E5\u30FC", "tooltip.undo": "\u5143\u306B\u623B\u3059", "menu.borders": "\u884C\u5217\u306E\u533A\u5207\u308A\u6587\u5B57", "menu.insert matrix": "\u884C\u5217\u3092\u633F\u5165", "menu.array.add row above": "\u5F8C\u306B\u884C\u3092\u8FFD\u52A0", "menu.array.add row below": "\u524D\u306B\u884C\u3092\u8FFD\u52A0", "menu.array.add column after": "\u5F8C\u306B\u5217\u3092\u8FFD\u52A0", "menu.array.add column before": "\u524D\u306B\u5217\u3092\u8FFD\u52A0", "menu.array.delete row": "\u884C\u3092\u524A\u9664", "menu.array.delete rows": "\u9078\u629E\u3057\u305F\u884C\u3092\u524A\u9664", "menu.array.delete column": "\u5217\u3092\u524A\u9664", "menu.array.delete columns": "\u9078\u629E\u3057\u305F\u5217\u3092\u524A\u9664", "menu.mode": "\u30E2\u30FC\u30C9", "menu.mode-math": "\u6570\u5F0F", "menu.mode-text": "\u30C6\u30AD\u30B9\u30C8", "menu.mode-latex": "LaTeX", "menu.insert": "\u633F\u5165", "menu.insert.abs": "\u7D76\u5BFE\u5024", "menu.insert.nth-root": "n \u4E57\u6839", "menu.insert.log-base": "\u5E95\u304C a \u306E\u5BFE\u6570", "menu.insert.heading-calculus": "\u5FAE\u7A4D\u5206", "menu.insert.derivative": "\u5C0E\u95A2\u6570", "menu.insert.nth-derivative": "n \u968E\u5C0E\u95A2\u6570", "menu.insert.integral": "\u7A4D\u5206", "menu.insert.sum": "\u7DCF\u548C", "menu.insert.product": "\u7DCF\u7A4D", "menu.insert.heading-complex-numbers": "\u8907\u7D20\u6570", "menu.insert.modulus": "\u7D76\u5BFE\u5024", "menu.insert.argument": "\u504F\u89D2", "menu.insert.real-part": "\u5B9F\u90E8", "menu.insert.imaginary-part": "\u865A\u90E8", "menu.insert.conjugate": "\u5171\u5F79\u8907\u7D20\u6570", "tooltip.blackboard": "\u9ED2\u677F", "tooltip.bold": "\u592A\u5B57", "tooltip.italic": "\u30A4\u30BF\u30EA\u30C3\u30AF\u4F53", "tooltip.fraktur": "\u30D5\u30E9\u30AF\u30C8\u30A5\u30FC\u30EB", "tooltip.script": "\u30B9\u30AF\u30EA\u30D7\u30C8", "tooltip.caligraphic": "\u30AB\u30EA\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF", "tooltip.typewriter": "\u30BF\u30A4\u30D7\u30E9\u30A4\u30BF\u30FC", "tooltip.roman-upright": "\u30ED\u30FC\u30DE\u76F4\u7ACB", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u30D5\u30A9\u30F3\u30C8\u30B9\u30BF\u30A4\u30EB", "menu.accent": "\u30A2\u30AF\u30BB\u30F3\u30C8", "menu.decoration": "\u88C5\u98FE", "menu.color": "\u8272", "menu.background-color": "\u80CC\u666F", "menu.cut": "\u5207\u308A\u53D6\u308A", "menu.copy": "\u30B3\u30D4\u30FC", "menu.copy-as-latex": "LaTeX \u3068\u3057\u3066\u30B3\u30D4\u30FC", "menu.copy-as-typst": "Typst \u3068\u3057\u3066\u30B3\u30D4\u30FC", "menu.copy-as-ascii-math": "ASCII Math \u3068\u3057\u3066\u30B3\u30D4\u30FC", "menu.copy-as-mathml": "MathML \u3068\u3057\u3066\u30B3\u30D4\u30FC", "menu.paste": "\u8CBC\u308A\u4ED8\u3051", "menu.select-all": "\u3059\u3079\u3066\u9078\u629E", "color.red": "\u8D64", "color.orange": "\u30AA\u30EC\u30F3\u30B8", "color.yellow": "\u9EC4\u8272", "color.lime": "\u30E9\u30A4\u30E0", "color.green": "\u7DD1", "color.teal": "\u30C6\u30A3\u30FC\u30EB", "color.cyan": "\u30B7\u30A2\u30F3", "color.blue": "\u9752", "color.indigo": "\u30A4\u30F3\u30C7\u30A3\u30B4", "color.purple": "\u7D2B", "color.magenta": "\u30DE\u30BC\u30F3\u30BF", "color.black": "\u9ED2", "color.dark-grey": "\u6FC3\u3044\u30B0\u30EC\u30FC", "color.grey": "\u30B0\u30EC\u30FC", "color.light-grey": "\u8584\u3044\u30B0\u30EC\u30FC", "color.white": "\u767D" }, ko: { "keyboard.tooltip.symbols": "\uAE30\uD638", "keyboard.tooltip.greek": "\uADF8\uB9AC\uC2A4 \uBB38\uC790", "keyboard.tooltip.numeric": "\uC22B\uC790", "keyboard.tooltip.alphabetic": "\uB85C\uB9C8 \uBB38\uC790", "tooltip.copy to clipboard": "\uD074\uB9BD \uBCF4\uB4DC\uC5D0 \uBCF5\uC0AC", "tooltip.redo": "\uB2E4\uC2DC \uC2E4\uD589", "tooltip.toggle virtual keyboard": "\uAC00\uC0C1 \uD0A4\uBCF4\uB4DC \uC804\uD658", "tooltip.undo": "\uC2E4\uD589 \uCDE8\uC18C", "menu.insert matrix": "\uD589\uB82C \uC0BD\uC785", "menu.borders": "\uD589\uB82C \uAD6C\uBD84 \uAE30\uD638", "menu.array.add row above": "\uB4A4\uC5D0 \uD589 \uCD94\uAC00", "menu.array.add row below": "\uC55E\uC5D0 \uD589 \uCD94\uAC00", "menu.array.add column after": "\uB4A4\uC5D0 \uC5F4 \uCD94\uAC00", "menu.array.add column before": "\uC55E\uC5D0 \uC5F4 \uCD94\uAC00", "menu.array.delete row": "\uD589 \uC0AD\uC81C", "menu.array.delete rows": "\uC120\uD0DD\uD55C \uD589 \uC0AD\uC81C", "menu.array.delete column": "\uC5F4 \uC0AD\uC81C", "menu.array.delete columns": "\uC120\uD0DD\uD55C \uC5F4 \uC0AD\uC81C", "menu.mode": "\uBAA8\uB4DC", "menu.mode-math": "\uC218\uC2DD", "menu.mode-text": "\uD14D\uC2A4\uD2B8", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "\uCE60\uD310", "tooltip.bold": "\uAD75\uAC8C", "tooltip.italic": "\uC774\uD0E4\uB9AD", "tooltip.fraktur": "\uD504\uB799\uD22C\uC5B4", "tooltip.script": "\uCCA8\uC790", "tooltip.caligraphic": "\uD544\uAE30\uCCB4", "tooltip.typewriter": "\uD0C0\uC790\uAE30", "tooltip.roman-upright": "\uC77C\uBC18 \uB85C\uB9C8\uC790", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\uAE00\uAF34 \uC2A4\uD0C0\uC77C", "menu.accent": "\uBC1C\uC74C \uAE30\uD638", "menu.decoration": "\uC7A5\uC2DD", "menu.color": "\uC0C9\uC0C1", "menu.background-color": "\uBC30\uACBD", "menu.cut": "\uC798\uB77C\uB0B4\uAE30", "menu.copy": "\uBCF5\uC0AC", "menu.copy-as-latex": "LaTeX\uB85C \uBCF5\uC0AC", "menu.copy-as-ascii-math": "ASCIIMath\uB85C \uBCF5\uC0AC", "menu.copy-as-mathml": "MathML\uB85C \uBCF5\uC0AC", "menu.paste": "\uBD99\uC5EC\uB123\uAE30", "menu.select-all": "\uBAA8\uB450 \uC120\uD0DD", "color.red": "\uBE68\uAC15", "color.orange": "\uC8FC\uD669", "color.yellow": "\uB178\uB791", "color.lime": "\uB77C\uC784", "color.green": "\uCD08\uB85D", "color.teal": "\uCCAD\uB85D", "color.cyan": "\uCCAD\uC0C9", "color.blue": "\uD30C\uB791", "color.indigo": "\uB0A8\uC0C9", "color.purple": "\uBCF4\uB77C", "color.magenta": "\uC790\uD64D", "color.black": "\uAC80\uC815", "color.dark-grey": "\uC9C4\uD55C \uD68C\uC0C9", "color.grey": "\uD68C\uC0C9", "color.light-grey": "\uC5F0\uD55C \uD68C\uC0C9", "color.white": "\uD770\uC0C9" }, pl: { "keyboard.tooltip.symbols": "Symbolika", "keyboard.tooltip.greek": "Litery greckie", "keyboard.tooltip.numeric": "Numeryczne", "keyboard.tooltip.alphabetic": "Litery rzymskie", "tooltip.copy to clipboard": "Kopiuj do Schowka", "tooltip.cut to clipboard": "Wytnij ze Schowka", "tooltip.paste from clipboard": "Wklej ze Schowka", "tooltip.redo": "Przywr\xF3\u0107", "tooltip.toggle virtual keyboard": "Prze\u0142\u0105cz klawiatur\u0119 wirtualn\u0105", "tooltip.menu": "Menu", "tooltip.undo": "Cofnij", "menu.borders": "Ograniczniki macierzy", "menu.insert matrix": "Wstaw macierz", "menu.array.add row above": "Dodaj wiersz przed", "menu.array.add row below": "Dodaj wiersz po", "menu.array.add column after": "Dodaj kolumn\u0119 po", "menu.array.add column before": "Dodaj kolumn\u0119 przed", "menu.array.delete row": "Usu\u0144 wiersz", "menu.array.delete rows": "Usu\u0144 wybrane wiersze", "menu.array.delete column": "Usu\u0144 kolumn\u0119", "menu.array.delete columns": "Usu\u0144 wybrane kolumny", "menu.mode": "Tryb", "menu.mode-math": "Formu\u0142a", "menu.mode-text": "Tekst", "menu.mode-latex": "LaTeX", "menu.insert": "Wstaw", "menu.insert.abs": "Warto\u015B\u0107 bezwzgl\u0119dna", "menu.insert.abs-template": "\\left|x\\right|", "menu.insert.nth-root": "Pierwiastek n-tego stopnia", "menu.insert.nth-root-template": "\\sqrt[n]{x}", "menu.insert.log-base": "Logarytm o podstawie a", "menu.insert.log-base-template": "\\log_a(x)", "menu.insert.heading-calculus": "Rachunek r\xF3\u017Cniczkowy i ca\u0142kowy", "menu.insert.derivative": "Pochodna", "menu.insert.derivative-template": "\\dfrac{\\mathrm{d}}{\\mathrm{d}x}f(x)\\bigm|_{x=a}", "menu.insert.nth-derivative": "Pochodna n-tego rz\u0119du", "menu.insert.nth-derivative-template": "\\dfrac{\\mathrm{d}^n}{\\mathrm{d}x^n}f(x)\\bigm|_{x=a}", "menu.insert.integral": "Ca\u0142ka", "menu.insert.integral-template": "$\\int_a^b f(x)\\,\\mathrm{d}x$", "menu.insert.sum": "Suma", "menu.insert.sum-template": "$\\sum_{i=1}^n x_i$", "menu.insert.product": "Iloczyn", "menu.insert.product-template": "\\prod_{i=1}^n x_i", "menu.insert.heading-complex-numbers": "Liczby zespolone", "menu.insert.modulus": "Modu\u0142", "menu.insert.modulus-template": "\\lvert z \\rvert", "menu.insert.argument": "Argument", "menu.insert.argument-template": "\\arg(z)", "menu.insert.real-part": "Cz\u0119\u015B\u0107 rzeczywista", "menu.insert.real-part-template": "\\Re(z)", "menu.insert.imaginary-part": "Cz\u0119\u015B\u0107 urojona", "menu.insert.imaginary-part-template": "\\Im(z)", "menu.insert.conjugate": "Sprz\u0119\u017Cenie", "menu.insert.conjugate-template": "\\overline{z}", "tooltip.blackboard": "Tablica", "tooltip.bold": "Pogrubienie", "tooltip.italic": "Kursywa", "tooltip.fraktur": "Fraktura", "tooltip.script": "Skrypt", "tooltip.caligraphic": "Kaligraficzny", "tooltip.typewriter": "Maszynowy", "tooltip.roman-upright": "Rzymski prosto", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Styl czcionki", "menu.accent": "Akcent", "menu.decoration": "Dekoracja", "menu.color": "Kolor", "menu.background-color": "T\u0142o", "menu.cut": "Wytnij", "menu.copy": "Kopiuj", "menu.copy-as-latex": "Kopiuj jako LaTeX", "menu.copy-as-ascii-math": "Kopiuj jako ASCII Math", "menu.copy-as-mathml": "Kopiuj jako MathML", "menu.paste": "Wklej", "menu.select-all": "Zaznacz wszystko", "color.red": "Czerwony", "color.orange": "Pomara\u0144czowy", "color.yellow": "\u017B\xF3\u0142ty", "color.lime": "Limetkowy", "color.green": "Zielony", "color.teal": "Turkusowy", "color.cyan": "Cyjan", "color.blue": "Niebieski", "color.indigo": "Indygo", "color.purple": "Fioletowy", "color.magenta": "Magenta", "color.black": "Czarny", "color.dark-grey": "Ciemnoszary", "color.grey": "Szary", "color.light-grey": "Jasnoszary", "color.white": "Bia\u0142y" }, pt: { "keyboard.tooltip.symbols": "S\xEDmbolos", "keyboard.tooltip.greek": "Letras gregas", "keyboard.tooltip.numeric": "Num\xE9rico", "keyboard.tooltip.alphabetic": "Letras romanas", "tooltip.copy to clipboard": "Copiar para \xE1rea de transfer\xEAncia", "tooltip.redo": "Refazer", "tooltip.toggle virtual keyboard": "Alternar teclado virtual", "tooltip.undo": "Desfazer", "menu.insert matrix": "Inserir Matriz", "menu.borders": "Delimitadores de matriz", "menu.array.add row above": "Adicionar linha depois", "menu.array.add row below": "Adicionar linha antes", "menu.array.add column after": "Adicionar coluna depois", "menu.array.add column before": "Adicionar coluna antes", "menu.array.delete row": "Excluir linha", "menu.array.delete rows": "Excluir linhas selecionadas", "menu.array.delete column": "Apagar Coluna", "menu.array.delete columns": "Excluir Colunas Selecionadas", "menu.mode": "Modo", "menu.mode-math": "F\xF3rmula", "menu.mode-text": "Texto", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "Quadro Negro", "tooltip.bold": "Negrito", "tooltip.italic": "It\xE1lico", "tooltip.fraktur": "Fraktur", "tooltip.script": "Script", "tooltip.caligraphic": "Caligr\xE1fico", "tooltip.typewriter": "M\xE1quina de Escrever", "tooltip.roman-upright": "Romano Vertical", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "Estilo da Fonte", "menu.accent": "Acento", "menu.decoration": "Decora\xE7\xE3o", "menu.color": "Cor", "menu.background-color": "Cor de Fundo", "menu.cut": "Recortar", "menu.copy": "Copiar", "menu.copy-as-latex": "Copiar como LaTeX", "menu.copy-as-ascii-math": "Copiar como ASCII Math", "menu.copy-as-mathml": "Copiar como MathML", "menu.paste": "Colar", "menu.select-all": "Selecionar Tudo", "color.red": "Vermelho", "color.orange": "Laranja", "color.yellow": "Amarelo", "color.lime": "Verde Lima", "color.green": "Verde", "color.teal": "Verde-azulado", "color.cyan": "Ciano", "color.blue": "Azul", "color.indigo": "\xCDndigo", "color.purple": "Roxo", "color.magenta": "Magenta", "color.black": "Preto", "color.dark-grey": "Cinza Escuro", "color.grey": "Cinza", "color.light-grey": "Cinza Claro", "color.white": "Branco" }, uk: { "keyboard.tooltip.symbols": "\u0421\u0438\u043C\u0432\u043E\u043B\u0438", "keyboard.tooltip.greek": "\u0413\u0440\u0435\u0446\u044C\u043A\u0456 \u043B\u0456\u0442\u0435\u0440\u0438", "keyboard.tooltip.numeric": "\u0427\u0438\u0441\u043B\u043E\u0432\u0438\u0439", "keyboard.tooltip.alphabetic": "\u0420\u0438\u043C\u0441\u044C\u043A\u0456 \u043B\u0456\u0442\u0435\u0440\u0438", "tooltip.copy to clipboard": "\u041A\u043E\u043F\u0456\u044E\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440 \u043E\u0431\u043C\u0456\u043D\u0443", "tooltip.cut to clipboard": "\u0412\u0438\u0440\u0456\u0437\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440 \u043E\u0431\u043C\u0456\u043D\u0443", "tooltip.paste from clipboard": "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u0438 \u0437 \u0431\u0443\u0444\u0435\u0440\u0430 \u043E\u0431\u043C\u0456\u043D\u0443", "tooltip.redo": "\u041F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0438", "tooltip.toggle virtual keyboard": "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u0438 \u0432\u0456\u0440\u0442\u0443\u0430\u043B\u044C\u043D\u0443 \u043A\u043B\u0430\u0432\u0456\u0430\u0442\u0443\u0440\u0443", "tooltip.menu": "\u041C\u0435\u043D\u044E", "tooltip.undo": "\u0421\u043A\u0430\u0441\u0443\u0432\u0430\u0442\u0438", "menu.borders": "\u041C\u0435\u0436\u0456", "menu.insert matrix": "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u0438 \u043C\u0430\u0442\u0440\u0438\u0446\u044E", "menu.array.add row above": "\u0414\u043E\u0434\u0430\u0442\u0438 \u0440\u044F\u0434\u043E\u043A \u043F\u0435\u0440\u0435\u0434", "menu.array.add row below": "\u0414\u043E\u0434\u0430\u0442\u0438 \u0440\u044F\u0434\u043E\u043A \u043F\u0456\u0441\u043B\u044F", "menu.array.add column after": "\u0414\u043E\u0434\u0430\u0442\u0438 \u0441\u0442\u043E\u0432\u043F\u0435\u0446\u044C \u043F\u0456\u0441\u043B\u044F", "menu.array.add column before": "\u0414\u043E\u0434\u0430\u0442\u0438 \u0441\u0442\u043E\u0432\u043F\u0435\u0446\u044C \u043F\u0435\u0440\u0435\u0434", "menu.array.delete row": "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438 \u0440\u044F\u0434\u043E\u043A", "menu.array.delete rows": "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438 \u0432\u0438\u0431\u0440\u0430\u043D\u0456 \u0440\u044F\u0434\u043A\u0438", "menu.array.delete column": "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438 \u0441\u0442\u043E\u0432\u043F\u0435\u0446\u044C", "menu.array.delete columns": "\u0412\u0438\u0434\u0430\u043B\u0438\u0442\u0438 \u0432\u0438\u0431\u0440\u0430\u043D\u0456 \u0441\u0442\u043E\u0432\u043F\u0446\u0456", "menu.mode": "\u0420\u0435\u0436\u0438\u043C", "menu.mode-math": "\u041C\u0430\u0442\u0435\u043C\u0430\u0442\u0438\u043A\u0430", "menu.mode-text": "\u0422\u0435\u043A\u0441\u0442", "menu.mode-latex": "LaTeX", "menu.insert": "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u0438", "menu.insert.abs": "\u0410\u0431\u0441\u043E\u043B\u044E\u0442\u043D\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F", "menu.insert.abs-template": "\\left|x\\right|", "menu.insert.nth-root": "\u041A\u043E\u0440\u0456\u043D\u044C n-\u0433\u043E \u0441\u0442\u0435\u043F\u0435\u043D\u044F", "menu.insert.nth-root-template": "\\sqrt[n]{x}", "menu.insert.log-base": "\u041B\u043E\u0433\u0430\u0440\u0438\u0444\u043C \u0437\u0430 \u043E\u0441\u043D\u043E\u0432\u043E\u044E a", "menu.insert.log-base-template": "\\log_a(x)", "menu.insert.heading-calculus": "\u041E\u0431\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044F", "menu.insert.derivative": "\u041F\u043E\u0445\u0456\u0434\u043D\u0430", "menu.insert.derivative-template": "\\dfrac{\\mathrm{d}}{\\mathrm{d}x}f(x)\\bigm|_{x=a}", "menu.insert.nth-derivative": "\u041F\u043E\u0445\u0456\u0434\u043D\u0430 n-\u0433\u043E \u043F\u043E\u0440\u044F\u0434\u043A\u0443", "menu.insert.nth-derivative-template": "\\dfrac{\\mathrm{d}^n}{\\mathrm{d}x^n}f(x)\\bigm|_{x=a}", "menu.insert.integral": "\u0406\u043D\u0442\u0435\u0433\u0440\u0430\u043B", "menu.insert.integral-template": "$\\int_a^b f(x)\\,\\mathrm{d}x$", "menu.insert.sum": "\u0421\u0443\u043C\u0430", "menu.insert.sum-template": "$\\sum_{i=1}^n x_i$", "menu.insert.product": "\u0414\u043E\u0431\u0443\u0442\u043E\u043A", "menu.insert.product-template": "\\prod_{i=1}^n x_i", "menu.insert.heading-complex-numbers": "\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u0456 \u0447\u0438\u0441\u043B\u0430", "menu.insert.modulus": "\u041C\u043E\u0434\u0443\u043B\u044C", "menu.insert.modulus-template": "\\lvert z \\rvert", "menu.insert.argument": "\u0410\u0440\u0433\u0443\u043C\u0435\u043D\u0442", "menu.insert.argument-template": "\\arg(z)", "menu.insert.real-part": "\u0414\u0456\u0439\u0441\u043D\u0430 \u0447\u0430\u0441\u0442\u0438\u043D\u0430", "menu.insert.real-part-template": "\\Re(z)", "menu.insert.imaginary-part": "\u0423\u044F\u0432\u043D\u0430 \u0447\u0430\u0441\u0442\u0438\u043D\u0430", "menu.insert.imaginary-part-template": "\\Im(z)", "menu.insert.conjugate": "\u0421\u043F\u0440\u044F\u0436\u0435\u043D\u0435 \u0447\u0438\u0441\u043B\u043E", "menu.insert.conjugate-template": "\\overline{z}", "tooltip.blackboard": "\u0414\u043E\u0448\u043A\u0430", "tooltip.bold": "\u0416\u0438\u0440\u043D\u0438\u0439", "tooltip.italic": "\u041A\u0443\u0440\u0441\u0438\u0432", "tooltip.fraktur": "\u0424\u0440\u0430\u043A\u0442\u0443\u0440\u043D\u0438\u0439", "tooltip.script": "\u0420\u0443\u043A\u043E\u043F\u0438\u0441\u043D\u0438\u0439", "tooltip.caligraphic": "\u041A\u0430\u043B\u0456\u0433\u0440\u0430\u0444\u0456\u0447\u043D\u0438\u0439", "tooltip.typewriter": "\u0414\u0440\u0443\u043A\u0430\u0440\u0441\u044C\u043A\u0438\u0439", "tooltip.roman-upright": "\u041F\u0440\u044F\u043C\u0438\u0439 \u0440\u0438\u043C\u0441\u044C\u043A\u0438\u0439", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u0421\u0442\u0438\u043B\u044C \u0448\u0440\u0438\u0444\u0442\u0443", "menu.accent": "\u0410\u043A\u0446\u0435\u043D\u0442", "menu.decoration": "\u041E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u043D\u044F", "menu.color": "\u041A\u043E\u043B\u0456\u0440", "menu.background-color": "\u0424\u043E\u043D", "menu.cut": "\u0412\u0438\u0440\u0456\u0437\u0430\u0442\u0438", "menu.copy": "\u041A\u043E\u043F\u0456\u044E\u0432\u0430\u0442\u0438", "menu.copy-as-latex": "\u041A\u043E\u043F\u0456\u044E\u0432\u0430\u0442\u0438 \u044F\u043A LaTeX", "menu.copy-as-ascii-math": "\u041A\u043E\u043F\u0456\u044E\u0432\u0430\u0442\u0438 \u044F\u043A ASCII Math", "menu.copy-as-mathml": "\u041A\u043E\u043F\u0456\u044E\u0432\u0430\u0442\u0438 \u044F\u043A MathML", "menu.paste": "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u0438", "menu.select-all": "\u0412\u0438\u0431\u0440\u0430\u0442\u0438 \u0432\u0441\u0435", "color.red": "\u0427\u0435\u0440\u0432\u043E\u043D\u0438\u0439", "color.orange": "\u041F\u043E\u043C\u0430\u0440\u0430\u043D\u0447\u0435\u0432\u0438\u0439", "color.yellow": "\u0416\u043E\u0432\u0442\u0438\u0439", "color.lime": "\u041B\u0430\u0439\u043C\u043E\u0432\u0438\u0439", "color.green": "\u0417\u0435\u043B\u0435\u043D\u0438\u0439", "color.teal": "\u0411\u0456\u0440\u044E\u0437\u043E\u0432\u0438\u0439", "color.cyan": "\u0421\u0438\u043D\u044C\u043E-\u0437\u0435\u043B\u0435\u043D\u0438\u0439", "color.blue": "\u0421\u0438\u043D\u0456\u0439", "color.indigo": "\u0406\u043D\u0434\u0438\u0433\u043E", "color.purple": "\u0424\u0456\u043E\u043B\u0435\u0442\u043E\u0432\u0438\u0439", "color.magenta": "\u041F\u0443\u0440\u043F\u0443\u0440\u043D\u0438\u0439", "color.black": "\u0427\u043E\u0440\u043D\u0438\u0439", "color.dark-grey": "\u0422\u0435\u043C\u043D\u043E-\u0441\u0456\u0440\u0438\u0439", "color.grey": "\u0421\u0456\u0440\u0438\u0439", "color.light-grey": "\u0421\u0432\u0456\u0442\u043B\u043E-\u0441\u0456\u0440\u0438\u0439", "color.white": "\u0411\u0456\u043B\u0438\u0439" }, "zh-cn": { "keyboard.tooltip.symbols": "\u7B26\u53F7", "keyboard.tooltip.greek": "\u5E0C\u814A\u5B57\u6BCD", "keyboard.tooltip.numeric": "\u6570\u5B57", "keyboard.tooltip.alphabetic": "\u7F57\u9A6C\u5B57\u6BCD", "tooltip.copy to clipboard": "\u590D\u5236\u5230\u526A\u8D34\u677F", "tooltip.redo": "\u91CD\u505A", "tooltip.toggle virtual keyboard": "\u5207\u6362\u865A\u62DF\u952E\u76D8", "tooltip.undo": "\u64A4\u6D88", "menu.insert matrix": "\u63D2\u5165\u77E9\u9635", "menu.borders": "\u77E9\u9635\u5206\u9694\u7B26", "menu.array.add row above": "\u5728\u540E\u9762\u6DFB\u52A0\u884C", "menu.array.add row below": "\u5728\u524D\u9762\u6DFB\u52A0\u884C", "menu.array.add column after": "\u5728\u540E\u9762\u6DFB\u52A0\u5217r", "menu.array.add column before": "\u5728\u524D\u9762\u6DFB\u52A0\u5217", "menu.array.delete row": "\u5220\u9664\u884C", "menu.array.delete rows": "\u5220\u9664\u9009\u5B9A\u884C", "menu.array.delete column": "\u5220\u9664\u5217", "menu.array.delete columns": "\u5220\u9664\u9009\u5B9A\u7684\u5217", "menu.mode": "\u6A21\u5F0F", "menu.mode-math": "\u6570\u5B66", "menu.mode-text": "\u6587\u672C", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "\u9ED1\u677F", "tooltip.bold": "\u7C97\u4F53", "tooltip.italic": "\u659C\u4F53", "tooltip.fraktur": "Fraktur", "tooltip.script": "\u811A\u672C", "tooltip.caligraphic": "\u8349\u4E66", "tooltip.typewriter": "\u6253\u5B57\u673A", "tooltip.roman-upright": "\u7F57\u9A6C\u76F4\u7ACB", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u5B57\u4F53\u6837\u5F0F", "menu.accent": "\u91CD\u97F3", "menu.decoration": "\u88C5\u9970", "menu.color": "\u989C\u8272", "menu.background-color": "\u80CC\u666F", "menu.cut": "\u526A\u5207", "menu.copy": "\u590D\u5236", "menu.copy-as-latex": "\u590D\u5236\u4E3A LaTeX", "menu.copy-as-ascii-math": "\u590D\u5236\u4E3A ASCII Math", "menu.copy-as-mathml": "\u590D\u5236\u4E3A MathML", "menu.paste": "\u7C98\u8D34", "menu.select-all": "\u5168\u9009", "color.red": "\u7EA2\u8272", "color.orange": "\u6A59\u8272", "color.yellow": "\u9EC4\u8272", "color.lime": "\u7EFF\u9EC4\u8272", "color.green": "\u7EFF\u8272", "color.teal": "\u9752\u8272", "color.cyan": "\u84DD\u7EFF\u8272", "color.blue": "\u84DD\u8272", "color.indigo": "\u975B\u84DD\u8272", "color.purple": "\u7D2B\u8272", "color.magenta": "\u6D0B\u7EA2\u8272", "color.black": "\u9ED1\u8272", "color.dark-grey": "\u6DF1\u7070\u8272", "color.grey": "\u7070\u8272", "color.light-grey": "\u6D45\u7070\u8272", "color.white": "\u767D\u8272" }, "zh-tw": { "keyboard.tooltip.symbols": "\u7B26\u865F", "keyboard.tooltip.greek": "\u5E0C\u81D8\u5B57\u6BCD", "keyboard.tooltip.numeric": "\u6578\u5B57", "keyboard.tooltip.alphabetic": "\u7F85\u99AC\u5B57\u6BCD", "tooltip.copy to clipboard": "\u8907\u88FD\u5230\u526A\u8CBC\u677F", "tooltip.redo": "\u91CD\u505A", "tooltip.toggle virtual keyboard": "\u5207\u63DB\u865B\u64EC\u9375\u76E4", "tooltip.undo": "\u64A4\u6D88", "menu.insert matrix": "\u63D2\u5165\u77E9\u9663", "menu.borders": "\u77E9\u9663\u5206\u9694\u7B26", "menu.array.add row above": "\u5728\u5F8C\u9762\u6DFB\u52A0\u884C", "menu.array.add row below": "\u5728\u524D\u9762\u6DFB\u52A0\u884C", "menu.array.add column after": "\u5728\u5F8C\u9762\u6DFB\u52A0\u5217", "menu.array.add column before": "\u5728\u524D\u9762\u6DFB\u52A0\u5217", "menu.array.delete row": "\u522A\u9664\u884C", "menu.array.delete rows": "\u522A\u9664\u9078\u5B9A\u884C", "menu.array.delete column": "\u522A\u9664\u5217", "menu.array.delete columns": "\u522A\u9664\u9078\u5B9A\u7684\u5217", "menu.mode": "\u6A21\u5F0F", "menu.mode-math": "\u6578\u5B78", "menu.mode-text": "\u6587\u672C", "menu.mode-latex": "LaTeX", "tooltip.blackboard": "\u9ED1\u677F", "tooltip.bold": "\u7C97\u9AD4", "tooltip.italic": "\u659C\u9AD4", "tooltip.fraktur": "Fraktur", "tooltip.script": "\u8173\u672C", "tooltip.caligraphic": "\u8349\u66F8", "tooltip.typewriter": "\u6253\u5B57\u6A5F", "tooltip.roman-upright": "\u7F85\u99AC\u76F4\u7ACB", "tooltip.row-by-col": "%@ \xD7 %@", "menu.font-style": "\u5B57\u9AD4\u6A23\u5F0F", "menu.accent": "\u91CD\u97F3", "menu.decoration": "\u88DD\u98FE", "menu.color": "\u984F\u8272", "menu.background-color": "\u80CC\u666F", "menu.cut": "\u526A\u4E0B", "menu.copy": "\u8907\u88FD", "menu.copy-as-latex": "\u8907\u88FD\u70BA LaTeX", "menu.copy-as-ascii-math": "\u8907\u88FD\u70BA ASCII Math", "menu.copy-as-mathml": "\u8907\u88FD\u70BA MathML", "menu.paste": "\u8CBC\u4E0A", "menu.select-all": "\u5168\u9078", "color.red": "\u7D05\u8272", "color.orange": "\u6A59\u8272", "color.yellow": "\u9EC3\u8272", "color.lime": "\u7DA0\u9EC3\u8272", "color.green": "\u7DA0\u8272", "color.teal": "\u9752\u8272", "color.cyan": "\u85CD\u7DA0\u8272", "color.blue": "\u85CD\u8272", "color.indigo": "\u975B\u85CD\u8272", "color.purple": "\u7D2B\u8272", "color.magenta": "\u6D0B\u7D05\u8272", "color.black": "\u9ED1\u8272", "color.dark-grey": "\u6DF1\u7070\u8272", "color.grey": "\u7070\u8272", "color.light-grey": "\u6DFA\u7070\u8272", "color.white": "\u767D\u8272" } };
+    q = { strings: il, _locale: "", _dirty: false, _subscribers: [], _numberFormatter: void 0, get locale() {
+      return q._locale || (q._locale = qi() ? navigator.language.slice(0, 5) : "en-US"), q._locale;
+    }, set locale(t32) {
+      q._locale = t32, q._numberFormatter = void 0, q.dirty = true;
+    }, get numberFormatter() {
+      if (!q._numberFormatter) try {
+        q._numberFormatter = new Intl.NumberFormat(q.locale);
+      } catch (t32) {
+        try {
+          q._numberFormatter = new Intl.NumberFormat(q.locale.slice(0, 2));
+        } catch (e) {
+          q._numberFormatter = new Intl.NumberFormat("en-US");
+        }
+      }
+      return q._numberFormatter;
+    }, merge(t32, e) {
+      if (typeof t32 == "string" && e) q.strings[t32] = m2(m2({}, q.strings[t32]), e), q.dirty = true;
+      else for (let r of Object.keys(t32)) q.merge(r, t32[r]);
+    }, get dirty() {
+      return q._dirty;
+    }, set dirty(t32) {
+      q._dirty || q._dirty === t32 || (q._dirty = true, setTimeout(() => {
+        q._dirty = false, this._subscribers.forEach((e) => e == null ? void 0 : e());
+      }, 0));
+    }, subscribe(t32) {
+      return q._subscribers.push(t32), q._subscribers.length - 1;
+    }, unsubscribe(t32) {
+      t32 < 0 || t32 >= q._subscribers.length || (q._subscribers[t32] = void 0);
+    }, update(t32) {
+      let e = t32.querySelectorAll("[data-l10n-tooltip]");
+      for (let r of e) {
+        let i = r.getAttribute("data-l10n-tooltip");
+        if (i) {
+          let n = nl(i);
+          n && r.setAttribute("data-tooltip", n);
+        }
+      }
+      e = t32.querySelectorAll("[data-l10n-arial-label]");
+      for (let r of e) {
+        let i = r.getAttribute("data-l10n-arial-label");
+        if (i) {
+          let n = nl(i);
+          n && r.setAttribute("aria-label", n);
+        }
+      }
+    } };
+    dc = { "p@": { dimension: 1 }, "z@": { dimension: 0 }, maxdimen: { dimension: 16383.99999 }, hfuzz: { dimension: 0.1 }, vfuzz: { dimension: 0.1 }, overfullrule: { dimension: 5 }, hsize: { dimension: 6.5, unit: "in" }, vsize: { dimension: 8.9, unit: "in" }, parindent: { dimension: 20 }, maxdepth: { dimension: 4 }, splitmaxdepth: { register: "maxdimen" }, boxmaxdepth: { register: "maxdimen" }, delimitershortfall: { dimension: 5 }, nulldelimiterspace: { dimension: 1.2, unit: "pt" }, scriptspace: { dimension: 0.5 }, topskip: { dimension: 10 }, splittopskip: { dimension: 10 }, normalbaselineskip: { dimension: 12 }, normallineskip: { dimension: 1 }, normallineskiplimit: { dimension: 0 }, jot: { dimension: 3 }, doublerulesep: { dimension: 2 }, arrayrulewidth: { dimension: 0.4 }, arraycolsep: { dimension: 5 }, fboxsep: { dimension: 3 }, fboxrule: { dimension: 0.4 }, "z@skip": { glue: { dimension: 0 }, shrink: { dimension: 0 }, grow: { dimension: 0 } }, hideskip: { glue: { dimension: -1e3 }, grow: { dimension: 1, unit: "fill" } }, "@flushglue": { glue: { dimension: 0 }, grow: { dimension: 1, unit: "fill" } }, parskip: { glue: { dimension: 0 }, grow: { dimension: 1 } }, abovedisplayskip: { glue: { dimension: 12 }, grow: { dimension: 3 }, shrink: { dimension: 9 } }, abovedisplayshortskip: { glue: { dimension: 0 }, grow: { dimension: 3 } }, belowdisplayskip: { glue: { dimension: 12 }, grow: { dimension: 3 }, shrink: { dimension: 9 } }, belowdisplayshortskip: { glue: { dimension: 7 }, grow: { dimension: 3 }, shrink: { dimension: 4 } }, parfillskip: { glue: { dimension: 0 }, grow: { dimension: 1, unit: "fil" } }, thinmuskip: { glue: { dimension: 3, unit: "mu" } }, medmuskip: { glue: { dimension: 4, unit: "mu" }, grow: { dimension: 2, unit: "mu" }, shrink: { dimension: 4, unit: "mu" } }, thickmuskip: { glue: { dimension: 5, unit: "mu" }, grow: { dimension: 5, unit: "mu" } }, smallskipamount: { glue: { dimension: 3 }, grow: { dimension: 1 }, shrink: { dimension: 1 } }, medskipamount: { glue: { dimension: 6 }, grow: { dimension: 2 }, shrink: { dimension: 3 } }, bigskipamount: { glue: { dimension: 12 }, grow: { dimension: 2 }, shrink: { dimension: 4 } }, pretolerance: 100, tolerance: 200, hbadness: 1e3, vbadness: 1e3, linepenalty: 10, hyphenpenalty: 50, exhyphenpenalty: 50, binoppenalty: 700, relpenalty: 500, clubpenalty: 150, widowpenalty: 150, displaywidowpenalty: 50, brokenpenalty: 100, predisplaypenalty: 1e4, doublehyphendemerits: 1e4, finalhyphendemerits: 5e3, adjdemerits: 1e4, tracinglostchars: 1, uchyph: 1, delimiterfactor: 901, defaulthyphenchar: "\\-", defaultskewchar: -1, newlinechar: -1, showboxbreadth: 5, showboxdepth: 3, errorcontextlines: 5, interdisplaylinepenalty: 100, interfootnotelinepenalty: 100, baselineSkip: 1.2, arraystretch: 1, month: (/* @__PURE__ */ new Date()).getMonth() + 1, day: (/* @__PURE__ */ new Date()).getDate(), year: (/* @__PURE__ */ new Date()).getFullYear() };
+    z = class t2 {
+      constructor(e, r) {
+        var o, a, l, s2, c, h2, d, f, S, x, w, T, g, C, k;
+        let i;
+        e != null && e.parent ? (this.parent = e.parent, i = e.parent, this.registers = {}) : (i = m2(m2({}, Vr()), (o = e == null ? void 0 : e.from) != null ? o : {}), this.registers = i.registers), i.atomIdsSettings && (this.atomIdsSettings = m2({}, i.atomIdsSettings)), this.renderPlaceholder = i.renderPlaceholder, this.isPhantom = (s2 = (l = e == null ? void 0 : e.isPhantom) != null ? l : (a = this.parent) == null ? void 0 : a.isPhantom) != null ? s2 : false, this.letterShapeStyle = i.letterShapeStyle, this.minFontScale = i.minFontScale, this.maxMatrixCols = i.maxMatrixCols, r != null && r.color && r.color !== "none" ? this.color = r.color : this.color = (h2 = (c = this.parent) == null ? void 0 : c.color) != null ? h2 : "", r != null && r.backgroundColor && r.backgroundColor !== "none" ? this.backgroundColor = r.backgroundColor : this.backgroundColor = (f = (d = this.parent) == null ? void 0 : d.backgroundColor) != null ? f : "", r != null && r.fontSize && r.fontSize !== "auto" && r.fontSize !== ((S = this.parent) == null ? void 0 : S.size) ? this.size = r.fontSize : this.size = (w = (x = this.parent) == null ? void 0 : x.size) != null ? w : Er;
+        let n = (g = (T = this.parent) == null ? void 0 : T.mathstyle) != null ? g : $e.displaystyle;
+        if (typeof (e == null ? void 0 : e.mathstyle) == "string") {
+          if (i instanceof t2) switch (e.mathstyle) {
+            case "cramp":
+              n = n.cramp;
+              break;
+            case "superscript":
+              n = n.sup;
+              break;
+            case "subscript":
+              n = n.sub;
+              break;
+            case "numerator":
+              n = n.fracNum;
+              break;
+            case "denominator":
+              n = n.fracDen;
+              break;
+          }
+          switch (e.mathstyle) {
+            case "textstyle":
+              n = $e.textstyle;
+              break;
+            case "displaystyle":
+              n = $e.displaystyle;
+              break;
+            case "scriptstyle":
+              n = $e.scriptstyle;
+              break;
+            case "scriptscriptstyle":
+              n = $e.scriptscriptstyle;
+              break;
+            case "":
+            case "auto":
+              break;
+          }
+        }
+        this.mathstyle = n, this.smartFence = i.smartFence, this.placeholderSymbol = i.placeholderSymbol, this.colorMap = (C = i.colorMap) != null ? C : ((L) => L), this.backgroundColorMap = (k = i.backgroundColorMap) != null ? k : ((L) => L), this.getMacro = i.getMacro, this.parent !== void 0 || this.registers;
+      }
+      makeID() {
+        if (!this.atomIdsSettings) return;
+        if (this.atomIdsSettings.overrideID) return this.atomIdsSettings.overrideID;
+        if (typeof this.atomIdsSettings.seed != "number") return `${Date.now().toString(36).slice(-2)}${Math.floor(Math.random() * 1e5).toString(36)}`;
+        let e = this.atomIdsSettings.seed.toString(36);
+        return this.atomIdsSettings.seed += 1, e;
+      }
+      scale(e) {
+        return e * this.effectiveFontSize;
+      }
+      get scalingFactor() {
+        return this.parent ? this.effectiveFontSize / this.parent.effectiveFontSize : 1;
+      }
+      get isDisplayStyle() {
+        return this.mathstyle.id === en || this.mathstyle.id === qr;
+      }
+      get isCramped() {
+        return this.mathstyle.cramped;
+      }
+      get isTight() {
+        return this.mathstyle.isTight;
+      }
+      get metrics() {
+        return this.mathstyle.metrics;
+      }
+      get effectiveFontSize() {
+        return Math.max($r[Math.max(1, this.size + this.mathstyle.sizeDelta)], this.minFontScale);
+      }
+      getRegister(e) {
+        if (this.registers && e in this.registers) return this.registers[e];
+        if (this.parent) return this.parent.getRegister(e);
+      }
+      getRegisterAsNumber(e) {
+        let r = this.getRegister(e);
+        if (typeof r == "number") return r;
+        if (typeof r == "string") return Number(r);
+      }
+      getRegisterAsGlue(e) {
+        if (this.registers && e in this.registers) {
+          let r = this.registers[e];
+          return typeof r == "object" && "glue" in r ? r : typeof r == "object" && "dimension" in r ? { glue: { dimension: r.dimension } } : typeof r == "number" ? { glue: { dimension: r } } : void 0;
+        }
+        if (this.parent) return this.parent.getRegisterAsGlue(e);
+      }
+      getRegisterAsEm(e, r) {
+        return tn(this.getRegisterAsDimension(e), r);
+      }
+      getRegisterAsDimension(e) {
+        if (this.registers && e in this.registers) {
+          let r = this.registers[e];
+          return typeof r == "object" && "glue" in r ? r.glue : typeof r == "object" && "dimension" in r ? r : typeof r == "number" ? { dimension: r } : void 0;
+        }
+        if (this.parent) return this.parent.getRegisterAsDimension(e);
+      }
+      setRegister(e, r) {
+        if (r === void 0) {
+          delete this.registers[e];
+          return;
+        }
+        this.registers[e] = r;
+      }
+      evaluate(e) {
+        if (!e || !("register" in e)) return e;
+        let r = this;
+        if ("global" in e && e.global) for (; r.parent; ) r = r.parent;
+        let i = 1;
+        "factor" in e && e.factor !== 1 && e.factor !== void 0 && (i = e.factor);
+        let n = r.getRegister(e.register);
+        if (n === void 0) return;
+        if (typeof n == "string") return { string: Number(n).toString() + n };
+        if (typeof n == "number") return { number: i * n };
+        let o = r.evaluate(n);
+        if (o !== void 0) return "string" in o ? { string: Number(n).toString() + o.string } : "number" in o ? { number: i * o.number } : "dimension" in o ? u(m2({}, o), { dimension: i * o.dimension }) : "glue" in o ? u(m2({}, o), { glue: u(m2({}, o.glue), { dimension: i * o.glue.dimension }), shrink: o.shrink ? u(m2({}, o.shrink), { dimension: i * o.shrink.dimension }) : void 0, grow: o.grow ? u(m2({}, o.grow), { dimension: i * o.grow.dimension }) : void 0 }) : e;
+      }
+      toDimension(e) {
+        let r = this.evaluate(e);
+        if (r === void 0) return null;
+        if ("dimension" in r) return r;
+        if ("glue" in r) return r.glue;
+        if ("number" in r) return { dimension: r.number };
+        if ("string" in r) {
+          let i = parseFloat(r.string), n = r.string.match(/(mm|cm|ex|px|em|bp|dd|pc|in|mu)$/);
+          return n ? { dimension: i, unit: n[0] } : { dimension: i };
+        }
+        return null;
+      }
+      toEm(e, r) {
+        if (e === null) return 0;
+        let i = this.toDimension(e);
+        return i === null ? 0 : Ao(i, r) / Ge;
+      }
+      toNumber(e) {
+        if (e === null) return null;
+        let r = this.evaluate(e);
+        return r === void 0 ? null : "number" in r ? r.number : "dimension" in r ? r.dimension : "glue" in r ? r.glue.dimension : "string" in r ? Number(r.string) : null;
+      }
+      toColor(e) {
+        var i, n, o;
+        if (e === null) return null;
+        let r = this.evaluate(e);
+        return r === void 0 ? null : "string" in r && (o = (n = (i = this.colorMap) == null ? void 0 : i.call(this, r.string)) != null ? n : lr(r.string)) != null ? o : null;
+      }
+      toBackgroundColor(e) {
+        var i, n, o;
+        if (e === null) return null;
+        let r = this.evaluate(e);
+        return r === void 0 ? null : "string" in r && (o = (n = (i = this.backgroundColorMap) == null ? void 0 : i.call(this, r.string)) != null ? n : lr(r.string)) != null ? o : null;
+      }
+    };
+    Mt = ["body", "above", "below", "subscript", "superscript"];
+    p2 = class t3 {
+      constructor(e) {
+        this.isRoot = false;
+        var r, i, n, o, a, l, s2;
+        this.type = e.type, typeof e.value == "string" && (this.value = e.value), this.command = (i = (r = e.command) != null ? r : this.value) != null ? i : "", this.mode = (n = e.mode) != null ? n : "math", e.isFunction && (this.isFunction = true), (e.isRoot || this.type === "root") && (this.isRoot = true), e.limits && (this.subsupPlacement = e.limits), this.style = m2({}, (o = e.style) != null ? o : {}), this.displayContainsHighlight = (a = e.displayContainsHighlight) != null ? a : false, this.captureSelection = (l = e.captureSelection) != null ? l : false, this.skipBoundary = (s2 = e.skipBoundary) != null ? s2 : false, e.verbatimLatex !== void 0 && e.verbatimLatex !== null && (this.verbatimLatex = e.verbatimLatex), e.args && (this.args = e.args), e.body && (this.body = e.body), this._changeCounter = 0;
+      }
+      static createBox(e, r, i) {
+        var l;
+        if (!r) return null;
+        let n = pc(r), o = [];
+        for (let s2 of n) {
+          let c = s2[0].style, h2 = fc(e, s2, { style: { color: c.color, backgroundColor: c.backgroundColor, fontSize: c.fontSize } });
+          h2 && o.push(h2);
+        }
+        if (o.length === 0) return null;
+        let a = ((l = i == null ? void 0 : i.classes) != null ? l : "").trim();
+        return o.length === 1 && !a && !(i != null && i.type) ? o[0].wrap(e) : new b(o, { classes: a, type: i == null ? void 0 : i.type }).wrap(e);
+      }
+      static serialize(e, r) {
+        return Q.serialize(e, r);
+      }
+      static commonAncestor(e, r) {
+        if (e === r || e.parent === r.parent) return e.parent;
+        let i = /* @__PURE__ */ new WeakSet(), { parent: n } = e;
+        for (; n; ) i.add(n), n = n.parent;
+        for (n = r.parent; n; ) {
+          if (i.has(n)) return n;
+          n = n.parent;
+        }
+      }
+      static fromJson(e) {
+        return typeof e == "string" ? new t3({ type: "mord", value: e, mode: "math" }) : new t3(e);
+      }
+      toJson() {
+        if (this._json) return this._json;
+        let e = {};
+        if (this.type && (e.type = this.type), this.mode !== "math" && (e.mode = this.mode), this.command && this.command !== this.value && (e.command = this.command), this.value !== void 0 && (e.value = this.value), this.style && Object.keys(this.style).length > 0 && (e.style = m2({}, this.style)), this.verbatimLatex !== void 0 && (e.verbatimLatex = this.verbatimLatex), this.subsupPlacement && (e.subsupPlacement = this.subsupPlacement), this.explicitSubsupPlacement && (e.explicitSubsupPlacement = true), this.isFunction && (e.isFunction = true), this.displayContainsHighlight && (e.displayContainsHighlight = true), this.skipBoundary && (e.skipBoundary = true), this.captureSelection && (e.captureSelection = true), this.args && (e.args = gc(this.args)), this._branches) for (let r of Object.keys(this._branches)) this._branches[r] && (e[r] = this._branches[r].filter((i) => i.type !== "first").map((i) => i.toJson()));
+        return e.type === "mord" && Object.keys(e).length === 2 && "value" in e ? e.value : (this._json = e, e);
+      }
+      get changeCounter() {
+        return this.parent ? this.parent.changeCounter : this._changeCounter;
+      }
+      set isDirty(e) {
+        e && (this._json = void 0, this.parent || this._changeCounter++, "verbatimLatex" in this && (this.verbatimLatex = void 0), this._children = void 0, this.parent && (this.parent.isDirty = true));
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        return r != null && r.serialize ? r.serialize(this, e) : this.body && this.command ? D([R(this.command, this.bodyToLatex(e)), this.supsubToLatex(e)]) : this.body ? D([this.bodyToLatex(e), this.supsubToLatex(e)]) : !this.value || this.value === "\u200B" ? "" : this.command;
+      }
+      bodyToLatex(e) {
+        var i;
+        let r = (i = e.defaultMode) != null ? i : this.mode === "math" ? "math" : "text";
+        return Q.serialize(this.body, u(m2({}, e), { defaultMode: r }));
+      }
+      aboveToLatex(e) {
+        return Q.serialize(this.above, e);
+      }
+      belowToLatex(e) {
+        return Q.serialize(this.below, e);
+      }
+      supsubToLatex(e) {
+        let r = "";
+        if (e = u(m2({}, e), { defaultMode: "math" }), this.branch("subscript") !== void 0) {
+          let i = Q.serialize(this.subscript, e);
+          i.length === 0 ? r += "_{}" : i.length === 1 ? /^[0-9]$/.test(i) ? r += `_${i}` : r += `_{${i}}` : r += `_{${i}}`;
+        }
+        if (this.branch("superscript") !== void 0) {
+          let i = Q.serialize(this.superscript, e);
+          i.length === 0 ? r += "^{}" : i.length === 1 ? i === "\u2032" ? r += "^\\prime " : i === "\u2033" ? r += "^\\doubleprime " : /^[0-9]$/.test(i) ? r += `^${i}` : r += `^{${i}}` : r += `^{${i}}`;
+        }
+        return r;
+      }
+      get treeDepth() {
+        let e = 1, r = this.parent;
+        for (; r; ) r = r.parent, e += 1;
+        return e;
+      }
+      get inCaptureSelection() {
+        let e = this;
+        for (; e; ) {
+          if (e.captureSelection) return true;
+          e = e.parent;
+        }
+        return false;
+      }
+      get parentPrompt() {
+        let e = this.parent;
+        for (; e; ) {
+          if (e.type === "prompt" && !e.captureSelection) return e;
+          e = e.parent;
+        }
+        return null;
+      }
+      branch(e) {
+        if (wt(e) && this._branches) return this._branches[e];
+      }
+      get branches() {
+        if (!this._branches) return [];
+        let e = [];
+        for (let r of Mt) this._branches[r] && e.push(r);
+        return e;
+      }
+      createBranch(e) {
+        return wt(e), wt(e) ? (this._branches ? this._branches[e] || (this._branches[e] = [this.makeFirstAtom(e)]) : this._branches = { [e]: [this.makeFirstAtom(e)] }, this.isDirty = true, this._branches[e]) : [];
+      }
+      get row() {
+        return Jr(this.parentBranch) ? this.parentBranch[0] : -1;
+      }
+      get col() {
+        return Jr(this.parentBranch) ? this.parentBranch[1] : -1;
+      }
+      get body() {
+        var e;
+        return (e = this._branches) == null ? void 0 : e.body;
+      }
+      set body(e) {
+        this.setChildren(e, "body");
+      }
+      get superscript() {
+        var e;
+        return (e = this._branches) == null ? void 0 : e.superscript;
+      }
+      set superscript(e) {
+        this.setChildren(e, "superscript");
+      }
+      get subscript() {
+        var e;
+        return (e = this._branches) == null ? void 0 : e.subscript;
+      }
+      set subscript(e) {
+        this.setChildren(e, "subscript");
+      }
+      get above() {
+        var e;
+        return (e = this._branches) == null ? void 0 : e.above;
+      }
+      set above(e) {
+        this.setChildren(e, "above");
+      }
+      get below() {
+        var e;
+        return (e = this._branches) == null ? void 0 : e.below;
+      }
+      set below(e) {
+        this.setChildren(e, "below");
+      }
+      applyStyle(e, r) {
+        this.isDirty = true, r != null && r.unstyledOnly ? (e.color && !this.style.color && (this.style.color = e.color), e.backgroundColor && !this.style.backgroundColor && (this.style.backgroundColor = e.backgroundColor), e.fontFamily && !this.style.fontFamily && (this.style.fontFamily = e.fontFamily), e.fontShape && !this.style.fontShape && (this.style.fontShape = e.fontShape), e.fontSeries && !this.style.fontSeries && (this.style.fontSeries = e.fontSeries), e.fontSize && !this.style.fontSize && (this.style.fontSize = e.fontSize), e.variant && !this.style.variant && (this.style.variant = e.variant), e.variantStyle && !this.style.variantStyle && (this.style.variantStyle = e.variantStyle)) : this.style = m2(m2({}, this.style), e), this.style.fontFamily === "none" && delete this.style.fontFamily, this.style.fontShape === "auto" && delete this.style.fontShape, this.style.fontSeries === "auto" && delete this.style.fontSeries, this.style.color === "none" && (delete this.style.color, delete this.style.verbatimColor), this.style.backgroundColor === "none" && (delete this.style.backgroundColor, delete this.style.verbatimBackgroundColor), this.style.fontSize === "auto" && delete this.style.fontSize;
+        for (let i of this.children) i.applyStyle(e, r);
+      }
+      getInitialBaseElement() {
+        var e, r, i;
+        return this.hasEmptyBranch("body") ? this : ((e = this.body) == null || e[0].type, (i = (r = this.body[1]) == null ? void 0 : r.getInitialBaseElement()) != null ? i : this);
+      }
+      getFinalBaseElement() {
+        return this.hasEmptyBranch("body") ? this : this.body[this.body.length - 1].getFinalBaseElement();
+      }
+      isCharacterBox() {
+        return this.type === "leftright" || this.type === "genfrac" || this.type === "subsup" || this.type === "delim" || this.type === "array" || this.type === "surd" ? false : this.getFinalBaseElement().type === "mord";
+      }
+      hasEmptyBranch(e) {
+        let r = this.branch(e);
+        return r ? (r.length > 0, r[0].type, r.length === 1) : true;
+      }
+      setChildren(e, r) {
+        var n;
+        if (!e || (wt(r), !wt(r))) return;
+        let i = ((n = e[0]) == null ? void 0 : n.type) === "first" ? [...e] : [this.makeFirstAtom(r), ...e];
+        this._branches ? this._branches[r] = i : this._branches = { [r]: i };
+        for (let o of e) o.parent = this, o.parentBranch = r;
+        this.isDirty = true;
+      }
+      makeFirstAtom(e) {
+        let r = new t3({ type: "first", mode: this.mode });
+        return r.parent = this, r.parentBranch = e, r;
+      }
+      addChild(e, r) {
+        e.type, this.createBranch(r).push(e), this.isDirty = true, e.parent = this, e.parentBranch = r;
+      }
+      addChildBefore(e, r) {
+        r.parentBranch;
+        let i = this.createBranch(r.parentBranch);
+        i.splice(i.indexOf(r), 0, e), this.isDirty = true, e.parent = this, e.parentBranch = r.parentBranch;
+      }
+      addChildAfter(e, r) {
+        r.parentBranch;
+        let i = this.createBranch(r.parentBranch);
+        i.splice(i.indexOf(r) + 1, 0, e), this.isDirty = true, e.parent = this, e.parentBranch = r.parentBranch;
+      }
+      addChildren(e, r) {
+        let i = this.createBranch(r);
+        for (let n of e) n.parent = this, n.parentBranch = r, i.push(n);
+        this.isDirty = true;
+      }
+      addChildrenAfter(e, r) {
+        e.length === 0 || e[0].type, r.parentBranch;
+        let i = this.createBranch(r.parentBranch);
+        i.splice(i.indexOf(r) + 1, 0, ...e), this.isDirty = true;
+        for (let n of e) n.parent = this, n.parentBranch = r.parentBranch;
+        return e[e.length - 1];
+      }
+      removeBranch(e) {
+        let r = this.branch(e);
+        if (wt(e) && (this._branches[e] = void 0), !r) return [];
+        for (let o of r) o.parent = void 0, o.parentBranch = void 0;
+        r[0].type;
+        let [i, ...n] = r;
+        return this.isDirty = true, n;
+      }
+      removeChild(e) {
+        if (e.parent, e.type === "first") return;
+        let r = this.branch(e.parentBranch), i = r.indexOf(e);
+        i >= 0, r.splice(i, 1), this.isDirty = true, e.parent = void 0, e.parentBranch = void 0;
+      }
+      get siblings() {
+        return this.parent ? this.parent.branch(this.parentBranch) : [];
+      }
+      get firstSibling() {
+        return this.siblings[0];
+      }
+      get lastSibling() {
+        let { siblings: e } = this;
+        return e[e.length - 1];
+      }
+      get isFirstSibling() {
+        return this === this.firstSibling;
+      }
+      get isLastSibling() {
+        return this === this.lastSibling;
+      }
+      get hasNoSiblings() {
+        return this.siblings.length === 1;
+      }
+      get leftSibling() {
+        this.parent;
+        let e = this.parent.branch(this.parentBranch);
+        return e[e.indexOf(this) - 1];
+      }
+      get rightSibling() {
+        this.parent;
+        let e = this.parent.branch(this.parentBranch);
+        return e[e.indexOf(this) + 1];
+      }
+      get hasChildren() {
+        return !!(this._branches && this.children.length > 0);
+      }
+      get firstChild() {
+        return this.hasChildren, this.children[0];
+      }
+      get lastChild() {
+        this.hasChildren;
+        let { children: e } = this;
+        return e[e.length - 1];
+      }
+      get children() {
+        if (this._children) return this._children;
+        if (!this._branches) return [];
+        let e = [];
+        for (let r of Mt) if (this._branches[r]) for (let i of this._branches[r]) e.push(...i.children), e.push(i);
+        return this._children = e, e;
+      }
+      render(e) {
+        if (this.type === "first" && !e.atomIdsSettings) return null;
+        let r = H(this.command, this.mode);
+        if (r != null && r.render) return r.render(this, e);
+        let i = new z({ parent: e }, this.style), n = this.createBox(i, { classes: this.parent ? "" : "ML__base" });
+        return n ? (!this.subsupPlacement && (this.superscript || this.subscript) && (n = this.attachSupsub(i, { base: n })), n.wrap(i)) : null;
+      }
+      attachSupsub(e, r) {
+        var x;
+        let i = r.base, n = this.superscript, o = this.subscript;
+        if (!n && !o) return i;
+        let a = null, l = null, s2 = (x = r.isCharacterBox) != null ? x : this.isCharacterBox(), c = 0;
+        if (n) {
+          let w = new z({ parent: e, mathstyle: "superscript" });
+          a = t3.createBox(w, n), s2 || (c = i.height - e.metrics.supDrop * w.scalingFactor);
+        }
+        let h2 = 0;
+        if (o) {
+          let w = new z({ parent: e, mathstyle: "subscript" });
+          l = t3.createBox(w, o), s2 || (h2 = i.depth + e.metrics.subDrop * w.scalingFactor);
+        }
+        let d;
+        e.isDisplayStyle ? d = e.metrics.sup1 : e.isCramped ? d = e.metrics.sup3 : d = e.metrics.sup2;
+        let f = 0.5 / Ge / e.scalingFactor, S = null;
+        if (l && a) {
+          c = Math.max(c, d, a.depth + 0.25 * e.metrics.xHeight), h2 = Math.max(h2, e.metrics.sub2);
+          let w = e.metrics.defaultRuleThickness;
+          if (c - a.depth - (l.height - h2) < 4 * w) {
+            h2 = 4 * w - (c - a.depth) + l.height;
+            let g = 0.8 * e.metrics.xHeight - (c - a.depth);
+            g > 0 && (c += g, h2 -= g);
+          }
+          let T = this.type === "extensible-symbol" && i.italic ? -i.italic : 0;
+          S = new V({ individualShift: [{ box: l, shift: h2, marginLeft: T }, { box: a, shift: -c }] });
+        } else l && !a ? (h2 = Math.max(h2, e.metrics.sub1, l.height - 0.8 * Se), S = new V({ shift: h2, children: [{ box: l, marginRight: f, marginLeft: this.isCharacterBox() ? -i.italic : 0 }] })) : !l && a && (c = Math.max(c, d, a.depth + 0.25 * Se), S = new V({ shift: -c, children: [{ box: a, marginRight: f }] }));
+        return new b([i, new b(S, { caret: this.caret, isSelected: this.isSelected, classes: "ML__msubsup" })], { type: r.type });
+      }
+      attachLimits(e, r) {
+        let i = this.superscript ? t3.createBox(new z({ parent: e, mathstyle: "superscript" }, this.style), this.superscript) : null, n = this.subscript ? t3.createBox(new z({ parent: e, mathstyle: "subscript" }, this.style), this.subscript) : null;
+        return !i && !n ? r.base.wrap(e) : Q0(e, u(m2({}, r), { above: i, below: n }));
+      }
+      bind(e, r) {
+        if (!r || e.isPhantom || this.value === "\u200B") return r;
+        let i = this.parent;
+        for (; i && !i.captureSelection; ) i = i.parent;
+        return i != null && i.captureSelection || (this.id || (this.id = e.makeID()), r.atomID = this.id), r;
+      }
+      createBox(e, r) {
+        var l, s2, c, h2;
+        let i = (l = this.value) != null ? l : this.body, n = (s2 = r == null ? void 0 : r.boxType) != null ? s2 : Ki(this.type), o = (c = r == null ? void 0 : r.classes) != null ? c : "";
+        this.mode === "text" && (o += " ML__text");
+        let a = typeof i == "string" || i === void 0 ? new b(i != null ? i : null, { type: n, isSelected: this.isSelected, mode: this.mode, maxFontSize: e.scalingFactor, style: u(m2({ variant: "normal" }, this.style), { fontSize: Math.max(1, e.size + e.mathstyle.sizeDelta) }), letterShapeStyle: e.letterShapeStyle, classes: o }) : (h2 = t3.createBox(e, i, { type: n, classes: o })) != null ? h2 : new b(null);
+        return e.isTight && (a.isTight = true), (this.mode !== "math" || this.style.variant === "main") && (a.italic = 0), a.right = a.italic, this.bind(e, a), this.caret && !this.superscript && !this.subscript && (a.caret = this.caret), a;
+      }
+      isDigit() {
+        var e;
+        return this.type === "mord" && this.value ? /^[\d,\.]$/.test(this.value) : this.type === "group" && ((e = this.body) == null ? void 0 : e.length) === 2 ? this.body[0].type === "first" && this.body[1].value === "," : false;
+      }
+      asDigit() {
+        var e;
+        return this.type === "mord" && this.value && /^[\d,\.]$/.test(this.value) ? this.value : this.type === "group" && ((e = this.body) == null ? void 0 : e.length) === 2 && this.body[0].type === "first" && this.body[1].value === "," ? "." : "";
+      }
+    };
+    At = class t4 extends p2 {
+      constructor(e) {
+        var r;
+        super(u(m2({}, e), { type: "accent", body: (r = e.body) != null ? r : void 0 })), e.accentChar ? this.accent = e.accentChar : this.svgAccent = e == null ? void 0 : e.svgAccent, this.skipBoundary = true, this.captureSelection = true;
+      }
+      static fromJson(e) {
+        return new t4(e);
+      }
+      toJson() {
+        return u(m2({}, super.toJson()), { accentChar: this.accent, svgAccent: this.svgAccent });
+      }
+      render(e) {
+        var c;
+        let r = new z({ parent: e, mathstyle: "cramp" }, this.style), i = (c = p2.createBox(r, this.body)) != null ? c : new b("\u25A1", { style: this.style }), n = 0;
+        !this.hasEmptyBranch("body") && this.body.length === 2 && this.body[1].isCharacterBox() && (n = i.skew);
+        let o = Math.min(i.height, Se), a;
+        if (this.svgAccent) a = sr(this.svgAccent), o = r.metrics.bigOpSpacing1 - o;
+        else if (this.accent) {
+          let h2 = new b(this.accent, { fontFamily: "Main-Regular" });
+          h2.italic = 0;
+          let d = this.accent === 8407 || this.accent === 8411 || this.accent === 8412 ? " ML__accent-combining-char" : "";
+          a = new b(h2, { classes: "ML__accent-body" + d });
+        }
+        let l = (i.width - a.width) / 2 + i.left + 2 * n;
+        a = new V({ shift: 0, children: [{ box: new b(i) }, -o, { box: a, marginLeft: l, classes: ["ML__center"] }] });
+        let s2 = new b(a, { type: "ord" });
+        return this.caret && (s2.caret = this.caret), this.bind(r, s2.wrap(r)), this.attachSupsub(r, { base: s2 });
+      }
+    };
+    _o = { "(": ")", "{": "}", "[": "]", "|": "|", "\\lbrace": "\\rbrace", "\\lparen": "\\rparen", "\\{": "\\}", "\\langle": "\\rangle", "\\lfloor": "\\rfloor", "\\lceil": "\\rceil", "\\vert": "\\vert", "\\lvert": "\\rvert", "\\Vert": "\\Vert", "\\lVert": "\\rVert", "\\lbrack": "\\rbrack", "\\ulcorner": "\\urcorner", "\\llcorner": "\\lrcorner", "\\lgroup": "\\rgroup", "\\lmoustache": "\\rmoustache" };
+    Fu = Object.fromEntries(Object.entries(_o).map(([t32, e]) => [e, t32]));
+    ll = /* @__PURE__ */ new Set(["(", ")", "\\lparen", "\\rparen", "[", "]", "\\lbrack", "\\rbrack", "\\{", "\\}", "\\lbrace", "\\rbrace", "\\lfloor", "\\rfloor", "\\lceil", "\\rceil", "\\surd", "\u230A", "\u230B", "\u2308", "\u2309"]);
+    bc = /* @__PURE__ */ new Set(["\\uparrow", "\\downarrow", "\\updownarrow", "\\Uparrow", "\\Downarrow", "\\Updownarrow", "|", "\\|", "\\vert", "\\Vert", "\\lvert", "\\rvert", "\\lVert", "\\rVert", "\\mvert", "\\mid", "\\lgroup", "\\rgroup", "\\lmoustache", "\\rmoustache", "\u27EE", "\u27EF", "\u23B0", "\u23B1"]);
+    cl = /* @__PURE__ */ new Set(["<", ">", "\\langle", "\\rangle", "/", "\\backslash", "\\lt", "\\gt"]);
+    xc = [0, 1.2, 1.8, 2.4, 3];
+    vc = [{ type: "small", mathstyle: "scriptscriptstyle" }, { type: "small", mathstyle: "scriptstyle" }, { type: "small", mathstyle: "textstyle" }, { type: "large", size: 1 }, { type: "large", size: 2 }, { type: "large", size: 3 }, { type: "large", size: 4 }];
+    Sc = [{ type: "small", mathstyle: "scriptscriptstyle" }, { type: "small", mathstyle: "scriptscriptstyle" }, { type: "small", mathstyle: "textstyle" }, { type: "stack" }];
+    wc = [{ type: "small", mathstyle: "scriptscriptstyle" }, { type: "small", mathstyle: "scriptstyle" }, { type: "small", mathstyle: "textstyle" }, { type: "large", size: 1 }, { type: "large", size: 2 }, { type: "large", size: 3 }, { type: "large", size: 4 }, { type: "stack" }];
+    le = class t5 extends p2 {
+      constructor(e) {
+        var r, i, n, o;
+        super({ type: "overunder", command: e.command, style: e.style, mode: e.mode, body: e.body, skipBoundary: (r = e.skipBoundary) != null ? r : true }), this.subsupPlacement = e.supsubPlacement, this.svgAbove = e.svgAbove, this.svgBelow = e.svgBelow, this.svgBody = e.svgBody, this.above = e.above, this.below = e.below, this.boxType = (i = e.boxType) != null ? i : "ord", this.paddedBody = (n = e.paddedBody) != null ? n : false, this.paddedLabels = (o = e.paddedLabels) != null ? o : false;
+      }
+      static fromJson(e) {
+        return new t5(e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.skipBoundary || (e.skipBoundary = false), this.subsupPlacement && (e.subsupPlacement = this.subsupPlacement), this.svgAbove && (e.svgAbove = this.svgAbove), this.svgBelow && (e.svgBelow = this.svgBelow), this.svgBody && (e.svgBody = this.svgBody), this.boxType !== "ord" && (e.boxType = this.boxType), this.paddedBody && (e.paddedBody = true), this.paddedLabels && (e.paddedLabels = true), e;
+      }
+      render(e) {
+        let r = this.svgBody ? sr(this.svgBody) : p2.createBox(e, this.body, { type: "ignore" }), i = new z({ parent: e, mathstyle: "scriptstyle" }, this.style), n = null;
+        this.svgAbove ? n = sr(this.svgAbove) : this.above && (n = p2.createBox(i, this.above, { type: "ignore" }));
+        let o = null;
+        this.svgBelow ? o = sr(this.svgBelow) : this.below && (o = p2.createBox(i, this.below, { type: "ignore" })), this.paddedBody && (r = new b([rt(e, "ML__open"), r, rt(e, "ML__close")], { type: "ignore" }));
+        let a = kc(e, { base: r, above: n, below: o, type: this.boxType === "bin" || this.boxType === "rel" ? this.boxType : "ord", paddedAboveBelow: this.paddedLabels });
+        return a ? (this.subsupPlacement === "over-under" ? a = this.attachLimits(e, { base: a, type: a.type }) : a = this.attachSupsub(e, { base: a }), this.caret && (a.caret = this.caret), this.bind(e, a)) : null;
+      }
+    };
+    ul = { acute: 714, grave: 715, dot: 729, ddot: 168, dddot: 8411, ddddot: 8412, mathring: 730, tilde: 126, bar: 713, breve: 728, check: 711, hat: 94, vec: 8407 };
+    y(Object.keys(ul), "{body:auto}", { createAtom: (t32) => new At(u(m2({}, t32), { body: M(t32.args[0]), accentChar: ul[t32.command.slice(1)] })) });
+    y(["widehat", "widecheck", "widetilde"], "{body:auto}", { createAtom: (t32) => {
+      let e = fo(M(t32.args[0]));
+      return new At(u(m2({}, t32), { body: M(t32.args[0]), svgAccent: t32.command.slice(1) + (e.length > 5 ? "4" : ["1", "1", "2", "2", "3", "3"][e.length]) }));
+    } });
+    y(["overarc", "overparen", "wideparen"], "{body:auto}", { createAtom: (t32) => new At(u(m2({}, t32), { body: M(t32.args[0]), svgAccent: "overarc" })) });
+    y(["underarc", "underparen"], "{body:auto}", { createAtom: (t32) => new le(u(m2({}, t32), { body: M(t32.args[0]), svgBelow: "underarc" })) });
+    y("utilde", "{body:auto}", { createAtom: (t32) => {
+      let e = M(t32.args[0]), r = fo(e), i = "widetilde" + (r.length > 5 ? "4" : ["1", "1", "2", "2", "3", "3"][r.length]);
+      return new le(u(m2({}, t32), { body: e, svgBelow: i, boxType: Ft(e) }));
+    } });
+    y("^", "{:string}", { createAtom: (t32) => {
+      var e;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: t32.args[0] && (e = { a: "\xE2", e: "\xEA", i: "\xEE", o: "\xF4", u: "\xFB", A: "\xC2", E: "\xCA", I: "\xCE", O: "\xD4", U: "\xDB" }[t32.args[0]]) != null ? e : "^" }));
+    } });
+    y("`", "{:string}", { createAtom: (t32) => {
+      var e;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: t32.args[0] && (e = { a: "\xE0", e: "\xE8", i: "\xEC", o: "\xF2", u: "\xF9", A: "\xC0", E: "\xC8", I: "\xCC", O: "\xD2", U: "\xD9" }[t32.args[0]]) != null ? e : "`" }));
+    } });
+    y("'", "{:string}", { createAtom: (t32) => {
+      var e;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: t32.args[0] && (e = { a: "\xE1", e: "\xE9", i: "\xED", o: "\xF3", u: "\xFA", A: "\xC1", E: "\xC9", I: "\xCD", O: "\xD3", U: "\xDA" }[t32.args[0]]) != null ? e : "'" }));
+    } });
+    y('"', "{:string}", { createAtom: (t32) => {
+      var e, r;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: (e = t32.args) != null && e[0] ? (r = { a: "\xE4", e: "\xEB", i: "\xEF", o: "\xF6", u: "\xFC", A: "\xC4", E: "\xCB", I: "\xCB", O: "\xD6", U: "\xDC" }[t32.args[0]]) != null ? r : '"' + t32.args[0] : '"' }));
+    } });
+    y(".", "{:string}", { createAtom: (t32) => {
+      var e, r;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: (e = t32.args) != null && e[0] ? (r = { a: "\u0227", e: "\u0117", i: "\u0307i", o: "\u022F", u: "\u0307u", A: "\u0226", E: "\u0116", I: "\u0130", O: "\u022E", U: "\u0307U" }[t32.args[0]]) != null ? r : "." + t32.args[0] : "." }));
+    } });
+    y("=", "{:string}", { createAtom: (t32) => {
+      var e, r;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: (e = t32.args) != null && e[0] ? (r = { a: "\u0101", e: "\u0113", i: "\u012B", o: "\u014D", u: "\u016B", A: "\u0100", E: "\u0112", I: "\u012A", O: "\u014C", U: "\u016A" }[t32.args[0]]) != null ? r : "=" + t32.args[0] : "=" }));
+    } });
+    y("~", "{:string}", { createAtom: (t32) => {
+      var e;
+      return new p2(u(m2({ type: "mord" }, t32), { isFunction: false, limits: "adjacent", value: t32.args[0] && (e = { n: "\xF1", N: "\xD1", a: "\xE3", o: "\xF5", A: "\xC3", O: "\xD5" }[t32.args[0]]) != null ? e : "\xB4" }));
+    } });
+    y("c", "{:string}", { createAtom: (t32) => {
+      var e;
+      return new p2(u(m2({}, t32), { type: "mord", isFunction: false, limits: "adjacent", value: t32.args[0] && (e = { c: "\xE7", C: "\xC7" }[t32.args[0]]) != null ? e : "" }));
+    } });
+    it = class t6 extends p2 {
+      constructor(e, r, i, n) {
+        var o, a, l, s2, c, h2;
+        super({ type: "enclose", command: e, style: n.style }), this.body = r, i.updiagonalarrow && (i.updiagonalstrike = false), i.box && (i.left = false, i.right = false, i.bottom = false, i.top = false), this.notation = i, this.shadow = (o = n.shadow) != null ? o : "none", this.strokeWidth = (a = el(n.strokeWidth)) != null ? a : "0.06em", this.strokeStyle = /^(solid|dashed|dotted|double|none)$/.test((l = n.strokeStyle) != null ? l : "") ? n.strokeStyle : "solid", this.svgStrokeStyle = n.svgStrokeStyle, this.strokeColor = (s2 = lr(n.strokeColor)) != null ? s2 : "currentColor", this.backgroundcolor = (c = lr(n.backgroundcolor)) != null ? c : "transparent", this.borderStyle = (h2 = Qi(n.borderStyle)) != null ? h2 : `${this.strokeWidth} ${this.strokeStyle} ${this.strokeColor}`, this.padding = n.padding, this.captureSelection = false;
+      }
+      static fromJson(e) {
+        return new t6(e.command, e.body, e.notation, e);
+      }
+      toJson() {
+        return u(m2({}, super.toJson()), { notation: this.notation, shadow: this.shadow, strokeWidth: this.strokeWidth, strokeStyle: this.strokeStyle, svgStrokeStyle: this.svgStrokeStyle, strokeColor: this.strokeColor, borderStyle: this.borderStyle, padding: this.padding });
+      }
+      _serialize(e) {
+        var n;
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        if (r != null && r.serialize) return r.serialize(this, e);
+        let i = (n = this.command) != null ? n : "";
+        if (this.command === "\\enclose") {
+          i += "{" + Object.keys(this.notation).join(" ") + "}";
+          let o = "", a = "";
+          this.backgroundcolor && this.backgroundcolor !== "transparent" && (o += a + 'mathbackground="' + this.backgroundcolor + '"', a = ","), this.shadow && this.shadow !== "auto" && (o += a + 'shadow="' + this.shadow + '"', a = ","), this.strokeWidth || this.strokeStyle !== "solid" ? (o += a + this.borderStyle, a = ",") : this.strokeColor && this.strokeColor !== "currentColor" && (o += a + 'mathcolor="' + this.strokeColor + '"', a = ","), o && (i += `[${o}]`);
+        }
+        return R(i, this.bodyToLatex(e));
+      }
+      render(e) {
+        var S, x, w, T;
+        let r = new z({ parent: e }, this.style), i = p2.createBox(r, this.body);
+        if (!i) return null;
+        let n = _c(this.borderStyle), o = r.toEm(!this.padding || this.padding === "auto" ? { register: "fboxsep" } : { string: this.padding });
+        i.setStyle("position", "relative"), i.setStyle("display", "inline-block"), i.setStyle("height", i.height + i.depth, "em"), i.setStyle("width", i.width, "em");
+        let a = new b(null, { classes: "ML__notation" }), l = i.height + i.depth + 2 * o, s2 = i.width + 2 * o, c = "", h2 = Math.min(o * 0.2, 0.05);
+        if (this.notation.horizontalstrike) {
+          let g = 2 * o + i.height - Se / 2;
+          c += this.line((o + h2).toString(), g.toString(), (o + i.width - h2).toString(), g.toString());
+        }
+        if (this.notation.verticalstrike) {
+          let g = o + i.width / 2;
+          c += this.line(g.toString(), (o + h2).toString(), g.toString(), (l - o - h2).toString());
+        }
+        if (this.notation.updiagonalstrike && (c += this.line((o + h2).toString(), (l - o - h2).toString(), (o + i.width - h2).toString(), (o + h2).toString())), this.notation.downdiagonalstrike && (c += this.line((o + h2).toString(), (o + h2).toString(), (o + i.width - h2).toString(), (l - o - h2).toString())), this.notation.updiagonalarrow) {
+          c += this.line(o.toString(), (2 * o + i.depth + i.height).toString(), (o + i.width).toString(), o.toString());
+          let k = 0.03 * Math.sqrt(s2 * s2 + l * l) * 1, L = i.width * k, P = (i.depth + i.height) * k, B = o + i.width, A = o;
+          A + P - 0.4 * L < 0 && (A = 0.4 * L - P), c += '<polygon points="', c += `${B},${A} ${B - L - 0.4 * P},${A + P - 0.4 * L} `, c += `${B - 0.7 * L},${A + 0.7 * P} ${B - L + 0.4 * P},${A + P + 0.4 * L} `, c += `${B},${A}`, c += `" stroke='none' fill="${Hr((S = this.strokeColor) != null ? S : "")}"`, c += "/>";
+        }
+        let d = 0;
+        if (this.notation.phasorangle) {
+          let g = hl(r), C = (i.height + i.depth + 2 * g + 2 * o).toString(), k = (i.height + i.depth) / 2;
+          c += this.line(o.toString(), C, (o + k + i.width).toString(), C), c += this.line(o.toString(), C, (o + k).toString(), (o - g).toString()), l += g, d = k, i.left += l / 2 - o;
+        }
+        if (this.notation.longdiv) {
+          let g = hl(r);
+          l += g, c += this.line(o.toString(), o.toString(), (o + i.width).toString(), o.toString());
+          let C = 0.3;
+          d = C + g, i.left += C + g, i.setTop(o + g), c += '<path d="', c += `M ${o} ${o}  a${C} ${(i.depth + i.height + 2 * g) / 2}, 0, 1, 1, 0 ${i.depth + i.height + 2 * g} "`, c += ` stroke-width="${Cc(r)}" stroke="${Hr((x = this.strokeColor) != null ? x : "")}" fill="none"`, c += "/>";
+        }
+        if (a.width = i.width + 2 * o + d, a.height = i.height + 2 * o, a.depth = i.depth, a.setStyle("box-sizing", "border-box"), a.setStyle("left", `calc(-1 * ${n} - ${o}em)`), a.setStyle("height", `calc( ${i.height + i.depth + 2 * o}em + ${n})`), a.setStyle("top", "0em"), a.setStyle("width", `calc(${i.width + 2 * o}em + ${n})`), this.backgroundcolor && a.setStyle("background-color", this.backgroundcolor), this.notation.box && a.setStyle("border", this.borderStyle), this.notation.actuarial && (a.setStyle("border-top", this.borderStyle), a.setStyle("border-right", this.borderStyle)), this.notation.madruwb && (a.setStyle("border-bottom", this.borderStyle), a.setStyle("border-right", this.borderStyle)), this.notation.roundedbox && (a.setStyle("border-radius", "8px"), a.setStyle("border", this.borderStyle)), this.notation.circle && (a.setStyle("border-radius", "50%"), a.setStyle("border", this.borderStyle)), this.notation.top && a.setStyle("border-top", this.borderStyle), this.notation.left && a.setStyle("border-left", this.borderStyle), this.notation.right && a.setStyle("border-right", this.borderStyle), this.notation.bottom && a.setStyle("border-bottom", this.borderStyle), c) {
+          if (this.shadow === "auto") a.svgFilter = "drop-shadow(0 0 .5px rgba(255, 255, 255, .7)) drop-shadow(1px 1px 2px #333)";
+          else if (this.shadow && this.shadow !== "none") {
+            let C = tl(this.shadow);
+            C && (a.svgFilter = `drop-shadow(${C})`);
+          }
+          let g = ` stroke-width="${Hr((w = this.strokeWidth) != null ? w : "")}" stroke="${Hr((T = this.strokeColor) != null ? T : "")}"`;
+          g += ' stroke-linecap="round"', this.svgStrokeStyle && (g += ` stroke-dasharray="${Hr(this.svgStrokeStyle)}"`), a.svgStyle = g, a.svgOverlay = c;
+        }
+        let f = new b([a, i]);
+        return f.setStyle("position", "relative"), f.setStyle("height", `${Math.floor(100 * (a.depth + a.height)) / 100}em`), f.setStyle("display", "inline-block"), f.height = a.height, f.depth = a.depth, f.width = a.width - 2 * o, f.left = o, f.right = o, this.caret && (f.caret = this.caret), f.wrap(r);
+      }
+      line(e, r, i, n) {
+        return `<line x1="${nn(e)}"  y1="${nn(r)}" x2="${nn(i)}" y2="${nn(n)}" vector-effect="non-scaling-stroke"></line>`;
+      }
+    };
+    Lc = /* @__PURE__ */ new Set(["downdiagonalstrike", "updiagonalstrike", "verticalstrike", "horizontalstrike", "updiagonalarrow", "right", "bottom", "left", "top", "circle", "roundedbox", "madruwb", "actuarial", "box", "phasorangle", "longdiv"]);
+    y("enclose", "{notation:string}[style:string]{body:auto}", { createAtom: (t32) => {
+      var n, o;
+      let e = t32.args, r = { strokeColor: "currentColor", strokeWidth: "", strokeStyle: "solid", backgroundcolor: "transparent", padding: "auto", shadow: "none", svgStrokeStyle: void 0, borderStyle: void 0, style: (n = t32.style) != null ? n : {} };
+      if (e[1]) {
+        let a = Bc(e[1], ",");
+        for (let l of a) {
+          let s2 = l.match(/^\s*([a-z]*)\s*=\s*"(.*)"\s*$/);
+          if (s2) s2[1] === "mathbackground" ? r.backgroundcolor = s2[2] : s2[1] === "mathcolor" ? r.strokeColor = s2[2] : s2[1] === "padding" ? r.padding = s2[2] : s2[1] === "shadow" && (r.shadow = s2[2]);
+          else {
+            let c = l.match(/\s*(\S+)\s+(\S+)\s+(.*)/);
+            c && (r.strokeWidth = c[1], r.strokeStyle = c[2], r.strokeColor = c[3]);
+          }
+        }
+        r.strokeStyle === "dashed" ? r.svgStrokeStyle = "5,5" : r.strokeStyle === "dotted" && (r.svgStrokeStyle = "1,5");
+      }
+      r.borderStyle = `${r.strokeWidth} ${r.strokeStyle} ${r.strokeColor}`;
+      let i = {};
+      return ((o = e[0]) != null ? o : "").split(/[, ]/).filter((a) => a.length > 0).forEach((a) => {
+        let l = a.toLowerCase();
+        Lc.has(l) && (i[l] = true);
+      }), new it(t32.command, M(e[2]), i, r);
+    } });
+    y("cancel", "{body:auto}", { createAtom: (t32) => {
+      var e;
+      return new it(t32.command, M(t32.args[0]), { updiagonalstrike: true }, { strokeColor: "currentColor", strokeWidth: "", strokeStyle: "solid", borderStyle: "1px solid currentColor", backgroundcolor: "transparent", padding: "auto", shadow: "none", style: (e = t32.style) != null ? e : {} });
+    } });
+    y("bcancel", "{body:auto}", { createAtom: (t32) => {
+      var e;
+      return new it(t32.command, M(t32.args[0]), { downdiagonalstrike: true }, { strokeColor: "currentColor", strokeWidth: "", strokeStyle: "solid", borderStyle: "1px solid currentColor", backgroundcolor: "transparent", padding: "auto", shadow: "none", style: (e = t32.style) != null ? e : {} });
+    } });
+    y("xcancel", "{body:auto}", { createAtom: (t32) => {
+      var e;
+      return new it(t32.command, M(t32.args[0]), { updiagonalstrike: true, downdiagonalstrike: true }, { strokeColor: "currentColor", strokeWidth: "", strokeStyle: "solid", borderStyle: "1px solid currentColor", backgroundcolor: "transparent", padding: "auto", shadow: "none", style: (e = t32.style) != null ? e : {} });
+    } });
+    ae = class t7 extends p2 {
+      constructor(e) {
+        var r;
+        super({ type: "placeholder", command: "\\placeholder", mode: (r = e == null ? void 0 : e.mode) != null ? r : "math", style: e == null ? void 0 : e.style }), this.captureSelection = true;
+      }
+      static fromJson(e) {
+        return new t7(e);
+      }
+      toJson() {
+        return super.toJson();
+      }
+      render(e) {
+        let r;
+        return this.value = e.placeholderSymbol, typeof e.renderPlaceholder == "function" ? r = e.renderPlaceholder(e) : r = this.createBox(e), this.caret && (r.classes += " ML__placeholder-selected"), r;
+      }
+      _serialize(e) {
+        return e.skipPlaceholders ? "" : "\\placeholder{}";
+      }
+    };
+    Tc = ["matrix", "matrix*", "pmatrix", "pmatrix*", "bmatrix", "bmatrix*", "Bmatrix", "Bmatrix*", "vmatrix", "vmatrix*", "Vmatrix", "Vmatrix*"];
+    G = class t8 extends p2 {
+      get isMultiline() {
+        let e = this.environmentName;
+        return ["lines", "multline", "multline*", "align", "split", "gather", "gathered"].includes(e);
+      }
+      constructor(e, r, i, n = {}) {
+        var o, a, l, s2;
+        if (super({ type: "array", isRoot: n.isRoot }), this.environmentName = e, n.columns) n.columns.length === 0 ? this.colFormat = [{ align: "l" }] : this.colFormat = [...n.columns];
+        else if (n.minColumns) {
+          let c = [];
+          for (let h2 = 0; h2 < n.minColumns; h2++) c.push({ align: "l" });
+          this.colFormat = c;
+        } else this.colFormat = [{ align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }, { align: "l" }];
+        this.minColumns = (o = n.minColumns) != null ? o : 1, this.minRows = (a = n.minRows) != null ? a : 1, this.maxRows = (l = n.maxRows) != null ? l : 1 / 0, this._rows = Dc(this, r, { columns: this.colFormat, minColumns: this.minColumns, minRows: this.minRows, maxRows: this.maxRows }), this.rowGaps = i, n.arraycolsep !== void 0 && (this.arraycolsep = n.arraycolsep), this.colSeparationType = n.colSeparationType, n.arraystretch !== void 0 && (this.arraystretch = n.arraystretch), n.mathstyleName && (this.mathstyleName = n.mathstyleName), n.leftDelim && (this.leftDelim = n.leftDelim), n.rightDelim && (this.rightDelim = n.rightDelim), this.classes = (s2 = n.classes) != null ? s2 : [];
+      }
+      static fromJson(e) {
+        return new t8(e.environmentName, e.array, e.rowGaps, e);
+      }
+      toJson() {
+        let e = u(m2({}, super.toJson()), { environmentName: this.environmentName, array: this._rows.map((r) => r.map((i) => i.map((n) => n.toJson()))), rowGaps: this.rowGaps, columns: this.colFormat, colSeparationType: this.colSeparationType, minColumns: this.minColumns, minRows: this.minRows, maxRows: this.maxRows });
+        return this.arraystretch !== void 0 && (e.arraystretch = this.arraystretch), this.arraycolsep !== void 0 && (e.arraycolsep = this.arraycolsep), this.leftDelim && (e.leftDelim = this.leftDelim), this.rightDelim && (e.rightDelim = this.rightDelim), this.isRoot && (e.isRoot = true), e.minColumns = this.minColumns, e.minRows = this.minRows, e.maxRows = this.maxRows, this.mathstyleName && (e.mathstyleName = this.mathstyleName), this.classes.length > 0 && (e.classes = this.classes), e;
+      }
+      branch(e) {
+        var r;
+        if (Jr(e)) return (r = this._rows[e[0]][e[1]]) != null ? r : void 0;
+      }
+      createBranch(e) {
+        var r;
+        return Jr(e) ? (this.isDirty = true, (r = this.branch(e)) != null ? r : []) : [];
+      }
+      get rowCount() {
+        return this._rows.length;
+      }
+      get colCount() {
+        return this._rows[0].length;
+      }
+      get maxColumns() {
+        return this.colFormat.filter((e) => !!e.align).length;
+      }
+      removeBranch(e) {
+        if (wt(e)) return super.removeBranch(e);
+        let [r, ...i] = this.branch(e);
+        return r.type, this._rows[e[0]][e[1]] = void 0, i.forEach((n) => {
+          n.parent = void 0, n.parentBranch = void 0;
+        }), this.isDirty = true, i;
+      }
+      get hasChildren() {
+        return this.children.length > 0;
+      }
+      get children() {
+        let e = [];
+        for (let r of this._rows) for (let i of r) if (i) for (let n of i) e.push(...n.children), e.push(n);
+        return [...e, ...super.children];
+      }
+      render(e) {
+        var $, K, ee, te, Ct, ot;
+        let r = new z({ parent: e, mathstyle: this.mathstyleName }, this.style), i = r.getRegisterAsEm("arrayrulewidth"), n = r.getRegisterAsEm("arraycolsep"), o = r.getRegisterAsEm("doublerulesep"), a = (K = ($ = this.arraystretch) != null ? $ : r.getRegisterAsNumber("arraystretch")) != null ? K : 1, l = typeof this.arraycolsep == "number" ? this.arraycolsep : n;
+        this.colSeparationType === "small" && (l = 0.2778 * (new z({ parent: e, mathstyle: "scriptstyle" }).scalingFactor / e.scalingFactor));
+        let s2 = a * B0, c = 0.7 * s2, h2 = 0.3 * s2, d = 0, f = [], S = 0, x = this._rows.length;
+        for (let j = 0; j < x; ++j) {
+          let oe = this._rows[j];
+          S = Math.max(S, oe.length);
+          let se = new z({ parent: r, mathstyle: this.mathstyleName }, this.style), we = c / se.scalingFactor, Ie = h2 / se.scalingFactor, W = { cells: [], height: 0, depth: 0, pos: 0 };
+          for (let Lt of oe) {
+            let at = this.isMultiline && Lt && zc(Lt) ? $c(Lt, se, { height: c / se.scalingFactor, depth: h2 / se.scalingFactor }) : (ee = p2.createBox(se, Lt, { type: "ignore" })) != null ? ee : new b(null, { type: "ignore" });
+            Ie = Math.max(Ie, at.depth), we = Math.max(we, at.height), W.cells.push(at);
+          }
+          let re2 = (te = tn(this.rowGaps[j])) != null ? te : 0;
+          re2 > 0 && (re2 += h2, Ie = Math.max(Ie, re2), re2 = 0), j < x - 1 && !dl(this.environmentName) && this.environmentName !== "cases" && this.environmentName !== "array" && (Ie += r.getRegisterAsEm("jot")), W.height = we, W.depth = Ie, d += we, W.pos = d, d += Ie + re2, f.push(W);
+        }
+        let w = this.environmentName === "array" && !this.isMultiline ? f[0].height : d / 2 + fe, T = [];
+        for (let j = 0; j < S; j++) {
+          let oe = [];
+          for (let se of f) {
+            let we = se.cells[j];
+            we && (we.depth = se.depth, we.height = se.height, oe.push({ box: we, shift: se.pos - w }));
+          }
+          oe.length > 0 && T.push(new V({ individualShift: oe }));
+        }
+        let g = [], C = false, k = false, L = 0, P = !this.leftDelim, { colFormat: B } = this;
+        for (let j of B) {
+          if ("align" in j && L >= T.length) break;
+          if ("align" in j) C ? g.push(an(2 * l)) : (k || P) && g.push(an(l)), g.push(new b(T[L], { classes: "col-align-" + j.align })), L++, C = true, k = false, P = false;
+          else if ("gap" in j) {
+            if (typeof j.gap == "number") g.push(an(j.gap));
+            else {
+              let oe = Fc(e, f, w, j.gap);
+              oe && g.push(oe);
+            }
+            C = false, k = false, P = false;
+          } else if ("separator" in j) {
+            let oe = new b(null, { classes: "ML__vertical-separator" });
+            oe.height = d, oe.setStyle("height", d, "em"), oe.setStyle("border-right", `${i}em ${j.separator} currentColor`), oe.setStyle("vertical-align", -(d - w), "em");
+            let se = 0;
+            k ? se = o - i : C && (se = l - i), oe.left = se, g.push(oe), C = false, k = true, P = false;
+          }
+        }
+        C && !this.rightDelim && g.push(an(l));
+        let A = new b(g, { classes: ["ML__mtable", ...this.classes].join(" ") });
+        if (this.environmentName === "array" && !this.isMultiline && (A.height = f[0].height, A.depth = d - f[0].height), (!this.leftDelim || this.leftDelim === ".") && (!this.rightDelim || this.rightDelim === ".")) return this.caret && (A.caret = this.caret), this.bind(e, A);
+        let F = A.height, O = A.depth, Y = this.bind(e, new b([this.bind(e, Ot("open", (Ct = this.leftDelim) != null ? Ct : ".", F, O, r, { isSelected: this.isSelected })), A, this.bind(e, Ot("close", (ot = this.rightDelim) != null ? ot : ".", F, O, r, { isSelected: this.isSelected }))], { type: "ord" }));
+        return Y ? (Y.setStyle("display", "inline-block"), this.caret && (Y.caret = this.caret), this.bind(e, this.attachSupsub(e, { base: Y }))) : null;
+      }
+      _serialize(e) {
+        var i;
+        let r = [];
+        if (this.environmentName === "lines" && this._rows.length > 1 ? r.push("\\displaylines{") : this.environmentName !== "lines" && r.push(`\\begin{${this.environmentName}}`), this.environmentName === "array") {
+          if (r.push("{"), this.colFormat !== void 0) for (let n of this.colFormat) "align" in n && typeof n.align == "string" ? r.push(n.align) : "separator" in n && n.separator === "solid" ? r.push("|") : "separator" in n && n.separator === "dashed" && r.push(":");
+          r.push("}");
+        }
+        for (let n = 0; n < this._rows.length; n++) {
+          for (let o = 0; o < this._rows[n].length; o++) o > 0 && r.push(" & "), r.push(p2.serialize(this._rows[n][o], e));
+          if (n < this._rows.length - 1) {
+            let o = this.rowGaps[n];
+            o != null && o.dimension ? r.push(`\\\\[${o.dimension} ${(i = o.unit) != null ? i : "pt"}] `) : r.push("\\\\ ");
+          }
+        }
+        return this.environmentName === "lines" && this._rows.length > 1 ? r.push("}") : this.environmentName !== "lines" && r.push(`\\end{${this.environmentName}}`), D(r);
+      }
+      forEachCell(e) {
+        for (let r = 0; r < this.rowCount; r++) for (let i = 0; i < this.colCount; i++) e(this._rows[r][i], r, i);
+      }
+      getCell(e, r) {
+        var i;
+        return (i = this._rows[e]) == null ? void 0 : i[r];
+      }
+      setCell(e, r, i) {
+        this.type === "array" && Array.isArray(this._rows) && this._rows[e][r];
+        for (let o of this._rows[e][r]) o.parent = void 0, o.parentBranch = void 0;
+        let n = [new p2({ type: "first", mode: this.mode }), ...i.filter((o) => o.type !== "first")];
+        this._rows[e][r] = n, It(this), this.isDirty = true;
+      }
+      addRowBefore(e) {
+        this.type === "array" && Array.isArray(this._rows), this._rows.splice(e, 0, Array.from({ length: this.colCount }, () => on(this, !this.isMultiline))), It(this), this.isDirty = true;
+      }
+      addRowAfter(e) {
+        this.type === "array" && Array.isArray(this._rows), this._rows.splice(e + 1, 0, Array.from({ length: this.colCount }, () => on(this, !this.isMultiline))), It(this), this.isDirty = true;
+      }
+      removeRow(e) {
+        this.type === "array" && Array.isArray(this._rows) && this.rowCount > e;
+        let r = this._rows.splice(e, 1);
+        for (let i of r) for (let n of i) if (n) for (let o of n) o.parent = void 0, o.parentBranch = void 0;
+        It(this), this.isDirty = true;
+      }
+      addColumnBefore(e) {
+        this.type === "array" && Array.isArray(this._rows);
+        for (let r of this._rows) r.splice(e, 0, on(this));
+        It(this), this.isDirty = true;
+      }
+      addColumnAfter(e) {
+        this.type === "array" && Array.isArray(this._rows);
+        for (let r of this._rows) r.splice(e + 1, 0, on(this));
+        It(this), this.isDirty = true;
+      }
+      addColumn() {
+        this.addColumnAfter(this.colCount - 1);
+      }
+      removeColumn(e) {
+        this.type === "array" && Array.isArray(this._rows) && this.colCount > e;
+        for (let r of this._rows) {
+          let i = r.splice(e, 1);
+          for (let n of i) if (n) for (let o of n) o.parent = void 0, o.parentBranch = void 0;
+        }
+        It(this), this.isDirty = true;
+      }
+      get cells() {
+        let e = [];
+        for (let r of this._rows) for (let i of r) i && e.push(i.filter((n) => n.type !== "first"));
+        return e;
+      }
+      get rows() {
+        return this._rows;
+      }
+    };
+    Gi(["math", "displaymath"], Re);
+    Gi("center", Re);
+    We(["multline", "multline*"], "", Re);
+    y("displaylines", "", { parse: (t32) => {
+      if (t32.skipWhitespace(), !t32.match("<{>")) return [];
+      let e = [], r = [];
+      t32.mathlist.length > 0 && e.push([t32.mathlist]), t32.beginContext({ tabular: true, root: true });
+      do {
+        if (t32.end() || t32.match("<}>")) break;
+        t32.matchColumnSeparator() || t32.matchRowSeparator() ? (e.push([r]), r = []) : r.push(...t32.scan((n) => ["<}>", "&", "\\cr", "\\\\", "\\tabularnewline"].includes(n)));
+      } while (true);
+      t32.endContext(), e.push([r]);
+      let i = t32.scan();
+      return i.length > 0 && e.push([i]), e;
+    }, createAtom: (t32) => new G("lines", t32.args, [], { leftDelim: ".", rightDelim: ".", columns: [{ align: "l" }], classes: ["ML__multiline_environment"], isRoot: true, minColumns: 1, maxColumns: 1, minRows: 1 }) });
+    We("split", "", Re);
+    We(["gather", "gather*", "gathered"], "", Re);
+    We(["equation", "equation*", "subequations"], "", Re);
+    Gi(["align", "align*", "eqnarray"], Re, { tabular: true });
+    We(["aligned"], "", Re);
+    We("array", "{columns:colspec}", (t32, e, r, i) => new G(t32, e, r, { columns: i[0], mathstyleName: "textstyle" }));
+    We(["matrix", "pmatrix", "bmatrix", "Bmatrix", "vmatrix", "Vmatrix", "matrix*", "pmatrix*", "bmatrix*", "Bmatrix*", "vmatrix*", "Vmatrix*"], "[columns:colspec]", Re);
+    We(["smallmatrix", "smallmatrix*"], "[columns:colspec]", Re);
+    We(["cases", "dcases", "rcases"], "", Re);
+    y(["overrightarrow", "overleftarrow", "Overrightarrow", "overleftharpoon", "overrightharpoon", "overleftrightarrow", "overlinesegment", "overgroup"], "{:auto}", { createAtom: (t32) => {
+      var e;
+      return new le(u(m2({}, t32), { body: M((e = t32.args) == null ? void 0 : e[0]), skipBoundary: false, supsubPlacement: "over-under", paddedBody: true, boxType: "rel", svgAbove: t32.command.slice(1) }));
+    } });
+    y("overbrace", "{:auto}", { createAtom: (t32) => new le(u(m2({}, t32), { body: M(t32.args[0]), skipBoundary: false, supsubPlacement: "over-under", paddedBody: true, boxType: "ord", svgAbove: t32.command.slice(1) })) });
+    y(["underrightarrow", "underleftarrow", "underleftrightarrow", "underlinesegment", "undergroup"], "{:auto}", { createAtom: (t32) => new le(u(m2({}, t32), { body: M(t32.args[0]), skipBoundary: false, supsubPlacement: "over-under", paddedBody: true, boxType: "rel", svgBelow: t32.command.slice(1) })) });
+    y(["underbrace"], "{:auto}", { createAtom: (t32) => new le(u(m2({}, t32), { body: M(t32.args[0]), skipBoundary: false, supsubPlacement: "over-under", paddedBody: true, boxType: "ord", svgBelow: t32.command.slice(1) })) });
+    y(["xrightarrow", "longrightarrow", "xleftarrow", "longleftarrow", "xRightarrow", "xLeftarrow", "xleftharpoonup", "xleftharpoondown", "xrightharpoonup", "xrightharpoondown", "xlongequal", "xtwoheadleftarrow", "xtwoheadrightarrow", "xleftrightarrow", "longleftrightarrow", "xLeftrightarrow", "xrightleftharpoons", "longrightleftharpoons", "xleftrightharpoons", "xhookleftarrow", "xhookrightarrow", "xmapsto", "xtofrom", "xleftrightarrows", "longleftrightarrows", "xRightleftharpoons", "longRightleftharpoons", "xLeftrightharpoons", "longLeftrightharpoons"], "[:auto]{:auto}", { createAtom: (t32) => {
+      var e, r, i, n, o;
+      return new le(u(m2({}, t32), { svgBody: t32.command.slice(1), above: ((r = M((e = t32.args) == null ? void 0 : e[1])) == null ? void 0 : r.length) === 0 ? void 0 : M((i = t32.args) == null ? void 0 : i[1]), below: (o = M((n = t32.args) == null ? void 0 : n[0])) != null ? o : null, skipBoundary: false, supsubPlacement: "over-under", paddedBody: true, paddedLabels: true, boxType: "rel" }));
+    }, serialize: (t32, e) => t32.command + (t32.hasEmptyBranch("below") ? "" : `[${t32.belowToLatex(e)}]`) + `{${t32.aboveToLatex(e)}}${t32.supsubToLatex(e)}` });
+    Nt = class t9 extends p2 {
+      constructor(e, r) {
+        super(u(m2({}, r), { type: "extensible-symbol", isFunction: r == null ? void 0 : r.isFunction })), this.value = e, this.variant = r == null ? void 0 : r.variant, this.subsupPlacement = r == null ? void 0 : r.limits;
+      }
+      static fromJson(e) {
+        return new t9(e.symbol, e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.variant && (e.variant = this.variant), this.subsupPlacement && (e.limits = this.subsupPlacement), this.value && (e.symbol = this.value), e;
+      }
+      render(e) {
+        var l;
+        let r = e.isDisplayStyle && this.value !== "\\smallint", i = new b(this.value, { fontFamily: r ? "Size2-Regular" : "Size1-Regular", classes: "ML__op-symbol " + (r ? "ML__large-op" : "ML__small-op"), type: "op", maxFontSize: e.scalingFactor, isSelected: this.isSelected });
+        if (!i) return null;
+        i.right = i.italic;
+        let n = (i.height - i.depth) / 2 - fe * e.scalingFactor, o = i.italic;
+        i.setTop(n);
+        let a = i;
+        if (this.superscript || this.subscript) {
+          let s2 = (l = this.subsupPlacement) != null ? l : "auto";
+          s2 === "auto" && e.isDisplayStyle && (s2 = "over-under"), a = s2 === "over-under" ? this.attachLimits(e, { base: i, baseShift: n, slant: o }) : this.attachSupsub(e, { base: i });
+        }
+        return new b(this.bind(e, a), { type: "op", caret: this.caret, isSelected: this.isSelected, classes: "ML__op-group" }).wrap(e);
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        if (r != null && r.serialize) return r.serialize(this, e);
+        let i = [];
+        return i.push(this.command), this.explicitSubsupPlacement && (this.subsupPlacement === "over-under" && i.push("\\limits"), this.subsupPlacement === "adjacent" && i.push("\\nolimits"), this.subsupPlacement === "auto" && i.push("\\displaylimits")), i.push(this.supsubToLatex(e)), D(i);
+      }
+    };
+    mr = class t10 extends p2 {
+      constructor(e) {
+        var r;
+        super(u(m2({}, e), { type: "surd", mode: (r = e.mode) != null ? r : "math", style: e.style, displayContainsHighlight: true, body: e.body })), this.above = e.index;
+      }
+      static fromJson(e) {
+        return new t10(u(m2({}, e), { index: e.above }));
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        if (r != null && r.serialize) return r.serialize(this, e);
+        let i = this.command, n = this.bodyToLatex(e);
+        return this.above && !this.hasEmptyBranch("above") ? R(`${i}[${this.aboveToLatex(e)}]`, n) : /^[0-9]$/.test(n) ? `${i}${n}` : R(i, n);
+      }
+      get children() {
+        if (this._children) return this._children;
+        let e = [];
+        if (this.above) for (let r of this.above) e.push(...r.children), e.push(r);
+        if (this.body) for (let r of this.body) e.push(...r.children), e.push(r);
+        return this._children = e, e;
+      }
+      render(e) {
+        var C;
+        let r = new z({ parent: e, mathstyle: "cramp" }, this.style), i = (C = p2.createBox(r, this.body, { type: "inner" })) != null ? C : new b(null), n = r.scalingFactor, o = r.metrics.defaultRuleThickness / n, a = e.isDisplayStyle ? Se : o, l = new b(null, { classes: "ML__sqrt-line", style: this.style });
+        l.height = o, l.softWidth = i.width;
+        let s2 = n * (o + a / 4), h2 = Math.max(n * 2 * a, i.height + i.depth) + s2 + o, d = new z({ parent: e }, this.style), f = this.bind(d, new b(cr("inner", "\\surd", h2, false, d, { isSelected: this.isSelected }), { isSelected: this.isSelected, classes: "ML__sqrt-sign", style: this.style }));
+        if (!f) return null;
+        let S = f.height + f.depth - o;
+        S > i.height + i.depth + s2 && (s2 = (s2 + S - (i.height + i.depth)) / 2), f.setTop(f.height - i.height - s2);
+        let x = this.bind(e, new V({ firstBaseline: [{ box: new b(i) }, s2 - 2 * o, { box: l }, o] })), w = p2.createBox(new z({ parent: e, mathstyle: "scriptscriptstyle" }), this.above, { type: "ignore" });
+        if (!w) {
+          let k = new b([f, x], { classes: this.containsCaret ? "ML__contains-caret" : "", type: "inner" });
+          return k.setStyle("display", "inline-block"), k.setStyle("height", k.height + k.depth, "em"), this.caret && (k.caret = this.caret), this.bind(e, k);
+        }
+        let T = new V({ shift: -0.6 * (Math.max(f.height, x.height) - Math.max(f.depth, x.depth)), children: [{ box: w }] }), g = new b([new b(T, { classes: "ML__sqrt-index", type: "ignore" }), f, x], { type: "inner", classes: this.containsCaret ? "ML__contains-caret" : "" });
+        return g.height = f.height, g.depth = f.depth, this.caret && (g.caret = this.caret), this.bind(e, g);
+      }
+    };
+    Ce = class t11 extends p2 {
+      constructor(e, r, i) {
+        var n, o, a;
+        super(u(m2({}, i), { type: "genfrac", displayContainsHighlight: true })), this.above = e, this.below = r, this.hasBarLine = (n = i == null ? void 0 : i.hasBarLine) != null ? n : true, this.continuousFraction = (o = i == null ? void 0 : i.continuousFraction) != null ? o : false, this.align = (a = i == null ? void 0 : i.align) != null ? a : "center", this.numerPrefix = i == null ? void 0 : i.numerPrefix, this.denomPrefix = i == null ? void 0 : i.denomPrefix, this.mathstyleName = i == null ? void 0 : i.mathstyleName, this.leftDelim = i == null ? void 0 : i.leftDelim, this.rightDelim = i == null ? void 0 : i.rightDelim, this.barThickness = i == null ? void 0 : i.barThickness;
+      }
+      static fromJson(e) {
+        return new t11(e.above, e.below, e);
+      }
+      toJson() {
+        let e = {};
+        return this.continuousFraction && (e.continuousFraction = true), this.align !== "center" && (e.align = this.align), this.numerPrefix && (e.numerPrefix = this.numerPrefix), this.denomPrefix && (e.denomPrefix = this.denomPrefix), this.leftDelim && (e.leftDelim = this.leftDelim), this.rightDelim && (e.rightDelim = this.rightDelim), this.hasBarLine || (e.hasBarLine = false), this.barThickness && (e.barThickness = this.barThickness), this.mathstyleName && (e.mathstyleName = this.mathstyleName), m2(m2({}, super.toJson()), e);
+      }
+      get children() {
+        if (this._children) return this._children;
+        let e = [];
+        if (Po.fractionNavigationOrder === "denominator-numerator") {
+          for (let r of this.below) e.push(...r.children), e.push(r);
+          for (let r of this.above) e.push(...r.children), e.push(r);
+        } else {
+          for (let r of this.above) e.push(...r.children), e.push(r);
+          for (let r of this.below) e.push(...r.children), e.push(r);
+        }
+        return this._children = e, e;
+      }
+      render(e) {
+        var P, B;
+        let r = new z({ parent: e, mathstyle: this.mathstyleName }, this.style), i = r.metrics, n = new z({ parent: r, mathstyle: this.continuousFraction ? "" : "numerator" }, this.style), o = this.numerPrefix ? new b([new b(this.numerPrefix), p2.createBox(n, this.above)], { isTight: n.isTight, type: "ignore" }) : (P = p2.createBox(n, this.above, { type: "ignore" })) != null ? P : new b(null, { type: "ignore" }), a = new z({ parent: r, mathstyle: this.continuousFraction ? "" : "denominator" }, this.style), l = this.denomPrefix ? new b([new b(this.denomPrefix), p2.createBox(a, this.below, { type: "ignore" })]) : (B = p2.createBox(a, this.below, { type: "ignore" })) != null ? B : new b(null, { type: "ignore" }), s2 = 0;
+        this.hasBarLine && (s2 = this.barThickness ? r.toEm(this.barThickness) : i.defaultRuleThickness);
+        let c, h2 = 0, d;
+        r.isDisplayStyle ? (c = n.metrics.num1, h2 = s2 > 0 ? 3 * s2 : 7 * s2, d = a.metrics.denom1) : (s2 > 0 ? (c = n.metrics.num2, h2 = s2) : (c = n.metrics.num3, h2 = 3 * i.defaultRuleThickness), d = a.metrics.denom2);
+        let f = [];
+        this.isSelected && f.push("ML__selected");
+        let S = o.depth, x = l.height, w;
+        if (s2 <= 0) {
+          let A = c - S - (x - d);
+          A < h2 && (c += (h2 - A) / 2, d += (h2 - A) / 2), w = new V({ individualShift: [{ box: o, shift: -c, classes: [...f, sn(this.align)] }, { box: l, shift: d, classes: [...f, sn(this.align)] }] }).wrap(r);
+        } else {
+          let A = new b(null, { classes: "ML__frac-line", mode: this.mode, style: this.style });
+          A.softWidth = Math.max(o.width, l.width), A.height = s2 / 2, A.depth = s2 / 2, this.barThickness && (A.setStyle("--frac-line-thickness", s2, "em"), A.setStyle("--frac-line-margin", "0"));
+          let F = fe + s2 / 2;
+          c < h2 + S + F && (c = h2 + S + F);
+          let O = fe - s2 / 2;
+          d < h2 + x - O && (d = h2 + x - O), w = new V({ individualShift: [{ box: l, shift: d, classes: [...f, sn(this.align)] }, { box: A, shift: -O, classes: f }, { box: o, shift: -c, classes: [...f, sn(this.align)] }] }).wrap(r);
+        }
+        let T = r.isDisplayStyle ? i.delim1 : i.delim2, g = this.leftDelim ? this.bind(e, cr("open", this.leftDelim, T, true, e, { style: this.style, mode: this.mode, isSelected: this.isSelected })) : rt(r, "ML__open"), C = null;
+        this.continuousFraction ? C = new b(null, { type: "close" }) : this.rightDelim ? C = this.bind(e, cr("close", this.rightDelim, T, true, e, { style: this.style, mode: this.mode, isSelected: this.isSelected })) : C = rt(r, "ML__close");
+        let k = new b([g, w, C], { isTight: r.isTight, type: "inner", classes: "ML__mfrac" }), L = this.bind(e, k);
+        return this.caret && (L.caret = this.caret), this.attachSupsub(e, { base: L });
+      }
+    };
+    ur = class t12 extends p2 {
+      constructor(e) {
+        super(u(m2({}, e), { type: "delim" })), this.value = e.delim, this.size = e.size;
+      }
+      static fromJson(e) {
+        return new t12(e);
+      }
+      toJson() {
+        return u(m2({}, super.toJson()), { delim: this.value, size: this.size });
+      }
+      render(e) {
+        return new b(this.value, { type: "middle" });
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        return r != null && r.serialize ? r.serialize(this, e) : R(this.command, this.value);
+      }
+    };
+    hr = class t13 extends p2 {
+      constructor(e) {
+        super(u(m2({}, e), { type: "sizeddelim", value: e.delim })), this.delimType = e.delimType, this.size = e.size;
+      }
+      static fromJson(e) {
+        return new t13(e);
+      }
+      toJson() {
+        return u(m2({}, super.toJson()), { delim: this.value, size: this.size, delimType: this.delimType });
+      }
+      render(e) {
+        let r = ml(this.value, this.size, e, { classes: { open: "ML__open", close: "ML__close" }[this.delimType], type: this.delimType, isSelected: this.isSelected });
+        return r ? (r = this.bind(e, r), this.caret && (r.caret = this.caret), r) : null;
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        return r != null && r.serialize ? r.serialize(this, e) : R(this.command, this.value);
+      }
+    };
+    Fe = class t14 extends p2 {
+      constructor(e, r) {
+        super(u(m2({}, r), { type: "operator", isFunction: r == null ? void 0 : r.isFunction })), this.value = e, this.variant = r == null ? void 0 : r.variant, this.variantStyle = r == null ? void 0 : r.variantStyle, this.subsupPlacement = r == null ? void 0 : r.limits;
+      }
+      static fromJson(e) {
+        return new t14(e.symbol, e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.variant && (e.variant = this.variant), this.variantStyle && (e.variantStyle = this.variantStyle), this.subsupPlacement && (e.limits = this.subsupPlacement), this.value && (e.symbol = this.value), e;
+      }
+      render(e) {
+        var n;
+        let r = new b(this.value, { type: "op", mode: "math", maxFontSize: e.scalingFactor, style: { variant: this.variant, variantStyle: this.variantStyle }, isSelected: this.isSelected, letterShapeStyle: e.letterShapeStyle }), i = r;
+        if (this.superscript || this.subscript) {
+          let o = (n = this.subsupPlacement) != null ? n : "auto";
+          i = o === "over-under" || o === "auto" && e.isDisplayStyle ? this.attachLimits(e, { base: r }) : this.attachSupsub(e, { base: r });
+        }
+        return new b(this.bind(e, i), { type: "op", caret: this.caret, isSelected: this.isSelected, classes: "ML__op-group" }).wrap(e);
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        if (r != null && r.serialize) return r.serialize(this, e);
+        let i = [this.command];
+        return this.explicitSubsupPlacement && (this.subsupPlacement === "over-under" && i.push("\\limits"), this.subsupPlacement === "adjacent" && i.push("\\nolimits"), this.subsupPlacement === "auto" && i.push("\\displaylimits")), i.push(this.supsubToLatex(e)), D(i);
+      }
+    };
+    y(["arccos", "arcsin", "arctan", "arctg", "arcctg", "arg", "ch", "cos", "cosh", "cot", "cotg", "coth", "ctg", "cth", "csc", "cosec", "deg", "dim", "exp", "gcd", "hom", "inf", "ker", "lb", "lg", "ln", "log", "Pr", "sec", "sh", "sin", "sinh", "sup", "tan", "tanh", "tg", "th", "arcsec", "arccsc", "arsinh", "arcosh", "artanh", "arcsech", "arccsch"], "", { isFunction: true, ifMode: "math", createAtom: (t32) => new Fe(t32.command.slice(1), u(m2({}, t32), { limits: "adjacent", isFunction: true, variant: "main", variantStyle: "up" })) });
+    y(["liminf", "limsup"], "", { ifMode: "math", createAtom: (t32) => new Fe({ "\\liminf": "lim inf", "\\limsup": "lim sup" }[t32.command], u(m2({}, t32), { limits: "over-under", variant: "main" })) });
+    y(["lim", "mod"], "", { ifMode: "math", createAtom: (t32) => new Fe(t32.command.slice(1), u(m2({}, t32), { limits: "over-under", variant: "main" })) });
+    y(["det", "max", "min"], "", { ifMode: "math", isFunction: true, createAtom: (t32) => new Fe(t32.command.slice(1), u(m2({}, t32), { limits: "over-under", isFunction: true, variant: "main" })) });
+    y("ang", "{:math}", { ifMode: "math", createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[0]) })), serialize: (t32, e) => `\\ang{${t32.bodyToLatex(e)}}`, render: (t32, e) => {
+      let r = t32.createBox(e), i = r.caret;
+      r.caret = void 0;
+      let n = new b("\xB0", { style: u(m2({}, t32.style), { variant: "normal", variantStyle: "up" }) });
+      return new b([r, n], { type: "inner", isSelected: t32.isSelected, caret: i });
+    } });
+    y("sqrt", "[index:auto]{radicand:expression}", { ifMode: "math", createAtom: (t32) => new mr(u(m2({}, t32), { body: M(t32.args[1]), index: t32.args[0] ? M(t32.args[0]) : void 0 })) });
+    y(["frac", "dfrac", "tfrac", "binom", "dbinom", "tbinom"], "{:expression}{:expression}", { ifMode: "math", createAtom: (t32) => {
+      let e = m2({}, t32), r = t32.command, i = t32.args;
+      switch (r) {
+        case "\\dfrac":
+        case "\\frac":
+        case "\\tfrac":
+          e.hasBarLine = true;
+          break;
+        case "\\atopfrac":
+          e.hasBarLine = false;
+          break;
+        case "\\dbinom":
+        case "\\binom":
+        case "\\tbinom":
+          e.hasBarLine = false, e.leftDelim = "(", e.rightDelim = ")";
+          break;
+        case "\\cfrac":
+          e.hasBarLine = true, e.continuousFraction = true;
+          break;
+        default:
+      }
+      switch (r) {
+        case "\\dfrac":
+        case "\\dbinom":
+          e.mathstyleName = "displaystyle";
+          break;
+        case "\\tfrac":
+        case "\\tbinom":
+          e.mathstyleName = "textstyle";
+          break;
+        default:
+      }
+      return new Ce(i[0] ? M(i[0]) : [new ae()], i[1] ? M(i[1]) : [new ae()], e);
+    }, serialize: (t32, e) => {
+      let r = t32.aboveToLatex(e), i = t32.belowToLatex(e);
+      return /^[0-9]$/.test(r) && /^[0-9]$/.test(i) ? `${t32.command}${r}${i}` : R(t32.command, r, i);
+    } });
+    y(["cfrac"], "[:string]{:expression}{:expression}", { ifMode: "math", createAtom: (t32) => {
+      let e = m2({}, t32), r = t32.args;
+      return e.hasBarLine = true, e.continuousFraction = true, r[0] === "r" && (e.align = "right"), r[0] === "l" && (e.align = "left"), new Ce(r[1] ? M(r[1]) : [new ae()], r[2] ? M(r[2]) : [new ae()], e);
+    }, serialize: (t32, e) => {
+      let r = t32.aboveToLatex(e), i = t32.belowToLatex(e);
+      return R(t32.command, r, i);
+    } });
+    fl2 = ["displaystyle", "textstyle", "scriptstyle", "scriptscriptstyle"];
+    y("genfrac", "{left-delim:delim}{right-delim:delim}{thickness:value}{mathstyle:string}{numerator:expression}{denominator:expression}", { ifMode: "math", createAtom: (t32) => {
+      let [e, r, i, n, o, a] = t32.args, l = m2({}, t32);
+      e && e !== "." && (l.leftDelim = e), r && r !== "." && (l.rightDelim = r), i ? (l.barThickness = i, l.hasBarLine = !Pc(i)) : l.hasBarLine = true;
+      let s2 = n == null ? void 0 : n.trim();
+      return s2 && /^[0-3]$/.test(s2) && (l.mathstyleName = fl2[Number(s2)]), new Ce(o ? M(o) : [new ae()], a ? M(a) : [new ae()], l);
+    }, serialize: (t32, e) => {
+      var i, n, o;
+      let r = t32.mathstyleName ? fl2.indexOf(t32.mathstyleName) : -1;
+      return R(t32.command, (i = t32.leftDelim) != null ? i : "", (n = t32.rightDelim) != null ? n : "", (o = X(t32.barThickness)) != null ? o : "", r >= 0 ? r.toString() : "", t32.aboveToLatex(e), t32.belowToLatex(e));
+    } });
+    y(["brace", "brack"], "", { infix: true, createAtom: (t32) => new Ce(M(t32.args[0]), M(t32.args[1]), u(m2({}, t32), { hasBarLine: false, leftDelim: t32.command === "\\brace" ? "\\lbrace" : "\\lbrack", rightDelim: t32.command === "\\brace" ? "\\rbrace" : "\\rbrack" })), serialize: (t32, e) => D([t32.aboveToLatex(e), t32.command, t32.belowToLatex(e)]) });
+    y(["over", "atop", "choose"], "", { infix: true, createAtom: (t32) => {
+      let e, r, i = t32.args;
+      return t32.command === "\\choose" && (e = "(", r = ")"), new Ce(M(i[0]), M(i[1]), u(m2({}, t32), { hasBarLine: t32.command === "\\over", leftDelim: e, rightDelim: r }));
+    }, serialize: (t32, e) => D([t32.aboveToLatex(e), t32.command, t32.belowToLatex(e)]) });
+    y(["overwithdelims", "atopwithdelims"], "{numer:auto}{denom:auto}{left-delim:delim}{right-delim:delim}", { infix: true, createAtom: (t32) => {
+      var r, i;
+      let e = t32.args;
+      return new Ce(M(e[0]), M(e[1]), u(m2({}, t32), { leftDelim: (r = e[2]) != null ? r : ".", rightDelim: (i = e[3]) != null ? i : ".", hasBarLine: false }));
+    }, serialize: (t32, e) => `${t32.aboveToLatex(e)} ${t32.command}${t32.leftDelim}${t32.rightDelim}${t32.belowToLatex(e)}` });
+    y("pdiff", "{numerator}{denominator}", { ifMode: "math", createAtom: (t32) => new Ce(M(t32.args[0]), M(t32.args[1]), u(m2({}, t32), { hasBarLine: true, numerPrefix: "\u2202", denomPrefix: "\u2202" })), serialize: (t32, e) => D([t32.aboveToLatex(e), t32.command, t32.belowToLatex(e)]) });
+    y(["sum", "prod", "bigcup", "bigcap", "coprod", "bigvee", "bigwedge", "biguplus", "bigotimes", "bigoplus", "bigodot", "bigsqcup", "intop"], "", { ifMode: "math", createAtom: (t32) => new Nt({ coprod: "\u2210", bigvee: "\u22C1", bigwedge: "\u22C0", biguplus: "\u2A04", bigcap: "\u22C2", bigcup: "\u22C3", intop: "\u222B", prod: "\u220F", sum: "\u2211", bigotimes: "\u2A02", bigoplus: "\u2A01", bigodot: "\u2A00", bigsqcup: "\u2A06", smallint: "\u222B" }[t32.command.slice(1)], u(m2({}, t32), { limits: "auto", variant: "main" })) });
+    y("smallint", "", { ifMode: "math", createAtom: (t32) => new Fe("\u222B", u(m2({}, t32), { limits: "adjacent", variant: "main" })) });
+    gl = { int: "\u222B", iint: "\u222C", iiint: "\u222D", oint: "\u222E", oiint: "\u222F", oiiint: "\u2230", intclockwise: "\u2231", varointclockwise: "\u2232", ointctrclockwise: "\u2233", intctrclockwise: "\u2A11", sqcup: "\u2294", sqcap: "\u2293", uplus: "\u228E", wr: "\u2240", amalg: "\u2A3F", Cap: "\u22D2", Cup: "\u22D3", doublecap: "\u22D2", doublecup: "\u22D3" };
+    y(Object.keys(gl), "", { ifMode: "math", createAtom: (t32) => {
+      let e = t32.command, r = gl[e.slice(1)];
+      return new Nt(r, u(m2({}, t32), { limits: "adjacent", variant: { "\u22D2": "ams", "\u22D3": "ams" }[r] }));
+    } });
+    y(["Re", "Im"], "", { ifMode: "math", createAtom: (t32) => new Fe({ "\\Re": "\u211C", "\\Im": "\u2111" }[t32.command], u(m2({}, t32), { limits: "adjacent", isFunction: true, variant: "fraktur" })) });
+    y("middle", "{:delim}", { ifMode: "math", createAtom: (t32) => {
+      var e;
+      return new ur(u(m2({}, t32), { delim: (e = t32.args[0]) != null ? e : "|", size: 1 }));
+    } });
+    y("the", "{:value}", { createAtom: (t32) => new p2(u(m2({}, t32), { captureSelection: true, verbatimLatex: null })), render: (t32, e) => {
+      var o;
+      let r = new z({ parent: e }, t32.style), i = "";
+      t32.isSelected && (i += " ML__selected");
+      let n = r.evaluate(t32.args[0]);
+      return new b(((o = X(n)) != null ? o : "").split("").map((a) => new b(a, { type: "ord", classes: i, mode: t32.mode, isSelected: t32.isSelected, style: m2({ variant: "main" }, t32.style) })), { type: "lift", style: t32.style, caret: t32.caret, isSelected: t32.isSelected, classes: i }).wrap(r);
+    }, serialize: (t32) => {
+      var e;
+      return `\\the${(e = X(t32.args[0])) != null ? e : "\\relax"}`;
+    } });
+    Pe = class t15 extends p2 {
+      constructor(e) {
+        super({ type: "error", value: e, command: e, mode: "math" }), this.verbatimLatex = e;
+      }
+      static fromJson(e) {
+        return new t15(e.command);
+      }
+      toJson() {
+        return super.toJson();
+      }
+      render(e) {
+        let r = this.createBox(e, { classes: "ML__error" });
+        return this.caret && (r.caret = this.caret), r;
+      }
+    };
+    dr = class t16 extends p2 {
+      constructor(e, r) {
+        super({ type: "group", mode: r }), this.body = e, this.boxType = e.length > 1 ? "ord" : "ignore", this.skipBoundary = true, this.displayContainsHighlight = false, (e == null ? void 0 : e.length) === 1 && e[0].command === "," && (this.captureSelection = true);
+      }
+      static fromJson(e) {
+        return new t16(e.body, e.mode);
+      }
+      render(e) {
+        let r = p2.createBox(e, this.body, { type: this.boxType });
+        return r ? (this.caret && (r.caret = this.caret), this.bind(e, r)) : null;
+      }
+      _serialize(e) {
+        if (!(e.expandMacro || e.skipStyles || e.skipPlaceholders) && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        return r != null && r.serialize ? r.serialize(this, e) : `{${this.bodyToLatex(e)}}`;
+      }
+    };
+    Vt = class t17 extends p2 {
+      constructor(e, r, i) {
+        super({ type: "leftright", style: i.style, displayContainsHighlight: true }), this.variant = e, this.body = r, this.leftDelim = i.leftDelim, this.rightDelim = i.rightDelim;
+      }
+      static fromJson(e) {
+        var r;
+        return new t17((r = e.variant) != null ? r : "", e.body, e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.variant && (e.variant = this.variant), this.leftDelim && (e.leftDelim = this.leftDelim), this.rightDelim && (e.rightDelim = this.rightDelim), e;
+      }
+      _serialize(e) {
+        var i, n;
+        let r = this.matchingRightDelim();
+        return this.variant === "left...right" ? D(["\\left", (i = this.leftDelim) != null ? i : ".", this.bodyToLatex(e), "\\right", r]) : this.variant === "mleft...mright" ? D(["\\mleft", (n = this.leftDelim) != null ? n : ".", this.bodyToLatex(e), "\\mright", r]) : D([!this.leftDelim || this.leftDelim === "." ? "" : this.leftDelim, this.bodyToLatex(e), r]);
+      }
+      matchingRightDelim() {
+        var r, i;
+        if (this.rightDelim && this.rightDelim !== "?") return this.rightDelim;
+        let e = (r = this.leftDelim) != null ? r : ".";
+        return (i = _o[e]) != null ? i : e;
+      }
+      render(e) {
+        var d, f;
+        let r = new z({ parent: e }, this.style);
+        this.body;
+        let i = new z({ parent: e, mathstyle: "textstyle" }, this.style), n = (d = p2.createBox(r, this.body, { type: "inner" })) != null ? d : new b(null, { type: "inner" }), o = n.height / i.scalingFactor, a = n.depth / i.scalingFactor, l = [];
+        if (this.leftDelim && l.push(this.bind(i, Ot("open", this.leftDelim, o, a, i, { isSelected: this.isSelected, classes: "ML__open" + (this.containsCaret ? " ML__contains-caret" : ""), mode: this.mode, style: this.style }))), n && (yl(n.children, this, r, o, a), l.push(n)), this.rightDelim) {
+          let S = this.containsCaret ? " ML__contains-caret" : "", x = this.rightDelim;
+          x === "?" && (r.smartFence ? (x = this.matchingRightDelim(), S += " ML__smart-fence__close") : x = "."), l.push(this.bind(i, Ot("close", x, o, a, i, { isSelected: this.isSelected, classes: S + " ML__close", mode: this.mode, style: this.style })));
+        }
+        let s2 = this.variant === "mleft...mright", c = this.leftSibling;
+        c && (!s2 && c.isFunction && (s2 = true), !s2 && c.type === "subsup" && ((f = c.leftSibling) != null && f.isFunction) && (s2 = true));
+        let h2 = new b(l, { type: s2 ? "close" : "inner", classes: "ML__left-right" });
+        return h2.setStyle("margin-top", `${-n.depth}em`), h2.setStyle("height", `${n.height + n.depth}em`), this.caret && (h2.caret = this.caret), this.bind(r, h2.wrap(r));
+      }
+    };
+    pr = class t18 extends p2 {
+      constructor(e, r) {
+        var i;
+        super({ type: "macro", command: e, style: r.style }), this.body = r.body, r.captureSelection === void 0 ? r.args ? this.captureSelection = false : this.captureSelection = true : this.captureSelection = r.captureSelection, this.macroArgs = r.args, this.expand = (i = r.expand) != null ? i : false;
+      }
+      static fromJson(e) {
+        return new t18(e.command, e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.expand && (e.expand = true), this.captureSelection !== void 0 && (e.captureSelection = this.captureSelection), this.macroArgs && (e.args = this.macroArgs), e;
+      }
+      _serialize(e) {
+        var r;
+        return e.expandMacro && this.expand ? this.bodyToLatex(e) : this.command + ((r = this.macroArgs) != null ? r : "");
+      }
+      applyStyle(e, r) {
+        let i = {};
+        e.color && (i.color = e.color), e.backgroundColor && (i.backgroundColor = e.backgroundColor), super.applyStyle(i, r);
+      }
+      render(e) {
+        let r = p2.createBox(e, this.body, { type: "lift" });
+        return r ? (this.caret && (r.caret = this.caret), this.bind(e, r)) : null;
+      }
+    };
+    ln = class t19 extends p2 {
+      constructor() {
+        super({ type: "macro-argument" });
+      }
+      static fromJson(e) {
+        return new t19();
+      }
+      toJson() {
+        return super.toJson();
+      }
+      _serialize(e) {
+        return "";
+      }
+      render(e) {
+        return null;
+      }
+    };
+    fr = class t20 extends p2 {
+      constructor(e, r, i = false, n, o) {
+        var a;
+        super({ type: "prompt", mode: (a = o == null ? void 0 : o.mode) != null ? a : "math", style: o == null ? void 0 : o.style, command: "\\placeholder" }), this.body = n, this.correctness = r, this.placeholderId = e, this.locked = i, this.captureSelection = this.locked;
+      }
+      static fromJson(e) {
+        return new t20(e.placeholderId, e.correctness, e.locked, e.body, e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.placeholderId && (e.placeholderId = this.placeholderId), this.body || delete e.body, this.body && (e.body = this.body.filter((r) => r.type !== "first").map((r) => r.toJson())), this.correctness && (e.correctness = this.correctness), e.locked = this.locked, e;
+      }
+      render(e) {
+        var B, A, F, O, Y;
+        let r = new z({ parent: e }), i = r.getRegisterAsEm("fboxsep"), n = i, o = i, a = p2.createBox(e, this.body);
+        if (!a) return null;
+        let s2 = !this.body || this.body.length === 0 || this.body.every(($) => $.type === "first") ? new ae({ mode: this.mode, style: this.style }).render(new z({ parent: e, isPhantom: true })) : null, c = (B = s2 == null ? void 0 : s2.height) != null ? B : r.metrics.xHeight, h2 = (A = s2 == null ? void 0 : s2.depth) != null ? A : c / 2, d = Math.max((F = a.height) != null ? F : 0, c), f = Math.max((O = a.depth) != null ? O : 0, h2);
+        a.setStyle("vertical-align", `calc(-${d}em + 2px)`), this.correctness === "correct" ? a.setStyle("color", "var(--correct-color, var(--ML__correct-color))") : this.correctness === "incorrect" && a.setStyle("color", "var(--incorrect-color, var(--ML__incorrect-color))");
+        let x = d + f + 2 * o - 2 * n, w = new b(a, { type: "ord" });
+        w.setStyle("display", "inline-block"), w.height = d, w.depth = f, w.setStyle("height", d + f, "em"), w.setStyle("vertical-align", -o, "em"), ((Y = a.width) != null ? Y : 0) < x && (w.width = x, w.setStyle("width", x, "em"));
+        let T = "ML__prompt ";
+        this.locked ? T += " ML__lockedPromptBox " : T += " ML__editablePromptBox ", this.correctness === "correct" ? T += " ML__correctPromptBox " : this.correctness === "incorrect" && (T += " ML__incorrectPromptBox "), this.containsCaret && (T += " ML__focusedPromptBox ");
+        let g = new b(null, { classes: T, attributes: { part: "prompt" } });
+        g.height = w.height + o, g.depth = w.depth + o, g.width = w.width + 2 * n, g.setStyle("position", "absolute"), g.setStyle("height", w.height + w.depth + 2 * o, "em"), n === 0 && g.setStyle("width", "100%"), n !== 0 && (g.setStyle("width", `calc(100% + ${2 * n}em)`), g.setStyle("top", i, "em"), g.setStyle("left", -n, "em"));
+        let C = "";
+        this.correctness === "incorrect" && (C += '<line x1="3%"  y1="97%" x2="97%" y2="3%" stroke-width="0.5" stroke="var(--incorrect-color, var(--ML__incorrect-color))" stroke-linecap="round" />'), C && (g.svgOverlay = C);
+        let k = new b([g, w], { classes: "ML__prompt-atom" });
+        w.setStyle("line-height", 1), k.setStyle("position", "relative"), k.setStyle("display", "inline-block"), k.setStyle("line-height", 0), k.height = d + o + 0.2, k.depth = f + o, k.left = n, k.right = n, k.setStyle("height", d + 2 * o, "em"), k.setStyle("top", f - d - o / 2, "em"), k.setStyle("vertical-align", w.depth, "em"), k.setStyle("margin-left", 0.5, "em"), k.setStyle("margin-right", 0.5, "em"), this.caret && (k.caret = this.caret);
+        let L = this.attachSupsub(e, { base: k }), P = this.bind(r, L);
+        return P && this.id && (g.atomID = this.id, w.atomID = this.id, k.atomID = this.id), P;
+      }
+      _serialize(e) {
+        var n;
+        let r = (n = this.bodyToLatex(e)) != null ? n : "";
+        if (e.skipPlaceholders) return r;
+        let i = "\\placeholder";
+        return this.placeholderId && (i += `[${this.placeholderId}]`), this.correctness === "correct" ? i += "[correct]" : this.correctness === "incorrect" && (i += "[incorrect]"), this.locked && (i += "[locked]"), R(i, r);
+      }
+    };
+    gr = class t21 extends p2 {
+      constructor(e) {
+        super({ type: "subsup", style: e == null ? void 0 : e.style }), this.subsupPlacement = "auto";
+      }
+      get children() {
+        if (!this._children) {
+          let e = [], r = this.branch("subscript");
+          if (r) for (let n of r) e.push(...n.children), e.push(n);
+          let i = this.branch("superscript");
+          if (i) for (let n of i) e.push(...n.children), e.push(n);
+          this._children = e;
+        }
+        return this._children;
+      }
+      static fromJson(e) {
+        let r = new t21(e);
+        for (let i of Mt) e[i] && r.setChildren(e[i], i);
+        return r;
+      }
+      render(e) {
+        var a;
+        let r = new z({ parent: e, isPhantom: true }), i = this.leftSibling, n = (a = i.render(r)) != null ? a : new b(null), o = new b(null);
+        return o.height = n.height, o.depth = n.depth, this.attachSupsub(e, { base: o, isCharacterBox: i.isCharacterBox(), type: "ignore" });
+      }
+      _serialize(e) {
+        return this.supsubToLatex(e);
+      }
+    };
+    kt = class t22 extends p2 {
+      constructor(e, r, i) {
+        super({ type: "text", command: e, mode: "text", displayContainsHighlight: true }), this.value = r, this.verbatimLatex = r, this.applyStyle(i);
+      }
+      static fromJson(e) {
+        return new t22(e.command, e.value, e.style);
+      }
+      render(e) {
+        let r = this.createBox(e);
+        return this.caret && (r.caret = this.caret), r;
+      }
+      _serialize(e) {
+        var r;
+        return (r = this.verbatimLatex) != null ? r : go("text", this.value.codePointAt(0));
+      }
+    };
+    cn = class {
+      constructor(e, r, i) {
+        this.errors = [];
+        this.index = 0;
+        this.endCount = 0;
+        var n, o, a, l;
+        i != null || (i = {}), this.tokens = e, this.context = r instanceof z && !(i != null && i.parseMode) && !i.mathstyle ? r : new z({ from: r, mathstyle: i.mathstyle }, i.style), this.args = (n = i.args) != null ? n : void 0, this.smartFence = this.context.smartFence, this.parsingContext = { parent: void 0, mathlist: [], style: (o = i.style) != null ? o : {}, parseMode: (a = i.parseMode) != null ? a : "math", mathstyle: (l = i.mathstyle) != null ? l : "displaystyle", tabular: false };
+      }
+      beginContext(e) {
+        var n, o, a, l, s2, c;
+        if (e != null && e.root) {
+          this.parsingContext = { parent: this.parsingContext.parent, mathlist: [], style: {}, parseMode: (n = e == null ? void 0 : e.mode) != null ? n : "math", mathstyle: (o = e == null ? void 0 : e.mathstyle) != null ? o : "displaystyle", tabular: (a = e == null ? void 0 : e.tabular) != null ? a : false };
+          return;
+        }
+        let r = this.parsingContext, i = { parent: r, mathlist: [], style: m2({}, r.style), parseMode: (l = e == null ? void 0 : e.mode) != null ? l : r.parseMode, mathstyle: (s2 = e == null ? void 0 : e.mathstyle) != null ? s2 : r.mathstyle, tabular: (c = e == null ? void 0 : e.tabular) != null ? c : false };
+        this.parsingContext = i;
+      }
+      endContext() {
+        this.parsingContext = this.parsingContext.parent;
+      }
+      onError(e) {
+        this.errors.push(m2({ before: xt(this.tokens.slice(this.index, this.index + 10)), after: xt(this.tokens.slice(Math.max(0, this.index - 10), this.index)) }, e));
+      }
+      get mathlist() {
+        return this.parsingContext.mathlist;
+      }
+      set mathlist(e) {
+        this.parsingContext.mathlist = e;
+      }
+      get parseMode() {
+        return this.parsingContext.parseMode;
+      }
+      set parseMode(e) {
+        this.parsingContext.parseMode = e;
+      }
+      get tabularMode() {
+        return this.parsingContext.tabular;
+      }
+      get style() {
+        let e = this.parsingContext;
+        for (; e; ) {
+          if (e.style) return m2({}, e.style);
+          e = e.parent;
+        }
+        return {};
+      }
+      set style(e) {
+        this.parsingContext.style = e;
+      }
+      end() {
+        return this.endCount++, this.index >= this.tokens.length || this.endCount > 1e3;
+      }
+      next() {
+        this.index += 1;
+      }
+      get() {
+        return this.endCount = 0, this.index < this.tokens.length ? this.tokens[this.index++] : "";
+      }
+      peek() {
+        return this.tokens[this.index];
+      }
+      expandUnicode() {
+        if (!this.peek() || this.parseMode !== "math") return;
+        let e = N0(this.peek());
+        e && this.tokens.splice(this.index, 1, ...or(e));
+      }
+      match(e) {
+        return this.tokens[this.index] === e ? (this.index++, true) : false;
+      }
+      lastSubsupAtom() {
+        let e;
+        return this.mathlist.length > 0 && (e = this.mathlist[this.mathlist.length - 1], e.type === "subsup" || e.subsupPlacement !== void 0) || (e = new gr({ style: this.style }), this.mathlist.push(e)), e;
+      }
+      hasPattern(e) {
+        return e.test(this.tokens[this.index]);
+      }
+      hasInfixCommand() {
+        var r;
+        let { index: e } = this;
+        if (e < this.tokens.length && this.tokens[e].startsWith("\\")) {
+          let i = H(this.tokens[e], this.parseMode);
+          return !i || i.definitionType === "symbol" || i.ifMode && !i.ifMode.includes(this.parseMode) ? false : (r = i.infix) != null ? r : false;
+        }
+        return false;
+      }
+      matchColumnSeparator() {
+        return !this.tabularMode || this.peek() !== "&" ? false : (this.index++, true);
+      }
+      matchRowSeparator() {
+        if (!this.tabularMode) return false;
+        let e = this.peek();
+        return e !== "\\\\" && e !== "\\cr" && e !== "\\tabularnewline" ? false : (this.index++, true);
+      }
+      placeholder() {
+        var r;
+        let e = (r = this.args) == null ? void 0 : r.call(this, "?");
+        return e ? nt(e, { parseMode: this.parseMode, mathstyle: "textstyle" }) : [new ae({ mode: this.parseMode, style: this.style })];
+      }
+      skipWhitespace() {
+        for (; this.match("<space>"); ) ;
+      }
+      skipUntilToken(e) {
+        let r = this.tokens[this.index];
+        for (; r && r !== e; ) r = this.tokens[++this.index];
+        r === e && this.index++;
+      }
+      skipFiller() {
+        for (; this.match("\\relax") || this.match("<space>"); ) ;
+      }
+      matchKeyword(e) {
+        let r = this.index, i = this.end(), n = "";
+        for (; !i; ) {
+          let a = this.get();
+          yr(a) ? (n += a, i = this.end() || n.length >= e.length) : i = true;
+        }
+        let o = e.toUpperCase() === n.toUpperCase();
+        return o || (this.index = r), o;
+      }
+      scanString() {
+        let e = "";
+        for (; !this.end(); ) {
+          let r = this.peek();
+          if (r === "]") return e;
+          if (r === "<space>") e += " ";
+          else if (r.startsWith("\\")) this.onError({ code: "unexpected-command-in-string" }), e += r.substring(1);
+          else if (yr(r)) e += r;
+          else return e;
+          this.next();
+        }
+        return e;
+      }
+      scanBalancedString() {
+        let e = "", r = this.end(), i = 1;
+        for (; !r; ) {
+          let n = this.get();
+          n === "<space>" ? e += " " : n === "<{>" ? (e += "{", i += 1) : n === "<}>" ? (i -= 1, i > 0 ? e += "}" : this.index -= 1) : n === "<$>" ? e += "$" : n === "<$$>" ? e += "$$" : e += n, r = i === 0 || this.end();
+        }
+        return e;
+      }
+      scanLiteralGroup() {
+        var i;
+        if (!this.match("<{>")) return "";
+        let e = "", r = 1;
+        for (; r > 0 && !this.end(); ) {
+          let n = this.get();
+          n === "<}>" ? (r -= 1, r > 0 && (e += "}")) : n === "<{>" ? (r += 1, e += "{") : (/\\[a-zA-Z]+$/.test(e) && /^[a-zA-Z]/.test(n) && (e += " "), e += (i = { "<space>": " ", "<$$>": "$$", "<$>": "$" }[n]) != null ? i : n);
+        }
+        return e;
+      }
+      scanNumber(e = true) {
+        var s2, c;
+        let r = false, i = this.peek();
+        for (; i === "<space>" || i === "+" || i === "-"; ) this.get(), i === "-" && (r = !r), i = this.peek();
+        e = !!e;
+        let n = 10, o = /\d/;
+        if (this.match("'")) n = 8, o = /[0-7]/, e = true;
+        else if (this.match('"')) n = 16, o = /[\dA-F]/, e = true;
+        else if (this.match("x")) n = 16, o = /[\dA-Fa-f]/, e = true;
+        else if (this.match("`")) return i = this.get(), i ? i.length === 2 && i.startsWith("\\") ? { number: (r ? -1 : 1) * ((s2 = i.codePointAt(1)) != null ? s2 : 0), base: "alpha" } : { number: (r ? -1 : 1) * ((c = i.codePointAt(0)) != null ? c : 0), base: "alpha" } : null;
+        let a = "";
+        for (; this.hasPattern(o); ) a += this.get();
+        if (!e && (this.match(".") || this.match(","))) for (a += "."; this.hasPattern(o); ) a += this.get();
+        let l = e ? Number.parseInt(a, n) : Number.parseFloat(a);
+        return Number.isNaN(l) ? null : { number: r ? -l : l, base: n === 16 ? "hexadecimal" : n === 8 ? "octal" : "decimal" };
+      }
+      scanRegister() {
+        var o;
+        let e = this.index, r = this.scanNumber(false);
+        if (this.skipWhitespace(), this.match("\\relax")) return r;
+        let i = false;
+        if (r === null) for (; ; ) {
+          let a = this.peek();
+          if (a === "-") i = !i;
+          else if (a !== "+") break;
+          this.next(), this.skipWhitespace();
+        }
+        if (this.match("\\global")) {
+          this.skipWhitespace();
+          let a = this.get();
+          return a.startsWith("\\") ? r ? { register: a, global: true, factor: (i ? -1 : 1) * r.number } : i ? { register: a, global: true, factor: -1 } : { register: a, global: true } : (this.index = e, null);
+        }
+        let n = this.get();
+        return n != null && n.startsWith("\\") ? (n = n.substring(1), this.context.registers[n] ? !i || r !== null ? { register: n, factor: (i ? -1 : 1) * ((o = r == null ? void 0 : r.number) != null ? o : 1) } : { register: n } : (this.index = e, null)) : (this.index = e, null);
+      }
+      scanValue() {
+        let e = this.scanRegister();
+        if (e) return e;
+        let r = this.index, i = this.scanGlueOrDimen();
+        if (i && ("unit" in i || "glue" in i && "unit" in i.glue)) return i;
+        this.index = r;
+        let n = this.scanNumber();
+        if (n) return n;
+        if (this.end() || !yr(this.peek())) return null;
+        let o = this.scanString();
+        return o.length > 0 ? { string: o } : null;
+      }
+      scanDimen() {
+        let e = this.scanNumber(false);
+        if (e === null) return null;
+        let r = e.number;
+        this.skipWhitespace(), this.matchKeyword("true"), this.skipWhitespace();
+        let i;
+        return this.matchKeyword("pt") ? i = "pt" : this.matchKeyword("mm") ? i = "mm" : this.matchKeyword("cm") ? i = "cm" : this.matchKeyword("ex") ? i = "ex" : this.matchKeyword("px") ? i = "px" : this.matchKeyword("em") ? i = "em" : this.matchKeyword("bp") ? i = "bp" : this.matchKeyword("dd") ? i = "dd" : this.matchKeyword("pc") ? i = "pc" : this.matchKeyword("in") ? i = "in" : this.matchKeyword("mu") && (i = "mu"), i ? { dimension: r, unit: i } : { dimension: r };
+      }
+      scanGlueOrDimen() {
+        let e = this.scanDimen();
+        if (e === null) return null;
+        if (this.skipWhitespace(), this.match("\\relax")) return e;
+        let r = { glue: e };
+        if (this.matchKeyword("plus")) {
+          let i = this.scanDimen();
+          if (i) r.grow = i;
+          else return r;
+        }
+        if (this.skipWhitespace(), this.match("\\relax")) return r;
+        if (this.skipWhitespace(), this.matchKeyword("minus")) {
+          let i = this.scanDimen();
+          if (i) r.shrink = i;
+          else return r;
+        }
+        return !r.grow && !r.shrink ? e : r;
+      }
+      scanColspec() {
+        this.skipWhitespace();
+        let e = [];
+        for (; !this.end() && !(this.peek() === "<}>" || this.peek() === "]"); ) {
+          let r = this.get();
+          r === "c" || r === "r" || r === "l" ? e.push({ align: r }) : r === "|" ? e.push({ separator: "solid" }) : r === ":" ? e.push({ separator: "dashed" }) : r === "@" && (this.match("<{>") && (this.beginContext({ mode: "math" }), e.push({ gap: this.scan((i) => i === "<}>") }), this.endContext()), this.match("<}>") || this.onError({ code: "unbalanced-braces" }));
+        }
+        return e;
+      }
+      scanModeSet() {
+        let e;
+        if (this.match("\\(") && (e = "textstyle"), !e && this.match("\\[") && (e = "displaystyle"), !e) return null;
+        this.beginContext({ mode: "math", mathstyle: e });
+        let r = this.scan((i) => i === (e === "displaystyle" ? "\\]" : "\\)"));
+        return this.match(e === "displaystyle" ? "\\]" : "\\)") || this.onError({ code: "unbalanced-mode-shift" }), this.endContext(), r;
+      }
+      scanModeShift() {
+        let e = "";
+        if (this.match("<$>") && (e = "<$>"), !e && this.match("<$$>") && (e = "<$$>"), !e) return null;
+        this.beginContext({ mode: "math", mathstyle: e === "<$>" ? "textstyle" : "displaystyle" });
+        let r = this.scan((i) => i === e);
+        return this.match(e) || this.onError({ code: "unbalanced-mode-shift" }), this.endContext(), r;
+      }
+      scanEnvironment() {
+        if (!this.match("\\begin")) return null;
+        let e = this.scanArgument("string");
+        if (!e) return null;
+        let r = G0(e);
+        if (!r) return this.onError({ code: "unknown-environment", arg: e }), null;
+        let i = [];
+        if (r.params) for (let s2 of r.params) if (s2.isOptional) i.push(this.scanOptionalArgument(s2.type));
+        else {
+          let c = this.scanArgument(s2.type);
+          c || this.onError({ code: "missing-argument", arg: e }), i.push(c);
+        }
+        this.beginContext({ tabular: r.tabular, root: r.rootOnly });
+        let n = [], o = [], a = [], l = false;
+        do
+          if (this.end() && (this.onError({ code: "unbalanced-environment", arg: e }), l = true), !l && this.match("\\end") && (this.scanArgument("string") !== e && this.onError({ code: "unbalanced-environment", arg: e }), l = true), !l) if (this.matchColumnSeparator()) a.push(this.mathlist), this.mathlist = [];
+          else if (this.matchRowSeparator()) {
+            a.push(this.mathlist), this.mathlist = [];
+            let s2 = null;
+            this.skipWhitespace(), this.match("[") && (s2 = this.scanDimen(), this.skipWhitespace(), this.match("]")), o.push(s2 != null ? s2 : { dimension: 0 }), n.push(a), a = [];
+          } else this.mathlist.push(...this.scan((s2) => ["<}>", "&", "\\end", "\\cr", "\\\\", "\\tabularnewline"].includes(s2)));
+        while (!l);
+        return a.push(this.mathlist), a.length > 0 && n.push(a), this.endContext(), r.rootOnly && (this.index = this.tokens.length), r.createAtom(e, n, o, i, this.context.maxMatrixCols);
+      }
+      scanExpression() {
+        let e = this.mathlist;
+        if (this.mathlist = [], this.parseExpression()) {
+          let r = this.mathlist;
+          return this.mathlist = e, r;
+        }
+        return this.mathlist = e, null;
+      }
+      scan(e) {
+        this.beginContext(), e || (e = (l) => l === "<}>");
+        let r = "", i = null, n = [], o = null;
+        for (; !this.end() && !e(this.peek()); ) this.hasInfixCommand() && !r ? (r = this.get(), i = H(r, "math"), i && (n = this.scanArguments(i)[1]), o = this.mathlist, this.mathlist = []) : this.parseExpression();
+        let a;
+        return r ? (n.unshift(this.mathlist), o && n.unshift(o), a = [i.createAtom({ command: r, args: n, style: this.style, mode: this.parseMode })]) : a = this.mathlist, this.endContext(), a;
+      }
+      scanGroup() {
+        let e = this.index;
+        if (!this.match("<{>")) return null;
+        let r = this.scan((n) => n === "<}>");
+        if (this.match("<}>") || this.onError({ code: "unbalanced-braces" }), r.length === 1 && r[0].type === "placeholder") return r[0];
+        let i = new dr(r, this.parseMode);
+        return i.verbatimLatex = xt(this.tokens.slice(e, this.index)), i;
+      }
+      scanSmartFence() {
+        if (this.skipWhitespace(), !this.match("(")) return null;
+        this.beginContext();
+        let e = 1;
+        for (; !this.end() && e !== 0; ) this.match("(") && (e += 1), this.match(")") && (e -= 1), e !== 0 && this.parseExpression();
+        let r = new Vt("", this.mathlist, { leftDelim: "(", rightDelim: e === 0 ? ")" : "?" });
+        return this.endContext(), r;
+      }
+      scanDelim() {
+        this.skipWhitespace();
+        let e = this.peek();
+        if (!e) return this.onError({ code: "unexpected-end-of-string" }), null;
+        if (!yr(e) && !e.startsWith("\\")) return null;
+        this.next();
+        let r = H(e, "math");
+        return r ? r.definitionType === "function" && r.ifMode && !r.ifMode.includes(this.parseMode) ? (this.onError({ code: "unexpected-delimiter", arg: e }), null) : r.definitionType === "symbol" && (r.type === "mopen" || r.type === "mclose") || /^(\.|\?|\||<|>|\\vert|\\Vert|\\\||\\surd|\\uparrow|\\downarrow|\\Uparrow|\\Downarrow|\\updownarrow|\\Updownarrow|\\mid|\\mvert|\\mVert)$/.test(e) ? e : (this.onError({ code: "unexpected-delimiter", arg: e }), null) : (this.onError({ code: "unknown-command", arg: e }), null);
+      }
+      scanLeftRight() {
+        var o;
+        if (this.match("\\right")) return this.onError({ code: "unbalanced-braces" }), new Pe("\\right");
+        if (this.match("\\mright")) return this.onError({ code: "unbalanced-braces" }), new Pe("\\mright");
+        let e = "\\right";
+        if (!this.match("\\left")) {
+          if (!this.match("\\mleft")) return null;
+          e = "\\mright";
+        }
+        let r = this.scanDelim();
+        if (!r) return this.onError({ code: "unexpected-delimiter" }), new Pe(e === "\\right" ? "\\left" : "\\mleft");
+        for (this.beginContext(); !this.end() && !this.match(e); ) this.parseExpression();
+        let i = this.mathlist;
+        this.endContext();
+        let n = (o = this.scanDelim()) != null ? o : ".";
+        return new Vt(e === "\\right" ? "left...right" : "mleft...mright", i, { leftDelim: r, rightDelim: n, style: this.style });
+      }
+      parseSupSub() {
+        if (this.parseMode !== "math") return false;
+        let e = this.peek();
+        if (e !== "^" && e !== "_" && e !== "'") return false;
+        let r = this.lastSubsupAtom();
+        for (; e === "^" || e === "_" || e === "'"; ) this.match("'") ? this.match("'") ? r.addChild(new p2({ type: "mord", command: "\\doubleprime", mode: "math", value: "\u2032\u2032" }), "superscript") : r.addChild(new p2({ type: "mord", command: "\\prime", mode: "math", value: "\u2032" }), "superscript") : (this.match("^") || this.match("_")) && r.addChildren(M(this.scanArgument("expression")), e === "_" ? "subscript" : "superscript"), e = this.peek();
+        return true;
+      }
+      parseLimits() {
+        if (this.parseMode !== "math") return false;
+        let e = this.match("\\limits"), r = !e && this.match("\\nolimits"), i = !r && !e && this.match("\\displaylimits");
+        if (!e && !r && !i) return false;
+        let n = this.mathlist.length > 0 ? this.mathlist[this.mathlist.length - 1] : null;
+        return n === null ? false : (n.explicitSubsupPlacement = true, e && (n.subsupPlacement = "over-under"), r && (n.subsupPlacement = "adjacent"), i && (n.subsupPlacement = "auto"), true);
+      }
+      scanArguments(e) {
+        if (!(e != null && e.params)) return [void 0, []];
+        let r, i = [], n = e.infix ? 2 : 0;
+        for (; n < e.params.length; ) {
+          let o = e.params[n];
+          o.type === "rest" ? i.push(this.scan((a) => ["<}>", "&", "\\end", "\\cr", "\\\\", "\\tabularnewline", "\\right"].includes(a))) : o.isOptional ? i.push(this.scanOptionalArgument(o.type)) : o.type.endsWith("*") ? r = o.type.slice(0, -1) : i.push(this.scanArgument(o.type)), n += 1;
+        }
+        return [r, i];
+      }
+      scanSymbolOrLiteral() {
+        let e = this.peek();
+        if (!e) return null;
+        this.next();
+        let r;
+        if (yr(e)) {
+          let i = Q.createAtom(this.parseMode, e, m2({}, this.style));
+          return i ? [i] : null;
+        }
+        if (r = this.scanMacro(e), r) return [r];
+        if (e.startsWith("\\")) {
+          let i = H(e, this.parseMode);
+          if (!i) return this.onError({ code: "unknown-command", arg: e }), [new Pe(e)];
+          if (i.definitionType === "symbol") {
+            let n = m2({}, this.style);
+            i.variant && (n.variant = i.variant), r = new p2({ type: i.type, command: e, style: n, value: String.fromCodePoint(i.codepoint), mode: this.parseMode, verbatimLatex: e });
+          } else {
+            if (i.applyMode || i.applyStyle || i.infix) return this.onError({ code: "invalid-command", arg: e }), [new Pe(e)];
+            i.createAtom && (r = i.createAtom({ command: e, args: [], style: this.style, mode: this.parseMode }));
+          }
+        }
+        return r ? [r] : null;
+      }
+      scanArgument(e) {
+        var n, o;
+        this.skipFiller();
+        let r = this.parseMode;
+        if (e === "auto" && (e = r), !this.match("<{>")) {
+          if (e === "string") return this.scanString();
+          if (e === "value") return this.scanValue();
+          if (e === "delim") return (n = this.scanDelim()) != null ? n : ".";
+          if (e === "expression") return this.scanExpression();
+          if (e === "math") {
+            e !== r && this.beginContext({ mode: "math" });
+            let a = this.scanSymbolOrLiteral();
+            return e !== r && this.endContext(), a;
+          }
+          if (e === "text") {
+            e !== r && this.beginContext({ mode: "text" });
+            let a = this.scanSymbolOrLiteral();
+            return e !== r && this.endContext(), a;
+          }
+          return e === "balanced-string" ? null : e === "rest" ? this.scan((a) => ["<}>", "&", "\\end", "\\cr", "\\\\", "\\tabularnewline", "\\right"].includes(a)) : null;
+        }
+        if (e === "text") {
+          this.beginContext({ mode: "text" });
+          do
+            this.mathlist.push(...this.scan());
+          while (!this.match("<}>") && !this.end());
+          let a = this.mathlist;
+          return this.endContext(), { group: a };
+        }
+        if (e === "math") {
+          this.beginContext({ mode: "math" });
+          do
+            this.mathlist.push(...this.scan());
+          while (!this.match("<}>") && !this.end());
+          let a = this.mathlist;
+          return this.endContext(), { group: a };
+        }
+        if (e === "rest") {
+          let a = this.scan();
+          return this.match("<}>") || this.onError({ code: "unbalanced-braces" }), { group: a };
+        }
+        let i = null;
+        if (e === "expression") {
+          this.beginContext({ mode: "math" });
+          do
+            this.mathlist.push(...this.scan());
+          while (!this.match("<}>") && !this.end());
+          let a = this.mathlist;
+          return this.endContext(), { group: a };
+        }
+        return e === "string" ? i = this.scanString() : e === "balanced-string" ? i = this.scanBalancedString() : e === "colspec" ? i = this.scanColspec() : e === "value" ? i = this.scanValue() : e === "delim" && (i = this.peek() === "<}>" ? "." : (o = this.scanDelim()) != null ? o : "."), this.skipUntilToken("<}>"), i;
+      }
+      scanOptionalArgument(e) {
+        if (e = e === "auto" ? this.parseMode : e, this.skipFiller(), !this.match("[")) return null;
+        let r = null;
+        for (; !this.end() && !this.match("]"); ) if (e === "string") r = this.scanString();
+        else if (e === "value") r = this.scanValue();
+        else if (e === "colspec") r = this.scanColspec();
+        else if (e === "bbox") {
+          let i = {}, n = this.scanString().toLowerCase().trim().split(/,(?![^(]*\)(?:(?:[^(]*\)){2})*[^"]*$)/);
+          for (let o of n) {
+            let a = o.match(/^\s*([\d.]+)\s*([a-z]{2})/);
+            if (a) i.padding = { dimension: Number.parseFloat(a[1]), unit: a[2] };
+            else {
+              let l = o.match(/^\s*border\s*:\s*(.*)/);
+              l ? i.border = l[1] : i.backgroundcolor = { string: o };
+            }
+          }
+          r = i;
+        } else e === "math" && (this.beginContext({ mode: "math" }), r = this.mathlist.concat(this.scan((i) => i === "]")), this.endContext());
+        return r;
+      }
+      scanSymbolOrCommand(e) {
+        var o, a, l;
+        if (e === "\\placeholder") {
+          let s2 = this.scanOptionalArgument("string"), c = this.scanOptionalArgument("math"), h2 = p2.serialize(c, { defaultMode: "math" }), d = [], f;
+          !f && h2 === "correct" ? f = "correct" : !f && h2 === "incorrect" ? f = "incorrect" : h2 !== "" && (d = c);
+          let S = this.scanOptionalArgument("string") === "locked", x = this.scanArgument("auto"), w;
+          return x && Array.isArray(x) && x.length > 0 ? w = x : x && typeof x == "object" && "group" in x ? w = x.group : w = d, s2 ? [new fr(s2, f, S, w != null ? w : d, { mode: this.parseMode, style: this.style })] : [new ae({ mode: this.parseMode, style: this.style })];
+        }
+        if (e === "\\renewcommand" || e === "\\newcommand" || e === "\\providecommand" || e === "\\def") {
+          let s2 = this.index, c = this.scanLiteralGroup() || this.next();
+          if (!c) return null;
+          if (this.context.registers[c.substring(1)]) {
+            let h2 = this.scanArgument("string");
+            h2 !== null && (this.context.registers[c.substring(1)] = h2);
+            let d = D([e, xt(this.tokens.slice(s2, this.index))]);
+            return [new p2({ type: "text", value: "", verbatimLatex: d })];
+          }
+        }
+        let r = this.scanMacro(e);
+        if (r) return [r];
+        let i = H(e, this.parseMode);
+        if (!i) return this.parseMode === "text" ? (/[a-zA-Z]/.test((o = this.peek()) != null ? o : "") && (e += " "), [...e].map((s2) => new p2({ type: "text", value: s2, mode: "text", style: this.style }))) : (this.onError({ code: "unknown-command", arg: e }), [new Pe(e)]);
+        let n = this.index;
+        if (i.definitionType === "symbol") {
+          let s2 = m2({}, this.style);
+          i.variant && (s2.variant = i.variant), r = new p2({ type: i.type, command: e, style: s2, value: String.fromCodePoint(i.codepoint), mode: this.parseMode });
+        } else {
+          if (i.ifMode && !i.ifMode.includes(this.parseMode)) return [];
+          let s2 = this.parseMode;
+          i.applyMode && (this.parseMode = i.applyMode);
+          let c, h2 = [];
+          if (i.parse ? h2 = i.parse(this) : [c, h2] = this.scanArguments(i), this.parseMode = s2, i.applyMode && !i.applyStyle && !i.createAtom) return M(h2[0]);
+          if (i.infix) return this.onError({ code: "too-many-infix-commands", arg: e }), null;
+          if (typeof i.createAtom == "function") r = i.createAtom({ command: e, args: h2, style: this.style, mode: this.parseMode }), c && (r.body = M(this.scanArgument(c)));
+          else if (typeof i.applyStyle == "function") {
+            let d = i.applyStyle(this.style, e, h2, this.context), f = this.parseMode;
+            if (i.applyMode && (this.parseMode = i.applyMode), c) {
+              let S = this.style;
+              this.style = d;
+              let x = this.scanArgument(c);
+              return this.style = S, this.parseMode = f, M(x);
+            }
+            this.style = d;
+          } else r = new p2({ type: "mord", command: (a = i.command) != null ? a : e, style: m2({}, this.style), value: e, mode: (l = i.applyMode) != null ? l : this.parseMode });
+        }
+        if (!r) return null;
+        if (r instanceof p2 && r.verbatimLatex === void 0 && !/^\\(llap|rlap|class|cssId|htmlData)$/.test(e)) {
+          let s2 = D([e, xt(this.tokens.slice(n, this.index))]);
+          s2 && (r.verbatimLatex = s2);
+        }
+        if (r.verbatimLatex === null && (r.verbatimLatex = void 0), r.isFunction && this.smartFence) {
+          let s2 = this.scanSmartFence();
+          if (s2) return [r, s2];
+        }
+        return [r];
+      }
+      scanSymbolCommandOrLiteral() {
+        this.expandUnicode();
+        let e = this.get();
+        if (!e) return null;
+        if (yr(e)) {
+          let r = Q.createAtom(this.parseMode, e, m2({}, this.style));
+          if (!r) return null;
+          if (r.isFunction && this.smartFence) {
+            let i = this.scanSmartFence();
+            if (i) return [r, i];
+          }
+          return [r];
+        }
+        return e.startsWith("\\") ? this.scanSymbolOrCommand(e) : e === "<space>" ? this.parseMode === "text" ? [new kt(" ", " ", this.style)] : null : (e === "<}>" ? this.onError({ latex: "", code: "unbalanced-braces" }) : this.onError({ latex: "", code: "unexpected-token", arg: e }), null);
+      }
+      scanMacro(e) {
+        var a;
+        let r = this.context.getMacro(e);
+        if (!r) return null;
+        let i = this.index, n = r.args, o = { "?": (a = this.args) == null ? void 0 : a.call(this, "?") };
+        for (let l = 1; l <= n; l++) {
+          let s2 = this.scanLiteralGroup();
+          if (!s2) {
+            let c = this.index;
+            this.scanExpression(), s2 = xt(this.tokens.slice(c, this.index));
+          }
+          o[l] = s2;
+        }
+        return new pr(e, { expand: r.expand, captureSelection: r.captureSelection, args: i === this.index ? null : xt(this.tokens.slice(i, this.index)), style: this.parsingContext.style, body: nt(r.def, { context: this.context, parseMode: this.parseMode, args: (l) => o[l], mathstyle: this.parsingContext.mathstyle, style: this.parsingContext.style }) });
+      }
+      parseExpression() {
+        var r, i, n, o;
+        let e = (o = (n = (i = (r = this.scanEnvironment()) != null ? r : this.scanModeShift()) != null ? i : this.scanModeSet()) != null ? n : this.scanGroup()) != null ? o : this.scanLeftRight();
+        if (e === null) {
+          if (this.parseSupSub() || this.parseLimits()) return true;
+          e = this.scanSymbolCommandOrLiteral();
+        }
+        return e ? (ye(e) ? this.mathlist.push(...e) : this.mathlist.push(e), true) : false;
+      }
+    };
+    Gr = class t23 extends p2 {
+      constructor(e, r) {
+        super({ type: "chem" }, { command: e, mode: "math" });
+        let i = Z.go(v.go(r, e === "\\pu" ? "pu" : "ce"), false);
+        this.body = nt(i), this._verbatimLatex = e + "{" + r + "}", this.arg = r, this.captureSelection = true;
+      }
+      static fromJson(e) {
+        return new t23(e.command, e.arg);
+      }
+      set verbatimLatex(e) {
+      }
+      get verbatimLatex() {
+        return this._verbatimLatex;
+      }
+      toJson() {
+        return u(m2({}, super.toJson()), { arg: this.arg });
+      }
+      render(e) {
+        let r = p2.createBox(e, this.body, { type: "inner" });
+        return this.caret && (r.caret = this.caret), this.bind(e, r);
+      }
+      _serialize(e) {
+        return this.verbatimLatex, this.verbatimLatex;
+      }
+    };
+    y(["ce", "pu"], "{chemformula:balanced-string}", { createAtom: (t32) => {
+      var e;
+      return new Gr(t32.command, (e = t32.args[0]) != null ? e : "");
+    } });
+    v = { go: function(t32, e) {
+      if (!t32) return [];
+      e === void 0 && (e = "ce");
+      var r = "0", i = {};
+      i.parenthesisLevel = 0, t32 = t32.replace(/\n/g, " "), t32 = t32.replace(/[\u2212\u2013\u2014\u2010]/g, "-"), t32 = t32.replace(/[\u2026]/g, "...");
+      for (var n, o = 10, a = []; ; ) {
+        n !== t32 ? (o = 10, n = t32) : o--;
+        var l = v.stateMachines[e], s2 = l.transitions[r] || l.transitions["*"];
+        e: for (var c = 0; c < s2.length; c++) {
+          var h2 = v.patterns.match_(s2[c].pattern, t32);
+          if (h2) {
+            for (var d = s2[c].task, f = 0; f < d.action_.length; f++) {
+              var S;
+              if (l.actions[d.action_[f].type_]) S = l.actions[d.action_[f].type_](i, h2.match_, d.action_[f].option);
+              else if (v.actions[d.action_[f].type_]) S = v.actions[d.action_[f].type_](i, h2.match_, d.action_[f].option);
+              else throw ["MhchemBugA", "mhchem bug A. Please report. (" + d.action_[f].type_ + ")"];
+              v.concatArray(a, S);
+            }
+            if (r = d.nextState || r, t32.length > 0) {
+              if (d.revisit || (t32 = h2.remainder), !d.toContinue) break e;
+            } else return a;
+          }
+        }
+        if (o <= 0) throw ["MhchemBugU", "mhchem bug U. Please report."];
+      }
+    }, concatArray: function(t32, e) {
+      if (e) if (Object.prototype.toString.call(e) === "[object Array]") for (var r = 0; r < e.length; r++) t32.push(e[r]);
+      else t32.push(e);
+    }, patterns: { patterns: { empty: /^$/, else: /^./, else2: /^./, space: /^\s/, "space A": /^\s(?=[A-Z\\$])/, space$: /^\s$/, "a-z": /^[a-z]/, x: /^x/, x$: /^x$/, i$: /^i$/, letters: /^(?:[a-zA-Z\u03B1-\u03C9\u0391-\u03A9?@]|(?:\\(?:alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|mu|nu|xi|omicron|pi|rho|sigma|tau|upsilon|phi|chi|psi|omega|Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega)(?:\s+|\{\}|(?![a-zA-Z]))))+/, "\\greek": /^\\(?:alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|mu|nu|xi|omicron|pi|rho|sigma|tau|upsilon|phi|chi|psi|omega|Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega)(?:\s+|\{\}|(?![a-zA-Z]))/, "one lowercase latin letter $": /^(?:([a-z])(?:$|[^a-zA-Z]))$/, "$one lowercase latin letter$ $": /^\$(?:([a-z])(?:$|[^a-zA-Z]))\$$/, "one lowercase greek letter $": /^(?:\$?[\u03B1-\u03C9]\$?|\$?\\(?:alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|mu|nu|xi|omicron|pi|rho|sigma|tau|upsilon|phi|chi|psi|omega)\s*\$?)(?:\s+|\{\}|(?![a-zA-Z]))$/, digits: /^[0-9]+/, "-9.,9": /^[+\-]?(?:[0-9]+(?:[,.][0-9]+)?|[0-9]*(?:\.[0-9]+))/, "-9.,9 no missing 0": /^[+\-]?[0-9]+(?:[.,][0-9]+)?/, "(-)(9.,9)(e)(99)": function(t32) {
+      var e = t32.match(/^(\+\-|\+\/\-|\+|\-|\\pm\s?)?([0-9]+(?:[,.][0-9]+)?|[0-9]*(?:\.[0-9]+))?(\((?:[0-9]+(?:[,.][0-9]+)?|[0-9]*(?:\.[0-9]+))\))?(?:(?:([eE])|\s*(\*|x|\\times|\u00D7)\s*10\^)([+\-]?[0-9]+|\{[+\-]?[0-9]+\}))?/);
+      return e && e[0] ? { match_: e.slice(1), remainder: t32.substr(e[0].length) } : null;
+    }, "(-)(9)^(-9)": function(t32) {
+      var e = t32.match(/^(\+\-|\+\/\-|\+|\-|\\pm\s?)?([0-9]+(?:[,.][0-9]+)?|[0-9]*(?:\.[0-9]+)?)\^([+\-]?[0-9]+|\{[+\-]?[0-9]+\})/);
+      return e && e[0] ? { match_: e.slice(1), remainder: t32.substr(e[0].length) } : null;
+    }, "state of aggregation $": function(t32) {
+      var e = v.patterns.findObserveGroups(t32, "", /^\([a-z]{1,3}(?=[\),])/, ")", "");
+      if (e && e.remainder.match(/^($|[\s,;\)\]\}])/)) return e;
+      var r = t32.match(/^(?:\((?:\\ca\s?)?\$[amothc]\$\))/);
+      return r ? { match_: r[0], remainder: t32.substr(r[0].length) } : null;
+    }, "_{(state of aggregation)}$": /^_\{(\([a-z]{1,3}\))\}/, "{[(": /^(?:\\\{|\[|\()/, ")]}": /^(?:\)|\]|\\\})/, ", ": /^[,;]\s*/, ",": /^[,;]/, ".": /^[.]/, ". ": /^([.\u22C5\u00B7\u2022])\s*/, "...": /^\.\.\.(?=$|[^.])/, "* ": /^([*])\s*/, "^{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "^{", "", "", "}");
+    }, "^($...$)": function(t32) {
+      return v.patterns.findObserveGroups(t32, "^", "$", "$", "");
+    }, "^a": /^\^([0-9]+|[^\\_])/, "^\\x{}{}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "^", /^\\[a-zA-Z]+\{/, "}", "", "", "{", "}", "", true);
+    }, "^\\x{}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "^", /^\\[a-zA-Z]+\{/, "}", "");
+    }, "^\\x": /^\^(\\[a-zA-Z]+)\s*/, "^(-1)": /^\^(-?\d+)/, "'": /^'/, "_{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "_{", "", "", "}");
+    }, "_($...$)": function(t32) {
+      return v.patterns.findObserveGroups(t32, "_", "$", "$", "");
+    }, _9: /^_([+\-]?[0-9]+|[^\\])/, "_\\x{}{}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "_", /^\\[a-zA-Z]+\{/, "}", "", "", "{", "}", "", true);
+    }, "_\\x{}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "_", /^\\[a-zA-Z]+\{/, "}", "");
+    }, "_\\x": /^_(\\[a-zA-Z]+)\s*/, "^_": /^(?:\^(?=_)|\_(?=\^)|[\^_]$)/, "{}": /^\{\}/, "{...}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "", "{", "}", "");
+    }, "{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "{", "", "", "}");
+    }, "$...$": function(t32) {
+      return v.patterns.findObserveGroups(t32, "", "$", "$", "");
+    }, "${(...)}$": function(t32) {
+      return v.patterns.findObserveGroups(t32, "${", "", "", "}$");
+    }, "$(...)$": function(t32) {
+      return v.patterns.findObserveGroups(t32, "$", "", "", "$");
+    }, "=<>": /^[=<>]/, "#": /^[#\u2261]/, "+": /^\+/, "-$": /^-(?=[\s_},;\]/]|$|\([a-z]+\))/, "-9": /^-(?=[0-9])/, "- orbital overlap": /^-(?=(?:[spd]|sp)(?:$|[\s,;\)\]\}]))/, "-": /^-/, "pm-operator": /^(?:\\pm|\$\\pm\$|\+-|\+\/-)/, operator: /^(?:\+|(?:[\-=<>]|<<|>>|\\approx|\$\\approx\$)(?=\s|$|-?[0-9]))/, arrowUpDown: /^(?:v|\(v\)|\^|\(\^\))(?=$|[\s,;\)\]\}])/, "\\bond{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\bond{", "", "", "}");
+    }, "->": /^(?:<->|<-->|->|<-|<=>>|<<=>|<=>|[\u2192\u27F6\u21CC])/, CMT: /^[CMT](?=\[)/, "[(...)]": function(t32) {
+      return v.patterns.findObserveGroups(t32, "[", "", "", "]");
+    }, "1st-level escape": /^(&|\\\\|\\hline)\s*/, "\\,": /^(?:\\[,\ ;:])/, "\\x{}{}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "", /^\\[a-zA-Z]+\{/, "}", "", "", "{", "}", "", true);
+    }, "\\x{}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "", /^\\[a-zA-Z]+\{/, "}", "");
+    }, "\\ca": /^\\ca(?:\s+|(?![a-zA-Z]))/, "\\x": /^(?:\\[a-zA-Z]+\s*|\\[_&{}%])/, orbital: /^(?:[0-9]{1,2}[spdfgh]|[0-9]{0,2}sp)(?=$|[^a-zA-Z])/, others: /^[\/~|]/, "\\frac{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\frac{", "", "", "}", "{", "", "", "}");
+    }, "\\overset{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\overset{", "", "", "}", "{", "", "", "}");
+    }, "\\underset{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\underset{", "", "", "}", "{", "", "", "}");
+    }, "\\underbrace{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\underbrace{", "", "", "}_", "{", "", "", "}");
+    }, "\\color{(...)}0": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\color{", "", "", "}");
+    }, "\\color{(...)}{(...)}1": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\color{", "", "", "}", "{", "", "", "}");
+    }, "\\color(...){(...)}2": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\color", "\\", "", /^(?=\{)/, "{", "", "", "}");
+    }, "\\ce{(...)}": function(t32) {
+      return v.patterns.findObserveGroups(t32, "\\ce{", "", "", "}");
+    }, oxidation$: /^(?:[+-][IVX]+|\\pm\s*0|\$\\pm\$\s*0)$/, "d-oxidation$": /^(?:[+-]?\s?[IVX]+|\\pm\s*0|\$\\pm\$\s*0)$/, "roman numeral": /^[IVX]+/, "1/2$": /^[+\-]?(?:[0-9]+|\$[a-z]\$|[a-z])\/[0-9]+(?:\$[a-z]\$|[a-z])?$/, amount: function(t32) {
+      var e;
+      if (e = t32.match(/^(?:(?:(?:\([+\-]?[0-9]+\/[0-9]+\)|[+\-]?(?:[0-9]+|\$[a-z]\$|[a-z])\/[0-9]+|[+\-]?[0-9]+[.,][0-9]+|[+\-]?\.[0-9]+|[+\-]?[0-9]+)(?:[a-z](?=\s*[A-Z]))?)|[+\-]?[a-z](?=\s*[A-Z])|\+(?!\s))/), e) return { match_: e[0], remainder: t32.substr(e[0].length) };
+      var r = v.patterns.findObserveGroups(t32, "", "$", "$", "");
+      return r && (e = r.match_.match(/^\$(?:\(?[+\-]?(?:[0-9]*[a-z]?[+\-])?[0-9]*[a-z](?:[+\-][0-9]*[a-z]?)?\)?|\+|-)\$$/), e) ? { match_: e[0], remainder: t32.substr(e[0].length) } : null;
+    }, amount2: function(t32) {
+      return this.amount(t32);
+    }, "(KV letters),": /^(?:[A-Z][a-z]{0,2}|i)(?=,)/, formula$: function(t32) {
+      if (t32.match(/^\([a-z]+\)$/)) return null;
+      var e = t32.match(/^(?:[a-z]|(?:[0-9\ \+\-\,\.\(\)]+[a-z])+[0-9\ \+\-\,\.\(\)]*|(?:[a-z][0-9\ \+\-\,\.\(\)]+)+[a-z]?)$/);
+      return e ? { match_: e[0], remainder: t32.substr(e[0].length) } : null;
+    }, uprightEntities: /^(?:pH|pOH|pC|pK|iPr|iBu)(?=$|[^a-zA-Z])/, "/": /^\s*(\/)\s*/, "//": /^\s*(\/\/)\s*/, "*": /^\s*[*.]\s*/ }, findObserveGroups: function(t32, e, r, i, n, o, a, l, s2, c) {
+      var h2 = function(g, C) {
+        if (typeof C == "string") return g.indexOf(C) !== 0 ? null : C;
+        var k = g.match(C);
+        return k ? k[0] : null;
+      }, d = function(g, C, k) {
+        for (var L = 0; C < g.length; ) {
+          var P = g.charAt(C), B = h2(g.substr(C), k);
+          if (B !== null && L === 0) return { endMatchBegin: C, endMatchEnd: C + B.length };
+          if (P === "{") L++;
+          else if (P === "}") {
+            if (L === 0) throw ["ExtraCloseMissingOpen", "Extra close brace or missing open brace"];
+            L--;
+          }
+          C++;
+        }
+        return L > 0, null;
+      }, f = h2(t32, e);
+      if (f === null || (t32 = t32.substr(f.length), f = h2(t32, r), f === null)) return null;
+      var S = d(t32, f.length, i || n);
+      if (S === null) return null;
+      var x = t32.substring(0, i ? S.endMatchEnd : S.endMatchBegin);
+      if (o || a) {
+        var w = this.findObserveGroups(t32.substr(S.endMatchEnd), o, a, l, s2);
+        if (w === null) return null;
+        var T = [x, w.match_];
+        return { match_: c ? T.join("") : T, remainder: w.remainder };
+      } else return { match_: x, remainder: t32.substr(S.endMatchEnd) };
+    }, match_: function(t32, e) {
+      var r = v.patterns.patterns[t32];
+      if (r === void 0) throw ["MhchemBugP", "mhchem bug P. Please report. (" + t32 + ")"];
+      if (typeof r == "function") return v.patterns.patterns[t32](e);
+      var i = e.match(r);
+      if (i) {
+        var n;
+        return i[2] ? n = [i[1], i[2]] : i[1] ? n = i[1] : n = i[0], { match_: n, remainder: e.substr(i[0].length) };
+      }
+      return null;
+    } }, actions: { "a=": function(t32, e) {
+      t32.a = (t32.a || "") + e;
+    }, "b=": function(t32, e) {
+      t32.b = (t32.b || "") + e;
+    }, "p=": function(t32, e) {
+      t32.p = (t32.p || "") + e;
+    }, "o=": function(t32, e) {
+      t32.o = (t32.o || "") + e;
+    }, "q=": function(t32, e) {
+      t32.q = (t32.q || "") + e;
+    }, "d=": function(t32, e) {
+      t32.d = (t32.d || "") + e;
+    }, "rm=": function(t32, e) {
+      t32.rm = (t32.rm || "") + e;
+    }, "text=": function(t32, e) {
+      t32.text_ = (t32.text_ || "") + e;
+    }, insert: function(t32, e, r) {
+      return { type_: r };
+    }, "insert+p1": function(t32, e, r) {
+      return { type_: r, p1: e };
+    }, "insert+p1+p2": function(t32, e, r) {
+      return { type_: r, p1: e[0], p2: e[1] };
+    }, copy: function(t32, e) {
+      return e;
+    }, rm: function(t32, e) {
+      return { type_: "rm", p1: e || "" };
+    }, text: function(t32, e) {
+      return v.go(e, "text");
+    }, "{text}": function(t32, e) {
+      var r = ["{"];
+      return v.concatArray(r, v.go(e, "text")), r.push("}"), r;
+    }, "tex-math": function(t32, e) {
+      return v.go(e, "tex-math");
+    }, "tex-math tight": function(t32, e) {
+      return v.go(e, "tex-math tight");
+    }, bond: function(t32, e, r) {
+      return { type_: "bond", kind_: r || e };
+    }, "color0-output": function(t32, e) {
+      return { type_: "color0", color: e[0] };
+    }, ce: function(t32, e) {
+      return v.go(e);
+    }, "1/2": function(t32, e) {
+      var r = [];
+      e.match(/^[+\-]/) && (r.push(e.substr(0, 1)), e = e.substr(1));
+      var i = e.match(/^([0-9]+|\$[a-z]\$|[a-z])\/([0-9]+)(\$[a-z]\$|[a-z])?$/);
+      return i[1] = i[1].replace(/\$/g, ""), r.push({ type_: "frac", p1: i[1], p2: i[2] }), i[3] && (i[3] = i[3].replace(/\$/g, ""), r.push({ type_: "tex-math", p1: i[3] })), r;
+    }, "9,9": function(t32, e) {
+      return v.go(e, "9,9");
+    } }, createTransitions: function(t32) {
+      var e, r, i, n, o = {};
+      for (e in t32) for (r in t32[e]) for (i = r.split("|"), t32[e][r].stateArray = i, n = 0; n < i.length; n++) o[i[n]] = [];
+      for (e in t32) for (r in t32[e]) for (i = t32[e][r].stateArray || [], n = 0; n < i.length; n++) {
+        var a = t32[e][r];
+        if (a.action_) {
+          a.action_ = [].concat(a.action_);
+          for (var l = 0; l < a.action_.length; l++) typeof a.action_[l] == "string" && (a.action_[l] = { type_: a.action_[l] });
+        } else a.action_ = [];
+        for (var s2 = e.split("|"), c = 0; c < s2.length; c++) if (i[n] === "*") for (var h2 in o) o[h2].push({ pattern: s2[c], task: a });
+        else o[i[n]].push({ pattern: s2[c], task: a });
+      }
+      return o;
+    }, stateMachines: {} };
+    v.stateMachines = { ce: { transitions: v.createTransitions({ empty: { "*": { action_: "output" } }, else: { "0|1|2": { action_: "beginsWithBond=false", revisit: true, toContinue: true } }, oxidation$: { 0: { action_: "oxidation-output" } }, CMT: { r: { action_: "rdt=", nextState: "rt" }, rd: { action_: "rqt=", nextState: "rdt" } }, arrowUpDown: { "0|1|2|as": { action_: ["sb=false", "output", "operator"], nextState: "1" } }, uprightEntities: { "0|1|2": { action_: ["o=", "output"], nextState: "1" } }, orbital: { "0|1|2|3": { action_: "o=", nextState: "o" } }, "->": { "0|1|2|3": { action_: "r=", nextState: "r" }, "a|as": { action_: ["output", "r="], nextState: "r" }, "*": { action_: ["output", "r="], nextState: "r" } }, "+": { o: { action_: "d= kv", nextState: "d" }, "d|D": { action_: "d=", nextState: "d" }, q: { action_: "d=", nextState: "qd" }, "qd|qD": { action_: "d=", nextState: "qd" }, dq: { action_: ["output", "d="], nextState: "d" }, 3: { action_: ["sb=false", "output", "operator"], nextState: "0" } }, amount: { "0|2": { action_: "a=", nextState: "a" } }, "pm-operator": { "0|1|2|a|as": { action_: ["sb=false", "output", { type_: "operator", option: "\\pm" }], nextState: "0" } }, operator: { "0|1|2|a|as": { action_: ["sb=false", "output", "operator"], nextState: "0" } }, "-$": { "o|q": { action_: ["charge or bond", "output"], nextState: "qd" }, d: { action_: "d=", nextState: "d" }, D: { action_: ["output", { type_: "bond", option: "-" }], nextState: "3" }, q: { action_: "d=", nextState: "qd" }, qd: { action_: "d=", nextState: "qd" }, "qD|dq": { action_: ["output", { type_: "bond", option: "-" }], nextState: "3" } }, "-9": { "3|o": { action_: ["output", { type_: "insert", option: "hyphen" }], nextState: "3" } }, "- orbital overlap": { o: { action_: ["output", { type_: "insert", option: "hyphen" }], nextState: "2" }, d: { action_: ["output", { type_: "insert", option: "hyphen" }], nextState: "2" } }, "-": { "0|1|2": { action_: [{ type_: "output", option: 1 }, "beginsWithBond=true", { type_: "bond", option: "-" }], nextState: "3" }, 3: { action_: { type_: "bond", option: "-" } }, a: { action_: ["output", { type_: "insert", option: "hyphen" }], nextState: "2" }, as: { action_: [{ type_: "output", option: 2 }, { type_: "bond", option: "-" }], nextState: "3" }, b: { action_: "b=" }, o: { action_: { type_: "- after o/d", option: false }, nextState: "2" }, q: { action_: { type_: "- after o/d", option: false }, nextState: "2" }, "d|qd|dq": { action_: { type_: "- after o/d", option: true }, nextState: "2" }, "D|qD|p": { action_: ["output", { type_: "bond", option: "-" }], nextState: "3" } }, amount2: { "1|3": { action_: "a=", nextState: "a" } }, letters: { "0|1|2|3|a|as|b|p|bp|o": { action_: "o=", nextState: "o" }, "q|dq": { action_: ["output", "o="], nextState: "o" }, "d|D|qd|qD": { action_: "o after d", nextState: "o" } }, digits: { o: { action_: "q=", nextState: "q" }, "d|D": { action_: "q=", nextState: "dq" }, q: { action_: ["output", "o="], nextState: "o" }, a: { action_: "o=", nextState: "o" } }, "space A": { "b|p|bp": {} }, space: { a: { nextState: "as" }, 0: { action_: "sb=false" }, "1|2": { action_: "sb=true" }, "r|rt|rd|rdt|rdq": { action_: "output", nextState: "0" }, "*": { action_: ["output", "sb=true"], nextState: "1" } }, "1st-level escape": { "1|2": { action_: ["output", { type_: "insert+p1", option: "1st-level escape" }] }, "*": { action_: ["output", { type_: "insert+p1", option: "1st-level escape" }], nextState: "0" } }, "[(...)]": { "r|rt": { action_: "rd=", nextState: "rd" }, "rd|rdt": { action_: "rq=", nextState: "rdq" } }, "...": { "o|d|D|dq|qd|qD": { action_: ["output", { type_: "bond", option: "..." }], nextState: "3" }, "*": { action_: [{ type_: "output", option: 1 }, { type_: "insert", option: "ellipsis" }], nextState: "1" } }, ". |* ": { "*": { action_: ["output", { type_: "insert", option: "addition compound" }], nextState: "1" } }, "state of aggregation $": { "*": { action_: ["output", "state of aggregation"], nextState: "1" } }, "{[(": { "a|as|o": { action_: ["o=", "output", "parenthesisLevel++"], nextState: "2" }, "0|1|2|3": { action_: ["o=", "output", "parenthesisLevel++"], nextState: "2" }, "*": { action_: ["output", "o=", "output", "parenthesisLevel++"], nextState: "2" } }, ")]}": { "0|1|2|3|b|p|bp|o": { action_: ["o=", "parenthesisLevel--"], nextState: "o" }, "a|as|d|D|q|qd|qD|dq": { action_: ["output", "o=", "parenthesisLevel--"], nextState: "o" } }, ", ": { "*": { action_: ["output", "comma"], nextState: "0" } }, "^_": { "*": {} }, "^{(...)}|^($...$)": { "0|1|2|as": { action_: "b=", nextState: "b" }, p: { action_: "b=", nextState: "bp" }, "3|o": { action_: "d= kv", nextState: "D" }, q: { action_: "d=", nextState: "qD" }, "d|D|qd|qD|dq": { action_: ["output", "d="], nextState: "D" } }, "^a|^\\x{}{}|^\\x{}|^\\x|'": { "0|1|2|as": { action_: "b=", nextState: "b" }, p: { action_: "b=", nextState: "bp" }, "3|o": { action_: "d= kv", nextState: "d" }, q: { action_: "d=", nextState: "qd" }, "d|qd|D|qD": { action_: "d=" }, dq: { action_: ["output", "d="], nextState: "d" } }, "_{(state of aggregation)}$": { "d|D|q|qd|qD|dq": { action_: ["output", "q="], nextState: "q" } }, "_{(...)}|_($...$)|_9|_\\x{}{}|_\\x{}|_\\x": { "0|1|2|as": { action_: "p=", nextState: "p" }, b: { action_: "p=", nextState: "bp" }, "3|o": { action_: "q=", nextState: "q" }, "d|D": { action_: "q=", nextState: "dq" }, "q|qd|qD|dq": { action_: ["output", "q="], nextState: "q" } }, "=<>": { "0|1|2|3|a|as|o|q|d|D|qd|qD|dq": { action_: [{ type_: "output", option: 2 }, "bond"], nextState: "3" } }, "#": { "0|1|2|3|a|as|o": { action_: [{ type_: "output", option: 2 }, { type_: "bond", option: "#" }], nextState: "3" } }, "{}": { "*": { action_: { type_: "output", option: 1 }, nextState: "1" } }, "{...}": { "0|1|2|3|a|as|b|p|bp": { action_: "o=", nextState: "o" }, "o|d|D|q|qd|qD|dq": { action_: ["output", "o="], nextState: "o" } }, "$...$": { a: { action_: "a=" }, "0|1|2|3|as|b|p|bp|o": { action_: "o=", nextState: "o" }, "as|o": { action_: "o=" }, "q|d|D|qd|qD|dq": { action_: ["output", "o="], nextState: "o" } }, "\\bond{(...)}": { "*": { action_: [{ type_: "output", option: 2 }, "bond"], nextState: "3" } }, "\\frac{(...)}": { "*": { action_: [{ type_: "output", option: 1 }, "frac-output"], nextState: "3" } }, "\\overset{(...)}": { "*": { action_: [{ type_: "output", option: 2 }, "overset-output"], nextState: "3" } }, "\\underset{(...)}": { "*": { action_: [{ type_: "output", option: 2 }, "underset-output"], nextState: "3" } }, "\\underbrace{(...)}": { "*": { action_: [{ type_: "output", option: 2 }, "underbrace-output"], nextState: "3" } }, "\\color{(...)}{(...)}1|\\color(...){(...)}2": { "*": { action_: [{ type_: "output", option: 2 }, "color-output"], nextState: "3" } }, "\\color{(...)}0": { "*": { action_: [{ type_: "output", option: 2 }, "color0-output"] } }, "\\ce{(...)}": { "*": { action_: [{ type_: "output", option: 2 }, "ce"], nextState: "3" } }, "\\,": { "*": { action_: [{ type_: "output", option: 1 }, "copy"], nextState: "1" } }, "\\x{}{}|\\x{}|\\x": { "0|1|2|3|a|as|b|p|bp|o|c0": { action_: ["o=", "output"], nextState: "3" }, "*": { action_: ["output", "o=", "output"], nextState: "3" } }, others: { "*": { action_: [{ type_: "output", option: 1 }, "copy"], nextState: "3" } }, else2: { a: { action_: "a to o", nextState: "o", revisit: true }, as: { action_: ["output", "sb=true"], nextState: "1", revisit: true }, "r|rt|rd|rdt|rdq": { action_: ["output"], nextState: "0", revisit: true }, "*": { action_: ["output", "copy"], nextState: "3" } } }), actions: { "o after d": function(t32, e) {
+      var r;
+      if ((t32.d || "").match(/^[0-9]+$/)) {
+        var i = t32.d;
+        t32.d = void 0, r = this.output(t32), t32.b = i;
+      } else r = this.output(t32);
+      return v.actions["o="](t32, e), r;
+    }, "d= kv": function(t32, e) {
+      t32.d = e, t32.dType = "kv";
+    }, "charge or bond": function(t32, e) {
+      if (t32.beginsWithBond) {
+        var r = [];
+        return v.concatArray(r, this.output(t32)), v.concatArray(r, v.actions.bond(t32, e, "-")), r;
+      } else t32.d = e;
+    }, "- after o/d": function(t32, e, r) {
+      var i = v.patterns.match_("orbital", t32.o || ""), n = v.patterns.match_("one lowercase greek letter $", t32.o || ""), o = v.patterns.match_("one lowercase latin letter $", t32.o || ""), a = v.patterns.match_("$one lowercase latin letter$ $", t32.o || ""), l = e === "-" && (i && i.remainder === "" || n || o || a);
+      l && !t32.a && !t32.b && !t32.p && !t32.d && !t32.q && !i && o && (t32.o = "$" + t32.o + "$");
+      var s2 = [];
+      return l ? (v.concatArray(s2, this.output(t32)), s2.push({ type_: "hyphen" })) : (i = v.patterns.match_("digits", t32.d || ""), r && i && i.remainder === "" ? (v.concatArray(s2, v.actions["d="](t32, e)), v.concatArray(s2, this.output(t32))) : (v.concatArray(s2, this.output(t32)), v.concatArray(s2, v.actions.bond(t32, e, "-")))), s2;
+    }, "a to o": function(t32) {
+      t32.o = t32.a, t32.a = void 0;
+    }, "sb=true": function(t32) {
+      t32.sb = true;
+    }, "sb=false": function(t32) {
+      t32.sb = false;
+    }, "beginsWithBond=true": function(t32) {
+      t32.beginsWithBond = true;
+    }, "beginsWithBond=false": function(t32) {
+      t32.beginsWithBond = false;
+    }, "parenthesisLevel++": function(t32) {
+      t32.parenthesisLevel++;
+    }, "parenthesisLevel--": function(t32) {
+      t32.parenthesisLevel--;
+    }, "state of aggregation": function(t32, e) {
+      return { type_: "state of aggregation", p1: v.go(e, "o") };
+    }, comma: function(t32, e) {
+      var r = e.replace(/\s*$/, ""), i = r !== e;
+      return i && t32.parenthesisLevel === 0 ? { type_: "comma enumeration L", p1: r } : { type_: "comma enumeration M", p1: r };
+    }, output: function(t32, e, r) {
+      var i;
+      if (!t32.r) i = [], !t32.a && !t32.b && !t32.p && !t32.o && !t32.q && !t32.d && !r || (t32.sb && i.push({ type_: "entitySkip" }), !t32.o && !t32.q && !t32.d && !t32.b && !t32.p && r !== 2 ? (t32.o = t32.a, t32.a = void 0) : !t32.o && !t32.q && !t32.d && (t32.b || t32.p) ? (t32.o = t32.a, t32.d = t32.b, t32.q = t32.p, t32.a = t32.b = t32.p = void 0) : t32.o && t32.dType === "kv" && v.patterns.match_("d-oxidation$", t32.d || "") ? t32.dType = "oxidation" : t32.o && t32.dType === "kv" && !t32.q && (t32.dType = void 0), i.push({ type_: "chemfive", a: v.go(t32.a, "a"), b: v.go(t32.b, "bd"), p: v.go(t32.p, "pq"), o: v.go(t32.o, "o"), q: v.go(t32.q, "pq"), d: v.go(t32.d, t32.dType === "oxidation" ? "oxidation" : "bd"), dType: t32.dType }));
+      else {
+        var n;
+        t32.rdt === "M" ? n = v.go(t32.rd, "tex-math") : t32.rdt === "T" ? n = [{ type_: "text", p1: t32.rd || "" }] : n = v.go(t32.rd);
+        var o;
+        t32.rqt === "M" ? o = v.go(t32.rq, "tex-math") : t32.rqt === "T" ? o = [{ type_: "text", p1: t32.rq || "" }] : o = v.go(t32.rq), i = { type_: "arrow", r: t32.r, rd: n, rq: o };
+      }
+      for (var a in t32) a !== "parenthesisLevel" && a !== "beginsWithBond" && delete t32[a];
+      return i;
+    }, "oxidation-output": function(t32, e) {
+      var r = ["{"];
+      return v.concatArray(r, v.go(e, "oxidation")), r.push("}"), r;
+    }, "frac-output": function(t32, e) {
+      return { type_: "frac-ce", p1: v.go(e[0]), p2: v.go(e[1]) };
+    }, "overset-output": function(t32, e) {
+      return { type_: "overset", p1: v.go(e[0]), p2: v.go(e[1]) };
+    }, "underset-output": function(t32, e) {
+      return { type_: "underset", p1: v.go(e[0]), p2: v.go(e[1]) };
+    }, "underbrace-output": function(t32, e) {
+      return { type_: "underbrace", p1: v.go(e[0]), p2: v.go(e[1]) };
+    }, "color-output": function(t32, e) {
+      return { type_: "color", color1: e[0], color2: v.go(e[1]) };
+    }, "r=": function(t32, e) {
+      t32.r = e;
+    }, "rdt=": function(t32, e) {
+      t32.rdt = e;
+    }, "rd=": function(t32, e) {
+      t32.rd = e;
+    }, "rqt=": function(t32, e) {
+      t32.rqt = e;
+    }, "rq=": function(t32, e) {
+      t32.rq = e;
+    }, operator: function(t32, e, r) {
+      return { type_: "operator", kind_: r || e };
+    } } }, a: { transitions: v.createTransitions({ empty: { "*": {} }, "1/2$": { 0: { action_: "1/2" } }, else: { 0: { nextState: "1", revisit: true } }, "$(...)$": { "*": { action_: "tex-math tight", nextState: "1" } }, ",": { "*": { action_: { type_: "insert", option: "commaDecimal" } } }, else2: { "*": { action_: "copy" } } }), actions: {} }, o: { transitions: v.createTransitions({ empty: { "*": {} }, "1/2$": { 0: { action_: "1/2" } }, else: { 0: { nextState: "1", revisit: true } }, letters: { "*": { action_: "rm" } }, "\\ca": { "*": { action_: { type_: "insert", option: "circa" } } }, "\\x{}{}|\\x{}|\\x": { "*": { action_: "copy" } }, "${(...)}$|$(...)$": { "*": { action_: "tex-math" } }, "{(...)}": { "*": { action_: "{text}" } }, else2: { "*": { action_: "copy" } } }), actions: {} }, text: { transitions: v.createTransitions({ empty: { "*": { action_: "output" } }, "{...}": { "*": { action_: "text=" } }, "${(...)}$|$(...)$": { "*": { action_: "tex-math" } }, "\\greek": { "*": { action_: ["output", "rm"] } }, "\\,|\\x{}{}|\\x{}|\\x": { "*": { action_: ["output", "copy"] } }, else: { "*": { action_: "text=" } } }), actions: { output: function(t32) {
+      if (t32.text_) {
+        var e = { type_: "text", p1: t32.text_ };
+        for (var r in t32) delete t32[r];
+        return e;
+      }
+    } } }, pq: { transitions: v.createTransitions({ empty: { "*": {} }, "state of aggregation $": { "*": { action_: "state of aggregation" } }, i$: { 0: { nextState: "!f", revisit: true } }, "(KV letters),": { 0: { action_: "rm", nextState: "0" } }, formula$: { 0: { nextState: "f", revisit: true } }, "1/2$": { 0: { action_: "1/2" } }, else: { 0: { nextState: "!f", revisit: true } }, "${(...)}$|$(...)$": { "*": { action_: "tex-math" } }, "{(...)}": { "*": { action_: "text" } }, "a-z": { f: { action_: "tex-math" } }, letters: { "*": { action_: "rm" } }, "-9.,9": { "*": { action_: "9,9" } }, ",": { "*": { action_: { type_: "insert+p1", option: "comma enumeration S" } } }, "\\color{(...)}{(...)}1|\\color(...){(...)}2": { "*": { action_: "color-output" } }, "\\color{(...)}0": { "*": { action_: "color0-output" } }, "\\ce{(...)}": { "*": { action_: "ce" } }, "\\,|\\x{}{}|\\x{}|\\x": { "*": { action_: "copy" } }, else2: { "*": { action_: "copy" } } }), actions: { "state of aggregation": function(t32, e) {
+      return { type_: "state of aggregation subscript", p1: v.go(e, "o") };
+    }, "color-output": function(t32, e) {
+      return { type_: "color", color1: e[0], color2: v.go(e[1], "pq") };
+    } } }, bd: { transitions: v.createTransitions({ empty: { "*": {} }, x$: { 0: { nextState: "!f", revisit: true } }, formula$: { 0: { nextState: "f", revisit: true } }, else: { 0: { nextState: "!f", revisit: true } }, "-9.,9 no missing 0": { "*": { action_: "9,9" } }, ".": { "*": { action_: { type_: "insert", option: "electron dot" } } }, "a-z": { f: { action_: "tex-math" } }, x: { "*": { action_: { type_: "insert", option: "KV x" } } }, letters: { "*": { action_: "rm" } }, "'": { "*": { action_: { type_: "insert", option: "prime" } } }, "${(...)}$|$(...)$": { "*": { action_: "tex-math" } }, "{(...)}": { "*": { action_: "text" } }, "\\color{(...)}{(...)}1|\\color(...){(...)}2": { "*": { action_: "color-output" } }, "\\color{(...)}0": { "*": { action_: "color0-output" } }, "\\ce{(...)}": { "*": { action_: "ce" } }, "\\,|\\x{}{}|\\x{}|\\x": { "*": { action_: "copy" } }, else2: { "*": { action_: "copy" } } }), actions: { "color-output": function(t32, e) {
+      return { type_: "color", color1: e[0], color2: v.go(e[1], "bd") };
+    } } }, oxidation: { transitions: v.createTransitions({ empty: { "*": {} }, "roman numeral": { "*": { action_: "roman-numeral" } }, "${(...)}$|$(...)$": { "*": { action_: "tex-math" } }, else: { "*": { action_: "copy" } } }), actions: { "roman-numeral": function(t32, e) {
+      return { type_: "roman numeral", p1: e || "" };
+    } } }, "tex-math": { transitions: v.createTransitions({ empty: { "*": { action_: "output" } }, "\\ce{(...)}": { "*": { action_: ["output", "ce"] } }, "{...}|\\,|\\x{}{}|\\x{}|\\x": { "*": { action_: "o=" } }, else: { "*": { action_: "o=" } } }), actions: { output: function(t32) {
+      if (t32.o) {
+        var e = { type_: "tex-math", p1: t32.o };
+        for (var r in t32) delete t32[r];
+        return e;
+      }
+    } } }, "tex-math tight": { transitions: v.createTransitions({ empty: { "*": { action_: "output" } }, "\\ce{(...)}": { "*": { action_: ["output", "ce"] } }, "{...}|\\,|\\x{}{}|\\x{}|\\x": { "*": { action_: "o=" } }, "-|+": { "*": { action_: "tight operator" } }, else: { "*": { action_: "o=" } } }), actions: { "tight operator": function(t32, e) {
+      t32.o = (t32.o || "") + "{" + e + "}";
+    }, output: function(t32) {
+      if (t32.o) {
+        var e = { type_: "tex-math", p1: t32.o };
+        for (var r in t32) delete t32[r];
+        return e;
+      }
+    } } }, "9,9": { transitions: v.createTransitions({ empty: { "*": {} }, ",": { "*": { action_: "comma" } }, else: { "*": { action_: "copy" } } }), actions: { comma: function() {
+      return { type_: "commaDecimal" };
+    } } }, pu: { transitions: v.createTransitions({ empty: { "*": { action_: "output" } }, space$: { "*": { action_: ["output", "space"] } }, "{[(|)]}": { "0|a": { action_: "copy" } }, "(-)(9)^(-9)": { 0: { action_: "number^", nextState: "a" } }, "(-)(9.,9)(e)(99)": { 0: { action_: "enumber", nextState: "a" } }, space: { "0|a": {} }, "pm-operator": { "0|a": { action_: { type_: "operator", option: "\\pm" }, nextState: "0" } }, operator: { "0|a": { action_: "copy", nextState: "0" } }, "//": { d: { action_: "o=", nextState: "/" } }, "/": { d: { action_: "o=", nextState: "/" } }, "{...}|else": { "0|d": { action_: "d=", nextState: "d" }, a: { action_: ["space", "d="], nextState: "d" }, "/|q": { action_: "q=", nextState: "q" } } }), actions: { enumber: function(t32, e) {
+      var r = [];
+      return e[0] === "+-" || e[0] === "+/-" ? r.push("\\pm ") : e[0] && r.push(e[0]), e[1] && (v.concatArray(r, v.go(e[1], "pu-9,9")), e[2] && (e[2].match(/[,.]/) ? v.concatArray(r, v.go(e[2], "pu-9,9")) : r.push(e[2])), (e[3] || e[4]) && (e[3] === "e" || e[4] === "*" ? r.push({ type_: "cdot" }) : r.push({ type_: "times" }))), e[5] && r.push("10^{" + e[5] + "}"), r;
+    }, "number^": function(t32, e) {
+      var r = [];
+      return e[0] === "+-" || e[0] === "+/-" ? r.push("\\pm ") : e[0] && r.push(e[0]), v.concatArray(r, v.go(e[1], "pu-9,9")), r.push("^{" + e[2] + "}"), r;
+    }, operator: function(t32, e, r) {
+      return { type_: "operator", kind_: r || e };
+    }, space: function() {
+      return { type_: "pu-space-1" };
+    }, output: function(t32) {
+      var e, r = v.patterns.match_("{(...)}", t32.d || "");
+      r && r.remainder === "" && (t32.d = r.match_);
+      var i = v.patterns.match_("{(...)}", t32.q || "");
+      if (i && i.remainder === "" && (t32.q = i.match_), t32.d && (t32.d = t32.d.replace(/\u00B0C|\^oC|\^{o}C/g, "{}^{\\circ}C"), t32.d = t32.d.replace(/\u00B0F|\^oF|\^{o}F/g, "{}^{\\circ}F")), t32.q) {
+        t32.q = t32.q.replace(/\u00B0C|\^oC|\^{o}C/g, "{}^{\\circ}C"), t32.q = t32.q.replace(/\u00B0F|\^oF|\^{o}F/g, "{}^{\\circ}F");
+        var n = { d: v.go(t32.d, "pu"), q: v.go(t32.q, "pu") };
+        t32.o === "//" ? e = { type_: "pu-frac", p1: n.d, p2: n.q } : (e = n.d, n.d.length > 1 || n.q.length > 1 ? e.push({ type_: " / " }) : e.push({ type_: "/" }), v.concatArray(e, n.q));
+      } else e = v.go(t32.d, "pu-2");
+      for (var o in t32) delete t32[o];
+      return e;
+    } } }, "pu-2": { transitions: v.createTransitions({ empty: { "*": { action_: "output" } }, "*": { "*": { action_: ["output", "cdot"], nextState: "0" } }, "\\x": { "*": { action_: "rm=" } }, space: { "*": { action_: ["output", "space"], nextState: "0" } }, "^{(...)}|^(-1)": { 1: { action_: "^(-1)" } }, "-9.,9": { 0: { action_: "rm=", nextState: "0" }, 1: { action_: "^(-1)", nextState: "0" } }, "{...}|else": { "*": { action_: "rm=", nextState: "1" } } }), actions: { cdot: function() {
+      return { type_: "tight cdot" };
+    }, "^(-1)": function(t32, e) {
+      t32.rm += "^{" + e + "}";
+    }, space: function() {
+      return { type_: "pu-space-2" };
+    }, output: function(t32) {
+      var e = [];
+      if (t32.rm) {
+        var r = v.patterns.match_("{(...)}", t32.rm || "");
+        r && r.remainder === "" ? e = v.go(r.match_, "pu") : e = { type_: "rm", p1: t32.rm };
+      }
+      for (var i in t32) delete t32[i];
+      return e;
+    } } }, "pu-9,9": { transitions: v.createTransitions({ empty: { 0: { action_: "output-0" }, o: { action_: "output-o" } }, ",": { 0: { action_: ["output-0", "comma"], nextState: "o" } }, ".": { 0: { action_: ["output-0", "copy"], nextState: "o" } }, else: { "*": { action_: "text=" } } }), actions: { comma: function() {
+      return { type_: "commaDecimal" };
+    }, "output-0": function(t32) {
+      var e = [];
+      if (t32.text_ = t32.text_ || "", t32.text_.length > 4) {
+        var r = t32.text_.length % 3;
+        r === 0 && (r = 3);
+        for (var i = t32.text_.length - 3; i > 0; i -= 3) e.push(t32.text_.substr(i, 3)), e.push({ type_: "1000 separator" });
+        e.push(t32.text_.substr(0, r)), e.reverse();
+      } else e.push(t32.text_);
+      for (var n in t32) delete t32[n];
+      return e;
+    }, "output-o": function(t32) {
+      var e = [];
+      if (t32.text_ = t32.text_ || "", t32.text_.length > 4) {
+        for (var r = t32.text_.length - 3, i = 0; i < r; i += 3) e.push(t32.text_.substr(i, 3)), e.push({ type_: "1000 separator" });
+        e.push(t32.text_.substr(i));
+      } else e.push(t32.text_);
+      for (var n in t32) delete t32[n];
+      return e;
+    } } } };
+    Z = { go: function(t32, e) {
+      if (!t32) return "";
+      for (var r = "", i = false, n = 0; n < t32.length; n++) {
+        var o = t32[n];
+        typeof o == "string" ? r += o : (r += Z._go2(o), o.type_ === "1st-level escape" && (i = true));
+      }
+      return !e && !i && r && (r = "{" + r + "}"), r;
+    }, _goInner: function(t32) {
+      return t32 && Z.go(t32, true);
+    }, _go2: function(t32) {
+      var e;
+      switch (t32.type_) {
+        case "chemfive":
+          e = "";
+          var r = { a: Z._goInner(t32.a), b: Z._goInner(t32.b), p: Z._goInner(t32.p), o: Z._goInner(t32.o), q: Z._goInner(t32.q), d: Z._goInner(t32.d) };
+          r.a && (r.a.match(/^[+\-]/) && (r.a = "{" + r.a + "}"), e += r.a + "\\,"), (r.b || r.p) && (e += "{\\vphantom{X}}", e += "^{\\hphantom{" + (r.b || "") + "}}_{\\hphantom{" + (r.p || "") + "}}", e += "{\\vphantom{X}}", e += "^{\\smash[t]{\\vphantom{2}}\\llap{" + (r.b || "") + "}}", e += "_{\\vphantom{2}\\llap{\\smash[t]{" + (r.p || "") + "}}}"), r.o && (r.o.match(/^[+\-]/) && (r.o = "{" + r.o + "}"), e += r.o), t32.dType === "kv" ? ((r.d || r.q) && (e += "{\\vphantom{X}}"), r.d && (e += "^{" + r.d + "}"), r.q && (e += "_{\\smash[t]{" + r.q + "}}")) : t32.dType === "oxidation" ? (r.d && (e += "{\\vphantom{X}}", e += "^{" + r.d + "}"), r.q && (e += "{\\vphantom{X}}", e += "_{\\smash[t]{" + r.q + "}}")) : (r.q && (e += "{\\vphantom{X}}", e += "_{\\smash[t]{" + r.q + "}}"), r.d && (e += "{\\vphantom{X}}", e += "^{" + r.d + "}"));
+          break;
+        case "rm":
+          e = "\\mathrm{" + t32.p1 + "}";
+          break;
+        case "text":
+          t32.p1.match(/[\^_]/) ? (t32.p1 = t32.p1.replace(" ", "~").replace("-", "\\text{-}"), e = "\\mathrm{" + t32.p1 + "}") : e = "\\text{" + t32.p1 + "}";
+          break;
+        case "roman numeral":
+          e = "\\mathrm{" + t32.p1 + "}";
+          break;
+        case "state of aggregation":
+          e = "\\mskip2mu " + Z._goInner(t32.p1);
+          break;
+        case "state of aggregation subscript":
+          e = "\\mskip1mu " + Z._goInner(t32.p1);
+          break;
+        case "bond":
+          if (e = Z._getBond(t32.kind_), !e) throw ["MhchemErrorBond", "mhchem Error. Unknown bond type (" + t32.kind_ + ")"];
+          break;
+        case "frac":
+          var i = "\\frac{" + t32.p1 + "}{" + t32.p2 + "}";
+          e = "\\mathchoice{\\textstyle" + i + "}{" + i + "}{" + i + "}{" + i + "}";
+          break;
+        case "pu-frac":
+          var n = "\\frac{" + Z._goInner(t32.p1) + "}{" + Z._goInner(t32.p2) + "}";
+          e = "\\mathchoice{\\textstyle" + n + "}{" + n + "}{" + n + "}{" + n + "}";
+          break;
+        case "tex-math":
+          e = t32.p1 + " ";
+          break;
+        case "frac-ce":
+          e = "\\frac{" + Z._goInner(t32.p1) + "}{" + Z._goInner(t32.p2) + "}";
+          break;
+        case "overset":
+          e = "\\overset{" + Z._goInner(t32.p1) + "}{" + Z._goInner(t32.p2) + "}";
+          break;
+        case "underset":
+          e = "\\underset{" + Z._goInner(t32.p1) + "}{" + Z._goInner(t32.p2) + "}";
+          break;
+        case "underbrace":
+          e = "\\underbrace{" + Z._goInner(t32.p1) + "}_{" + Z._goInner(t32.p2) + "}";
+          break;
+        case "color":
+          e = "{\\color{" + t32.color1 + "}{" + Z._goInner(t32.color2) + "}}";
+          break;
+        case "color0":
+          e = "\\color{" + t32.color + "}";
+          break;
+        case "arrow":
+          var o = { rd: Z._goInner(t32.rd), rq: Z._goInner(t32.rq) }, a = Z._getArrow(t32.r);
+          o.rd || o.rq ? t32.r === "<=>" || t32.r === "<=>>" || t32.r === "<<=>" || t32.r === "<-->" ? (a = "\\long" + a, o.rd && (a = "\\overset{" + o.rd + "}{" + a + "}"), o.rq && (t32.r === "<-->" ? a = "\\underset{\\lower2mu{" + o.rq + "}}{" + a + "}" : a = "\\underset{\\lower6mu{" + o.rq + "}}{" + a + "}"), a = " {}\\mathrel{" + a + "}{} ") : (o.rq && (a += "[{" + o.rq + "}]"), a += "{" + o.rd + "}", a = " {}\\mathrel{\\x" + a + "}{} ") : a = " {}\\mathrel{\\long" + a + "}{} ", e = a;
+          break;
+        case "operator":
+          e = Z._getOperator(t32.kind_);
+          break;
+        case "1st-level escape":
+          e = t32.p1 + " ";
+          break;
+        case "space":
+          e = " ";
+          break;
+        case "entitySkip":
+          e = "~";
+          break;
+        case "pu-space-1":
+          e = "~";
+          break;
+        case "pu-space-2":
+          e = "\\mkern3mu ";
+          break;
+        case "1000 separator":
+          e = "\\mkern2mu ";
+          break;
+        case "commaDecimal":
+          e = "{,}";
+          break;
+        case "comma enumeration L":
+          e = "{" + t32.p1 + "}\\mkern6mu ";
+          break;
+        case "comma enumeration M":
+          e = "{" + t32.p1 + "}\\mkern3mu ";
+          break;
+        case "comma enumeration S":
+          e = "{" + t32.p1 + "}\\mkern1mu ";
+          break;
+        case "hyphen":
+          e = "\\text{-}";
+          break;
+        case "addition compound":
+          e = "\\,{\\cdot}\\,";
+          break;
+        case "electron dot":
+          e = "\\mkern1mu \\bullet\\mkern1mu ";
+          break;
+        case "KV x":
+          e = "{\\times}";
+          break;
+        case "prime":
+          e = "\\prime ";
+          break;
+        case "cdot":
+          e = "\\cdot ";
+          break;
+        case "tight cdot":
+          e = "\\mkern1mu{\\cdot}\\mkern1mu ";
+          break;
+        case "times":
+          e = "\\times ";
+          break;
+        case "circa":
+          e = "{\\sim}";
+          break;
+        case "^":
+          e = "uparrow";
+          break;
+        case "v":
+          e = "downarrow";
+          break;
+        case "ellipsis":
+          e = "\\ldots ";
+          break;
+        case "/":
+          e = "/";
+          break;
+        case " / ":
+          e = "\\,/\\,";
+          break;
+        default:
+          throw ["MhchemBugT", "mhchem bug T. Please report."];
+      }
+      return e;
+    }, _getArrow: function(t32) {
+      switch (t32) {
+        case "->":
+          return "rightarrow";
+        case "\u2192":
+          return "rightarrow";
+        case "\u27F6":
+          return "rightarrow";
+        case "<-":
+          return "leftarrow";
+        case "<->":
+          return "leftrightarrow";
+        case "<-->":
+          return "leftrightarrows";
+        case "<=>":
+          return "rightleftharpoons";
+        case "\u21CC":
+          return "rightleftharpoons";
+        case "<=>>":
+          return "Rightleftharpoons";
+        case "<<=>":
+          return "Leftrightharpoons";
+        default:
+          throw ["MhchemBugT", "mhchem bug T. Please report."];
+      }
+    }, _getBond: function(t32) {
+      switch (t32) {
+        case "-":
+          return "{-}";
+        case "1":
+          return "{-}";
+        case "=":
+          return "{=}";
+        case "2":
+          return "{=}";
+        case "#":
+          return "{\\equiv}";
+        case "3":
+          return "{\\equiv}";
+        case "~":
+          return "{\\tripledash}";
+        case "~-":
+          return "{\\rlap{\\lower.1em{-}}\\raise.1em{\\tripledash}}";
+        case "~=":
+          return "{\\rlap{\\lower.2em{-}}\\rlap{\\raise.2em{\\tripledash}}-}";
+        case "~--":
+          return "{\\rlap{\\lower.2em{-}}\\rlap{\\raise.2em{\\tripledash}}-}";
+        case "-~-":
+          return "{\\rlap{\\lower.2em{-}}\\rlap{\\raise.2em{-}}\\tripledash}";
+        case "...":
+          return "{{\\cdot}{\\cdot}{\\cdot}}";
+        case "....":
+          return "{{\\cdot}{\\cdot}{\\cdot}{\\cdot}}";
+        case "->":
+          return "{\\rightarrow}";
+        case "<-":
+          return "{\\leftarrow}";
+        case "<":
+          return "{<}";
+        case ">":
+          return "{>}";
+        default:
+          throw ["MhchemBugT", "mhchem bug T. Please report."];
+      }
+    }, _getOperator: function(t32) {
+      switch (t32) {
+        case "+":
+          return " {}+{} ";
+        case "-":
+          return " {}-{} ";
+        case "=":
+          return " {}={} ";
+        case "<":
+          return " {}<{} ";
+        case ">":
+          return " {}>{} ";
+        case "<<":
+          return " {}\\ll{} ";
+        case ">>":
+          return " {}\\gg{} ";
+        case "\\pm":
+          return " {}\\pm{} ";
+        case "\\approx":
+          return " {}\\approx{} ";
+        case "$\\approx$":
+          return " {}\\approx{} ";
+        case "v":
+          return " \\downarrow{} ";
+        case "(v)":
+          return " \\downarrow{} ";
+        case "^":
+          return " \\uparrow{} ";
+        case "(^)":
+          return " \\uparrow{} ";
+        default:
+          throw ["MhchemBugT", "mhchem bug T. Please report."];
+      }
+    } };
+    Le = class t24 extends p2 {
+      constructor(e) {
+        super({ mode: e.mode, command: e.command, style: e.style, body: e.body, type: "box" }), this.framecolor = e.framecolor, this.backgroundcolor = e.backgroundcolor, this.padding = e.padding, this.offset = e.offset, this.border = e.border;
+      }
+      static fromJson(e) {
+        return new t24(e);
+      }
+      toJson() {
+        return u(m2({}, super.toJson()), { framecolor: this.framecolor, backgroundcolor: this.backgroundcolor, padding: this.padding, offset: this.offset, border: this.border });
+      }
+      render(e) {
+        var c, h2, d, f;
+        let r = p2.createBox(e, this.body, { type: "lift" });
+        if (!r) return null;
+        let i = e.toEm((c = this.offset) != null ? c : { dimension: 0 });
+        r.depth += i, r.setStyle("display", "inline-block"), r.setStyle("position", "relative"), r.setStyle("height", Math.floor(100 * r.height + r.depth) / 100, "em"), r.setStyle("vertical-align", -Math.floor(100 * r.height) / 100, "em");
+        let n = new z({ parent: e }, this.style), o = n.toEm((h2 = this.padding) != null ? h2 : { register: "fboxsep" }), a = new b(null, { classes: "ML__box" });
+        a.height = r.height + o, a.depth = r.depth + o, a.setStyle("box-sizing", "border-box"), a.setStyle("position", "absolute"), a.setStyle("top", -o + 0.3, "em"), a.setStyle("left", 0), a.setStyle("height", a.height + a.depth, "em"), a.setStyle("width", "100%"), this.backgroundcolor && a.setStyle("background-color", (d = n.toBackgroundColor(this.backgroundcolor)) != null ? d : "transparent"), this.framecolor && a.setStyle("border", `${n.getRegisterAsEm("fboxrule", 2)}em solid ${(f = n.toColor(this.framecolor)) != null ? f : "black"}`);
+        let l = Qi(this.border);
+        l && a.setStyle("border", l);
+        let s2 = new b([a, r], { type: "lift" });
+        return s2.setStyle("display", "inline-block"), s2.setStyle("position", "relative"), s2.setStyle("line-height", 0), s2.height = r.height + o + (i > 0 ? i : 0), s2.depth = r.depth + o + (i < 0 ? -i : 0), s2.setStyle("padding-left", o, "em"), s2.setStyle("padding-right", o, "em"), s2.setStyle("height", Math.floor(100 * (r.height + r.depth + 2 * o + Math.abs(i))) / 100, "em"), s2.setStyle("margin-top", -o, "em"), s2.setStyle("top", Math.floor(100 * (r.depth - r.height + 2 * o - i)) / 100, "em"), s2.setStyle("vertical-align", Math.floor(100 * (r.depth + 2 * o)) / 100, "em"), this.caret && (s2.caret = this.caret), this.attachSupsub(e, { base: s2 });
+      }
+      _serialize(e) {
+        return e.skipStyles ? D([this.bodyToLatex(e), this.supsubToLatex(e)]) : super._serialize(e);
+      }
+    };
+    Ue = class t25 extends p2 {
+      constructor(e) {
+        var r, i, n, o;
+        super(u(m2({}, e), { type: "phantom" })), this.captureSelection = true, this.isInvisible = (r = e.isInvisible) != null ? r : false, this.smashDepth = (i = e.smashDepth) != null ? i : false, this.smashHeight = (n = e.smashHeight) != null ? n : false, this.smashWidth = (o = e.smashWidth) != null ? o : false;
+      }
+      static fromJson(e) {
+        return new t25(e);
+      }
+      toJson() {
+        let e = {};
+        return this.isInvisible && (e.isInvisible = true), this.smashDepth && (e.smashDepth = true), this.smashHeight && (e.smashHeight = true), this.smashWidth && (e.smashWidth = true), m2(m2({}, super.toJson()), e);
+      }
+      render(e) {
+        let r = new z({ parent: e, isPhantom: true });
+        if (!this.smashDepth && !this.smashHeight && !this.smashWidth) return this.isInvisible, p2.createBox(r, this.body, { classes: "ML__inner" });
+        let i = p2.createBox(this.isInvisible ? r : e, this.body);
+        if (!i) return null;
+        if (this.smashWidth) {
+          let n = new b(null, { classes: "ML__fix" });
+          return new b([i, n], { classes: "ML__rlap" }).wrap(e);
+        }
+        if (!this.smashHeight && !this.smashDepth) return i;
+        if (this.smashHeight && (i.height = 0), this.smashDepth && (i.depth = 0), i.children) for (let n of i.children) this.smashHeight && (n.height = 0), this.smashDepth && (n.depth = 0);
+        return new V({ firstBaseline: [{ box: i }] }, { type: i.type }).wrap(e);
+      }
+    };
+    je = class t26 extends p2 {
+      constructor(e) {
+        var r;
+        super(m2({ type: "spacing" }, e)), this.width = e == null ? void 0 : e.width, this._braced = (r = e == null ? void 0 : e.braced) != null ? r : false;
+      }
+      static fromJson(e) {
+        return new t26(e);
+      }
+      toJson() {
+        let e = super.toJson();
+        return this.width !== void 0 && (e.width = this.width), this._braced && (e.braced = true), e;
+      }
+      render(e) {
+        var i;
+        if (this.command === "space") return new b(this.mode === "math" ? null : " ");
+        let r;
+        if (this.width !== void 0) r = new b(null, { classes: "ML__mspace" }), r.left = e.toEm(this.width);
+        else {
+          let n = (i = { "\\qquad": "ML__qquad", "\\quad": "ML__quad", "\\enspace": "ML__enspace", "\\;": "ML__thickspace", "\\:": "ML__mediumspace", "\\>": "ML__mediumspace", "\\,": "ML__thinspace", "\\!": "ML__negativethinspace" }[this.command]) != null ? i : "ML__mediumspace";
+          r = new b(null, { classes: n });
+        }
+        return r = this.bind(e, r), this.caret && (r.caret = this.caret), r;
+      }
+      _serialize(e) {
+        var n;
+        if (!e.expandMacro && typeof this.verbatimLatex == "string") return this.verbatimLatex;
+        let r = H(this.command, this.mode);
+        if (r != null && r.serialize) return r.serialize(this, e);
+        let i = (n = this.command) != null ? n : "";
+        return this.width === void 0 ? i : this._braced && !("register" in this.width) ? `${i}{${X(this.width)}}` : `${i}${X(this.width)}`;
+      }
+    };
+    Oe = class t27 extends p2 {
+      constructor(e) {
+        let r = e.body;
+        super(u(m2({}, e), { type: "overlap", body: typeof r == "string" ? [new p2({ value: r })] : r, style: e == null ? void 0 : e.style })), this.skipBoundary = true, this.align = e == null ? void 0 : e.align, this.boxType = e == null ? void 0 : e.boxType;
+      }
+      static fromJson(e) {
+        return new t27(e);
+      }
+      toJson() {
+        let e = {};
+        return this.align && (e.align = this.align), this.boxType && (e.boxType = this.boxType), m2(m2({}, super.toJson()), e);
+      }
+      render(e) {
+        let r = p2.createBox(e, this.body, { classes: "ML__inner" });
+        return r ? (this.caret && (r.caret = this.caret), this.bind(e, new b([r, new b(null, { classes: "ML__fix" })], { classes: this.align === "right" ? "ML__rlap" : "ML__llap", type: this.boxType }))) : null;
+      }
+    };
+    mn = class t28 extends p2 {
+      constructor(e, r) {
+        var i;
+        super({ type: "composition", mode: (i = r == null ? void 0 : r.mode) != null ? i : "math", value: e });
+      }
+      static fromJson(e) {
+        return new t28(e.value, e);
+      }
+      toJson() {
+        return super.toJson();
+      }
+      render(e) {
+        let r = new b(this.value, { classes: "ML__composition", type: "composition" });
+        return this.bind(e, r), this.caret && (r.caret = this.caret), r;
+      }
+      _serialize(e) {
+        return "";
+      }
+    };
+    _t = class t29 extends p2 {
+      constructor(e, r) {
+        var i;
+        super({ type: "latex", value: e, mode: "latex" }), this.isSuggestion = (i = r == null ? void 0 : r.isSuggestion) != null ? i : false, this.isError = false;
+      }
+      static fromJson(e) {
+        let r = new t29(e.value);
+        return e.isSuggestion && (r.isSuggestion = true), e.isError && (r.isError = true), r;
+      }
+      toJson() {
+        let e = {};
+        return this.isSuggestion && (e.isSuggestion = true), this.isError && (e.isError = true), m2({ type: "latex", value: this.value }, e);
+      }
+      render(e) {
+        let r = new b(this.value, { classes: this.isSuggestion ? "ML__suggestion" : this.isError ? "ML__error" : "", type: "latex", maxFontSize: 1 });
+        return r ? (this.caret && (r.caret = this.caret), this.bind(e, r)) : null;
+      }
+    };
+    un = class t30 extends p2 {
+      constructor(e = "") {
+        super({ type: "latexgroup", mode: "latex" }), this.body = [...e].map((r) => new _t(r)), this.skipBoundary = true;
+      }
+      static fromJson(e) {
+        return new t30();
+      }
+      toJson() {
+        return super.toJson();
+      }
+      render(e) {
+        let r = p2.createBox(e, this.body);
+        return r ? (this.caret && (r.caret = this.caret), this.bind(e, r)) : null;
+      }
+      _serialize(e) {
+        var r, i;
+        return (i = (r = this.body) == null ? void 0 : r.map((n) => n.value).join("")) != null ? i : "";
+      }
+    };
+    Co = class extends b {
+      constructor(e) {
+        super(null, { type: "skip" }), this._width = e;
+      }
+      toMarkup() {
+        return `<span style="display:inline-block;width:${Math.ceil(this.width * 100) / 100}em"></span>`;
+      }
+    };
+    Ic = { ord: { op: 3, bin: 4, rel: 5, inner: 3 }, op: { ord: 3, op: 3, rel: 5, inner: 3 }, bin: { ord: 4, op: 4, open: 4, inner: 4 }, rel: { ord: 5, op: 5, open: 5, inner: 5 }, close: { op: 3, bin: 4, rel: 5, inner: 3 }, punct: { ord: 3, op: 3, rel: 3, open: 3, punct: 3, inner: 3 }, inner: { ord: 3, op: 3, bin: 4, rel: 5, open: 3, punct: 3, inner: 3 } };
+    qc = { ord: { op: 3 }, op: { ord: 3, op: 3 }, close: { op: 3 }, inner: { op: 3 } };
+    Ht = class t31 extends p2 {
+      constructor(e) {
+        super({ type: "tooltip", command: e.command, mode: e.mode, style: e.style, body: e.body, displayContainsHighlight: true }), this.tooltip = new p2({ type: "root", mode: e.content, body: e.tooltip, style: {} }), this.skipBoundary = true, this.captureSelection = false;
+      }
+      static fromJson(e) {
+        return new t31(u(m2({}, e), { tooltip: Jt(e.tooltip) }));
+      }
+      toJson() {
+        var r;
+        let e = (r = this.tooltip.body) == null ? void 0 : r.filter((i) => i.type !== "first").map((i) => i.toJson());
+        return u(m2({}, super.toJson()), { tooltip: e });
+      }
+      render(e) {
+        let r = p2.createBox(e, this.body);
+        if (!r) return null;
+        let i = new z({ parent: e, mathstyle: "displaystyle" }, { fontSize: Er }), n = Yi(hn(new b(this.tooltip.render(i), { classes: "ML__tooltip-content" }), i)), o = new b([n, r], { classes: "ML__tooltip-container" });
+        return this.caret && (o.caret = this.caret), this.bind(e, o);
+      }
+    };
+    y("mathtip", "{:auto}{:math}", { createAtom: (t32) => new Ht(u(m2({}, t32), { body: M(t32.args[0]), tooltip: M(t32.args[1]), content: "math" })), serialize: (t32, e) => e.skipStyles ? t32.bodyToLatex(e) : `\\mathtip{${t32.bodyToLatex(e)}}{${p2.serialize([t32.tooltip], u(m2({}, e), { defaultMode: "math" }))}}` });
+    y("texttip", "{:auto}{:text}", { createAtom: (t32) => new Ht(u(m2({}, t32), { body: M(t32.args[0]), tooltip: M(t32.args[1]), content: "text" })), serialize: (t32, e) => e.skipStyles ? t32.bodyToLatex(e) : `\\texttip{${t32.bodyToLatex(e)}}{${p2.serialize([t32.tooltip], u(m2({}, e), { defaultMode: "text" }))}}` });
+    y("error", "{:math}", { createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[0]) })), serialize: (t32, e) => `\\error{${t32.bodyToLatex(e)}}`, render: (t32, e) => t32.createBox(e, { classes: "ML__error" }) });
+    y("ensuremath", "{:math}", { createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[0]) })), serialize: (t32, e) => `${t32.command}{${t32.bodyToLatex(u(m2({}, e), { defaultMode: "math" }))}}` });
+    y("color", "{:value}", { applyStyle: (t32, e, r, i) => {
+      var n, o;
+      return u(m2({}, t32), { verbatimColor: (n = X(r[0])) != null ? n : void 0, color: i.toColor((o = r[0]) != null ? o : { string: "red" }) });
+    } });
+    y("textcolor", "{:value}{content:auto*}", { applyStyle: (t32, e, r, i) => {
+      var n, o;
+      return u(m2({}, t32), { verbatimColor: (n = X(r[0])) != null ? n : void 0, color: i.toColor((o = r[0]) != null ? o : { string: "red" }) });
+    } });
+    y("boxed", "{content:math}", { createAtom: (t32) => new Le(u(m2({}, t32), { body: M(t32.args[0]), framecolor: { string: "black" } })) });
+    y("colorbox", "{:value}{:text*}", { applyStyle: (t32, e, r, i) => {
+      var n, o;
+      return u(m2({}, t32), { verbatimBackgroundColor: (n = X(r[0])) != null ? n : void 0, backgroundColor: i.toBackgroundColor((o = r[0]) != null ? o : { string: "yellow" }) });
+    } });
+    y("fcolorbox", "{frame-color:value}{background-color:value}{content:text}", { applyMode: "text", createAtom: (t32) => {
+      var e, r;
+      return new Le(u(m2({}, t32), { body: M(t32.args[2]), framecolor: (e = t32.args[0]) != null ? e : { string: "blue" }, backgroundcolor: (r = t32.args[1]) != null ? r : { string: "yellow" } }));
+    }, serialize: (t32, e) => {
+      var r, i;
+      return e.skipStyles ? t32.bodyToLatex(u(m2({}, e), { defaultMode: "text" })) : R(t32.command, (r = X(t32.framecolor)) != null ? r : "", (i = X(t32.backgroundcolor)) != null ? i : "", t32.bodyToLatex(u(m2({}, e), { defaultMode: "text" })));
+    } });
+    y("bbox", "[:bbox]{body:auto}", { createAtom: (t32) => {
+      var i;
+      let e = t32.args[0], r = M(t32.args[1]);
+      return e ? new Le(u(m2({}, t32), { body: r, padding: e.padding, border: e.border, backgroundcolor: (i = e.backgroundcolor) != null ? i : void 0 })) : new Le(u(m2({}, t32), { body: r }));
+    }, serialize: (t32, e) => {
+      var i, n;
+      if (e.skipStyles) return t32.bodyToLatex(e);
+      let r = t32.command;
+      if (Number.isFinite(t32.padding) || t32.border !== void 0 || t32.backgroundcolor !== void 0) {
+        let o = [];
+        t32.padding && o.push((i = X(t32.padding)) != null ? i : ""), t32.border && o.push(`border: ${t32.border}`), t32.backgroundcolor && o.push((n = X(t32.backgroundcolor)) != null ? n : ""), r += `[${o.join(",")}]`;
+      }
+      return R(r, t32.bodyToLatex(e));
+    } });
+    y(["displaystyle", "textstyle", "scriptstyle", "scriptscriptstyle"], "{:rest}", { createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[0]) })), render: (t32, e) => {
+      let r = new z({ parent: e, mathstyle: t32.command.slice(1) }, t32.style), i = p2.createBox(r, t32.body, { type: "lift" });
+      return t32.caret && (i.caret = t32.caret), t32.bind(e, i);
+    }, serialize: (t32, e) => e.skipStyles ? t32.bodyToLatex(e) : `{${D([t32.command, t32.bodyToLatex(e)])}}` });
+    y(["tiny", "scriptsize", "footnotesize", "small", "normalsize", "large", "Large", "LARGE", "huge", "Huge"], "", { applyStyle: (t32, e) => u(m2({}, t32), { fontSize: { "\\tiny": 1, "\\scriptsize": 2, "\\footnotesize": 3, "\\small": 4, "\\normalsize": 5, "\\large": 6, "\\Large": 7, "\\LARGE": 8, "\\huge": 9, "\\Huge": 10 }[e] }) });
+    y("fontseries", "{:string}", { ifMode: "text", applyStyle: (t32, e, r) => {
+      var i;
+      return u(m2({}, t32), { fontSeries: (i = r[0]) != null ? i : "auto" });
+    } });
+    y("fontshape", "{:string}", { ifMode: "text", applyStyle: (t32, e, r) => {
+      var i;
+      return u(m2({}, t32), { fontShape: (i = r[0]) != null ? i : "auto" });
+    } });
+    y("fontfamily", "{:string}", { ifMode: "text", applyStyle: (t32, e, r) => {
+      var i;
+      return u(m2({}, t32), { fontFamily: (i = r[0]) != null ? i : "roman" });
+    } });
+    y("selectfont", "", { ifMode: "text", applyStyle: (t32) => t32 });
+    y("bf", "{:rest*}", { applyStyle: (t32) => u(m2({}, t32), { fontSeries: "b", fontShape: "n", fontFamily: "roman" }) });
+    y(["boldsymbol", "bm", "bold"], "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variantStyle: "bold" }) });
+    y("bfseries", "{:rest*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontSeries: "b" }) });
+    y("mdseries", "{:rest*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontSeries: "m" }) });
+    y("upshape", "{:rest*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "n" }) });
+    y("slshape", "{:rest*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "sl" }) });
+    y("scshape", "{:rest*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "sc" }) });
+    y("textbf", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontSeries: "b" }) });
+    y("textmd", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontSeries: "m" }) });
+    y("textup", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "n" }) });
+    y("textnormal", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "n", fontSeries: "m" }) });
+    y("textsl", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "sl" }) });
+    y("textit", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "it" }) });
+    y("textsc", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontShape: "sc" }) });
+    y("textrm", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontFamily: "roman" }) });
+    y("textsf", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontFamily: "sans-serif" }) });
+    y("texttt", "{:text*}", { applyMode: "text", applyStyle: (t32) => u(m2({}, t32), { fontFamily: "monospace" }) });
+    y("mathbf", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "normal", variantStyle: "bold" }) });
+    y("mathit", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "main", variantStyle: "italic" }) });
+    y("mathnormal", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "normal", variantStyle: "italic" }) });
+    y("mathbfit", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "main", variantStyle: "bolditalic" }) });
+    y("mathrm", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "normal", variantStyle: "up" }) });
+    y("mathsf", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "sans-serif", variantStyle: "up" }) });
+    y("mathtt", "{:math*}", { applyMode: "math", applyStyle: (t32) => u(m2({}, t32), { variant: "monospace", variantStyle: "up" }) });
+    y("it", "{:rest*}", { applyStyle: (t32) => u(m2({}, t32), { fontSeries: "m", fontShape: "it", fontFamily: "roman", variantStyle: "italic" }) });
+    y("rmfamily", "{:rest*}", { applyStyle: (t32) => u(m2({}, t32), { fontFamily: "roman" }) });
+    y("sffamily", "{:rest*}", { applyStyle: (t32) => u(m2({}, t32), { fontFamily: "sans-serif" }) });
+    y("ttfamily", "{:rest*}", { applyStyle: (t32) => u(m2({}, t32), { fontFamily: "monospace" }) });
+    y(["Bbb", "mathbb"], "{:math*}", { applyStyle: (t32) => u(m2({}, t32), { variant: "double-struck", variantStyle: Ur(t32.variantStyle) }) });
+    y(["frak", "mathfrak"], "{:math*}", { applyStyle: (t32) => u(m2({}, t32), { variant: "fraktur", variantStyle: Ur(t32.variantStyle) }) });
+    y("mathcal", "{:math*}", { applyStyle: (t32) => u(m2({}, t32), { variant: "calligraphic", variantStyle: Ur(t32.variantStyle) }) });
+    y("mathscr", "{:math*}", { applyStyle: (t32) => u(m2({}, t32), { variant: "script", variantStyle: Ur(t32.variantStyle) }) });
+    y("mbox", "{:text}", { ifMode: "math", createAtom: (t32) => new p2(u(m2({}, t32), { type: "mord", body: M(t32.args[0]), mode: "math" })), serialize: (t32, e) => R("\\mbox", t32.bodyToLatex(u(m2({}, e), { defaultMode: "text" }))) });
+    y("text", "{:text}", { ifMode: "math", applyMode: "text" });
+    y(["class", "htmlClass"], "{name:string}{content:auto*}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mord", body: M(t32.args[1]) })), serialize: (t32, e) => !t32.args[0] || e.skipStyles ? t32.bodyToLatex(e) : `${t32.command}{${t32.args[0]}}{${t32.bodyToLatex(e)}}`, render: (t32, e) => {
+      var r;
+      return t32.createBox(e, { classes: (r = t32.args[0]) != null ? r : "", boxType: "lift" });
+    } });
+    y(["cssId", "htmlId"], "{id:string}{content:auto*}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mord", body: M(t32.args[1]) })), serialize: (t32, e) => {
+      var r;
+      return !((r = t32.args) != null && r[0]) || e.skipStyles ? t32.bodyToLatex(e) : `${t32.command}{${t32.args[0]}}{${t32.bodyToLatex(e)}}`;
+    }, render: (t32, e) => {
+      var i;
+      let r = t32.createBox(e);
+      return r.cssId = (i = t32.args[0]) != null ? i : "", r;
+    } });
+    y("htmlData", "{data:string}{content:auto*}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mord", body: M(t32.args[1]) })), serialize: (t32, e) => {
+      var r;
+      return !((r = t32.args) != null && r[0]) || e.skipStyles ? t32.bodyToLatex(e) : `\\htmlData{${t32.args[0]}}{${t32.bodyToLatex(e)}}`;
+    }, render: (t32, e) => {
+      var i;
+      let r = t32.createBox(e);
+      return r.htmlData = (i = t32.args[0]) != null ? i : "", r;
+    } });
+    y(["style", "htmlStyle"], "{data:string}{content:auto*}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mord", body: M(t32.args[1]) })), serialize: (t32, e) => {
+      var r;
+      return !((r = t32.args) != null && r[0]) || e.skipStyles ? t32.bodyToLatex(e) : `${t32.command}{${t32.args[0]}}{${t32.bodyToLatex(e)}}`;
+    }, render: (t32, e) => {
+      var i;
+      let r = t32.createBox(e);
+      return r.htmlStyle = (i = t32.args[0]) != null ? i : "", r;
+    } });
+    y("href", "{url:string}{content:auto*}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mord", body: M(t32.args[1]) })), render: (t32, e) => {
+      var n;
+      let r = t32.createBox(e), i = (n = t32.args[0]) != null ? n : "";
+      return i && (r.htmlData = `href=${i}`), r;
+    } });
+    y("em", "{:rest}", { createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[0]) })), serialize: (t32, e) => e.skipStyles ? t32.bodyToLatex(e) : `{\\em ${t32.bodyToLatex(e)}}`, render: (t32, e) => t32.createBox(e, { classes: "ML__emph", boxType: "lift" }) });
+    y("emph", "{:auto}", { createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[1]) })), serialize: (t32, e) => e.skipStyles ? t32.bodyToLatex(e) : `\\emph{${t32.bodyToLatex(e)}}`, render: (t32, e) => t32.createBox(e, { classes: "ML__emph", boxType: "lift" }) });
+    vl = { "\\bigl": { mclass: "mopen", size: 1 }, "\\Bigl": { mclass: "mopen", size: 2 }, "\\biggl": { mclass: "mopen", size: 3 }, "\\Biggl": { mclass: "mopen", size: 4 }, "\\bigr": { mclass: "mclose", size: 1 }, "\\Bigr": { mclass: "mclose", size: 2 }, "\\biggr": { mclass: "mclose", size: 3 }, "\\Biggr": { mclass: "mclose", size: 4 }, "\\bigm": { mclass: "mrel", size: 1 }, "\\Bigm": { mclass: "mrel", size: 2 }, "\\biggm": { mclass: "mrel", size: 3 }, "\\Biggm": { mclass: "mrel", size: 4 }, "\\big": { mclass: "mord", size: 1 }, "\\Big": { mclass: "mord", size: 2 }, "\\bigg": { mclass: "mord", size: 3 }, "\\Bigg": { mclass: "mord", size: 4 } };
+    y(["bigl", "Bigl", "biggl", "Biggl", "bigr", "Bigr", "biggr", "Biggr", "bigm", "Bigm", "biggm", "Biggm", "big", "Big", "bigg", "Bigg"], "{:delim}", { createAtom: (t32) => {
+      var e;
+      return new hr(u(m2({}, t32), { delim: (e = t32.args[0]) != null ? e : ".", size: vl[t32.command].size, delimType: vl[t32.command].mclass }));
+    }, serialize: (t32, e) => D([t32.command, /^[a-zA-Z]/.test(t32.value) ? `{${t32.value}}` : t32.value]) });
+    y(["hspace", "hspace*"], "{width:value}", { createAtom: (t32) => {
+      var e;
+      return new je(u(m2({}, t32), { width: (e = t32.args[0]) != null ? e : { dimension: 0 } }));
+    } });
+    y(["mkern", "kern", "mskip", "hskip", "mspace"], "{width:value}", { createAtom: (t32) => {
+      var e;
+      return new je(u(m2({}, t32), { width: (e = t32.args[0]) != null ? e : { dimension: 0 } }));
+    } });
+    y("mathchoice", "{:math}{:math}{:math}{:math}", { createAtom: (t32) => new p2(t32), render: (t32, e) => {
+      let r = 0, i = e.mathstyle.id;
+      (i === Nr || i === vt) && (r = 1), (i === Pt || i === be) && (r = 2), (i === St || i === me) && (r = 3);
+      let n = M(t32.args[r]);
+      return p2.createBox(e, n);
+    }, serialize: (t32, e) => `\\mathchoice{${p2.serialize(t32.args[0], e)}}{${p2.serialize(t32.args[1], e)}}{${p2.serialize(t32.args[2], e)}}{${p2.serialize(t32.args[3], e)}}` });
+    y("mathop", "{:auto}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mop", body: M(t32.args[0]), limits: "over-under", isFunction: true, captureSelection: true })), render: (t32, e) => {
+      var i;
+      let r = p2.createBox(e, t32.body);
+      if (t32.superscript || t32.subscript) {
+        let n = (i = t32.subsupPlacement) != null ? i : "auto";
+        r = n === "over-under" || n === "auto" && e.isDisplayStyle ? t32.attachLimits(e, { base: r }) : t32.attachSupsub(e, { base: r });
+      }
+      return t32.caret && (r.caret = t32.caret), new b(t32.bind(e, r), { type: "op", isSelected: t32.isSelected, classes: "ML__op-group" });
+    }, serialize: (t32, e) => {
+      let r = [R(t32.command, t32.bodyToLatex(e))];
+      return t32.explicitSubsupPlacement && (t32.subsupPlacement === "over-under" && r.push("\\limits"), t32.subsupPlacement === "adjacent" && r.push("\\nolimits"), t32.subsupPlacement === "auto" && r.push("\\displaylimits")), r.push(t32.supsubToLatex(e)), D(r);
+    } });
+    y(["mathbin", "mathrel", "mathopen", "mathclose", "mathpunct", "mathord", "mathinner"], "{:auto}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: { "\\mathbin": "mbin", "\\mathrel": "mrel", "\\mathopen": "mopen", "\\mathclose": "mclose", "\\mathpunct": "mpunct", "\\mathord": "mord", "\\mathinner": "minner" }[t32.command], body: M(t32.args[0]) })) });
+    y(["operatorname", "operatorname*"], "{operator:math}", { createAtom: (t32) => {
+      let e = M(t32.args[0]).map((r) => {
+        var i;
+        return r.type !== "first" && (r.type = "mord", r.value = (i = { "\u2217": "*", "\u2212": "-" }[r.value]) != null ? i : r.value, r.isFunction = false, !r.style.variant && !r.style.variantStyle && (r.style.variant = "main", r.style.variantStyle = "up")), r;
+      });
+      return new p2(u(m2({}, t32), { type: "mop", body: e, isFunction: true, limits: t32.command === "\\operatorname" ? "adjacent" : "over-under" }));
+    }, render: (t32, e) => {
+      var i;
+      let r = p2.createBox(e, t32.body);
+      if (t32.superscript || t32.subscript) {
+        let n = (i = t32.subsupPlacement) != null ? i : "auto";
+        r = n === "over-under" || n === "auto" && e.isDisplayStyle ? t32.attachLimits(e, { base: r }) : t32.attachSupsub(e, { base: r });
+      }
+      return t32.caret && (r.caret = t32.caret), new b(t32.bind(e, r), { type: "op", isSelected: t32.isSelected, classes: "ML__op-group" });
+    }, serialize: (t32, e) => {
+      let r = [R(t32.command, t32.bodyToLatex(e))];
+      return t32.explicitSubsupPlacement && (t32.subsupPlacement === "over-under" && r.push("\\limits"), t32.subsupPlacement === "adjacent" && r.push("\\nolimits"), t32.subsupPlacement === "auto" && r.push("\\displaylimits")), r.push(t32.supsubToLatex(e)), D(r);
+    } });
+    y(["char", "unicode"], "{charcode:value}", { createAtom: (t32) => new p2(u(m2({}, t32), { type: t32.mode === "text" ? "text" : "mord" })), serialize: (t32) => {
+      var e;
+      return `${t32.command}${X((e = t32.args[0]) != null ? e : { number: 10067, base: "hexadecimal" })}`;
+    }, render: (t32, e) => {
+      let r = e.evaluate(t32.args[0]);
+      return (!r || !("number" in r)) && (r = { number: 10067, base: "hexadecimal" }), t32.value = String.fromCodePoint(r.number), t32.createBox(e);
+    } });
+    y("rule", "[raise:value]{width:value}{thickness:value}", { createAtom: (t32) => new p2(t32), render: (t32, e) => {
+      var l, s2, c;
+      let r = new z({ parent: e, mathstyle: "textstyle" }, t32.style), i = r.toEm((l = t32.args[0]) != null ? l : { dimension: 0 }), n = r.toEm((s2 = t32.args[1]) != null ? s2 : { dimension: 10 }), o = r.toEm((c = t32.args[2]) != null ? c : { dimension: 10 }), a = new b(null, { classes: "ML__rule", type: "ord" });
+      return a.width = n, a.height = o + i, a.depth = -i, a.setStyle("border-right-width", n, "em"), a.setStyle("border-top-width", o, "em"), a.setStyle("border-color", t32.style.color), a.setStyle("vertical-align", i, "em"), t32.isSelected && a.setStyle("opacity", "50%"), t32.bind(r, a), t32.caret && (a.caret = t32.caret), a.wrap(e);
+    }, serialize: (t32) => `\\rule${t32.args[0] ? `[${X(t32.args[0])}]` : ""}{${X(t32.args[1])}}{${X(t32.args[2])}}` });
+    y(["overline", "underline"], "{:auto}", { createAtom: (t32) => new p2(u(m2({}, t32), { body: M(t32.args[0]) })), render: (t32, e) => {
+      let r = t32.command.substring(1), i = new z({ parent: e, mathstyle: "cramp" }, t32.style), n = p2.createBox(i, t32.body);
+      if (!n) return null;
+      let o = i.metrics.defaultRuleThickness / i.scalingFactor, a = new b(null, { classes: r + "-line" });
+      a.height = o, a.maxFontSize = o * 1.125 * i.scalingFactor;
+      let l;
+      return r === "overline" ? l = new V({ shift: 0, children: [{ box: n }, 3 * o, { box: a }, o] }) : l = new V({ top: n.height, children: [o, { box: a }, 3 * o, { box: n }] }), t32.caret && (l.caret = t32.caret), new b(l, { classes: r, type: "ignore" });
+    } });
+    y("overset", "{:auto}{base:auto}", { createAtom: (t32) => {
+      let e = M(t32.args[1]);
+      return new le(u(m2({}, t32), { above: M(t32.args[0]), body: e, skipBoundary: false, boxType: Ft(e) }));
+    }, serialize: (t32, e) => R(t32.command, t32.aboveToLatex(e), t32.bodyToLatex(e)) });
+    y("underset", "{:auto}{base:auto}", { createAtom: (t32) => {
+      let e = M(t32.args[1]);
+      return new le(u(m2({}, t32), { below: M(t32.args[0]), body: e, skipBoundary: false, boxType: Ft(e) }));
+    }, serialize: (t32, e) => R(t32.command, t32.belowToLatex(e), t32.bodyToLatex(e)) });
+    y("overunderset", "{above:auto}{below:auto}{base:auto}", { createAtom: (t32) => {
+      let e = M(t32.args[2]);
+      return new le(u(m2({}, t32), { above: M(t32.args[0]), below: M(t32.args[1]), body: e, skipBoundary: false, boxType: Ft(e) }));
+    }, serialize: (t32, e) => R(t32.command, t32.belowToLatex(e), t32.bodyToLatex(e)) });
+    y(["stackrel", "stackbin"], "[below:auto]{above:auto}{base:auto}", { createAtom: (t32) => new le(u(m2({}, t32), { body: M(t32.args[2]), above: M(t32.args[1]), below: M(t32.args[0]), skipBoundary: false, boxType: t32.command === "\\stackrel" ? "rel" : "bin" })), serialize: (t32, e) => R(t32.command, t32.aboveToLatex(e), t32.bodyToLatex(e)) });
+    y("smash", "[:string]{:auto}", { createAtom: (t32) => {
+      var e, r, i, n;
+      return new Ue(u(m2({}, t32), { body: M(t32.args[1]), smashHeight: (r = (e = t32.args[0]) == null ? void 0 : e.includes("t")) != null ? r : true, smashDepth: (n = (i = t32.args[0]) == null ? void 0 : i.includes("b")) != null ? n : true }));
+    } });
+    y("vphantom", "{:auto}", { createAtom: (t32) => new Ue(u(m2({}, t32), { body: M(t32.args[0]), isInvisible: true, smashWidth: true })) });
+    y("hphantom", "{:auto}", { createAtom: (t32) => new Ue(u(m2({}, t32), { body: M(t32.args[0]), isInvisible: true, smashHeight: true, smashDepth: true })) });
+    y("phantom", "{:auto}", { createAtom: (t32) => new Ue(u(m2({}, t32), { body: M(t32.args[0]), isInvisible: true })) });
+    y("mathstrut", "", { createAtom: (t32) => new Ue(u(m2({}, t32), { body: [new p2({ value: "(" })], isInvisible: true })) });
+    y("not", "{:math}", { createAtom: (t32) => {
+      let e = M(t32.args[0]);
+      return e.length === 0 ? new p2(u(m2({}, t32), { type: "mrel", value: "\uE020" })) : new p2(u(m2({}, t32), { body: [new Oe(u(m2({}, t32), { body: "\uE020", align: "right" })), ...e], captureSelection: true }));
+    }, serialize: (t32, e) => {
+      let r = t32.args[0], i = r && typeof r == "object" && "group" in r;
+      return t32.value !== "\uE020" ? i ? `\\not{${p2.serialize(r.group, e)}}` : `\\not${p2.serialize(r, e)}` : i ? "\\not{}" : "\\not";
+    }, render: (t32, e) => {
+      if (t32.value) return t32.createBox(e);
+      let i = t32.args[0] && typeof t32.args[0] == "object" && "group" in t32.args[0] ? "ord" : Ft(M(t32.args[0])), n = p2.createBox(e, t32.body, { type: i });
+      return t32.caret && (n.caret = t32.caret), t32.bind(e, n);
+    } });
+    y(["ne", "neq"], "", { createAtom: (t32) => new p2(u(m2({}, t32), { type: "mrel", body: [new Oe(u(m2({}, t32), { body: "\uE020", align: "right", boxType: "rel" })), new p2(u(m2({}, t32), { value: "=" }))], captureSelection: true })), serialize: (t32) => t32.command });
+    y("rlap", "{:auto}", { createAtom: (t32) => new Oe(u(m2({}, t32), { body: M(t32.args[0]), align: "right" })) });
+    y("llap", "{:auto}", { createAtom: (t32) => new Oe(u(m2({}, t32), { body: M(t32.args[0]), align: "left" })) });
+    y("mathrlap", "{:math}", { createAtom: (t32) => new Oe(u(m2({}, t32), { body: M(t32.args[0]), align: "right" })) });
+    y("mathllap", "{:math}", { createAtom: (t32) => new Oe(u(m2({}, t32), { body: M(t32.args[0]), align: "left" })) });
+    y("raisebox", "{:value}{:text}", { createAtom: (t32) => {
+      var e;
+      return new Le(u(m2({}, t32), { body: M(t32.args[1]), padding: { dimension: 0 }, offset: (e = t32.args[0]) != null ? e : { dimension: 0 } }));
+    }, serialize: (t32, e) => {
+      var r;
+      return R("\\raisebox", (r = X(t32.offset)) != null ? r : "0pt", t32.bodyToLatex(e));
+    } });
+    y("raise", "{:value}{:auto}", { createAtom: (t32) => {
+      var e;
+      return new Le(u(m2({}, t32), { body: M(t32.args[1]), padding: { dimension: 0 }, offset: (e = t32.args[0]) != null ? e : { dimension: 0 } }));
+    }, serialize: (t32, e) => {
+      var r;
+      return R("\\raise", (r = X(t32.offset)) != null ? r : "0pt", t32.bodyToLatex(e));
+    } });
+    y("lower", "{:value}{:auto}", { createAtom: (t32) => {
+      var e;
+      return new Le(u(m2({}, t32), { body: M(t32.args[1]), padding: { dimension: 0 }, offset: (e = Ee(t32.args[0], -1)) != null ? e : { dimension: 0 } }));
+    }, serialize: (t32, e) => {
+      var r, i;
+      return R("\\lower", (i = X(Ee((r = t32.offset) != null ? r : { dimension: 0 }, -1))) != null ? i : "0pt", t32.bodyToLatex(e));
+    } });
+    ne("0123456789/@.?!");
+    po(65, 90);
+    po(97, 122);
+    ne([["\\forall", 8704], ["\\exists", 8707], ["\\nexists", 8708, "mord", "ams"], ["\\mid", 8739, "mrel"], ["\\top", 8868], ["\\bot", 8869]]);
+    ne([["\\#", 35], ["\\&", 38], ["\\parallelogram", 9649], ["\\spadesuit", 9824], ["\\heartsuit", 9825], ["\\diamondsuit", 9826], ["\\clubsuit", 9827], ["\\flat", 9837], ["\\natural", 9838], ["\\sharp", 9839]]);
+    ne([["\\backslash", 92], ["\\nabla", 8711], ["\\partial", 8706], ["\\ell", 8467], ["\\hbar", 8463], ["\\pounds", 163], ["\\euro", 8364]]);
+    ne([["\\rightarrow", 8594], ["\\to", 8594], ["\\leftarrow", 8592], ["\\gets", 8592], ["\\Rightarrow", 8658], ["\\Leftarrow", 8656], ["\\longrightarrow", 10230], ["\\longleftarrow", 10229], ["\\Longrightarrow", 10233], ["\\implies", 10233], ["\\Longleftarrow", 10232], ["\\impliedby", 10232], ["\\longleftrightarrow", 10231], ["\\biconditional", 10231], ["\\Longleftrightarrow", 10234], ["\\mapsto", 8614], ["\\longmapsto", 10236], ["\\uparrow", 8593], ["\\downarrow", 8595], ["\\Uparrow", 8657], ["\\Downarrow", 8659], ["\\updownarrow", 8597], ["\\Updownarrow", 8661], ["\\hookrightarrow", 8618], ["\\hookleftarrow", 8617], ["\\rightharpoonup", 8640], ["\\leftharpoonup", 8636], ["\\rightharpoondown", 8641], ["\\leftharpoondown", 8637], ["\\searrow", 8600], ["\\nearrow", 8599], ["\\swarrow", 8601], ["\\nwarrow", 8598], ["\\originalof", 8886], ["\\laplace", 8886], ["\\imageof", 8887], ["\\Laplace", 8887]], "mrel");
+    ne([["\\mapsfrom", 8612, "mrel"], ["\\Mapsfrom", 10502, "mrel"], ["\\MapsTo", 10503, "mrel"], ["\\Yup", 8516, "mord"], ["\\lightning", 8623, "mrel"], ["\\leftarrowtriangle", 8701, "mrel"], ["\\rightarrowtriangle", 8702, "mrel"], ["\\leftrightarrowtriangle", 8703, "mrel"], ["\\boxdot", 8865, "mbin"], ["\\bigtriangleup", 9651, "mbin"], ["\\bigtriangledown", 9661, "mbin"], ["\\boxbar", 9707, "mbin"], ["\\Lbag", 10181, "mopen"], ["\\Rbag", 10182, "mclose"], ["\\llbracket", 10214, "mopen"], ["\\rrbracket", 10215, "mclose"], ["\\longmapsfrom", 10235, "mrel"], ["\\Longmapsfrom", 10237, "mrel"], ["\\Longmapsto", 10238, "mrel"], ["\\boxslash", 10692, "mbin"], ["\\boxbslash", 10693, "mbin"], ["\\boxast", 10694, "mbin"], ["\\boxcircle", 10695, "mbin"], ["\\boxbox", 10696, "mbin"], ["\\fatsemi", 10783, "mop"], ["\\leftslice", 10918, "mrel"], ["\\rightslice", 10919, "mrel"], ["\\interleave", 10996, "mbin"], ["\\biginterleave", 11004, "mop"], ["\\sslash", 11005, "mbin"], ["\\talloblong", 11006, "mbin"]]);
+    ne([["\\lbrace", 123, "mopen"], ["\\rbrace", 125, "mclose"], ["\\lparen", 40, "mopen"], ["\\rparen", 41, "mclose"], ["\\langle", 10216, "mopen"], ["\\rangle", 10217, "mclose"], ["\\lfloor", 8970, "mopen"], ["\\rfloor", 8971, "mclose"], ["\\lceil", 8968, "mopen"], ["\\rceil", 8969, "mclose"], ["\\vert", 8739], ["\\lvert", 8739, "mopen"], ["\\rvert", 8739, "mclose"], ["\\|", 8741], ["\\Vert", 8741], ["\\mVert", 8741], ["\\lVert", 8741, "mopen"], ["\\rVert", 8741, "mclose"], ["\\lbrack", 91, "mopen"], ["\\rbrack", 93, "mclose"], ["\\{", 123, "mopen"], ["\\}", 125, "mclose"], ["(", 40, "mopen"], [")", 41, "mclose"], ["[", 91, "mopen"], ["]", 93, "mclose"], ["\\ulcorner", 9484, "mopen", "ams"], ["\\urcorner", 9488, "mclose", "ams"], ["\\llcorner", 9492, "mopen", "ams"], ["\\lrcorner", 9496, "mclose", "ams"], ["\\lgroup", 10222, "mopen"], ["\\rgroup", 10223, "mclose"], ["\\lmoustache", 9136, "mopen"], ["\\rmoustache", 9137, "mclose"]]);
+    ne([["\\dashrightarrow", 8674], ["\\dashleftarrow", 8672], ["\\Rrightarrow", 8667], ["\\Lleftarrow", 8666], ["\\leftrightarrows", 8646], ["\\rightleftarrows", 8644], ["\\curvearrowright", 8631], ["\\curvearrowleft", 8630], ["\\rightrightarrows", 8649], ["\\leftleftarrows", 8647], ["\\upuparrows", 8648], ["\\downdownarrows", 8650], ["\\vartriangle", 9651], ["\\triangleq", 8796], ["\\vartriangleleft", 8882], ["\\trianglelefteq", 8884], ["\\ntriangleleft", 8938], ["\\ntrianglelefteq", 8940], ["\\vartriangleright", 8883], ["\\trianglerighteq", 8885], ["\\ntriangleright", 8939], ["\\ntrianglerighteq", 8941], ["\\blacktriangleleft", 9664], ["\\blacktriangleright", 9654], ["\\leftarrowtail", 8610], ["\\rightarrowtail", 8611], ["\\looparrowright", 8620], ["\\looparrowleft", 8619], ["\\twoheadleftarrow", 8606], ["\\twoheadrightarrow", 8608], ["\\twoheadrightarrowtail", 10518], ["\\rightleftharpoons", 8652], ["\\leftrightharpoons", 8651], ["\\Rsh", 8625], ["\\Lsh", 8624], ["\\circlearrowright", 8635], ["\\circlearrowleft", 8634], ["\\restriction", 8638], ["\\upharpoonright", 8638], ["\\upharpoonleft", 8639], ["\\downharpoonright", 8642], ["\\downharpoonleft", 8643], ["\\rightsquigarrow", 8669], ["\\leadsto", 8669], ["\\leftrightsquigarrow", 8621], ["\\multimap", 8888], ["\\nleftarrow", 8602], ["\\nrightarrow", 8603], ["\\nRightarrow", 8655], ["\\nLeftarrow", 8653], ["\\nleftrightarrow", 8622], ["\\nLeftrightarrow", 8654], ["\\nvrightarrow", 8696], ["\\nvtwoheadrightarrow", 10496], ["\\nvrightarrowtail", 10516], ["\\nvtwoheadrightarrowtail", 10519], ["\\shortparallel", 8741], ["\\nless", 8814], ["\\nleqslant", 57360], ["\\lneq", 10887], ["\\lneqq", 8808], ["\\nleqq", 57361], ["\\lvertneqq", 57356], ["\\lnsim", 8934], ["\\lnapprox", 10889], ["\\nprec", 8832], ["\\npreceq", 8928], ["\\precnsim", 8936], ["\\precnapprox", 10937], ["\\nsim", 8769], ["\\nshortmid", 57350], ["\\nmid", 8740], ["\\nvdash", 8876], ["\\nvDash", 8877], ["\\ngtr", 8815], ["\\ngeqslant", 57359], ["\\ngeqq", 57358], ["\\gneq", 10888], ["\\gneqq", 8809], ["\\gvertneqq", 57357], ["\\gnsim", 8935], ["\\gnapprox", 10890], ["\\nsucc", 8833], ["\\nsucceq", 8929], ["\\succnsim", 8937], ["\\succnapprox", 10938], ["\\ncong", 8774], ["\\nshortparallel", 57351], ["\\nparallel", 8742], ["\\nVDash", 8879], ["\\nsupseteqq", 57368], ["\\supsetneq", 8843], ["\\varsupsetneq", 57371], ["\\supsetneqq", 10956], ["\\varsupsetneqq", 57369], ["\\nVdash", 8878], ["\\precneqq", 10933], ["\\succneqq", 10934], ["\\nsubseteqq", 57366], ["\\leqslant", 10877], ["\\geqslant", 10878], ["\\gtrsim", 8819], ["\\approxeq", 8778], ["\\thickapprox", 8776], ["\\lessapprox", 10885], ["\\gtrapprox", 10886], ["\\precapprox", 10935], ["\\succapprox", 10936], ["\\thicksim", 8764], ["\\succsim", 8831], ["\\precsim", 8830], ["\\backsim", 8765], ["\\eqsim", 8770], ["\\backsimeq", 8909], ["\\lesssim", 8818], ["\\nleq", 8816], ["\\ngeq", 8817], ["\\smallsmile", 8995], ["\\smallfrown", 8994], ["\\leqq", 8806], ["\\eqslantless", 10901], ["\\lll", 8920], ["\\lessgtr", 8822], ["\\lesseqgtr", 8922], ["\\lesseqqgtr", 10891], ["\\risingdotseq", 8787], ["\\fallingdotseq", 8786], ["\\subseteqq", 10949], ["\\Subset", 8912], ["\\sqsubset", 8847], ["\\preccurlyeq", 8828], ["\\curlyeqprec", 8926], ["\\vDash", 8872], ["\\Vvdash", 8874], ["\\bumpeq", 8783], ["\\Bumpeq", 8782], ["\\geqq", 8807], ["\\eqslantgtr", 10902], ["\\ggg", 8921], ["\\gtrless", 8823], ["\\gtreqless", 8923], ["\\gtreqqless", 10892], ["\\supseteqq", 10950], ["\\Supset", 8913], ["\\sqsupset", 8848], ["\\succcurlyeq", 8829], ["\\curlyeqsucc", 8927], ["\\Vdash", 8873], ["\\shortmid", 8739], ["\\between", 8812], ["\\pitchfork", 8916], ["\\varpropto", 8733], ["\\backepsilon", 8717], ["\\llless", 8920], ["\\gggtr", 8921], ["\\doteqdot", 8785], ["\\Doteq", 8785], ["\\eqcirc", 8790], ["\\circeq", 8791], ["\\therefore", 8756], ["\\because", 8757]], "mrel", "ams");
+    ne([["+", 43], ["-", 8722], ["\u2212", 8722], ["\\pm", 177], ["\\mp", 8723], ["*", 8727], ["\\times", 215], ["\\div", 247], ["\\divides", 8739], ["\\cdot", 8901], ["\\cap", 8745], ["\\cup", 8746], ["\\setminus", 8726], ["\\land", 8743], ["\\wedge", 8743], ["\\lor", 8744], ["\\vee", 8744], ["\\circ", 8728], ["\\bigcirc", 9711], ["\\bullet", 8729], ["\\oplus", 8853], ["\\ominus", 8854], ["\\otimes", 8855], ["\\odot", 8857], ["\\oslash", 8856], ["\\bigtriangleup", 9651], ["\\bigtriangledown", 9661], ["\\triangleleft", 9667], ["\\triangleright", 9657], ["\\And", 38], ["\\dagger", 8224], ["\\dag", 8224], ["\\ddag", 8225], ["\\ddagger", 8225], ["\\ast", 8727], ["\\star", 8902], ["\\bigstar", 9733], ["\\diamond", 8900]], "mbin");
+    ne([["\\lhd", 8882], ["\\rhd", 8883], ["\\lessdot", 8918], ["\\gtrdot", 8919], ["\\ltimes", 8905], ["\\rtimes", 8906], ["\\leftthreetimes", 8907], ["\\rightthreetimes", 8908], ["\\intercal", 8890], ["\\dotplus", 8724], ["\\doublebarwedge", 10846], ["\\divideontimes", 8903], ["\\centerdot", 8901], ["\\smallsetminus", 8726], ["\\barwedge", 8892], ["\\veebar", 8891], ["\\nor", 8891], ["\\curlywedge", 8911], ["\\curlyvee", 8910], ["\\boxminus", 8863], ["\\boxplus", 8862], ["\\boxtimes", 8864], ["\\boxdot", 8865], ["\\circleddash", 8861], ["\\circledast", 8859], ["\\circledcirc", 8858], ["\\unlhd", 8884], ["\\unrhd", 8885]], "mbin", "ams");
+    ne([["\\surd", 8730], ["\\S", 167], ["\\infty", 8734], ["\\prime", 8242], ["\\doubleprime", 8243], ["\\angle", 8736], ["`", 8216], ["\\$", 36], ["\\%", 37], ["\\_", 95], ["\\alpha", 945], ["\\beta", 946], ["\\gamma", 947], ["\\delta", 948], ["\\epsilon", 1013], ["\\varepsilon", 949], ["\\zeta", 950], ["\\eta", 951], ["\\theta", 952], ["\\vartheta", 977], ["\\iota", 953], ["\\kappa", 954], ["\\varkappa", 1008, "mord", "ams"], ["\\lambda", 955], ["\\mu", 956], ["\\nu", 957], ["\\xi", 958], ["\\omicron", 111], ["\\pi", 960], ["\\varpi", 982], ["\\rho", 961], ["\\varrho", 1009], ["\\sigma", 963], ["\\varsigma", 962], ["\\tau", 964], ["\\phi", 981], ["\\varphi", 966], ["\\upsilon", 965], ["\\chi", 967], ["\\psi", 968], ["\\omega", 969], ["\\Gamma", 915], ["\\Delta", 916], ["\\Theta", 920], ["\\Lambda", 923], ["\\Xi", 926], ["\\Pi", 928], ["\\Sigma", 931], ["\\Upsilon", 933], ["\\Phi", 934], ["\\Psi", 936], ["\\Omega", 937], ["\\digamma", 989, "mord", "ams"], ["\\varkappa", 1008, "mord", "ams"], ["\\coppa", 985, "mord", "ams"], ["\\koppa", 985, "mord", "ams"], ["\\Coppa", 984, "mord", "ams"], ["\\Koppa", 984, "mord", "ams"], ["\\sampi", 993, "mord", "ams"], ["\\Sampi", 992, "mord", "ams"], ["\\emptyset", 8709]]);
+    ne([["=", 61], ["<", 60], ["\\lt", 60], [">", 62], ["\\gt", 62], ["\\le", 8804], ["\\leq", 8804], ["\\ge", 8805], ["\\geq", 8805], ["\\ll", 8810], ["\\gg", 8811], ["\\coloneq", 8788], ["\\coloneqq", 8788], ["\\colonequals", 8788], ["\\measeq", 8797], ["\\eqdef", 8798], ["\\questeq", 8799], [":", 58], ["\\cong", 8773], ["\\equiv", 8801], ["\\prec", 8826], ["\\preceq", 10927], ["\\succ", 8827], ["\\succeq", 10928], ["\\perp", 10178], ["\\propto", 8733], ["\\Colon", 8759], ["\\smile", 8995], ["\\frown", 8994], ["\\sim", 8764], ["\\doteq", 8784], ["\\bowtie", 8904], ["\\Join", 8904], ["\\asymp", 8781], ["\\sqsubseteq", 8849], ["\\sqsupseteq", 8850], ["\\approx", 8776], ["\\~", 126], ["\\leftrightarrow", 8596], ["\\Leftrightarrow", 8660], ["\\models", 8872], ["\\vdash", 8866], ["\\dashv", 8867], ["\\roundimplies", 10608], ["\\in", 8712], ["\\notin", 8713], ["\\ni", 8715], ["\\owns", 8715], ["\\subset", 8834], ["\\supset", 8835], ["\\subseteq", 8838], ["\\supseteq", 8839], ["\\differencedelta", 8710], ["\\mvert", 8739], ["\\parallel", 8741], ["\\simeq", 8771]], "mrel");
+    ne([["\\lnot", 172], ["\\neg", 172], ["\\triangle", 9651], ["\\subsetneq", 8842], ["\\varsubsetneq", 57370], ["\\subsetneqq", 10955], ["\\varsubsetneqq", 57367], ["\\nsubset", 8836], ["\\nsupset", 8837], ["\\nsubseteq", 8840], ["\\nsupseteq", 8841]], "mrel", "ams");
+    ne([["\\wp", 8472], ["\\aleph", 8501]]);
+    ne([["\\blacktriangle", 9650], ["\\hslash", 8463], ["\\Finv", 8498], ["\\Game", 8513], ["\\eth", 240], ["\\mho", 8487], ["\\Bbbk", 107], ["\\yen", 165], ["\\square", 9633], ["\\Box", 9633], ["\\blacksquare", 9632], ["\\circledS", 9416], ["\\circledR", 174], ["\\triangledown", 9661], ["\\blacktriangledown", 9660], ["\\checkmark", 10003], ["\\diagup", 9585], ["\\measuredangle", 8737], ["\\sphericalangle", 8738], ["\\backprime", 8245], ["\\backdoubleprime", 8246], ["\\Diamond", 9674], ["\\lozenge", 9674], ["\\blacklozenge", 10731], ["\\varnothing", 8709], ["\\complement", 8705], ["\\maltese", 10016], ["\\beth", 8502], ["\\daleth", 8504], ["\\gimel", 8503]], "mord", "ams");
+    ne([["\\ ", 160], ["~", 160]], "space");
+    y(["!", ",", ":", ";", ">", "enskip", "enspace", "quad", "qquad"], "", { createAtom: (t32) => new je(t32) });
+    y("space", "", { createAtom: (t32) => new je(t32) });
+    ne([["\\colon", 58], ["\\cdotp", 8901], ["\\vdots", 8942, "mord"], ["\\ldotp", 46], [",", 44], [";", 59]], "mpunct");
+    ne([["\\cdots", 8943], ["\\ddots", 8945], ["\\ldots", 8230], ["\\mathellipsis", 8230]], "minner");
+    ne([["\\/", 47], ["|", 8739, "mord"], ["\\imath", 305], ["\\jmath", 567], ["\\degree", 176], ["'", 8242], ['"', 8221]]);
+    Sl = "<mo>&#x2061;</mo>";
+    dn = "<mo>&#8290;</mo>";
+    xr = { "\\alpha": "alpha ", "\\mu": "mew ", "\\sigma": "sigma ", "\\pi": "pie ", "\\imaginaryI": "imaginary eye ", "\\imaginaryJ": "imaginary jay ", "\\sum": "Summation ", "\\prod": "Product ", "+": "plus ", "-": "minus ", ";": '<break time="150ms"/> semi-colon <break time="150ms"/>', ",": '<break time="150ms"/> comma  <break time="150ms"/>', "|": '<break time="150ms"/>Vertical bar<break time="150ms"/>', "(": '<break time="150ms"/>Open paren. <break time="150ms"/>', ")": '<break time="150ms"/> Close paren. <break time="150ms"/>', "=": "equals ", "<": "is less than ", "\\lt": "is less than ", "<=": "is less than or equal to ", "\\le": "is less than or equal to ", "\\gt": "is greater than ", ">": "is greater than ", "\\pm": "plus or minus", "\\mp": "minus or plus", "\\ge": "is greater than or equal to ", "\\geq": "is greater than or equal to ", "\\leq": "is less than or equal to ", "\\ne": "is not equal to ", "\\neq": "is not equal to ", "!": "factorial ", "\\sin": "sine ", "\\cos": "cosine ", "\u200B": "", "\u2212": "minus ", ":": '<break time="150ms"/> such that <break time="200ms"/> ', "\\colon": '<break time="150ms"/> such that <break time="200ms"/> ', "\\hbar": "etch bar ", "\\iff": '<break time="200ms"/>if, and only if, <break time="200ms"/>', "\\Longleftrightarrow": '<break time="200ms"/>if, and only if, <break time="200ms"/>', "\\land": "and ", "\\lor": "or ", "\\neg": "not ", "\\div": "divided by ", "\\forall": "for all ", "\\exists": "there exists ", "\\nexists": "there does not exists ", "\\in": "element of ", "\\N": 'the set <break time="150ms"/><say-as interpret-as="character">n</say-as>', "\\C": 'the set <break time="150ms"/><say-as interpret-as="character">c</say-as>', "\\Z": 'the set <break time="150ms"/><say-as interpret-as="character">z</say-as>', "\\Q": 'the set <break time="150ms"/><say-as interpret-as="character">q</say-as>', "\\infty": "infinity ", "\\nabla": "nabla ", "\\partial": "partial derivative of ", "\\cdot": "times ", "\\cdots": "dot dot dot ", "\\Rightarrow": "implies ", "\\lparen": '<break time="150ms"/>open paren<break time="150ms"/>', "\\rparen": '<break time="150ms"/>close paren<break time="150ms"/>', "\\lbrace": '<break time="150ms"/>open brace<break time="150ms"/>', "\\{": '<break time="150ms"/>open brace<break time="150ms"/>', "\\rbrace": '<break time="150ms"/>close brace<break time="150ms"/>', "\\}": '<break time="150ms"/>close brace<break time="150ms"/>', "\\langle": '<break time="150ms"/>left angle bracket<break time="150ms"/>', "\\rangle": '<break time="150ms"/>right angle bracket<break time="150ms"/>', "\\lfloor": '<break time="150ms"/>open floor<break time="150ms"/>', "\\rfloor": '<break time="150ms"/>close floor<break time="150ms"/>', "\\lceil": '<break time="150ms"/>open ceiling<break time="150ms"/>', "\\rceil": '<break time="150ms"/>close ceiling<break time="150ms"/>', "\\vert": '<break time="150ms"/>vertical bar<break time="150ms"/>', "\\mvert": '<break time="150ms"/>divides<break time="150ms"/>', "\\lvert": '<break time="150ms"/>left vertical bar<break time="150ms"/>', "\\rvert": '<break time="150ms"/>right vertical bar<break time="150ms"/>', "\\lbrack": '<break time="150ms"/> open square bracket <break time="150ms"/>', "\\rbrack": '<break time="150ms"/> close square bracket <break time="150ms"/>', mm: "millimeters", cm: "centimeters", km: "kilometers", kg: "kilograms" };
+    Bo = { array: "array", matrix: "matrix", pmatrix: "parenthesis matrix", bmatrix: "square brackets matrix", Bmatrix: "braces matrix", vmatrix: "bars matrix", Vmatrix: "double bars matrix", "matrix*": "matrix", smallmatrix: "small matrix" };
+    Ke = { "\\ne": "\u2260", "\\neq": "\u2260", "\u2212": "-", "-": "-", "\\alpha": "alpha", "\\beta": "beta", "\\gamma": "gamma", "\\delta": "delta", "\\epsilon": "epsilon", "\\varepsilon": "varepsilon", "\\zeta": "zeta", "\\eta": "eta", "\\theta": "theta", "\\vartheta": "vartheta", "\\iota": "iota", "\\kappa": "kappa", "\\lambda": "lambda", "\\mu": "mu", "\\nu": "nu", "\\xi": "xi", "\\pi": "pi", "\\rho": "rho", "\\sigma": "sigma", "\\tau": "tau", "\\upsilon": "upsilon", "\\phi": "phi", "\\varphi": "varphi", "\\chi": "chi", "\\psi": "psi", "\\omega": "omega", "\\Gamma": "Gamma", "\\Delta": "Delta", "\\Theta": "Theta", "\\Lambda": "Lambda", "\\Xi": "Xi", "\\Pi": "Pi", "\\Sigma": "Sigma", "\\Phi": "Phi", "\\Psi": "Psi", "\\Omega": "Omega", "\\exponentialE": "e", "\\imaginaryI": "i", "\\imaginaryJ": "j", "\\!": " ", "\\,": " ", "\\:": " ", "\\>": " ", "\\;": " ", "\\enskip": " ", "\\enspace": " ", "\\qquad": " ", "\\quad": " ", "\\infty": "oo", "\\R": "RR", "\\mathbb{R}": "RR", "\\N": "NN", "\\mathbb{N}": "NN", "\\Z": "ZZ", "\\mathbb{Z}": "ZZ", "\\Q": "QQ", "\\mathbb{Q}": "QQ", "\\C": "CC", "\\mathbb{C}": "CC", "\\emptyset": "O/", "\\varnothing": "O/", "\\varDelta": "Delta", "\\varTheta": "Theta", "\\varLambda": "Lambda", "\\varXi": "Xi", "\\varPi": "Pi", "\\varSigma": "Sigma", "\\varUpsilon": "Upsilon", "\\varPhi": "Phi", "\\varPsi": "Psi", "\\varOmega": "Omega" };
+    Xr = { "\\pm": "+-", "\\colon": " : ", "\\sum": " sum ", "\\prod": " prod ", "\\bigcap": " nnn ", "\\bigcup": " uuu ", "\\int": " int ", "\\oint": " oint ", "\\ge": ">=", "\\le": "<=", "\\ne": "!=", "\\neq": "!=", "\\lt": "<", "\\gt": ">", "\\gets": "<-", "\\to": "->", "\\land": " and ", "\\lor": " or ", "\\lnot": " not ", "\\forall": " AA ", "\\exists": " EE ", "\\in": " in ", "\\notin": " !in ", "\\mapsto": "|->", "\\implies": "=>", "\\iff": "<=>", "\\cdot": " * ", "\\ast": " ** ", "\\star": " *** ", "\\times": " * ", "\\div": " -: ", "\\ltimes": " |>< ", "\\rtimes": " ><| ", "\\bowtie": " |><| ", "\\circ": "@" };
+    fn3 = { "\\vert": "|", "\\Vert": "||", "\\mid": "|", "\\lbrack": "[", "\\rbrack": "]", "\\lbrace": "{", "\\rbrace": "}", "\\lparen": "(", "\\rparen": ")", "\\langle": "(:", "\\rangle": ":)" };
+    Cl = { "&": "\\&", "%": "\\%", $: "\\$", "''": "^{\\doubleprime}", "'''": "^{\\prime\\prime\\prime}", "''''": "^{\\prime\\prime\\prime\\prime}", alpha: "\\alpha", delta: "\\delta", Delta: "\\Delta", pi: "\\pi", Pi: "\\Pi", theta: "\\theta", Theta: "\\Theta", ii: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\imaginaryI" }, jj: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\imaginaryJ" }, ee: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\exponentialE" }, nabla: "\\nabla", grad: "\\nabla", del: "\\partial", deg: { after: "digit+space", value: "\\degree" }, infty: "\\infty", "\u221E": "\\infty", oo: { after: "nothing+digit+frac+surd+binop+relop+punct+array+openfence+closefence+space", value: "\\infty" }, "\u2211": "\\sum", sum: "\\sum_{#?}^{#?}", int: "\\int_{#?}^{#?}", prod: "\\prod_{#?}^{#?}", sqrt: "\\sqrt{#?}", "\u2206": "\\differentialD", "\u2202": "\\differentialD", sin: "\\sin", cos: "\\cos", tan: "\\tan", arccos: "\\arccos", arcsin: "\\arcsin", arctan: "\\arctan", arctg: "\\operatorname{arctg}", arcsec: "\\operatorname{arcsec}", arccsc: "\\operatorname{arccsc}", arsinh: "\\operatorname{arsinh}", arccosh: "\\operatorname{arccosh}", arcosh: "\\operatorname{arcosh}", artanh: "\\operatorname{artanh}", arctanh: "\\operatorname{arctanh}", arcsech: "\\operatorname{arcsech}", arccsch: "\\operatorname{arccsch}", ch: "\\operatorname{ch}", cosec: "\\operatorname{cosec}", cosh: "\\cosh", cot: "\\cot", cotg: "\\operatorname{cotg}", coth: "\\coth", csc: "\\csc", ctg: "\\operatorname{ctg}", cth: "\\operatorname{cth}", sec: "\\sec", sech: "\\operatorname{sech}", sinh: "\\sinh", sh: "\\operatorname{sh}", tanh: "\\tanh", tg: "\\operatorname{tg}", th: "\\operatorname{th}", arg: "\\arg", lg: "\\lg", lb: "\\operatorname{lb}", log: "\\log_{#?}", ln: "\\ln", exp: "\\exp", lim: "\\lim_{#?\\to#?}", dx: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\differentialD x" }, dy: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\differentialD y" }, dt: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\differentialD t" }, AA: "\\forall", EE: "\\exists", "!EE": "\\nexists", "&&": "\\land", xin: { after: "nothing+text+relop+punct+openfence+space", value: "x \\in" }, sint: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\sin t" }, in: { after: "nothing+letter+closefence", value: "\\in" }, "!in": "\\notin", NN: "\\mathbb{N}", ZZ: "\\mathbb{Z}", QQ: "\\mathbb{Q}", RR: "\\mathbb{R}", CC: "\\mathbb{C}", xx: "\\times", "+-": "\\pm", "\u2260": "\\ne", "!=": "\\ne", "\u2265": "\\ge", ">=": "\\ge", "\u2264": "\\le", "<=": "\\le", "<<": "\\ll", ">>": "\\gg", "~~": "\\approx", "\u2248": "\\approx", "?=": "\\questeq", "\xF7": "\\div", "\xAC": "\\neg", ":=": "\\coloneq", "::": "\\Colon", "(:": "\\langle", ":)": "\\rangle", beta: "\\beta", chi: "\\chi", epsilon: "\\epsilon", varepsilon: "\\varepsilon", eta: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\eta" }, gamma: "\\gamma", Gamma: "\\Gamma", iota: "\\iota", kappa: "\\kappa", lambda: "\\lambda", Lambda: "\\Lambda", mu: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\mu" }, nu: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\nu" }, \u00B5: "\\mu", phi: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\phi" }, Phi: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\Phi" }, varphi: "\\varphi", psi: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\psi" }, Psi: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\Psi" }, rho: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\rho" }, sigma: "\\sigma", Sigma: "\\Sigma", tau: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\tau" }, vartheta: "\\vartheta", upsilon: "\\upsilon", xi: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space", value: "\\xi" }, Xi: { after: "nothing+digit+function+frac+surd+binop+relop+punct+array+openfence+closefence+space+text", value: "\\Xi" }, zeta: "\\zeta", omega: "\\omega", Omega: "\\Omega", \u03A9: "\\omega", forall: "\\forall", exists: "\\exists", "!exists": "\\nexists", ":.": "\\therefore", liminf: "\\liminf_{#?}", limsup: "\\limsup_{#?}", argmin: "\\operatorname*{arg~min}_{#?}", argmax: "\\operatorname*{arg~max}_{#?}", det: "\\det", mod: "\\bmod{#?}", "(mod": "\\pmod{#?}", max: "\\max", min: "\\min", erf: "\\operatorname{erf}", erfc: "\\operatorname{erfc}", bessel: "\\operatorname{bessel}", mean: "\\operatorname{mean}", median: "\\operatorname{median}", fft: "\\operatorname{fft}", lcm: "\\operatorname{lcm}", gcd: "\\gcd", randomReal: "\\operatorname{randomReal}", randomInteger: "\\operatorname{randomInteger}", Re: "\\operatorname{Re}", Im: "\\operatorname{Im}", mm: { after: "nothing+digit+operator", value: "\\operatorname{mm}" }, cm: { after: "nothing+digit+operator", value: "\\operatorname{cm}" }, km: { after: "nothing+digit+operator", value: "\\operatorname{km}" }, kg: { after: "nothing+digit+operator", value: "\\operatorname{kg}" }, ft: { after: "nothing+digit+operator", value: "\\operatorname{ft}" }, inch: { after: "nothing+digit+operator", value: "\\operatorname{inch}" }, mi: { after: "nothing+digit+operator", value: "\\operatorname{mi}" }, "...": "\\ldots", "+...": "+\\cdots", "-...": "-\\cdots", "->...": "\\to\\cdots", "-->...": "\\longrightarrow\\cdots", "->": "\\to", "|->": "\\mapsto", "-->": "\\longrightarrow", "<--": "\\longleftarrow", "=>": "\\Rightarrow", "==>": "\\Longrightarrow", "<=>": "\\iff", "<->": "\\leftrightarrow", "(.)": "\\odot", "(+)": "\\oplus", "(/)": "\\oslash", "(*)": "\\otimes", "(-)": "\\ominus", "||": "\\Vert", "*": "\\cdot", "**": "\\star", "***": "\\ast", "//": "\\slash", "\\\\": "\\backslash", setminus: "\\backslash", "|><": "\\ltimes", "><|": "\\rtimes", "|><|": "\\bowtie", "-:": "\\div", divide: "\\div", "@": "\\circ", "^^": "\\wedge", "^^^": "\\bigwedge", vv: "\\vee", vvv: "\\bigvee", nn: "\\cap", nnn: "\\bigcap", uu: "\\cup", uuu: "\\bigcup", "-=": "\\equiv", "~=": "\\cong", lt: "<", "lt=": "\\leq", gt: ">", "gt=": "\\geq", "-<": "\\prec", "-lt": "\\prec", "-<=": "\\preceq", ">-=": "\\succeq", prop: "\\propto", diamond: "\\diamond", square: "\\square", iff: "\\iff", sub: "\\subset", sup: "\\supset", sube: "\\subseteq", supe: "\\supseteq", uarr: "\\uparrow", darr: "\\downarrow", rarr: "\\rightarrow", rArr: "\\Rightarrow", larr: "\\leftarrow", lArr: "\\Leftarrow", harr: "\\leftrightarrow", hArr: "\\Leftrightarrow", aleph: "\\aleph", and: "\\land", or: "\\lor", not: "\\neg", "_|_": "\\bot", TT: "\\top", "|--": "\\vdash", "|==": "\\models", "|__": "\\lfloor", "__|": "\\rfloor", "|~": "\\lceil", "~|": "\\rceil", ">->": "\\rightarrowtail", "->>": "\\twoheadrightarrow", ">->>": "\\twoheadrightarrowtail", times: "\\times", of: "\\circ", infinity: "\\infty", defint: "\\int_{#?}^{#?}", approaches: "\\to", ceil: "\\left\\lceil#?\\right\\rceil", floor: "\\left\\lfloor#?\\right\\rfloor", union: "\\cup", asterisk: "\\ast", frac: "\\frac{#?}{#?}", cbrt: "\\sqrt[3]{#?}", nthroot: "\\sqrt[#?]{#?}" };
+    Ll = { "[": "\\lbrack", "]": "\\rbrack", "{": "\\lbrace", "}": "\\rbrace" };
+    em = [["\\[", "\\]"], ["\\(", "\\)"], ["$$", "$$"], ["$", "$"], ["\\begin{math}", "\\end{math}"], ["\\begin{displaymath}", "\\end{displaymath}"], ["\\begin{equation}", "\\end{equation}"], ["\\begin{equation*}", "\\end{equation*}"]];
+    gn = { main: ["Main-Regular", "ML__cmr"], "main-italic": ["Main-Italic", "ML__cmr ML__it"], "main-bold": ["Main-Bold", "ML__cmr ML__bold"], "main-bolditalic": ["Main-BoldItalic", "ML__cmr ML__bold ML__it"], normal: ["Main-Regular", "ML__cmr"], "normal-bold": ["Main-Bold", "ML__mathbf"], "normal-italic": ["Math-Italic", "ML__mathit"], "normal-bolditalic": ["Math-BoldItalic", "ML__mathbfit"], roman: ["Main-Regular", "ML__cmr"], "roman-bold": ["Main-Bold", "ML__mathbf"], "roman-italic": ["Math-Italic", "ML__mathit"], "roman-bolditalic": ["Math-BoldItalic", "ML__mathbfit"], ams: ["AMS-Regular", "ML__ams"], "ams-bold": ["AMS-Regular", "ML__ams ML__bold"], "ams-italic": ["AMS-Regular", "ML__ams ML__it"], "ams-bolditalic": ["AMS-Regular", "ML__ams ML__bold ML__it"], "sans-serif": ["SansSerif-Regular", "ML__sans"], "sans-serif-bold": ["SansSerif-Regular", "ML__sans ML__bold"], "sans-serif-italic": ["SansSerif-Regular", "ML__sans ML__it"], "sans-serif-bolditalic": ["SansSerif-Regular", "ML__sans ML__bold ML__it"], calligraphic: ["Caligraphic-Regular", "ML__cal"], "calligraphic-bold": ["Caligraphic-Regular", "ML__cal ML__bold"], "calligraphic-italic": ["Caligraphic-Regular", "ML__cal ML__it"], "calligraphic-bolditalic": ["Caligraphic-Regular", "ML__cal ML__bold ML__it"], script: ["Script-Regular", "ML__script"], "script-bold": ["Script-Regular", "ML__script ML__bold"], "script-italic": ["Script-Regular", "ML__script ML__it"], "script-bolditalic": ["Script-Regular", "ML__script ML__bold ML__it"], fraktur: ["Fraktur-Regular", "ML__frak"], "fraktur-bold": ["Fraktur-Regular", "ML__frak ML__bold"], "fraktur-italic": ["Fraktur-Regular", "ML__frak ML__it"], "fraktur-bolditalic": ["Fraktur-Regular", "ML__frak ML__bold ML__it"], monospace: ["Typewriter-Regular", "ML__tt"], "monospace-bold": ["Typewriter-Regular", "ML__tt ML__bold"], "monospace-italic": ["Typewriter-Regular", "ML__tt ML__it"], "monospace-bolditalic": ["Typewriter-Regular", "ML__tt ML__bold ML__it"], "double-struck": ["AMS-Regular", "ML__bb"], "double-struck-bold": ["AMS-Regular", "ML__bb ML__bold"], "double-struck-italic": ["AMS-Regular", "ML__bb ML_italic"], "double-struck-bolditalic": ["AMS-Regular", "ML__bb ML_bolditalic"] };
+    Dl = { "double-struck": /^[A-Z ]$/, script: /^[A-Z ]$/, calligraphic: /^[\dA-Z ]$/, fraktur: /^[\dA-Za-z ]$|^[!"#$%&'()*+,\-./:;=?[]^’‘]$/, monospace: /^[\dA-Za-z ]$|^[!"&'()*+,\-./:;=?@[\]^_~\u0131\u0237\u0393\u0394\u0398\u039B\u039E\u03A0\u03A3\u03A5\u03A8\u03A9]$/, "sans-serif": /^[\dA-Za-z ]$|^[!"&'()*+,\-./:;=?@[\]^_~\u0131\u0237\u0393\u0394\u0398\u039B\u039E\u03A0\u03A3\u03A5\u03A8\u03A9]$/ };
+    zl = /^[\u03B1-\u03C9]|\u03D1|\u03D5|\u03D6|\u03F1|\u03F5]$/;
+    im = /^[\u0393|\u0394\u0398\u039B\u039E\u03A0\u03A3\u03A5\u03A6\u03A8\u03A9]$/;
+    nm = [/^[a-z]$/, /^[A-Z]$/, zl, im];
+    om = { iso: ["it", "it", "it", "it"], tex: ["it", "it", "it", "up"], french: ["it", "up", "up", "up"], upright: ["up", "up", "up", "up"] };
+    zo = class extends Q {
+      constructor() {
+        super("math");
+      }
+      createAtom(e, r, i) {
+        var a, l, s2, c, h2, d;
+        if (r === null) return new p2({ type: "mord", mode: "math", command: e, value: e, style: i });
+        let n;
+        try {
+          n = (s2 = (l = globalThis.MathfieldElement) == null ? void 0 : l.isFunction((a = r.command) != null ? a : e)) != null ? s2 : false;
+        } catch (f) {
+          n = false;
+        }
+        if (r.definitionType === "symbol") {
+          let f = new p2({ type: (c = r.type) != null ? c : "mord", mode: "math", command: (h2 = r.command) != null ? h2 : e, value: String.fromCodePoint(r.codepoint), isFunction: n, style: i });
+          return e.startsWith("\\") && (f.verbatimLatex = e), f;
+        }
+        let o = new p2({ type: "mord", mode: "math", command: (d = r.command) != null ? d : e, value: e, isFunction: n, style: i });
+        return e.startsWith("\\") && (o.verbatimLatex = e), o;
+      }
+      serialize(e, r) {
+        let i = am(e, u(m2({}, r), { defaultMode: "math" }));
+        return i.length === 0 || r.defaultMode !== "text" ? i : ["$ ", ...i, " $"];
+      }
+      getFont(e, r) {
+        var s2, c, h2;
+        if (r.variant, r.fontFamily) {
+          let d = r.fontFamily;
+          r.fontSeries === "b" && r.fontShape === "it" ? d += "-bolditalic" : r.fontSeries === "b" ? d += "-bold" : r.fontShape === "it" && (d += "-italic");
+          let f = (s2 = gn[d]) != null ? s2 : gn[r.fontFamily];
+          if (!f) return console.error(`Unknown font family variant: ${d}`), null;
+          let [S, x] = f;
+          return x && (e.classes += " " + x), S;
+        }
+        let { variant: i } = r, { variantStyle: n } = r;
+        if (i === "normal" && !n && /[\u00A3\u0131\u0237]/.test(e.value) && (i = "main", n = "italic"), i === "normal" && !n && e.value.length === 1) {
+          let d = false;
+          nm.forEach((f, S) => {
+            var x;
+            f.test(e.value) && om[(x = r.letterShapeStyle) != null ? x : "tex"][S] === "it" && (d = true);
+          }), d && (n = xl(n));
+        }
+        n === "up" && (n = void 0);
+        let o = n ? i + "-" + n : i;
+        gn[o];
+        let [a, l] = gn[o];
+        if (Dl[i] && !Dl[i].test(e.value)) {
+          let d = Rr(e.value, i, n);
+          return d || (d = (c = Rr(e.value, i)) != null ? c : e.value, e.classes += (h2 = { bold: " ML__bold", italic: " ML__it", "bold-italic": " ML__bold ML__it" }[n != null ? n : ""]) != null ? h2 : ""), e.value = d, null;
+        }
+        return zl.test(e.value) && (e.classes += " lcGreek"), l && (e.classes += " " + l), a;
+      }
+    };
+    new zo();
+    $l = { roman: "", "sans-serif": "ML__sans", monospace: "ML__tt" };
+    $o = class extends Q {
+      constructor() {
+        super("text");
+      }
+      createAtom(e, r, i) {
+        return r && r.definitionType === "symbol" ? new kt(e, String.fromCodePoint(r.codepoint), i != null ? i : {}) : null;
+      }
+      serialize(e, r) {
+        return um(e, u(m2({}, r), { defaultMode: "text" }), r.defaultMode !== "text");
+      }
+      getFont(e, r) {
+        var n, o, a, l, s2;
+        let { fontFamily: i } = r;
+        if ($l[i]) e.classes += " " + $l[i];
+        else if (i) {
+          let c = rl(i);
+          c && e.setStyle("font-family", c);
+        }
+        if (r.fontShape && (e.classes += " ", e.classes += (n = { it: "ML__it", sl: "ML__shape_sl", sc: "ML__shape_sc", ol: "ML__shape_ol" }[r.fontShape]) != null ? n : ""), r.fontSeries) {
+          let c = r.fontSeries.match(/(.?[lbm])?(.?[cx])?/);
+          c && (e.classes += " ", e.classes += (a = { ul: "ML__series_ul", el: "ML__series_el", l: "ML__series_l", sl: "ML__series_sl", m: "", sb: "ML__series_sb", b: "ML__bold", eb: "ML__series_eb", ub: "ML__series_ub" }[(o = c[1]) != null ? o : ""]) != null ? a : "", e.classes += " ", e.classes += (s2 = { uc: "ML__series_uc", ec: "ML__series_ec", c: "ML__series_c", sc: "ML__series_sc", n: "", sx: "ML__series_sx", x: "ML__series_x", ex: "ML__series_ex", ux: "ML__series_ux" }[(l = c[2]) != null ? l : ""]) != null ? s2 : "");
+        }
+        return "Main-Regular";
+      }
+    };
+    new $o();
+    Eo = class extends Q {
+      constructor() {
+        super("latex");
+      }
+      createAtom(e) {
+        return new _t(e);
+      }
+      serialize(e, r) {
+        return e.filter((i) => i instanceof _t && !i.isSuggestion).map((i) => i.value);
+      }
+      getFont() {
+        return null;
+      }
+    };
+    new Eo();
+  }
+});
+
+// src/math-engine.js
+var require_math_engine = __commonJS({
+  "src/math-engine.js"(exports2, module2) {
+    "use strict";
+    var { sanitizeHTMLToDom } = require("obsidian");
+    var MAX_LATEX_LENGTH = 8192;
+    var MAX_NESTING = 64;
+    var MAX_COMMANDS = 1024;
+    var MAX_MARKUP_LENGTH = 5e5;
+    var MAX_ELEMENTS = 1e4;
+    var UNSAFE_COMMAND = /\\(?:html[A-Za-z]*|style|class|cssId|href|url|includegraphics|def|gdef|edef|xdef|let|futurelet|newcommand|renewcommand|providecommand|csname|expandafter)(?![A-Za-z])/i;
+    var SIZING_COMMAND = /\\(?:rule|kern|mkern|mskip|mspace|hspace|vspace|hskip|vskip|raise|lower|raisebox|scalebox|resizebox|fontsize|genfrac|bbox|enclose|above|abovewithdelims)(?![A-Za-z])/i;
+    var CUSTOM_ROW_GAP = /(?:\\\\|\\(?:cr|tabularnewline)(?![A-Za-z]))\s*\*?\s*\[/;
+    var TAGS = /* @__PURE__ */ new Set(["span", "svg", "path", "line", "rect", "circle", "ellipse", "polygon", "polyline", "g"]);
+    var SVG_ATTRIBUTES = /* @__PURE__ */ new Set(["width", "height", "viewbox", "preserveaspectratio", "d", "fill", "stroke", "stroke-width", "stroke-linecap", "stroke-linejoin", "vector-effect", "x", "y", "x1", "x2", "y1", "y2", "cx", "cy", "r", "rx", "ry", "points", "transform", "xmlns"]);
+    var STYLE_PROPERTIES = /* @__PURE__ */ new Set([
+      "height",
+      "width",
+      "min-width",
+      "max-width",
+      "top",
+      "left",
+      "right",
+      "bottom",
+      "vertical-align",
+      "margin-left",
+      "margin-right",
+      "margin-top",
+      "margin-bottom",
+      "padding-left",
+      "padding-right",
+      "font-size",
+      "line-height",
+      "color",
+      "background-color",
+      "opacity",
+      "position",
+      "display",
+      "box-sizing",
+      "overflow",
+      "z-index",
+      "border",
+      "border-top",
+      "border-right",
+      "border-bottom",
+      "border-left",
+      "border-color",
+      "border-radius",
+      "border-top-width",
+      "border-right-width",
+      "--bg-color",
+      "--frac-line-margin",
+      "--frac-line-thickness"
+    ]);
+    var enginePromise;
+    function supportedSource(latex) {
+      if (typeof latex !== "string" || !latex.trim() || latex.length > MAX_LATEX_LENGTH) return false;
+      let depth = 0, commands = 0, uncommented = "";
+      for (let index = 0; index < latex.length; index++) {
+        const character = latex[index];
+        if (character === "%") {
+          while (index < latex.length && latex[index] !== "\n") index++;
+        } else if (character === "\\") {
+          uncommented += character;
+          if (++commands > MAX_COMMANDS) return false;
+          if (!/[A-Za-z]/.test(latex[index + 1] || "")) uncommented += latex[++index] || "";
+        } else {
+          uncommented += character;
+          if (character === "{" && ++depth > MAX_NESTING) return false;
+          if (character === "}" && --depth < 0) return false;
+        }
+      }
+      return depth === 0 && !UNSAFE_COMMAND.test(uncommented) && !SIZING_COMMAND.test(uncommented) && !CUSTOM_ROW_GAP.test(uncommented);
+    }
+    function safeStyles(element3) {
+      for (const declaration of element3.getAttribute("style").split(";").filter((value) => value.trim())) {
+        const separator = declaration.indexOf(":"), name2 = declaration.slice(0, separator).trim(), value = declaration.slice(separator + 1).trim();
+        if (separator < 1 || !STYLE_PROPERTIES.has(name2) || !/^[\w\s#.,%()+*/-]+$/.test(value) || /(?:url|var|env|expression|attr)\s*\(/i.test(value)) return false;
+        if (name2 === "position" && !["relative", "absolute"].includes(value)) return false;
+        if (name2 === "display" && !["inline", "inline-block", "block"].includes(value)) return false;
+        if (name2 === "box-sizing" && value !== "border-box") return false;
+        if (name2 === "overflow" && !["visible", "hidden"].includes(value)) return false;
+        if (name2 === "z-index" && !/^[0-9]$/.test(value)) return false;
+        if (!/color|border|--bg-color/.test(name2) && [...value.matchAll(/-?\d+(?:\.\d+)?/g)].some((match) => Math.abs(Number(match[0])) > 1e4)) return false;
+      }
+      return true;
+    }
+    function safeMarkup(fragment) {
+      const elements = fragment.querySelectorAll("*");
+      if (!elements.length || elements.length > MAX_ELEMENTS) return false;
+      for (const element3 of elements) {
+        if (!TAGS.has(element3.localName.toLowerCase())) return false;
+        for (const attribute2 of element3.attributes) {
+          const name2 = attribute2.name.toLowerCase(), value = attribute2.value;
+          if (name2 === "class") {
+            if (!/^[\w -]*$/.test(value)) return false;
+          } else if (name2 === "style") {
+            if (!safeStyles(element3)) return false;
+          } else if (element3.namespaceURI === "http://www.w3.org/2000/svg" && SVG_ATTRIBUTES.has(name2)) {
+            if (name2 === "xmlns" && value === "http://www.w3.org/2000/svg") continue;
+            if (/(?:url|javascript|data|https?)\s*[:(]/i.test(value) || /[<>\\]/.test(value)) return false;
+          } else return false;
+        }
+      }
+      return true;
+    }
+    async function renderEquation(latex, display, doc) {
+      if (!supportedSource(latex) || !doc?.createElement) return null;
+      try {
+        enginePromise || (enginePromise = Promise.resolve().then(() => (init_mathlive_ssr_min(), mathlive_ssr_min_exports)));
+        const { validateLatex, convertLatexToMarkup } = await enginePromise;
+        if (validateLatex(latex).length) return null;
+        const markup = convertLatexToMarkup(`${display ? "\\displaystyle" : "\\textstyle"} ${latex}`, {
+          defaultMode: display ? "math" : "inline-math"
+        });
+        if (!markup || markup.length > MAX_MARKUP_LENGTH) return null;
+        const fragment = sanitizeHTMLToDom(markup);
+        if (!safeMarkup(fragment) || fragment.querySelector(".ML__error")) return null;
+        const rendered = doc.createElement("span");
+        rendered.className = "nn-math-rendered";
+        rendered.setAttribute("role", "math");
+        rendered.setAttribute("aria-label", latex);
+        const visual = doc.createElement("span");
+        visual.className = "nn-math-visual";
+        visual.setAttribute("aria-hidden", "true");
+        visual.appendChild(doc.importNode(fragment, true));
+        rendered.appendChild(visual);
+        return rendered;
+      } catch {
+        return null;
+      }
+    }
+    module2.exports = { renderEquation, supportedSource, MAX_LATEX_LENGTH, MAX_NESTING };
+  }
+});
+
+// src/math-renderer.js
+var require_math_renderer = __commonJS({
+  "src/math-renderer.js"(exports2, module2) {
+    "use strict";
+    var { Component } = require("obsidian");
+    var { renderEquation } = require_math_engine();
+    var MATH = ".math";
+    function equationSource(element3) {
+      const root5 = Array.from(element3.children).find((child) => child.localName === "mjx-container");
+      if (!root5) return null;
+      const math = Array.from(root5.children).find((child) => child.localName === "mjx-math" || child.localName === "svg");
+      const latex = math?.getAttribute("data-latex") ?? root5.querySelector('annotation[encoding="application/x-tex"]')?.textContent;
+      return typeof latex === "string" && latex.trim() ? latex : null;
+    }
+    function sameChildren(element3, children) {
+      return element3.childNodes.length === children.length && children.every((node, index) => element3.childNodes[index] === node);
+    }
+    var MathRenderer2 = class extends Component {
+      constructor(host) {
+        super();
+        this.host = host;
+        this.documents = /* @__PURE__ */ new Map();
+        this.running = false;
+      }
+      enabled() {
+        return this.running && this.host.featureEnabled("mathRendering");
+      }
+      onload() {
+        this.running = true;
+        this.refreshSettings();
+      }
+      attachDocument(doc) {
+        if (!this.enabled() || !doc?.body || !doc.defaultView || this.documents.has(doc)) return;
+        const state = { doc, win: doc.defaultView, pending: /* @__PURE__ */ new Set(), entries: /* @__PURE__ */ new Map(), frame: null, active: true };
+        const collect = (node) => {
+          if (node.nodeType !== 1 || node.closest(".nn-math-rendered")) return;
+          if (node.matches(MATH)) state.pending.add(node);
+          for (const element3 of node.querySelectorAll(MATH)) state.pending.add(element3);
+        };
+        state.observer = new state.win.MutationObserver((records) => {
+          for (const record of records) {
+            const target = record.target.nodeType === 1 ? record.target : record.target.parentElement;
+            if (target?.closest(".nn-math-rendered")) continue;
+            if (record.type === "attributes" && record.attributeName === "class") {
+              if (state.entries.has(target)) state.pending.add(target);
+              collect(target);
+            }
+            const element3 = target?.closest(MATH);
+            if (element3) state.pending.add(element3);
+            for (const node of record.addedNodes) collect(node);
+            for (const node of record.removedNodes) collect(node);
+          }
+          if (state.pending.size) this.schedule(state);
+        });
+        state.observer.observe(doc.body, { subtree: true, childList: true, attributes: true, attributeFilter: ["data-latex", "class"] });
+        this.documents.set(doc, state);
+        collect(doc.body);
+        this.schedule(state);
+      }
+      schedule(state) {
+        if (!state.active || state.frame !== null) return;
+        state.frame = state.win.requestAnimationFrame(() => {
+          state.frame = null;
+          for (const [element3, entry] of state.entries) {
+            if (!element3.isConnected || element3.ownerDocument !== state.doc) this.restore(state, element3, entry);
+          }
+          const pending = Array.from(state.pending).slice(0, 8);
+          for (const element3 of pending) {
+            state.pending.delete(element3);
+            this.updateElement(state, element3);
+          }
+          if (state.pending.size) this.schedule(state);
+        });
+      }
+      eligible(element3) {
+        if (!this.enabled() || !element3.isConnected || !element3.matches(MATH) || !element3.closest(".markdown-rendered, .markdown-source-view.mod-cm6") || element3.closest(".frontmatter, .mod-frontmatter, pre, code, math-field")) return false;
+        return this.host.settings.math[element3.classList.contains("math-block") ? "display" : "inline"];
+      }
+      updateElement(state, element3) {
+        if (element3.ownerDocument !== state.doc) return;
+        let existing = state.entries.get(element3);
+        if (!this.eligible(element3)) {
+          if (existing) this.restore(state, element3, existing);
+          return;
+        }
+        const display = element3.classList.contains("math-block");
+        if (existing && existing.display !== display) {
+          this.restore(state, element3, existing);
+          existing = null;
+        }
+        if (existing) {
+          if (existing.output && sameChildren(element3, [existing.output])) {
+            this.applyOptions(existing.output);
+            return;
+          }
+          if (!existing.output && sameChildren(element3, existing.original) && equationSource(element3) === existing.latex) return;
+          existing.active = false;
+          state.entries.delete(element3);
+        }
+        const latex = equationSource(element3);
+        if (latex === null) return;
+        const entry = { active: true, original: Array.from(element3.childNodes), output: null, latex, display };
+        state.entries.set(element3, entry);
+        void renderEquation(latex, display, state.doc).then((output) => {
+          if (!output || !state.active || !entry.active || element3.ownerDocument !== state.doc || !this.eligible(element3) || element3.classList.contains("math-block") !== display || !sameChildren(element3, entry.original) || equationSource(element3) !== latex) return;
+          output.dataset.display = String(display);
+          if (display) output.tabIndex = 0;
+          this.applyOptions(output);
+          entry.output = output;
+          element3.replaceChildren(output);
+        }).catch((error) => {
+          if (state.active && entry.active) console.error("Native Notes could not render an equation", error);
+        });
+      }
+      applyOptions(output) {
+        output.dataset.scale = String(this.host.settings.math.scale);
+        output.dataset.alignment = this.host.settings.math.alignment;
+      }
+      restore(state, element3, entry) {
+        entry.active = false;
+        if (entry.output && sameChildren(element3, [entry.output])) element3.replaceChildren(...entry.original);
+        state.entries.delete(element3);
+      }
+      detachDocument(doc) {
+        const state = this.documents.get(doc);
+        if (!state) return;
+        state.active = false;
+        state.observer.disconnect();
+        if (state.frame !== null) state.win.cancelAnimationFrame(state.frame);
+        state.pending.clear();
+        for (const [element3, entry] of state.entries) this.restore(state, element3, entry);
+        this.documents.delete(doc);
+      }
+      refreshSettings() {
+        if (!this.enabled()) {
+          for (const doc of this.documents.keys()) this.detachDocument(doc);
+          return;
+        }
+        for (const doc of this.host.documents.keys()) this.attachDocument(doc);
+        for (const state of this.documents.values()) {
+          for (const [element3, entry] of state.entries) {
+            if (!this.eligible(element3)) this.restore(state, element3, entry);
+            else if (entry.output) this.applyOptions(entry.output);
+          }
+          for (const element3 of state.doc.querySelectorAll(MATH)) state.pending.add(element3);
+          this.schedule(state);
+        }
+      }
+      onunload() {
+        this.running = false;
+        for (const doc of this.documents.keys()) this.detachDocument(doc);
+      }
+    };
+    module2.exports = { MathRenderer: MathRenderer2, equationSource };
+  }
+});
+
+// src/math-keyboard.js
+var require_math_keyboard = __commonJS({
+  "src/math-keyboard.js"(exports2, module2) {
+    "use strict";
+    var key2 = (id2, label, description, template) => ({ id: id2, label, description, template });
+    var categories = [
+      { id: "basics", label: "Basics", keys: [
+        key2("fraction", "a/b", "Fraction numerator and denominator", String.raw`\frac{«a»}{«b»}`),
+        key2("power", "x\u207F", "Power superscript exponent", String.raw`{«x»}^{«n»}`),
+        key2("subscript", "x\u2099", "Subscript index", String.raw`{«x»}_{«n»}`),
+        key2("subsup", "x\u1D47\u2090", "Combined subscript and superscript", String.raw`{«x»}_{«a»}^{«b»}`),
+        key2("square-root", "\u221Ax", "Square root radical", String.raw`\sqrt{«x»}`),
+        key2("nth-root", "\u207F\u221Ax", "Nth root radical", String.raw`\sqrt[«n»]{«x»}`),
+        key2("parentheses", "(x)", "Parentheses grouping", String.raw`\left(«x»\right)`),
+        key2("brackets", "[x]", "Square brackets grouping", String.raw`\left[«x»\right]`),
+        key2("braces", "{x}", "Curly braces grouping", String.raw`\left\{«x»\right\}`),
+        key2("absolute", "|x|", "Absolute value magnitude", String.raw`\left\lvert «x»\right\rvert`),
+        key2("plus-minus", "\xB1", "Plus or minus", String.raw`\pm `),
+        key2("minus-plus", "\u2213", "Minus or plus", String.raw`\mp `),
+        key2("multiply", "\xD7", "Multiplication times", String.raw`\times `),
+        key2("dot-product", "\xB7", "Centered dot multiplication", String.raw`\cdot `),
+        key2("division", "\xF7", "Division sign", String.raw`\div `),
+        key2("factorial", "n!", "Factorial", String.raw`«n»!`),
+        key2("binomial", "n choose k", "Binomial coefficient combinations", String.raw`\binom{«n»}{«k»}`),
+        key2("infinity", "\u221E", "Infinity", String.raw`\infty `),
+        key2("text", "Text", "Plain text within an equation", String.raw`\text{«text»}`),
+        key2("thin-space", "Space", "Thin mathematical spacing", String.raw`\,`),
+        key2("degree", "\xB0", "Degree symbol", String.raw`^{\circ}`),
+        key2("percent", "%", "Percent symbol", String.raw`\%`)
+      ] },
+      { id: "numbers", label: "Numbers", keys: [
+        key2("number-7", "7", "Digit seven", "7"),
+        key2("number-8", "8", "Digit eight", "8"),
+        key2("number-9", "9", "Digit nine", "9"),
+        key2("number-divide", "\xF7", "Division sign", String.raw`\div `),
+        key2("number-4", "4", "Digit four", "4"),
+        key2("number-5", "5", "Digit five", "5"),
+        key2("number-6", "6", "Digit six", "6"),
+        key2("number-multiply", "\xD7", "Multiplication times", String.raw`\times `),
+        key2("number-1", "1", "Digit one", "1"),
+        key2("number-2", "2", "Digit two", "2"),
+        key2("number-3", "3", "Digit three", "3"),
+        key2("number-minus", "\u2212", "Subtraction minus negative number", "-"),
+        key2("number-0", "0", "Digit zero", "0"),
+        key2("number-decimal", ".", "Decimal point", "."),
+        key2("number-equals", "=", "Equal to", "="),
+        key2("number-plus", "+", "Addition plus", "+"),
+        key2("variable-x", "x", "Variable x", "x"),
+        key2("variable-y", "y", "Variable y", "y"),
+        key2("variable-z", "z", "Variable z", "z"),
+        key2("constant-e", "e", "Euler number natural exponential base", "e"),
+        key2("constant-pi", "\u03C0", "Circle constant pi", String.raw`\pi `),
+        key2("variable-n", "n", "Variable n integer count", "n"),
+        key2("imaginary-i", "i", "Imaginary unit or variable i", "i"),
+        key2("comma", ",", "Comma separator", ",")
+      ] },
+      { id: "greek", label: "Greek", keys: [
+        ...[
+          ["alpha", "\u03B1"],
+          ["beta", "\u03B2"],
+          ["gamma", "\u03B3"],
+          ["delta", "\u03B4"],
+          ["epsilon", "\u03F5"],
+          ["varepsilon", "\u03B5"],
+          ["zeta", "\u03B6"],
+          ["eta", "\u03B7"],
+          ["theta", "\u03B8"],
+          ["vartheta", "\u03D1"],
+          ["iota", "\u03B9"],
+          ["kappa", "\u03BA"],
+          ["lambda", "\u03BB"],
+          ["mu", "\u03BC"],
+          ["nu", "\u03BD"],
+          ["xi", "\u03BE"],
+          ["pi", "\u03C0"],
+          ["varpi", "\u03D6"],
+          ["rho", "\u03C1"],
+          ["sigma", "\u03C3"],
+          ["varsigma", "\u03C2"],
+          ["tau", "\u03C4"],
+          ["upsilon", "\u03C5"],
+          ["phi", "\u03D5"],
+          ["varphi", "\u03C6"],
+          ["chi", "\u03C7"],
+          ["psi", "\u03C8"],
+          ["omega", "\u03C9"],
+          ["Gamma", "\u0393"],
+          ["Delta", "\u0394"],
+          ["Theta", "\u0398"],
+          ["Lambda", "\u039B"],
+          ["Xi", "\u039E"],
+          ["Pi", "\u03A0"],
+          ["Sigma", "\u03A3"],
+          ["Upsilon", "\u03A5"],
+          ["Phi", "\u03A6"],
+          ["Psi", "\u03A8"],
+          ["Omega", "\u03A9"]
+        ].map(([name2, label]) => key2(`greek-${name2}`, label, `${name2[0] === name2[0].toUpperCase() ? "Uppercase" : "Lowercase"} Greek ${name2}`, `\\${name2} `))
+      ] },
+      { id: "relations", label: "Relations", keys: [
+        key2("equals", "=", "Equal to", "="),
+        key2("not-equal", "\u2260", "Not equal to", String.raw`\ne `),
+        key2("less", "<", "Less than", "<"),
+        key2("greater", ">", "Greater than", ">"),
+        key2("less-equal", "\u2264", "Less than or equal to", String.raw`\le `),
+        key2("greater-equal", "\u2265", "Greater than or equal to", String.raw`\ge `),
+        key2("approximately", "\u2248", "Approximately equal", String.raw`\approx `),
+        key2("equivalent", "\u2261", "Equivalent identical congruence", String.raw`\equiv `),
+        key2("similar", "\u223C", "Similar asymptotic relation", String.raw`\sim `),
+        key2("congruent", "\u2245", "Congruent approximately isomorphic", String.raw`\cong `),
+        key2("proportional", "\u221D", "Proportional to", String.raw`\propto `),
+        key2("much-less", "\u226A", "Much less than", String.raw`\ll `),
+        key2("much-greater", "\u226B", "Much greater than", String.raw`\gg `),
+        key2("perpendicular", "\u22A5", "Perpendicular orthogonal", String.raw`\perp `),
+        key2("parallel", "\u2225", "Parallel relation", String.raw`\parallel `),
+        key2("defined-as", ":=", "Defined as assignment", ":=")
+      ] },
+      { id: "calculus", label: "Calculus", keys: [
+        key2("sum", "\u2211", "Summation with lower and upper limits", String.raw`\sum_{«i=1»}^{«n»} «a_i»`),
+        key2("product", "\u220F", "Product with lower and upper limits", String.raw`\prod_{«i=1»}^{«n»} «a_i»`),
+        key2("integral", "\u222B", "Indefinite integral", String.raw`\int «f(x)»\,d«x»`),
+        key2("definite-integral", "\u222B\u2090\u1D47", "Definite integral with bounds", String.raw`\int_{«a»}^{«b»} «f(x)»\,d«x»`),
+        key2("double-integral", "\u222C", "Double integral", String.raw`\iint_{«D»} «f(x,y)»\,dx\,dy`),
+        key2("triple-integral", "\u222D", "Triple integral", String.raw`\iiint_{«V»} «f(x,y,z)»\,dx\,dy\,dz`),
+        key2("contour-integral", "\u222E", "Closed contour integral", String.raw`\oint_{«C»} «f(z)»\,dz`),
+        key2("limit", "lim", "Limit as variable approaches a value", String.raw`\lim_{«x»\to «a»} «f(x)»`),
+        key2("derivative", "d/dx", "Ordinary derivative", String.raw`\frac{d«y»}{d«x»}`),
+        key2("second-derivative", "d\xB2/dx\xB2", "Second derivative", String.raw`\frac{d^2«y»}{d«x»^2}`),
+        key2("partial-derivative", "\u2202/\u2202x", "Partial derivative", String.raw`\frac{\partial «f»}{\partial «x»}`),
+        key2("partial", "\u2202", "Partial differential symbol", String.raw`\partial `),
+        key2("gradient", "\u2207f", "Gradient nabla operator", String.raw`\nabla «f»`),
+        key2("divergence", "\u2207\xB7F", "Divergence of vector field", String.raw`\nabla\cdot «\mathbf{F}»`),
+        key2("curl", "\u2207\xD7F", "Curl of vector field", String.raw`\nabla\times «\mathbf{F}»`),
+        key2("laplacian", "\u2207\xB2f", "Laplacian operator", String.raw`\nabla^2 «f»`),
+        key2("prime", "f\u2032", "Prime derivative notation", String.raw`«f»^{\prime}`)
+      ] },
+      { id: "matrices", label: "Linear algebra", keys: [
+        key2("matrix-2", "2\xD72", "Two by two matrix with parentheses", String.raw`\begin{pmatrix}«a»&«b»\\«c»&«d»\end{pmatrix}`),
+        key2("matrix-3", "3\xD73", "Three by three matrix with brackets", String.raw`\begin{bmatrix}«a»&«b»&«c»\\«d»&«e»&«f»\\«g»&«h»&«i»\end{bmatrix}`),
+        key2("column-vector", "Column", "Column vector three entries", String.raw`\begin{pmatrix}«x»\\«y»\\«z»\end{pmatrix}`),
+        key2("row-vector", "Row", "Row vector three entries", String.raw`\begin{pmatrix}«x»&«y»&«z»\end{pmatrix}`),
+        key2("determinant-matrix", "|A|", "Two by two determinant matrix", String.raw`\begin{vmatrix}«a»&«b»\\«c»&«d»\end{vmatrix}`),
+        key2("determinant", "det A", "Determinant operator", String.raw`\det\left(«A»\right)`),
+        key2("transpose", "A\u1D40", "Matrix transpose", String.raw`{«A»}^{\mathsf{T}}`),
+        key2("inverse", "A\u207B\xB9", "Matrix inverse", String.raw`{«A»}^{-1}`),
+        key2("norm", "\u2016x\u2016", "Vector norm", String.raw`\left\lVert «x»\right\rVert`),
+        key2("inner-product", "\u27E8x,y\u27E9", "Inner product angle brackets", String.raw`\left\langle «x»,«y»\right\rangle`),
+        key2("bold-vector", "\u{1D42F}", "Bold vector or matrix", String.raw`\mathbf{«v»}`),
+        key2("cases", "Cases", "Piecewise function two cases", String.raw`\begin{cases}«x^2»&\text{«if x>0»}\\«0»&\text{«otherwise»}\end{cases}`),
+        key2("aligned", "Align", "Two aligned equations", String.raw`\begin{aligned}«x»&=«a»\\«y»&=«b»\end{aligned}`),
+        key2("diagonal-dots", "\u22F1", "Diagonal dots in matrices", String.raw`\ddots `),
+        key2("vertical-dots", "\u22EE", "Vertical dots in matrices", String.raw`\vdots `)
+      ] },
+      { id: "sets", label: "Sets and logic", keys: [
+        key2("reals", "\u211D", "Real numbers", String.raw`\mathbb{R}`),
+        key2("integers", "\u2124", "Integers", String.raw`\mathbb{Z}`),
+        key2("naturals", "\u2115", "Natural numbers", String.raw`\mathbb{N}`),
+        key2("rationals", "\u211A", "Rational numbers", String.raw`\mathbb{Q}`),
+        key2("complex", "\u2102", "Complex numbers", String.raw`\mathbb{C}`),
+        key2("member", "\u2208", "Element of membership", String.raw`\in `),
+        key2("not-member", "\u2209", "Not an element of", String.raw`\notin `),
+        key2("subset", "\u2282", "Strict subset", String.raw`\subset `),
+        key2("subset-equal", "\u2286", "Subset or equal", String.raw`\subseteq `),
+        key2("superset", "\u2287", "Superset or equal", String.raw`\supseteq `),
+        key2("union", "\u222A", "Set union", String.raw`\cup `),
+        key2("intersection", "\u2229", "Set intersection", String.raw`\cap `),
+        key2("set-minus", "\u2216", "Set difference", String.raw`\setminus `),
+        key2("empty-set", "\u2205", "Empty set", String.raw`\emptyset `),
+        key2("forall", "\u2200", "For all universal quantifier", String.raw`\forall `),
+        key2("exists", "\u2203", "There exists existential quantifier", String.raw`\exists `),
+        key2("not-exists", "\u2204", "There does not exist", String.raw`\nexists `),
+        key2("logical-and", "\u2227", "Logical and conjunction", String.raw`\land `),
+        key2("logical-or", "\u2228", "Logical or disjunction", String.raw`\lor `),
+        key2("logical-not", "\xAC", "Logical not negation", String.raw`\neg `),
+        key2("therefore", "\u2234", "Therefore", String.raw`\therefore `),
+        key2("because", "\u2235", "Because", String.raw`\because `)
+      ] },
+      { id: "functions", label: "Functions", keys: [
+        ...["sin", "cos", "tan", "cot", "sec", "csc", "arcsin", "arccos", "arctan", "sinh", "cosh", "tanh", "ln", "log", "exp", "min", "max"].map((name2) => key2(`function-${name2}`, name2, `${name2} function of an argument`, `\\${name2}\\left(\xABx\xBB\\right)`)),
+        key2("log-base", "log\u1D66", "Logarithm with arbitrary base", String.raw`\log_{«b»}\left(«x»\right)`),
+        key2("exponential", "e\u02E3", "Natural exponential", String.raw`e^{«x»}`),
+        key2("function", "f(x)", "Function notation", String.raw`«f»\left(«x»\right)`),
+        key2("floor", "\u230Ax\u230B", "Floor integer part", String.raw`\left\lfloor «x»\right\rfloor`),
+        key2("ceiling", "\u2308x\u2309", "Ceiling integer rounding", String.raw`\left\lceil «x»\right\rceil`),
+        key2("modulo", "mod n", "Modulo congruence", String.raw`\pmod{«n»}`),
+        key2("named-operator", "Operator", "Named mathematical operator", String.raw`\operatorname{«name»}\left(«x»\right)`)
+      ] },
+      { id: "probability", label: "Probability and statistics", keys: [
+        key2("probability", "Pr(A)", "Probability of an event", String.raw`\Pr\left(«A»\right)`),
+        key2("conditional-probability", "Pr(A|B)", "Conditional probability given an event", String.raw`\Pr\left(«A»\mid «B»\right)`),
+        key2("expectation", "E[X]", "Expected value expectation", String.raw`\mathbb{E}\left[«X»\right]`),
+        key2("variance", "Var(X)", "Variance of a random variable", String.raw`\operatorname{Var}\left(«X»\right)`),
+        key2("standard-deviation", "\u03C3\u2093", "Standard deviation of a random variable", String.raw`\sigma_{«X»}`),
+        key2("sample-deviation", "s\u2093", "Sample standard deviation", String.raw`s_{«x»}`),
+        key2("sample-mean", "x\u0304", "Sample mean average", String.raw`\bar{«x»}`),
+        key2("population-mean", "\u03BC\u2093", "Population mean", String.raw`\mu_{«X»}`),
+        key2("covariance", "Cov(X,Y)", "Covariance of two random variables", String.raw`\operatorname{Cov}\left(«X»,«Y»\right)`),
+        key2("correlation", "\u03C1\u2093\u1D67", "Correlation coefficient", String.raw`\rho_{«X»,«Y»}`),
+        key2("normal-distribution", "Normal", "Normal Gaussian probability distribution", String.raw`«X»\sim\mathcal{N}\left(«\mu»,«\sigma^2»\right)`),
+        key2("binomial-distribution", "Binomial", "Binomial probability distribution", String.raw`«X»\sim\operatorname{Bin}\left(«n»,«p»\right)`),
+        key2("bernoulli-distribution", "Bernoulli", "Bernoulli probability distribution", String.raw`«X»\sim\operatorname{Bernoulli}\left(«p»\right)`),
+        key2("poisson-distribution", "Poisson", "Poisson probability distribution", String.raw`«X»\sim\operatorname{Pois}\left(«\lambda»\right)`),
+        key2("uniform-distribution", "Uniform", "Uniform probability distribution", String.raw`«X»\sim\mathcal{U}\left(«a»,«b»\right)`),
+        key2("density", "f\u2093(x)", "Probability density or mass function", String.raw`f_{«X»}\left(«x»\right)`),
+        key2("cumulative-distribution", "F\u2093(x)", "Cumulative distribution function CDF", String.raw`F_{«X»}\left(«x»\right)`),
+        key2("sample-variance", "Sample variance", "Unbiased sample variance formula", String.raw`\frac{1}{«n»-1}\sum_{i=1}^{«n»}\left(«x_i»-\bar{x}\right)^2`)
+      ] },
+      { id: "accents", label: "Accents and styles", keys: [
+        key2("vector-arrow", "v\u20D7", "Vector arrow accent", String.raw`\vec{«v»}`),
+        key2("hat", "x\u0302", "Hat estimate accent", String.raw`\hat{«x»}`),
+        key2("wide-hat", "\xE2b", "Wide hat accent", String.raw`\widehat{«AB»}`),
+        key2("bar", "x\u0304", "Bar mean conjugate accent", String.raw`\bar{«x»}`),
+        key2("overline", "AB\u0305", "Overline segment or complement", String.raw`\overline{«AB»}`),
+        key2("underline", "x\u0332", "Underline", String.raw`\underline{«x»}`),
+        key2("tilde", "x\u0303", "Tilde approximation accent", String.raw`\tilde{«x»}`),
+        key2("dot", "\u1E8B", "Dot time derivative", String.raw`\dot{«x»}`),
+        key2("double-dot", "\u1E8D", "Double dot second time derivative", String.raw`\ddot{«x»}`),
+        key2("overbrace", "Overbrace", "Overbrace with annotation", String.raw`\overbrace{«a+b»}^{«n»}`),
+        key2("underbrace", "Underbrace", "Underbrace with annotation", String.raw`\underbrace{«a+b»}_{«n»}`),
+        key2("cancel", "Cancel", "Diagonal cancellation mark", String.raw`\cancel{«x»}`),
+        key2("boxed", "Box", "Boxed result", String.raw`\boxed{«x»}`),
+        key2("upright", "Upright", "Upright roman letters", String.raw`\mathrm{«x»}`),
+        key2("calligraphic", "\u{1D49C}", "Calligraphic script letter", String.raw`\mathcal{«A»}`),
+        key2("blackboard", "\u{1D538}", "Blackboard bold letter", String.raw`\mathbb{«A»}`),
+        key2("bold", "Bold", "Bold mathematical letters", String.raw`\mathbf{«x»}`)
+      ] },
+      { id: "arrows", label: "Arrows", keys: [
+        key2("right-arrow", "\u2192", "Right arrow tends to maps to", String.raw`\to `),
+        key2("left-arrow", "\u2190", "Left arrow", String.raw`\leftarrow `),
+        key2("both-arrow", "\u2194", "Left right arrow", String.raw`\leftrightarrow `),
+        key2("implies", "\u21D2", "Implies implication", String.raw`\Rightarrow `),
+        key2("implied-by", "\u21D0", "Implied by", String.raw`\Leftarrow `),
+        key2("iff", "\u21D4", "If and only if equivalence", String.raw`\Leftrightarrow `),
+        key2("maps-to", "\u21A6", "Maps to function mapping", String.raw`\mapsto `),
+        key2("up-arrow", "\u2191", "Up arrow", String.raw`\uparrow `),
+        key2("down-arrow", "\u2193", "Down arrow", String.raw`\downarrow `),
+        key2("labeled-arrow", "a \u2192 b", "Right arrow with an annotation", String.raw`\xrightarrow{«label»}`),
+        key2("long-arrow", "\u27F6", "Long right arrow", String.raw`\longrightarrow `),
+        key2("equilibrium-arrow", "\u21CC", "Equilibrium reversible reaction arrows", String.raw`\rightleftharpoons `)
+      ] },
+      { id: "chemistry", label: "Chemistry", keys: [
+        key2("chemical-formula", "H\u2082O", "Chemical formula with upright element letters", String.raw`\mathrm{«H»}_{«2»}\mathrm{«O»}`),
+        key2("chemical-ion", "Na\u207A", "Ion charge superscript", String.raw`\mathrm{«Na»}^{«+»}`),
+        key2("isotope", "\xB9\u2074C", "Isotope mass and atomic numbers", String.raw`{}^{«14»}_{«6»}\mathrm{«C»}`),
+        key2("reaction", "Reaction", "Chemical reaction with coefficients", String.raw`«2»\mathrm{«H_2»}+\mathrm{«O_2»}\to «2»\mathrm{«H_2O»}`),
+        key2("reversible-reaction", "Reversible", "Reversible chemical reaction", String.raw`\mathrm{«A»}\rightleftharpoons\mathrm{«B»}`),
+        key2("reaction-condition", "Heat \u2192", "Reaction arrow with condition", String.raw`\xrightarrow{\text{«heat»}}`),
+        key2("state-aqueous", "(aq)", "Aqueous chemical state", String.raw`\mathrm{(aq)}`),
+        key2("state-gas", "(g)", "Gas chemical state", String.raw`\mathrm{(g)}`),
+        key2("chemical-bond", "A\u2013B", "Single bond between upright element letters", String.raw`\mathrm{«A»}{-}\mathrm{«B»}`),
+        key2("electron", "e\u207B", "Electron with negative charge", String.raw`e^{-}`)
+      ] }
+    ];
+    function applyTemplate(value, start, end, template) {
+      if (typeof value !== "string" || typeof template !== "string") throw new TypeError("Equation and template must be text.");
+      const offset = (input) => Math.max(0, Math.min(value.length, Number.isFinite(input) ? Math.trunc(input) : 0));
+      const from = Math.min(offset(start), offset(end)), to2 = Math.max(offset(start), offset(end));
+      const selected = value.slice(from, to2), slots = [];
+      let insertion = "", cursor = 0;
+      for (const match of template.matchAll(/«([^«»]*)»/g)) {
+        insertion += template.slice(cursor, match.index);
+        const slotValue = slots.length === 0 && selected ? selected : match[1];
+        const slotStart = from + insertion.length;
+        insertion += slotValue;
+        slots.push({ from: slotStart, to: from + insertion.length });
+        cursor = match.index + match[0].length;
+      }
+      insertion += template.slice(cursor);
+      if (/[«»]/.test(template.replace(/«([^«»]*)»/g, ""))) throw new Error("Unbalanced equation template slot.");
+      const next = slots[selected ? 1 : 0];
+      const caret = from + insertion.length;
+      return { value: value.slice(0, from) + insertion + value.slice(to2), start: next?.from ?? caret, end: next?.to ?? caret, slots };
+    }
+    function findKeys(query = "") {
+      const terms = String(query).toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+      return categories.flatMap((category) => category.keys.filter((item) => {
+        const text3 = `${category.label} ${item.label} ${item.description} ${item.template}`.toLocaleLowerCase();
+        return terms.every((term) => text3.includes(term));
+      }).map((item) => ({ ...item, categoryId: category.id, categoryLabel: category.label })));
+    }
+    module2.exports = { categories, applyTemplate, findKeys };
+  }
+});
+
+// src/math-source.js
+var require_math_source = __commonJS({
+  "src/math-source.js"(exports2, module2) {
+    "use strict";
+    var { scanFences } = require_fence();
+    var { applyTemplate } = require_math_keyboard();
+    function linesOf(text3) {
+      const lines = [];
+      const pattern = /([^\r\n]*)(\r\n|\r|\n|$)/g;
+      let match;
+      while (match = pattern.exec(text3)) {
+        lines.push({ text: match[1], from: match.index, to: match.index + match[1].length, end: match.index + match[0].length });
+        if (!match[2]) break;
+      }
+      return lines;
+    }
+    function escaped(text3, index) {
+      let count2 = 0;
+      while (index > 0 && text3[--index] === "\\") count2++;
+      return count2 % 2 === 1;
+    }
+    function overlap(from, to2, range) {
+      return from === to2 ? from >= range.from && from < range.to : from < range.to && to2 > range.from;
+    }
+    function indentWidth(text3, start = 0) {
+      let width = start;
+      for (const char of text3) width += char === "	" ? 4 - width % 4 : 1;
+      return width - start;
+    }
+    function hasTablePipe(text3) {
+      return [...text3.matchAll(/\|/g)].some((match) => !escaped(text3, match.index));
+    }
+    function escapeTablePipes(text3) {
+      return text3.replace(/\|/g, (pipe, index) => escaped(text3, index) ? pipe : "\\|");
+    }
+    function lineContexts(lines, protectedSource) {
+      const contexts = [];
+      let lists = [], previousQuoteDepth = 0;
+      for (const line of lines) {
+        let text3 = line.text, quoteDepth = 0, quote;
+        while (quote = /^ {0,3}>[ \t]?/.exec(text3)) {
+          text3 = text3.slice(quote[0].length);
+          quoteDepth++;
+        }
+        if (quoteDepth !== previousQuoteDepth) lists = [];
+        previousQuoteDepth = quoteDepth;
+        const indent = indentWidth(/^[ \t]*/.exec(text3)[0]);
+        const content = text3.trimStart(), marker = /^(?:[-+*]|\d{1,9}[.)])([ \t]+)(?=\S)/.exec(content);
+        const protectedLine = protectedSource.some((range) => range.from <= line.from && range.to >= line.to);
+        if (content && !protectedLine) {
+          while (lists.length && indent < lists.at(-1).contentIndent) lists.pop();
+        }
+        const code = indent >= (lists.at(-1)?.contentIndent || 0) + 4;
+        if (content && !protectedLine && marker && !code) {
+          const markerLength = marker[0].length - marker[1].length;
+          const padding = indentWidth(marker[1], indent + markerLength);
+          lists.push({ contentIndent: indent + markerLength + (padding <= 4 ? padding : 1) });
+        }
+        contexts.push({ code, table: false, text: text3, quoteDepth, protected: protectedLine });
+      }
+      for (let index = 1; index < contexts.length; index++) {
+        const row = contexts[index], header = contexts[index - 1];
+        if (row.code || row.protected || header.code || header.protected || row.quoteDepth !== header.quoteDepth || !hasTablePipe(row.text) || !hasTablePipe(header.text)) continue;
+        const cells2 = row.text.trim().replace(/^\|/, "").replace(/\|$/, "").split("|");
+        if (!cells2.length || !cells2.every((cell) => /^\s*:?-+:?\s*$/.test(cell))) continue;
+        row.table = header.table = true;
+        for (let next = index + 1; next < contexts.length; next++) {
+          const candidate = contexts[next];
+          if (candidate.code || candidate.protected || candidate.quoteDepth !== row.quoteDepth || !hasTablePipe(candidate.text)) break;
+          candidate.table = true;
+        }
+      }
+      return contexts;
+    }
+    function protectedRanges(text3, lines) {
+      const ranges = scanFences(text3).map((fence) => ({
+        from: fence.openingStart,
+        to: fence.lineEnd === null ? fence.bodyEnd + (fence.bodyEnd === text3.length ? 1 : 0) : lines[fence.lineEnd].end + (lines[fence.lineEnd].end === text3.length ? 1 : 0)
+      }));
+      if (/^\uFEFF?---[ \t]*$/.test(lines[0].text)) {
+        const end = lines.findIndex((line, index) => index > 0 && /^(?:---|\.\.\.)[ \t]*$/.test(line.text));
+        ranges.push({ from: 0, to: end < 0 ? text3.length + 1 : lines[end].end + (lines[end].end === text3.length ? 1 : 0) });
+      }
+      ranges.sort((a, b2) => a.from - b2.from);
+      const spans = [];
+      let block = 0;
+      for (let index = 0; index < text3.length; ) {
+        while (block < ranges.length && ranges[block].to <= index) block++;
+        if (ranges[block]?.from <= index) {
+          index = ranges[block].to;
+          continue;
+        }
+        if (escaped(text3, index)) {
+          index++;
+          continue;
+        }
+        const comment4 = text3.startsWith("%%", index) ? "%%" : text3.startsWith("<!--", index) ? "-->" : null;
+        if (comment4) {
+          const openingLength = comment4 === "%%" ? 2 : 4;
+          const end = text3.indexOf(comment4, index + openingLength);
+          const to2 = end < 0 ? text3.length + 1 : end + comment4.length;
+          spans.push({ from: index, to: to2 });
+          index = to2;
+          continue;
+        }
+        if (text3[index] === "`") {
+          const run = /^`+/.exec(text3.slice(index))[0];
+          const ticks = /`+/g;
+          ticks.lastIndex = index + run.length;
+          let close;
+          while ((close = ticks.exec(text3)) && close[0].length !== run.length) {
+          }
+          const lineEnd = text3.indexOf("\n", index);
+          const to2 = close ? close.index + run.length : lineEnd < 0 ? text3.length + 1 : lineEnd;
+          spans.push({ from: index, to: to2 });
+          index = to2;
+          continue;
+        }
+        index++;
+      }
+      return ranges.concat(spans);
+    }
+    function dollarTokens(text3, protectedSource) {
+      const tokens = [];
+      for (let index = 0; index < text3.length; index++) {
+        if (text3[index] !== "$" || escaped(text3, index) || protectedSource.some((range) => overlap(index, index + 1, range))) continue;
+        const from = index;
+        while (text3[index + 1] === "$") index++;
+        tokens.push({ 0: text3.slice(from, index + 1), index: from });
+      }
+      return tokens;
+    }
+    function equationRanges(text3, lines, protectedSource, contexts) {
+      const tokens = dollarTokens(text3, protectedSource);
+      const equations = [], ambiguous = [];
+      for (let index = 0; index < tokens.length; index++) {
+        const token = tokens[index], from = token.index, length = token[0].length;
+        const lineIndex = position(lines, from).line, line = lines[lineIndex], lineContext = contexts[lineIndex];
+        const display = length === 2;
+        if (length > 2 || display && !/^ {0,3}$/.test(text3.slice(line.from, from))) {
+          ambiguous.push({ from, to: line.end || line.to + 1 });
+          continue;
+        }
+        let closing2 = index + 1;
+        for (; closing2 < tokens.length; closing2++) {
+          const candidate = tokens[closing2];
+          if (!display && candidate.index > line.to) break;
+          if (candidate[0].length === length) break;
+        }
+        const close = tokens[closing2];
+        const validClose = close && close[0].length === length && (display || close.index <= line.to);
+        const to2 = validClose ? close.index + length : display ? text3.length : line.to;
+        const source = validClose ? text3.slice(from + length, close.index) : "";
+        const closingLine = validClose && lines[position(lines, close.index).line];
+        const valid2 = validClose && (display ? !text3.slice(to2, closingLine.to).trim() : source.trim() && source === source.trim() && !lineContext.code && (!lineContext.table || !hasTablePipe(source))) && !protectedSource.some((range) => overlap(from, to2, range));
+        if (valid2) {
+          equations.push({ from, to: to2, source: display ? source.replace(/^(?:\r\n|\r|\n)/, "").replace(/(?:\r\n|\r|\n)$/, "") : source, display });
+          index = closing2;
+        } else {
+          ambiguous.push({ from, to: Math.max(from + length, to2 + 1) });
+          if (validClose) index = closing2;
+        }
+      }
+      return { equations, ambiguous };
+    }
+    function scanMathEquations(snapshot, view) {
+      if (typeof snapshot !== "string") return [];
+      const lines = linesOf(snapshot), protectedSource = protectedRanges(snapshot, lines);
+      const contexts = lineContexts(lines, protectedSource);
+      const { equations } = equationRanges(snapshot, lines, protectedSource, contexts);
+      return equations.map((range) => {
+        const delimiter = range.display ? 2 : 1, contentFrom = range.from + delimiter, contentTo = range.to - delimiter;
+        const source = snapshot.slice(contentFrom, contentTo), caret = contentFrom + source.trimEnd().length;
+        const table = contexts[position(lines, range.from).line].table;
+        return {
+          source,
+          display: range.display,
+          complete: true,
+          contentFrom,
+          contentTo,
+          delimiterFrom: range.from,
+          delimiterTo: range.to,
+          selectionFrom: caret,
+          selectionTo: caret,
+          snapshot,
+          filePath: view?.file?.path || null,
+          ...table ? { table: true } : {}
+        };
+      });
+    }
+    function position(lines, offset2) {
+      let low = 0, high = lines.length - 1;
+      while (low <= high) {
+        const index = low + high >>> 1, line = lines[index];
+        if (offset2 < line.from) high = index - 1;
+        else if (offset2 > line.to) low = index + 1;
+        else return { line: index, ch: offset2 - line.from };
+      }
+      return null;
+    }
+    function offset(lines, cursor) {
+      if (!cursor || !Number.isInteger(cursor.line) || !Number.isInteger(cursor.ch)) return null;
+      const line = lines[cursor.line];
+      return line && cursor.ch >= 0 && cursor.ch <= line.text.length ? line.from + cursor.ch : null;
+    }
+    function captureEquation(editor, view) {
+      if (!editor?.getValue || !editor.getCursor) return null;
+      const snapshot = editor.getValue();
+      if (typeof snapshot !== "string") return null;
+      const lines = linesOf(snapshot);
+      let from = offset(lines, editor.getCursor("from")), to2 = offset(lines, editor.getCursor("to"));
+      if (from === null || to2 === null || from > to2) return null;
+      const protectedSource = protectedRanges(snapshot, lines);
+      if (protectedSource.some((range) => overlap(from, to2, range))) return null;
+      const contexts = lineContexts(lines, protectedSource);
+      const { equations, ambiguous } = equationRanges(snapshot, lines, protectedSource, contexts);
+      if (ambiguous.some((range) => overlap(from, to2, range))) return null;
+      const containing = equations.filter((range) => from >= range.from && to2 <= range.to);
+      const existing = containing.length === 1 ? containing[0] : null;
+      if (containing.length > 1 || equations.some((range) => range !== existing && overlap(from, to2, range))) return null;
+      let source = snapshot.slice(from, to2), display = false;
+      if (existing) {
+        ({ from, to: to2, source, display } = existing);
+      }
+      const first = position(lines, from), last = position(lines, to2);
+      if (!first || !last) return null;
+      const selectedLines = lines.slice(first.line, last.line + 1);
+      const selectedContexts = contexts.slice(first.line, last.line + 1), table = selectedContexts.some((context) => context.table);
+      if (!display && selectedContexts.some((context) => context.code)) return null;
+      if (table && !existing && (first.line !== last.line || hasTablePipe(source))) return null;
+      const displayAllowed = display || !table && selectedLines.every((line) => !/^(?:[ \t]+| {0,3}>| {0,3}(?:[-+*]|\d{1,9}[.)])[ \t]+)/.test(line.text));
+      return {
+        source,
+        display,
+        from: first,
+        to: last,
+        snapshot,
+        filePath: view?.file?.path || null,
+        existing: !!existing,
+        displayAllowed,
+        ...table ? { table: true } : {}
+      };
+    }
+    function applyEquation(editor, capture, latex, display) {
+      if (!capture || !editor?.getValue || !editor.replaceRange || editor.getValue() !== capture.snapshot || typeof latex !== "string" || typeof display !== "boolean") return false;
+      const source = latex.trim();
+      if (!source || !display && (/[\r\n]/.test(source) || escaped(source, source.length)) || display && capture.displayAllowed === false || [...source.matchAll(/\$/g)].some((match) => !escaped(source, match.index))) return false;
+      const lines = linesOf(capture.snapshot), from = offset(lines, capture.from), to2 = offset(lines, capture.to);
+      if (from === null || to2 === null || from > to2) return false;
+      let replacement = `$${capture.table ? escapeTablePipes(source) : source}$`;
+      if (display) {
+        const newline = /\r\n|\r|\n/.exec(capture.snapshot)?.[0] || "\n";
+        const before = capture.snapshot.slice(lines[capture.from.line].from, from);
+        const after = capture.snapshot.slice(to2, lines[capture.to.line].to);
+        replacement = `${before.trim() ? newline + newline : ""}$$${newline}${source.replace(/\r\n|\r|\n/g, newline)}${newline}$$${after.trim() ? newline + newline : ""}`;
+      }
+      editor.replaceRange(replacement, capture.from, capture.to);
+      return editor.getValue() !== capture.snapshot || capture.snapshot.slice(from, to2) === replacement;
+    }
+    function findActiveMath(editor, view, previous = null) {
+      if (!editor?.getValue || !editor.getCursor) return null;
+      const snapshot = editor.getValue();
+      if (typeof snapshot !== "string") return null;
+      const lines = linesOf(snapshot);
+      const selectionFrom = offset(lines, editor.getCursor("from")), selectionTo = offset(lines, editor.getCursor("to"));
+      if (selectionFrom === null || selectionTo === null || selectionFrom > selectionTo) return null;
+      const protectedSource = protectedRanges(snapshot, lines);
+      if (protectedSource.some((range) => overlap(selectionFrom, selectionTo, range))) return null;
+      const contexts = lineContexts(lines, protectedSource);
+      const filePath = view?.file?.path || null, tokens = dollarTokens(snapshot, protectedSource);
+      const continuingAt = (from) => previous?.contentFrom === from + 1 && previous.delimiterFrom === from && previous.filePath === filePath && typeof previous.snapshot === "string" && snapshot.slice(0, from + 1) === previous.snapshot.slice(0, from + 1);
+      const context = (delimiterFrom, contentFrom, contentTo, delimiterTo, display, complete) => {
+        if (selectionFrom < contentFrom || selectionTo > contentTo || protectedSource.some((range) => overlap(delimiterFrom, delimiterTo, range))) return null;
+        const rowContext = contexts[position(lines, delimiterFrom).line], source = snapshot.slice(contentFrom, contentTo);
+        if (!display && (rowContext.code || rowContext.table && hasTablePipe(source))) return null;
+        return {
+          source,
+          display,
+          complete,
+          contentFrom,
+          contentTo,
+          delimiterFrom,
+          delimiterTo,
+          selectionFrom,
+          selectionTo,
+          snapshot,
+          filePath,
+          ...rowContext.table ? { table: true } : {}
+        };
+      };
+      for (let index = 0; index < tokens.length; index++) {
+        const token = tokens[index], from = token.index, length = token[0].length;
+        const row = lines[position(lines, from).line], root5 = /^ {0,3}$/.test(snapshot.slice(row.from, from));
+        const nextToken = tokens[index + 1];
+        if (length === 2 && nextToken?.[0].length !== 2 && selectionFrom === from + 1 && selectionTo === selectionFrom) {
+          return context(from, from + 1, from + 1, from + 2, false, true);
+        }
+        if (length === 4 && root5 && !snapshot.slice(from + 4, row.to).trim()) {
+          const found2 = context(from, from + 2, from + 2, from + 4, true, true);
+          if (found2) return found2;
+          continue;
+        }
+        if (length > 2 || length === 2 && !root5) continue;
+        const display = length === 2, next = tokens[index + 1];
+        const close = next && next[0].length === length && (display || next.index <= row.to) ? next : null;
+        if (close) {
+          const body4 = snapshot.slice(from + length, close.index);
+          const closingRow = lines[position(lines, close.index).line];
+          const valid2 = display ? !snapshot.slice(close.index + length, closingRow.to).trim() : !body4.trim() || body4 === body4.trim() || continuingAt(from);
+          if (!valid2) {
+            if (selectionFrom >= from && selectionTo <= (display ? closingRow.to : row.to)) return null;
+            continue;
+          }
+          const found2 = context(from, from + length, close.index, close.index + length, display, true);
+          if (found2) return found2;
+          index++;
+          continue;
+        }
+        let contentTo = display ? snapshot.length : row.to;
+        if (!display && contexts[position(lines, from).line].table) {
+          for (let pipe = from + 1; pipe < contentTo; pipe++) {
+            if (snapshot[pipe] === "|" && !escaped(snapshot, pipe)) {
+              contentTo = pipe;
+              break;
+            }
+          }
+          const caretEnd = Math.min(selectionTo, contentTo);
+          while (contentTo > from + 1 && /[ \t]/.test(snapshot[contentTo - 1])) contentTo--;
+          contentTo = Math.max(contentTo, caretEnd);
+        }
+        if (next && next.index < contentTo) continue;
+        if (display) {
+          const found2 = context(from, from + 2, contentTo, contentTo, true, false);
+          if (found2) return found2;
+          continue;
+        }
+        const before = snapshot[from - 1] || "", body3 = snapshot.slice(from + 1, contentTo);
+        if (before && !/[\s()[\]{}.,:;!?=+*/<>|-]/.test(before)) continue;
+        const continuing = continuingAt(from);
+        const mathLike = /^\\[A-Za-z]*|^[A-Za-z](?=$|[\s_^+*/=<>()[\]{}.,:;!|\\-])|^[({[]/.test(body3) || /^\d[\d\s.,]*[_^+*/=<>\\-]/.test(body3);
+        if (!continuing && body3 && !mathLike) continue;
+        if (!continuing && !body3 && selectionFrom !== from + 1) continue;
+        const found = context(from, from + 1, contentTo, contentTo, false, false);
+        if (found) return found;
+      }
+      return null;
+    }
+    function captureActiveEquation(editor, view, previous = null) {
+      const active = findActiveMath(editor, view, previous);
+      if (!active) return null;
+      const lines = linesOf(active.snapshot), from = position(lines, active.delimiterFrom), to2 = position(lines, active.delimiterTo);
+      if (!from || !to2) return null;
+      const displayAllowed = active.display || !active.table && lines.slice(from.line, to2.line + 1).every((line) => !/^(?:[ \t]+| {0,3}>| {0,3}(?:[-+*]|\d{1,9}[.)])[ \t]+)/.test(line.text));
+      return {
+        source: active.display ? active.source.replace(/^(?:\r\n|\r|\n)/, "").replace(/(?:\r\n|\r|\n)$/, "") : active.source,
+        display: active.display,
+        from,
+        to: to2,
+        snapshot: active.snapshot,
+        filePath: active.filePath,
+        existing: true,
+        displayAllowed,
+        ...active.table ? { table: true } : {}
+      };
+    }
+    function planMathInsertion(editor, current, template) {
+      if (!current || !editor?.getValue || !editor.getCursor || editor.getValue() !== current.snapshot || typeof template !== "string") return null;
+      const view = { file: { path: current.filePath } }, active = findActiveMath(editor, view, current);
+      if (!active || ["contentFrom", "contentTo", "delimiterFrom", "delimiterTo", "selectionFrom", "selectionTo", "display", "complete"].some((key2) => active[key2] !== current[key2])) return null;
+      let next;
+      try {
+        next = applyTemplate(
+          active.source,
+          active.selectionFrom - active.contentFrom,
+          active.selectionTo - active.contentFrom,
+          active.table ? escapeTablePipes(template) : template
+        );
+      } catch {
+        return null;
+      }
+      if (next.value.length > 8192 || !active.display && /[\r\n]/.test(next.value) || [...next.value.matchAll(/\$/g)].some((match) => !escaped(next.value, match.index))) return null;
+      const before = active.selectionFrom - active.contentFrom, after = active.contentTo - active.selectionTo;
+      const insertion = next.value.slice(before, next.value.length - after);
+      const lines = linesOf(active.snapshot);
+      const from = position(lines, active.selectionFrom), to2 = position(lines, active.selectionTo);
+      if (!from || !to2) return null;
+      const updated = active.snapshot.slice(0, active.selectionFrom) + insertion + active.snapshot.slice(active.selectionTo);
+      const updatedLines = linesOf(updated), selectionFrom = active.contentFrom + next.start, selectionTo = active.contentFrom + next.end;
+      const start = position(updatedLines, selectionFrom), end = position(updatedLines, selectionTo);
+      if (!start || !end) return null;
+      const nextContext = findActiveMath({ getValue: () => updated, getCursor: (edge) => edge === "from" ? start : end }, view, active);
+      if (!nextContext) return null;
+      return {
+        context: nextContext,
+        selectionFrom,
+        selectionTo,
+        change: { from, to: to2, text: insertion },
+        selection: { from: start, to: end },
+        slots: next.slots.map((slot) => ({ from: active.contentFrom + slot.from, to: active.contentFrom + slot.to }))
+      };
+    }
+    function applyMathInsertion(editor, current, template) {
+      if (!editor?.replaceRange || !editor.setSelection) return null;
+      const plan = planMathInsertion(editor, current, template);
+      if (!plan) return null;
+      editor.replaceRange(plan.change.text, plan.change.from, plan.change.to);
+      if (editor.getValue() !== plan.context.snapshot) return null;
+      editor.setSelection(plan.selection.from, plan.selection.to);
+      return plan;
+    }
+    module2.exports = { captureEquation, applyEquation, findActiveMath, captureActiveEquation, applyMathInsertion, planMathInsertion, scanMathEquations };
+  }
+});
+
+// src/math-composer.js
+var require_math_composer = __commonJS({
+  "src/math-composer.js"(exports2, module2) {
+    "use strict";
+    var { Component, Modal, Notice: Notice2, MarkdownView } = require("obsidian");
+    var { categories, applyTemplate, findKeys } = require_math_keyboard();
+    var { captureEquation, captureActiveEquation, applyEquation } = require_math_source();
+    var { renderEquation, MAX_LATEX_LENGTH } = require_math_engine();
+    function mapSlots(before, after, slots) {
+      let from = 0, end = before.length, nextEnd = after.length;
+      while (from < end && from < nextEnd && before[from] === after[from]) from++;
+      while (end > from && nextEnd > from && before[end - 1] === after[nextEnd - 1]) {
+        end--;
+        nextEnd--;
+      }
+      const delta = nextEnd - end;
+      return slots.flatMap((slot) => {
+        if (slot.to <= from) return [slot];
+        if (slot.from >= end) return [{ from: slot.from + delta, to: slot.to + delta }];
+        if (slot.from <= from && slot.to >= end) return [{ from: slot.from, to: slot.to + delta }];
+        return [];
+      });
+    }
+    var EquationModal = class extends Modal {
+      constructor(controller, editor, view, capture) {
+        super(controller.host.app);
+        this.controller = controller;
+        this.host = controller.host;
+        this.editor = editor;
+        this.view = view;
+        this.capture = capture;
+        this.file = view.file;
+        this.closed = true;
+        this.generation = 0;
+        this.slots = [];
+        this.undo = [];
+        this.redo = [];
+        this.category = categories[0].id;
+      }
+      element(tag, className2, text3, parent = this.contentEl) {
+        const element3 = this.ownerDoc.createElement(tag);
+        if (className2) element3.className = className2;
+        if (text3) element3.textContent = text3;
+        parent.appendChild(element3);
+        return element3;
+      }
+      button(text3, description, callback, parent) {
+        const button = this.element("button", "nn-equation-button", text3, parent);
+        button.type = "button";
+        button.title = description;
+        button.setAttribute("aria-label", description);
+        button.addEventListener("click", (event) => {
+          if (!this.closed) callback(event);
+        });
+        return button;
+      }
+      onOpen() {
+        this.closed = false;
+        this.controller.modals.add(this);
+        this.ownerDoc = this.contentEl.ownerDocument;
+        this.ownerWin = this.ownerDoc.defaultView;
+        this.host.attachDocument(this.ownerDoc);
+        this.modalEl.classList.add("native-notes-math-modal");
+        this.contentEl.classList.add("nn-equation-composer");
+        this.setTitle(this.capture.existing ? "Edit equation" : "Insert equation");
+        this.element("p", "nn-equation-intro", "Choose a template or symbol, fill its fields, and insert LaTeX into your note.");
+        const toolbar = this.element("div", "nn-equation-toolbar");
+        const formatLabel = this.element("label", "nn-equation-format", "Format ", toolbar);
+        this.format = this.element("select", "", "", formatLabel);
+        this.format.setAttribute("aria-label", "Equation format");
+        for (const [value, text3] of [["inline", "Inline"], ["display", "Display block"]]) {
+          const option2 = this.element("option", "", text3, this.format);
+          option2.value = value;
+          if (value === "display" && this.capture.displayAllowed === false) option2.disabled = true;
+        }
+        this.format.value = this.capture.existing ? this.capture.display ? "display" : "inline" : this.host.settings.math.defaultMode;
+        if (this.capture.displayAllowed === false) this.format.value = "inline";
+        this.format.addEventListener("change", () => this.preview());
+        this.previewVisible = this.host.settings.math.preview;
+        this.previewToggle = this.button("Preview", "Show or hide equation preview", () => {
+          this.previewVisible = !this.previewVisible;
+          this.preview();
+        }, toolbar);
+        const work = this.element("div", "nn-equation-workspace");
+        const source = this.element("label", "nn-equation-source", "LaTeX", work);
+        this.input = this.element("textarea", "nn-equation-input", "", source);
+        this.input.setAttribute("aria-label", "Equation LaTeX");
+        this.input.spellcheck = false;
+        this.input.setAttribute("autocapitalize", "off");
+        this.input.setAttribute("autocomplete", "off");
+        this.input.rows = 3;
+        this.input.maxLength = MAX_LATEX_LENGTH;
+        this.input.placeholder = "Enter LaTeX or choose a key below";
+        this.input.value = this.capture.source;
+        this.input.setSelectionRange(0, this.input.value.length);
+        this.previous = this.snapshot();
+        this.input.addEventListener("input", () => {
+          if (this.closed) return;
+          this.undo.push(this.previous);
+          this.undo = this.undo.slice(-100);
+          this.redo = [];
+          this.slots = mapSlots(this.previous.value, this.input.value, this.slots);
+          this.previous = this.snapshot();
+          this.changed();
+        });
+        const selection = () => {
+          this.previous = this.snapshot();
+        };
+        for (const event of ["select", "keyup", "click"]) this.input.addEventListener(event, selection);
+        this.input.addEventListener("keydown", (event) => {
+          if (event.key === "Tab" && this.nextSlot(event.shiftKey ? -1 : 1, false)) event.preventDefault();
+          if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "z") {
+            event.preventDefault();
+            this.history(event.shiftKey);
+          }
+        });
+        this.previewPanel = this.element("div", "nn-equation-preview-panel", "", work);
+        this.element("div", "nn-equation-label", "Preview", this.previewPanel);
+        this.previewEl = this.element("div", "nn-equation-preview", "", this.previewPanel);
+        this.previewEl.setAttribute("aria-label", "Equation preview");
+        const editing = this.element("div", "nn-equation-editing");
+        this.button("Previous field", "Select previous template field", () => this.nextSlot(-1), editing);
+        this.button("Next field", "Select next template field", () => this.nextSlot(1), editing);
+        this.undoButton = this.button("Undo", "Undo equation edit", () => this.history(false), editing);
+        this.redoButton = this.button("Redo", "Redo equation edit", () => this.history(true), editing);
+        this.button("\u232B", "Delete selection or previous symbol", () => this.backspace(), editing);
+        this.button("Clear", "Clear equation", () => this.commit({ value: "", start: 0, end: 0, slots: [] }), editing);
+        this.search = this.element("input", "nn-equation-search");
+        this.search.type = "search";
+        this.search.placeholder = "Search symbols and templates";
+        this.search.setAttribute("aria-label", "Search math keyboard");
+        this.search.addEventListener("input", () => this.renderKeys());
+        this.tabs = this.element("div", "nn-equation-tabs");
+        this.tabs.setAttribute("role", "tablist");
+        this.tabs.setAttribute("aria-label", "Math categories");
+        this.tabButtons = categories.map((category, index) => {
+          const button = this.button(category.label, category.label, () => this.selectCategory(category.id), this.tabs);
+          button.setAttribute("role", "tab");
+          button.addEventListener("keydown", (event) => {
+            let next;
+            if (event.key === "ArrowRight") next = (index + 1) % categories.length;
+            if (event.key === "ArrowLeft") next = (index + categories.length - 1) % categories.length;
+            if (event.key === "Home") next = 0;
+            if (event.key === "End") next = categories.length - 1;
+            if (next !== void 0) {
+              event.preventDefault();
+              this.selectCategory(categories[next].id);
+              this.tabButtons[next].focus();
+            }
+          });
+          return button;
+        });
+        this.keys = this.element("div", "nn-equation-keys");
+        this.keys.setAttribute("role", "tabpanel");
+        this.keyCount = this.element("div", "nn-equation-key-count");
+        this.keyCount.setAttribute("aria-live", "polite");
+        this.status = this.element("div", "nn-equation-status");
+        this.status.setAttribute("role", "status");
+        const actions = this.element("div", "nn-equation-actions");
+        this.button("Cancel", "Cancel without changing the note", () => this.close(), actions);
+        this.insertButton = this.button(this.capture.existing ? "Update equation" : "Insert equation", "Insert equation into note", () => this.insert(), actions);
+        this.insertButton.classList.add("mod-cta");
+        this.submitKey = (event) => {
+          if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+            event.preventDefault();
+            this.insert();
+          }
+        };
+        this.contentEl.addEventListener("keydown", this.submitKey);
+        this.renderKeys();
+        this.changed();
+      }
+      snapshot() {
+        return { value: this.input.value, start: this.input.selectionStart, end: this.input.selectionEnd, slots: this.slots.map((slot) => ({ ...slot })) };
+      }
+      commit(next, record = true) {
+        if (this.closed || next.value.length > MAX_LATEX_LENGTH) return;
+        if (record) {
+          this.undo.push(this.snapshot());
+          this.undo = this.undo.slice(-100);
+          this.redo = [];
+        }
+        this.input.value = next.value;
+        this.input.setSelectionRange(next.start, next.end);
+        this.slots = next.slots || [];
+        this.previous = this.snapshot();
+        this.changed();
+      }
+      history(redo) {
+        const source = redo ? this.redo : this.undo, target = redo ? this.undo : this.redo;
+        if (!source.length) return;
+        target.push(this.snapshot());
+        this.commit(source.pop(), false);
+      }
+      template(template, focus = true) {
+        const next = applyTemplate(this.input.value, this.input.selectionStart, this.input.selectionEnd, template);
+        const retained = mapSlots(this.input.value, next.value, this.slots);
+        next.slots = [...retained, ...next.slots].filter((slot, index, all4) => all4.findIndex((other) => other.from === slot.from && other.to === slot.to) === index).sort((a, b2) => a.from - b2.from);
+        this.commit(next);
+        if (focus) this.input.focus({ preventScroll: true });
+      }
+      backspace() {
+        const value = this.input.value, to2 = this.input.selectionEnd;
+        let from = this.input.selectionStart;
+        if (from === to2 && from > 0) {
+          const before = value.slice(0, from), command = /\\[A-Za-z]+$/.exec(before);
+          from -= command ? command[0].length : [...before].at(-1).length;
+        }
+        const next = value.slice(0, from) + value.slice(to2);
+        this.commit({ value: next, start: from, end: from, slots: mapSlots(value, next, this.slots) });
+      }
+      nextSlot(direction2, cycle = true) {
+        const start = this.input.selectionStart, end = this.input.selectionEnd;
+        const slots = this.slots.filter((slot) => slot.to <= this.input.value.length);
+        const candidates = direction2 > 0 ? slots : slots.slice().reverse();
+        let next = candidates.find((slot) => direction2 > 0 ? slot.from >= end && slot.to > end : slot.to <= start && slot.from < start);
+        if (!next && cycle) next = candidates[0];
+        if (!next) return false;
+        this.input.setSelectionRange(next.from, next.to);
+        this.input.focus({ preventScroll: true });
+        this.previous = this.snapshot();
+        return true;
+      }
+      selectCategory(id2) {
+        this.category = id2;
+        this.search.value = "";
+        this.renderKeys();
+      }
+      renderKeys() {
+        const query = this.search.value.trim();
+        const category = categories.find((item) => item.id === this.category);
+        for (let index = 0; index < categories.length; index++) {
+          const selected = !query && categories[index].id === this.category;
+          this.tabButtons[index].setAttribute("aria-selected", String(selected));
+          this.tabButtons[index].tabIndex = selected ? 0 : -1;
+        }
+        this.keys.replaceChildren();
+        this.keys.dataset.category = query ? "search" : category.id;
+        const keys = query ? findKeys(query) : category.keys;
+        this.keys.setAttribute("aria-label", query ? "Math search results" : category.label);
+        for (const key2 of keys) {
+          const button = this.button(key2.label, key2.description, (event) => this.template(key2.template, event.pointerType !== "touch"), this.keys);
+          button.classList.add("nn-equation-key");
+          if (key2.label.length > 4 && /[A-Za-z]{2}/.test(key2.label)) button.classList.add("nn-equation-word-key");
+          button.dataset.key = key2.id;
+        }
+        this.keyCount.textContent = keys.length ? `${keys.length} ${keys.length === 1 ? "key" : "keys"}${query ? " found" : ""}` : "No matching symbols. Try a name such as fraction, integral, or alpha.";
+      }
+      changed() {
+        if (this.closed) return;
+        this.undoButton.disabled = this.undo.length === 0;
+        this.redoButton.disabled = this.redo.length === 0;
+        this.insertButton.disabled = !this.input.value.trim();
+        this.status.textContent = "";
+        this.ownerWin.clearTimeout(this.timer);
+        const generation = ++this.generation;
+        this.timer = this.ownerWin.setTimeout(() => {
+          if (generation === this.generation) void this.preview();
+        }, 100);
+      }
+      async preview() {
+        if (this.closed) return;
+        const generation = ++this.generation;
+        this.previewPanel.hidden = !this.previewVisible;
+        this.previewToggle.setAttribute("aria-pressed", String(this.previewVisible));
+        if (!this.previewVisible) {
+          this.previewEl.replaceChildren();
+          return;
+        }
+        const source = this.input.value;
+        this.previewEl.dataset.format = this.format.value;
+        if (!source.trim()) {
+          this.previewEl.textContent = "Your equation appears here.";
+          return;
+        }
+        const output = await renderEquation(source, this.format.value === "display", this.ownerDoc);
+        if (this.closed || generation !== this.generation) return;
+        if (output) this.previewEl.replaceChildren(output);
+        else this.previewEl.textContent = "Preview unavailable. Check the LaTeX; unsupported expressions use Obsidian\u2019s renderer after insertion.";
+      }
+      insert() {
+        if (this.closed || !this.controller.canOpen(this.editor, this.view) || this.view.file !== this.file || this.host.app.workspace.getActiveViewOfType(MarkdownView) !== this.view) {
+          if (!this.closed) this.status.textContent = "Return to the original note in editing mode before inserting.";
+          return;
+        }
+        const scroll = this.editor.getScrollInfo();
+        if (!applyEquation(this.editor, this.capture, this.input.value, this.format.value === "display")) {
+          this.status.textContent = "The equation could not be saved here. Check its delimiters, or close this dialog and reopen it at the intended position in source mode.";
+          return;
+        }
+        this.close();
+        this.editor.focus();
+        this.editor.scrollTo(scroll.left, scroll.top);
+      }
+      onClose() {
+        this.closed = true;
+        this.generation++;
+        this.ownerWin?.clearTimeout(this.timer);
+        this.controller.modals.delete(this);
+        if (this.submitKey) this.contentEl.removeEventListener("keydown", this.submitKey);
+        this.contentEl.replaceChildren();
+        this.modalEl.classList.remove("native-notes-math-modal");
+      }
+    };
+    var MathKeyboard2 = class extends Component {
+      constructor(host) {
+        super();
+        this.host = host;
+        this.modals = /* @__PURE__ */ new Set();
+        this.running = false;
+      }
+      canOpen(editor, view) {
+        return this.running && this.host.featureEnabled("mathKeyboard") && view?.editor === editor && view?.file?.extension === "md" && view.getMode?.() === "source";
+      }
+      onload() {
+        this.running = true;
+        this.host.addCommand({ id: "insert-math", name: "Insert or edit equation", editorCheckCallback: (checking, editor, view) => {
+          if (!this.canOpen(editor, view)) return false;
+          if (!checking) this.open(editor, view);
+          return true;
+        } });
+        this.host.registerEvent(this.host.app.workspace.on("editor-menu", (menu, editor, view) => {
+          if (this.canOpen(editor, view)) menu.addItem((item) => item.setTitle("Insert or edit equation").setIcon("sigma").onClick(() => this.open(editor, view)));
+        }));
+      }
+      open(editor, view, previousContext) {
+        if (!this.canOpen(editor, view)) return;
+        const capture = captureEquation(editor, view) || captureActiveEquation(editor, view, previousContext);
+        if (!capture) {
+          new Notice2("Place the cursor in note text or inside a complete equation, outside code and comments.");
+          return;
+        }
+        new EquationModal(this, editor, view, capture).open();
+      }
+      refreshSettings() {
+        if (!this.host.featureEnabled("mathKeyboard")) for (const modal of this.modals) modal.close();
+      }
+      onunload() {
+        this.running = false;
+        for (const modal of this.modals) modal.close();
+      }
+    };
+    module2.exports = { MathKeyboard: MathKeyboard2, EquationModal, mapSlots };
+  }
+});
+
+// src/math-keyboard-placement.js
+var require_math_keyboard_placement = __commonJS({
+  "src/math-keyboard-placement.js"(exports2, module2) {
+    "use strict";
+    var GAP = 10;
+    var clamp = (value, min, max2) => Math.max(min, Math.min(value, max2));
+    function placeMathKeyboard({ anchor, bounds, width = 420, height = 316, preferredSide, preferredPosition }) {
+      if (![anchor, bounds].every((rect) => rect && [rect.left, rect.right, rect.top, rect.bottom].every(Number.isFinite) && rect.right >= rect.left && rect.bottom >= rect.top) || ![width, height].every((value) => Number.isFinite(value) && value > 0)) return null;
+      const availableWidth = bounds.right - bounds.left, availableHeight = bounds.bottom - bounds.top;
+      if (availableWidth <= 0 || availableHeight <= 0 || anchor.bottom < bounds.top || anchor.top > bounds.bottom || anchor.right < bounds.left || anchor.left > bounds.right) return null;
+      const minimumWidth = 260, minimumHeight = 160;
+      width = Math.min(width, availableWidth);
+      height = Math.min(height, availableHeight);
+      const regions = {
+        below: { ...bounds, top: Math.max(bounds.top, anchor.bottom + GAP) },
+        above: { ...bounds, bottom: Math.min(bounds.bottom, anchor.top - GAP) },
+        right: { ...bounds, left: Math.max(bounds.left, anchor.right + GAP) },
+        left: { ...bounds, right: Math.min(bounds.right, anchor.left - GAP) }
+      };
+      const sides = [.../* @__PURE__ */ new Set([preferredSide, "below", "above", "right", "left"])].filter((side) => Object.hasOwn(regions, side));
+      const proposal = preferredPosition && [preferredPosition.left, preferredPosition.top].every(Number.isFinite) ? preferredPosition : null;
+      const candidates = sides.map((side) => {
+        const region = regions[side];
+        const candidateWidth = Math.min(width, region.right - region.left), candidateHeight = Math.min(height, region.bottom - region.top);
+        if (candidateWidth < minimumWidth || candidateHeight < minimumHeight) return null;
+        const origin = proposal || {
+          left: side === "right" ? region.left : side === "left" ? region.right - candidateWidth : anchor.left,
+          top: side === "below" ? region.top : side === "above" ? region.bottom - candidateHeight : anchor.top
+        };
+        return {
+          left: clamp(origin.left, region.left, region.right - candidateWidth),
+          top: clamp(origin.top, region.top, region.bottom - candidateHeight),
+          width: candidateWidth,
+          height: candidateHeight,
+          side
+        };
+      }).filter(Boolean);
+      const full = candidates.filter((candidate) => candidate.width === width && candidate.height === height);
+      const compact = candidates.filter((candidate) => candidate.width >= Math.min(width, 260) && candidate.height >= Math.min(height, 210));
+      const choices = full.length ? full : compact.length ? compact : candidates;
+      if (!proposal) return choices[0] || null;
+      return choices.reduce((closest, candidate) => {
+        const distance = (position) => (position.left - proposal.left) ** 2 + (position.top - proposal.top) ** 2;
+        return !closest || distance(candidate) < distance(closest) ? candidate : closest;
+      }, null);
+    }
+    module2.exports = { placeMathKeyboard };
+  }
+});
+
+// src/math-keyboard-launcher.js
+var require_math_keyboard_launcher = __commonJS({
+  "src/math-keyboard-launcher.js"(exports2, module2) {
+    "use strict";
+    var { setIcon } = require("obsidian");
+    var { findActiveMath, scanMathEquations } = require_math_source();
+    var { equationSource } = require_math_renderer();
+    var { scanRootMath } = require_math_spacing();
+    var OWNED = ".nn-math-keyboard-launcher, .nn-math-keyboard-launcher-actions";
+    var MathKeyboardLaunchers = class {
+      constructor(owner, record) {
+        this.owner = owner;
+        this.record = record;
+        this.doc = record.cm.dom.ownerDocument;
+        this.win = this.doc.defaultView;
+        this.portal = record.cm.dom.parentElement.closest(".cm-editor") || record.cm.dom;
+        this.scroller = this.portal.querySelector(":scope > .cm-scroller") || record.cm.scrollDOM;
+        this.targets = /* @__PURE__ */ new Map();
+        this.disposers = [];
+        this.queue = () => {
+          if (!this.destroyed) this.owner.queue(this.record);
+        };
+        const listen = (target, name2, capture = false) => {
+          target?.addEventListener(name2, this.queue, { passive: true, capture });
+          this.disposers.push(() => target?.removeEventListener(name2, this.queue, capture));
+        };
+        listen(record.cm.scrollDOM, "scroll");
+        if (this.portal !== record.cm.dom) listen(this.doc, "scroll", true);
+        listen(this.win, "resize");
+        listen(this.win.visualViewport, "resize");
+        listen(this.win.visualViewport, "scroll");
+        this.observer = new this.win.MutationObserver((changes) => {
+          if (changes.some((change) => [...change.addedNodes, ...change.removedNodes].some((node) => node.nodeType !== 1 || !node.matches(OWNED)))) this.queue();
+        });
+        this.observer.observe(record.cm.contentDOM, { childList: true, subtree: true });
+        if (this.win.ResizeObserver) {
+          this.resizeObserver = new this.win.ResizeObserver(this.queue);
+          this.resizeObserver.observe(record.cm.dom);
+          if (this.portal !== record.cm.dom) this.resizeObserver.observe(this.portal);
+        }
+      }
+      eligible(context = null) {
+        const { cm: cm2, view, editor } = this.record;
+        return !this.destroyed && this.owner.enabled() && this.record.alive !== false && !this.record.detached && cm2.dom.ownerDocument === this.doc && cm2.dom.isConnected && !cm2.state.readOnly && view?.getMode() === "source" && view.file?.extension === "md" && view.editor === editor && view.containerEl.contains(cm2.dom) && (!context || context.filePath === view.file.path && context.snapshot === editor.getValue() && (this.owner.sourceMatches ? this.owner.sourceMatches(this.record, context) : context.snapshot === cm2.state.doc.toString()));
+      }
+      button(className2, context, anchor = null) {
+        const button = this.doc.createElement("button");
+        button.type = "button";
+        button.className = `nn-math-keyboard-launcher ${className2}`;
+        button.setAttribute("aria-label", "Open math keyboard");
+        button.setAttribute("title", "Open math keyboard");
+        button.setAttribute("aria-haspopup", "dialog");
+        button.setAttribute("contenteditable", "false");
+        setIcon(button, "keyboard");
+        button.addEventListener("pointerdown", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        });
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          if (!button.isConnected || !this.portal.contains(button) || !this.contains(button)) return;
+          const current = context();
+          if (current && this.eligible(current)) this.owner.open(this.record, current, anchor ? anchor() : button.getBoundingClientRect());
+          else this.queue();
+        });
+        return button;
+      }
+      displayContexts() {
+        const { cm: cm2, view } = this.record, snapshot = cm2.state.doc.toString();
+        if (snapshot !== this.record.editor.getValue()) return [];
+        if (this.snapshot === snapshot && this.path === view.file.path) return this.displays;
+        this.snapshot = snapshot;
+        this.path = view.file.path;
+        this.displays = scanRootMath(snapshot).filter((range) => range.end !== null).flatMap((range) => {
+          const line = cm2.state.doc.line(range.start + 1), opener = /^ {0,3}\$\$/.exec(line.text);
+          if (!opener) return [];
+          return [{
+            from: line.from + opener[0].length - 2,
+            to: cm2.state.doc.line(range.end + 1).to,
+            caret: line.from + opener[0].length
+          }];
+        });
+        return this.displays;
+      }
+      inlineContexts() {
+        const snapshot = this.record.editor.getValue(), path = this.record.view.file.path;
+        if (snapshot !== this.inlineSnapshot || path !== this.inlinePath) {
+          this.inlineSnapshot = snapshot;
+          this.inlinePath = path;
+          this.inlines = scanMathEquations(snapshot, this.record.view).filter((context) => !context.display);
+        }
+        return this.inlines;
+      }
+      localContext(context) {
+        return this.owner.sourceRange ? this.owner.sourceRange(this.record, context) : context;
+      }
+      localInlines(contexts) {
+        if (!this.owner.sourceWindow) return new Map(contexts.map((context) => [context, context]));
+        const window2 = this.owner.sourceWindow(this.record);
+        if (!window2 || window2.snapshot !== this.inlineSnapshot) return /* @__PURE__ */ new Map();
+        if (!window2.boundaries) return new Map(contexts.map((context) => [context, context]));
+        const mapped = /* @__PURE__ */ new Map();
+        for (const context of contexts) {
+          if (context.delimiterFrom < window2.from || context.delimiterTo > window2.to) continue;
+          const local = { ...context };
+          for (const key2 of ["delimiterFrom", "delimiterTo", "contentFrom", "contentTo", "selectionFrom", "selectionTo"]) local[key2] = window2.boundaries.indexOf(context[key2]);
+          if (local.delimiterFrom >= 0 && local.delimiterTo >= 0 && local.contentFrom >= 0 && local.contentTo >= 0 && local.selectionFrom >= 0 && local.selectionTo >= 0) mapped.set(context, local);
+        }
+        return mapped;
+      }
+      bounds(target) {
+        const parent = target.parentNode, index = [...parent.childNodes].indexOf(target);
+        return { from: this.record.cm.posAtDOM(parent, index), to: this.record.cm.posAtDOM(parent, index + 1) };
+      }
+      inlineMath(target) {
+        return target.matches(".math:not(.math-block)") && target.closest(".cm-editor") === this.record.cm.dom && !target.closest(".internal-embed, .markdown-embed, pre, code");
+      }
+      matchesSource(target, context) {
+        const latex = equationSource(target) ?? target.querySelector(":scope > .nn-math-rendered")?.getAttribute("aria-label");
+        return latex === context.source || context.table && latex === context.source.replace(/\\\|/g, "|");
+      }
+      mappedInline(target, contexts, locals = this.localInlines(contexts), blocks = /* @__PURE__ */ new Map()) {
+        if (!this.inlineMath(target)) return null;
+        try {
+          const candidates = (from, to2) => contexts.filter((context) => {
+            const local = locals.get(context);
+            return local && local.delimiterFrom >= from && local.delimiterTo <= to2;
+          });
+          const direct = this.bounds(target);
+          if (direct.from < direct.to) {
+            const matches4 = candidates(direct.from, direct.to);
+            return matches4.length === 1 && this.matchesSource(target, matches4[0]) ? matches4[0] : null;
+          }
+          const block = target.closest(".cm-table-widget, .cm-callout");
+          if (!block || !this.record.cm.contentDOM.contains(block)) return null;
+          if (blocks.has(block)) return blocks.get(block)?.get(target) || null;
+          const bounds = this.bounds(block);
+          if (bounds.from >= bounds.to) return null;
+          const widgets = [...block.querySelectorAll(".math:not(.math-block)")].filter((math) => this.inlineMath(math));
+          const matches3 = candidates(bounds.from, bounds.to);
+          if (widgets.length !== matches3.length || !widgets.every((math, index) => this.matchesSource(math, matches3[index]))) {
+            blocks.set(block, null);
+            return null;
+          }
+          blocks.set(block, new Map(widgets.map((math, index) => [math, matches3[index]])));
+          return matches3[widgets.indexOf(target)] || null;
+        } catch {
+          return null;
+        }
+      }
+      mappedContext(target, displays) {
+        const { cm: cm2 } = this.record;
+        if (!cm2.contentDOM.contains(target) || !target.matches(".math.math-block") && !target.querySelector(".math.math-block")) return null;
+        try {
+          const parent = target.parentNode, index = [...parent.childNodes].indexOf(target);
+          const from = cm2.posAtDOM(parent, index), to2 = cm2.posAtDOM(parent, index + 1);
+          if (!Number.isInteger(from) || !Number.isInteger(to2) || from >= to2) return null;
+          const matches3 = displays.filter((candidate2) => candidate2.from >= from && candidate2.to <= to2);
+          if (matches3.length !== 1) return null;
+          const candidate = matches3[0];
+          if (candidate.context === void 0) {
+            const line = cm2.state.doc.lineAt(candidate.caret);
+            const context = findActiveMath({
+              getValue: () => this.snapshot,
+              getCursor: () => ({ line: line.number - 1, ch: candidate.caret - line.from })
+            }, this.record.view);
+            candidate.context = null;
+            if (context?.display && context.complete && context.delimiterFrom === candidate.from && context.delimiterTo <= candidate.to) {
+              const caret = context.contentFrom + context.source.trimEnd().length;
+              candidate.context = { ...context, selectionFrom: caret, selectionTo: caret };
+            }
+          }
+          return candidate.context;
+        } catch {
+          return null;
+        }
+      }
+      removeTarget(target, entry) {
+        this.win.clearTimeout(entry.hideTimer);
+        entry.disposers?.forEach((dispose) => dispose());
+        entry.button.remove();
+        entry.actions?.remove();
+        if (!entry.hadClass) target.classList.remove("nn-math-keyboard-target");
+        this.targets.delete(target);
+      }
+      watchReveal(target, entry) {
+        entry.disposers = [];
+        const reveal = () => {
+          this.win.clearTimeout(entry.hideTimer);
+          entry.button.dataset.revealed = "true";
+        };
+        const leave = (event) => {
+          const related = event.relatedTarget;
+          if (related?.nodeType && (target.contains(related) || entry.button.contains(related))) return;
+          const hide = () => {
+            entry.button.dataset.revealed = "false";
+          };
+          if (entry.inline) {
+            this.win.clearTimeout(entry.hideTimer);
+            entry.hideTimer = this.win.setTimeout(hide, 160);
+          } else hide();
+        };
+        for (const element3 of [target, entry.button]) {
+          for (const [name2, listener] of [["pointerenter", reveal], ["pointerleave", leave], ["focusin", reveal], ["focusout", leave]]) {
+            element3.addEventListener(name2, listener);
+            entry.disposers.push(() => element3.removeEventListener(name2, listener));
+          }
+        }
+        entry.button.dataset.revealed = String(target.matches(":hover, :focus-within"));
+      }
+      update(context) {
+        if (!this.eligible()) {
+          this.clear();
+          return;
+        }
+        const { cm: cm2 } = this.record, displays = this.displayContexts(), inlines = this.inlineContexts(), found = /* @__PURE__ */ new Map();
+        for (const math of cm2.contentDOM.querySelectorAll(".math.math-block")) {
+          const target = math.closest(".cm-embed-block");
+          if (!target || !cm2.contentDOM.contains(target) || found.has(target)) continue;
+          const mapped = this.mappedContext(target, displays);
+          if (mapped) found.set(target, mapped);
+        }
+        const locals = this.localInlines(inlines), blocks = /* @__PURE__ */ new Map();
+        for (const math of cm2.contentDOM.querySelectorAll(".math:not(.math-block)")) {
+          const mapped = this.mappedInline(math, inlines, locals, blocks);
+          if (mapped) found.set(math, mapped);
+        }
+        for (const [target, entry] of this.targets) {
+          if (!found.has(target) || !entry.button.isConnected || !entry.toolbar.isConnected || !(entry.overlay ? this.portal : target).contains(entry.button)) this.removeTarget(target, entry);
+        }
+        for (const [target, mapped] of found) {
+          let entry = this.targets.get(target);
+          if (!entry) {
+            entry = {
+              hadClass: target.classList.contains("nn-math-keyboard-target"),
+              context: mapped,
+              inline: !mapped.display,
+              overlay: target.matches(".math")
+            };
+            let toolbar = entry.overlay ? this.portal : target.querySelector(":scope > .embed-actions");
+            if (!toolbar) {
+              toolbar = this.doc.createElement("div");
+              toolbar.className = "embed-actions nn-math-keyboard-launcher-actions";
+              toolbar.setAttribute("contenteditable", "false");
+              target.appendChild(toolbar);
+              entry.actions = toolbar;
+            }
+            entry.toolbar = toolbar;
+            entry.button = this.button(entry.inline ? "nn-math-keyboard-inline-launcher" : entry.overlay ? "nn-math-keyboard-block-launcher" : "embed-action", () => {
+              if (!this.eligible(entry.context) || !target.isConnected) return null;
+              const current = entry.inline ? this.mappedInline(target, this.inlineContexts()) : this.mappedContext(target, this.displayContexts());
+              return current?.delimiterFrom === entry.context.delimiterFrom ? current : null;
+            }, () => target.getBoundingClientRect());
+            if (entry.overlay) {
+              toolbar.appendChild(entry.button);
+              this.watchReveal(target, entry);
+            } else toolbar.insertBefore(entry.button, toolbar.querySelector(":scope > .edit-block-button"));
+            target.classList.add("nn-math-keyboard-target");
+            this.targets.set(target, entry);
+          }
+          entry.context = mapped;
+          if (entry.inline) this.positionInline(entry.button, target.getBoundingClientRect());
+          else if (entry.overlay) {
+            const actions = target.querySelector(":scope > .embed-actions")?.getBoundingClientRect();
+            this.positionButton(entry.button, target.getBoundingClientRect(), true, actions);
+          }
+        }
+        const panel = this.owner.panels?.get(this.doc);
+        this.active = context && this.eligible(context) && panel?.record !== this.record ? context : null;
+        if (!this.active) {
+          this.sourceButton?.remove();
+          this.sourceButton = null;
+          this.clearStatusBars();
+          return;
+        }
+        if (!this.sourceButton) {
+          this.sourceButton = this.button("nn-math-keyboard-source-launcher", () => this.active, () => this.sourceAnchor);
+          this.portal.appendChild(this.sourceButton);
+        }
+        this.positionSource();
+      }
+      positionSource() {
+        const { cm: cm2 } = this.record, button = this.sourceButton, local = this.active && this.localContext(this.active);
+        if (!button || !this.active) return;
+        if (!local) {
+          button.hidden = true;
+          return;
+        }
+        const root5 = this.portal.getBoundingClientRect(), viewport = this.scroller.getBoundingClientRect();
+        const visual = this.win.visualViewport;
+        const visibleTop = Math.max(root5.top, viewport.top, visual?.offsetTop || 0);
+        const visibleBottom = Math.min(root5.bottom, viewport.bottom, visual ? visual.offsetTop + visual.height : this.win.innerHeight);
+        const visibleLeft = Math.max(root5.left, viewport.left, visual?.offsetLeft || 0);
+        const visibleRight = Math.min(root5.right, viewport.right, visual ? visual.offsetLeft + visual.width : this.win.innerWidth);
+        let rect;
+        try {
+          rect = cm2.coordsAtPos(local.delimiterFrom);
+        } catch {
+        }
+        if (!rect || rect.bottom <= visibleTop || rect.top >= visibleBottom) {
+          try {
+            rect = cm2.coordsAtPos(local.selectionTo);
+          } catch {
+          }
+        }
+        if (!rect || rect.bottom <= visibleTop || rect.top >= visibleBottom || visibleBottom <= visibleTop) {
+          button.hidden = true;
+          return;
+        }
+        this.sourceAnchor = rect;
+        button.hidden = false;
+        const size = button.getBoundingClientRect(), width = size.width || 48, height = size.height || 48, inset = 12;
+        const corner = this.owner.host?.settings.math.launcherPosition || "bottom-right";
+        const left = corner.endsWith("left") ? visibleLeft + inset : visibleRight - width - inset;
+        let bottom = visibleBottom;
+        for (const bar of this.statusBarRects()) {
+          if (bar.right > left && bar.left < left + width && bar.bottom > visibleTop && bar.top < bottom) bottom = bar.top;
+        }
+        if (visibleRight - visibleLeft < width + 2 * inset || bottom - visibleTop < height + 2 * inset) {
+          button.hidden = true;
+          return;
+        }
+        const top = corner.startsWith("top") ? visibleTop + inset : bottom - height - inset;
+        button.style.left = `${left - root5.left}px`;
+        button.style.top = `${top - root5.top}px`;
+        button.dataset.position = corner;
+      }
+      statusBarRects() {
+        const bars = [...this.doc.querySelectorAll(".status-bar")];
+        if (!this.statusBars || bars.length !== this.statusBars.length || bars.some((bar, index) => bar !== this.statusBars[index])) {
+          this.clearStatusBars();
+          this.statusBars = bars;
+          this.statusObserver = new this.win.MutationObserver(this.queue);
+          this.statusObserver.observe(this.doc.querySelector(".app-container") || this.doc.body, { childList: true });
+          if (this.win.ResizeObserver) this.statusResizeObserver = new this.win.ResizeObserver(this.queue);
+          for (const bar of bars) {
+            this.statusObserver.observe(bar, { attributes: true, attributeFilter: ["class", "style", "hidden"] });
+            this.statusResizeObserver?.observe(bar);
+          }
+        }
+        return bars.flatMap((bar) => {
+          const rect = bar.getBoundingClientRect(), style2 = this.win.getComputedStyle(bar);
+          return bar.isConnected && rect.width > 0 && rect.height > 0 && style2.display !== "none" && style2.visibility !== "hidden" && style2.visibility !== "collapse" ? [rect] : [];
+        });
+      }
+      clearStatusBars() {
+        this.statusObserver?.disconnect();
+        this.statusResizeObserver?.disconnect();
+        this.statusObserver = null;
+        this.statusResizeObserver = null;
+        this.statusBars = null;
+      }
+      positionInline(button, rect) {
+        const root5 = this.portal.getBoundingClientRect(), viewport = this.scroller.getBoundingClientRect();
+        const top = Math.max(root5.top, viewport.top), bottom = Math.min(root5.bottom, viewport.bottom);
+        const left = Math.max(root5.left, viewport.left), right = Math.min(root5.right, viewport.right);
+        if (!rect || rect.width <= 0 || rect.height <= 0 || rect.bottom <= top || rect.top >= bottom || rect.right <= left || rect.left >= right) {
+          button.hidden = true;
+          return;
+        }
+        button.hidden = false;
+        const size = button.getBoundingClientRect(), width = size.width || 28, height = size.height || 28;
+        const y2 = rect.top - height - 2 >= top ? rect.top - height - 2 : rect.bottom + 2;
+        if (y2 + height > bottom || right - left < width) {
+          button.hidden = true;
+          return;
+        }
+        button.style.left = `${Math.max(left, Math.min(rect.right - width, right - width)) - root5.left}px`;
+        button.style.top = `${y2 - root5.top}px`;
+      }
+      positionButton(button, rect, rendered = false, actions = null) {
+        const { cm: cm2 } = this.record;
+        const root5 = cm2.dom.getBoundingClientRect(), viewport = cm2.scrollDOM.getBoundingClientRect();
+        const content = cm2.contentDOM.getBoundingClientRect();
+        const visibleTop = Math.max(root5.top, viewport.top), visibleBottom = Math.min(root5.bottom, viewport.bottom);
+        if (!rect || rect.bottom <= visibleTop || rect.top >= visibleBottom || visibleBottom <= visibleTop) {
+          button.hidden = true;
+          return;
+        }
+        button.hidden = false;
+        const size = button.getBoundingClientRect(), width = size.width || 28, height = size.height || 28;
+        let right = Math.min(root5.right, viewport.right, content.right || viewport.right, rendered ? rect.right : Infinity);
+        let top = rect.top;
+        if (actions?.width > 0 && actions.height > 0 && actions.bottom > rect.top && actions.top < rect.bottom && actions.left >= root5.left && actions.left < right) {
+          right = actions.left;
+          top = Math.max(rect.top, actions.top + (actions.height - height) / 2);
+          if (right - root5.left < width + 4) {
+            button.hidden = true;
+            return;
+          }
+        }
+        button.style.left = `${Math.max(0, right - root5.left - width - 4)}px`;
+        button.style.top = `${Math.max(visibleTop - root5.top, Math.min(top - root5.top, visibleBottom - root5.top - height))}px`;
+      }
+      contains(target) {
+        return !!target && (this.sourceButton?.contains(target) || [...this.targets.values()].some((entry) => entry.button.contains(target)));
+      }
+      clear() {
+        this.sourceButton?.remove();
+        this.sourceButton = null;
+        this.active = null;
+        this.sourceAnchor = null;
+        this.clearStatusBars();
+        for (const [target, entry] of this.targets) this.removeTarget(target, entry);
+      }
+      destroy() {
+        if (this.destroyed) return;
+        this.destroyed = true;
+        this.observer.disconnect();
+        this.resizeObserver?.disconnect();
+        this.disposers.splice(0).forEach((dispose) => dispose());
+        this.clear();
+      }
+    };
+    module2.exports = { MathKeyboardLaunchers };
+  }
+});
+
+// src/math-keyboard-panel.js
+var require_math_keyboard_panel = __commonJS({
+  "src/math-keyboard-panel.js"(exports2, module2) {
+    "use strict";
+    var { Component, Platform, editorInfoField, setIcon } = require("obsidian");
+    var { EditorView, ViewPlugin } = require("@codemirror/view");
+    var { StateEffect } = require("@codemirror/state");
+    var { categories, findKeys } = require_math_keyboard();
+    var { findActiveMath, applyMathInsertion, planMathInsertion } = require_math_source();
+    var { mapSlots } = require_math_composer();
+    var { placeMathKeyboard } = require_math_keyboard_placement();
+    var { MathKeyboardLaunchers } = require_math_keyboard_launcher();
+    var keyboardChanged = StateEffect.define();
+    function nestedBoundaries(snapshot, local, selection, from, to2, table) {
+      let base = from;
+      for (let index = selection.from - 1; index >= 0; index--) {
+        if (snapshot[--base] !== local[index]) return null;
+        if (table && local[index] === "|" && snapshot[base - 1] === "\\") base--;
+      }
+      const boundaries = [base];
+      let offset = base;
+      for (const character of local.split("")) {
+        if (table && character === "|" && snapshot[offset] === "\\" && snapshot[offset + 1] === "|") offset++;
+        if (snapshot[offset++] !== character) return null;
+        boundaries.push(offset);
+      }
+      return boundaries[selection.from] === from && boundaries[selection.to] === to2 ? boundaries : null;
+    }
+    var MathKeyboardPanel = class {
+      constructor(owner, record, context, anchor = null) {
+        this.owner = owner;
+        this.record = record;
+        this.context = context;
+        this.sourceDoc = record.cm.dom.ownerDocument;
+        this.initialAnchor = anchor;
+        this.doc = this.sourceDoc;
+        this.win = this.doc.defaultView;
+        this.slots = [];
+        this.category = "numbers";
+        this.disposers = [];
+        this.root = this.doc.createElement("div");
+        this.root.className = "nn-math-keyboard-panel";
+        this.root.setAttribute("role", "dialog");
+        this.root.setAttribute("aria-label", "Math keyboard");
+        this.root.setAttribute("aria-modal", "false");
+        this.root.tabIndex = -1;
+        const accessory = this.element("div", "nn-math-panel-accessory");
+        this.browse = this.action("\u2211", "Browse math symbols", () => this.toggleBrowser(), accessory);
+        this.browse.classList.add("nn-math-panel-layout-toggle");
+        this.browse.setAttribute("aria-expanded", "false");
+        this.icon("chevron-left", "Select previous template field", () => this.nextSlot(-1), accessory);
+        this.icon("chevron-right", "Select next template field", () => this.nextSlot(1), accessory);
+        this.element("div", "nn-math-panel-accessory-spacer", "", accessory);
+        this.dragHandle = this.element("button", "nn-math-panel-drag-handle", "", accessory);
+        this.dragHandle.type = "button";
+        this.dragHandle.title = "Drag to move. Arrow keys move; Shift moves farther. Home resets position.";
+        this.dragHandle.setAttribute("aria-label", "Move math keyboard");
+        this.dragHandle.setAttribute("aria-description", "Drag or use arrow keys to move. Home restores automatic placement.");
+        setIcon(this.dragHandle, "grip-horizontal");
+        this.listen(this.dragHandle, "pointerdown", (event) => this.startDrag(event));
+        this.listen(this.dragHandle, "lostpointercapture", () => this.endDrag());
+        this.listen(this.dragHandle, "keydown", (event) => this.moveHandle(event));
+        this.listen(this.win, "pointermove", (event) => this.dragMove(event));
+        this.listen(this.win, "pointerup", (event) => {
+          if (event.pointerId === this.drag?.pointerId) this.endDrag();
+        });
+        this.listen(this.win, "pointercancel", (event) => {
+          if (event.pointerId === this.drag?.pointerId) this.endDrag();
+        });
+        this.listen(this.win, "blur", () => this.endDrag());
+        this.icon("maximize-2", "Open full equation composer", () => {
+          if (!this.current()) {
+            this.owner.hide(this.record);
+            return;
+          }
+          const { editor, view } = this.record;
+          const context2 = this.context;
+          this.owner.focus(this.record);
+          this.owner.hide(this.record, true);
+          this.owner.host.mathKeyboard?.open(editor, view, context2);
+        }, accessory);
+        this.icon("keyboard", "Close math keyboard", () => this.owner.hide(this.record, true), accessory);
+        this.browser = this.element("div", "nn-math-panel-browser");
+        this.browser.hidden = true;
+        const tools = this.element("div", "nn-math-panel-tools", "", this.browser);
+        this.select = this.element("select", "nn-math-panel-category", "", tools);
+        this.select.setAttribute("aria-label", "Math category");
+        for (const category of categories) {
+          const option2 = this.element("option", "", category.label, this.select);
+          option2.value = category.id;
+        }
+        this.select.value = this.category;
+        this.listen(this.select, "change", () => {
+          this.selectCategory(this.select.value);
+          this.toggleBrowser(false);
+        });
+        this.search = this.element("input", "nn-math-panel-search", "", tools);
+        this.search.type = "search";
+        this.search.placeholder = "Search symbols";
+        this.search.setAttribute("aria-label", "Search math keyboard");
+        this.listen(this.search, "input", () => this.renderKeys());
+        this.keys = this.element("div", "nn-math-panel-keys");
+        const bottom = this.element("div", "nn-math-panel-bottom");
+        this.layout = this.action("\u2211", "Show math templates", () => this.selectCategory(this.category === "numbers" ? "basics" : "numbers"), bottom);
+        this.layout.classList.add("is-layout", "is-modifier");
+        this.icon("delete", "Delete selection or previous symbol", () => this.backspace(), bottom).classList.add("is-library", "is-modifier");
+        this.action("space", "Insert math space", () => this.insert(String.raw`\,`), bottom).classList.add("is-space");
+        this.returnKey = this.action("done", "Finish equation", () => {
+          if (!this.nextSlot(1, false)) this.finish();
+        }, bottom);
+        this.returnKey.classList.add("is-primary");
+        this.status = this.element("div", "nn-math-panel-status");
+        this.status.setAttribute("role", "status");
+        this.listen(this.sourceDoc, "pointerdown", (event) => {
+          if (!this.root.contains(event.target) && !this.record.cm.dom.contains(event.target)) this.owner.hide(this.record);
+        }, true);
+        this.listen(this.sourceDoc, "focusin", (event) => {
+          if (!this.root.contains(event.target) && !this.record.cm.dom.contains(event.target)) this.owner.hide(this.record);
+        });
+        this.listen(this.win, "keydown", (event) => {
+          if (event.key !== "Escape" || event.isComposing || event.ctrlKey || event.metaKey || event.altKey || !this.root.contains(event.target) && !this.record.cm.dom.contains(event.target)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          this.owner.hide(this.record, true);
+        }, true);
+        this.listen(this.root, "keydown", (event) => this.hardwareKey(event));
+        this.listen(this.sourceDoc, "scroll", () => this.position(), { passive: true, capture: true });
+        this.listen(this.win, "resize", () => this.position());
+        this.listen(this.win.visualViewport, "resize", () => this.position());
+        this.listen(this.win.visualViewport, "scroll", () => this.position());
+        this.listen(this.win, "pagehide", () => this.owner.hide(this.record));
+        if (this.win.ResizeObserver) {
+          const observer = new this.win.ResizeObserver(() => this.position());
+          observer.observe(record.cm.dom);
+          this.disposers.push(() => observer.disconnect());
+        }
+        this.doc.body.appendChild(this.root);
+        this.owner.host.attachDocument(this.doc);
+        this.renderKeys();
+      }
+      listen(target, name2, callback, options) {
+        if (!target) return;
+        target.addEventListener(name2, callback, options);
+        this.disposers.push(() => target.removeEventListener(name2, callback, options));
+      }
+      element(tag, className2, text3 = "", parent = this.root) {
+        const element3 = this.doc.createElement(tag);
+        if (className2) element3.className = className2;
+        element3.textContent = text3;
+        parent.appendChild(element3);
+        return element3;
+      }
+      action(text3, label, callback, parent) {
+        const button = this.element("button", "nn-math-panel-action", text3, parent);
+        button.type = "button";
+        button.title = label;
+        button.setAttribute("aria-label", label);
+        button.addEventListener("pointerdown", (event) => event.preventDefault());
+        button.addEventListener("click", (event) => {
+          if (!this.destroyed) callback(event);
+        });
+        return button;
+      }
+      icon(name2, label, callback, parent) {
+        const button = this.action("", label, callback, parent);
+        button.classList.add("is-icon");
+        setIcon(button, name2);
+        return button;
+      }
+      startDrag(event) {
+        if (this.destroyed || this.root.hidden || this.root.dataset.mode !== "floating" || event.button !== 0 || event.isPrimary === false || !this.current()) return;
+        event.preventDefault();
+        const rect = this.root.getBoundingClientRect();
+        this.drag = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, left: rect.left, top: rect.top };
+        this.root.dataset.dragging = "true";
+        try {
+          this.dragHandle.setPointerCapture(event.pointerId);
+        } catch {
+        }
+      }
+      dragMove(event) {
+        if (!this.drag || event.pointerId !== this.drag.pointerId || this.destroyed) return;
+        event.preventDefault();
+        this.manualPosition = { left: this.drag.left + event.clientX - this.drag.x, top: this.drag.top + event.clientY - this.drag.y };
+        this.position();
+      }
+      endDrag() {
+        if (!this.drag) return;
+        const { pointerId } = this.drag;
+        this.drag = null;
+        delete this.root.dataset.dragging;
+        if (this.manualPosition) {
+          const rect = this.root.getBoundingClientRect();
+          this.manualPosition = { left: rect.left, top: rect.top };
+        }
+        try {
+          this.dragHandle.releasePointerCapture(pointerId);
+        } catch {
+        }
+      }
+      moveHandle(event) {
+        if (this.destroyed || this.root.dataset.mode !== "floating" || event.isComposing || event.ctrlKey || event.metaKey || event.altKey) return;
+        const directions = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+        if (event.key !== "Home" && !directions[event.key]) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (event.key === "Home") {
+          this.manualPosition = null;
+          this.side = null;
+        } else {
+          const rect = this.root.getBoundingClientRect(), step = event.shiftKey ? 50 : 20, [x, y2] = directions[event.key];
+          this.manualPosition = { left: rect.left + x * step, top: rect.top + y2 * step };
+        }
+        this.position();
+      }
+      toggleBrowser(show = this.browser.hidden) {
+        this.browser.hidden = !show;
+        this.browse.setAttribute("aria-expanded", String(show));
+        this.root.dataset.browsing = String(show);
+        this.position();
+      }
+      selectCategory(id2) {
+        this.category = id2;
+        this.select.value = id2;
+        this.search.value = "";
+        this.toggleBrowser(false);
+        this.renderKeys();
+      }
+      renderKeys() {
+        const query = this.search.value.trim();
+        const category = categories.find((item) => item.id === this.category);
+        const keys = query ? findKeys(query) : category.keys;
+        this.keys.replaceChildren();
+        this.keys.dataset.category = query ? "search" : category.id;
+        this.root.dataset.category = this.keys.dataset.category;
+        this.keys.setAttribute("aria-label", query ? "Math search results" : category.label);
+        if (!query && category.id === "numbers") this.renderNumbers();
+        else for (const key2 of keys) this.renderKey(key2, this.keys);
+        this.layout.textContent = category.id === "numbers" ? "\u2211" : "123";
+        const layoutLabel = category.id === "numbers" ? "Show math templates" : "Switch to numbers";
+        this.layout.setAttribute("aria-label", layoutLabel);
+        this.layout.title = layoutLabel;
+        this.status.textContent = keys.length ? "" : "No matching symbols";
+        this.position();
+      }
+      renderKey(key2, parent) {
+        const button = this.action(key2.label, key2.description, () => {
+          this.insert(key2.template);
+          if (this.search.value) {
+            this.search.value = "";
+            this.toggleBrowser(false);
+            this.renderKeys();
+          }
+        }, parent);
+        button.className = "nn-math-panel-key";
+        if (key2.label.length > 4 && /[A-Za-z]{2}/.test(key2.label)) button.classList.add("is-word");
+        button.dataset.key = key2.id;
+        return button;
+      }
+      renderNumbers() {
+        const keys = new Map(categories.flatMap((category) => category.keys).map((key2) => [key2.id, key2]));
+        const rows = [
+          ["number-7", "number-8", "number-9", "number-divide", "parentheses", "power", "fraction"],
+          ["number-4", "number-5", "number-6", "number-multiply", "brackets", "square-root", "subscript"],
+          ["number-1", "number-2", "number-3", "number-minus", "less-equal", "greater-equal", "not-equal"],
+          ["number-0", "number-decimal", "number-equals", "number-plus", "constant-pi", "infinity", "comma"]
+        ];
+        for (let index = 0; index < rows.length; index++) {
+          const row = this.element("div", "nn-math-panel-math-row", "", this.keys);
+          for (const id2 of rows[index]) this.renderKey(keys.get(id2), row);
+        }
+      }
+      update(context) {
+        if (this.context.snapshot !== context.snapshot) {
+          if (this.context.table && context.table) {
+            this.slots = mapSlots(this.context.source, context.source, this.slots.map((slot) => ({ from: slot.from - this.context.contentFrom, to: slot.to - this.context.contentFrom }))).map((slot) => ({ from: slot.from + context.contentFrom, to: slot.to + context.contentFrom }));
+          } else this.slots = mapSlots(this.context.snapshot, context.snapshot, this.slots);
+        }
+        this.context = context;
+        this.localDelimiterFrom = this.owner.sourceRange(this.record, context)?.delimiterFrom;
+        this.root.setAttribute("aria-label", context.display ? "Display math keyboard" : "Inline math keyboard");
+        const hasNext = this.slots.some((slot) => slot.from >= context.selectionTo && slot.to > context.selectionTo && slot.to <= context.contentTo);
+        this.returnKey.textContent = hasNext ? "next" : "done";
+        this.returnKey.setAttribute("aria-label", hasNext ? "Select next template field" : "Finish equation");
+        const mode = this.owner.usesDock() ? "docked" : "floating";
+        const changed = this.root.dataset.mode !== mode;
+        this.root.dataset.mode = mode;
+        this.dragHandle.hidden = mode !== "floating";
+        this.position();
+        if (changed) this.owner.ping(this.record);
+      }
+      position() {
+        if (!this.root.isConnected || !this.root.dataset.mode) return;
+        const viewport = this.win.visualViewport;
+        if (this.root.dataset.mode === "docked") {
+          const bottom = Math.max(0, this.win.innerHeight - (viewport ? viewport.offsetTop + viewport.height : this.win.innerHeight));
+          this.root.style.setProperty("--nn-math-panel-bottom", `${bottom}px`);
+          const height = this.root.getBoundingClientRect().height + bottom + 12;
+          if (this.height !== height) {
+            this.height = height;
+            this.owner.ping(this.record, true);
+          }
+          return;
+        }
+        this.height = 0;
+        const visible = {
+          left: (viewport?.offsetLeft || 0) + 8,
+          top: (viewport?.offsetTop || 0) + 8,
+          right: (viewport?.offsetLeft || 0) + (viewport?.width || this.win.innerWidth) - 8,
+          bottom: (viewport?.offsetTop || 0) + (viewport?.height || this.win.innerHeight) - 8
+        };
+        const pane = this.record.cm.scrollDOM.getBoundingClientRect();
+        const bounds = { ...visible };
+        const width = Math.min(420, visible.right - visible.left);
+        if (!this.manualPosition && Math.min(pane.right, visible.right) - Math.max(pane.left, visible.left) >= width) {
+          bounds.left = Math.max(pane.left, visible.left);
+          bounds.right = Math.min(pane.right, visible.right);
+        }
+        const anchor = this.anchorRect();
+        if (!anchor || anchor.bottom <= Math.max(pane.top, visible.top) || anchor.top >= Math.min(pane.bottom, visible.bottom)) {
+          this.endDrag();
+          this.root.hidden = true;
+          return;
+        }
+        let placement = placeMathKeyboard({ anchor, bounds, width, height: 316, preferredSide: this.side, preferredPosition: this.manualPosition });
+        if (!placement) placement = placeMathKeyboard({ anchor, bounds: visible, width, height: 316, preferredPosition: this.manualPosition });
+        if (!placement) {
+          this.endDrag();
+          this.root.hidden = true;
+          return;
+        }
+        this.root.hidden = false;
+        this.side = placement.side;
+        if (this.manualPosition && !this.drag) this.manualPosition = { left: placement.left, top: placement.top };
+        for (const [property, value] of [["left", placement.left], ["top", placement.top], ["width", placement.width], ["max-height", placement.height]]) {
+          this.root.style.setProperty(`--nn-math-panel-${property}`, `${value}px`);
+        }
+        this.root.dataset.compact = String(placement.height < 210);
+        this.root.dataset.positioned = "true";
+      }
+      anchorRect() {
+        const { cm: cm2 } = this.record, context = this.owner.sourceRange(this.record, this.context);
+        if (!context) return null;
+        const initial = this.initialAnchor;
+        this.initialAnchor = null;
+        const coordinates = (offset) => {
+          try {
+            return cm2.coordsAtPos(offset);
+          } catch {
+            return null;
+          }
+        };
+        const pane = cm2.scrollDOM.getBoundingClientRect(), rectangles = [];
+        let missingRange = false;
+        try {
+          for (const visible of cm2.visibleRanges) {
+            const from = Math.max(visible.from, context.delimiterFrom), to2 = Math.min(visible.to, context.delimiterTo);
+            if (from >= to2) continue;
+            const start = cm2.domAtPos(from), end = cm2.domAtPos(to2), range = this.doc.createRange();
+            range.setStart(start.node, start.offset);
+            range.setEnd(end.node, end.offset);
+            const measured = Array.from(range.getClientRects());
+            if (!measured.some((rect) => rect.width > 0 && rect.height > 0)) missingRange = true;
+            for (const rect of measured) {
+              if (rect.width > 0 && rect.height > 0 && rect.bottom > pane.top && rect.top < pane.bottom && rect.right > pane.left && rect.left < pane.right) {
+                rectangles.push({
+                  left: Math.max(rect.left, pane.left),
+                  right: Math.min(rect.right, pane.right),
+                  top: Math.max(rect.top, pane.top),
+                  bottom: Math.min(rect.bottom, pane.bottom)
+                });
+              }
+            }
+          }
+        } catch {
+          return null;
+        }
+        if (rectangles.length) {
+          if (missingRange) return null;
+          return {
+            left: Math.min(...rectangles.map((rect) => rect.left)),
+            right: Math.max(...rectangles.map((rect) => rect.right)),
+            top: Math.min(...rectangles.map((rect) => rect.top)),
+            bottom: Math.max(...rectangles.map((rect) => rect.bottom))
+          };
+        }
+        const first = coordinates(context.delimiterFrom), last = coordinates(context.delimiterTo), caret = coordinates(context.selectionTo);
+        if (first && last && first.bottom > first.top && last.bottom > last.top) {
+          const multiline = context.display || first.top !== last.top || /[\r\n]/.test(context.source);
+          return {
+            left: multiline ? pane.left : Math.min(first.left, last.left),
+            right: multiline ? pane.right : Math.max(first.right, last.right, caret?.right || first.right),
+            top: Math.min(first.top, last.top, initial?.top ?? Infinity),
+            bottom: Math.max(first.bottom, last.bottom, initial?.bottom ?? -Infinity)
+          };
+        }
+        return null;
+      }
+      current() {
+        if (this.destroyed || !this.context || this.owner.panels.get(this.sourceDoc) !== this || !this.owner.enabled() || !this.record.alive || !this.record.cm.dom.isConnected || this.record.cm.state.readOnly || this.record.view?.editor !== this.record.editor || this.record.view?.getMode() !== "source" || this.record.view.file?.path !== this.context.filePath) return null;
+        if (!this.owner.sourceRange(this.record, this.context)) return null;
+        const current = findActiveMath(this.record.editor, this.record.view, this.context);
+        if (!current || current.snapshot !== this.context.snapshot || current.selectionFrom !== this.context.selectionFrom || current.selectionTo !== this.context.selectionTo) return null;
+        return current;
+      }
+      insert(template) {
+        if (!this.current()) {
+          this.owner.hide(this.record);
+          return;
+        }
+        const before = this.context.snapshot;
+        const source = this.owner.sourceWindow(this.record);
+        const result = source?.boundaries ? this.insertInCell(template, source) : applyMathInsertion(this.record.editor, this.context, template);
+        if (!result) return;
+        if (!result.context) {
+          this.owner.hide(this.record);
+          return;
+        }
+        this.slots = [...result.preserveSlots ? this.slots : mapSlots(before, result.context.snapshot, this.slots), ...result.slots].filter((slot, index, all4) => all4.findIndex((other) => other.from === slot.from && other.to === slot.to) === index).sort((a, b2) => a.from - b2.from);
+        this.context = result.context;
+        this.owner.focus(this.record);
+        this.owner.queue(this.record);
+      }
+      insertInCell(template, source) {
+        const { cm: cm2, editor, view } = this.record, context = this.context;
+        const plan = planMathInsertion(editor, context, template);
+        if (!plan) return null;
+        const from = source.boundaries.indexOf(context.selectionFrom), to2 = source.boundaries.indexOf(context.selectionTo);
+        if (from < 0 || to2 < 0) return null;
+        const decode = (text3) => text3.replace(/\\\|/g, "|");
+        const insert = decode(plan.change.text);
+        const local = cm2.state.doc.toString(), expected = local.slice(0, from) + insert + local.slice(to2);
+        const anchor = decode(plan.context.snapshot.slice(source.from, plan.selectionFrom)).length;
+        const head2 = decode(plan.context.snapshot.slice(source.from, plan.selectionTo)).length;
+        cm2.dispatch({ changes: { from, to: to2, insert }, selection: { anchor, head: head2 }, userEvent: "input.type" });
+        if (cm2.state.doc.toString() !== expected) {
+          this.owner.hide(this.record);
+          return null;
+        }
+        const updated = this.owner.sourceWindow(this.record), delimiter = source.boundaries.indexOf(context.delimiterFrom);
+        const continuation = updated?.boundaries && delimiter >= 0 ? {
+          ...context,
+          snapshot: updated.snapshot,
+          delimiterFrom: updated.boundaries[delimiter],
+          contentFrom: updated.boundaries[delimiter + 1]
+        } : context;
+        const actual = findActiveMath(editor, view, continuation);
+        if (!actual || actual.source !== plan.context.source || actual.filePath !== context.filePath) {
+          this.owner.hide(this.record);
+          return null;
+        }
+        const delta = actual.contentFrom - plan.context.contentFrom;
+        const beforeBody = context.source, afterBody = actual.source;
+        this.slots = mapSlots(beforeBody, afterBody, this.slots.map((slot) => ({ from: slot.from - context.contentFrom, to: slot.to - context.contentFrom }))).map((slot) => ({ from: slot.from + actual.contentFrom, to: slot.to + actual.contentFrom }));
+        this.context = actual;
+        return { ...plan, context: actual, slots: plan.slots.map((slot) => ({ from: slot.from + delta, to: slot.to + delta })), preserveSlots: true };
+      }
+      selectRange(from, to2 = from) {
+        const { editor } = this.record;
+        editor.setSelection(editor.offsetToPos(from), editor.offsetToPos(to2));
+        this.context = findActiveMath(editor, this.record.view, this.context);
+        this.owner.focus(this.record);
+        this.owner.queue(this.record);
+      }
+      nextSlot(direction2, cycle = true) {
+        if (!this.current()) return false;
+        const slots = this.slots.filter((slot) => slot.from >= this.context.contentFrom && slot.to <= this.context.contentTo);
+        const ordered = direction2 > 0 ? slots : slots.slice().reverse();
+        const next = ordered.find((slot) => direction2 > 0 ? slot.from >= this.context.selectionTo && slot.to > this.context.selectionTo : slot.to <= this.context.selectionFrom && slot.from < this.context.selectionFrom) || (cycle ? ordered[0] : null);
+        if (!next) return false;
+        this.selectRange(next.from, next.to);
+        return true;
+      }
+      move(direction2) {
+        if (!this.current()) return;
+        const context = this.context;
+        const offset = direction2 < 0 ? context.selectionFrom : context.selectionTo;
+        const character = direction2 < 0 ? [...context.snapshot.slice(context.contentFrom, offset)].at(-1) : [...context.snapshot.slice(offset, context.contentTo)][0];
+        const next = context.selectionFrom !== context.selectionTo ? offset : offset + direction2 * (character?.length || 0);
+        this.selectRange(next);
+      }
+      backspace() {
+        if (!this.current()) return;
+        let from = this.context.selectionFrom;
+        const to2 = this.context.selectionTo;
+        if (from === to2 && from > this.context.contentFrom) {
+          const source = this.owner.sourceWindow(this.record);
+          if (source?.boundaries) {
+            const localFrom = source.boundaries.indexOf(from), contentFrom = source.boundaries.indexOf(this.context.contentFrom);
+            const before = this.record.cm.state.sliceDoc(contentFrom, localFrom);
+            from = source.boundaries[localFrom - (/\\[A-Za-z]+$/.exec(before)?.[0].length || [...before].at(-1).length)];
+          } else {
+            const before = this.context.snapshot.slice(this.context.contentFrom, from);
+            from -= /\\[A-Za-z]+$/.exec(before)?.[0].length || [...before].at(-1).length;
+          }
+        }
+        if (from === to2) return;
+        this.selectRange(from, to2);
+        this.insert("");
+      }
+      finish() {
+        const context = this.current();
+        if (!context) return;
+        if (!context.complete && !context.display && (/\\+$/.exec(context.source)?.[0].length || 0) % 2 === 1) {
+          this.status.textContent = "Finish the LaTeX command before closing the equation.";
+          return;
+        }
+        const editor = this.record.editor;
+        const source = this.owner.sourceWindow(this.record);
+        if (source?.boundaries) {
+          const local = this.owner.sourceRange(this.record, context);
+          if (!local) return;
+          const closing2 = !context.complete && context.source.trim() ? "$" : "";
+          this.record.cm.dispatch({
+            ...closing2 ? { changes: { from: local.contentTo, to: local.contentTo, insert: closing2 } } : {},
+            selection: { anchor: closing2 ? local.contentTo + 1 : local.delimiterTo },
+            userEvent: "input.type"
+          });
+          this.owner.hide(this.record, true);
+          return;
+        }
+        let end = context.delimiterTo;
+        if (!context.complete && context.source.trim()) {
+          const closing2 = context.display ? `${/[\r\n]$/.test(context.source) ? "" : "\n"}$$` : "$";
+          const position = editor.offsetToPos(context.contentTo);
+          editor.replaceRange(closing2, position, position);
+          end = context.contentTo + closing2.length;
+        }
+        editor.setSelection(editor.offsetToPos(end));
+        this.owner.hide(this.record, true);
+      }
+      hardwareKey(event) {
+        if (event.defaultPrevented || event.isComposing || event.ctrlKey || event.metaKey || event.altKey || event.target.closest?.("input, select, textarea, button, [contenteditable=true]")) return;
+        if (event.key === "Escape") {
+          event.preventDefault();
+          this.owner.focus(this.record);
+          this.owner.hide(this.record, true);
+          return;
+        }
+        if (!this.current()) return;
+        if (event.key === "Backspace") this.backspace();
+        else if (event.key === "ArrowLeft") this.move(-1);
+        else if (event.key === "ArrowRight") this.move(1);
+        else if (event.key === "Enter") {
+          if (!this.nextSlot(1, false)) this.finish();
+        } else if (event.key === " ") this.insert(String.raw`\,`);
+        else if ([...event.key].length === 1) this.insert(event.key);
+        else return;
+        event.preventDefault();
+      }
+      destroy() {
+        this.destroyed = true;
+        this.endDrag();
+        this.disposers.splice(0).forEach((dispose) => dispose());
+        this.root.remove();
+      }
+    };
+    var AutomaticMathKeyboard2 = class extends Component {
+      constructor(host) {
+        super();
+        this.host = host;
+        this.records = /* @__PURE__ */ new Set();
+        this.panels = /* @__PURE__ */ new Map();
+        this.pendingOpen = /* @__PURE__ */ new Map();
+        this.running = false;
+      }
+      enabled() {
+        return this.running && this.host.featureEnabled("mathKeyboard");
+      }
+      onload() {
+        this.running = true;
+        const createEditorPlugin = (owner) => ViewPlugin.fromClass(class {
+          constructor(cm2) {
+            this.cm = cm2;
+            this.alive = true;
+            owner.records.add(this);
+            owner.queue(this);
+          }
+          update(update) {
+            if (update.docChanged || update.selectionSet || update.focusChanged || update.viewportChanged || update.geometryChanged) owner.queue(this);
+          }
+          destroy() {
+            this.alive = false;
+            const pending = owner.pendingOpen.get(this.cm.dom.ownerDocument);
+            if (pending?.record === this) owner.clearPending(this.cm.dom.ownerDocument);
+            this.timerWindow?.clearTimeout(this.timer);
+            this.pingWindow?.clearTimeout(this.pingTimer);
+            this.launchers?.destroy();
+            owner.hide(this);
+            owner.records.delete(this);
+          }
+        }, { eventHandlers: {
+          pointerdown() {
+            owner.queue(this);
+          },
+          keydown(event) {
+            const panel = owner.panels.get(this.cm.dom.ownerDocument);
+            if (panel?.record !== this) return false;
+            if (event.key === "Tab" && panel.nextSlot(event.shiftKey ? -1 : 1)) return true;
+            return false;
+          }
+        } });
+        this.host.registerEditorExtension([
+          createEditorPlugin(this),
+          EditorView.contentAttributes.of((cm2) => this.panelFor(cm2)?.root.dataset.mode === "docked" ? { inputmode: "none" } : {}),
+          EditorView.scrollMargins.of((cm2) => ({ bottom: this.panelFor(cm2)?.height || 0 }))
+        ]);
+        this.host.registerEvent(this.host.app.workspace.on("layout-change", () => this.refreshSettings()));
+      }
+      panelFor(cm2) {
+        const panel = this.panels.get(cm2.dom.ownerDocument);
+        return panel?.record.cm === cm2 ? panel : null;
+      }
+      focus(record) {
+        record.editor.focus();
+      }
+      sourceWindow(record) {
+        const { cm: cm2, editor, view } = record;
+        if (!editor || !view) return null;
+        const local = cm2.state.doc.toString(), snapshot = editor.getValue(), filePath = view.file?.path;
+        let boundaries = null;
+        if (snapshot !== local) {
+          const cached = record.sourceBridge;
+          let from, to2;
+          try {
+            from = editor.posToOffset(editor.getCursor("from"));
+            to2 = editor.posToOffset(editor.getCursor("to"));
+          } catch {
+            return null;
+          }
+          const selection = cm2.state.selection.main;
+          if (cached?.snapshot === snapshot && cached.local === local && cached.filePath === filePath && cached.boundaries[selection.from] === from && cached.boundaries[selection.to] === to2) boundaries = cached.boundaries;
+          else {
+            const panel = this.panels.get(cm2.dom.ownerDocument);
+            const focused = cm2.hasFocus || record.launchers?.contains(cm2.dom.ownerDocument.activeElement) || panel?.record === record && panel.root.contains(cm2.dom.ownerDocument.activeElement);
+            if (!focused) return null;
+            try {
+              boundaries = nestedBoundaries(snapshot, local, selection, from, to2, false) || nestedBoundaries(snapshot, local, selection, from, to2, true);
+              if (!boundaries) return null;
+            } catch {
+              return null;
+            }
+            record.sourceBridge = { snapshot, local, boundaries, filePath };
+          }
+        } else record.sourceBridge = null;
+        return { snapshot, from: boundaries ? boundaries[0] : 0, to: boundaries ? boundaries.at(-1) : snapshot.length, boundaries };
+      }
+      sourceRange(record, context) {
+        if (!context || context.filePath !== record.view?.file?.path) return null;
+        const source = this.sourceWindow(record);
+        if (!source || source.snapshot !== context.snapshot) return null;
+        const { boundaries } = source, length = record.cm.state.doc.length;
+        const mapped = { ...context };
+        for (const key2 of ["delimiterFrom", "delimiterTo", "contentFrom", "contentTo", "selectionFrom", "selectionTo"]) {
+          mapped[key2] = boundaries ? boundaries.indexOf(context[key2]) : context[key2];
+          if (mapped[key2] < 0 || mapped[key2] > length) return null;
+        }
+        return mapped;
+      }
+      sourceMatches(record, context) {
+        return !!this.sourceRange(record, context);
+      }
+      clearPending(doc) {
+        const pending = this.pendingOpen.get(doc);
+        if (pending) {
+          pending.win.clearTimeout(pending.timer);
+          this.pendingOpen.delete(doc);
+        }
+      }
+      usesDock() {
+        if (Platform.isMobileApp || Platform.isIosApp || Platform.isAndroidApp || Platform.isPhone || Platform.isTablet) return true;
+        return !Platform.isDesktopApp && !!Platform.isMobile;
+      }
+      queue(record) {
+        if (!record.alive || record.detached || !this.running) return;
+        const win = record.cm.dom.ownerDocument.defaultView;
+        record.timerWindow?.clearTimeout(record.timer);
+        record.timerWindow = win;
+        record.timer = win.setTimeout(() => this.sync(record), 0);
+      }
+      ping(record, reveal = false) {
+        if (!record.alive || record.detached || !this.running) return;
+        record.reveal = record.reveal || reveal;
+        if (record.pingTimer) return;
+        const win = record.cm.dom.ownerDocument.defaultView;
+        record.pingWindow = win;
+        record.pingTimer = win.setTimeout(() => {
+          record.pingTimer = null;
+          const reveal2 = record.reveal;
+          record.reveal = false;
+          if (record.alive && this.running) record.cm.dispatch({ effects: [
+            keyboardChanged.of(null),
+            ...reveal2 ? [EditorView.scrollIntoView(record.cm.state.selection.main.head, { y: "nearest" })] : []
+          ] });
+        }, 0);
+      }
+      sync(record) {
+        if (!record.alive || record.detached || !this.running) return;
+        const cm2 = record.cm, doc = cm2.dom.ownerDocument;
+        const previousDocument = [...this.panels.entries()].find(([document3, panel2]) => panel2.record === record && document3 !== doc);
+        if (previousDocument) {
+          record.pingWindow?.clearTimeout(record.pingTimer);
+          record.pingTimer = null;
+          this.hide(record);
+        }
+        const panel = this.panels.get(doc);
+        const info = cm2.state.field(editorInfoField, false);
+        const view = this.host.app.workspace.getLeavesOfType("markdown").map((leaf) => leaf.view).find((view2) => view2.editor === info?.editor && view2.containerEl.contains(cm2.dom));
+        if (!this.enabled() || !cm2.dom.isConnected || cm2.state.readOnly || !view || view.getMode() !== "source" || view.file?.extension !== "md") {
+          this.hide(record);
+          record.launchers?.destroy();
+          record.launchers = null;
+          record.previous = null;
+          return;
+        }
+        record.editor = view.editor;
+        record.view = view;
+        if (record.launcherDocument !== doc) {
+          record.launchers?.destroy();
+          record.launchers = null;
+        }
+        record.launcherDocument = doc;
+        if (!record.launchers) record.launchers = new MathKeyboardLaunchers(this, record);
+        const focused = cm2.hasFocus || record.launchers.contains(doc.activeElement) || panel?.record === record && panel.root.contains(doc.activeElement);
+        const previous = panel?.record === record ? panel.context : record.previous;
+        const active = focused ? findActiveMath(record.editor, view, previous) : null;
+        const context = active && this.sourceRange(record, active) ? active : null;
+        const pending = this.pendingOpen.get(doc);
+        if (pending && cm2.hasFocus && context && cm2.state.doc.toString() !== context.snapshot && pending.editor === record.editor && pending.view === view && pending.context.filePath === context.filePath && pending.context.snapshot === context.snapshot && pending.context.delimiterFrom === context.delimiterFrom && pending.context.selectionFrom === context.selectionFrom && pending.context.selectionTo === context.selectionTo) {
+          this.clearPending(doc);
+          this.open(record, context, pending.anchor);
+          return;
+        }
+        record.previous = context;
+        const session = panel?.record === record ? panel : null;
+        const reflowedCell = context?.table && session?.context.table && context.snapshot !== session.context.snapshot && cm2.state.doc.toString() !== context.snapshot && this.sourceRange(record, context)?.delimiterFrom === session.localDelimiterFrom;
+        if (session && (!context || session.context.filePath !== context.filePath || session.context.delimiterFrom !== context.delimiterFrom && !reflowedCell || panel.root.dataset.mode === "docked" !== this.usesDock())) this.hide(record);
+        else if (panel?.record === record) panel.update(context);
+        record.launchers.update(context);
+      }
+      open(record, context, anchor = null) {
+        if (!record?.alive || record.detached || !this.enabled() || !context) return false;
+        const { cm: cm2, editor, view } = record;
+        const doc = cm2.dom.ownerDocument;
+        const info = cm2.state.field(editorInfoField, false);
+        if (!cm2.dom.isConnected || cm2.state.readOnly || !view || view.editor !== editor || info?.editor !== editor || !view.containerEl.contains(cm2.dom) || view.getMode() !== "source" || view.file?.extension !== "md" || view.file.path !== context.filePath || editor.getValue() !== context.snapshot) return false;
+        const current = findActiveMath({
+          getValue: () => editor.getValue(),
+          getCursor: (side) => editor.offsetToPos(side === "from" ? context.selectionFrom : context.selectionTo)
+        }, view, context);
+        if (!current || ["delimiterFrom", "delimiterTo", "contentFrom", "contentTo", "display", "complete"].some((key2) => current[key2] !== context[key2]) || !this.sourceRange(record, current)) return false;
+        const panel = this.panels.get(doc);
+        if (panel?.record === record && panel.context.delimiterFrom === context.delimiterFrom) return true;
+        if (panel) this.hide(panel.record);
+        this.clearPending(doc);
+        editor.setSelection(editor.offsetToPos(current.selectionFrom), editor.offsetToPos(current.selectionTo));
+        this.focus(record);
+        for (const candidate of this.records) {
+          if (candidate === record || !candidate.alive || candidate.detached || !candidate.cm.hasFocus || candidate.cm.dom.ownerDocument !== doc || candidate.cm.state.field(editorInfoField, false)?.editor !== editor || !view.containerEl.contains(candidate.cm.dom)) continue;
+          candidate.editor = editor;
+          candidate.view = view;
+          if (this.sourceRange(candidate, current)) {
+            record = candidate;
+            break;
+          }
+        }
+        if (!this.sourceRange(record, current)) return false;
+        if (context.table && record.cm.state.doc.toString() === context.snapshot && record.cm.contentDOM.querySelector(".cm-table-widget")) {
+          const pending = { record, editor, view, context: current, anchor, win: doc.defaultView };
+          pending.timer = pending.win.setTimeout(() => this.clearPending(doc), 1e3);
+          this.pendingOpen.set(doc, pending);
+          return true;
+        }
+        record.previous = current;
+        context = current;
+        const keyboard = new MathKeyboardPanel(this, record, context, anchor);
+        this.panels.set(doc, keyboard);
+        keyboard.update(context);
+        record.launchers?.update(context);
+        return true;
+      }
+      hide(record, restoreFocus = false) {
+        const entry = [...this.panels.entries()].find(([, panel2]) => panel2.record === record);
+        if (!entry) return;
+        const [doc, panel] = entry;
+        panel.destroy();
+        this.panels.delete(doc);
+        if (restoreFocus && record.alive && record.cm.dom.isConnected && record.cm.dom.ownerDocument === doc) this.focus(record);
+        this.ping(record);
+        this.queue(record);
+      }
+      detachDocument(doc) {
+        this.clearPending(doc);
+        for (const record of this.records) {
+          if (record.cm.dom.ownerDocument === doc) {
+            record.launchers?.destroy();
+            record.launchers = null;
+            record.detached = true;
+            record.timerWindow?.clearTimeout(record.timer);
+            record.pingWindow?.clearTimeout(record.pingTimer);
+            record.pingTimer = null;
+            record.reveal = false;
+          }
+        }
+        const panel = this.panels.get(doc);
+        if (panel) this.hide(panel.record);
+        for (const record of this.records) {
+          if (record.alive && record.cm.dom.ownerDocument === doc) record.cm.dispatch({ effects: keyboardChanged.of(null) });
+        }
+      }
+      refreshSettings() {
+        if (!this.enabled()) for (const doc of this.pendingOpen.keys()) this.clearPending(doc);
+        for (const record of this.records) this.queue(record);
+      }
+      onunload() {
+        this.running = false;
+        for (const doc of this.pendingOpen.keys()) this.clearPending(doc);
+        for (const record of this.records) {
+          record.timerWindow?.clearTimeout(record.timer);
+          record.pingWindow?.clearTimeout(record.pingTimer);
+          record.pingTimer = null;
+          record.reveal = false;
+          record.launchers?.destroy();
+          record.launchers = null;
+          this.hide(record);
+        }
+        for (const record of this.records) if (record.alive) record.cm.dispatch({ effects: keyboardChanged.of(null) });
+      }
+    };
+    module2.exports = { AutomaticMathKeyboard: AutomaticMathKeyboard2, MathKeyboardPanel };
+  }
+});
+
 // src/outline.js
 var require_outline = __commonJS({
   "src/outline.js"(exports2, module2) {
@@ -41493,7 +50380,7 @@ var require_outline = __commonJS({
     var { maskComments } = require_callout_spacing();
     var { setLocalIcon } = require_icons();
     function headingLabel(text3) {
-      return String(text3).replace(/!?(?:\[\[)([^\]]+)\]\]/g, (_, target) => target.split("|").pop()).replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/<[^>]*>/g, "").replace(/`+([^`]+)`+/g, "$1").replace(/(\*\*|__|~~)(.*?)\1/g, "$2").replace(/(^|[\s([{])([*_])([^*_]+)\2(?=$|[\s.,!?;:)\]}])/g, "$1$3").replace(/\\([\\`*{}[\]()#+.!_>~-])/g, "$1").replace(/\s+/g, " ").trim() || "Untitled heading";
+      return String(text3).replace(/!?(?:\[\[)([^\]]+)\]\]/g, (_2, target) => target.split("|").pop()).replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/<[^>]*>/g, "").replace(/`+([^`]+)`+/g, "$1").replace(/(\*\*|__|~~)(.*?)\1/g, "$2").replace(/(^|[\s([{])([*_])([^*_]+)\2(?=$|[\s.,!?;:)\]}])/g, "$1$3").replace(/\\([\\`*{}[\]()#+.!_>~-])/g, "$1").replace(/\s+/g, " ").trim() || "Untitled heading";
     }
     function scanHeadings(source) {
       if (typeof source !== "string") throw new TypeError("source must be a string");
@@ -42164,6 +51051,114 @@ var require_media_alignment_source = __commonJS({
       }
       return result;
     }
+    function scanAlignmentMarkers(source) {
+      if (typeof source !== "string") throw new TypeError("source must be a string");
+      const lines = linesOf(source);
+      const candidates = /* @__PURE__ */ new Map();
+      const prepared = lines.map((line, row) => {
+        const match = MARKER.exec(line.text);
+        if (!match) return line.text + line.eol;
+        candidates.set(row, { from: line.start, to: line.next });
+        return line.text.slice(0, match[1].length) + "N" + line.text.slice(match[1].length + 1) + line.eol;
+      });
+      if (!candidates.size) return [];
+      const masked = maskComments(prepared.join("")).split("\n");
+      const maskedSource = lines.map((line, row) => masked[row] + line.eol).join("");
+      const fences = new Map(scanFences(maskedSource).map((fence) => [fence.lineStart, fence]));
+      let start = 0;
+      if (/^\uFEFF?---[ \t]*$/.test(lines[0].text)) {
+        start = 1;
+        while (start < lines.length && !/^(?:---|\.\.\.)[ \t]*$/.test(lines[start].text)) start++;
+        start++;
+      }
+      const result = [];
+      let html5 = false, rawHTML = null, math = false, quote = false, listIndent = null, listBlank = false;
+      let inlineEnd = -1;
+      for (let row = start; row < lines.length; row++) {
+        const line = masked[row];
+        if (rawHTML) {
+          if (rawHTML.test(lines[row].text)) rawHTML = null;
+          continue;
+        }
+        if (!line.trim()) {
+          html5 = false;
+          quote = false;
+          listBlank = true;
+          inlineEnd = -1;
+          continue;
+        }
+        if (math) {
+          if (/\$\$[ \t]*$/.test(line)) math = false;
+          continue;
+        }
+        if (html5) continue;
+        const fence = fences.get(row);
+        if (fence) {
+          row = fence.lineEnd === null ? Math.max(row, lines.findIndex((line2) => line2.start >= fence.bodyEnd) - 1) : fence.lineEnd;
+          if (!fence.closed && fence.bodyEnd === source.length) row = lines.length;
+          inlineEnd = -1;
+          continue;
+        }
+        const raw2 = /^ {0,3}<(script|style|pre|textarea)(?:[\s>]|$)/i.exec(line);
+        if (raw2) {
+          const closing2 = new RegExp(`</${raw2[1]}\\s*>`, "i");
+          rawHTML = closing2.test(lines[row].text) ? null : closing2;
+          inlineEnd = -1;
+          continue;
+        }
+        if (/^ {0,3}</.test(line)) {
+          html5 = true;
+          continue;
+        }
+        if (/^ {0,3}\$\$/.test(line)) {
+          math = !/\$\$[ \t]*$/.test(line.slice(line.indexOf("$$") + 2));
+          continue;
+        }
+        const interrupt = /^ {0,3}(?:#{1,6}(?:[ \t]|$)|>|[-+*][ \t]|\d+[.)][ \t])/.test(line);
+        const indent = /^[ \t]*/.exec(line)[0].replace(/\t/g, "    ").length;
+        let nested = false;
+        if (listIndent !== null) {
+          if (indent >= listIndent || !listBlank && !interrupt) nested = true;
+          else listIndent = null;
+        }
+        if (quote && !interrupt) nested = true;
+        else if (quote) quote = false;
+        const list2 = /^( {0,3})(?:[-+*]|\d{1,9}[.)])([ \t]+)(.*)$/.exec(line);
+        if (list2) {
+          listIndent = line.length - list2[3].length;
+          listBlank = false;
+          continue;
+        }
+        if (/^ {0,3}>/.test(line)) {
+          quote = true;
+          continue;
+        }
+        const candidate = candidates.get(row);
+        if (candidate && !nested && inlineEnd <= candidate.from && line.trim()) result.push(candidate);
+        for (let index = Math.max(0, inlineEnd - lines[row].start); index < line.length; ) {
+          if (line[index] === "\\") {
+            index += 2;
+            continue;
+          }
+          if (line[index] !== "`") {
+            index++;
+            continue;
+          }
+          const run = /^`+/.exec(line.slice(index))[0];
+          const ticks = /`+|\r\n[ \t]*(?:\r\n|\r|\n)|\r(?!\n)[ \t]*(?:\r\n|\r|\n)|\n[ \t]*(?:\r\n|\r|\n)/g;
+          ticks.lastIndex = lines[row].start + index + run.length;
+          let closing2;
+          while ((closing2 = ticks.exec(maskedSource)) && closing2[0][0] === "`" && closing2[0].length !== run.length) {
+          }
+          if (closing2?.[0] === run) {
+            inlineEnd = closing2.index + run.length;
+            index = Math.max(index + run.length, inlineEnd - lines[row].start);
+          } else index += run.length;
+        }
+        listBlank = false;
+      }
+      return result;
+    }
     function alignmentChange(currentSource, target, alignment) {
       if (typeof currentSource !== "string") throw new TypeError("currentSource must be a string");
       if (!ALIGNMENTS.has(alignment)) throw new RangeError("Alignment must be left, center, or right");
@@ -42182,7 +51177,7 @@ var require_media_alignment_source = __commonJS({
       }
       return { from: matched.from, to: matched.from, insert: `<!-- native-notes:align=${alignment} -->${matched.eol}` };
     }
-    module2.exports = { scanMedia, alignmentChange };
+    module2.exports = { scanMedia, scanAlignmentMarkers, alignmentChange };
   }
 });
 
@@ -42191,9 +51186,9 @@ var require_media_alignment = __commonJS({
   "src/media-alignment.js"(exports2, module2) {
     "use strict";
     var { Component, MarkdownRenderChild, Notice: Notice2, editorInfoField } = require("obsidian");
-    var { ViewPlugin, Decoration } = require("@codemirror/view");
-    var { StateEffect } = require("@codemirror/state");
-    var { scanMedia, alignmentChange } = require_media_alignment_source();
+    var { EditorView, ViewPlugin, Decoration } = require("@codemirror/view");
+    var { EditorState, StateEffect, StateField } = require("@codemirror/state");
+    var { scanMedia, scanAlignmentMarkers, alignmentChange } = require_media_alignment_source();
     var { setLocalIcon } = require_icons();
     var MEDIA = ".mermaid, .image-embed, img[src]";
     var settingsChanged = StateEffect.define();
@@ -42314,10 +51309,14 @@ var require_media_alignment = __commonJS({
       }
       onload() {
         this.running = true;
+        this.markerField = StateField.define({
+          create: (state) => this.decorations(state),
+          update: (value, transaction) => transaction.docChanged || transaction.effects.some((effect) => effect.is(settingsChanged)) ? this.decorations(transaction.state) : value,
+          provide: (field) => EditorView.decorations.from(field)
+        });
         const createEditorPlugin = (owner) => class {
           constructor(view) {
             this.view = view;
-            this.decorations = owner.decorations(view.state);
             const context = {
               editorView: view,
               get sourcePath() {
@@ -42342,10 +51341,19 @@ var require_media_alignment = __commonJS({
             owner.live.add(this.region);
             owner.editors.add(this);
             this.region.load();
+            Promise.resolve().then(() => {
+              if (!this.region.running || !owner.enabled() || !view.state.selection?.main.empty || view.state.selection.ranges.length !== 1) return;
+              const head2 = view.state.selection.main.head;
+              view.state.field(owner.markerField).between(head2, head2, (from, to2) => {
+                if (head2 >= from && head2 < to2) view.dispatch({ selection: { anchor: to2 }, scrollIntoView: false });
+              });
+            });
+          }
+          get decorations() {
+            return this.view.state.field(owner.markerField);
           }
           update(update) {
             if (update.docChanged || update.transactions.some((transaction) => transaction.effects.some((effect) => effect.is(settingsChanged)))) {
-              this.decorations = owner.decorations(update.state);
               this.region.queue();
             } else if (update.viewportChanged) this.region.queue();
           }
@@ -42355,7 +51363,53 @@ var require_media_alignment = __commonJS({
             owner.editors.delete(this);
           }
         };
-        this.host.registerEditorExtension(ViewPlugin.fromClass(createEditorPlugin(this), { decorations: (plugin2) => plugin2.decorations }));
+        this.host.registerEditorExtension(ViewPlugin.fromClass(createEditorPlugin(this)));
+        this.host.registerEditorExtension([
+          this.markerField,
+          EditorView.atomicRanges.of((view) => view.state.field(this.markerField)),
+          // Atomic cursor motion also makes Backspace/Delete treat the range as a
+          // single character. Protect that invisible metadata (including its line
+          // boundary) from accidental single-caret deletion on desktop and touch.
+          // Selecting a block intentionally still deletes all of its Markdown.
+          EditorState.changeFilter.of((transaction) => {
+            if (!this.enabled() || !transaction.isUserEvent("delete") || transaction.startState.selection.ranges.some((range) => !range.empty)) return true;
+            const ranges = transaction.startState.field(this.markerField);
+            let safe = true;
+            transaction.changes.iterChangedRanges((from, to2) => {
+              if (from === to2) return;
+              ranges.between(Math.max(0, from), Math.min(transaction.startState.doc.length, to2 + 1), (start, end) => {
+                if (from < end && to2 > Math.max(0, start - 1)) safe = false;
+              });
+            });
+            return safe;
+          }),
+          // Go-to-line, Home, pointer selection, and host editor commands may set
+          // selections directly, bypassing atomic cursor motion. Keep a collapsed
+          // caret on a visible line without changing an intentional text selection.
+          EditorState.transactionFilter.of((transaction) => {
+            if (!this.enabled()) return transaction;
+            const state = transaction.startState, end = state.doc.length;
+            if ((transaction.isUserEvent("input.type") || transaction.isUserEvent("input.paste") || transaction.isUserEvent("input.drop")) && state.selection.ranges.length === 1 && state.selection.main.empty && state.selection.main.head === end && state.doc.lineAt(end).from < end) {
+              let hiddenEnd = false, append = false;
+              state.field(this.markerField).between(end, end, (_from, to2) => {
+                if (to2 === end) hiddenEnd = true;
+              });
+              if (hiddenEnd) transaction.changes.iterChanges((from, to2, _newFrom, _newTo, inserted) => {
+                if (from === end && to2 === end && inserted.length && inserted.line(1).length) append = true;
+              });
+              if (append) return [transaction, { changes: { from: end, insert: state.lineBreak }, sequential: true }];
+            }
+            const settingsChange = transaction.effects.some((effect) => effect.is(settingsChanged));
+            if (!transaction.selection && !settingsChange || !transaction.newSelection.main.empty || transaction.newSelection.ranges.length !== 1) return transaction;
+            const ranges = settingsChange ? this.decorations({ doc: transaction.newDoc }) : transaction.startState.field(this.markerField).map(transaction.changes);
+            const head2 = transaction.newSelection.main.head;
+            let anchor = head2;
+            ranges.between(head2, head2, (from, to2) => {
+              if (head2 >= from && head2 < to2) anchor = head2 < transaction.startState.selection.main.head && from > 0 ? from - 1 : to2;
+            });
+            return anchor === head2 ? transaction : [transaction, { selection: { anchor }, sequential: true }];
+          })
+        ]);
         this.host.registerMarkdownPostProcessor((element3, context) => {
           if (!this.running || !context.sourcePath?.toLowerCase().endsWith(".md")) return;
           const selector = `${MEDIA}, .internal-embed[src], code.language-mermaid`;
@@ -42387,7 +51441,13 @@ var require_media_alignment = __commonJS({
       }
       decorations(state) {
         if (!this.enabled()) return Decoration.none;
-        const ranges = scanMedia(state.doc.toString()).filter((item) => item.markerFrom !== null && !item.ambiguous).map((item) => Decoration.line({ class: "nn-media-alignment-marker" }).range(item.markerFrom));
+        const blocks = [];
+        for (const marker of scanAlignmentMarkers(state.doc.toString())) {
+          const previous = blocks[blocks.length - 1];
+          if (previous?.to === marker.from) previous.to = marker.to;
+          else blocks.push({ ...marker });
+        }
+        const ranges = blocks.map((item) => Decoration.replace({ block: true, inclusive: false }).range(item.from, item.to));
         return Decoration.set(ranges, true);
       }
       ensureButton(record) {
@@ -42546,6 +51606,1977 @@ var require_media_alignment = __commonJS({
   }
 });
 
+// src/flowchart-model.js
+var require_flowchart_model = __commonJS({
+  "src/flowchart-model.js"(exports2, module2) {
+    "use strict";
+    var SHAPES = Object.freeze([
+      { id: "rectangle", label: "Process", open: "[", close: "]" },
+      { id: "rounded", label: "Rounded process", open: "(", close: ")" },
+      { id: "stadium", label: "Start/end", open: "([", close: "])" },
+      { id: "diamond", label: "Decision", open: "{", close: "}" },
+      { id: "parallelogram", label: "Data", open: "[/", close: "/]" },
+      { id: "cylinder", label: "Database", open: "[(", close: ")]" },
+      { id: "subroutine", label: "Subprocess", open: "[[", close: "]]" },
+      { id: "circle", label: "Connector", open: "((", close: "))" }
+    ].map((shape) => Object.freeze(shape)));
+    var DIRECTIONS = Object.freeze(["TB", "LR", "BT", "RL"]);
+    var MAX_NODES = 200;
+    var MAX_EDGES = 500;
+    var MAX_LABEL = 1e3;
+    var MAX_SOURCE = 25e4;
+    var MAX_POSITION = 1e5;
+    var IDENTIFIER = /^[A-Za-z_][A-Za-z0-9_]*(?:-[A-Za-z0-9_]+)*/;
+    var RESERVED = /* @__PURE__ */ new Set(["end", "subgraph", "style", "classDef", "class", "click", "linkStyle", "direction", "flowchart", "graph", "accTitle", "accDescr"]);
+    var EDGE_SYNTAX = Object.freeze({ arrow: "-->", line: "---", dotted: "-.->", thick: "==>" });
+    var ORDERED_SHAPES = [...SHAPES].sort((a, b2) => b2.open.length - a.open.length);
+    function createGraph() {
+      return { direction: "TB", nodes: [], edges: [] };
+    }
+    function validId(value) {
+      return typeof value === "string" && value.length <= 100 && IDENTIFIER.exec(value)?.[0] === value && !RESERVED.has(value);
+    }
+    function coordinate(value) {
+      return Number.isFinite(value) && value >= 0 && value <= MAX_POSITION;
+    }
+    function controlCharacters(value) {
+      return [...value].some((char) => {
+        const code = char.charCodeAt(0);
+        return code < 32 && code !== 9 && code !== 10 && code !== 13 || code >= 127 && code <= 159;
+      });
+    }
+    function validateGraph(graph) {
+      if (!graph || !DIRECTIONS.includes(graph.direction) || !Array.isArray(graph.nodes) || !Array.isArray(graph.edges)) throw new Error("Invalid flowchart");
+      if (graph.nodes.length > MAX_NODES || graph.edges.length > MAX_EDGES) throw new Error("This flowchart exceeds the visual editor limit");
+      const ids = /* @__PURE__ */ new Set();
+      for (const node of graph.nodes) {
+        if (!validId(node.id) || ids.has(node.id) || !SHAPES.some((shape) => shape.id === node.shape) || typeof node.label !== "string" || node.label.length > MAX_LABEL || controlCharacters(node.label) || !coordinate(node.x) || !coordinate(node.y)) throw new Error("Invalid flowchart component");
+        ids.add(node.id);
+      }
+      const edgeIds = /* @__PURE__ */ new Set();
+      for (const edge of graph.edges) {
+        if (!validId(edge.id) || edgeIds.has(edge.id) || !ids.has(edge.from) || !ids.has(edge.to) || !Object.hasOwn(EDGE_SYNTAX, edge.style) || typeof edge.label !== "string" || edge.label.length > MAX_LABEL || controlCharacters(edge.label)) throw new Error("Invalid flowchart connection");
+        edgeIds.add(edge.id);
+      }
+      if (graph.comments !== void 0 && (!Array.isArray(graph.comments) || graph.comments.some((comment4) => typeof comment4 !== "string" || /[\r\n]/.test(comment4) || !/^%%(?!\{)/.test(comment4)))) throw new Error("Invalid flowchart comment");
+    }
+    function addNode(graph, shape = "rectangle", x = 80, y2 = 80) {
+      if (!SHAPES.some((item) => item.id === shape)) throw new Error("Unknown component shape");
+      if (graph.nodes.length >= MAX_NODES) throw new Error(`A flowchart can contain up to ${MAX_NODES} components`);
+      if (!coordinate(x) || !coordinate(y2)) throw new Error("Invalid component position");
+      let index = 1;
+      while (graph.nodes.some((node2) => node2.id === `node${index}`)) index++;
+      const node = { id: `node${index}`, label: SHAPES.find((item) => item.id === shape).label, shape, x, y: y2 };
+      graph.nodes.push(node);
+      return node;
+    }
+    function layoutGraph(graph) {
+      const byId = new Map(graph.nodes.map((node) => [node.id, node]));
+      const outgoing = new Map(graph.nodes.map((node) => [node.id, []]));
+      const incoming = new Map(graph.nodes.map((node) => [node.id, 0]));
+      for (const edge of graph.edges) {
+        if (!byId.has(edge.from) || !byId.has(edge.to)) continue;
+        outgoing.get(edge.from).push(edge.to);
+        incoming.set(edge.to, incoming.get(edge.to) + 1);
+      }
+      const ranks = /* @__PURE__ */ new Map(), queue = [];
+      for (const node of graph.nodes) if (!incoming.get(node.id)) {
+        ranks.set(node.id, 0);
+        queue.push(node.id);
+      }
+      const visit2 = () => {
+        for (let index = 0; index < queue.length; index++) {
+          const id2 = queue[index];
+          for (const next of outgoing.get(id2)) if (!ranks.has(next)) {
+            ranks.set(next, ranks.get(id2) + 1);
+            queue.push(next);
+          }
+        }
+      };
+      visit2();
+      for (const node of graph.nodes) if (!ranks.has(node.id)) {
+        ranks.set(node.id, 0);
+        queue.length = 0;
+        queue.push(node.id);
+        visit2();
+      }
+      const levels = /* @__PURE__ */ new Map(), maxRank = Math.max(0, ...ranks.values());
+      for (const node of graph.nodes) {
+        const rank = ranks.get(node.id), slot = levels.get(rank) || 0;
+        levels.set(rank, slot + 1);
+        const along = graph.direction === "BT" || graph.direction === "RL" ? maxRank - rank : rank;
+        node.x = 80 + (graph.direction === "LR" || graph.direction === "RL" ? along * 240 : slot * 220);
+        node.y = 80 + (graph.direction === "LR" || graph.direction === "RL" ? slot * 140 : along * 150);
+      }
+      return graph;
+    }
+    function encodeLabel(label) {
+      if (!label) return "#8203;";
+      return label.replace(/\r\n?|\n/g, "\n").replace(/[&"#<>|[\]{}();`%\\\n\t]/g, (char) => char === "\n" ? "<br/>" : `#${char.codePointAt(0)};`);
+    }
+    function decodeLabel(label) {
+      if (label === "#8203;") return "";
+      label = label.replace(/<br\s*\/?\s*>/gi, "\n");
+      if (/[<>`]/.test(label)) throw new Error("HTML and Markdown labels cannot be edited visually yet");
+      return label.replace(/(?:#|&#?)(\d+|[A-Za-z][A-Za-z0-9]*);/g, (match, entity) => {
+        const named = { quot: '"', amp: "&", lt: "<", gt: ">", nbsp: "\xA0" };
+        if (Object.hasOwn(named, entity)) return named[entity];
+        if (!/^\d+$/.test(entity)) throw new Error("This named label entity cannot be edited visually yet");
+        const number2 = Number(entity);
+        if (number2 < 1 || number2 > 1114111 || number2 >= 127 && number2 <= 159 || number2 >= 55296 && number2 <= 57343) throw new Error("Unsupported label entity");
+        return String.fromCodePoint(number2);
+      });
+    }
+    function serializeMermaid(graph) {
+      validateGraph(graph);
+      const lines = [`flowchart ${graph.direction}`];
+      for (const comment4 of graph.comments || []) lines.push(`    ${comment4}`);
+      for (const node of graph.nodes) {
+        const shape = SHAPES.find((item) => item.id === node.shape);
+        lines.push(`    ${node.id}${shape.open}"${encodeLabel(node.label)}"${shape.close}`);
+      }
+      for (const edge of graph.edges) lines.push(`    ${edge.from} ${EDGE_SYNTAX[edge.style]}${edge.label ? `|"${encodeLabel(edge.label)}"|` : ""} ${edge.to}`);
+      for (const node of graph.nodes) lines.push(`    %% native-notes:position ${node.id} ${Math.round(node.x * 100) / 100} ${Math.round(node.y * 100) / 100}`);
+      const source = lines.join("\n");
+      if (source.length > MAX_SOURCE) throw new Error("This diagram is too large for the visual editor");
+      return source;
+    }
+    function statementsOf(source) {
+      const statements = [];
+      let current = "", quoted = false, pipe = false, depth = 0;
+      for (let index = 0; index < source.length; index++) {
+        const char = source[index];
+        if (!quoted && !pipe && depth === 0 && source.startsWith("%%", index)) {
+          if (current.trim()) statements.push(current.trim());
+          current = "";
+          const end = source.indexOf("\n", index);
+          statements.push(source.slice(index, end < 0 ? source.length : end).trim());
+          index = end < 0 ? source.length : end;
+          continue;
+        }
+        if (char === '"') quoted = !quoted;
+        if (!quoted) {
+          if (char === "|" && depth === 0) pipe = !pipe;
+          if (!pipe && "[({".includes(char)) depth++;
+          if (!pipe && "])}".includes(char)) depth--;
+          if (depth < 0) throw new Error("Unbalanced component shape");
+          if ((char === ";" || char === "\n") && depth === 0 && !pipe) {
+            if (current.trim()) statements.push(current.trim());
+            current = "";
+            continue;
+          }
+        }
+        current += char;
+      }
+      if (quoted || depth || pipe) throw new Error("Unclosed component label or shape");
+      if (current.trim()) statements.push(current.trim());
+      return statements;
+    }
+    function parseMermaid(source) {
+      try {
+        if (typeof source !== "string" || source.length > MAX_SOURCE) throw new Error("This diagram is too large for the visual editor");
+        const statements = statementsOf(source.replace(/\r\n?/g, "\n"));
+        const graph = createGraph(), nodes = /* @__PURE__ */ new Map(), positions = /* @__PURE__ */ new Map(), comments = [];
+        let header = false;
+        const ensure = (id2, definition) => {
+          if (!nodes.has(id2)) {
+            if (nodes.size >= MAX_NODES) throw new Error(`The visual editor supports up to ${MAX_NODES} components`);
+            const node = { id: id2, label: id2, shape: "rectangle", x: 0, y: 0 };
+            nodes.set(id2, node);
+            graph.nodes.push(node);
+          }
+          if (definition) Object.assign(nodes.get(id2), definition);
+          return id2;
+        };
+        for (const statement of statements) {
+          if (statement.startsWith("%%")) {
+            if (/^%%\{/.test(statement)) throw new Error("Mermaid configuration directives cannot be edited visually yet");
+            const position = /^%% native-notes:position ([A-Za-z_][A-Za-z0-9_-]*) (\d+(?:\.\d+)?) (\d+(?:\.\d+)?)$/.exec(statement);
+            if (position) {
+              if (positions.has(position[1]) || !coordinate(Number(position[2])) || !coordinate(Number(position[3]))) throw new Error("Invalid saved component position");
+              positions.set(position[1], { x: Number(position[2]), y: Number(position[3]) });
+            } else if (statement.startsWith("%% native-notes:position")) throw new Error("Invalid saved component position");
+            else comments.push(statement);
+            continue;
+          }
+          if (!header) {
+            const match = /^(?:flowchart|graph)[ \t]+(TB|TD|BT|LR|RL)$/.exec(statement);
+            if (!match) throw new Error("Choose a Mermaid flowchart with a supported direction");
+            graph.direction = match[1] === "TD" ? "TB" : match[1];
+            header = true;
+            continue;
+          }
+          let cursor = 0;
+          const space = () => {
+            while (/\s/.test(statement[cursor] || "\0")) cursor++;
+          };
+          const node = () => {
+            space();
+            const match = IDENTIFIER.exec(statement.slice(cursor));
+            if (!match || !validId(match[0])) throw new Error("This Mermaid syntax cannot be edited visually yet");
+            const id2 = match[0];
+            cursor += id2.length;
+            space();
+            const shape = ORDERED_SHAPES.find((item) => statement.startsWith(item.open, cursor));
+            if (!shape) return ensure(id2);
+            cursor += shape.open.length;
+            let label;
+            if (statement[cursor] === '"') {
+              const end = statement.indexOf('"', ++cursor);
+              if (end < 0) throw new Error("Unclosed component label");
+              label = statement.slice(cursor, end);
+              cursor = end + 1;
+              if (!statement.startsWith(shape.close, cursor)) throw new Error("Unsupported component shape");
+            } else {
+              const end = statement.indexOf(shape.close, cursor);
+              if (end < 0) throw new Error("Unclosed component shape");
+              label = statement.slice(cursor, end);
+              if (/[[\]{}()"\r\n]/.test(label)) throw new Error("Quote component labels containing punctuation");
+              cursor = end;
+            }
+            cursor += shape.close.length;
+            return ensure(id2, { label: decodeLabel(label), shape: shape.id });
+          };
+          let from = node();
+          space();
+          while (cursor < statement.length) {
+            let style2, label = "";
+            const edge = /^(-->|---|-\.->|==>)/.exec(statement.slice(cursor));
+            if (edge) {
+              if (edge[0] === "---" && /^[ox]/.test(statement.slice(cursor + edge[0].length))) throw new Error("Circle and cross connections cannot be edited visually yet");
+              style2 = Object.keys(EDGE_SYNTAX).find((key2) => EDGE_SYNTAX[key2] === edge[0]);
+              cursor += edge[0].length;
+            } else {
+              const labelled = /^(--|-\.|==)/.exec(statement.slice(cursor));
+              const token = labelled?.[0].trim();
+              if (!token) throw new Error("Connections, groups or styling in this diagram are not supported visually yet");
+              const close = token === "--" ? "-->" : token === "-." ? ".->" : "==>";
+              const end = statement.indexOf(close, cursor + token.length);
+              if (end < 0) throw new Error("Unsupported connection syntax");
+              label = statement.slice(cursor + token.length, end).trim();
+              if (label.startsWith('"') && label.endsWith('"')) label = label.slice(1, -1);
+              else if (/["|[\]{}()]/.test(label)) throw new Error("Unsupported connection label");
+              style2 = token === "--" ? "arrow" : token === "-." ? "dotted" : "thick";
+              cursor = end + close.length;
+            }
+            space();
+            if (statement[cursor] === "|") {
+              if (label) throw new Error("Ambiguous connection label");
+              cursor++;
+              if (statement[cursor] === '"') {
+                const end = statement.indexOf('"', ++cursor);
+                if (end < 0 || statement[end + 1] !== "|") throw new Error("Unclosed connection label");
+                label = statement.slice(cursor, end);
+                cursor = end + 2;
+              } else {
+                const end = statement.indexOf("|", cursor);
+                if (end < 0) throw new Error("Unclosed connection label");
+                label = statement.slice(cursor, end);
+                cursor = end + 1;
+              }
+            }
+            const to2 = node();
+            if (graph.edges.length >= MAX_EDGES) throw new Error(`The visual editor supports up to ${MAX_EDGES} connections`);
+            graph.edges.push({ id: `edge${graph.edges.length + 1}`, from, to: to2, label: decodeLabel(label), style: style2 });
+            from = to2;
+            space();
+          }
+        }
+        if (!header) throw new Error("Choose a Mermaid flowchart to edit");
+        if (comments.length) graph.comments = comments;
+        layoutGraph(graph);
+        for (const [id2, position] of positions) {
+          if (!nodes.has(id2)) throw new Error("A saved position refers to a missing component");
+          Object.assign(nodes.get(id2), position);
+        }
+        serializeMermaid(graph);
+        return { graph, error: null };
+      } catch (error) {
+        return { graph: null, error: error.message || "This Mermaid diagram cannot be edited visually" };
+      }
+    }
+    module2.exports = { SHAPES, DIRECTIONS, MAX_NODES, MAX_EDGES, createGraph, addNode, layoutGraph, parseMermaid, serializeMermaid };
+  }
+});
+
+// src/flowchart-source.js
+var require_flowchart_source = __commonJS({
+  "src/flowchart-source.js"(exports2, module2) {
+    "use strict";
+    var { scanFences } = require_fence();
+    var { scanMedia } = require_media_alignment_source();
+    var { parseMermaid } = require_flowchart_model();
+    function linesOf(source) {
+      const lines = [];
+      const pattern = /([^\r\n]*)(\r\n|\r|\n|$)/g;
+      let match;
+      while (match = pattern.exec(source)) {
+        lines.push({ text: match[1], from: match.index, to: match.index + match[1].length, end: match.index + match[0].length });
+        if (!match[2]) break;
+      }
+      return lines;
+    }
+    function position(lines, offset2) {
+      const index = lines.findIndex((line) => offset2 >= line.from && offset2 <= line.to);
+      return index < 0 ? null : { line: index, ch: offset2 - lines[index].from };
+    }
+    function offset(lines, cursor) {
+      if (!cursor || !Number.isInteger(cursor.line) || !Number.isInteger(cursor.ch)) return null;
+      const line = lines[cursor.line];
+      return line && cursor.ch >= 0 && cursor.ch <= line.text.length ? line.from + cursor.ch : null;
+    }
+    function overlaps(from, to2, start, end) {
+      return from === to2 ? from >= start && from < end : from < end && to2 > start;
+    }
+    function escaped(source, index) {
+      let count2 = 0;
+      while (index && source[--index] === "\\") count2++;
+      return count2 % 2 === 1;
+    }
+    function protectedSelection(source, lines, from, to2) {
+      const fences = scanFences(source).map((fence) => ({
+        from: fence.openingStart,
+        to: fence.closed ? lines[fence.lineEnd].end : fence.bodyEnd + 1
+      }));
+      if (fences.some((range) => overlaps(from, to2, range.from, range.to))) return true;
+      if (/^\uFEFF?---[ \t]*$/.test(lines[0].text)) {
+        const end = lines.findIndex((line, index) => index > 0 && /^(?:---|\.\.\.)[ \t]*$/.test(line.text));
+        if (overlaps(from, to2, 0, end < 0 ? source.length + 1 : lines[end].end)) return true;
+      }
+      for (let index = 0; index < source.length; index++) {
+        const fence = fences.find((range) => index >= range.from && index < range.to);
+        if (fence) {
+          index = fence.to - 1;
+          continue;
+        }
+        if (escaped(source, index)) continue;
+        let close = null, startLength = 0;
+        if (source.startsWith("<!--", index)) {
+          close = "-->";
+          startLength = 4;
+        } else if (source.startsWith("%%", index)) {
+          close = "%%";
+          startLength = 2;
+        }
+        if (close) {
+          const end = source.indexOf(close, index + startLength);
+          const finish = end < 0 ? source.length + 1 : end + close.length;
+          if (overlaps(from, to2, index, finish)) return true;
+          index = finish - 1;
+          continue;
+        }
+        if (source[index] === "`") {
+          const ticks = /^`+/.exec(source.slice(index))[0];
+          const candidates = /`+/g;
+          candidates.lastIndex = index + ticks.length;
+          let match;
+          while ((match = candidates.exec(source)) && match[0].length !== ticks.length) {
+          }
+          const line = lines.find((row) => index >= row.from && index <= row.to);
+          const end = match ? match.index + ticks.length : line.end + 1;
+          if (overlaps(from, to2, index, end)) return true;
+          index = end - 1;
+          continue;
+        }
+        if (source[index] === "$") {
+          const delimiter = source[index + 1] === "$" ? "$$" : "$";
+          let end = source.indexOf(delimiter, index + delimiter.length);
+          while (end >= 0 && escaped(source, end)) end = source.indexOf(delimiter, end + delimiter.length);
+          const line = lines.find((row) => index >= row.from && index <= row.to);
+          const finish = end >= 0 && (delimiter.length === 2 || end <= line.to) ? end + delimiter.length : delimiter.length === 2 ? source.length + 1 : line.end + 1;
+          if (overlaps(from, to2, index, finish)) return true;
+          index = finish - 1;
+        }
+      }
+      return false;
+    }
+    function protectedContainer(source, lines, first, last) {
+      const fences = new Map(scanFences(source).map((fence) => [fence.lineStart, fence]));
+      let listIndent = null, listBlank = false, quote = false, html5 = false;
+      for (let row = 0; row <= last; row++) {
+        const line = lines[row].text;
+        if (!line.trim()) {
+          html5 = false;
+          quote = false;
+          listBlank = true;
+          continue;
+        }
+        if (html5 || /^ {0,3}</.test(line)) {
+          html5 = true;
+          if (row >= first) return true;
+          continue;
+        }
+        const indent = /^[ \t]*/.exec(line)[0].replace(/\t/g, "    ").length;
+        const interrupt = /^ {0,3}(?:#{1,6}(?:[ \t]|$)|`{3,}|~{3,}|>|[-+*][ \t]|\d+[.)][ \t])/.test(line);
+        let nested = false;
+        if (listIndent !== null) {
+          if (indent >= listIndent || !listBlank && !interrupt) nested = true;
+          else listIndent = null;
+        }
+        if (quote && !interrupt) nested = true;
+        else if (quote) quote = false;
+        if (nested && row >= first) return true;
+        const fence = fences.get(row);
+        if (fence) {
+          row = fence.lineEnd === null ? lines.findIndex((item) => item.from >= fence.bodyEnd) - 1 : fence.lineEnd;
+          if (row < 0) break;
+          continue;
+        }
+        if (nested) continue;
+        const list2 = /^( {0,3})(?:[-+*]|\d{1,9}[.)])([ \t]+)(.*)$/.exec(line);
+        if (list2) {
+          listIndent = line.length - list2[3].length;
+          listBlank = false;
+          continue;
+        }
+        if (/^ {0,3}>/.test(line)) {
+          quote = true;
+          continue;
+        }
+        listBlank = false;
+      }
+      return false;
+    }
+    function insertionText(snapshot, lines, from, to2, source) {
+      const first = position(lines, from), last = position(lines, to2);
+      const eol = /\r\n|\r|\n/.exec(snapshot)?.[0] || "\n";
+      const before = snapshot.slice(lines[first.line].from, from), after = snapshot.slice(to2, lines[last.line].to);
+      return `${before.trim() ? eol + eol : ""}\`\`\`mermaid${eol}${source.replace(/\r\n|\r|\n/g, eol)}${eol}\`\`\`${after.trim() ? eol + eol : ""}`;
+    }
+    function captureAt(snapshot, from, to2, filePath) {
+      const lines = linesOf(snapshot);
+      if (from === null || to2 === null || from > to2 || !position(lines, from) || !position(lines, to2)) return null;
+      const media = scanMedia(snapshot).filter((item) => item.kind === "mermaid");
+      const containing = media.filter((item) => from >= item.from && to2 <= item.to);
+      if (containing.length === 1) {
+        const target = containing[0];
+        return {
+          snapshot,
+          filePath,
+          from: position(lines, target.fence.bodyStart),
+          to: position(lines, target.fence.bodyEnd),
+          source: target.fence.body.replace(/(?:\r\n|\r|\n)$/, ""),
+          existing: true,
+          selectionFrom: from,
+          selectionTo: to2,
+          eol: target.eol
+        };
+      }
+      if (containing.length || protectedSelection(snapshot, lines, from, to2)) return null;
+      const first = position(lines, from), last = position(lines, to2);
+      if (lines.slice(first.line, last.line + 1).some((line) => /^(?:[ \t]+\S| {0,3}>| {0,3}(?:[-+*]|\d+[.)])[ \t]+)/.test(line.text))) return null;
+      if (protectedContainer(snapshot, lines, first.line, last.line)) return null;
+      const probe = insertionText(snapshot, lines, from, to2, "flowchart TB\nNativeNotesInsertionProbe");
+      const candidate = snapshot.slice(0, from) + probe + snapshot.slice(to2);
+      const expected = probe.startsWith("```mermaid") ? lines[first.line].from : from + probe.indexOf("```mermaid");
+      if (!scanMedia(candidate).some((item) => item.kind === "mermaid" && item.from === expected)) return null;
+      return { snapshot, filePath, from: first, to: last, source: "", existing: false, selectionFrom: from, selectionTo: to2 };
+    }
+    function captureFlowchart(editor, view) {
+      if (!editor?.getValue || !editor.getCursor) return null;
+      const snapshot = editor.getValue();
+      if (typeof snapshot !== "string") return null;
+      const lines = linesOf(snapshot);
+      return captureAt(snapshot, offset(lines, editor.getCursor("from")), offset(lines, editor.getCursor("to")), view?.file?.path || null);
+    }
+    function applyFlowchart(editor, capture, source) {
+      if (!capture || !editor?.getValue || !editor.replaceRange || editor.getValue() !== capture.snapshot || typeof source !== "string" || !parseMermaid(source).graph) return false;
+      const checked2 = captureAt(capture.snapshot, capture.selectionFrom, capture.selectionTo, capture.filePath);
+      if (!checked2 || checked2.existing !== capture.existing || checked2.from.line !== capture.from?.line || checked2.from.ch !== capture.from?.ch || checked2.to.line !== capture.to?.line || checked2.to.ch !== capture.to?.ch) return false;
+      const lines = linesOf(capture.snapshot), from = offset(lines, capture.from), to2 = offset(lines, capture.to);
+      if (from === null || to2 === null) return false;
+      const body3 = source.trim();
+      const replacement = capture.existing ? body3.replace(/\r\n|\r|\n/g, checked2.eol) + checked2.eol : insertionText(capture.snapshot, lines, from, to2, body3);
+      editor.replaceRange(replacement, capture.from, capture.to);
+      return true;
+    }
+    module2.exports = { captureFlowchart, applyFlowchart };
+  }
+});
+
+// src/flowchart-canvas.js
+var require_flowchart_canvas = __commonJS({
+  "src/flowchart-canvas.js"(exports2, module2) {
+    "use strict";
+    var NODE_WIDTH = 160;
+    var NODE_HEIGHT = 80;
+    var SVG_NS = "http://www.w3.org/2000/svg";
+    var SHAPES = /* @__PURE__ */ new Set(["rectangle", "rounded", "stadium", "diamond", "parallelogram", "cylinder", "subroutine", "circle"]);
+    var canvasSequence = 0;
+    function coordinate(value) {
+      return Number.isFinite(value) ? Math.max(0, Math.min(1e5, value)) : 0;
+    }
+    function svg3(document3, name2, attributes = {}) {
+      const element3 = document3.createElementNS(SVG_NS, name2);
+      for (const [key2, value] of Object.entries(attributes)) element3.setAttribute(key2, String(value));
+      return element3;
+    }
+    function connectionPath(from, to2) {
+      const x1 = from.x + NODE_WIDTH / 2, y1 = from.y + NODE_HEIGHT / 2;
+      const x2 = to2.x + NODE_WIDTH / 2, y2 = to2.y + NODE_HEIGHT / 2;
+      const halfWidth = (node) => node.shape === "circle" ? 38 : node.shape === "parallelogram" ? 70 : NODE_WIDTH / 2;
+      const halfHeight = (node) => node.shape === "circle" ? 38 : NODE_HEIGHT / 2;
+      if (from.id === to2.id) {
+        return { path: `M ${x1 + halfWidth(from)} ${y1} C ${from.x + NODE_WIDTH + 90} ${y1 - 100}, ${x1} ${from.y - 100}, ${x1} ${y1 - halfHeight(from)}`, x: from.x + NODE_WIDTH + 28, y: from.y - 24 };
+      }
+      if (Math.abs(x2 - x1) > Math.abs(y2 - y1)) {
+        const sign2 = x2 >= x1 ? 1 : -1;
+        const start2 = x1 + sign2 * halfWidth(from), end2 = x2 - sign2 * halfWidth(to2);
+        const distance2 = Math.max(40, Math.abs(end2 - start2) / 2);
+        return { path: `M ${start2} ${y1} C ${start2 + sign2 * distance2} ${y1}, ${end2 - sign2 * distance2} ${y2}, ${end2} ${y2}`, x: (start2 + end2) / 2, y: (y1 + y2) / 2 - 9 };
+      }
+      const sign = y2 >= y1 ? 1 : -1;
+      const start = y1 + sign * halfHeight(from), end = y2 - sign * halfHeight(to2);
+      const distance = Math.max(40, Math.abs(end - start) / 2);
+      return { path: `M ${x1} ${start} C ${x1} ${start + sign * distance}, ${x2} ${end - sign * distance}, ${x2} ${end}`, x: (x1 + x2) / 2 + 10, y: (start + end) / 2 - 8 };
+    }
+    var FlowchartCanvas = class {
+      constructor(container, { onSelect, onChange, onConnect, onAdd } = {}) {
+        this.document = container.ownerDocument;
+        this.window = this.document.defaultView;
+        this.callbacks = { onSelect, onChange, onConnect, onAdd };
+        this.graph = { direction: "TB", nodes: [], edges: [] };
+        this.selection = null;
+        this.nodes = /* @__PURE__ */ new Map();
+        this.edges = /* @__PURE__ */ new Map();
+        this.disposers = [];
+        this.zoom = 1;
+        this.connectMode = false;
+        this.connectSource = null;
+        this.drag = null;
+        this.destroyed = false;
+        this.suppressClick = false;
+        this.markerId = `nn-flowchart-arrow-${++canvasSequence}`;
+        this.viewport = this.document.createElement("div");
+        this.viewport.className = "nn-flowchart-viewport";
+        this.viewport.tabIndex = 0;
+        this.viewport.setAttribute("role", "region");
+        this.viewport.setAttribute("aria-label", "Flowchart canvas");
+        this.surface = this.document.createElement("div");
+        this.surface.className = "nn-flowchart-surface";
+        this.world = this.document.createElement("div");
+        this.world.className = "nn-flowchart-world";
+        this.connections = svg3(this.document, "svg", { class: "nn-flowchart-connections", "aria-label": "Connections" });
+        const definitions = svg3(this.document, "defs");
+        const marker = svg3(this.document, "marker", { id: this.markerId, viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: "auto-start-reverse" });
+        marker.appendChild(svg3(this.document, "path", { d: "M 0 0 L 10 5 L 0 10 z", class: "nn-flowchart-arrow" }));
+        definitions.appendChild(marker);
+        this.connections.appendChild(definitions);
+        this.world.appendChild(this.connections);
+        this.surface.appendChild(this.world);
+        this.viewport.appendChild(this.surface);
+        container.appendChild(this.viewport);
+        this.listen(this.viewport, "click", (event) => {
+          if ([this.viewport, this.surface, this.world, this.connections].includes(event.target)) {
+            this.connectSource = null;
+            this.select(null);
+          }
+        });
+        this.listen(this.viewport, "keydown", (event) => {
+          if (event.key === "Escape" && (this.drag || this.connectSource)) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.finishDrag(false);
+            this.connectSource = null;
+            this.updateSelection();
+          }
+        });
+        this.listen(this.viewport, "dragover", (event) => {
+          if (event.dataTransfer && Array.from(event.dataTransfer.types || []).includes("text/plain")) {
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "copy";
+          }
+        });
+        this.listen(this.viewport, "drop", (event) => {
+          const value = event.dataTransfer?.getData("text/plain") || "";
+          if (!value.startsWith("native-notes-flowchart:")) return;
+          const shape = value.slice("native-notes-flowchart:".length);
+          if (!SHAPES.has(shape)) return;
+          event.preventDefault();
+          const bounds = this.world.getBoundingClientRect();
+          this.callbacks.onAdd?.(shape, coordinate((event.clientX - bounds.left) / this.zoom - NODE_WIDTH / 2), coordinate((event.clientY - bounds.top) / this.zoom - NODE_HEIGHT / 2));
+        });
+        this.listen(this.window, "blur", () => this.finishDrag(false));
+        this.resizeWorld();
+      }
+      listen(target, name2, callback, options) {
+        target.addEventListener(name2, callback, options);
+        this.disposers.push(() => target.removeEventListener(name2, callback, options));
+      }
+      setGraph(graph, selection = null) {
+        if (this.destroyed) return;
+        this.graph = {
+          direction: graph.direction,
+          nodes: graph.nodes.map((node) => ({ ...node, x: coordinate(node.x), y: coordinate(node.y) })),
+          edges: graph.edges.map((edge) => ({ ...edge }))
+        };
+        this.selection = selection;
+        if (this.drag && !this.graph.nodes.some((node) => node.id === this.drag.id)) this.finishDrag(false);
+        if (this.connectSource && !this.graph.nodes.some((node) => node.id === this.connectSource)) this.connectSource = null;
+        for (const [id2, record] of this.nodes) {
+          if (!this.graph.nodes.some((node) => node.id === id2)) {
+            record.element.remove();
+            this.nodes.delete(id2);
+          }
+        }
+        for (const node of this.graph.nodes) {
+          let record = this.nodes.get(node.id);
+          if (!record) {
+            record = this.createNode(node.id);
+            this.nodes.set(node.id, record);
+          }
+          record.element.dataset.shape = node.shape;
+          record.label.textContent = node.label;
+          record.body.setAttribute("aria-label", `${node.label || "Untitled component"}. Use arrow keys to move.`);
+          record.port.setAttribute("aria-label", `Connect ${node.label || "component"}`);
+          if (record.shape !== node.shape) {
+            record.shape = node.shape;
+            this.drawShape(record.outline, node.shape);
+          }
+          this.positionNode(node.id);
+        }
+        this.drawEdges();
+        this.updateSelection();
+        this.resizeWorld();
+      }
+      createNode(id2) {
+        const element3 = this.document.createElement("div");
+        element3.className = "nn-flowchart-node";
+        element3.dataset.nodeId = id2;
+        element3.style.width = `${NODE_WIDTH}px`;
+        element3.style.height = `${NODE_HEIGHT}px`;
+        const body3 = this.document.createElement("button");
+        body3.type = "button";
+        body3.className = "nn-flowchart-node-body";
+        const outline = svg3(this.document, "svg", { class: "nn-flowchart-node-shape", viewBox: `0 0 ${NODE_WIDTH} ${NODE_HEIGHT}`, "aria-hidden": "true", preserveAspectRatio: "none" });
+        const label = this.document.createElement("span");
+        label.className = "nn-flowchart-node-label";
+        body3.append(outline, label);
+        const port = this.document.createElement("button");
+        port.type = "button";
+        port.className = "nn-flowchart-port";
+        const dot = this.document.createElement("span");
+        dot.className = "nn-flowchart-port-dot";
+        dot.setAttribute("aria-hidden", "true");
+        port.appendChild(dot);
+        element3.append(body3, port);
+        this.world.appendChild(element3);
+        body3.addEventListener("pointerdown", (event) => this.startDrag(event, id2));
+        body3.addEventListener("click", (event) => {
+          event.stopPropagation();
+          if (this.suppressClick) {
+            this.suppressClick = false;
+            return;
+          }
+          if (this.connectMode || this.connectSource) this.connect(id2);
+          else this.select({ type: "node", id: id2 });
+        });
+        body3.addEventListener("keydown", (event) => {
+          if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const node = this.graph.nodes.find((candidate) => candidate.id === id2);
+          if (!node) return;
+          const distance = event.shiftKey ? 50 : 10;
+          this.select({ type: "node", id: id2 });
+          this.callbacks.onChange?.({ type: "move", id: id2, x: coordinate(node.x + (event.key === "ArrowRight" ? distance : event.key === "ArrowLeft" ? -distance : 0)), y: coordinate(node.y + (event.key === "ArrowDown" ? distance : event.key === "ArrowUp" ? -distance : 0)) });
+        });
+        port.addEventListener("click", (event) => {
+          event.stopPropagation();
+          this.connect(id2);
+        });
+        return { element: element3, body: body3, label, port, outline, shape: null };
+      }
+      drawShape(outline, shape) {
+        outline.replaceChildren();
+        const add2 = (name2, attrs) => outline.appendChild(svg3(this.document, name2, attrs));
+        if (shape === "diamond") add2("polygon", { points: "80,2 158,40 80,78 2,40" });
+        else if (shape === "parallelogram") add2("polygon", { points: "20,2 158,2 140,78 2,78" });
+        else if (shape === "circle") add2("ellipse", { cx: 80, cy: 40, rx: 38, ry: 38 });
+        else if (shape === "cylinder") {
+          add2("path", { d: "M 2 14 C 2 -2 158 -2 158 14 L 158 66 C 158 82 2 82 2 66 Z" });
+          add2("path", { d: "M 2 14 C 2 30 158 30 158 14", fill: "none" });
+        } else {
+          add2("rect", { x: 2, y: 2, width: 156, height: 76, rx: shape === "stadium" ? 38 : shape === "rounded" ? 14 : 2 });
+          if (shape === "subroutine") {
+            add2("path", { d: "M 13 2 V 78 M 147 2 V 78", fill: "none" });
+          }
+        }
+      }
+      displayedNode(id2) {
+        const node = this.graph.nodes.find((candidate) => candidate.id === id2);
+        return node && this.drag?.id === id2 ? { ...node, x: this.drag.x, y: this.drag.y } : node;
+      }
+      positionNode(id2) {
+        const node = this.displayedNode(id2), record = this.nodes.get(id2);
+        if (!node || !record) return;
+        record.element.style.left = `${node.x}px`;
+        record.element.style.top = `${node.y}px`;
+      }
+      drawEdges() {
+        for (const [id2, record] of this.edges) {
+          if (!this.graph.edges.some((edge) => edge.id === id2)) {
+            record.group.remove();
+            this.edges.delete(id2);
+          }
+        }
+        for (const edge of this.graph.edges) {
+          const from = this.displayedNode(edge.from), to2 = this.displayedNode(edge.to);
+          if (!from || !to2) continue;
+          let record = this.edges.get(edge.id);
+          if (!record) {
+            const group = svg3(this.document, "g", { class: "nn-flowchart-edge", role: "button", tabindex: 0, "data-edge-id": edge.id });
+            const hit = svg3(this.document, "path", { class: "nn-flowchart-edge-hit", fill: "none", stroke: "transparent", "stroke-width": 18, "pointer-events": "stroke" });
+            const line = svg3(this.document, "path", { class: "nn-flowchart-edge-line", fill: "none", "pointer-events": "none" });
+            const label = svg3(this.document, "text", { class: "nn-flowchart-edge-label", "text-anchor": "middle", "pointer-events": "all" });
+            group.append(hit, line, label);
+            this.connections.appendChild(group);
+            group.addEventListener("click", (event) => {
+              event.stopPropagation();
+              this.select({ type: "edge", id: edge.id });
+            });
+            group.addEventListener("keydown", (event) => {
+              if (event.key !== "Enter" && event.key !== " ") return;
+              event.preventDefault();
+              event.stopPropagation();
+              this.select({ type: "edge", id: edge.id });
+            });
+            record = { group, hit, line, label };
+            this.edges.set(edge.id, record);
+          }
+          const route = connectionPath(from, to2);
+          record.group.setAttribute("aria-label", `${from.label || "Component"} to ${to2.label || "component"}${edge.label ? `: ${edge.label}` : ""}`);
+          record.group.dataset.style = edge.style || "arrow";
+          record.hit.setAttribute("d", route.path);
+          record.line.setAttribute("d", route.path);
+          record.line.setAttribute("stroke-width", edge.style === "thick" ? "4" : "2");
+          record.line.setAttribute("stroke-dasharray", edge.style === "dotted" ? "5 5" : "none");
+          if (edge.style === "line") record.line.removeAttribute("marker-end");
+          else record.line.setAttribute("marker-end", `url(#${this.markerId})`);
+          record.label.textContent = edge.label || "";
+          record.label.setAttribute("x", String(route.x));
+          record.label.setAttribute("y", String(route.y));
+        }
+      }
+      select(selection) {
+        this.selection = selection;
+        this.updateSelection();
+        this.callbacks.onSelect?.(selection);
+      }
+      updateSelection() {
+        for (const [id2, record] of this.nodes) {
+          const selected = this.selection?.type === "node" && this.selection.id === id2;
+          record.element.classList.toggle("is-selected", selected);
+          record.element.classList.toggle("is-connect-source", this.connectSource === id2);
+          record.body.setAttribute("aria-pressed", String(selected));
+          record.port.setAttribute("aria-pressed", String(this.connectSource === id2));
+        }
+        for (const [id2, record] of this.edges) {
+          const selected = this.selection?.type === "edge" && this.selection.id === id2;
+          record.group.classList.toggle("is-selected", selected);
+          record.group.setAttribute("aria-pressed", String(selected));
+        }
+        this.world.classList.toggle("is-connecting", this.connectMode || Boolean(this.connectSource));
+      }
+      connect(id2) {
+        if (!this.connectSource) {
+          this.connectSource = id2;
+          this.select({ type: "node", id: id2 });
+        } else {
+          const from = this.connectSource;
+          this.connectSource = null;
+          this.updateSelection();
+          if (from !== id2) this.callbacks.onConnect?.(from, id2);
+        }
+      }
+      setConnectMode(enabled2) {
+        if (this.destroyed) return;
+        this.finishDrag(false);
+        this.connectMode = Boolean(enabled2);
+        this.connectSource = null;
+        this.suppressClick = false;
+        this.updateSelection();
+      }
+      startDrag(event, id2) {
+        if (this.destroyed || this.connectMode || this.connectSource || event.button !== 0 || event.isPrimary === false || this.drag) return;
+        const node = this.graph.nodes.find((candidate) => candidate.id === id2);
+        if (!node) return;
+        event.preventDefault();
+        this.suppressClick = false;
+        this.nodes.get(id2).body.focus({ preventScroll: true });
+        this.drag = { id: id2, pointerId: event.pointerId, captureTarget: this.nodes.get(id2).body, startX: event.clientX, startY: event.clientY, originX: node.x, originY: node.y, x: node.x, y: node.y, moved: false };
+        this.moveListener = (moved) => this.moveDrag(moved);
+        this.upListener = (ended) => {
+          if (ended.pointerId === this.drag?.pointerId) this.finishDrag(true);
+        };
+        this.cancelListener = (canceled) => {
+          if (canceled.pointerId === this.drag?.pointerId) this.finishDrag(false);
+        };
+        this.document.addEventListener("pointermove", this.moveListener, { passive: false });
+        this.document.addEventListener("pointerup", this.upListener);
+        this.document.addEventListener("pointercancel", this.cancelListener);
+        this.drag.captureTarget.addEventListener("lostpointercapture", this.cancelListener);
+        try {
+          this.drag.captureTarget.setPointerCapture(event.pointerId);
+        } catch {
+        }
+        this.nodes.get(id2).element.classList.add("is-dragging");
+        this.select({ type: "node", id: id2 });
+      }
+      moveDrag(event) {
+        const drag = this.drag;
+        if (!drag || event.pointerId !== drag.pointerId) return;
+        event.preventDefault();
+        const dx = (event.clientX - drag.startX) / this.zoom, dy = (event.clientY - drag.startY) / this.zoom;
+        if (!drag.moved && Math.hypot(dx, dy) < 3) return;
+        drag.moved = true;
+        drag.x = coordinate(drag.originX + dx);
+        drag.y = coordinate(drag.originY + dy);
+        this.positionNode(drag.id);
+        this.drawEdges();
+        this.resizeWorld();
+      }
+      finishDrag(commit) {
+        const drag = this.drag;
+        if (!drag) return;
+        this.drag = null;
+        this.document.removeEventListener("pointermove", this.moveListener);
+        this.document.removeEventListener("pointerup", this.upListener);
+        this.document.removeEventListener("pointercancel", this.cancelListener);
+        drag.captureTarget.removeEventListener("lostpointercapture", this.cancelListener);
+        try {
+          drag.captureTarget.releasePointerCapture(drag.pointerId);
+        } catch {
+        }
+        this.nodes.get(drag.id)?.element.classList.remove("is-dragging");
+        this.suppressClick = drag.moved;
+        if (commit && drag.moved && this.graph.nodes.some((node) => node.id === drag.id)) {
+          this.callbacks.onChange?.({ type: "move", id: drag.id, x: Math.round(drag.x), y: Math.round(drag.y) });
+        }
+        this.positionNode(drag.id);
+        this.drawEdges();
+        this.resizeWorld();
+      }
+      resizeWorld() {
+        let width = 2400, height = 1600;
+        for (const node of this.graph.nodes) {
+          const displayed = this.displayedNode(node.id);
+          width = Math.max(width, displayed.x + NODE_WIDTH + 200);
+          height = Math.max(height, displayed.y + NODE_HEIGHT + 200);
+        }
+        this.world.style.width = `${width}px`;
+        this.world.style.height = `${height}px`;
+        this.world.style.transform = `scale(${this.zoom})`;
+        this.world.style.setProperty("--nn-flowchart-inverse-zoom", String(1 / this.zoom));
+        this.connections.setAttribute("width", String(width));
+        this.connections.setAttribute("height", String(height));
+        this.surface.style.width = `${width * this.zoom}px`;
+        this.surface.style.height = `${height * this.zoom}px`;
+        this.viewport.setAttribute("aria-description", `Zoom ${Math.round(this.zoom * 100)} percent. Drag components or use arrow keys to move. Use connection buttons to connect two components.`);
+      }
+      getCenter() {
+        return { x: coordinate((this.viewport.scrollLeft + this.viewport.clientWidth / 2) / this.zoom - NODE_WIDTH / 2), y: coordinate((this.viewport.scrollTop + this.viewport.clientHeight / 2) / this.zoom - NODE_HEIGHT / 2) };
+      }
+      zoomBy(factor) {
+        if (this.destroyed || !Number.isFinite(factor) || factor <= 0) return;
+        this.finishDrag(false);
+        const centerX = (this.viewport.scrollLeft + this.viewport.clientWidth / 2) / this.zoom;
+        const centerY = (this.viewport.scrollTop + this.viewport.clientHeight / 2) / this.zoom;
+        this.zoom = Math.max(0.25, Math.min(2, this.zoom * factor));
+        this.resizeWorld();
+        this.viewport.scrollLeft = Math.max(0, centerX * this.zoom - this.viewport.clientWidth / 2);
+        this.viewport.scrollTop = Math.max(0, centerY * this.zoom - this.viewport.clientHeight / 2);
+      }
+      fit() {
+        if (this.destroyed) return;
+        this.finishDrag(false);
+        if (!this.graph.nodes.length) {
+          this.zoom = 1;
+          this.resizeWorld();
+          this.viewport.scrollLeft = this.viewport.scrollTop = 0;
+          return;
+        }
+        const left = Math.min(...this.graph.nodes.map((node) => node.x));
+        const top = Math.min(...this.graph.nodes.map((node) => node.y));
+        const right = Math.max(...this.graph.nodes.map((node) => node.x + NODE_WIDTH));
+        const bottom = Math.max(...this.graph.nodes.map((node) => node.y + NODE_HEIGHT));
+        const width = this.viewport.clientWidth || 640, height = this.viewport.clientHeight || 400;
+        this.zoom = Math.max(0.25, Math.min(1.2, (width - 64) / (right - left), (height - 64) / (bottom - top)));
+        this.resizeWorld();
+        this.viewport.scrollLeft = Math.max(0, (left + right) / 2 * this.zoom - width / 2);
+        this.viewport.scrollTop = Math.max(0, (top + bottom) / 2 * this.zoom - height / 2);
+      }
+      destroy() {
+        if (this.destroyed) return;
+        this.finishDrag(false);
+        this.destroyed = true;
+        for (const dispose of this.disposers.splice(0)) dispose();
+        this.nodes.clear();
+        this.edges.clear();
+        this.callbacks = {};
+        this.viewport.remove();
+      }
+    };
+    module2.exports = { FlowchartCanvas, NODE_WIDTH, NODE_HEIGHT };
+  }
+});
+
+// src/flowchart-builder.js
+var require_flowchart_builder = __commonJS({
+  "src/flowchart-builder.js"(exports2, module2) {
+    "use strict";
+    var { Component, Modal, Notice: Notice2, MarkdownView, MarkdownRenderer } = require("obsidian");
+    var { SHAPES, createGraph, parseMermaid, serializeMermaid, layoutGraph, addNode } = require_flowchart_model();
+    var { captureFlowchart, applyFlowchart } = require_flowchart_source();
+    var { FlowchartCanvas } = require_flowchart_canvas();
+    var clone2 = (value) => JSON.parse(JSON.stringify(value));
+    var DIRECTIONS = [["TB", "Top to bottom"], ["LR", "Left to right"], ["BT", "Bottom to top"], ["RL", "Right to left"]];
+    var STYLES = [["arrow", "Arrow"], ["line", "Line"], ["dotted", "Dotted arrow"], ["thick", "Thick arrow"]];
+    var FlowchartModal = class extends Modal {
+      constructor(controller, editor, view, capture, graph) {
+        super(controller.host.app);
+        this.controller = controller;
+        this.host = controller.host;
+        this.editor = editor;
+        this.view = view;
+        this.file = view.file;
+        this.capture = capture;
+        this.graph = clone2(graph);
+        this.selection = null;
+        this.undo = [];
+        this.redo = [];
+        this.closed = true;
+        this.sourceDirty = false;
+        this.generation = 0;
+      }
+      element(tag, parent, cls, text3) {
+        const el2 = this.ownerDoc.createElement(tag);
+        if (cls) el2.className = cls;
+        if (text3 !== void 0) el2.textContent = text3;
+        parent.appendChild(el2);
+        return el2;
+      }
+      button(parent, text3, callback, cls) {
+        const button = this.element("button", parent, cls, text3);
+        button.type = "button";
+        button.addEventListener("click", () => {
+          if (!this.closed) callback();
+        });
+        return button;
+      }
+      field(parent, label, tag = "input") {
+        const wrapper = this.element("label", parent, "nn-flowchart-field");
+        this.element("span", wrapper, "", label);
+        return this.element(tag, wrapper);
+      }
+      select(parent, label, options, value, callback) {
+        const select2 = this.field(parent, label, "select");
+        for (const [id2, name2] of options) {
+          const option2 = this.element("option", select2, "", name2);
+          option2.value = id2;
+        }
+        select2.value = value;
+        select2.addEventListener("change", () => {
+          if (!this.closed && !this.sourceDirty) callback(select2.value);
+        });
+        return select2;
+      }
+      onOpen() {
+        this.closed = false;
+        this.ownerDoc = this.contentEl.ownerDocument;
+        this.host.attachDocument(this.ownerDoc);
+        this.controller.modals.add(this);
+        this.modalEl.classList.add("native-notes-flowchart-modal");
+        this.contentEl.classList.add("nn-flowchart-builder");
+        this.setTitle(this.capture.existing ? "Edit flowchart" : "Insert flowchart");
+        const toolbar = this.element("div", this.contentEl, "nn-flowchart-toolbar");
+        toolbar.setAttribute("aria-label", "Flowchart tools");
+        this.undoButton = this.button(toolbar, "Undo", () => this.history(false));
+        this.redoButton = this.button(toolbar, "Redo", () => this.history(true));
+        this.connectButton = this.button(toolbar, "Connect", () => {
+          this.connecting = !this.connecting;
+          this.canvas.setConnectMode(this.connecting);
+          this.connectButton.setAttribute("aria-pressed", String(this.connecting));
+          this.status.textContent = this.connecting ? "Choose the starting shape, then the destination. Select Connect again to cancel." : "Connection mode off.";
+        });
+        this.connectButton.setAttribute("aria-pressed", "false");
+        this.arrangeButton = this.button(toolbar, "Arrange", () => {
+          if (this.change((graph) => layoutGraph(graph))) this.canvas.fit();
+        });
+        this.direction = this.select(toolbar, "Direction", DIRECTIONS, this.graph.direction, (value) => {
+          if (this.change((graph) => {
+            graph.direction = value;
+            layoutGraph(graph);
+          })) this.canvas.fit();
+        });
+        this.button(toolbar, "\u2212", () => this.canvas.zoomBy(1 / 1.2)).setAttribute("aria-label", "Zoom out");
+        this.button(toolbar, "+", () => this.canvas.zoomBy(1.2)).setAttribute("aria-label", "Zoom in");
+        this.button(toolbar, "Fit", () => this.canvas.fit());
+        const workspace = this.element("div", this.contentEl, "nn-flowchart-workspace");
+        this.palette = this.element("aside", workspace, "nn-flowchart-palette");
+        this.element("h3", this.palette, "", "Shapes");
+        this.element("p", this.palette, "nn-flowchart-help", "Drag onto the canvas, or tap to add.");
+        for (const shape of SHAPES) {
+          const button = this.button(this.palette, shape.label, () => this.add(shape.id), "nn-flowchart-shape");
+          button.dataset.shape = shape.id;
+          button.draggable = true;
+          button.addEventListener("dragstart", (event) => {
+            if (this.closed || this.sourceDirty) {
+              event.preventDefault();
+              return;
+            }
+            event.dataTransfer?.setData("text/plain", `native-notes-flowchart:${shape.id}`);
+            if (event.dataTransfer) event.dataTransfer.effectAllowed = "copy";
+          });
+        }
+        const stage = this.element("div", workspace, "nn-flowchart-stage");
+        const container = this.element("div", stage, "nn-flowchart-canvas");
+        this.canvas = new FlowchartCanvas(container, {
+          onSelect: (selection) => {
+            if (this.closed || this.sourceDirty) return;
+            this.lastChangeKey = null;
+            this.selection = selection;
+            this.canvas.setGraph(this.graph, selection);
+            this.renderInspector();
+          },
+          onChange: (change) => this.change((graph) => {
+            const node = graph.nodes.find((node2) => node2.id === change.id);
+            if (node && change.type === "move") {
+              node.x = change.x;
+              node.y = change.y;
+            }
+          }),
+          onConnect: (from, to2) => this.connect(from, to2),
+          onAdd: (shape, x, y2) => this.add(shape, x, y2)
+        });
+        this.element("p", stage, "nn-flowchart-help", "Drag shapes to move. Use a shape\u2019s connection button to link it to another. Arrow keys move the focused shape; Shift moves farther.");
+        this.inspector = this.element("aside", workspace, "nn-flowchart-inspector");
+        const sourcePanel = this.element("details", this.contentEl, "nn-flowchart-source");
+        this.element("summary", sourcePanel, "", "Mermaid source");
+        this.input = this.element("textarea", sourcePanel);
+        this.input.setAttribute("aria-label", "Mermaid source");
+        this.input.spellcheck = false;
+        this.input.maxLength = 25e4;
+        this.input.addEventListener("input", () => {
+          if (this.closed) return;
+          this.sourceDirty = this.input.value !== serializeMermaid(this.graph);
+          this.updateAvailability();
+        });
+        const sourceActions = this.element("div", sourcePanel, "nn-flowchart-actions");
+        this.applySourceButton = this.button(sourceActions, "Apply source", () => this.importSource());
+        this.discardSourceButton = this.button(sourceActions, "Discard source changes", () => {
+          this.sourceDirty = false;
+          this.refresh();
+        });
+        this.sourceState = this.element("p", sourcePanel, "nn-flowchart-source-state");
+        this.previewPanel = this.element("details", this.contentEl, "nn-flowchart-preview");
+        this.element("summary", this.previewPanel, "", "Rendered preview");
+        this.element("p", this.previewPanel, "nn-flowchart-help", "Mermaid arranges the saved diagram automatically. Canvas positions are retained for your next editing session.");
+        this.preview = this.element("div", this.previewPanel, "nn-flowchart-preview-content");
+        this.previewPanel.addEventListener("toggle", () => {
+          if (!this.closed) void this.renderPreview();
+        });
+        const footer = this.element("div", this.contentEl, "nn-flowchart-footer");
+        this.status = this.element("p", footer, "nn-flowchart-status");
+        this.status.setAttribute("role", "status");
+        this.status.setAttribute("aria-live", "polite");
+        const actions = this.element("div", footer, "nn-flowchart-actions");
+        this.button(actions, "Cancel", () => this.close());
+        this.saveButton = this.button(actions, this.capture.existing ? "Update flowchart" : "Insert flowchart", () => this.save(), "mod-cta");
+        this.keyHandler = (event) => {
+          if (this.closed || event.defaultPrevented || event.isComposing) return;
+          const typing = event.target.closest?.("input,textarea,select,[contenteditable=true]");
+          if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
+            event.preventDefault();
+            this.save();
+          } else if (!typing && (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "z") {
+            event.preventDefault();
+            this.history(event.shiftKey);
+          } else if (!typing && ["Delete", "Backspace"].includes(event.key) && this.selection) {
+            event.preventDefault();
+            this.removeSelection();
+          }
+        };
+        this.contentEl.addEventListener("keydown", this.keyHandler);
+        this.refresh();
+      }
+      updateAvailability() {
+        const locked = this.sourceDirty;
+        this.undoButton.disabled = locked || !this.undo.length;
+        this.redoButton.disabled = locked || !this.redo.length;
+        this.connectButton.disabled = locked;
+        this.arrangeButton.disabled = locked;
+        this.direction.disabled = locked;
+        this.palette.inert = locked;
+        this.inspector.inert = locked;
+        this.contentEl.querySelector(".nn-flowchart-canvas").inert = locked;
+        this.saveButton.disabled = locked || !this.graph.nodes.length;
+        this.applySourceButton.disabled = !locked;
+        this.discardSourceButton.disabled = !locked;
+        this.sourceState.textContent = locked ? "Source has unapplied changes. Apply or discard them to continue building." : "Saved as a standard Mermaid code block. Layout comments remember your canvas positions.";
+      }
+      refresh(preserveInspector = false) {
+        if (this.closed) return;
+        this.input.value = serializeMermaid(this.graph);
+        this.direction.value = this.graph.direction;
+        this.canvas.setGraph(this.graph, this.selection);
+        if (!preserveInspector) this.renderInspector();
+        this.updateAvailability();
+        this.status.textContent = `${this.graph.nodes.length} shapes \xB7 ${this.graph.edges.length} connections`;
+        if (preserveInspector) {
+          this.generation++;
+          this.ownerDoc.defaultView.clearTimeout(this.previewTimer);
+          this.previewTimer = this.ownerDoc.defaultView.setTimeout(() => {
+            if (!this.closed) void this.renderPreview();
+          }, 250);
+        } else void this.renderPreview();
+      }
+      change(mutate, { preserveInspector = false, mergeKey = null } = {}) {
+        if (this.closed || this.sourceDirty) return false;
+        const next = clone2(this.graph), previousSelection = this.selection;
+        try {
+          mutate(next);
+          serializeMermaid(next);
+        } catch (error) {
+          this.selection = previousSelection;
+          this.status.textContent = error.message;
+          return false;
+        }
+        if (JSON.stringify(next) === JSON.stringify(this.graph)) return false;
+        if (!mergeKey || mergeKey !== this.lastChangeKey) {
+          this.undo.push(clone2(this.graph));
+          if (this.undo.length > 100) this.undo.shift();
+        }
+        this.lastChangeKey = mergeKey;
+        this.redo = [];
+        this.graph = next;
+        this.refresh(preserveInspector);
+        return true;
+      }
+      add(shape, x, y2) {
+        this.change((graph) => {
+          const center = this.canvas.getCenter();
+          let left = x ?? center.x, top = y2 ?? center.y;
+          if (x === void 0) {
+            while (graph.nodes.some((node2) => Math.abs(node2.x - left) < 25 && Math.abs(node2.y - top) < 25)) {
+              left += 24;
+              top += 24;
+            }
+          }
+          const node = addNode(graph, shape, left, top);
+          this.selection = { type: "node", id: node.id };
+        });
+      }
+      connect(from, to2) {
+        if (this.closed || this.sourceDirty) return;
+        if (!this.graph.nodes.some((node) => node.id === from) || !this.graph.nodes.some((node) => node.id === to2)) return;
+        if (this.graph.edges.some((edge) => edge.from === from && edge.to === to2)) {
+          this.status.textContent = "These shapes are already connected. Select their connection to edit it.";
+          return;
+        }
+        this.change((graph) => {
+          let index = 1;
+          while (graph.edges.some((edge2) => edge2.id === `edge${index}`)) index++;
+          const edge = { id: `edge${index}`, from, to: to2, label: "", style: "arrow" };
+          graph.edges.push(edge);
+          this.selection = { type: "edge", id: edge.id };
+        });
+        this.connecting = false;
+        this.canvas.setConnectMode(false);
+        this.connectButton.setAttribute("aria-pressed", "false");
+      }
+      history(forward) {
+        if (this.closed || this.sourceDirty) return;
+        const from = forward ? this.redo : this.undo, to2 = forward ? this.undo : this.redo;
+        if (!from.length) return;
+        this.lastChangeKey = null;
+        to2.push(clone2(this.graph));
+        this.graph = from.pop();
+        this.selection = null;
+        this.refresh();
+      }
+      removeSelection() {
+        const selected = this.selection;
+        if (!selected) return;
+        this.change((graph) => {
+          if (selected.type === "node") {
+            graph.nodes = graph.nodes.filter((node) => node.id !== selected.id);
+            graph.edges = graph.edges.filter((edge) => edge.from !== selected.id && edge.to !== selected.id);
+          } else graph.edges = graph.edges.filter((edge) => edge.id !== selected.id);
+          this.selection = null;
+        });
+      }
+      renderInspector() {
+        this.inspector.replaceChildren();
+        const selected = this.selection;
+        const item = selected && (selected.type === "node" ? this.graph.nodes : this.graph.edges).find((item2) => item2.id === selected.id);
+        this.element("h3", this.inspector, "", item ? selected.type === "node" ? "Shape" : "Connection" : "Properties");
+        if (!item) {
+          this.element("p", this.inspector, "nn-flowchart-help", "Select a shape or connection to edit its label and appearance.");
+          return;
+        }
+        const update = (key2, value, options) => this.change((graph) => {
+          const current = (selected.type === "node" ? graph.nodes : graph.edges).find((item2) => item2.id === selected.id);
+          if (current) current[key2] = value;
+        }, options);
+        const label = this.field(this.inspector, "Label", "textarea");
+        label.value = item.label;
+        label.maxLength = 1e3;
+        label.rows = 3;
+        const updateLabel = () => update("label", label.value, { preserveInspector: true, mergeKey: `${selected.type}:${selected.id}:label` });
+        label.addEventListener("input", updateLabel);
+        label.addEventListener("change", updateLabel);
+        label.addEventListener("blur", () => {
+          this.lastChangeKey = null;
+        });
+        if (selected.type === "node") {
+          this.select(this.inspector, "Shape", SHAPES.map((shape) => [shape.id, shape.label]), item.shape, (value) => update("shape", value));
+          this.button(this.inspector, "Duplicate shape", () => this.change((graph) => {
+            const current = graph.nodes.find((node) => node.id === selected.id);
+            if (!current) return;
+            const copy = addNode(graph, current.shape, current.x + 30, current.y + 100);
+            copy.label = current.label;
+            this.selection = { type: "node", id: copy.id };
+          }));
+        } else {
+          const nodes = this.graph.nodes.map((node) => [node.id, node.label || node.id]);
+          this.select(this.inspector, "From", nodes, item.from, (value) => update("from", value));
+          this.select(this.inspector, "To", nodes, item.to, (value) => update("to", value));
+          this.select(this.inspector, "Style", STYLES, item.style, (value) => update("style", value));
+        }
+        this.button(this.inspector, selected.type === "node" ? "Delete shape" : "Delete connection", () => this.removeSelection(), "mod-warning");
+      }
+      importSource() {
+        if (this.closed || !this.sourceDirty) return;
+        const result = parseMermaid(this.input.value);
+        if (!result.graph) {
+          this.status.textContent = result.error;
+          return;
+        }
+        this.sourceDirty = false;
+        this.selection = null;
+        if (!this.change((graph) => {
+          for (const key2 of Object.keys(graph)) delete graph[key2];
+          Object.assign(graph, result.graph);
+        })) this.refresh();
+        this.canvas.fit();
+      }
+      async renderPreview() {
+        const generation = ++this.generation;
+        this.previewChild?.unload();
+        this.previewChild = null;
+        this.ownerDoc.defaultView.clearTimeout(this.previewTimer);
+        if (this.closed || !this.previewPanel.open) return;
+        if (!this.graph.nodes.length) {
+          this.preview.textContent = "Add a shape to preview your flowchart.";
+          return;
+        }
+        const child = new Component();
+        child.load();
+        this.previewChild = child;
+        const output = this.ownerDoc.createElement("div");
+        this.preview.replaceChildren(output);
+        this.preview.setAttribute("aria-busy", "true");
+        try {
+          await MarkdownRenderer.render(this.host.app, `\`\`\`mermaid
+${serializeMermaid(this.graph)}
+\`\`\``, output, this.capture.filePath || "", child);
+          if (!this.closed && generation === this.generation) this.preview.replaceChildren(output);
+        } catch {
+          if (!this.closed && generation === this.generation) this.preview.textContent = "Preview is unavailable. Your flowchart draft is still editable.";
+        } finally {
+          if (!this.closed && generation === this.generation) this.preview.removeAttribute("aria-busy");
+          if (this.closed || generation !== this.generation) child.unload();
+        }
+      }
+      save() {
+        if (this.closed || this.sourceDirty || !this.graph.nodes.length) return;
+        if (!this.controller.canOpen(this.editor, this.view) || this.view.file !== this.file || this.view.file?.path !== this.capture.filePath || this.view.containerEl?.ownerDocument !== this.ownerDoc || this.host.app.workspace.getActiveViewOfType(MarkdownView) !== this.view) {
+          this.status.textContent = "Return to the original note in editing mode before saving.";
+          return;
+        }
+        const scroll = this.editor.getScrollInfo();
+        if (!applyFlowchart(this.editor, this.capture, serializeMermaid(this.graph))) {
+          this.status.textContent = "The note changed while this draft was open. Copy the Mermaid source, then reopen the builder at the intended block.";
+          return;
+        }
+        this.close();
+        this.editor.focus();
+        this.editor.scrollTo(scroll.left, scroll.top);
+      }
+      onClose() {
+        this.closed = true;
+        this.generation++;
+        this.ownerDoc?.defaultView.clearTimeout(this.previewTimer);
+        this.canvas?.destroy();
+        this.previewChild?.unload();
+        this.previewChild = null;
+        this.controller.modals.delete(this);
+        if (this.keyHandler) this.contentEl.removeEventListener("keydown", this.keyHandler);
+        this.contentEl.replaceChildren();
+        this.modalEl.classList.remove("native-notes-flowchart-modal");
+      }
+    };
+    var FlowchartBuilder2 = class extends Component {
+      constructor(host) {
+        super();
+        this.host = host;
+        this.modals = /* @__PURE__ */ new Set();
+        this.running = false;
+      }
+      canOpen(editor, view) {
+        return this.running && this.host.featureEnabled("flowchart") && view?.editor === editor && view?.file?.extension === "md" && view.getMode?.() === "source";
+      }
+      onload() {
+        this.running = true;
+        this.host.addCommand({ id: "insert-flowchart", name: "Insert or edit flowchart", editorCheckCallback: (checking, editor, view) => {
+          if (!this.canOpen(editor, view)) return false;
+          if (!checking) this.open(editor, view);
+          return true;
+        } });
+        this.host.registerEvent(this.host.app.workspace.on("editor-menu", (menu, editor, view) => {
+          if (this.canOpen(editor, view)) menu.addItem((item) => item.setTitle("Insert or edit flowchart").setIcon("workflow").onClick(() => this.open(editor, view)));
+        }));
+      }
+      open(editor, view) {
+        if (!this.canOpen(editor, view)) return;
+        const previous = [...this.modals].find((modal) => modal.view === view);
+        if (previous) {
+          previous.input?.focus();
+          return;
+        }
+        const capture = captureFlowchart(editor, view);
+        if (!capture) {
+          new Notice2("Place the cursor in ordinary note text or inside a complete Mermaid block, outside lists, quotes, and other code blocks.");
+          return;
+        }
+        const result = capture.existing ? parseMermaid(capture.source) : { graph: createGraph() };
+        if (!result.graph) {
+          new Notice2(`This diagram cannot be edited visually: ${result.error} The note is unchanged.`, 1e4);
+          return;
+        }
+        new FlowchartModal(this, editor, view, capture, result.graph).open();
+      }
+      detachDocument(doc) {
+        for (const modal of this.modals) if (modal.ownerDoc === doc) modal.close();
+      }
+      refreshSettings() {
+        if (!this.host.featureEnabled("flowchart")) for (const modal of this.modals) modal.close();
+      }
+      onunload() {
+        this.running = false;
+        for (const modal of this.modals) modal.close();
+      }
+    };
+    module2.exports = { FlowchartBuilder: FlowchartBuilder2, FlowchartModal };
+  }
+});
+
+// src/slash-components.js
+var require_slash_components = __commonJS({
+  "src/slash-components.js"(exports2, module2) {
+    "use strict";
+    function component(id2, label, description, category, icon, keywords, kind, template, extra = {}) {
+      return Object.freeze({ id: id2, label, description, category, icon, keywords, kind, template, ...extra });
+    }
+    var COMPONENTS = Object.freeze([
+      component("paragraph", "Text", "Start a plain paragraph", "Basic", "pilcrow", "paragraph normal prose", "block", "{{Text}}"),
+      ...Array.from({ length: 6 }, (_2, index) => component(`heading-${index + 1}`, `Heading ${index + 1}`, `Create a level ${index + 1} heading`, "Basic", "heading", `h${index + 1} title section`, "block", `${"#".repeat(index + 1)} {{Heading}}`)),
+      component("bullet-list", "Bulleted list", "Create an unordered list", "Basic", "list", "bullet unordered ul list", "block", "- {{List item}}"),
+      component("numbered-list", "Numbered list", "Create an ordered list", "Basic", "list-ordered", "number ordered ol list", "block", "1. {{List item}}"),
+      component("task-list", "To-do list", "Add a checkable task", "Basic", "list-todo", "todo to-do checkbox checklist task", "block", "- [ ] {{Task}}"),
+      component("quote", "Quote", "Add a block quotation", "Basic", "quote", "blockquote quotation cite", "block", "> {{Quote}}"),
+      component("divider", "Divider", "Separate sections with a horizontal rule", "Basic", "minus", "horizontal rule separator hr line", "block", "***\n{{}}"),
+      component("table", "Table", "Add a Markdown table", "Basic", "table", "grid columns rows spreadsheet", "block", "| {{Column 1}} | Column 2 |\n| --- | --- |\n| Cell | Cell |"),
+      component("code-block", "Code block", "Insert a fenced code block", "Code", "square-code", "code fence syntax snippet programming", "block", "```{{language}}\n\n```"),
+      component("inline-code", "Inline code", "Format a short code fragment", "Code", "code", "monospace code backtick", "inline", "`{{code}}`"),
+      component("math-block", "Math block", "Insert a rendered LaTeX equation", "Math", "sigma", "latex equation formula display math", "block", "$$\n{{x^2 + y^2 = z^2}}\n$$"),
+      component("inline-math", "Inline math", "Insert LaTeX within a sentence", "Math", "variable", "latex equation formula inline math", "inline", "${{x^2}}$"),
+      component("equation-builder", "Equation builder", "Compose an equation with the math keyboard", "Math", "keyboard", "math latex formula equation keyboard composer", "composer", "", { feature: "mathKeyboard" }),
+      component("flowchart-builder", "Flowchart builder", "Drag shapes and connections to create Mermaid", "Diagrams", "workflow", "flow chart diagram mermaid visual builder", "composer", "", { feature: "flowchart" }),
+      component("mermaid-flowchart", "Flowchart", "Insert a Mermaid flowchart template", "Diagrams", "git-branch", "mermaid diagram flow chart nodes", "block", "```mermaid\nflowchart TD\n    A[{{Start}}] --> B{Decision}\n    B -->|Yes| C[Result]\n    B -->|No| D[Try again]\n```"),
+      component("mermaid-sequence", "Sequence diagram", "Describe messages between participants", "Diagrams", "messages-square", "mermaid sequence interaction message diagram", "block", "```mermaid\nsequenceDiagram\n    participant A as {{Alice}}\n    participant B as Bob\n    A->>B: Hello\n    B-->>A: Response\n```"),
+      component("mermaid-class", "Class diagram", "Describe classes and relationships", "Diagrams", "boxes", "mermaid class uml object inheritance diagram", "block", "```mermaid\nclassDiagram\n    class {{Animal}} {\n        +String name\n        +speak()\n    }\n    Animal <|-- Bird\n```"),
+      component("mermaid-state", "State diagram", "Describe states and transitions", "Diagrams", "circle-dot", "mermaid state machine transition diagram", "block", "```mermaid\nstateDiagram-v2\n    [*] --> {{Idle}}\n    Idle --> Active\n    Active --> [*]\n```"),
+      component("mermaid-er", "Entity relationship diagram", "Describe data entities and relationships", "Diagrams", "database", "mermaid er erd entity relationship database diagram", "block", "```mermaid\nerDiagram\n    {{CUSTOMER}} ||--o{ ORDER : places\n    CUSTOMER {\n        string name\n    }\n```"),
+      component("mermaid-gantt", "Gantt chart", "Plan tasks on a timeline", "Diagrams", "chart-gantt", "mermaid gantt schedule project timeline diagram", "block", "```mermaid\ngantt\n    title {{Project plan}}\n    dateFormat YYYY-MM-DD\n    section Work\n    First task :a1, 2026-01-01, 3d\n    Next task :after a1, 2d\n```"),
+      component("mermaid-pie", "Pie chart", "Visualize proportions", "Diagrams", "chart-pie", "mermaid pie chart percent data diagram", "block", '```mermaid\npie title {{Breakdown}}\n    "First" : 60\n    "Second" : 40\n```'),
+      component("mermaid-mindmap", "Mind map", "Organize ideas around a central topic", "Diagrams", "network", "mermaid mindmap mind map brainstorm diagram", "block", "```mermaid\nmindmap\n  root(({{Topic}}))\n    First idea\n    Second idea\n```"),
+      component("mermaid-timeline", "Timeline", "Show events in chronological order", "Diagrams", "milestone", "mermaid timeline history events diagram", "block", "```mermaid\ntimeline\n    title {{Timeline}}\n    2026 : First event\n    2027 : Next event\n```"),
+      component("callout", "Callout", "Highlight a note in a callout", "Callouts", "sticky-note", "callout note box aside annotation", "block", "> [!note] {{Title}}\n> Content"),
+      ...[
+        ["abstract", "Abstract", "summary tldr", "clipboard-list"],
+        ["info", "Information", "information details", "info"],
+        ["todo", "To-do", "todo task checklist", "circle-check"],
+        ["tip", "Tip", "hint important", "lightbulb"],
+        ["success", "Success", "check done complete", "check"],
+        ["question", "Question", "help faq ask", "circle-help"],
+        ["warning", "Warning", "caution attention", "triangle-alert"],
+        ["failure", "Failure", "fail missing", "x"],
+        ["danger", "Danger", "error critical", "zap"],
+        ["bug", "Bug", "defect issue", "bug"],
+        ["example", "Example", "sample demonstration", "list"],
+        ["quote", "Quote", "cite quotation", "quote"]
+      ].map(([type, label, aliases, icon]) => component(`callout-${type}`, `${label} callout`, `Insert ${/^[aeiou]/i.test(label) ? "an" : "a"} ${label.toLowerCase()} callout`, "Callouts", icon, `callout ${type} ${aliases}`, "block", `> [!${type}] {{Title}}
+> Content`)),
+      component("callout-collapsible", "Collapsible callout", "Add a callout that starts collapsed", "Callouts", "chevrons-down-up", "callout toggle collapse fold disclosure accordion", "block", "> [!note]- {{Title}}\n> Content"),
+      component("link", "Link", "Link text to a web address", "Links and media", "link", "url hyperlink external web address", "inline", "[{{Link text}}](https://example.com)"),
+      component("internal-link", "Note link", "Link to another note in this vault", "Links and media", "file-text", "internal wiki wikilink backlink page note", "inline", "[[{{Note name}}]]"),
+      component("heading-link", "Heading link", "Link to a heading in a note", "Links and media", "hash", "internal wiki section heading anchor", "inline", "[[{{Note name}}#Heading]]"),
+      component("block-link", "Block link", "Link to a block identifier", "Links and media", "link-2", "internal wiki block reference id", "inline", "[[{{Note name}}#^block-id]]"),
+      component("image", "Image", "Embed an image from the vault", "Links and media", "image", "picture photo png jpg jpeg gif svg image", "block", "![[{{image.png}}]]"),
+      component("web-image", "Web image", "Embed an image using its URL", "Links and media", "image-plus", "remote external url web image picture photo", "block", "![{{Description}}](https://example.com/image.png)"),
+      component("note-embed", "Note embed", "Embed another note or section", "Links and media", "files", "transclusion embed note page wiki", "block", "![[{{Note name}}]]"),
+      component("audio", "Audio", "Embed an audio attachment", "Links and media", "audio-lines", "sound music mp3 wav m4a audio recording", "block", "![[{{audio.mp3}}]]"),
+      component("video", "Video", "Embed a video attachment", "Links and media", "video", "movie film mp4 webm video", "block", "![[{{video.mp4}}]]"),
+      component("pdf", "PDF", "Embed a PDF attachment", "Links and media", "file", "document pdf attachment pages", "block", "![[{{document.pdf}}]]"),
+      component("bold", "Bold", "Emphasize text with bold formatting", "Formatting", "bold", "strong bold emphasis", "inline", "**{{Bold text}}**"),
+      component("italic", "Italic", "Emphasize text with italic formatting", "Formatting", "italic", "italics emphasis em", "inline", "*{{Italic text}}*"),
+      component("strikethrough", "Strikethrough", "Strike through text", "Formatting", "strikethrough", "strike delete crossed out", "inline", "~~{{Text}}~~"),
+      component("highlight", "Highlight", "Mark text with a highlight", "Formatting", "highlighter", "mark yellow highlight", "inline", "=={{Text}}=="),
+      component("comment", "Comment", "Add a comment hidden in reading view", "Formatting", "message-square", "comment annotation hidden private", "inline", "%%{{Comment}}%%"),
+      component("tag", "Tag", "Add a searchable tag", "References", "tag", "hashtag label category tag", "inline", "#{{tag}}"),
+      component("footnote", "Footnote", "Add an inline footnote", "References", "asterisk", "footnote citation reference source", "inline", "^[{{Footnote text}}]"),
+      component("date", "Date", "Insert today's local date", "References", "calendar", "calendar today current date", "inline", "{{@date}}"),
+      component("time", "Time", "Insert the current local time", "References", "clock", "clock now current time", "inline", "{{@time}}"),
+      component("properties", "Properties", "Add YAML properties at the start of a note", "References", "list-filter", "yaml frontmatter metadata property properties", "block", "---\ntags:\n  - {{tag}}\n---", { documentStart: true })
+    ]);
+    function normalize2(value) {
+      return String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+    }
+    var INDEX = COMPONENTS.map((item, order) => ({
+      item,
+      order,
+      label: normalize2(item.label),
+      aliases: normalize2(`${item.id} ${item.keywords}`),
+      category: normalize2(item.category)
+    }));
+    function subsequence(needle, haystack) {
+      let previous = -1, score = 0;
+      for (const character of needle) {
+        const at = haystack.indexOf(character, previous + 1);
+        if (at < 0) return -1;
+        score += at === previous + 1 ? 8 : 0;
+        score += at === 0 || haystack[at - 1] === " " ? 12 : 0;
+        score -= Math.min(12, at - previous - 1);
+        previous = at;
+      }
+      return Math.max(1, 20 + score - Math.floor(haystack.length / 12));
+    }
+    function fieldScore(term, value, bonus) {
+      if (term === value) return 500 + bonus;
+      if (value.startsWith(term)) return 350 + bonus;
+      if (value.includes(` ${term}`)) return 260 + bonus;
+      if (value.includes(term)) return 180 + bonus;
+      const score = subsequence(term, value);
+      return score < 0 ? -1 : score + bonus;
+    }
+    function searchComponents(query, options = {}) {
+      const normalized = normalize2(query).replace(/^\//, "").trim();
+      if (normalized.length > 64) return [];
+      const terms = normalized.split(" ").filter(Boolean), results = [];
+      for (const entry of INDEX) {
+        if (typeof options.enabled === "function" && !options.enabled(entry.item)) continue;
+        let score = 0;
+        for (const term of terms) {
+          const best = Math.max(fieldScore(term, entry.label, 60), fieldScore(term, entry.aliases, 15), fieldScore(term, entry.category, 0));
+          if (best < 0) {
+            score = -1;
+            break;
+          }
+          score += best;
+        }
+        if (score >= 0) results.push({ item: entry.item, score, matches: terms.filter((term) => entry.label.includes(term)), order: entry.order });
+      }
+      results.sort((a, b2) => b2.score - a.score || a.order - b2.order);
+      const limit = Number.isInteger(options.limit) && options.limit >= 0 ? options.limit : results.length;
+      return results.slice(0, limit).map(({ item, score, matches: matches3 }) => ({ item, score, matches: matches3 }));
+    }
+    module2.exports = { COMPONENTS, searchComponents };
+  }
+});
+
+// src/slash-source.js
+var require_slash_source = __commonJS({
+  "src/slash-source.js"(exports2, module2) {
+    "use strict";
+    var { scanFences } = require_fence();
+    var CONTEXT_CACHE = /* @__PURE__ */ new WeakMap();
+    var MAX_QUERY = 64;
+    function samePosition(a, b2) {
+      return !!a && !!b2 && a.line === b2.line && a.ch === b2.ch;
+    }
+    function validPosition(position) {
+      return !!position && Number.isInteger(position.line) && position.line >= 0 && Number.isInteger(position.ch) && position.ch >= 0;
+    }
+    function linesOf(source) {
+      const lines = [];
+      const pattern = /([^\r\n]*)(\r\n|\r|\n|$)/g;
+      let match;
+      while (match = pattern.exec(source)) {
+        lines.push({ text: match[1], from: match.index, to: match.index + match[1].length, end: match.index + match[0].length });
+        if (!match[2]) break;
+      }
+      return lines;
+    }
+    function offset(lines, position) {
+      if (!validPosition(position)) return null;
+      const line = lines[position.line];
+      return line && position.ch <= line.text.length ? line.from + position.ch : null;
+    }
+    function positionAt(source, offsetValue) {
+      const before = source.slice(0, offsetValue).split(/\r\n|\r|\n/);
+      return { line: before.length - 1, ch: before.at(-1).length };
+    }
+    function escaped(source, index) {
+      let count2 = 0;
+      while (index > 0 && source[--index] === "\\") count2++;
+      return count2 % 2 === 1;
+    }
+    function containerPrefix(line) {
+      let index = 0, continuation = "";
+      while (true) {
+        const quote = /^ {0,3}>[ \t]?/.exec(line.slice(index));
+        if (!quote) break;
+        continuation += quote[0];
+        index += quote[0].length;
+      }
+      const list2 = /^([ \t]*)(?:[-+*]|\d{1,9}[.)])[ \t]+/.exec(line.slice(index));
+      if (list2) {
+        continuation += list2[0].replace(/[^\t]/g, " ");
+        index += list2[0].length;
+      } else {
+        const indent = /^[ \t]*/.exec(line.slice(index))[0];
+        continuation += indent;
+        index += indent.length;
+      }
+      return { length: index, continuation, list: !!list2 };
+    }
+    function protectedPrefix(source) {
+      const lines = linesOf(source), lastLine = lines.at(-1).text;
+      let firstLine = 0;
+      if (/^\uFEFF?---[ \t]*$/.test(lines[0].text)) {
+        const closing2 = lines.findIndex((line, index) => index > 0 && /^(?:---|\.\.\.)[ \t]*$/.test(line.text));
+        if (closing2 < 0 || closing2 === lines.length - 1) return true;
+        firstLine = closing2 + 1;
+      }
+      const container = containerPrefix(lastLine);
+      if (!container.list && /^(?: {4}|\t)/.test(lastLine.replace(/^(?: {0,3}>[ \t]?)+/, ""))) return true;
+      const fences = new Map(scanFences(source).map((fence) => [fence.lineStart, fence]));
+      let comment4 = null, ticks = 0, dollars = 0, brackets = 0, destination = 0, htmlTag = false, htmlBlock = false, rawHTML = null;
+      for (let lineIndex = firstLine; lineIndex < lines.length; lineIndex++) {
+        const line = lines[lineIndex];
+        const blank2 = lineIndex < lines.length - 1 && !line.text.trim();
+        if (blank2 && !comment4 && dollars !== 2 && !rawHTML) {
+          ticks = 0;
+          brackets = 0;
+          destination = 0;
+          htmlTag = false;
+          htmlBlock = false;
+        }
+        if (rawHTML) {
+          if (new RegExp(`</${rawHTML}\\s*>`, "i").test(line.text)) rawHTML = null;
+          continue;
+        }
+        if (htmlBlock) continue;
+        if (!comment4 && !dollars) {
+          let fence = fences.get(lineIndex);
+          if (!fence && /^[ \t>]*(?:(?:[-+*]|\d{1,9}[.)])[ \t]+)?[`~]{3}/.test(line.text)) {
+            const candidate = scanFences(source.slice(line.from))[0];
+            if (candidate?.lineStart === 0) fence = {
+              ...candidate,
+              bodyEnd: candidate.bodyEnd + line.from,
+              lineEnd: candidate.lineEnd === null ? null : candidate.lineEnd + lineIndex
+            };
+          }
+          if (fence) {
+            if (!fence.closed && fence.bodyEnd === source.length) return true;
+            ticks = 0;
+            brackets = 0;
+            destination = 0;
+            htmlTag = false;
+            if (fence.closed) lineIndex = fence.lineEnd;
+            else while (lineIndex + 1 < lines.length && lines[lineIndex + 1].from < fence.bodyEnd) lineIndex++;
+            continue;
+          }
+          const raw2 = /^ {0,3}<(script|style|pre|textarea)(?:[\s>]|$)/i.exec(line.text);
+          if (raw2) {
+            rawHTML = new RegExp(`</${raw2[1]}\\s*>`, "i").test(line.text) ? null : raw2[1];
+            ticks = 0;
+            brackets = 0;
+            destination = 0;
+            htmlTag = false;
+            continue;
+          }
+          if (/^ {0,3}<\/?(?:address|article|aside|base|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|nav|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul)(?:[\s/>]|$)/i.test(line.text)) {
+            htmlBlock = true;
+            ticks = 0;
+            brackets = 0;
+            destination = 0;
+            htmlTag = false;
+            continue;
+          }
+        }
+        for (let index = line.from; index < line.to; index++) {
+          if (comment4) {
+            if (source.startsWith(comment4, index)) {
+              index += comment4.length - 1;
+              comment4 = null;
+            }
+            continue;
+          }
+          if (ticks) {
+            if (source[index] === "`") {
+              const count2 = /^`+/.exec(source.slice(index))[0].length;
+              if (count2 === ticks) ticks = 0;
+              index += count2 - 1;
+            }
+            continue;
+          }
+          if (escaped(source, index)) continue;
+          if (dollars) {
+            if (source[index] === "$" && (dollars === 1 ? source[index + 1] !== "$" : source[index + 1] === "$")) {
+              index += dollars - 1;
+              dollars = 0;
+            }
+            continue;
+          }
+          if (source.startsWith("<!--", index)) {
+            comment4 = "-->";
+            index += 3;
+            continue;
+          }
+          if (source.startsWith("%%", index)) {
+            comment4 = "%%";
+            index++;
+            continue;
+          }
+          if (source[index] === "`") {
+            ticks = /^`+/.exec(source.slice(index))[0].length;
+            index += ticks - 1;
+            continue;
+          }
+          if (source[index] === "$") {
+            dollars = source[index + 1] === "$" ? 2 : 1;
+            index += dollars - 1;
+            continue;
+          }
+          if (source[index] === "<" && /[A-Za-z/!]/.test(source[index + 1] || "")) htmlTag = true;
+          if (source[index] === ">") htmlTag = false;
+          if (source[index] === "[") brackets++;
+          else if (source[index] === "]") {
+            brackets = Math.max(0, brackets - 1);
+            if (source[index + 1] === "(") {
+              destination = 1;
+              index++;
+            }
+          } else if (destination && source[index] === "(") destination++;
+          else if (destination && source[index] === ")") destination--;
+        }
+        if (dollars === 1 && lineIndex < lines.length - 1) dollars = 0;
+      }
+      return !!(comment4 || ticks || dollars || brackets || destination || htmlTag || htmlBlock || rawHTML);
+    }
+    function prefixBefore(editor, start) {
+      if (typeof editor.getRange === "function") return editor.getRange({ line: 0, ch: 0 }, start);
+      if (typeof editor.getValue !== "function") return null;
+      const source = editor.getValue();
+      if (typeof source !== "string") return null;
+      const at = offset(linesOf(source), start);
+      return at === null ? null : source.slice(0, at);
+    }
+    function findSlashTrigger(cursor, editor) {
+      if (!validPosition(cursor) || !editor?.getLine) return null;
+      if (typeof editor.listSelections === "function" && editor.listSelections().length !== 1) return null;
+      if (editor.getCursor && !samePosition(editor.getCursor("from"), editor.getCursor("to"))) return null;
+      const line = editor.getLine(cursor.line);
+      if (typeof line !== "string" || cursor.ch > line.length) return null;
+      const before = line.slice(0, cursor.ch);
+      const match = /(?:^|[ \t])\/([\p{L}\p{N}_ -]{0,64})$/u.exec(before);
+      if (!match || match[1].length > MAX_QUERY) return null;
+      const start = { line: cursor.line, ch: cursor.ch - match[1].length - 1 };
+      if (/(?:^|[=+*()-][ \t]*)-?\d+(?:\.\d+)?[ \t]+$/.test(line.slice(0, start.ch))) return null;
+      const prefix = prefixBefore(editor, start);
+      if (prefix === null) return null;
+      const cached = CONTEXT_CACHE.get(editor);
+      const blocked = cached?.prefix === prefix ? cached.blocked : protectedPrefix(prefix);
+      if (!cached || cached.prefix !== prefix) CONTEXT_CACHE.set(editor, { prefix, blocked });
+      if (blocked) return null;
+      return { start, end: { ...cursor }, query: match[1] };
+    }
+    function captureSlash(editor, trigger, file = null) {
+      if (!trigger || !editor?.getValue || !samePosition(trigger.start, { line: trigger.end?.line, ch: trigger.start?.ch })) return null;
+      const current = findSlashTrigger(trigger.end, editor);
+      if (!current || !samePosition(current.start, trigger.start) || current.query !== trigger.query) return null;
+      const snapshot = editor.getValue();
+      if (typeof snapshot !== "string") return null;
+      const lines = linesOf(snapshot), fromOffset = offset(lines, trigger.start), toOffset = offset(lines, trigger.end);
+      if (fromOffset === null || toOffset === null || snapshot.slice(fromOffset, toOffset) !== `/${trigger.query}`) return null;
+      return Object.freeze({
+        snapshot,
+        from: Object.freeze({ ...trigger.start }),
+        to: Object.freeze({ ...trigger.end }),
+        query: trigger.query,
+        filePath: typeof file === "string" ? file : file?.path || null
+      });
+    }
+    function expandTemplate(template, now, literal) {
+      if (literal) return { text: template, start: template.length, end: template.length };
+      let text3 = "", cursor = 0, start = null, end = null;
+      for (const match of template.matchAll(/\{\{([^{}]*)\}\}/g)) {
+        text3 += template.slice(cursor, match.index);
+        let value = match[1];
+        if (value === "@date") value = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+        if (value === "@time") value = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+        if (start === null) {
+          start = text3.length;
+          end = start + value.length;
+        }
+        text3 += value;
+        cursor = match.index + match[0].length;
+      }
+      text3 += template.slice(cursor);
+      return { text: text3, start: start ?? text3.length, end: end ?? text3.length };
+    }
+    function planSlashInsertion(editor, capture, item, options = {}) {
+      if (!capture || !editor?.getValue || editor.getValue() !== capture.snapshot || typeof item?.template !== "string" || !["inline", "block"].includes(item.kind)) return null;
+      const lines = linesOf(capture.snapshot), fromOffset = offset(lines, capture.from), toOffset = offset(lines, capture.to);
+      if (fromOffset === null || toOffset === null || fromOffset > toOffset || capture.snapshot.slice(fromOffset, toOffset) !== `/${capture.query}` || protectedPrefix(capture.snapshot.slice(0, fromOffset))) return null;
+      if (item.documentStart && (capture.from.line !== 0 || capture.from.ch !== 0 || /^\uFEFF?---(?:\r\n|\r|\n)/.test(capture.snapshot))) return null;
+      const now = options.now instanceof Date && !Number.isNaN(options.now.valueOf()) ? options.now : /* @__PURE__ */ new Date();
+      const expanded = expandTemplate(item.template, now, options.literal === true);
+      const eol = /\r\n|\r|\n/.exec(capture.snapshot)?.[0] || "\n";
+      const line = lines[capture.from.line], before = line.text.slice(0, capture.from.ch), after = line.text.slice(capture.to.ch);
+      const container = containerPrefix(before), continuation = container.continuation;
+      let lead = "", tail = "";
+      if (item.kind === "block") {
+        if (before.slice(container.length).trim()) lead = `${eol}${continuation}${eol}${continuation}`;
+        else if (!container.list && !before.includes(">") && capture.from.line > 0 && lines[capture.from.line - 1].text.trim()) lead = `${eol}${continuation}`;
+        if (after.trim()) tail = `${eol}${continuation}${eol}${continuation}`;
+        else if (lines[capture.to.line + 1]?.text.trim()) tail = `${eol}${continuation}`;
+      }
+      const convert2 = (text4) => text4.replace(/\r\n|\r|\n/g, `${eol}${item.kind === "block" ? continuation : ""}`);
+      const text3 = lead + convert2(expanded.text) + tail;
+      const selectionStart = fromOffset + lead.length + convert2(expanded.text.slice(0, expanded.start)).length;
+      const selectionEnd = fromOffset + lead.length + convert2(expanded.text.slice(0, expanded.end)).length;
+      const updated = capture.snapshot.slice(0, fromOffset) + text3 + capture.snapshot.slice(toOffset);
+      return {
+        text: text3,
+        from: { ...capture.from },
+        to: { ...capture.to },
+        selection: { anchor: positionAt(updated, selectionStart), head: positionAt(updated, selectionEnd) }
+      };
+    }
+    module2.exports = { findSlashTrigger, captureSlash, planSlashInsertion };
+  }
+});
+
+// src/slash-menu.js
+var require_slash_menu = __commonJS({
+  "src/slash-menu.js"(exports2, module2) {
+    "use strict";
+    var { Component, EditorSuggest, MarkdownView, Notice: Notice2, setIcon } = require("obsidian");
+    var { searchComponents } = require_slash_components();
+    var { findSlashTrigger, captureSlash, planSlashInsertion } = require_slash_source();
+    var { captureEquation } = require_math_source();
+    var { captureFlowchart } = require_flowchart_source();
+    var { EquationModal } = require_math_composer();
+    var { FlowchartModal } = require_flowchart_builder();
+    var { createGraph } = require_flowchart_model();
+    function samePosition(a, b2) {
+      return a?.line === b2?.line && a?.ch === b2?.ch;
+    }
+    var SlashEquationModal = class extends EquationModal {
+      onClose() {
+        super.onClose();
+        this.slashOwner?.modals.delete(this);
+      }
+    };
+    var SlashFlowchartModal = class extends FlowchartModal {
+      onClose() {
+        super.onClose();
+        this.slashOwner?.modals.delete(this);
+      }
+    };
+    var ComponentSuggest = class extends EditorSuggest {
+      constructor(owner) {
+        super(owner.host.app);
+        this.owner = owner;
+        this.limit = 100;
+        this.rows = /* @__PURE__ */ new Set();
+        this.popups = /* @__PURE__ */ new Set();
+        this.setInstructions([
+          { command: "\u2191\u2193", purpose: "Navigate" },
+          { command: "\u21B5", purpose: "Insert" },
+          { command: "esc", purpose: "Dismiss" }
+        ]);
+      }
+      onTrigger(cursor, editor, file) {
+        if (!this.owner.viewFor(editor, file)) return null;
+        return findSlashTrigger(cursor, editor, file);
+      }
+      getSuggestions(context) {
+        this.rows.clear();
+        const view = this.owner.viewFor(context.editor, context.file);
+        if (!view) return [];
+        const trigger = findSlashTrigger(context.end, context.editor);
+        if (!trigger || trigger.query !== context.query || !samePosition(trigger.start, context.start)) return [];
+        const capture = { snapshot: context.editor.getValue(), filePath: context.file.path };
+        const results = searchComponents(context.query, { enabled: (item) => !item.feature || this.owner.host.featureEnabled(item.feature), limit: this.limit });
+        const available = results.filter((result) => {
+          if (result.item.documentStart && (context.start.line !== 0 || context.start.ch !== 0)) return false;
+          if (result.item.id === "flowchart-builder") return !/^(?:[ \t]+\S| {0,3}>| {0,3}(?:[-+*]|\d+[.)])[ \t]+)/.test(context.editor.getLine(context.start.line));
+          return true;
+        }).map((result) => ({ ...result, capture, view, file: view.file, ownerDoc: view.containerEl?.ownerDocument, context: { start: { ...context.start }, end: { ...context.end }, query: context.query } }));
+        return available.length ? available : [{ item: null }];
+      }
+      tagPopup(element3) {
+        const popup = element3.closest(".suggestion-container");
+        if (!popup) return;
+        popup.classList.add("nn-slash-menu");
+        this.popups.add(popup);
+      }
+      renderSuggestion(result, element3) {
+        if (!this.owner.enabled()) return;
+        this.rows.add(element3);
+        this.owner.host.attachDocument(element3.ownerDocument);
+        this.tagPopup(element3);
+        const create2 = (tag, parent, cls, text3) => {
+          const child = element3.ownerDocument.createElement(tag);
+          child.className = cls;
+          if (text3 !== void 0) child.textContent = text3;
+          parent.appendChild(child);
+          return child;
+        };
+        const row = create2("div", element3, "nn-slash-row");
+        if (!result.item) {
+          create2("div", row, "nn-slash-copy nn-slash-empty", "No matching components. Try a shorter search.");
+          return;
+        }
+        const item = result.item;
+        const icon = create2("span", row, "nn-slash-icon");
+        icon.setAttribute("aria-hidden", "true");
+        setIcon(icon, item.icon);
+        const copy = create2("div", row, "nn-slash-copy");
+        create2("div", copy, "nn-slash-title", item.label);
+        create2("div", copy, "nn-slash-description", item.description);
+        create2("span", row, "nn-slash-category", item.category);
+        Promise.resolve().then(() => {
+          if (this.owner.enabled() && this.rows.has(element3) && element3.isConnected) this.tagPopup(element3);
+        });
+      }
+      open() {
+        if (!this.owner.enabled()) return;
+        super.open();
+        for (const row of this.rows) this.tagPopup(row);
+      }
+      close() {
+        super.close();
+        for (const popup of this.popups) popup.classList.remove("nn-slash-menu");
+        this.popups.clear();
+        this.rows.clear();
+      }
+      selectSuggestion(result) {
+        if (!result.item || !this.owner.enabled()) return;
+        const { view, file, capture, context, item, ownerDoc } = result;
+        const editor = view.editor;
+        const current = this.context;
+        if (!current || current.editor !== editor || current.file !== file || current.query !== context.query || !samePosition(current.start, context.start) || !samePosition(current.end, context.end) || this.owner.viewFor(editor, file) !== view || view.file !== file || file.path !== capture.filePath || view.containerEl?.ownerDocument !== ownerDoc || view.containerEl?.isConnected === false || ownerDoc?.defaultView?.closed || item.feature && !this.owner.host.featureEnabled(item.feature) || editor.getValue() !== capture.snapshot || !samePosition(editor.getCursor("from"), context.end) || !samePosition(editor.getCursor("to"), context.end)) {
+          this.close();
+          return;
+        }
+        if (item.kind === "composer") {
+          const prepared = this.owner.composerCapture(item, editor, view, context);
+          if (!prepared) {
+            this.close();
+            new Notice2("Move to an ordinary note paragraph to open this builder.");
+            return;
+          }
+          this.close();
+          if (item.id === "equation-builder") {
+            const controller = this.owner.host.mathKeyboard;
+            if (!controller?.canOpen(editor, view)) return;
+            const modal = new SlashEquationModal(controller, editor, view, { ...prepared, source: "" });
+            modal.slashOwner = this.owner;
+            this.owner.modals.add(modal);
+            modal.open();
+          } else if (item.id === "flowchart-builder") {
+            const controller = this.owner.host.flowchartBuilder;
+            if (!controller?.canOpen(editor, view)) return;
+            const modal = new SlashFlowchartModal(controller, editor, view, prepared, createGraph());
+            modal.slashOwner = this.owner;
+            this.owner.modals.add(modal);
+            modal.open();
+          }
+          return;
+        }
+        const insertion = captureSlash(editor, context, file);
+        const plan = insertion && planSlashInsertion(editor, insertion, item);
+        if (!plan) {
+          this.close();
+          new Notice2("This component cannot be inserted here. Move to an ordinary note paragraph and try again.");
+          return;
+        }
+        this.close();
+        editor.transaction({ changes: [{ from: plan.from, to: plan.to, text: plan.text }], selection: { from: plan.selection.anchor, to: plan.selection.head } }, "input.native-notes-component");
+        editor.focus();
+      }
+    };
+    var SlashMenu2 = class extends Component {
+      constructor(host) {
+        super();
+        this.host = host;
+        this.running = false;
+        this.modals = /* @__PURE__ */ new Set();
+      }
+      enabled() {
+        return this.running && this.host.featureEnabled("slashMenu");
+      }
+      viewFor(editor, file) {
+        if (!this.enabled() || !file || file.extension !== "md") return null;
+        const view = this.host.app.workspace.getActiveViewOfType(MarkdownView);
+        return view?.editor === editor && view.file === file && view.getMode() === "source" ? view : null;
+      }
+      composerCapture(item, editor, view, context) {
+        const selection = { getValue: () => editor.getValue(), getCursor: (side) => side === "from" ? context.start : context.end };
+        if (item.id === "flowchart-builder") return captureFlowchart(selection, view);
+        if (item.id === "equation-builder") return captureEquation(selection, view);
+        return null;
+      }
+      onload() {
+        this.running = true;
+        this.suggest = new ComponentSuggest(this);
+        this.host.registerEditorSuggest(this.suggest);
+        this.host.registerEvent(this.host.app.workspace.on("active-leaf-change", () => this.suggest.close()));
+      }
+      detachDocument(doc) {
+        if ([...this.suggest?.rows || []].some((row) => row.ownerDocument === doc)) this.suggest.close();
+        for (const modal of this.modals) if (modal.ownerDoc === doc) {
+          modal.close();
+          this.modals.delete(modal);
+        }
+      }
+      refreshSettings() {
+        this.suggest?.close();
+        for (const modal of this.modals) {
+          if (modal.closed) this.modals.delete(modal);
+          else if (!this.enabled()) {
+            modal.close();
+            this.modals.delete(modal);
+          }
+        }
+      }
+      onunload() {
+        this.running = false;
+        this.suggest?.close();
+        for (const modal of this.modals) if (!modal.closed) modal.close();
+        this.modals.clear();
+      }
+    };
+    module2.exports = { SlashMenu: SlashMenu2, ComponentSuggest };
+  }
+});
+
 // src/dom-state.js
 var require_dom_state = __commonJS({
   "src/dom-state.js"(exports2, module2) {
@@ -42579,7 +53610,7 @@ var require_dom_state = __commonJS({
     var CANDIDATES = `${TARGETS},${CLASSES.map((name2) => `.${name2}`).join(",")}`;
     var CONTEXTS = /* @__PURE__ */ new Set(["mermaid", "mathlive-modal-content", "obsidian-mathlive-codemirror-wrapper"]);
     var externalClasses = (value) => String(value || "").split(/\s+/).filter((name2) => name2 && !OWNED.has(name2)).sort().join(" ");
-    var direct = (el, selector) => Array.from(el.children).some((child) => child.matches(selector));
+    var direct = (el2, selector) => Array.from(el2.children).some((child) => child.matches(selector));
     var DOMState2 = class {
       constructor(doc) {
         this.doc = doc;
@@ -42599,9 +53630,9 @@ var require_dom_state = __commonJS({
           attributeFilter: ["class", "data-language", "display", "id"]
         });
         this.refreshDiagrams = () => {
-          for (const el of this.tracked) if (el.matches("svg.flowchart")) {
-            this.clearDiagram(el);
-            this.pending.add(el);
+          for (const el2 of this.tracked) if (el2.matches("svg.flowchart")) {
+            this.clearDiagram(el2);
+            this.pending.add(el2);
           }
           this.schedule();
         };
@@ -42614,7 +53645,7 @@ var require_dom_state = __commonJS({
       addSubtree(node) {
         if (node.nodeType !== 1) return;
         if (node.matches(CANDIDATES)) this.pending.add(node);
-        for (const el of node.querySelectorAll(CANDIDATES)) this.pending.add(el);
+        for (const el2 of node.querySelectorAll(CANDIDATES)) this.pending.add(el2);
       }
       collect(records) {
         if (this.disposed) return;
@@ -42622,8 +53653,8 @@ var require_dom_state = __commonJS({
           const target = record.target;
           if (record.type === "attributes" && record.attributeName === "class" && externalClasses(record.oldValue) === externalClasses(target.getAttribute("class")) && CLASSES.every((name2) => target.classList.contains(name2) === Boolean(this.states.get(target)?.has(name2)))) continue;
           if (target.nodeType !== 1 || target.closest("[data-native-notes-diagram-style]")) continue;
-          for (let el = target; el && el !== this.doc.body; el = el.parentElement) {
-            if (el.matches(TARGETS) || this.tracked.has(el)) this.pending.add(el);
+          for (let el2 = target; el2 && el2 !== this.doc.body; el2 = el2.parentElement) {
+            if (el2.matches(TARGETS) || this.tracked.has(el2)) this.pending.add(el2);
           }
           if (record.type === "attributes" && record.attributeName === "class") {
             const previous = new Set(String(record.oldValue || "").split(/\s+/));
@@ -42644,42 +53675,42 @@ var require_dom_state = __commonJS({
       }
       flush() {
         if (this.disposed) return;
-        for (const el of this.pending) {
-          if (!el.isConnected || el.ownerDocument !== this.doc || !el.matches(TARGETS)) {
-            this.clearElement(el);
+        for (const el2 of this.pending) {
+          if (!el2.isConnected || el2.ownerDocument !== this.doc || !el2.matches(TARGETS)) {
+            this.clearElement(el2);
             continue;
           }
-          this.syncElement(el);
+          this.syncElement(el2);
         }
         this.pending.clear();
       }
-      syncElement(el) {
-        this.tracked.add(el);
-        OWNERS.set(el, this);
+      syncElement(el2) {
+        this.tracked.add(el2);
+        OWNERS.set(el2, this);
         const states = /* @__PURE__ */ new Set();
         const set = (name2, value) => {
           if (value) states.add(name2);
         };
-        if (el.matches(".nav-folder-title, .nav-file-title")) set("nn-has-iconize", el.querySelector(".iconize-icon"));
-        if (el.matches(".cm-preview-code-block")) {
-          set("nn-has-expressive-code", el.querySelector(".expressive-code"));
-          set("nn-has-code", el.querySelector(".expressive-code, pre"));
-          set("nn-code-widget", direct(el, "pre") || Array.from(el.children).some((child) => child.matches("div") && direct(child, ".expressive-code")));
-          set("nn-editable-code-header", el.querySelector(".an-code-title-editable"));
-          set("nn-has-copy-feedback", el.querySelector(".expressive-code .copy .feedback"));
+        if (el2.matches(".nav-folder-title, .nav-file-title")) set("nn-has-iconize", el2.querySelector(".iconize-icon"));
+        if (el2.matches(".cm-preview-code-block")) {
+          set("nn-has-expressive-code", el2.querySelector(".expressive-code"));
+          set("nn-has-code", el2.querySelector(".expressive-code, pre"));
+          set("nn-code-widget", direct(el2, "pre") || Array.from(el2.children).some((child) => child.matches("div") && direct(child, ".expressive-code")));
+          set("nn-editable-code-header", el2.querySelector(".an-code-title-editable"));
+          set("nn-has-copy-feedback", el2.querySelector(".expressive-code .copy .feedback"));
         }
-        if (el.matches("pre")) set("nn-has-copy-button", direct(el, "button.copy-code-button"));
-        if (el.matches("figure.frame")) {
-          set("nn-editable-code-header", el.querySelector(".an-code-title-editable"));
-          set("nn-shell-frame", direct(el, 'pre:is([data-language="sh"], [data-language="bash"], [data-language="zsh"], [data-language="shell"])'));
+        if (el2.matches("pre")) set("nn-has-copy-button", direct(el2, "button.copy-code-button"));
+        if (el2.matches("figure.frame")) {
+          set("nn-editable-code-header", el2.querySelector(".an-code-title-editable"));
+          set("nn-shell-frame", direct(el2, 'pre:is([data-language="sh"], [data-language="bash"], [data-language="zsh"], [data-language="shell"])'));
         }
-        if (el.matches("figcaption.header")) set("nn-has-language-label", direct(el, ".an-code-language-label"));
-        set("nn-math-display", el.localName === "mjx-container" && el.getAttribute("display") === "true");
-        set("nn-mathlive-field", el.localName === "math-field" && el.closest(".mathlive-modal-content, .obsidian-mathlive-codemirror-wrapper"));
-        this.states.set(el, states);
-        for (const name2 of CLASSES) el.classList.toggle(name2, states.has(name2));
-        if (el.matches(".mermaid svg.flowchart")) this.syncDiagram(el);
-        else this.clearDiagram(el);
+        if (el2.matches("figcaption.header")) set("nn-has-language-label", direct(el2, ".an-code-language-label"));
+        set("nn-math-display", el2.localName === "mjx-container" && el2.getAttribute("display") === "true");
+        set("nn-mathlive-field", el2.localName === "math-field" && el2.closest(".mathlive-modal-content, .obsidian-mathlive-codemirror-wrapper"));
+        this.states.set(el2, states);
+        for (const name2 of CLASSES) el2.classList.toggle(name2, states.has(name2));
+        if (el2.matches(".mermaid svg.flowchart")) this.syncDiagram(el2);
+        else this.clearDiagram(el2);
       }
       syncDiagram(svg3) {
         const id2 = svg3.id;
@@ -42716,18 +53747,18 @@ var require_dom_state = __commonJS({
         svg3.appendChild(style2);
         this.diagrams.set(svg3, { id: id2, style: style2 });
       }
-      clearDiagram(el) {
-        this.diagrams.get(el)?.style.remove();
-        this.diagrams.delete(el);
+      clearDiagram(el2) {
+        this.diagrams.get(el2)?.style.remove();
+        this.diagrams.delete(el2);
       }
-      clearElement(el) {
-        if (OWNERS.get(el) === this) {
-          el.classList.remove(...CLASSES);
-          OWNERS.delete(el);
+      clearElement(el2) {
+        if (OWNERS.get(el2) === this) {
+          el2.classList.remove(...CLASSES);
+          OWNERS.delete(el2);
         }
-        this.clearDiagram(el);
-        this.states.delete(el);
-        this.tracked.delete(el);
+        this.clearDiagram(el2);
+        this.states.delete(el2);
+        this.tracked.delete(el2);
       }
       destroy() {
         this.disposed = true;
@@ -42737,7 +53768,7 @@ var require_dom_state = __commonJS({
         if (this.frame !== null) this.win.cancelAnimationFrame(this.frame);
         this.frame = null;
         this.pending.clear();
-        for (const el of this.tracked) this.clearElement(el);
+        for (const el2 of this.tracked) this.clearElement(el2);
       }
     };
     module2.exports = { DOMState: DOMState2 };
@@ -42751,8 +53782,13 @@ var { OWNED_CLASSES, classNames, settingsCSS } = require_appearance();
 var { NativeNotesSettingsTab } = require_settings_tab();
 var { CodeFeatures } = require_code_features();
 var { CodeRenderer } = require_code_renderer();
+var { MathRenderer } = require_math_renderer();
+var { MathKeyboard } = require_math_composer();
+var { AutomaticMathKeyboard } = require_math_keyboard_panel();
 var { FloatingOutline } = require_outline();
 var { MediaAlignment } = require_media_alignment();
+var { FlowchartBuilder } = require_flowchart_builder();
+var { SlashMenu } = require_slash_menu();
 var { DOMState } = require_dom_state();
 module.exports = class NativeNotes extends Plugin {
   async onload() {
@@ -42768,8 +53804,13 @@ module.exports = class NativeNotes extends Plugin {
     this.addSettingTab(this.settingTab);
     this.codeFeatures = this.addChild(new CodeFeatures(this));
     this.codeRenderer = this.addChild(new CodeRenderer(this));
+    this.mathRenderer = this.addChild(new MathRenderer(this));
+    this.mathKeyboard = this.addChild(new MathKeyboard(this));
+    this.automaticMathKeyboard = this.addChild(new AutomaticMathKeyboard(this));
     this.outline = this.addChild(new FloatingOutline(this));
     this.mediaAlignment = this.addChild(new MediaAlignment(this));
+    this.flowchartBuilder = this.addChild(new FlowchartBuilder(this));
+    this.slashMenu = this.addChild(new SlashMenu(this));
     this.addCommand({ id: "toggle-outline", name: "Toggle floating outline", checkCallback: (checking) => this.featureEnabled("outline") && this.outline.toggleActive(checking) });
     this.registerEvent(this.app.workspace.on("window-open", (_window, win) => this.attachDocument(win.document)));
     this.registerEvent(this.app.workspace.on("window-close", (_window, win) => this.detachDocument(win.document)));
@@ -42804,6 +53845,7 @@ module.exports = class NativeNotes extends Plugin {
     this.documentDisposers.set(doc, () => doc.defaultView?.removeEventListener("pagehide", cleanup));
     this.applyDocument(doc, style2);
     this.documentStates.set(doc, new DOMState(doc));
+    this.mathRenderer?.attachDocument(doc);
   }
   applyDocument(doc, style2) {
     const names2 = new Set(classNames(this.settings));
@@ -42812,6 +53854,10 @@ module.exports = class NativeNotes extends Plugin {
   }
   detachDocument(doc) {
     if (!this.documents.has(doc)) return;
+    this.mathRenderer?.detachDocument(doc);
+    this.automaticMathKeyboard?.detachDocument(doc);
+    this.flowchartBuilder?.detachDocument(doc);
+    this.slashMenu?.detachDocument(doc);
     this.documentStates.get(doc)?.destroy();
     this.documentStates.delete(doc);
     doc.body?.classList.remove(...OWNED_CLASSES);
@@ -42825,8 +53871,13 @@ module.exports = class NativeNotes extends Plugin {
     for (const [doc, style2] of this.documents) this.applyDocument(doc, style2);
     this.codeFeatures?.refreshSettings();
     this.codeRenderer?.refreshSettings();
+    this.mathRenderer?.refreshSettings();
+    this.mathKeyboard?.refreshSettings();
+    this.automaticMathKeyboard?.refreshSettings();
     this.outline?.refreshSettings();
     this.mediaAlignment?.refreshSettings();
+    this.flowchartBuilder?.refreshSettings();
+    this.slashMenu?.refreshSettings();
   }
   updateSettings() {
     if (this.disposed) return Promise.resolve(false);

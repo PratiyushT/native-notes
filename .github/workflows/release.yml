@@ -44,6 +44,8 @@ jobs:
             'docs/INSTALL.md', 'docs/CODE-HIGHLIGHTING.md', 'docs/SYNC.md', 'docs/images/README.md',
             'docs/images/appearance-settings.png', 'docs/images/code-highlighting.png', 'docs/images/code-settings.png',
             'docs/images/notes-light.png', 'docs/images/ocean-dark.png', 'docs/images/optional-features.png', 'docs/images/profile-settings.png',
+            'docs/images/math-settings.png', 'docs/images/math-keyboard-light.png', 'docs/images/math-keyboard-dark.png',
+            'docs/images/math-button-light.png', 'docs/images/math-button-dark.png', 'docs/images/flowchart-builder.png', 'docs/images/slash-menu.png',
             `docs/RELEASE-${tag}.md`, '.github/workflows/release.yml',
           ].sort();
           const entries = execFileSync('git', ['ls-files', '-s', '-z'], { encoding: 'utf8' }).split('\0').filter(Boolean);
@@ -79,44 +81,73 @@ jobs:
             main.js
             manifest.json
             styles.css
-      - name: Stage GitHub release assets
+      - name: Stage, verify and publish release before advancing main
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          gh release create "$RELEASE_TAG" main.js manifest.json styles.css \
-            --verify-tag --draft --title "Native Notes ${RELEASE_TAG}" \
-            --notes-file "docs/RELEASE-${RELEASE_TAG}.md"
-      - name: Verify published asset names and hashes
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ github.ref_name }}
-        run: |
-          gh api "repos/$GH_REPO/releases/tags/$RELEASE_TAG" | node -e '
-            const fs = require("node:fs");
-            const { createHash } = require("node:crypto");
-            let input = "";
-            process.stdin.on("data", chunk => input += chunk);
-            process.stdin.on("end", () => {
-              const expected = ["main.js", "manifest.json", "styles.css"].sort();
-              const assets = JSON.parse(input).assets;
-              const actual = assets.map(asset => asset.name).sort();
-              if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error("Unexpected published assets.");
-              for (const asset of assets) {
-                const contents = fs.readFileSync(asset.name);
-                const digest = "sha256:" + createHash("sha256").update(contents).digest("hex");
-                if (asset.digest !== digest || asset.size !== contents.length) throw new Error(`Published asset does not match distribution: ${asset.name}`);
-              }
-            });
-          '
-      - name: Publish release and advance distribution main
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ github.ref_name }}
-        run: |
-          gh release edit "$RELEASE_TAG" --draft=false --latest
-          gh api --method PATCH "repos/$GH_REPO/git/refs/heads/main" \
-            -f sha="$GITHUB_SHA" -F force=false
+          node <<'NODE'
+          const fs = require('node:fs');
+          const { createHash } = require('node:crypto');
+          const { execFileSync } = require('node:child_process');
+          const tag = process.env.RELEASE_TAG;
+          const repo = process.env.GH_REPO;
+          if (repo !== 'PratiyushT/native-notes' || !/^\d+\.\d+\.\d+$/.test(tag)) throw new Error('Invalid release destination or tag.');
+          const expected = ['main.js', 'manifest.json', 'styles.css'].sort();
+          const notesFile = `docs/RELEASE-${tag}.md`;
+          const normalizeNotes = text => text.replace(/\r\n/g, '\n').trimEnd();
+          const notes = normalizeNotes(fs.readFileSync(notesFile, 'utf8'));
+          const gh = (args, input) => execFileSync('gh', args, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'], input });
+          function api(args, input) {
+            let output;
+            try { output = gh(['api', ...args], input); }
+            catch (error) { throw new Error(`GitHub API request failed: ${args.join(' ')}`, { cause: error }); }
+            try { return JSON.parse(output); }
+            catch (error) { throw new Error('GitHub API returned invalid JSON.', { cause: error }); }
+          }
+          function findRelease() {
+            // The by-tag REST endpoint only returns published releases. Listing
+            // with this write-capable token also includes drafts on every page.
+            const pages = api(['--paginate', '--slurp', `repos/${repo}/releases?per_page=100`]);
+            if (!Array.isArray(pages) || !pages.every(Array.isArray)) throw new Error('Invalid GitHub release listing.');
+            const releases = pages.flat();
+            if (!releases.every(release => release && typeof release.tag_name === 'string' && Number.isSafeInteger(release.id) && release.id > 0)) throw new Error('Invalid GitHub release listing.');
+            const matches = releases.filter(release => release.tag_name === tag);
+            if (matches.length > 1) throw new Error('Multiple releases match this tag; inspect them manually.');
+            return matches[0];
+          }
+          function releaseId(release) {
+            if (!Number.isSafeInteger(release?.id) || release.id <= 0) throw new Error('Missing or invalid GitHub release ID.');
+            return release.id;
+          }
+          function verifyRelease(release, id, draft) {
+            if (!release || release.id !== id || release.tag_name !== tag) throw new Error('GitHub release identity does not match this tag.');
+            if (release.draft !== draft) throw new Error(draft ? 'Release is already published; refusing to modify it.' : 'Release was not published successfully.');
+            if (draft && release.immutable !== false) throw new Error('Draft is immutable or has unknown immutability; refusing to modify it.');
+            if (release.prerelease !== false || release.name !== `Native Notes ${tag}` || typeof release.body !== 'string' || normalizeNotes(release.body) !== notes) {
+              throw new Error('GitHub release metadata does not match this distribution.');
+            }
+            if (!Array.isArray(release.assets)) throw new Error('GitHub release response is missing its assets array.');
+            const names = release.assets.map(asset => asset?.name).sort();
+            if (JSON.stringify(names) !== JSON.stringify(expected)) throw new Error('Expected exactly main.js, manifest.json and styles.css; inspect partial or unexpected draft assets manually.');
+            for (const asset of release.assets) {
+              const contents = fs.readFileSync(asset.name);
+              const digest = 'sha256:' + createHash('sha256').update(contents).digest('hex');
+              if (asset.state !== 'uploaded' || asset.digest !== digest || asset.size !== contents.length) throw new Error(`Release asset does not match distribution: ${asset.name}`);
+            }
+          }
+          let release = findRelease();
+          if (!release) {
+            gh(['release', 'create', tag, ...expected, '--verify-tag', '--draft', '--title', `Native Notes ${tag}`, '--notes-file', notesFile]);
+            release = findRelease();
+          }
+          const id = releaseId(release);
+          const endpoint = `repos/${repo}/releases/${id}`;
+          // Reuse a complete matching draft without changing any uploaded asset.
+          // Incomplete drafts require explicit recovery instead of overwrites.
+          verifyRelease(api([endpoint]), id, true);
+          const published = api(['--method', 'PATCH', endpoint, '--input', '-'], JSON.stringify({ draft: false, make_latest: 'true' }));
+          verifyRelease(published, id, false);
+          api(['--method', 'PATCH', `repos/${repo}/git/refs/heads/main`, '-f', `sha=${process.env.GITHUB_SHA}`, '-F', 'force=false']);
+          NODE
